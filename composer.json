@@ -1,0 +1,11 @@
+{
+    "require": {
+        "league/oauth2-client": "~0.3",
+        "vlucas/phpdotenv": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Picqer": "src/"
+        }
+    }
+}
