@@ -1,7 +1,7 @@
 {
     "require": {
-        "league/oauth2-client": "~0.3",
-        "vlucas/phpdotenv": "dev-master"
+        "vlucas/phpdotenv": "1.*",
+        "commerceguys/guzzle-oauth2-plugin": "1.*"
     },
     "autoload": {
         "psr-0": {
