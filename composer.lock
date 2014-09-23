@@ -4,20 +4,20 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0b2055d914611568bf2e98d481db1423",
+    "hash": "2f43ac44e593d59318564aeccd8fac06",
     "packages": [
         {
             "name": "commerceguys/guzzle-oauth2-plugin",
-            "version": "v1.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/commerceguys/guzzle-oauth2-plugin.git",
-                "reference": "90b375330080175a9aaad2bc897d1de111813e69"
+                "url": "https://github.com/picqer/guzzle-oauth2-plugin.git",
+                "reference": "0fb3623deb3135e948c0514d79950e476091835d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/guzzle-oauth2-plugin/zipball/90b375330080175a9aaad2bc897d1de111813e69",
-                "reference": "90b375330080175a9aaad2bc897d1de111813e69",
+                "url": "https://api.github.com/repos/picqer/guzzle-oauth2-plugin/zipball/0fb3623deb3135e948c0514d79950e476091835d",
+                "reference": "0fb3623deb3135e948c0514d79950e476091835d",
                 "shasum": ""
             },
             "require": {
@@ -29,7 +29,6 @@
                     "CommerceGuys\\Guzzle": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -42,7 +41,10 @@
                 }
             ],
             "description": "An OAuth2 plugin for guzzle",
-            "time": "2014-05-20 10:02:48"
+            "support": {
+                "source": "https://github.com/picqer/guzzle-oauth2-plugin/tree/master"
+            },
+            "time": "2014-09-22 07:24:38"
         },
         {
             "name": "guzzle/guzzle",
@@ -248,9 +250,9 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "commerceguys/guzzle-oauth2-plugin": 20
+    },
     "prefer-stable": false,
     "platform": [
 
