@@ -1,4 +1,20 @@
 {
+    "name": "picqer/exact-php-client",
+    "type": "library",
+    "description": "A PHP Client for the Exact API",
+    "keywords": [
+        "api",
+        "php",
+        "exact"
+    ],
+    "homepage": "http://github.com/picqer/exact-php-client",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stephan Groen",
+            "email": "support@picqer.com"
+        }
+    ],
     "repositories": [
         {
             "type": "vcs",
@@ -6,11 +22,12 @@
         }
     ],
     "require": {
+        "php": ">=5.4.0",
         "commerceguys/guzzle-oauth2-plugin": "dev-master"
     },
     "autoload": {
         "psr-0": {
-            "Picqer": "src/"
+            "Picqer": "src"
         }
     }
 }
