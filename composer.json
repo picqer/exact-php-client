@@ -6,7 +6,6 @@
         }
     ],
     "require": {
-        "vlucas/phpdotenv": "1.*",
         "commerceguys/guzzle-oauth2-plugin": "dev-master"
     },
     "autoload": {
