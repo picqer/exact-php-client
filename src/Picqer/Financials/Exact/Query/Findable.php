@@ -11,6 +11,15 @@ trait Findable
         return new self($this->connection(), $result);
     }
 
+    public function filter($filter)
+    {
+        $result = $this->connection()->get($this->url, [
+            '$filter' => $filter
+        ]);
+
+        return new self($this->connection(), $result);
+    }
+
     public function get()
     {
         $result = $this->connection()->get($this->url);
