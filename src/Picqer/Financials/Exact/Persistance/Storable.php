@@ -4,12 +4,12 @@ trait Storable
 {
     public function save()
     {
-        if ($this->exists())
-            $this->fill($this->update());
-
-        $this->fill($this->insert());
-
-        return $this;
+        if ($this->exists()) {
+            $result = $this->update();
+        } else {
+            $result = $this->insert();
+        }
+        return $this->find($result[$this->primaryKey]);
     }
 
     public function insert()
