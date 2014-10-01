@@ -20,7 +20,8 @@ class Account extends Model {
         'Name',
         'Phone',
         'Postcode',
-        'Website'
+        'Website',
+        'Status'
     ];
 
     protected $url = 'crm/Accounts';
