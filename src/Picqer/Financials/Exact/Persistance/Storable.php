@@ -5,11 +5,11 @@ trait Storable
     public function save()
     {
         if ($this->exists()) {
-            $result = $this->update();
+            $this->fill($this->update());
         } else {
-            $result = $this->insert();
+            $this->fill($this->insert());
         }
-        return $this->find($result[$this->primaryKey]);
+        return $this;
     }
 
     public function insert()
