@@ -5,7 +5,7 @@ trait Findable
     public function find($id)
     {
         $result = $this->connection()->get($this->url, [
-            '$filter' => "ID eq guid'$id'"
+            '$filter' => $this->primaryKey . " eq guid'$id'"
         ]);
 
         return new self($this->connection(), $result);
