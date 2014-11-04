@@ -11,7 +11,8 @@ class Item extends Model {
         'Division',
         'Description',
         'ID',
-        'IsSalesItem'
+        'IsSalesItem',
+        'SalesVatCode'
     ];
 
     protected $url = 'logistics/Items';
