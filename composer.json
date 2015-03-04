@@ -26,8 +26,8 @@
         "commerceguys/guzzle-oauth2-plugin": "~1.0"
     },
     "autoload": {
-        "psr-0": {
-            "Picqer": "src"
+        "psr-4": {
+            "Picqer\\": "src/Picqer"
         }
     }
 }
