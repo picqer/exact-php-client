@@ -1,7 +1,7 @@
 <?php namespace Picqer\Financials\Exact\Query;
 
-trait Findable
-{
+trait Findable {
+
     public function find($id)
     {
         $result = $this->connection()->get($this->url, [

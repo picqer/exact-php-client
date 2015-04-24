@@ -1,14 +1,17 @@
 <?php namespace Picqer\Financials\Exact\Persistance;
 
-trait Storable
-{
+trait Storable {
+
     public function save()
     {
-        if ($this->exists()) {
+        if ($this->exists())
+        {
             $this->fill($this->update());
-        } else {
+        } else
+        {
             $this->fill($this->insert());
         }
+
         return $this;
     }
 

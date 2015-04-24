@@ -34,16 +34,12 @@ class Connection {
     {
         if ($this->client) return $this->client;
 
-        //$adapter = new ArrayLogAdapter();
-        //$logPlugin = new LogPlugin($adapter, MessageFormatter::DEBUG_FORMAT);
-
         $this->client = new Client($this->apiUrl);
         $this->client->setDefaultOption('headers/Accept', 'application/json');
         $this->client->setDefaultOption('headers/Content-Type', 'application/json');
 
-        //$this->client->addSubscriber(LogPlugin::getDebugPlugin());
-
         $this->authenticate();
+
         return $this->client;
     }
 
@@ -61,15 +57,18 @@ class Connection {
         }
 
         $result = $this->client()->send($request);
+
         return $this->parseResult($result);
     }
 
     public function post($url, $body)
     {
         $this->addDivisionNumberToApiUrl();
-        try {
+        try
+        {
             $result = $this->client()->post($url, null, $body)->send();
-        } catch (ServerErrorResponseException $e) {
+        } catch (ServerErrorResponseException $e)
+        {
             throw new ApiException($e->getResponse()->getBody(true));
         }
 
@@ -80,6 +79,7 @@ class Connection {
     {
         $this->addDivisionNumberToApiUrl();
         $result = $this->client()->put($url, null, $body)->send();
+
         return $this->parseResult($result);
     }
 
@@ -87,6 +87,7 @@ class Connection {
     {
         $this->addDivisionNumberToApiUrl();
         $result = $this->client()->delete($url)->send();
+
         return $this->parseResult($result);
     }
 
@@ -187,13 +188,15 @@ class Connection {
 
     public function parseResult(Response $response)
     {
-        try {
+        try
+        {
             $json = $response->json();
             if (array_key_exists('d', $json))
             {
                 if (array_key_exists('results', $json['d']))
                 {
-                    if (count($json['d']['results']) == 1) {
+                    if (count($json['d']['results']) == 1)
+                    {
                         return $json['d']['results'][0];
                     }
 
@@ -204,14 +207,16 @@ class Connection {
             }
 
             return $json;
-        } catch (\RuntimeException $e) {
+        } catch (\RuntimeException $e)
+        {
             throw new ApiException($e->getMessage());
         }
     }
 
     public function addDivisionNumberToApiUrl()
     {
-        if (empty($this->division)) {
+        if (empty($this->division))
+        {
             $me = new Me($this);
             $this->division = $me->find()->CurrentDivision;
             $this->client()->setBaseUrl($this->client()->getBaseUrl() . '/' . $this->division);

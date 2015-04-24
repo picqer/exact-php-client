@@ -1,7 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Me extends Model
-{
+class Me extends Model {
+
     protected $fillable = [
         'CurrentDivision',
         'FullName',
@@ -25,6 +25,7 @@ class Me extends Model
     public function find()
     {
         $result = $this->connection()->get('current/Me');
+
         return new self($this->connection(), $result);
     }
 }
