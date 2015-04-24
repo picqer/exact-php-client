@@ -89,9 +89,9 @@ the api connection.
 
       // Add a product in Exact
       $item = new Item($connection);
-      $item->Code = $product->productcode;
-      $item->CostPriceStandard = $product->fixedstockprice;
-      $item->Description = $product->name;
+      $item->Code = $productcode;
+      $item->CostPriceStandard = $costprice;
+      $item->Description = $name;
       $item->IsSalesItem = true;
       $item->SalesVatCode = 'VH';
       $item->save();
