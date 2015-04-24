@@ -97,17 +97,17 @@ the api connection.
       $item->save();
 
 
-    // Retrieve an item
-    $item = new Item($connection);
-    $item->find(ID);
+      // Retrieve an item
+      $item = new Item($connection);
+      $item->find(ID);
     
-    // List items
-    $item = new Item($connection);
-    $item->get();
+      // List items
+      $item = new Item($connection);
+      $item->get();
     
-    // List items with filter
-    $item = new Item($connection);
-    $item->filter("Code eq '$productcode'"); // Uses filters as descriped in Exact API docs (odata filters)
+      // List items with filter
+      $item = new Item($connection);
+      $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
 
 Check `src/Picqer/Financials/Exact` for all available entities.
 
