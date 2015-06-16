@@ -6,7 +6,7 @@ PHP client library to use the Exact Online API.
 Installing this Exact client for PHP can be done through Composer.
 
     "require": {
-      "picqer/exact-php-client": "~0.1.0"
+      "picqer/exact-php-client": "~1.0"
     }
     
 ## Usage
@@ -89,25 +89,25 @@ the api connection.
 
       // Add a product in Exact
       $item = new Item($connection);
-      $item->Code = $product->productcode;
-      $item->CostPriceStandard = $product->fixedstockprice;
-      $item->Description = $product->name;
+      $item->Code = $productcode;
+      $item->CostPriceStandard = $costprice;
+      $item->Description = $name;
       $item->IsSalesItem = true;
       $item->SalesVatCode = 'VH';
       $item->save();
 
 
-    // Retrieve an item
-    $item = new Item($connection);
-    $item->find(ID);
+      // Retrieve an item
+      $item = new Item($connection);
+      $item->find(ID);
     
-    // List items
-    $item = new Item($connection);
-    $item->get();
+      // List items
+      $item = new Item($connection);
+      $item->get();
     
-    // List items with filter
-    $item = new Item($connection);
-    $item->filter("Code eq '$productcode'"); // Uses filters as descriped in Exact API docs (odata filters)
+      // List items with filter
+      $item = new Item($connection);
+      $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
 
 Check `src/Picqer/Financials/Exact` for all available entities.
 
