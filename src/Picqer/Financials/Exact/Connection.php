@@ -1,15 +1,5 @@
 <?php namespace Picqer\Financials\Exact;
 
-use CommerceGuys\Guzzle\Plugin\Oauth2\GrantType\AuthorizationCode;
-use CommerceGuys\Guzzle\Plugin\Oauth2\GrantType\RefreshToken;
-use CommerceGuys\Guzzle\Plugin\Oauth2\Oauth2Plugin;
-use Guzzle\Http\Client;
-use Guzzle\Http\Exception\ClientErrorResponseException;
-use Guzzle\Http\Exception\ServerErrorResponseException;
-use Guzzle\Http\Message\Response;
-use Guzzle\Log\ArrayLogAdapter;
-use Guzzle\Log\MessageFormatter;
-use Guzzle\Plugin\Log\LogPlugin;
 
 class Connection {
 
