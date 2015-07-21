@@ -16,8 +16,8 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "league/oauth2-client": "0.12.*"
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "autoload": {
         "psr-4": {
