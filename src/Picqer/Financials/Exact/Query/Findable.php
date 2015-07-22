@@ -11,11 +11,21 @@ trait Findable {
         return new self($this->connection(), $result);
     }
 
-    public function filter($filter)
+    public function filter($filter, $expand = '', $select='')
     {
-        $result = $this->connection()->get($this->url, [
+        $request = [
             '$filter' => $filter
-        ]);
+        ];
+        if (strlen($expand) > 0)
+        {
+            $request['$expand'] = $expand;
+        }
+        if (strlen($select) > 0)
+        {
+            $request['$select'] = $select;
+        }
+        
+        $result = $this->connection()->get($this->url, $request);
 
         return new self($this->connection(), $result);
     }

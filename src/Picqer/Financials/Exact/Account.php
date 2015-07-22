@@ -15,13 +15,18 @@ class Account extends Model {
         'Division',
         'Email',
         'ID',
-        'IsSales',
         'Language',
         'Name',
         'Phone',
         'Postcode',
         'Website',
-        'Status'
+        'Status',
+        'SearchCode',
+        'MainContact',
+        'Remarks',
+        'PurchaseVATCode',
+        'VATNumber',
+        'IsSales'
     ];
 
     protected $url = 'crm/Accounts';
