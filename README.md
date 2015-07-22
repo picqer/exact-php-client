@@ -108,12 +108,26 @@ the api connection.
       // List items with filter
       $item = new Item($connection);
       $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
+      
+      // Create new invoice with invoice lines
+      $items[] = [
+            'Item'      => $itemId,
+            'Quantity'  => $orderproduct['amount'],
+            'UnitPrice' => $orderproduct['price']
+      ];
+      
+      $salesInvoice = new SalesInvoice($this->connection());
+      $salesInvoice->InvoiceTo = $customer_code;
+      $salesInvoice->OrderedBy = $customer_code;
+      $salesInvoice->YourRef = $orderId;
+      $salesInvoice->SalesInvoiceLines = $items;
 
+
+      
 Check [src/Picqer/Financials/Exact](src/Picqer/Financials/Exact) for all available entities.
 
 ## Code example
 See for example: [example/example.php](example/example.php)
-
 
 ## TODO
 - Switch administration (now uses default)
