@@ -109,7 +109,10 @@ the api connection.
       $item = new Item($connection);
       $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
 
-Check `src/Picqer/Financials/Exact` for all available entities.
+Check [src/Picqer/Financials/Exact](src/Picqer/Financials/Exact) for all available entities.
+
+## Code example
+See for example: [example/example.php](example/example.php)
 
 
 ## TODO
