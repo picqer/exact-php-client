@@ -1,7 +1,5 @@
 <?php namespace Picqer\Financials\Exact;
 
-use Rhumsaa\Uuid\Uuid;
-
 abstract class Model {
 
     /**
@@ -61,6 +59,8 @@ abstract class Model {
      * Fill the entity from an array
      *
      * @param array $attributes
+     *
+     * @return bool
      */
     protected function fill(array $attributes)
     {
@@ -68,11 +68,11 @@ abstract class Model {
         {
             return false;
         }
+
         foreach ($this->fillableFromArray($attributes) as $key => $value)
         {
             if ($this->isFillable($key))
             {
-
                 $this->setAttribute($key, $value);
             }
         }
@@ -129,9 +129,6 @@ abstract class Model {
     public function exists()
     {
         return $this->exists;
-//        if (! in_array($this->primaryKey, $this->attributes)) return false;
-
-//        return ! empty($this->attributes[$this->primaryKey]);
     }
 
     public function json()

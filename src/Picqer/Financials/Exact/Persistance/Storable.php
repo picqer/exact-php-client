@@ -32,8 +32,9 @@ trait Storable {
     public function delete()
     {
         if (!$this->__get($this->primaryKey)) {
-            $this->insert();
+            return;
         }
+
         return $this->connection()->delete($this->url . "(guid'".$this->__get($this->primaryKey)."')");
     }
 }

@@ -4,11 +4,6 @@ use Picqer\Financials\Exact\Model;
 
 trait Findable {
 
-    /**
-     * @param $id
-     *
-     * @return Model
-     */
     public function find($id)
     {
         $result = $this->connection()->get($this->url, [

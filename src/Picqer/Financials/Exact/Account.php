@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Account extends Model {
+class Account extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
