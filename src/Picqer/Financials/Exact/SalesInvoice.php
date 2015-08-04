@@ -33,7 +33,7 @@ class SalesInvoice extends Model {
 		'Modifier',
 		'ModifierFullName',
 		'OrderDate',
-		'OrderBy',
+		'OrderedBy',
 		'OrderedByContactPerson',
 		'OrderedByContactPersonFullName',
 		'OrderedByName',
