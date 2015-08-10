@@ -72,7 +72,7 @@ function connect()
 
     // Make the client connect and exchange tokens
     try {
-        $connection->client();
+        $connection->connect();
     } catch (\Exception $e) {
         throw new Exception('Could not connect to Exact: ' . $e->getMessage());
     }
