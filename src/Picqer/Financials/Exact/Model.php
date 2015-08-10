@@ -27,6 +27,8 @@ abstract class Model {
      */
     protected $primaryKey = 'ID';
 
+    protected $exists = false;
+
     public function __construct(Connection $connection, array $attributes = [])
     {
         $this->connection = $connection;
@@ -57,15 +59,28 @@ abstract class Model {
      * Fill the entity from an array
      *
      * @param array $attributes
+     *
+     * @return bool
      */
     protected function fill(array $attributes)
     {
+        if (empty($attributes))
+        {
+            return false;
+        }
+
         foreach ($this->fillableFromArray($attributes) as $key => $value)
         {
             if ($this->isFillable($key))
             {
                 $this->setAttribute($key, $value);
             }
+        }
+
+        if ($this->__get($this->primaryKey)) {
+            $this->exists = true;
+        } else {
+            $this->exists = false;
         }
     }
 
@@ -113,9 +128,7 @@ abstract class Model {
 
     public function exists()
     {
-        if (! in_array($this->primaryKey, $this->attributes)) return false;
-
-        return ! empty($this->attributes[$this->primaryKey]);
+        return $this->exists;
     }
 
     public function json()

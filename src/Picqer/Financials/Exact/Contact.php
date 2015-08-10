@@ -6,16 +6,23 @@ class Contact extends Model {
     use Persistance\Storable;
 
     protected $fillable = [
+        'ID',
         'Account',
         'AccountIsCustomer',
         'AccountIsSupplier',
-	'AccountName',
-	'AddressStreet',
-	'AddressStreetNumber',
-	'FirstName',
-	'LastName',
-	'Phone',
-	'Postcode',
+        'AccountName',
+        'AddressStreet',
+        'AddressStreetNumber',
+        'Initials',
+        'FirstName',
+        'MiddleName',
+        'LastName',
+        'Gender',
+        'Phone',
+        'Postcode',
+        'Account',
+        'AccountIsCustomer',
+        'AccountIsSupplier',
         'City',
         'Code',
         'Country',
@@ -23,7 +30,7 @@ class Contact extends Model {
         'Email',
         'HID',
         'AccountMainContact',
-        'IsMainContact'
+        'IsMainContact',
     ];
 
     protected $url = 'crm/Contacts';

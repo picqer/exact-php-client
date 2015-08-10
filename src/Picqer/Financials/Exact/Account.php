@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Account extends Model {
+class Account extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
@@ -30,5 +31,4 @@ class Account extends Model {
     ];
 
     protected $url = 'crm/Accounts';
-
 }

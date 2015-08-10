@@ -1,5 +1,7 @@
 <?php namespace Picqer\Financials\Exact\Query;
 
+use Picqer\Financials\Exact\Model;
+
 trait Findable {
 
     public function find($id)
