@@ -1,17 +1,18 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Item extends Model {
+class Item extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
 
     protected $fillable = [
-    	'ID',
-    	'Class_01',
-    	'Class_02',
-    	'Class_03',
-    	'Class_04',
-    	'Class_05',
+        'ID',
+        'Class_01',
+        'Class_02',
+        'Class_03',
+        'Class_04',
+        'Class_05',
         'Code',
         'CopyRemarks',
         'CostPriceCurrency',
@@ -86,7 +87,7 @@ class Item extends Model {
         'Notes',
         'SalesVatCode',
         'SalesVatCodeDescription',
-		'SearchCode',
+        'SearchCode',
         'SecurityLevel',
         'StartDate',
         'Unit',

@@ -1,25 +1,26 @@
 <?php namespace Picqer\Financials\Exact;
 
-class SalesInvoiceLine extends Model {
+class SalesInvoiceLine extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
 
     protected $fillable = [
-    	'ID',
-    	'AmountDC',
-    	'AmountFC',
-    	'CostCenter',
-    	'CostCenterDescription',
-    	'CostUnit',
-    	'CostUnitDescription',
-    	'Description',
-    	'Discount',
+        'ID',
+        'AmountDC',
+        'AmountFC',
+        'CostCenter',
+        'CostCenterDescription',
+        'CostUnit',
+        'CostUnitDescription',
+        'Description',
+        'Discount',
         'Division',
-    	'Employee',
-    	'EmployeeFullName',
-    	'EndTime',
-    	'GLAccount',
+        'Employee',
+        'EmployeeFullName',
+        'EndTime',
+        'GLAccount',
         'GLAccountDescription',
         'InvoiceID',
         'Item',
