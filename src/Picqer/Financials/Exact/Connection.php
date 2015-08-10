@@ -429,6 +429,24 @@ class Connection
         ]);
     }
 
+
+    /**
+     * @return mixed
+     */
+    public function getDivision()
+    {
+        return $this->division;
+    }
+
+
+    /**
+     * @param mixed $division
+     */
+    public function setDivision($division)
+    {
+        $this->division = $division;
+    }
+
 }
 
 
