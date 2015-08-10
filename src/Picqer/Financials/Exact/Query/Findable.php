@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact\Query;
 
-trait Findable {
+trait Findable
+{
 
     public function find($id)
     {
@@ -11,24 +12,30 @@ trait Findable {
         return new self($this->connection(), $result);
     }
 
-    public function filter($filter, $expand = '', $select='')
+
+    public function filter($filter, $expand = '', $select = '')
     {
         $request = [
             '$filter' => $filter
         ];
-        if (strlen($expand) > 0)
-        {
+        if (strlen($expand) > 0) {
             $request['$expand'] = $expand;
         }
-        if (strlen($select) > 0)
-        {
+        if (strlen($select) > 0) {
             $request['$select'] = $select;
         }
-        
+
         $result = $this->connection()->get($this->url, $request);
 
-        return new self($this->connection(), $result);
+        // If we have one result which is not an assoc array, make it the first element of an array for the
+        // collectionFromResult function so we always return a collection from filter
+        if ((bool) count(array_filter(array_keys($result), 'is_string'))) {
+            $result = [ $result ];
+        }
+
+        return $this->collectionFromResult($result);
     }
+
 
     public function get()
     {
@@ -37,11 +44,11 @@ trait Findable {
         return $this->collectionFromResult($result);
     }
 
+
     public function collectionFromResult($result)
     {
-        $collection = [];
-        foreach ($result as $r)
-        {
+        $collection = [ ];
+        foreach ($result as $r) {
             $collection[] = new self($this->connection(), $r);
         }
 
