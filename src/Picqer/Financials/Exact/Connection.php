@@ -219,8 +219,9 @@ class Connection {
         {
             $me = new Me($this);
             $this->division = $me->find()->CurrentDivision;
-            $this->client()->setBaseUrl($this->client()->getBaseUrl() . '/' . $this->division);
         }
+
+        $this->client()->setBaseUrl($this->client()->getBaseUrl() . '/' . $this->division);
     }
 
     /**
@@ -237,6 +238,24 @@ class Connection {
     public function getAccessToken()
     {
         return $this->accessToken;
+    }
+
+
+    /**
+     * @return mixed
+     */
+    public function getDivision()
+    {
+        return $this->division;
+    }
+
+
+    /**
+     * @param mixed $division
+     */
+    public function setDivision($division)
+    {
+        $this->division = $division;
     }
 
 }

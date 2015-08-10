@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Contact extends Model {
+class Contact extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
@@ -9,13 +10,13 @@ class Contact extends Model {
         'Account',
         'AccountIsCustomer',
         'AccountIsSupplier',
-	'AccountName',
-	'AddressStreet',
-	'AddressStreetNumber',
-	'FirstName',
-	'LastName',
-	'Phone',
-	'Postcode',
+        'AccountName',
+        'AddressStreet',
+        'AddressStreetNumber',
+        'FirstName',
+        'LastName',
+        'Phone',
+        'Postcode',
         'City',
         'Code',
         'Country',
