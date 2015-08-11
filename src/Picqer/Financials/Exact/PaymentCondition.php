@@ -8,8 +8,26 @@ class PaymentCondition extends Model {
     protected $fillable = [
         'ID',
         'Code',
+        'Created',
+        'Creator',
+        'CreatorFullName',
+        'CreditManagementScenario',
+        'CreditManagementScenarioCode',
+        'CreditManagementScenarioDescription',
         'Description',
-        'PaymentDays'
+        'DiscountCalculation',
+        'DiscountPaymentDays',
+        'DiscountPercentage',
+        'Division',
+        'Modified',
+        'Modifier',
+        'ModifierFullName',
+        'PaymentDays',
+        'PaymentDiscountType',
+        'PaymentEndOfMonths',
+        'PaymentMethod',
+        'Percentage',
+        'VATCalculation'
     ];
 
     protected $url = 'cashflow/PaymentConditions';
