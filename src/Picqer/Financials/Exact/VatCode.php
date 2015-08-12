@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class VatCode extends Model {
+class VatCode extends Model
+{
 
     use Query\Findable;
 

@@ -1,18 +1,19 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Account extends Model {
+class Account extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
 
     protected $fillable = [
-    	'ID',
-    	'Accountant',
-    	'AccountManager',
-    	'AccountManagerFullName',
-    	'AccountManagerHID',
-    	'ActivitySector',
-    	'ActivitySubSector',
+        'ID',
+        'Accountant',
+        'AccountManager',
+        'AccountManagerFullName',
+        'AccountManagerHID',
+        'ActivitySector',
+        'ActivitySubSector',
         'AddressLine1',
         'AddressLine2',
         'AddressLine3',

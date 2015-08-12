@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class PaymentCondition extends Model {
+class PaymentCondition extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;

@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class SalesEntryLine extends Model {
+class SalesEntryLine extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
@@ -19,7 +20,7 @@ class SalesEntryLine extends Model {
         'VATCode',
         'VATPercentage',
         'Notes',
-        
+
     ];
 
     protected $url = 'salesinvoice/SalesInvoiceLines';
