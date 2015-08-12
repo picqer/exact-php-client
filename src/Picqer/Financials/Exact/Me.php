@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Me extends Model {
+class Me extends Model
+{
 
     protected $fillable = [
         'CurrentDivision',
@@ -21,6 +22,7 @@ class Me extends Model {
         'PhoneExtension',
         'Mobile'
     ];
+
 
     public function find()
     {

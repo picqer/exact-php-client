@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Journal extends Model {
+class Journal extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;

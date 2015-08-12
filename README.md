@@ -6,7 +6,7 @@ PHP client library to use the Exact Online API.
 Installing this Exact client for PHP can be done through Composer.
 
     "require": {
-      "picqer/exact-php-client": "~1.0"
+      "picqer/exact-php-client": "1.0.6"
     }
     
 ## Usage
@@ -105,9 +105,9 @@ the api connection.
       $item = new Item($connection);
       $item->get();
     
-      // List items with filter
+      // List items with filter (using a filter always returns a collection)
       $item = new Item($connection);
-      $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
+      $items = $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
       
       // Create new invoice with invoice lines
       $items[] = [

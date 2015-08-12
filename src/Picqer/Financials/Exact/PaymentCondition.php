@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class PaymentCondition extends Model {
+class PaymentCondition extends Model
+{
 
     use Query\Findable;
     use Persistance\Storable;
@@ -8,8 +9,26 @@ class PaymentCondition extends Model {
     protected $fillable = [
         'ID',
         'Code',
+        'Created',
+        'Creator',
+        'CreatorFullName',
+        'CreditManagementScenario',
+        'CreditManagementScenarioCode',
+        'CreditManagementScenarioDescription',
         'Description',
-        'PaymentDays'
+        'DiscountCalculation',
+        'DiscountPaymentDays',
+        'DiscountPercentage',
+        'Division',
+        'Modified',
+        'Modifier',
+        'ModifierFullName',
+        'PaymentDays',
+        'PaymentDiscountType',
+        'PaymentEndOfMonths',
+        'PaymentMethod',
+        'Percentage',
+        'VATCalculation'
     ];
 
     protected $url = 'cashflow/PaymentConditions';

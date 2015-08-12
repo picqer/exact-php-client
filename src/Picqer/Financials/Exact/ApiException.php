@@ -1,5 +1,6 @@
 <?php namespace Picqer\Financials\Exact;
 
-class ApiException extends \Exception {
+class ApiException extends \Exception
+{
 
 }

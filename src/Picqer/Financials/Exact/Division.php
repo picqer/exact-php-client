@@ -1,6 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Division extends Model {
+class Division extends Model
+{
 
     use Query\Findable;
 
