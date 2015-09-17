@@ -2,15 +2,15 @@
 
 class PurchaseEntry extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
     protected $primaryKey = 'EntryID';
 
-    protected $purchaseEntryLines = [ ];
+    protected $purchaseEntryLines = [];
 
     protected $fillable = [
+        'EntryID',
         'BatchNumber',
         'Currency',
         'Description',
@@ -34,13 +34,14 @@ class PurchaseEntry extends Model
         'YourRef',
     ];
 
-
     public function addItem(array $array)
     {
-        if ( ! isset( $this->attributes['PurchaseEntryLines'] ) || $this->attributes['PurchaseEntryLines'] == null) {
+        if ( ! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null)
+        {
             $this->attributes['PurchaseEntryLines'] = [];
         }
-        if ( ! isset( $array['LineNumber'] )) {
+        if ( ! isset($array['LineNumber']))
+        {
             $array['LineNumber'] = count($this->attributes['PurchaseEntryLines']) + 1;
         }
         $this->attributes['PurchaseEntryLines'][] = $array;
