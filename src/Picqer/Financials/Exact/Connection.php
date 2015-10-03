@@ -221,7 +221,7 @@ class Connection {
             $this->division = $me->find()->CurrentDivision;
         }
 
-        $this->client()->setBaseUrl($this->client()->getBaseUrl() . '/' . $this->division);
+        $this->client()->setBaseUrl($this->apiUrl . '/' . $this->division);
     }
 
     /**

@@ -22,11 +22,17 @@ trait Storable {
 
     public function update()
     {
-        return $this->connection()->put($this->url . "(guid'$this->primaryKey')", $this->json());
+        $key = $this->primaryKey;
+        $primarykey = $this->$key;
+
+        return $this->connection()->put($this->url . "(guid'$primarykey')", $this->json());
     }
 
     public function delete()
     {
-        return $this->connection()->delete($this->url . "(guid'$this->primaryKey')");
+        $key = $this->primaryKey;
+        $primarykey = $this->$key;
+
+        return $this->connection()->delete($this->url . "(guid'$primarykey')");
     }
 }
