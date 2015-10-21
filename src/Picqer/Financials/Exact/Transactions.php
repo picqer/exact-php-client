@@ -26,5 +26,5 @@ class Transactions extends Model
         'TypeDescription'
     ];
 
-    protected $url = 'financialtransaction/Transactions/';
+    protected $url = 'financialtransaction/Transactions';
 }
