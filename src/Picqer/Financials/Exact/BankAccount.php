@@ -1,6 +1,6 @@
 <?php namespace Picqer\Financials\Exact;
 
-class Account extends Model
+class BankAccount extends Model
 {
 
     use Query\Findable;
