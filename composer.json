@@ -15,15 +15,9 @@
             "email": "info@picqer.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/picqer/guzzle-oauth2-plugin"
-        }
-    ],
     "require": {
-        "php": ">=5.4.0",
-        "commerceguys/guzzle-oauth2-plugin": "~1.0"
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6.0"
     },
     "autoload": {
         "psr-4": {

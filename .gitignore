@@ -3,3 +3,4 @@ vendor/
 .env
 index.php
 storage.txt
+composer.lock

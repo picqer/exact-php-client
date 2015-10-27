@@ -1,13 +1,7 @@
 <?php
 
-// Autoload composer installed libraries
-require __DIR__ . '/../vendor/autoload.php';
+require 'vendor/autoload.php';
 
-/**
- * Function to retrieve persisted data for the example
- * @param string $key
- * @return null|string
- */
 function getValue($key)
 {
     $storage = json_decode(file_get_contents('storage.json'), true);
@@ -17,11 +11,6 @@ function getValue($key)
     return null;
 }
 
-/**
- * Function to persist some data for the example
- * @param string $key
- * @param string $value
- */
 function setValue($key, $value)
 {
     $storage       = json_decode(file_get_contents('storage.json'), true);
@@ -29,31 +18,21 @@ function setValue($key, $value)
     file_put_contents('storage.json', json_encode($storage));
 }
 
-/**
- * Function to authorize with Exact, this redirects to Exact login promt and retrieves authorization code
- * to set up requests for oAuth tokens
- */
 function authorize()
 {
     $connection = new \Picqer\Financials\Exact\Connection();
-    $connection->setRedirectUrl('__REDIRECT_URL__');
-    $connection->setExactClientId('__CLIENT_ID__');
-    $connection->setExactClientSecret('__CLIENT_SECRET__');
+    $connection->setRedirectUrl('YOUR_REDIRECT_URL');
+    $connection->setExactClientId('YOUR_CLIENT_ID');
+    $connection->setExactClientSecret('YOUR_CLIENT_SECRET');
     $connection->redirectForAuthorization();
 }
 
-/**
- * Function to connect to Exact, this creates the client and automatically retrieves oAuth tokens if needed
- *
- * @return \Picqer\Financials\Exact\Connection
- * @throws Exception
- */
 function connect()
 {
     $connection = new \Picqer\Financials\Exact\Connection();
-    $connection->setRedirectUrl('__REDIRECT_URL__');
-    $connection->setExactClientId('__CLIENT_ID__');
-    $connection->setExactClientSecret('__CLIENT_SECRET__');
+    $connection->setRedirectUrl('YOUR_REDIRECT_URL');
+    $connection->setExactClientId('YOUR_CLIENT_ID');
+    $connection->setExactClientSecret('YOUR_CLIENT_SECRET');
 
     if (getValue('authorizationcode')) // Retrieves authorizationcode from database
     {
@@ -70,6 +49,11 @@ function connect()
         $connection->setRefreshToken(getValue('refreshtoken'));
     }
 
+    if (getValue('expires_in')) // Retrieves expires from database
+    {
+        $connection->setTokenExpires(getValue('expires_in'));
+    }
+
     // Make the client connect and exchange tokens
     try {
         $connection->connect();
@@ -80,30 +64,25 @@ function connect()
     // Save the new tokens for next connections
     setValue('accesstoken', $connection->getAccessToken());
     setValue('refreshtoken', $connection->getRefreshToken());
+    setValue('expires_in', $connection->getTokenExpires());
 
     return $connection;
 }
 
-// If authorization code is returned from Exact, save this to use for token request
 if (isset($_GET['code']) && is_null(getValue('authorizationcode'))) {
     setValue('authorizationcode', $_GET['code']);
 }
 
-// If we do not have a authorization code, authorize first to setup tokens
-if (getValue('authorizationcode') === null) {
-    authorize();
-}
-
-// Create the Exact client
 $connection = connect();
 
-// Get the journals from our administration
 try {
     $journals = new \Picqer\Financials\Exact\Journal($connection);
     $result   = $journals->get();
     foreach ($result as $journal) {
-        echo 'Journal: ' . $journal->Description . '<br>';
+        echo 'journal: ' . $journal->Description . '<br>';
     }
+
+    echo 'done';
 } catch (\Exception $e) {
     echo get_class($e) . ' : ' . $e->getMessage();
 }
