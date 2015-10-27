@@ -120,7 +120,7 @@ abstract class Model
 
     public function exists()
     {
-        if ( ! in_array($this->primaryKey, $this->attributes)) {
+        if ( ! array_key_exists($this->primaryKey, $this->attributes)) {
             return false;
         }
 
