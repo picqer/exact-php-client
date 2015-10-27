@@ -2,11 +2,13 @@
 
 PHP client library to use the Exact Online API.
 
+Note: For Guzzle 6 use v2, for Guzzle 3 use v1.
+
 ## Composer install
 Installing this Exact client for PHP can be done through Composer.
 
     "require": {
-      "picqer/exact-php-client": "~1.0.7"
+      "picqer/exact-php-client": "~2.0"
     }
     
 ## Usage
