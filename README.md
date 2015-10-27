@@ -6,7 +6,7 @@ PHP client library to use the Exact Online API.
 Installing this Exact client for PHP can be done through Composer.
 
     "require": {
-      "picqer/exact-php-client": "1.0.6"
+      "picqer/exact-php-client": "~1.0.7"
     }
     
 ## Usage
