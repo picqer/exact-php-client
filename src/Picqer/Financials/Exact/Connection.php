@@ -326,6 +326,7 @@ class Connection
     private function parseResponse(Response $response)
     {
         try {
+            Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
             if (array_key_exists('d', $json)) {
                 if (array_key_exists('results', $json['d'])) {
@@ -401,6 +402,7 @@ class Connection
         $response = $this->client()->post($this->tokenUrl, $body);
 
         if ($response->getStatusCode() == 200) {
+            Psr7\rewind_body($response);
             $body = json_decode($response->getBody()->getContents(), true);
 
             if (json_last_error() === JSON_ERROR_NONE) {
