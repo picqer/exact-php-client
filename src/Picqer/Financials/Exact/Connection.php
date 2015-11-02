@@ -2,8 +2,10 @@
 
 use Exception;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7;
 
 /**
  * Class Connection
@@ -148,11 +150,11 @@ class Connection
         try {
             $request = $this->createRequest('GET', $url, null, $params);
             $response = $this->client()->send($request);
-        } catch (Exception $e) {
-            throw new ApiException($e->getMessage());
-        }
 
-        return $this->parseResponse($response);
+            return $this->parseResponse($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
     }
 
     /**
@@ -168,11 +170,11 @@ class Connection
         try {
             $request  = $this->createRequest('POST', $url, $body);
             $response = $this->client()->send($request);
-        } catch (Exception $e) {
-            throw new ApiException($e->getMessage());
-        }
 
-        return $this->parseResponse($response);
+            return $this->parseResponse($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
     }
 
     /**
@@ -188,11 +190,11 @@ class Connection
         try {
             $request  = $this->createRequest('PUT', $url, $body);
             $response = $this->client()->send($request);
-        } catch (Exception $e) {
-            throw new ApiException($e->getMessage());
-        }
 
-        return $this->parseResponse($response);
+            return $this->parseResponse($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
     }
 
     /**
@@ -207,11 +209,11 @@ class Connection
         try {
             $request  = $this->createRequest('DELETE', $url);
             $response = $this->client()->send($request);
-        } catch (Exception $e) {
-            throw new ApiException($e->getMessage());
-        }
 
-        return $this->parseResponse($response);
+            return $this->parseResponse($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
     }
 
     /**
@@ -457,6 +459,32 @@ class Connection
     public function setDivision($division)
     {
         $this->division = $division;
+    }
+
+
+    /**
+     * Parse the reponse in the Exception to return the Exact error messages
+     * @param Exception $e
+     * @throws ApiException
+     */
+    private function parseExceptionForErrorMessages(Exception $e)
+    {
+        if (! $e instanceof BadResponseException) {
+            throw new ApiException($e->getMessage());
+        }
+
+        $response = $e->getResponse();
+        Psr7\rewind_body($response);
+        $responseBody = $response->getBody()->getContents();
+        $decodedResponseBody = json_decode($responseBody, true);
+
+        if (! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
+            $errorMessage = $decodedResponseBody['error']['message']['value'];
+        } else {
+            $errorMessage = $responseBody;
+        }
+
+        throw new ApiException('Error ' . $response->getStatusCode() .': ' . $errorMessage);
     }
 
 }
