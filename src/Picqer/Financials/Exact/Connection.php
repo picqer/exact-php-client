@@ -1,5 +1,6 @@
 <?php namespace Picqer\Financials\Exact;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
@@ -144,9 +145,12 @@ class Connection
     {
         $url = $this->formatUrl($url, $url !== 'current/Me');
 
-        $request = $this->createRequest('GET', $url, null, $params);
-
-        $response = $this->client()->send($request);
+        try {
+            $request = $this->createRequest('GET', $url, null, $params);
+            $response = $this->client()->send($request);
+        } catch (Exception $e) {
+            throw new ApiException($e->getMessage());
+        }
 
         return $this->parseResponse($response);
     }
@@ -164,7 +168,7 @@ class Connection
         try {
             $request  = $this->createRequest('POST', $url, $body);
             $response = $this->client()->send($request);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             throw new ApiException($e->getMessage());
         }
 
@@ -181,8 +185,12 @@ class Connection
     {
         $url = $this->formatUrl($url);
 
-        $request  = $this->createRequest('PUT', $url, $body);
-        $response = $this->client()->send($request);
+        try {
+            $request  = $this->createRequest('PUT', $url, $body);
+            $response = $this->client()->send($request);
+        } catch (Exception $e) {
+            throw new ApiException($e->getMessage());
+        }
 
         return $this->parseResponse($response);
     }
@@ -196,8 +204,12 @@ class Connection
     {
         $url = $this->formatUrl($url);
 
-        $request  = $this->createRequest('DELETE', $url);
-        $response = $this->client()->send($request);
+        try {
+            $request  = $this->createRequest('DELETE', $url);
+            $response = $this->client()->send($request);
+        } catch (Exception $e) {
+            throw new ApiException($e->getMessage());
+        }
 
         return $this->parseResponse($response);
     }
