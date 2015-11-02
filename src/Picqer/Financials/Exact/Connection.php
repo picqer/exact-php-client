@@ -3,6 +3,7 @@
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
+use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7;
@@ -13,15 +14,16 @@ use GuzzleHttp\Psr7;
  */
 class Connection
 {
-
     /**
      * @var string
      */
     private $apiUrl = 'https://start.exactonline.nl/api/v1';
+
     /**
      * @var string
      */
     private $authUrl = 'https://start.exactonline.nl/api/oauth2/auth';
+
     /**
      * @var string
      */
@@ -31,14 +33,17 @@ class Connection
      * @var
      */
     private $exactClientId;
+
     /**
      * @var
      */
     private $exactClientSecret;
+
     /**
      * @var
      */
     private $authorizationCode;
+
     /**
      * @var
      */
@@ -53,10 +58,12 @@ class Connection
      * @var
      */
     private $refreshToken;
+
     /**
      * @var
      */
     private $redirectUrl;
+
     /**
      * @var
      */
@@ -68,6 +75,11 @@ class Connection
     private $client;
 
     /**
+     *
+     */
+    protected $middleWares = [];
+
+    /**
      * @return Client
      */
     private function client()
@@ -76,11 +88,22 @@ class Connection
             return $this->client;
         }
 
+        $handlerStack = HandlerStack::create();
+        foreach ($this->middleWares as $middleWare) {
+            $handlerStack->push($middleWare);
+        }
+
         $this->client = new Client([
             'http_errors' => true,
+            'handler' => $handlerStack,
         ]);
 
         return $this->client;
+    }
+
+    public function insertMiddleWare($middleWare)
+    {
+        $this->middleWares[] = $middleWare;
     }
 
     public function connect()
@@ -303,6 +326,7 @@ class Connection
     private function parseResponse(Response $response)
     {
         try {
+            Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
             if (array_key_exists('d', $json)) {
                 if (array_key_exists('results', $json['d'])) {
@@ -378,6 +402,7 @@ class Connection
         $response = $this->client()->post($this->tokenUrl, $body);
 
         if ($response->getStatusCode() == 200) {
+            Psr7\rewind_body($response);
             $body = json_decode($response->getBody()->getContents(), true);
 
             if (json_last_error() === JSON_ERROR_NONE) {
