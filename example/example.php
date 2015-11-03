@@ -70,6 +70,11 @@ function connect()
         $connection->setRefreshToken(getValue('refreshtoken'));
     }
 
+    if (getValue('expires_in')) // Retrieves expires timestamp from database
+    {
+        $connection->setTokenExpires(getValue('expires_in'));
+    }
+
     // Make the client connect and exchange tokens
     try {
         $connection->connect();
@@ -80,6 +85,9 @@ function connect()
     // Save the new tokens for next connections
     setValue('accesstoken', $connection->getAccessToken());
     setValue('refreshtoken', $connection->getRefreshToken());
+
+    // Save expires time for next connections
+    setValue('expires_in', $connection->getTokenExpires());
 
     return $connection;
 }
