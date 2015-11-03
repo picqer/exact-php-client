@@ -27,12 +27,6 @@ trait Findable
 
         $result = $this->connection()->get($this->url, $request);
 
-        // If we have one result which is not an assoc array, make it the first element of an array for the
-        // collectionFromResult function so we always return a collection from filter
-        if ((bool) count(array_filter(array_keys($result), 'is_string'))) {
-            $result = [ $result ];
-        }
-
         return $this->collectionFromResult($result);
     }
 
@@ -47,6 +41,12 @@ trait Findable
 
     public function collectionFromResult($result)
     {
+        // If we have one result which is not an assoc array, make it the first element of an array for the
+        // collectionFromResult function so we always return a collection from filter
+        if ((bool) count(array_filter(array_keys($result), 'is_string'))) {
+            $result = [ $result ];
+        }
+
         $collection = [ ];
         foreach ($result as $r) {
             $collection[] = new self($this->connection(), $r);
