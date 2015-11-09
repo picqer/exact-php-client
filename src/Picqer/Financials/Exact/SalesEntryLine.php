@@ -23,6 +23,6 @@ class SalesEntryLine extends Model
 
     ];
 
-    protected $url = 'salesinvoice/SalesInvoiceLines';
+    protected $url = 'salesentry/SalesEntryLines';
 
 }
