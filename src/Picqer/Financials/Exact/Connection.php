@@ -326,6 +326,11 @@ class Connection
     private function parseResponse(Response $response)
     {
         try {
+
+            if ($response->getStatusCode() === 204) {
+                return [];
+            }
+
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
             if (array_key_exists('d', $json)) {
