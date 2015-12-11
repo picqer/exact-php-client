@@ -10,7 +10,7 @@ Installing this Exact client for PHP can be done through Composer.
     "require": {
       "picqer/exact-php-client": "~2.0"
     }
-    
+
 ## Usage
 
 1. Set up app at Exact App Center to retrieve credentials
@@ -29,11 +29,11 @@ You will also need to set the correct `Callback URL` for the oAuth dance to work
 
 The code below is an example `authorize()` function.
 
-        $connection = new \Picqer\Financials\Exact\Connection();
-        $connection->setRedirectUrl('CALLBACK_URL'); // Same as entered online in the App Center
-        $connection->setExactClientId('CLIENT_ID');
-        $connection->setExactClientSecret('CLIENT_SECRET');
-        $connection->redirectForAuthorization();
+    $connection = new \Picqer\Financials\Exact\Connection();
+    $connection->setRedirectUrl('CALLBACK_URL'); // Same as entered online in the App Center
+    $connection->setExactClientId('CLIENT_ID');
+    $connection->setExactClientSecret('CLIENT_SECRET');
+    $connection->redirectForAuthorization();
 
 This will redirect the user to Exact to login and authorize your integration with their account.
 
@@ -47,85 +47,93 @@ The `refreshtoken` is a token which is used to get a new `accesstoken` which als
 The library will settle all of this for you. The code below could be an general `connect()` function, which returns
 the api connection.
 
-        $connection = new \Picqer\Financials\Exact\Connection();
-        $connection->setRedirectUrl('CALLBACK_URL');
-        $connection->setExactClientId('CLIENT_ID');
-        $connection->setExactClientSecret('CLIENT_SECRET');
+    $connection = new \Picqer\Financials\Exact\Connection();
+    $connection->setRedirectUrl('CALLBACK_URL');
+    $connection->setExactClientId('CLIENT_ID');
+    $connection->setExactClientSecret('CLIENT_SECRET');
 
-        if (getValue('authorizationcode')) // Retrieves authorizationcode from database
-            $connection->setAuthorizationCode(getValue('authorizationcode'));
+    if (getValue('authorizationcode')) // Retrieves authorizationcode from database
+        $connection->setAuthorizationCode(getValue('authorizationcode'));
 
-        if (getValue('accesstoken')) // Retrieves accesstoken from database
-            $connection->setAccessToken(unserialize(getValue('accesstoken')));
+    if (getValue('accesstoken')) // Retrieves accesstoken from database
+        $connection->setAccessToken(unserialize(getValue('accesstoken')));
 
-        if (getValue('refreshtoken')) // Retrieves refreshtoken from database
-            $connection->setRefreshToken(getValue('refreshtoken'));
+    if (getValue('refreshtoken')) // Retrieves refreshtoken from database
+        $connection->setRefreshToken(getValue('refreshtoken'));
 
-        // Make the client connect and exchange tokens
-        try {
-            $connection->client();
-        } catch (\Exception $e)
-        {
-            throw new Exception('Could not connect to Exact: ' . $e->getMessage());
-        }
+    // Make the client connect and exchange tokens
+    try {
+        $connection->client();
+    } catch (\Exception $e)
+    {
+        throw new Exception('Could not connect to Exact: ' . $e->getMessage());
+    }
 
-        // Save the new tokens for next connections
-        setValue('accesstoken', serialize($connection->getAccessToken()));
-        setValue('refreshtoken', $connection->getRefreshToken());
+    // Save the new tokens for next connections
+    setValue('accesstoken', serialize($connection->getAccessToken()));
+    setValue('refreshtoken', $connection->getRefreshToken());
 
 ### Use the library to do stuff (examples)
 
-      // Create a new account
-      $account = new Account($connection);
-      $account->AddressLine1 = $customer['address'];
-      $account->AddressLine2 = $customer['address2'];
-      $account->City = $customer['city'];
-      $account->Code = $customer['customerid'];
-      $account->Country = $customer['country'];
-      $account->IsSales = 'true';
-      $account->Name = $customer['name'];
-      $account->Postcode = $customer['zipcode'];
-      $account->Status = 'C';
-      $account->save();
+    // Create a new account
+    $account = new Account($connection);
+    $account->AddressLine1 = $customer['address'];
+    $account->AddressLine2 = $customer['address2'];
+    $account->City = $customer['city'];
+    $account->Code = $customer['customerid'];
+    $account->Country = $customer['country'];
+    $account->IsSales = 'true';
+    $account->Name = $customer['name'];
+    $account->Postcode = $customer['zipcode'];
+    $account->Status = 'C';
+    $account->save();
 
 
-      // Add a product in Exact
-      $item = new Item($connection);
-      $item->Code = $productcode;
-      $item->CostPriceStandard = $costprice;
-      $item->Description = $name;
-      $item->IsSalesItem = true;
-      $item->SalesVatCode = 'VH';
-      $item->save();
+    // Add a product in Exact
+    $item = new Item($connection);
+    $item->Code = $productcode;
+    $item->CostPriceStandard = $costprice;
+    $item->Description = $name;
+    $item->IsSalesItem = true;
+    $item->SalesVatCode = 'VH';
+    $item->save();
 
 
-      // Retrieve an item
-      $item = new Item($connection);
-      $item->find(ID);
-    
-      // List items
-      $item = new Item($connection);
-      $item->get();
-    
-      // List items with filter (using a filter always returns a collection)
-      $item = new Item($connection);
-      $items = $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
-      
-      // Create new invoice with invoice lines
-      $items[] = [
-            'Item'      => $itemId,
-            'Quantity'  => $orderproduct['amount'],
-            'UnitPrice' => $orderproduct['price']
-      ];
-      
-      $salesInvoice = new SalesInvoice($this->connection());
-      $salesInvoice->InvoiceTo = $customer_code;
-      $salesInvoice->OrderedBy = $customer_code;
-      $salesInvoice->YourRef = $orderId;
-      $salesInvoice->SalesInvoiceLines = $items;
+    // Retrieve an item
+    $item = new Item($connection);
+    $item->find(ID);
 
+    // List items
+    $item = new Item($connection);
+    $item->get();
 
-      
+    // List items with filter (using a filter always returns a collection)
+    $item = new Item($connection);
+    $items = $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
+
+    // Create new invoice with invoice lines
+    $items[] = [
+        'Item'      => $itemId,
+        'Quantity'  => $orderproduct['amount'],
+        'UnitPrice' => $orderproduct['price']
+    ];
+
+    $salesInvoice = new SalesInvoice($this->connection());
+    $salesInvoice->InvoiceTo = $customer_code;
+    $salesInvoice->OrderedBy = $customer_code;
+    $salesInvoice->YourRef = $orderId;
+    $salesInvoice->SalesInvoiceLines = $items;
+
+## Connect to other Exact country then NL
+Choose the right base URL according to [Exact developers guide](https://developers.exactonline.com/#Exact%20Online%20sites.html)
+
+    <?php
+    $connection = new \Picqer\Financials\Exact\Connection();
+    $connection->setRedirectUrl('CALLBACK_URL');
+    $connection->setExactClientId('CLIENT_ID');
+    $connection->setExactClientSecret('CLIENT_SECRET');
+    $connection->setBaseUrl('https://start.exactonline.de');
+
 Check [src/Picqer/Financials/Exact](src/Picqer/Financials/Exact) for all available entities.
 
 ## Code example
