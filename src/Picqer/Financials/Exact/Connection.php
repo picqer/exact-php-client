@@ -17,17 +17,22 @@ class Connection
     /**
      * @var string
      */
-    private $apiUrl = 'https://start.exactonline.nl/api/v1';
+    private $baseUrl = 'https://start.exactonline.nl';
 
     /**
      * @var string
      */
-    private $authUrl = 'https://start.exactonline.nl/api/oauth2/auth';
+    private $apiUrl = '/api/v1';
 
     /**
      * @var string
      */
-    private $tokenUrl = 'https://start.exactonline.nl/api/oauth2/token';
+    private $authUrl = '/api/oauth2/auth';
+
+    /**
+     * @var string
+     */
+    private $tokenUrl = '/api/oauth2/token';
 
     /**
      * @var
@@ -244,7 +249,7 @@ class Connection
      */
     private function getAuthUrl()
     {
-        return $this->authUrl . '?' . http_build_query(array(
+        return $this->baseUrl . $this->authUrl . '?' . http_build_query(array(
             'client_id' => $this->exactClientId,
             'redirect_uri' => $this->redirectUrl,
             'response_type' => 'code'
@@ -404,7 +409,7 @@ class Connection
             ];
         }
 
-        $response = $this->client()->post($this->tokenUrl, $body);
+        $response = $this->client()->post($this->getTokenUrl(), $body);
 
         if ($response->getStatusCode() == 200) {
             Psr7\rewind_body($response);
@@ -461,14 +466,14 @@ class Connection
     {
         if ($includeDivision) {
             return implode('/', [
-                $this->apiUrl,
+                $this->getApiUrl(),
                 $this->getCurrentDivisionNumber(),
                 $endPoint
             ]);
         }
 
         return implode('/', [
-            $this->apiUrl,
+            $this->getApiUrl(),
             $endPoint
         ]);
     }
@@ -517,6 +522,64 @@ class Connection
         throw new ApiException('Error ' . $response->getStatusCode() .': ' . $errorMessage);
     }
 
+    /**
+     * @return string
+     */
+    protected function getBaseUrl()
+    {
+        return $this->baseUrl;
+    }
+
+    /**
+     * @return string
+     */
+    private function getApiUrl()
+    {
+        return $this->baseUrl . $this->apiUrl;
+    }
+
+    /**
+     * @return string
+     */
+    private function getTokenUrl()
+    {
+        return $this->baseUrl . $this->tokenUrl;
+    }
+
+    /**
+     * Set base URL for different countries according to
+     * https://developers.exactonline.com/#Exact%20Online%20sites.html
+     *
+     * @param string $baseUrl
+     */
+    public function setBaseUrl($baseUrl)
+    {
+        $this->baseUrl = $baseUrl;
+    }
+
+    /**
+     * @param string $apiUrl
+     */
+    public function setApiUrl($apiUrl)
+    {
+        $this->apiUrl = $apiUrl;
+    }
+
+    /**
+     * @param string $authUrl
+     */
+    public function setAuthUrl($authUrl)
+    {
+        $this->authUrl = $authUrl;
+    }
+
+    /**
+     * @param string $tokenUrl
+     */
+    public function setTokenUrl($tokenUrl)
+    {
+        $this->tokenUrl = $tokenUrl;
+    }
 }
 
 
