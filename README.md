@@ -132,7 +132,7 @@ $salesInvoice->YourRef = $orderId;
 $salesInvoice->SalesInvoiceLines = $items;
 ```
 
-## Connect to other Exact country then NL
+## Connect to other Exact country than NL
 Choose the right base URL according to [Exact developers guide](https://developers.exactonline.com/#Exact%20Online%20sites.html)
 
 ```php
