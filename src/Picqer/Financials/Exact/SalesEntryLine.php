@@ -15,7 +15,6 @@ class SalesEntryLine extends Model
         'GLAccount',
         'GLAccountCode',
         'ItemDescription',
-        'AmountDC',
         'Quantity',
         'VATCode',
         'VATPercentage',
