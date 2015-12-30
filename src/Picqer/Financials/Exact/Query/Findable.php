@@ -13,6 +13,17 @@ trait Findable
     }
 
 
+    public function findWithSelect($id, $select = '')
+    {
+        $result = $this->connection()->get($this->url, [
+            '$filter' => $this->primaryKey . " eq guid'$id'",
+            '$select' => $select
+        ]);
+        
+        return new self($this->connection(), $result);
+    }
+
+
     public function filter($filter, $expand = '', $select = '')
     {
         $request = [
