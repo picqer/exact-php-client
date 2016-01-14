@@ -247,7 +247,7 @@ class Connection
     /**
      * @return string
      */
-    private function getAuthUrl()
+    public function getAuthUrl()
     {
         return $this->baseUrl . $this->authUrl . '?' . http_build_query(array(
             'client_id' => $this->exactClientId,
