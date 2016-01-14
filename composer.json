@@ -1,5 +1,5 @@
 {
-    "name": "picqer/exact-php-client",
+    "name": "marcelfw/exact-php-client",
     "type": "library",
     "description": "A PHP Client for the Exact API",
     "keywords": [
