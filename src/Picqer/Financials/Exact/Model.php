@@ -1,6 +1,6 @@
 <?php namespace Picqer\Financials\Exact;
 
-abstract class Model
+abstract class Model implements \JsonSerializable
 {
 
     /**
@@ -131,6 +131,16 @@ abstract class Model
     public function json()
     {
         return json_encode($this->attributes);
+    }
+
+    /**
+     * Return serializable data
+     * 
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return $this->attributes;
     }
 
 }
