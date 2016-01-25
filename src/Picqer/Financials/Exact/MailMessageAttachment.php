@@ -10,7 +10,7 @@ class MailMessageAttachment extends Model
         'ID',
         'Attachment',
         'AttachmentFileName',
-        'MailMessageId',
+        'MailMessageID',
         'Type'
     ];
 
