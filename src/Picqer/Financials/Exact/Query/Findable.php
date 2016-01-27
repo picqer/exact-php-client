@@ -24,7 +24,7 @@ trait Findable
     }
 
 
-    public function filter($filter, $expand = '', $select = '')
+    public function filter($filter, $expand = '', $select = '', $system_query_options = null)
     {
         $request = [
             '$filter' => $filter
@@ -34,6 +34,11 @@ trait Findable
         }
         if (strlen($select) > 0) {
             $request['$select'] = $select;
+        }
+        if (is_array($system_query_options)) {
+            // merge in other options
+            // no verification of proper system query options
+            $request = array_merge($system_query_options, $request);
         }
 
         $result = $this->connection()->get($this->url, $request);
