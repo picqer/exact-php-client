@@ -88,7 +88,7 @@ class Connection
     /**
     * @var
     */
-    public $nextUrl = NULL;
+    public $nextUrl = null;
 
     /**
      * @return Client
@@ -353,7 +353,7 @@ class Connection
                         $this->nextUrl = $json['d']['__next'];
                     }
                     else {
-                        $this->nextUrl = NULL;
+                        $this->nextUrl = null;
                     }
 
                     return $json['d']['results'];

@@ -58,7 +58,7 @@ trait Findable
             $result = [ $result ];
         }
 
-        while ($this->connection()->nextUrl !== NULL)
+        while ($this->connection()->nextUrl !== null)
         {
             $nextResult = $this->connection()->get($this->connection()->nextUrl);
             $result = array_merge($result, $nextResult);
@@ -71,4 +71,3 @@ trait Findable
         return $collection;
     }
 }
-
