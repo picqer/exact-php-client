@@ -63,6 +63,11 @@ trait Findable
             $result = [ $result ];
         }
 
+        while ($this->connection()->nextUrl !== null)
+        {
+            $nextResult = $this->connection()->get($this->connection()->nextUrl);
+            $result = array_merge($result, $nextResult);
+        }
         $collection = [ ];
         foreach ($result as $r) {
             $collection[] = new self($this->connection(), $r);
