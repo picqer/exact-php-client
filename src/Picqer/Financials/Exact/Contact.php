@@ -24,7 +24,9 @@ class Contact extends Model
         'Email',
         'HID',
         'AccountMainContact',
-        'IsMainContact'
+        'IsMainContact',
+        'Gender',
+        'Title'
     ];
 
     protected $url = 'crm/Contacts';
