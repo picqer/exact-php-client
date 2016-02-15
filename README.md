@@ -7,10 +7,8 @@ Note: For Guzzle 6 use v2, for Guzzle 3 use v1.
 ## Composer install
 Installing this Exact client for PHP can be done through Composer.
 
-```json
-"require": {
-  "picqer/exact-php-client": "~2.0"
-}
+```
+composer require picqer/exact-php-client
 ```
 
 ## Usage
