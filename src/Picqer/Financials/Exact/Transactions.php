@@ -2,10 +2,11 @@
 
 class Transactions extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
-
+    
+    protected $primaryKey = 'EntryID';
+    
     protected $fillable = [
         'ClosingBalanceFC',
         'Date',
@@ -25,6 +26,5 @@ class Transactions extends Model
         'Type',
         'TypeDescription'
     ];
-
     protected $url = 'financialtransaction/Transactions';
 }
