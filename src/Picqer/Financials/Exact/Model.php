@@ -1,5 +1,12 @@
 <?php namespace Picqer\Financials\Exact;
 
+/**
+ * Class Model
+ *
+ * @package Picqer\Financials\Exact
+ *
+ */
+
 abstract class Model implements \JsonSerializable
 {
 

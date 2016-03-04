@@ -1,5 +1,14 @@
 <?php namespace Picqer\Financials\Exact;
 
+/**
+ * Class WebhookSubscription
+ *
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=webhooksWebhookSubscriptions
+ *
+ * @property  $CallbackURL 
+ * @property  $Topic 
+ */
 class WebhookSubscription extends Model
 {
 
