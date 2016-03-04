@@ -10,7 +10,9 @@ use GuzzleHttp\Psr7;
 
 /**
  * Class Connection
+ *
  * @package Picqer\Financials\Exact
+ *
  */
 class Connection
 {
