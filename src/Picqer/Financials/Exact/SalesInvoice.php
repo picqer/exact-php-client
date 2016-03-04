@@ -116,4 +116,17 @@ class SalesInvoice extends Model
 
     protected $url = 'salesinvoice/SalesInvoices';
 
+    /**
+     * Updates the SalesInvoiceLines collection on a SalesInvoice if it's been detected as a deferred collection.
+     * Fetches results and stores them on this object.
+     *
+     * @return mixed
+     */
+    public function getSalesInvoiceLines() {
+        if(array_key_exists('__deferred', $this->attributes['SalesInvoiceLines'])) {
+            $this->attributes['SalesInvoiceLines'] = (new SalesInvoiceLine($this->connection()))->filter("InvoiceID eq guid'{$this->InvoiceID}'");
+        }
+        return $this->attributes['SalesInvoiceLines'];
+    }
+
 }
