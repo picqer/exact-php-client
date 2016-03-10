@@ -6,6 +6,7 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=crmContacts
  *
+ * @property Guid $ID Primary key
  * @property Guid $Account The account to which the contact belongs
  * @property Boolean $AccountIsCustomer Indicates if account is a customer
  * @property Boolean $AccountIsSupplier Indicates if account is a supplier
