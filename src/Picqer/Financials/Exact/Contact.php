@@ -6,6 +6,7 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=crmContacts
  *
+ * @property Guid $ID Primary key
  * @property Guid $Account The account to which the contact belongs
  * @property Boolean $AccountIsCustomer Indicates if account is a customer
  * @property Boolean $AccountIsSupplier Indicates if account is a supplier
@@ -22,6 +23,8 @@
  * @property Int32 $Division Division code
  * @property String $Email Email address of the contact
  * @property Int32 $HID Contact ID
+ * @property String $JobTitleDescription Jobtitle of the contact
+ * @property String $Notes Extra remarks
  * @property Guid $AccountMainContact Reference to the main contact of the account
  * @property Boolean $IsMainContact Indicates if this is the main contact of the linked account
  * @property String $Gender Gender
@@ -34,6 +37,7 @@ class Contact extends Model
     use Persistance\Storable;
 
     protected $fillable = [
+        'ID',
         'Account',
         'AccountIsCustomer',
         'AccountIsSupplier',
@@ -50,6 +54,8 @@ class Contact extends Model
         'Division',
         'Email',
         'HID',
+        'JobTitleDescription',
+        'Notes',
         'AccountMainContact',
         'IsMainContact',
         'Gender',
@@ -59,4 +65,3 @@ class Contact extends Model
     protected $url = 'crm/Contacts';
 
 }
-
