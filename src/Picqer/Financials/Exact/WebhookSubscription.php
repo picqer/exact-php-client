@@ -16,6 +16,7 @@ class WebhookSubscription extends Model
     use Persistance\Storable;
 
     protected $fillable = [
+    	'ID',
         'CallbackURL',
         'Topic'
     ];
