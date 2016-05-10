@@ -13,7 +13,18 @@ trait Findable
     }
 
 
-    public function filter($filter, $expand = '', $select = '')
+    public function findWithSelect($id, $select = '')
+    {
+        $result = $this->connection()->get($this->url, [
+            '$filter' => $this->primaryKey . " eq guid'$id'",
+            '$select' => $select
+        ]);
+        
+        return new self($this->connection(), $result);
+    }
+
+
+    public function filter($filter, $expand = '', $select = '', $system_query_options = null)
     {
         $request = [
             '$filter' => $filter
@@ -23,6 +34,11 @@ trait Findable
         }
         if (strlen($select) > 0) {
             $request['$select'] = $select;
+        }
+        if (is_array($system_query_options)) {
+            // merge in other options
+            // no verification of proper system query options
+            $request = array_merge($system_query_options, $request);
         }
 
         $result = $this->connection()->get($this->url, $request);
@@ -47,6 +63,11 @@ trait Findable
             $result = [ $result ];
         }
 
+        while ($this->connection()->nextUrl !== null)
+        {
+            $nextResult = $this->connection()->get($this->connection()->nextUrl);
+            $result = array_merge($result, $nextResult);
+        }
         $collection = [ ];
         foreach ($result as $r) {
             $collection[] = new self($this->connection(), $r);
