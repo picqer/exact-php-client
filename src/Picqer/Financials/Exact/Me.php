@@ -1,5 +1,29 @@
 <?php namespace Picqer\Financials\Exact;
 
+/**
+ * Class Me
+ *
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=
+ *
+ * @property  $CurrentDivision 
+ * @property  $FullName 
+ * @property  $PictureUrl 
+ * @property  $UserID 
+ * @property  $UserName 
+ * @property  $LanguageCode 
+ * @property  $Email 
+ * @property  $Title 
+ * @property  $Initials 
+ * @property  $FirstName 
+ * @property  $MiddleName 
+ * @property  $LastName 
+ * @property  $Gender 
+ * @property  $Language 
+ * @property  $Phone 
+ * @property  $PhoneExtension 
+ * @property  $Mobile 
+ */
 class Me extends Model
 {
 

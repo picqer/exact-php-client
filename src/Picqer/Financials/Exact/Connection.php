@@ -10,7 +10,9 @@ use GuzzleHttp\Psr7;
 
 /**
  * Class Connection
+ *
  * @package Picqer\Financials\Exact
+ *
  */
 class Connection
 {
@@ -83,6 +85,12 @@ class Connection
      *
      */
     protected $middleWares = [];
+
+
+    /**
+    * @var
+    */
+    public $nextUrl = null;
 
     /**
      * @return Client
@@ -173,7 +181,7 @@ class Connection
      */
     public function get($url, array $params = [])
     {
-        $url = $this->formatUrl($url, $url !== 'current/Me');
+        $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
 
         try {
             $request = $this->createRequest('GET', $url, null, $params);
@@ -247,7 +255,7 @@ class Connection
     /**
      * @return string
      */
-    private function getAuthUrl()
+    public function getAuthUrl()
     {
         return $this->baseUrl . $this->authUrl . '?' . http_build_query(array(
             'client_id' => $this->exactClientId,
@@ -342,6 +350,12 @@ class Connection
                 if (array_key_exists('results', $json['d'])) {
                     if (count($json['d']['results']) == 1) {
                         return $json['d']['results'][0];
+                    }
+                    if (array_key_exists('__next', $json['d'])) {
+                        $this->nextUrl = $json['d']['__next'];
+                    }
+                    else {
+                        $this->nextUrl = null;
                     }
 
                     return $json['d']['results'];
@@ -462,8 +476,12 @@ class Connection
         return $this->tokenExpires <= time();
     }
 
-    private function formatUrl($endPoint, $includeDivision = true)
+    private function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
     {
+        if ($formatNextUrl) {
+            return $endPoint;
+        }
+
         if ($includeDivision) {
             return implode('/', [
                 $this->getApiUrl(),
@@ -581,5 +599,3 @@ class Connection
         $this->tokenUrl = $tokenUrl;
     }
 }
-
-
