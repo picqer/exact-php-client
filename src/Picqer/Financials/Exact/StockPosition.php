@@ -28,7 +28,7 @@ class StockPosition extends Model
      *
      * @var string
      */
-    protected $url = 'logistics/StockPosition';
+    protected $url = 'read/logistics/StockPosition';
 
     /**
      * The primary key for the current entity.
@@ -36,4 +36,19 @@ class StockPosition extends Model
      * @var string
      */
     protected $primaryKey = 'ItemId';
+
+    /**
+     * Find a stock position with item id
+     *
+     * @param string $id For example: 00000000-0000-0000-0000-000000000000
+     * @return StockPosition
+     */
+    public function find($id)
+    {
+        $result = $this->connection()->get($this->url, [
+            'itemId' => sprintf('guid\'%s\'', $id)
+        ]);
+
+        return new self($this->connection(), $result);
+    }
 }
