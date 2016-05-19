@@ -182,6 +182,7 @@ class Item extends Model
         'SearchCode',
         'SecurityLevel',
         'StartDate',
+        'Stock',
         'Unit',
         'UnitDescription'
     ];
