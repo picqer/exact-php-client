@@ -28,7 +28,7 @@ class StockPosition extends Model
      *
      * @var string
      */
-    protected $url = 'logistics/StockPosition';
+    protected $url = 'read/logistics/StockPosition';
 
     /**
      * The primary key for the current entity.
