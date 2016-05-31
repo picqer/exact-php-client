@@ -21,7 +21,8 @@ class DocumentAttachment extends Model
         'ID',
         'Attachment',
         'Document',
-        'FileName',   
+        'FileName',
+        'Url'
     ];
 
     protected $url = 'documents/DocumentAttachments';
