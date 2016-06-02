@@ -1,29 +1,27 @@
 <?php namespace Picqer\Financials\Exact;
-
 /**
 * Class CashEntry
 *
 * @package Picqer\Financials\Exact
-* @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=generaljournalentryGeneralJournalEntries
+* @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionCashEntries
 *
- * @property Guid $EntryID Primary key
- * @property-read DateTime $Created Creation date (read-only)
- * @property String $Currency Currency code
- * @property-read Int32 $Division Division code (read-only)
+ * @property Guid $EntryID Primary key (read-only)
+ * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
+ * @property DateTime $Created Creation date (read-only)
+ * @property Double $Currency Closing balance in the currency of the transaction
+ * @property Int32 $Division Division code (read-only)
  * @property Int32 $EntryNumber Entry number
- * @property Double $ExchangeRate Exchange rate
- * @property Int16 $FinancialPeriod Financial period
- * @property Int16 $FinancialYear Financial year
- * @property GeneralJournalEntryLines $GeneralJournalEntryLines Collection of lines
+ * @property Int16 $FinancialPeriod Fiancial period
+ * @property Int16 $FinancialYear Fiancial year
+ * @property CashEntryLines $CashEntryLines Collection of lines
  * @property String $JournalCode Code of Journal
- * @property-read String $JournalDescription Description of Journal (read-only)
- * @property-read DateTime $Modified Last modified date (read-only)
- * @property Boolean $Reversal Indicates that amounts are reversed
- * @property-read Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed (read-only)
- * @property-read String $StatusDescription Description of Status (read-only)
- * @property-read Int32 $Type Type: 10 = Opening balance, 90 = Other (read-only)
- * @property-read String $TypeDescription Description of Type (read-only)
+ * @property String $JournalDescription Description of Journal (read-only)
+ * @property DateTime $Modified Last modified date (read-only)
+ * @property Double $OpeningBalanceFC Opening balance in the currency of the transaction
+ * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed (read-only)
+ * @property String $StatusDescription Description of Status (read-only)
  */
+
 class CashEntry extends Model
 {
 
@@ -46,7 +44,7 @@ class CashEntry extends Model
 		'JournalCode',
 		'JournalDescription',
 		'Modified',
-		'Reversal',
+		'OpeningBalanceFC',
 		'Status',
 		'StatusDescription'
 	];
@@ -66,3 +64,4 @@ class CashEntry extends Model
 
 	protected $url = 'financialtransaction/CashEntries';
 }
+
