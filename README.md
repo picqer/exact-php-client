@@ -144,6 +144,25 @@ $connection->setBaseUrl('https://start.exactonline.de');
 
 Check [src/Picqer/Financials/Exact](src/Picqer/Financials/Exact) for all available entities.
 
+## Troubleshooting
+> 'Picqer\Financials\Exact\ApiException' with message 'Error 400: Please add a $select or a $top=1 statement to the query string.'
+
+In specific instances, sadly not documented in the API documentation of Exact this is a requirement. Probably to prevent overflooding requests. What you have to do when encountering this error is adding a select or top. The select is used to provide a list of fields you want to extract, the $top=1 limits the results to one item.
+
+Examples:
+
+Return only the EntryID and FinancialYear.
+```php
+$test = new GeneralJournalEntry($connection);
+var_dump($test->filter('', '', 'EntryID, FinancialYear'));
+```
+
+The $top=1 is added like this:
+```php
+$test = new GeneralJournalEntry($connection);
+var_dump($test->filter('', '', '', ['$top'=> 1]));
+```
+
 ## Code example
 See for example: [example/example.php](example/example.php)
 
