@@ -7,6 +7,7 @@
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesentrySalesEntryLines
  *
  * @property Double $AmountDC Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC.
+ * @property Double $AmountFC For normal lines it's the amount excluding VAT
  * @property String $Description Description of Asset
  * @property Int32 $Division Division code
  * @property Guid $ID Primary key
@@ -27,6 +28,7 @@ class SalesEntryLine extends Model
 
     protected $fillable = [
         'AmountDC',
+        'AmountFC',
         'Description',
         'Division',
         'ID',
@@ -38,7 +40,6 @@ class SalesEntryLine extends Model
         'VATCode',
         'VATPercentage',
         'Notes',
-
     ];
 
     protected $url = 'salesentry/SalesEntryLines';
