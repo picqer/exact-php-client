@@ -1,6 +1,4 @@
-<?php
-
-namespace VSmart\ExactOnlineBundle\Component\Exact\Financials;
+<?php namespace Picqer\Financials\Exact;
 
 use DateTime;
 use Picqer\Financials\Exact\Model;
