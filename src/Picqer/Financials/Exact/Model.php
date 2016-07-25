@@ -125,6 +125,11 @@ abstract class Model implements \JsonSerializable
     }
 
 
+    /**
+     * Checks if primaryKey holds a value
+     *
+     * @return boolean
+     */
     public function exists()
     {
         if ( ! array_key_exists($this->primaryKey, $this->attributes)) {
@@ -135,14 +140,22 @@ abstract class Model implements \JsonSerializable
     }
 
 
-    public function json()
+    /**
+     * Return the JSON representation of the data
+     *
+     * @param int $options http://php.net/manual/en/json.constants.php
+     *
+     * @return string
+     */
+    public function json($options = 0)
     {
-        return json_encode($this->attributes);
+        return json_encode($this->attributes, $options);
     }
+
 
     /**
      * Return serializable data
-     * 
+     *
      * @return array
      */
     public function jsonSerialize()
@@ -150,4 +163,22 @@ abstract class Model implements \JsonSerializable
         return $this->attributes;
     }
 
+
+    /**
+     * Check whether the current user has rights for an action on this endpoint
+     * https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10
+     *
+     * @param string $action
+     *
+     * @return boolean
+     */
+    public function userHasRights($action='GET')
+    {
+        $action =  preg_match('/^GET|POST|PUT|DELETE$/i', $action) ? strtoupper($action) : 'GET';
+        $result = $this->connection()->get('users/UserHasRights', [
+            'endpoint' => "'{$this->url}'",
+            'action' => "'{$action}'"
+        ]);
+        return isset($result['UserHasRights']) ? $result['UserHasRights'] : null;
+    }
 }
