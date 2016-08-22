@@ -19,67 +19,67 @@ class Connection
     /**
      * @var string
      */
-    private $baseUrl = 'https://start.exactonline.nl';
+    protected $baseUrl = 'https://start.exactonline.nl';
 
     /**
      * @var string
      */
-    private $apiUrl = '/api/v1';
+    protected $apiUrl = '/api/v1';
 
     /**
      * @var string
      */
-    private $authUrl = '/api/oauth2/auth';
+    protected $authUrl = '/api/oauth2/auth';
 
     /**
      * @var string
      */
-    private $tokenUrl = '/api/oauth2/token';
+    protected $tokenUrl = '/api/oauth2/token';
 
     /**
      * @var
      */
-    private $exactClientId;
+    protected $exactClientId;
 
     /**
      * @var
      */
-    private $exactClientSecret;
+    protected $exactClientSecret;
 
     /**
      * @var
      */
-    private $authorizationCode;
+    protected $authorizationCode;
 
     /**
      * @var
      */
-    private $accessToken;
+    protected $accessToken;
 
     /**
      * @var
      */
-    private $tokenExpires;
+    protected $tokenExpires;
 
     /**
      * @var
      */
-    private $refreshToken;
+    protected $refreshToken;
 
     /**
      * @var
      */
-    private $redirectUrl;
+    protected $redirectUrl;
 
     /**
      * @var
      */
-    private $division;
+    protected $division;
 
     /**
      * @var Client
      */
-    private $client;
+    protected $client;
 
     /**
      *
@@ -95,7 +95,7 @@ class Connection
     /**
      * @return Client
      */
-    private function client()
+    protected function client()
     {
         if ($this->client) {
             return $this->client;
@@ -144,7 +144,7 @@ class Connection
      * @param array $headers
      * @return Request
      */
-    private function createRequest($method = 'GET', $endpoint, $body = null, array $params = [], array $headers = [])
+    protected function createRequest($method = 'GET', $endpoint, $body = null, array $params = [], array $headers = [])
     {
         // Add default json headers to the request
         $headers = array_merge($headers, [
@@ -336,7 +336,7 @@ class Connection
      * @return mixed
      * @throws ApiException
      */
-    private function parseResponse(Response $response)
+    protected function parseResponse(Response $response)
     {
         try {
 
@@ -373,7 +373,7 @@ class Connection
     /**
      * @return mixed
      */
-    private function getCurrentDivisionNumber()
+    protected function getCurrentDivisionNumber()
     {
         if (empty($this->division)) {
             $me             = new Me($this);
@@ -399,7 +399,7 @@ class Connection
         return $this->accessToken;
     }
 
-    private function acquireAccessToken()
+    protected function acquireAccessToken()
     {
         // If refresh token not yet acquired, do token request
         if (empty($this->refreshToken)) {
@@ -442,7 +442,7 @@ class Connection
     }
 
 
-    private function getDateTimeFromExpires($expires)
+    protected function getDateTimeFromExpires($expires)
     {
         if (!is_numeric($expires)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
@@ -467,7 +467,7 @@ class Connection
         $this->tokenExpires = $tokenExpires;
     }
 
-    private function tokenHasExpired()
+    protected function tokenHasExpired()
     {
         if (empty($this->tokenExpires)) {
             return true;
@@ -476,7 +476,7 @@ class Connection
         return $this->tokenExpires <= time();
     }
 
-    private function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
+    protected function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
     {
         if ($formatNextUrl) {
             return $endPoint;
@@ -520,7 +520,7 @@ class Connection
      * @param Exception $e
      * @throws ApiException
      */
-    private function parseExceptionForErrorMessages(Exception $e)
+    protected function parseExceptionForErrorMessages(Exception $e)
     {
         if (! $e instanceof BadResponseException) {
             throw new ApiException($e->getMessage());
@@ -551,7 +551,7 @@ class Connection
     /**
      * @return string
      */
-    private function getApiUrl()
+    protected function getApiUrl()
     {
         return $this->baseUrl . $this->apiUrl;
     }
@@ -559,7 +559,7 @@ class Connection
     /**
      * @return string
      */
-    private function getTokenUrl()
+    protected function getTokenUrl()
     {
         return $this->baseUrl . $this->tokenUrl;
     }
