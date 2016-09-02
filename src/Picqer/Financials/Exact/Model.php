@@ -181,4 +181,24 @@ abstract class Model implements \JsonSerializable
         ]);
         return isset($result['UserHasRights']) ? $result['UserHasRights'] : null;
     }
+
+    /**
+     * Return the value of the primary key
+     *
+     * @param string $code the value to search for
+     * @param string $key  the key being searched (defaults to 'Code')
+     *
+     * @return string (guid)
+     */
+    public function findId($code, $key='Code'){
+        if ( $this->isFillable($key) ) {
+            $format = $this->url == 'crm/Accounts' ? '%18s' : '%s';
+            $filter = sprintf("$key eq '$format'", $code);
+            $request = array('$filter' => $filter, '$top' => 1, '$orderby' => $this->primaryKey);
+            if( $records = $this->connection()->get($this->url, $request) ){
+                return $records[0][$this->primaryKey];
+            }
+        }
+    }
+
 }
