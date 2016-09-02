@@ -6,6 +6,7 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemMe
  *
+ * @property Guid   $UserID Primary key
  * @property Int32  $CurrentDivision Division number that is currently used in the API. You should use a division number in the url
  * @property Guid   $DivisionCustomer Owner account of the division
  * @property String $DivisionCustomerCode Owner account code of the division
