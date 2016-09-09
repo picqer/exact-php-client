@@ -15,12 +15,33 @@ trait Findable
 
     public function findWithSelect($id, $select = '')
     {
+        //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
         $result = $this->connection()->get($this->url, [
             '$filter' => $this->primaryKey . " eq guid'$id'",
             '$select' => $select
         ]);
-        
+
         return new self($this->connection(), $result);
+    }
+
+
+    /**
+     * Return the value of the primary key
+     *
+     * @param string $code the value to search for
+     * @param string $key  the key being searched (defaults to 'Code')
+     *
+     * @return string (guid)
+     */
+    public function findId($code, $key='Code'){
+        if ( $this->isFillable($key) ) {
+            $format = $this->url == 'crm/Accounts' ? '%18s' : '%s';
+            $filter = sprintf("$key eq '$format'", $code);
+            $request = array('$filter' => $filter, '$top' => 1, '$orderby' => $this->primaryKey);
+            if( $records = $this->connection()->get($this->url, $request) ){
+                return $records[0][$this->primaryKey];
+            }
+        }
     }
 
 
