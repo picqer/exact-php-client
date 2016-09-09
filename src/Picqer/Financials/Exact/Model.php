@@ -181,4 +181,5 @@ abstract class Model implements \JsonSerializable
         ]);
         return isset($result['UserHasRights']) ? $result['UserHasRights'] : null;
     }
+
 }
