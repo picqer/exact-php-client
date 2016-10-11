@@ -124,6 +124,10 @@ abstract class Model implements \JsonSerializable
         }
     }
 
+    public function __call($name, $arguments)
+    {
+        return $this->__get($name);
+    }
 
     /**
      * Checks if primaryKey holds a value
