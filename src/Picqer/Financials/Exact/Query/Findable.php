@@ -36,7 +36,8 @@ trait Findable
     public function findId($code, $key='Code'){
         if ( $this->isFillable($key) ) {
             $format = $this->url == 'crm/Accounts' ? '%18s' : '%s';
-            $filter = sprintf("$key eq '$format'", $code);
+            $format = is_string($code) ? "'$format'" : $format;
+            $filter = sprintf("$key eq $format", $code);
             $request = array('$filter' => $filter, '$top' => 1, '$orderby' => $this->primaryKey);
             if( $records = $this->connection()->get($this->url, $request) ){
                 return $records[0][$this->primaryKey];
