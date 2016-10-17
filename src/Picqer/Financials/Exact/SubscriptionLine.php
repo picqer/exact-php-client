@@ -6,7 +6,7 @@ use Picqer\Financials\Exact\Persistance\Storable;
 use Picqer\Financials\Exact\Query\Findable;
 
 /**
- * Class Subscriptions
+ * Class SubscriptionLine
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=subscriptionSubscriptions
@@ -32,7 +32,7 @@ use Picqer\Financials\Exact\Query\Findable;
  * @property Double $VATAmountFC Vat Amount in the currency of the transaction
  * @property String $VATCode VATCode
  */
-class SubscriptionLines extends Model
+class SubscriptionLine extends Model
 {
 
     use Findable;

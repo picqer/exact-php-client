@@ -6,7 +6,7 @@ use Picqer\Financials\Exact\Persistance\Storable;
 use Picqer\Financials\Exact\Query\Findable;
 
 /**
- * Class Subscriptions
+ * Class SubscriptionType
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=subscriptionSubscriptions
@@ -22,7 +22,7 @@ use Picqer\Financials\Exact\Query\Findable;
  * @property Guid $Modifier User ID of the last modifier
  * @property String $ModifierFullName Name of the last modifier
  */
-class SubscriptionTypes extends Model
+class SubscriptionType extends Model
 {
 
     use Findable;

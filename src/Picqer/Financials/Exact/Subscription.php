@@ -1,7 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
 /**
- * Class Subscriptions
+ * Class Subscription
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=subscriptionSubscriptions
@@ -49,7 +49,7 @@
  * @property String $SubscriptionTypeCode Code of SubscriptionType
  * @property String $SubscriptionTypeDescription Description of SubscriptionType
  */
-class Subscriptions extends Model
+class Subscription extends Model
 {
 
     use Query\Findable;
