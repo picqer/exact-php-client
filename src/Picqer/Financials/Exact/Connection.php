@@ -347,15 +347,16 @@ class Connection
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
             if (array_key_exists('d', $json)) {
+                if (array_key_exists('__next', $json['d'])) {
+                    $this->nextUrl = $json['d']['__next'];
+                }
+                else {
+                    $this->nextUrl = null;
+                }
+
                 if (array_key_exists('results', $json['d'])) {
                     if (count($json['d']['results']) == 1) {
                         return $json['d']['results'][0];
-                    }
-                    if (array_key_exists('__next', $json['d'])) {
-                        $this->nextUrl = $json['d']['__next'];
-                    }
-                    else {
-                        $this->nextUrl = null;
                     }
 
                     return $json['d']['results'];
