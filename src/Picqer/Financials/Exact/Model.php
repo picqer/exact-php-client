@@ -69,6 +69,14 @@ abstract class Model implements \JsonSerializable
         return $this->attributes;
     }
 
+    /**
+     * Get the model's primary key
+     *
+     * @return string
+     */
+    public function primaryKey() {
+        return $this->primaryKey;
+    }
 
     /**
      * Fill the entity from an array
@@ -123,7 +131,7 @@ abstract class Model implements \JsonSerializable
     protected function lazyLoad($key) {
         // Check previously resolved or manualy set.
         if (isset($this->deferred[$key])) {
-            return TRUE;
+            return true;
         }
 
         try {
@@ -135,14 +143,14 @@ abstract class Model implements \JsonSerializable
                 $result = $deferred->connection()->get($uri);
                 $this->deferred[$key] = $deferred->collectionFromResult($result);
 
-                return TRUE;
+                return true;
             }
         }
         catch (Exception $e) {
             // We tried lets leave it as is.
         }
 
-        return FALSE;
+        return false;
     }
 
     public function __get($key)
@@ -196,7 +204,7 @@ abstract class Model implements \JsonSerializable
      *
      * @return string
      */
-    public function json($options = 0, $withDeferred = FALSE)
+    public function json($options = 0, $withDeferred = false)
     {
         $attributes = $this->attributes;
         if ($withDeferred) {
