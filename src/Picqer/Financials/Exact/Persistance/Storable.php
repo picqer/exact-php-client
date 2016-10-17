@@ -17,7 +17,7 @@ trait Storable {
 
     public function insert()
     {
-        return $this->connection()->post($this->url, $this->json());
+        return $this->connection()->post($this->url, $this->json(0, TRUE));
     }
 
     public function update()
