@@ -6,6 +6,7 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionTransactions
  *
+ * @property Guid $EntryID Primary key
  * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
  * @property DateTime $Date Creation date
  * @property String $Description Description
@@ -36,6 +37,7 @@ class Transactions extends Model
         'Date',
         'Description',
         'Division',
+        'EntryID',
         'EntryNumber',
         'FinancialPeriod',
         'FinancialYear',

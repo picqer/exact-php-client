@@ -6,6 +6,7 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=subscriptionSubscriptions
  *
+ * @property Guid $EntryID ID of the entry, Primary key
  * @property Boolean $BlockEntry Indicates if subscription is blocked for time cost entry
  * @property DateTime $CancellationDate Date of cancellation
  * @property Guid $Classification Reference to Classification
@@ -53,6 +54,8 @@ class Subscriptions extends Model
 
     use Query\Findable;
     use Persistance\Storable;
+    
+    protected $primaryKey = 'EntryID';
 
     protected $fillable = [
         'BlockEntry',
@@ -68,6 +71,7 @@ class Subscriptions extends Model
         'Description',
         'Division',
         'EndDate',
+        'EntryID',
         'InvoicedTo',
         'InvoiceTo',
         'InvoiceToContactPerson',
