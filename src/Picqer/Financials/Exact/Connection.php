@@ -440,7 +440,7 @@ class Connection
                 $this->tokenExpires = $this->getDateTimeFromExpires($body['expires_in']);
                 
                 if (is_callable($this->tokenUpdateCallback)) {
-                    call_user_func($this->tokenUpdateCallback, $connection);                    
+                    call_user_func($this->tokenUpdateCallback, $this);                    
                 }
             } else {
                 throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
