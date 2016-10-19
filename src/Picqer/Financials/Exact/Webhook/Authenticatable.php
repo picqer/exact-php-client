@@ -2,7 +2,7 @@
 
 trait Authenticatable
 {
-    protected function authenticate($requestContent, $webhookSecret)
+    public function authenticate($requestContent, $webhookSecret)
     {
         $matches = [];
         $matched = preg_match('/^{"Content":(.*),"HashCode":"(.*)"}$/', $requestContent, $matches);
