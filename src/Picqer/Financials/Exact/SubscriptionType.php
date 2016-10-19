@@ -1,23 +1,18 @@
 <?php namespace Picqer\Financials\Exact;
 
-use DateTime;
-use Picqer\Financials\Exact\Model;
-use Picqer\Financials\Exact\Persistance\Storable;
-use Picqer\Financials\Exact\Query\Findable;
-
 /**
  * Class SubscriptionType
  *
  * @package Picqer\Financials\Exact
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=subscriptionSubscriptions
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionTypes
  *
- * @property Guid $ID Primary Key
+ * @property Guid $ID Primary key
  * @property String $Code Code
  * @property DateTime $Created Creation date
- * @property Guid $Creator UserID of the Creator
+ * @property Guid $Creator User ID of the creator
  * @property String $CreatorFullName Name of the creator
  * @property String $Description Description
- * @property Int $Division Division Code
+ * @property Int32 $Division Division code
  * @property DateTime $Modified Last modified date
  * @property Guid $Modifier User ID of the last modifier
  * @property String $ModifierFullName Name of the last modifier
@@ -25,8 +20,8 @@ use Picqer\Financials\Exact\Query\Findable;
 class SubscriptionType extends Model
 {
 
-    use Findable;
-    use Storable;
+    use Query\Findable;
+    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -38,8 +33,9 @@ class SubscriptionType extends Model
         'Division',
         'Modified',
         'Modifier',
-        'ModifierFullName'
+        'ModifierFullName',
     ];
 
     protected $url = 'subscription/SubscriptionTypes';
+
 }
