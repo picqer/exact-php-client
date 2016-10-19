@@ -144,6 +144,12 @@ $connection->setBaseUrl('https://start.exactonline.de');
 
 Check [src/Picqer/Financials/Exact](src/Picqer/Financials/Exact) for all available entities.
 
+## Webhooks
+Managaging webhook subscriptions is possible through the [WebhookSubscription](src/Picqer/Financials/Exact/WebhookSubscription.php) entitiy.
+
+For authenticating incoming webhook calls you can use the [Authenticatable](src/Picqer/Financials/Exact/Webhook/Authenticatable.php) trait.
+Supply the authenticate method with the full JSON request and your Webhook secret supplied by Exact, it will return true or false.
+
 ## Troubleshooting
 > 'Picqer\Financials\Exact\ApiException' with message 'Error 400: Please add a $select or a $top=1 statement to the query string.'
 
