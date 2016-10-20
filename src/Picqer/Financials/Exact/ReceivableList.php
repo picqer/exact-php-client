@@ -28,7 +28,7 @@ class ReceivableList extends Model
 
     use Query\Findable;
 
-	protected $primaryKey = 'HID';
+    protected $primaryKey = 'HID';
 
     protected $fillable = [
 		'AccountCode',
