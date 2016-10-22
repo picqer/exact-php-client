@@ -4,3 +4,4 @@ vendor/
 index.php
 storage.txt
 composer.lock
+.DS_Store
