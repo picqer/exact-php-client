@@ -174,6 +174,22 @@ class Connection
     }
 
     /**
+     * @param array $params
+     * @return bool
+     */
+    private function extractDivision($params = []){
+        if(is_array($params)){
+            if(isset($params['$filter']) && is_string($params['$filter'])){
+                if(preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $params['$filter'], $m)){
+                    $this->division = trim($m[1]);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
      * @param $url
      * @param array $params
      * @return mixed
@@ -181,6 +197,8 @@ class Connection
      */
     public function get($url, array $params = [])
     {
+        $this->extractDivision($params);
+
         $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
 
         try {
