@@ -48,7 +48,10 @@ trait Findable
     public function filter($filter, $expand = '', $select = '', $system_query_options = null)
     {
         $originalDivision = $this->connection()->getDivision();
-        if($this->url == 'financialtransaction/Transactions' && preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $divisionId)) $this->connection()->setDivision(trim($divisionId[1])); // Fix division
+
+        if ($this->url !== 'current/Me' && preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $divisionId)) {
+            $this->connection()->setDivision(trim($divisionId[1])); // Fix division
+        }
 
         $request = [
             '$filter' => $filter
@@ -67,7 +70,9 @@ trait Findable
 
         $result = $this->connection()->get($this->url, $request);
 
-        if(!empty($divisionId)) $this->connection()->setDivision($originalDivision); // Restore division
+        if (!empty($divisionId)) {
+            $this->connection()->setDivision($originalDivision); // Restore division
+        }
 
         return $this->collectionFromResult($result);
     }
