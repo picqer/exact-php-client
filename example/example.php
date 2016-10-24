@@ -43,6 +43,20 @@ function authorize()
 }
 
 /**
+ * Callback function that sets values that expire and are refreshed by Connection.
+ *
+ * @param Connection $connection
+ */
+function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection) {
+    // Save the new tokens for next connections
+    setValue('accesstoken', $connection->getAccessToken());
+    setValue('refreshtoken', $connection->getRefreshToken());
+
+    // Save expires time for next connections
+    setValue('expires_in', $connection->getTokenExpires());
+}
+
+/**
  * Function to connect to Exact, this creates the client and automatically retrieves oAuth tokens if needed
  *
  * @return \Picqer\Financials\Exact\Connection
@@ -74,6 +88,8 @@ function connect()
     {
         $connection->setTokenExpires(getValue('expires_in'));
     }
+    
+    $connection->setTokenUpdateCallback('tokenUpdateCallback'); // Set callback to save newly generated tokens
 
     // Make the client connect and exchange tokens
     try {
@@ -81,13 +97,6 @@ function connect()
     } catch (\Exception $e) {
         throw new Exception('Could not connect to Exact: ' . $e->getMessage());
     }
-
-    // Save the new tokens for next connections
-    setValue('accesstoken', $connection->getAccessToken());
-    setValue('refreshtoken', $connection->getRefreshToken());
-
-    // Save expires time for next connections
-    setValue('expires_in', $connection->getTokenExpires());
 
     return $connection;
 }
