@@ -44,6 +44,7 @@ trait Findable
         }
     }
 
+
     public function filter($filter, $expand = '', $select = '', $system_query_options = null)
     {
         $originalDivision = $this->connection()->getDivision();
