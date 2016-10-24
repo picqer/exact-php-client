@@ -49,7 +49,7 @@ trait Findable
     {
         $originalDivision = $this->connection()->getDivision();
 
-        if ($this->url !== 'current/Me' && preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $divisionId)) {
+        if ($this->isFillable('Division') && preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $divisionId)) {
             $this->connection()->setDivision(trim($divisionId[1])); // Fix division
         }
 
