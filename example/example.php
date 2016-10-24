@@ -45,7 +45,7 @@ function authorize()
 /**
  * Callback function that sets values that expire and are refreshed by Connection.
  *
- * @param Connection $connection
+ * @param \Picqer\Financials\Exact\Connection $connection
  */
 function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection) {
     // Save the new tokens for next connections
@@ -69,27 +69,28 @@ function connect()
     $connection->setExactClientId('__CLIENT_ID__');
     $connection->setExactClientSecret('__CLIENT_SECRET__');
 
-    if (getValue('authorizationcode')) // Retrieves authorizationcode from database
-    {
+    // Retrieves authorizationcode from database
+    if (getValue('authorizationcode')) {
         $connection->setAuthorizationCode(getValue('authorizationcode'));
     }
 
-    if (getValue('accesstoken')) // Retrieves accesstoken from database
-    {
+    // Retrieves accesstoken from database
+    if (getValue('accesstoken')) {
         $connection->setAccessToken(getValue('accesstoken'));
     }
 
-    if (getValue('refreshtoken')) // Retrieves refreshtoken from database
-    {
+    // Retrieves refreshtoken from database
+    if (getValue('refreshtoken')) {
         $connection->setRefreshToken(getValue('refreshtoken'));
     }
 
-    if (getValue('expires_in')) // Retrieves expires timestamp from database
-    {
+    // Retrieves expires timestamp from database
+    if (getValue('expires_in')) {
         $connection->setTokenExpires(getValue('expires_in'));
     }
-    
-    $connection->setTokenUpdateCallback('tokenUpdateCallback'); // Set callback to save newly generated tokens
+
+    // Set callback to save newly generated tokens
+    $connection->setTokenUpdateCallback('tokenUpdateCallback');
 
     // Make the client connect and exchange tokens
     try {
