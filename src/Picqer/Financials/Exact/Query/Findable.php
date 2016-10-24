@@ -44,22 +44,10 @@ trait Findable
         }
     }
 
-    private function fixDivision($filter){
-        $previousDivision = $this->connection()->getDivision();
-
-        if($this->url == 'financialtransaction/Transactions'){
-            if(preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $m)){
-                $this->connection()->setDivision(trim($m[1]));
-            }
-        }
-
-        return $previousDivision;
-    }
-
     public function filter($filter, $expand = '', $select = '', $system_query_options = null)
     {
-        // Fix division
-        $previousDivision = $this->fixDivision($filter);
+        $originalDivision = $this->connection()->getDivision();
+        if($this->url == 'financialtransaction/Transactions' && preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $divisionId)) $this->connection()->setDivision(trim($divisionId[1])); // Fix division
 
         $request = [
             '$filter' => $filter
@@ -78,8 +66,7 @@ trait Findable
 
         $result = $this->connection()->get($this->url, $request);
 
-        // Restore division
-        $this->connection()->setDivision($previousDivision);
+        if(!empty($divisionId)) $this->connection()->setDivision($originalDivision); // Restore division
 
         return $this->collectionFromResult($result);
     }
