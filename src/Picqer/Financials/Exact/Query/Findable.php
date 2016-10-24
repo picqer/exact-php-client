@@ -47,11 +47,9 @@ trait Findable
     private function fixDivision($filter){
         $previousDivision = $this->connection()->getDivision();
 
-        if(isset($filter) && is_string($filter)){
-            if($this->url == 'financialtransaction/Transactions'){
-                if(preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $m)){
-                    $this->connection()->setDivision(trim($m[1]));
-                }
+        if($this->url == 'financialtransaction/Transactions'){
+            if(preg_match("@Division[\t\r\n ]+eq[\t\r\n ]+([0-9]+)@i", $filter, $m)){
+                $this->connection()->setDivision(trim($m[1]));
             }
         }
 
