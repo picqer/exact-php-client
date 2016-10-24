@@ -174,6 +174,6 @@ See for example: [example/example.php](example/example.php)
 
 ## TODO
 - Switch administration (now uses default)
-- Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them.
+- Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them. Use the ```userscript.js``` in greasemonkey or tampermonkey to generate entities consistently and completely.
 
 

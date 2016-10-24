@@ -33,6 +33,8 @@ class Division extends Model
 
     use Query\Findable;
 
+    protected $primaryKey = 'Code';
+
     protected $fillable = [
         'Code',
         'BlockingStatus',

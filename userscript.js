@@ -1,0 +1,72 @@
+// ==UserScript==
+// @name        PHP SDK Entity generator
+// @namespace   php
+// @description Generates php class that can be used in SDK
+// @include     https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?*
+// @version     1
+// @grant       none
+// ==/UserScript==
+
+(function() {
+  /** Add textarea to display php code **/
+  // Push current content to the left.
+  $('body > form').css('float', 'left');
+  $('body > form').css('width', '50%');
+  $('body > form').css('overflow', 'auto');
+
+  // Add textarea to body, css might need some work.
+  $('<textarea/>', {
+    id : 'php',
+    style: 'min-height:800px; width: 47%; margin-left:10px;'
+  }).appendTo('body');
+
+  /** Initialize variables **/
+  var primarykey = 'ID';
+  var data = {};
+  // Fetch entity URL and strip '/api/v1/{division}/'
+  var url = $('#serviceUri').text().replace(/^\/api\/v[0-9]\/[^/]+\//, '');
+  var classname = url.replace(/.+\/(.+?)s?$/,'$1'); // Last part after slash should be the (plural) classname.
+  
+  /** Fetch attribute information **/
+  $('#referencetable tr input').each(function() {
+    data[$(this).attr('name')] = {
+      'type' : $(this).attr('data-type').replace('Edm.', ''),
+      'description' : $(this).parent().siblings('td:last-child').text().trim()
+    };
+    
+    // Set primarykey when found. Should be first itteration.
+    if ($(this).attr('data-key') == "True") {
+      primarykey = $(this).attr('name');
+    }
+  });
+
+  /** Build php code **/
+  phptxt = "<?php namespace Picqer\\Financials\\Exact;\n\n/**";
+  
+  // Build docblock
+  phptxt += "\n * Class " + classname;
+  phptxt += "\n *\n * @package Picqer\\Financials\\Exact";
+  phptxt += "\n * @see " + window.location.href;
+  phptxt += "\n *";
+  $.each(data,function(attribute, info){
+    phptxt += "\n * @property " + info.type + " $" + attribute + " " + info.description;
+  });
+  phptxt += "\n */";
+  
+  // Build class
+  phptxt += "\nclass " + classname + " extends Model\n{\n\n    use Query\\Findable;\n    use Persistance\\Storable;";
+  if (primarykey != 'ID') {
+    phptxt += "\n\n    protected $primaryKey = " + primarykey + ";";
+  }
+  phptxt += "\n\n    protected $fillable = [";
+  $.each(Object.keys(data), function(){
+    phptxt += "\n        '" + this + "',";
+  });
+  phptxt += "\n    ];";
+  phptxt += "\n\n    protected $url = '" + url + "';";
+  phptxt += "\n\n}";
+  
+  // Display php code
+  $('#php').text(phptxt);
+
+})();
