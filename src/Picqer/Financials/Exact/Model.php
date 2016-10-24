@@ -19,6 +19,11 @@ abstract class Model implements \JsonSerializable
      * @var array The model's attributes
      */
     protected $attributes = [ ];
+    
+    /**
+     * @deferred array The model's collection values
+     */
+    protected $deferred = [ ];
 
     /**
      * @var array The model's fillable attributes
@@ -64,6 +69,14 @@ abstract class Model implements \JsonSerializable
         return $this->attributes;
     }
 
+    /**
+     * Get the model's primary key
+     *
+     * @return string
+     */
+    public function primaryKey() {
+        return $this->primaryKey;
+    }
 
     /**
      * Fill the entity from an array
@@ -107,10 +120,45 @@ abstract class Model implements \JsonSerializable
     {
         $this->attributes[$key] = $value;
     }
+    
+    /**
+     * Resolve deferred values
+     *
+     * @param string $key
+     *
+     * @return boolian returns true when collection is found.
+     */
+    protected function lazyLoad($key) {
+        // Check previously resolved or manualy set.
+        if (isset($this->deferred[$key])) {
+            return true;
+        }
 
+        try {
+            if(is_array($this->attributes[$key]) && array_key_exists('__deferred', $this->attributes[$key])) {
+                $class = preg_replace('/(.+?)s?$/', __NAMESPACE__ . '\\\$1', $key); // Filter plural 's' and add namespace
+                $deferred = new $class($this->connection());
+                $uri = $this->attributes[$key]['__deferred']['uri'];
+                $deferred->connection()->nextUrl = $uri; // $uri is complete, by setting it to nextUrl Connection->formatUrl leaves it as is.
+                $result = $deferred->connection()->get($uri);
+                $this->deferred[$key] = $deferred->collectionFromResult($result);
+
+                return true;
+            }
+        }
+        catch (Exception $e) {
+            // We tried lets leave it as is.
+        }
+
+        return false;
+    }
 
     public function __get($key)
     {
+        if ($this->lazyLoad($key)) {
+            return $this->deferred[$key];
+        }
+        
         if (isset( $this->attributes[$key] )) {
             return $this->attributes[$key];
         }
@@ -120,6 +168,11 @@ abstract class Model implements \JsonSerializable
     public function __set($key, $value)
     {
         if ($this->isFillable($key)) {
+            if (is_array($value)) {
+                $this->deferred[$key] = $value;
+                return;
+            }
+
             return $this->setAttribute($key, $value);
         }
     }
@@ -151,9 +204,27 @@ abstract class Model implements \JsonSerializable
      *
      * @return string
      */
-    public function json($options = 0)
+    public function json($options = 0, $withDeferred = false)
     {
-        return json_encode($this->attributes, $options);
+        $attributes = $this->attributes;
+        if ($withDeferred) {
+            foreach($this->deferred as $attribute => $collection) {
+                if (empty($collection)) {
+                    continue; // Leave orriginal array with __deferred key
+                }
+
+                $attributes[$attribute] = [];
+                foreach ($collection as $value) {
+                    if (is_a($value, 'Picqer\Financials\Exact\Model')) {
+                        array_push($attributes[$attribute], $value->attributes);
+                    } else {
+                        array_push($attributes[$attribute], $value);
+                    }
+                }
+            }
+        }
+
+        return json_encode($attributes, $options);
     }
 
 
