@@ -8,18 +8,6 @@
 // ==/UserScript==
 
 (function() {
-  /** Add textarea to display php code **/
-  // Push current content to the left.
-  $('body > form').css('float', 'left');
-  $('body > form').css('width', '50%');
-  $('body > form').css('overflow', 'auto');
-
-  // Add textarea to body, css might need some work.
-  $('<textarea/>', {
-    id : 'php',
-    style: 'min-height:800px; width: 47%; margin-left:10px;'
-  }).appendTo('body');
-
   /** Initialize variables **/
   var primarykey = 'ID';
   var data = {};
@@ -66,7 +54,22 @@
   phptxt += "\n\n    protected $url = '" + url + "';";
   phptxt += "\n\n}";
   
-  // Display php code
-  $('#php').text(phptxt);
+  // Present the php code as a download
+  $("<a />", {
+    // if supported , set name of file
+    download: classname + ".php",
+    // set `href` to `objectURL` of `Blob` of `textarea` value
+    href: URL.createObjectURL(
+      new Blob([phptxt], {
+        type: "text/plain"
+      })
+    )
+  }).appendTo("body")[0].click();
+  
+  // remove appended `a` element after "Save File" dialog,
+  // `window` regains `focus` 
+  $(window).one("focus", function() {
+    $("a").last().remove()
+  })
 
 })();
