@@ -176,6 +176,10 @@ abstract class Model implements \JsonSerializable
             return $this->setAttribute($key, $value);
         }
     }
+    
+    public function __isset(string $name) {
+        return $this->__get($name) !== null;
+    }
 
     public function __call($name, $arguments)
     {
