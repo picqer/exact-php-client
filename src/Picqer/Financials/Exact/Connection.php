@@ -82,7 +82,7 @@ class Connection
     private $client;
     
     /**
-     * @var function(Connection)
+     * @var callable(Connection)
      */
     private $tokenUpdateCallback;
 
@@ -525,7 +525,7 @@ class Connection
     }
     
     /**
-     * @param mixed $callback
+     * @param callable $callback
      */
     public function setTokenUpdateCallback($callback) {
         $this->tokenUpdateCallback = $callback;
