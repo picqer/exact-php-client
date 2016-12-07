@@ -56,7 +56,7 @@
   // Build class
   phptxt += "\nclass " + classname + " extends Model\n{\n\n    use Query\\Findable;\n    use Persistance\\Storable;";
   if (primarykey != 'ID') {
-    phptxt += "\n\n    protected $primaryKey = " + primarykey + ";";
+    phptxt += "\n\n    protected $primaryKey = '" + primarykey + "';";
   }
   phptxt += "\n\n    protected $fillable = [";
   $.each(Object.keys(data), function(){
