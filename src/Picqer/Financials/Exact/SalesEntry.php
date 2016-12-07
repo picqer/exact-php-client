@@ -22,6 +22,7 @@
  * @property String $Description Description. Can be different for header and lines
  * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
  * @property DateTime $PaymentCondition The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition
+ * @property String $PaymentReference The reference in PSP system
  */
 class SalesEntry extends Model
 {
