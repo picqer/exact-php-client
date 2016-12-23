@@ -56,23 +56,23 @@ $connection->setExactClientId('CLIENT_ID');
 $connection->setExactClientSecret('CLIENT_SECRET');
 
 if (getValue('authorizationcode')) // Retrieves authorizationcode from database
-$connection->setAuthorizationCode(getValue('authorizationcode'));
+	$connection->setAuthorizationCode(getValue('authorizationcode'));
 
 if (getValue('accesstoken')) // Retrieves accesstoken from database
-$connection->setAccessToken(unserialize(getValue('accesstoken')));
+	$connection->setAccessToken(unserialize(getValue('accesstoken')));
 
 if (getValue('refreshtoken')) // Retrieves refreshtoken from database
-$connection->setRefreshToken(getValue('refreshtoken'));
+	$connection->setRefreshToken(getValue('refreshtoken'));
 
 if (getValue('expires_in'))  // Retrieves expires timestamp from database
-$connection->setTokenExpires(getValue('expires_in'));
+	$connection->setTokenExpires(getValue('expires_in'));
 
 // Make the client connect and exchange tokens
 try {
-$connection->connect();
+	$connection->connect();
 } catch (\Exception $e)
 {
-throw new Exception('Could not connect to Exact: ' . $e->getMessage());
+	throw new Exception('Could not connect to Exact: ' . $e->getMessage());
 }
 
 // Save the new tokens for next connections
@@ -133,9 +133,9 @@ $items = $item->filter("Code eq '$productcode'"); // Uses filters as described i
 
 // Create new invoice with invoice lines
 $items[] = [
-'Item'      => $itemId,
-'Quantity'  => $orderproduct['amount'],
-'UnitPrice' => $orderproduct['price']
+	'Item'      => $itemId,
+	'Quantity'  => $orderproduct['amount'],
+	'UnitPrice' => $orderproduct['price']
 ];
 
 $salesInvoice = new SalesInvoice($this->connection());
@@ -195,5 +195,3 @@ See for example: [example/example.php](example/example.php)
 
 ## TODO
 - Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them. Use the ```userscript.js``` in greasemonkey or tampermonkey to generate entities consistently and completely.
-
-
