@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
 class StockPosition extends Model
 {
     use Query\Findable;
+    use Query\Relatable;
 
     /**
      * The fillable properties for the StockPosition model.
