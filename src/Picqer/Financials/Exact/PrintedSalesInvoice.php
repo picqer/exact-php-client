@@ -4,8 +4,8 @@
  * Class PrintedSalesInvoice
  *
  * @package Picqer\Financials\Exact
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesinvoicePrintedSalesInvoices
- *
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoicePrintedSalesInvoices
+ * 
  * @property Guid $InvoiceID Primary key, Reference to EntryID of SalesInvoice
  * @property Int32 $Division Division code
  * @property Guid $Document Contains the id of the document that was created
@@ -23,12 +23,13 @@
  * @property Int32 $ReportingPeriod Reporting period
  * @property Int32 $ReportingYear Reporting year
  * @property Boolean $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer
+ * @property String $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  * @property Boolean $SendInvoiceToCustomerPostbox Set to True if a postbox message containing the invoice should be sent to the invoice customer
  * @property Boolean $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Paper, Email, Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox.
  */
 class PrintedSalesInvoice extends Model
 {
-    protected $primaryKey = 'InvoiceID';
+    use Persistance\Storable;
 
     protected $fillable = [
         'InvoiceID',
@@ -48,19 +49,10 @@ class PrintedSalesInvoice extends Model
         'ReportingPeriod',
         'ReportingYear',
         'SendEmailToCustomer',
+        'SenderEmailAddress',
         'SendInvoiceToCustomerPostbox',
-        'SendOutputBasedOnAccount',
+        'SendOutputBasedOnAccount'
     ];
-
-    public function save()
-    {
-        return $this->insert();
-    }
-
-    public function insert()
-    {
-        return $this->connection()->post($this->url, $this->json());
-    }
 
     protected $url = 'salesinvoice/PrintedSalesInvoices';
 

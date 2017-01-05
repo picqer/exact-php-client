@@ -5,7 +5,7 @@
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionTypes
- *
+ * 
  * @property Guid $ID Primary key
  * @property String $Code Code
  * @property DateTime $Created Creation date
@@ -19,9 +19,7 @@
  */
 class SubscriptionType extends Model
 {
-
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -33,7 +31,7 @@ class SubscriptionType extends Model
         'Division',
         'Modified',
         'Modifier',
-        'ModifierFullName',
+        'ModifierFullName'
     ];
 
     protected $url = 'subscription/SubscriptionTypes';

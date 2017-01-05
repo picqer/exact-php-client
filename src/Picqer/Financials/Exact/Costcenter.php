@@ -5,7 +5,7 @@
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostcenters
- *
+ * 
  * @property Guid $ID Primary key
  * @property Boolean $Active Indicates if the cost center is active: 0 = inactive 1 = active
  * @property String $Code Code (user-defined ID)
@@ -20,7 +20,6 @@
  */
 class Costcenter extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -39,4 +38,5 @@ class Costcenter extends Model
     ];
 
     protected $url = 'hrm/Costcenters';
+
 }
