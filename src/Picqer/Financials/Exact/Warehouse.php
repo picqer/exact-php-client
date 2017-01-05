@@ -1,7 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
 /**
- * Class Warehous
+ * Class Warehouse
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryWarehouses
@@ -21,7 +21,7 @@
  * @property String $ModifierFullName Name of modifier
  * @property Byte $UseStorageLocations Indicates if this warehouse is using storage locations. The storage locations will not be removed when when this is deactivated
  */
-class Warehous extends Model
+class Warehouse extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
