@@ -154,7 +154,8 @@ class Connection
         // Add default json headers to the request
         $headers = array_merge($headers, [
             'Accept' => 'application/json',
-            'Content-Type' => 'application/json'
+            'Content-Type' => 'application/json',
+            'Prefer' => 'return=representation'
         ]);
 
         // If access token is not set or token has expired, acquire new token
