@@ -1,7 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
 /**
- * Class Return
+ * Class Returns
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReturns
@@ -22,7 +22,7 @@
  * @property Int32 $Type Type
  * @property Int32 $Year Year
  */
-class Return extends Model
+class Returns extends Model
 {
     use Query\Findable;
 

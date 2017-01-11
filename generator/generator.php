@@ -45,6 +45,10 @@ function makeSingular($plural) {
 	if (substr($plural, -3) == 'ies') {
 		return substr($plural, 0, strlen($plural) - 3) . 'y';
 	}
+		
+	if ($plural == 'Returns') {
+		return $plural;
+	}
 	
 	if (substr($plural, -1) == 's') {
 		return substr($plural, 0, strlen($plural) - 1);
@@ -72,6 +76,7 @@ function parseEndpoint($href, $methods = 'GET', $function = false, $webhook = ''
 	$endpoint->loadHTML($endpoint_html, LIBXML_NOERROR | LIBXML_NOWARNING);
 	
 	$model_name = makeSingular(str_replace('/', '', $endpoint->getElementById('endpoint')->textContent));
+	
 	$url = substr($endpoint->getElementById('serviceUri')->textContent, 19);
 	$properties = [];
 	
