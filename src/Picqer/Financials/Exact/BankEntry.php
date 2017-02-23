@@ -30,6 +30,11 @@ class BankEntry extends Model
     use Query\Findable;
     use Persistance\Storable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'EntryID';
+
     protected $fillable = [
         'EntryID',
         'BankEntryLines',

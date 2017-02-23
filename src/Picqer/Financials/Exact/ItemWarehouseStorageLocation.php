@@ -16,11 +16,18 @@
  * @property Guid $StorageLocation Storage location of this stock
  * @property String $StorageLocationCode Code of the storage location of this stock quantity
  * @property String $StorageLocationDescription Description of the storage location of this stock quantity
- * @property Guid $Warehouse 
+ * @property Guid $Warehouse ID of Warehouse
+ * @property String $WarehouseCode Code of the warehouse of this stock quantity
+ * @property String $WarehouseDescription Description of the warehouse of this stock quantity
  */
 class ItemWarehouseStorageLocation extends Model
 {
     use Query\Findable;
+
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'Item';
 
     protected $fillable = [
         'Item',
@@ -33,7 +40,9 @@ class ItemWarehouseStorageLocation extends Model
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
-        'Warehouse'
+        'Warehouse',
+        'WarehouseCode',
+        'WarehouseDescription'
     ];
 
     protected $url = 'inventory/ItemWarehouseStorageLocations';

@@ -56,8 +56,10 @@ class SalesEntry extends Model
     use Query\Findable;
     use Persistance\Storable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
     protected $primaryKey = 'EntryID';
-    protected $saleEntryLines = [ ];
 
     protected $fillable = [
         'EntryID',
@@ -105,19 +107,6 @@ class SalesEntry extends Model
         'VATAmountFC',
         'YourRef'
     ];
-
-
-    public function addItem(array $array)
-    {
-        if ( ! isset( $this->attributes['SalesEntryLines'] ) || $this->attributes['SalesEntryLines'] == null) {
-            $this->attributes['SalesEntryLines'] = [ ];
-        }
-        if ( ! isset( $array['LineNumber'] )) {
-            $array['LineNumber'] = count($this->attributes['SalesEntryLines']) + 1;
-        }
-        $this->attributes['SalesEntryLines'][] = $array;
-    }
-
 
     protected $url = 'salesentry/SalesEntries';
 

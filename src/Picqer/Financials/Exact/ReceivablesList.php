@@ -27,6 +27,11 @@ class ReceivablesList extends Model
 {
     use Query\Findable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'HID';
+
     protected $fillable = [
         'HID',
         'AccountCode',

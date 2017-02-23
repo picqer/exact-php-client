@@ -33,6 +33,11 @@ class StockCount extends Model
     use Query\Findable;
     use Persistance\Storable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'StockCountID';
+
     protected $fillable = [
         'StockCountID',
         'Created',

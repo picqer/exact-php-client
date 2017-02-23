@@ -16,6 +16,11 @@ class TimeAndBillingRecentProject extends Model
     use Query\Findable;
     use Query\Relatable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'ProjectId';
+
     protected $fillable = [
         'ProjectId',
         'DateLastUsed',

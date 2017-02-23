@@ -25,11 +25,16 @@
  * @property Boolean $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer. This option overrules SendInvoiceToCustomerPostbox.
  * @property String $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  * @property Boolean $SendInvoiceToCustomerPostbox Set to True if a postbox message containing the invoice should be sent to the invoice customer
- * @property Boolean $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Document only, Email or Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox.
+ * @property Boolean $SendOutputBasedOnAccount 
  */
 class PrintedSalesInvoice extends Model
 {
     use Persistance\Storable;
+
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'InvoiceID';
 
     protected $fillable = [
         'InvoiceID',

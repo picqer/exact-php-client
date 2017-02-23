@@ -15,6 +15,11 @@ class ProcessStockCount extends Model
 {
     use Persistance\Storable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'StockCountID';
+
     protected $fillable = [
         'StockCountID',
         'Division',

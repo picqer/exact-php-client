@@ -56,6 +56,11 @@ class PurchaseEntry extends Model
     use Query\Findable;
     use Persistance\Storable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'EntryID';
+
     protected $fillable = [
         'EntryID',
         'AmountDC',
@@ -102,20 +107,6 @@ class PurchaseEntry extends Model
         'VATAmountFC',
         'YourRef'
     ];
-    
-    public function addItem(array $array)
-    {
-        if ( ! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null)
-        {
-            $this->attributes['PurchaseEntryLines'] = [];
-        }
-        if ( ! isset($array['LineNumber']))
-        {
-            $array['LineNumber'] = count($this->attributes['PurchaseEntryLines']) + 1;
-        }
-        $this->attributes['PurchaseEntryLines'][] = $array;
-    }
-
 
     protected $url = 'purchaseentry/PurchaseEntries';
 

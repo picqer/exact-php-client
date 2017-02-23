@@ -27,6 +27,11 @@ class CashEntry extends Model
     use Query\Findable;
     use Persistance\Storable;
 
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'EntryID';
+
     protected $fillable = [
         'EntryID',
         'CashEntryLines',
@@ -44,17 +49,6 @@ class CashEntry extends Model
         'Status',
         'StatusDescription'
     ];
-    
-    public function addItem(array $array)
-	{
-		if (!isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
-			$this->attributes['CashEntryLines'] = [];
-		}
-		if (!isset($array['LineNumber'])) {
-			$array['LineNumber'] = count($this->attributes['CashEntryLines']) + 1;
-		}
-		$this->attributes['CashEntryLines'][] = $array;
-	}
 
     protected $url = 'financialtransaction/CashEntries';
 

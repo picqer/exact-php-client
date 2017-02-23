@@ -37,6 +37,11 @@ class HoursById extends Model
     use Query\Relatable;
 
     /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected $primaryKey = 'Id';
+
+    /**
      * @var string Name of the parent key for this model
      */
     protected $parentKey = 'entryId';
