@@ -8,6 +8,8 @@
 // ==/UserScript==
 
 (function() {
+  var instant_download = false;
+
   /** Add textarea to display php code **/
   // Push current content to the left.
   $('body > form').css('float', 'left');
@@ -15,6 +17,14 @@
   $('body > form').css('overflow', 'auto');
 
   // Add textarea to body, css might need some work.
+  $('<a />', {
+    id : 'php_download',
+    text: 'Download Code',
+    style: 'margin: 10px; padding: 10px; color: white; background-color: red'
+  }).appendTo('body');
+
+  $('<br /><br />').appendTo('body');
+
   $('<textarea/>', {
     id : 'php',
     style: 'min-height:800px; width: 47%; margin-left:10px;'
@@ -56,7 +66,7 @@
   // Build class
   phptxt += "\nclass " + classname + " extends Model\n{\n\n    use Query\\Findable;\n    use Persistance\\Storable;";
   if (primarykey != 'ID') {
-    phptxt += "\n\n    protected $primaryKey = " + primarykey + ";";
+    phptxt += "\n\n    protected $primaryKey = '" + primarykey + "';";
   }
   phptxt += "\n\n    protected $fillable = [";
   $.each(Object.keys(data), function(){
@@ -69,4 +79,17 @@
   // Display php code
   $('#php').text(phptxt);
 
+  // Present the php code as a download
+  $('#php_download').attr("href",
+    URL.createObjectURL(
+      new Blob([phptxt], {
+        type: "text/plain"
+      })
+    )
+  ).attr('download', classname + '.php');
+
+  if (instant_download)
+  {
+    $('#php_download')[0].click();
+  }
 })();

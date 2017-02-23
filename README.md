@@ -56,30 +56,45 @@ $connection->setExactClientId('CLIENT_ID');
 $connection->setExactClientSecret('CLIENT_SECRET');
 
 if (getValue('authorizationcode')) // Retrieves authorizationcode from database
-    $connection->setAuthorizationCode(getValue('authorizationcode'));
+	$connection->setAuthorizationCode(getValue('authorizationcode'));
 
 if (getValue('accesstoken')) // Retrieves accesstoken from database
-    $connection->setAccessToken(unserialize(getValue('accesstoken')));
+	$connection->setAccessToken(unserialize(getValue('accesstoken')));
 
 if (getValue('refreshtoken')) // Retrieves refreshtoken from database
-    $connection->setRefreshToken(getValue('refreshtoken'));
+	$connection->setRefreshToken(getValue('refreshtoken'));
+
+if (getValue('expires_in'))  // Retrieves expires timestamp from database
+	$connection->setTokenExpires(getValue('expires_in'));
 
 // Make the client connect and exchange tokens
 try {
-    $connection->connect();
+	$connection->connect();
 } catch (\Exception $e)
 {
-    throw new Exception('Could not connect to Exact: ' . $e->getMessage());
+	throw new Exception('Could not connect to Exact: ' . $e->getMessage());
 }
 
 // Save the new tokens for next connections
 setValue('accesstoken', serialize($connection->getAccessToken()));
 setValue('refreshtoken', $connection->getRefreshToken());
+
+// Optionally, save the expiry-timestamp. This prevents exchanging valid tokens (ie. saves you some requests)
+setValue('expires_in', $connection->getTokenExpires());
 ```
+
+
+
+### About divisions (administrations)
+
+By default the library will use the default administration of the user. This means that when the user switches administrations in Exact Online. The library will also start working with this administration.
 
 ### Use the library to do stuff (examples)
 
 ```php
+// Optionally set administration, otherwise use the current administration of the user
+$connection->setDivision(123456);
+
 // Create a new account
 $account = new Account($connection);
 $account->AddressLine1 = $customer['address'];
@@ -118,9 +133,9 @@ $items = $item->filter("Code eq '$productcode'"); // Uses filters as described i
 
 // Create new invoice with invoice lines
 $items[] = [
-    'Item'      => $itemId,
-    'Quantity'  => $orderproduct['amount'],
-    'UnitPrice' => $orderproduct['price']
+	'Item'      => $itemId,
+	'Quantity'  => $orderproduct['amount'],
+	'UnitPrice' => $orderproduct['price']
 ];
 
 $salesInvoice = new SalesInvoice($this->connection());
@@ -169,11 +184,14 @@ $test = new GeneralJournalEntry($connection);
 var_dump($test->filter('', '', '', ['$top'=> 1]));
 ```
 
+### Authentication error
+
+> 'Fatal error: Uncaught Exception: Could not connect to Exact: Client error:POST https://start.exactonline.nl/api/oauth2/token resulted in a 400 Bad Request response: Bad Request in /var/www/html/oauth_call_connect.php:61 Stack trace: #0 {main} thrown in /var/www/html/oauth_call_connect.php on line 61`'
+
+This error occurs because the code you get in your redirect URL is only valid for one call. When you call the authentication-process again with a "used" code. You get this error. Make sure you use the provided code by Exact Online only once to get your access token.
+
 ## Code example
 See for example: [example/example.php](example/example.php)
 
 ## TODO
-- Switch administration (now uses default)
 - Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them. Use the ```userscript.js``` in greasemonkey or tampermonkey to generate entities consistently and completely.
-
-
