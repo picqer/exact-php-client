@@ -4,43 +4,61 @@
  * Class Division
  *
  * @package Picqer\Financials\Exact
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemDivisions
- * 
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=hrmDivisions
+ *
  * @property Int32 $Code Primary key
+ * @property Int32 $BlockingStatus Values: 0 = Not blocked 1 = Backup 2 = Conversion busy 3 = Conversion shadow 4 = Conversion waiting 5 = Copy data waiting 6 = Copy data buzy 100 = Wait for deletion 101 = Deleted 102 = Deletion failed
  * @property String $Country Country of the division. Is used for determination of legislation
- * @property String $Currency Default currency
- * @property Boolean $Current True when this division is most recently used by the API
+ * @property String $CountryDescription Description of Country
+ * @property DateTime $Created Creation date
+ * @property Guid $Creator User ID of creator
+ * @property String $Currency Default currency of the division
+ * @property String $CurrencyDescription Description of Currency
  * @property Guid $Customer Owner account of the division
- * @property String $CustomerCode Owner account code of the division
- * @property String $CustomerName Owner account name of the division
- * @property String $Description Description
- * @property Int64 $Hid Company number that is assigned by the customer
- * @property Boolean $IsMainDivision True if the division is the main division
- * @property Int32 $Status Follow the Division Status 0 for Inactive, 1 for Active and 2 for Archived Divisions
+ * @property String $Description Description of Country
+ * @property Int64 $HID Number that customers give to the division
+ * @property Boolean $Main True for the main (hosting) division
+ * @property DateTime $Modified Last modified date
+ * @property Guid $Modifier User ID of modifier
+ * @property String $SiretNumber Siret Number of the division (France)
+ * @property DateTime $StartDate Date on which the division becomes active
+ * @property Int32 $Status Values: 0 = Not blocked 1 = Backup 2 = Conversion busy 3 = Conversion shadow 4 = Conversion waiting 5 = Copy data waiting 6 = Copy data buzy 100 = Wait for deletion 101 = Deleted 102 = Deletion failed
+ * @property String $TaxOfficeNumber Number of your local tax authority (Germany)
+ * @property String $TaxReferenceNumber Local tax reference number (Germany)
+ * @property String $VATNumber VAT number
+ * @property String $Website Customer value, hyperlink to external website
  */
 class Division extends Model
 {
+
     use Query\Findable;
 
-    /**
-     * @var string Name of the primary key for this model because it is different than ID
-     */
     protected $primaryKey = 'Code';
 
     protected $fillable = [
         'Code',
+        'BlockingStatus',
         'Country',
+        'CountryDescription',
+        'Created',
+        'Creator',
         'Currency',
-        'Current',
+        'CurrencyDescription',
         'Customer',
-        'CustomerCode',
-        'CustomerName',
         'Description',
-        'Hid',
-        'IsMainDivision',
-        'Status'
+        'HID',
+        'Main',
+        'Modified',
+        'Modifier',
+        'SiretNumber',
+        'StartDate',
+        'Status',
+        'TaxOfficeNumber',
+        'TaxReferenceNumber',
+        'VATNumber',
+        'Website'
     ];
 
-    protected $url = 'system/Divisions';
+    protected $url = 'hrm/Divisions';
 
 }
