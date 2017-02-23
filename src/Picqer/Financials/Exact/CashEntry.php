@@ -44,6 +44,17 @@ class CashEntry extends Model
         'Status',
         'StatusDescription'
     ];
+    
+    public function addItem(array $array)
+	{
+		if (!isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
+			$this->attributes['CashEntryLines'] = [];
+		}
+		if (!isset($array['LineNumber'])) {
+			$array['LineNumber'] = count($this->attributes['CashEntryLines']) + 1;
+		}
+		$this->attributes['CashEntryLines'][] = $array;
+	}
 
     protected $url = 'financialtransaction/CashEntries';
 
