@@ -25,6 +25,7 @@
  * @property Int32 $PurchaseOrderNumber Purchase order number.
  * @property Int32 $SalesInvoiceNumber 'Our reference' of the transaction that belongs to this document
  * @property Int32 $SalesOrderNumber Number of the sales order
+ * @property Int32 $SendMethod Send Method
  * @property String $Subject Subject of this document
  * @property Int32 $Type The document type
  * @property String $TypeDescription Translated description of the document type. $filter and $orderby are not supported for this property.
@@ -59,6 +60,7 @@ class OpportunityDocument extends Model
         'PurchaseOrderNumber',
         'SalesInvoiceNumber',
         'SalesOrderNumber',
+        'SendMethod',
         'Subject',
         'Type',
         'TypeDescription'

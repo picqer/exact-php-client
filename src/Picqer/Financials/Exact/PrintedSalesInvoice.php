@@ -22,10 +22,10 @@
  * @property Guid $PostboxSender The postbox from where the message is sent
  * @property Int32 $ReportingPeriod Reporting period
  * @property Int32 $ReportingYear Reporting year
- * @property Boolean $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer
+ * @property Boolean $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer. This option overrules SendInvoiceToCustomerPostbox.
  * @property String $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  * @property Boolean $SendInvoiceToCustomerPostbox Set to True if a postbox message containing the invoice should be sent to the invoice customer
- * @property Boolean $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Paper, Email, Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox.
+ * @property Boolean $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Document only, Email or Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox.
  */
 class PrintedSalesInvoice extends Model
 {

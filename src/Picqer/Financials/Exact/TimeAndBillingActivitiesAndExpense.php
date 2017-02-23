@@ -1,7 +1,7 @@
 <?php namespace Picqer\Financials\Exact;
 
 /**
- * Class TimeAndBillingActivitiesAndExpens
+ * Class TimeAndBillingActivitiesAndExpense
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingActivitiesAndExpenses
@@ -10,7 +10,7 @@
  * @property String $Description Description
  * @property String $ParentDescription Description of Parent
  */
-class TimeAndBillingActivitiesAndExpens extends Model
+class TimeAndBillingActivitiesAndExpense extends Model
 {
     use Query\Findable;
 

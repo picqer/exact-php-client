@@ -55,6 +55,7 @@
  * @property Guid $GLAccountSales Default (corporate) GL offset account for sales (revenue)
  * @property Guid $GLAP Default GL account for Accounts Payable
  * @property Guid $GLAR Default GL account for Accounts Receivable
+ * @property Boolean $HasWithholdingTaxSales Indicates whether a customer has withholding tax on sales
  * @property Boolean $IgnoreDatevWarningMessage Suppressed warning message when there is duplication on the DATEV code
  * @property String $IntraStatArea Intrastat Area
  * @property String $IntraStatDeliveryTerm Intrastat delivery method
@@ -190,6 +191,7 @@ class Account extends Model
         'GLAccountSales',
         'GLAP',
         'GLAR',
+        'HasWithholdingTaxSales',
         'IgnoreDatevWarningMessage',
         'IntraStatArea',
         'IntraStatDeliveryTerm',

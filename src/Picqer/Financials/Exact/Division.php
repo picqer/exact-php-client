@@ -16,6 +16,7 @@
  * @property String $Description Description
  * @property Int64 $Hid Company number that is assigned by the customer
  * @property Boolean $IsMainDivision True if the division is the main division
+ * @property Int32 $Status Follow the Division Status 0 for Inactive, 1 for Active and 2 for Archived Divisions
  */
 class Division extends Model
 {
@@ -31,7 +32,8 @@ class Division extends Model
         'CustomerName',
         'Description',
         'Hid',
-        'IsMainDivision'
+        'IsMainDivision',
+        'Status'
     ];
 
     protected $url = 'system/Divisions';

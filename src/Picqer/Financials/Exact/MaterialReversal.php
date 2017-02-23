@@ -12,6 +12,7 @@
  * @property DateTime $CreatedDate Date this reversal was created
  * @property Boolean $IsBackflush Boolean indicating if this reversal was the result of shop order backflushing, processed during a ShopOrderReversal
  * @property Byte $IsBatch Does the issue reversal's item use batch numbers
+ * @property Byte $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of the material reversal's item
  * @property Byte $IsSerial Does the issue reversal's item use serial numbers
  * @property Guid $Item Item reversed
  * @property String $ItemCode Code of item reversed
@@ -44,6 +45,7 @@ class MaterialReversal extends Model
         'CreatedDate',
         'IsBackflush',
         'IsBatch',
+        'IsFractionAllowedItem',
         'IsSerial',
         'Item',
         'ItemCode',

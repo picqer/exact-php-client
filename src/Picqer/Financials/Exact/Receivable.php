@@ -49,9 +49,11 @@
  * @property String $GLAccountDescription Description of the G/L account.
  * @property DateTime $InvoiceDate Invoice date of the linked transaction.
  * @property Int32 $InvoiceNumber Invoice number of the linked transaction.
- * @property Byte $IsBatchBooking Boolean indicating whether the payment is part of a batch booking.
+ * @property Byte $IsBatchBooking Boolean indicating whether the receivable is part of a batch booking.
+ * @property Boolean $IsFullyPaid Boolean indicating whether the receivable was fully paid by the customer.
  * @property String $Journal Journal of the linked transaction.
  * @property String $JournalDescription Description of the journal.
+ * @property DateTime $LastPaymentDate Last payment date.
  * @property DateTime $Modified Last modified date.
  * @property Guid $Modifier User ID of modifier.
  * @property String $ModifierFullName Name of modifier.
@@ -131,8 +133,10 @@ class Receivable extends Model
         'InvoiceDate',
         'InvoiceNumber',
         'IsBatchBooking',
+        'IsFullyPaid',
         'Journal',
         'JournalDescription',
+        'LastPaymentDate',
         'Modified',
         'Modifier',
         'ModifierFullName',

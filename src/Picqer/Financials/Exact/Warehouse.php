@@ -11,6 +11,9 @@
  * @property DateTime $Created Creation date
  * @property Guid $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
+ * @property Guid $DefaultStorageLocation The default storage location of this warehouse. Warehouses can have a default storage location in packages Manufacturing Premium or Wholesale Premium
+ * @property String $DefaultStorageLocationCode Default storage location's code
+ * @property String $DefaultStorageLocationDescription Default storage location's description
  * @property String $Description The description of the warehouse
  * @property Int32 $Division Division code
  * @property String $EMail Email address
@@ -32,6 +35,9 @@ class Warehouse extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'DefaultStorageLocation',
+        'DefaultStorageLocationCode',
+        'DefaultStorageLocationDescription',
         'Description',
         'Division',
         'EMail',

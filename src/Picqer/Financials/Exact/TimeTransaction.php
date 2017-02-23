@@ -39,6 +39,7 @@
  * @property Guid $ProjectAccount Reference to project account
  * @property String $ProjectAccountCode Project account code
  * @property String $ProjectAccountName Project account name
+ * @property String $ProjectCode Code of Project
  * @property String $ProjectDescription Description of Project
  * @property Double $Quantity Quantity of the transaction
  * @property DateTime $StartTime Start time of the transaction
@@ -89,6 +90,7 @@ class TimeTransaction extends Model
         'ProjectAccount',
         'ProjectAccountCode',
         'ProjectAccountName',
+        'ProjectCode',
         'ProjectDescription',
         'Quantity',
         'StartTime',
