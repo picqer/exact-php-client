@@ -5,9 +5,9 @@
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostunits
- *
+ * 
  * @property Guid $ID Primary key
- * @property String $Code Code (user-defined ID)
+ * @property String $Code Code (user-defined)
  * @property DateTime $Created Creation date
  * @property Guid $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
@@ -19,7 +19,6 @@
  */
 class Costunit extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -37,4 +36,5 @@ class Costunit extends Model
     ];
 
     protected $url = 'hrm/Costunits';
+
 }

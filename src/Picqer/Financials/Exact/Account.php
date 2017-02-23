@@ -4,8 +4,8 @@
  * Class Account
  *
  * @package Picqer\Financials\Exact
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=crmAccounts
- *
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAccounts
+ * 
  * @property Guid $ID Primary key
  * @property Guid $Accountant Reference to the accountant of the customer. Conditions: The referred accountant must have value > 0 in the field IsAccountant
  * @property Guid $AccountManager ID of the account manager
@@ -42,16 +42,20 @@
  * @property String $CreatorFullName Name of creator
  * @property Double $CreditLinePurchase Maximum amount of credit for Purchase. If no value has been defined, there is no credit limit
  * @property Double $CreditLineSales Maximum amount of credit for sales. If no value has been defined, there is no credit limit
+ * @property String $DatevCreditorCode DATEV creditor code for Germany legislation
+ * @property String $DatevDebtorCode DATEV debtor code for Germany legislation
  * @property Double $DiscountPurchase Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055
  * @property Double $DiscountSales Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055
  * @property Int32 $Division Division code
  * @property String $Email E-Mail address of the account
  * @property DateTime $EndDate Determines in combination with the start date if the account is active. If the current date is > end date the account is inactive
+ * @property DateTime $EstablishedDate RegistrationDate
  * @property String $Fax Fax number
  * @property Guid $GLAccountPurchase Default (corporate) GL offset account for purchase (cost)
  * @property Guid $GLAccountSales Default (corporate) GL offset account for sales (revenue)
  * @property Guid $GLAP Default GL account for Accounts Payable
  * @property Guid $GLAR Default GL account for Accounts Receivable
+ * @property Boolean $IgnoreDatevWarningMessage Suppressed warning message when there is duplication on the DATEV code
  * @property String $IntraStatArea Intrastat Area
  * @property String $IntraStatDeliveryTerm Intrastat delivery method
  * @property String $IntraStatSystem System for Intrastat
@@ -63,9 +67,10 @@
  * @property String $InvoiceAccountName Name of InvoiceAccount
  * @property Int32 $InvoiceAttachmentType Indicates which attachment types should be sent when a sales invoice is printed. Only values in related table with Invoice=1 are allowed
  * @property Int32 $InvoicingMethod Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange)
- * @property Guid $IsAccountant Reference to the accountant of the customer. Conditions: The referred accountant must have value > 0 in the field IsAccountant
+ * @property Byte $IsAccountant Indicates whether the account is an accountant. Values: 0 = No accountant, 1 = True, but accountant doesn't want his name to be published in the list of accountants, 2 = True, and accountant is published in the list of accountants
  * @property Byte $IsAgency Indicates whether the accounti is an agency
  * @property Byte $IsCompetitor Indicates whether the account is a competitor
+ * @property Boolean $IsExtraDuty Indicates whether a customer is eligible for extra duty
  * @property Byte $IsMailing Indicates if the account is excluded from mailing marketing information
  * @property Boolean $IsPilot Indicates whether the account is a pilot account
  * @property Boolean $IsReseller Indicates whether the account is a reseller
@@ -84,7 +89,9 @@
  * @property DateTime $Modified Last modified date
  * @property Guid $Modifier User ID of modifier
  * @property String $ModifierFullName Name of modifier
- * @property String $Name Name of the account manager
+ * @property String $Name Account name
+ * @property Guid $Parent ID of the parent account
+ * @property String $PayAsYouEarn Indicates the loan repayment plan for UK legislation
  * @property String $PaymentConditionPurchase Code of default payment condition for purchase
  * @property String $PaymentConditionPurchaseDescription Description of PaymentConditionPurchase
  * @property String $PaymentConditionSales Code of default payment condition for sales
@@ -100,9 +107,10 @@
  * @property String $PurchaseVATCodeDescription Description of PurchaseVATCode
  * @property Boolean $RecepientOfCommissions Define the relation that should be taken in the official document of the rewarding fiscal fiches Belcotax
  * @property String $Remarks Remarks
- * @property Boolean $Reseller Indicates whether the account is a reseller
+ * @property Guid $Reseller ID of the reseller account. Conditions: the target account must have the property IsReseller turned on
  * @property String $ResellerCode Code of Reseller
  * @property String $ResellerName Name of Reseller
+ * @property String $RSIN Fiscal number for NL legislation
  * @property String $SalesCurrency Currency of Sales used for Time & Billing
  * @property String $SalesCurrencyDescription Description of SalesCurrency
  * @property Guid $SalesTaxSchedule Default tax schedule when creating sales orders or sales invoices
@@ -120,14 +128,15 @@
  * @property String $State State/Province code
  * @property String $StateName Name of State
  * @property String $Status If the status field is filled this means the account is a customer. The value indicates the customer status. Possible values: A=None, S=Suspect, P=Prospect, C=Customer
- * @property Guid $Type Reference to the business type of the account
+ * @property String $TradeName Trade name can be registered and shown with the client (for all legislations)
+ * @property String $Type Account type: Values: A = Relation, D = Division
+ * @property String $UniqueTaxpayerReference Unique taxpayer reference for UK legislation
  * @property String $VATLiability Indicates the VAT status of an account to be able to identify the relation that should be selected in the VAT debtor listing in Belgium
  * @property String $VATNumber The number under which the account is known at the Value Added Tax collection agency
  * @property String $Website Website of the account
  */
 class Account extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -168,16 +177,20 @@ class Account extends Model
         'CreatorFullName',
         'CreditLinePurchase',
         'CreditLineSales',
+        'DatevCreditorCode',
+        'DatevDebtorCode',
         'DiscountPurchase',
         'DiscountSales',
         'Division',
         'Email',
         'EndDate',
+        'EstablishedDate',
         'Fax',
         'GLAccountPurchase',
         'GLAccountSales',
         'GLAP',
         'GLAR',
+        'IgnoreDatevWarningMessage',
         'IntraStatArea',
         'IntraStatDeliveryTerm',
         'IntraStatSystem',
@@ -192,6 +205,7 @@ class Account extends Model
         'IsAccountant',
         'IsAgency',
         'IsCompetitor',
+        'IsExtraDuty',
         'IsMailing',
         'IsPilot',
         'IsReseller',
@@ -211,6 +225,8 @@ class Account extends Model
         'Modifier',
         'ModifierFullName',
         'Name',
+        'Parent',
+        'PayAsYouEarn',
         'PaymentConditionPurchase',
         'PaymentConditionPurchaseDescription',
         'PaymentConditionSales',
@@ -229,6 +245,7 @@ class Account extends Model
         'Reseller',
         'ResellerCode',
         'ResellerName',
+        'RSIN',
         'SalesCurrency',
         'SalesCurrencyDescription',
         'SalesTaxSchedule',
@@ -246,7 +263,9 @@ class Account extends Model
         'State',
         'StateName',
         'Status',
+        'TradeName',
         'Type',
+        'UniqueTaxpayerReference',
         'VATLiability',
         'VATNumber',
         'Website'

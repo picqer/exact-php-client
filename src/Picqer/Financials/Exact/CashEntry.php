@@ -1,67 +1,50 @@
 <?php namespace Picqer\Financials\Exact;
+
 /**
-* Class CashEntry
-*
-* @package Picqer\Financials\Exact
-* @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionCashEntries
-*
- * @property Guid $EntryID Primary key (read-only)
+ * Class CashEntry
+ *
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionCashEntries
+ * 
+ * @property Guid $EntryID Primary key
+ * @property CashEntryLines $CashEntryLines Collection of lines
  * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
- * @property DateTime $Created Creation date (read-only)
- * @property Double $Currency Closing balance in the currency of the transaction
- * @property Int32 $Division Division code (read-only)
+ * @property DateTime $Created Creation date
+ * @property String $Currency Currency code
+ * @property Int32 $Division Division code
  * @property Int32 $EntryNumber Entry number
  * @property Int16 $FinancialPeriod Fiancial period
  * @property Int16 $FinancialYear Fiancial year
- * @property CashEntryLines $CashEntryLines Collection of lines
  * @property String $JournalCode Code of Journal
- * @property String $JournalDescription Description of Journal (read-only)
- * @property DateTime $Modified Last modified date (read-only)
+ * @property String $JournalDescription Description of Journal
+ * @property DateTime $Modified Last modified date
  * @property Double $OpeningBalanceFC Opening balance in the currency of the transaction
- * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed (read-only)
- * @property String $StatusDescription Description of Status (read-only)
+ * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
+ * @property String $StatusDescription Description of Status
  */
-
 class CashEntry extends Model
 {
+    use Query\Findable;
+    use Persistance\Storable;
 
-	use Query\Findable;
-	use Persistance\Storable;
+    protected $fillable = [
+        'EntryID',
+        'CashEntryLines',
+        'ClosingBalanceFC',
+        'Created',
+        'Currency',
+        'Division',
+        'EntryNumber',
+        'FinancialPeriod',
+        'FinancialYear',
+        'JournalCode',
+        'JournalDescription',
+        'Modified',
+        'OpeningBalanceFC',
+        'Status',
+        'StatusDescription'
+    ];
 
-	protected $primaryKey = 'EntryID';
-	protected $generalJournalEntryLines = [];
+    protected $url = 'financialtransaction/CashEntries';
 
-	protected $fillable = [
-		'EntryID',
-		'ClosingBalanceFC',
-		'Created',
-		'Currency',
-		'Division',
-		'EntryNumber',
-		'FinancialPeriod',
-		'FinancialYear',
-		'CashEntryLines',
-		'JournalCode',
-		'JournalDescription',
-		'Modified',
-		'OpeningBalanceFC',
-		'Status',
-		'StatusDescription'
-	];
-
-
-	public function addItem(array $array)
-	{
-		if (!isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
-			$this->attributes['CashEntryLines'] = [];
-		}
-		if (!isset($array['LineNumber'])) {
-			$array['LineNumber'] = count($this->attributes['CashEntryLines']) + 1;
-		}
-		$this->attributes['CashEntryLines'][] = $array;
-	}
-
-
-	protected $url = 'financialtransaction/CashEntries';
 }
-

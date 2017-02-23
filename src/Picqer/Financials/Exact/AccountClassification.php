@@ -4,8 +4,8 @@
  * Class AccountClassification
  *
  * @package Picqer\Financials\Exact
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=crmAccountClassifications
- *
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAccountClassifications
+ * 
  * @property Guid $ID Primary key
  * @property Guid $AccountClassificationName Reference to Account classification name
  * @property String $AccountClassificationNameDescription Description of AccountClassificationName
@@ -13,7 +13,7 @@
  * @property DateTime $Created Creation date
  * @property Guid $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
- * @property String $Description Description of AccountClassificationName
+ * @property String $Description Description
  * @property Int32 $Division Division code
  * @property DateTime $Modified Last modified date
  * @property Guid $Modifier User ID of modifier
@@ -21,9 +21,7 @@
  */
 class AccountClassification extends Model
 {
-
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -37,8 +35,9 @@ class AccountClassification extends Model
         'Division',
         'Modified',
         'Modifier',
-        'ModifierFullName',
+        'ModifierFullName'
     ];
 
     protected $url = 'crm/AccountClassifications';
+
 }

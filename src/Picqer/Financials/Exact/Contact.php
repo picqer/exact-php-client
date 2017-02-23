@@ -4,8 +4,8 @@
  * Class Contact
  *
  * @package Picqer\Financials\Exact
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=crmContacts
- *
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMContacts
+ * 
  * @property Guid $ID Primary key
  * @property Guid $Account The account to which the contact belongs
  * @property Boolean $AccountIsCustomer Indicates if account is a customer
@@ -16,10 +16,7 @@
  * @property String $AddressStreet Street name of the address
  * @property String $AddressStreetNumber Street number of the address
  * @property String $AddressStreetNumberSuffix Street number suffix of the address
- * @property Int32 $AllowMailing Obsolete
  * @property DateTime $BirthDate Birth date
- * @property String $BirthName Last birth name
- * @property String $BirthNamePrefix Middle birth name
  * @property String $BirthPlace Birth place
  * @property String $BusinessEmail Email address of the contact
  * @property String $BusinessFax Fax of the contact
@@ -37,7 +34,7 @@
  * @property DateTime $EndDate End date
  * @property String $FirstName First name. Provide at least first name or last name to create a new contact
  * @property String $FullName Full name (First name Middle name Last name)
- * @property String $Gender Gender: M=Male, V=Female, O=Unknown
+ * @property String $Gender Gender
  * @property Int32 $HID Contact ID
  * @property DateTime $IdentificationDate Identification date
  * @property Guid $IdentificationDocument Reference to the identification document of the contact
@@ -73,7 +70,6 @@
  */
 class Contact extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -88,10 +84,7 @@ class Contact extends Model
         'AddressStreet',
         'AddressStreetNumber',
         'AddressStreetNumberSuffix',
-        'AllowMailing',
         'BirthDate',
-        'BirthName',
-        'BirthNamePrefix',
         'BirthPlace',
         'BusinessEmail',
         'BusinessFax',
@@ -145,4 +138,5 @@ class Contact extends Model
     ];
 
     protected $url = 'crm/Contacts';
+
 }

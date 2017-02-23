@@ -5,7 +5,7 @@
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionLines
- *
+ * 
  * @property Guid $ID Primary key
  * @property Double $AmountDC Amount in the default currency of the company
  * @property Double $AmountFC Amount in the currency of the transaction
@@ -34,7 +34,6 @@
  */
 class SubscriptionLine extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -63,7 +62,7 @@ class SubscriptionLine extends Model
         'UnitPrice',
         'VATAmountFC',
         'VATCode',
-        'VATCodeDescription',
+        'VATCodeDescription'
     ];
 
     protected $url = 'subscription/SubscriptionLines';
