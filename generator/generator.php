@@ -41,6 +41,10 @@ function makeSingular($plural) {
 	if (substr($plural, -4) == 'sses') {
 		return substr($plural, 0, strlen($plural) - 2);
 	}
+    
+    if (substr($plural, -3) == 'ses') {
+		return substr($plural, 0, strlen($plural) - 1);
+	}
 	
 	if (substr($plural, -3) == 'ies') {
 		return substr($plural, 0, strlen($plural) - 3) . 'y';
@@ -96,7 +100,8 @@ function parseEndpoint($href, $methods = 'GET', $function = false, $webhook = ''
 	}
 	
 	$referencetable = $endpoint->getElementById('referencetable');
-	
+	$primaryKey = '';
+    
 	if (!$referencetable instanceof DOMNode) {
 		if (false !== strpos($model_name, 'Count')) {
 			$findable = false;
@@ -126,8 +131,7 @@ function parseEndpoint($href, $methods = 'GET', $function = false, $webhook = ''
 			if (!$inputs->length) {
 				continue;
 			}
-			
-			
+						
 			$input = $inputs->item(0);
 			
 			$description_tds = $tr->getElementsByTagName('td');
@@ -142,15 +146,19 @@ function parseEndpoint($href, $methods = 'GET', $function = false, $webhook = ''
 				'type' => $input->getAttribute('data-type'),
 				'description' => $description,
 			];
+            
+            if (hasClass($tr, 'key') && $input->getAttribute('name') != 'ID') {
+				$primaryKey = $input->getAttribute('name');
+			}
 		}
 	}
 	
-	writeModel($model_name, EXACT_APIDOC_BASEURL . $href, $url, $properties, $findable, $storable, $relatable, $parentKey);
+	writeModel($model_name, EXACT_APIDOC_BASEURL . $href, $url, $properties, $findable, $storable, $relatable, $parentKey, $primaryKey);
 	
 	return true;
 }
 
-function writeModel($model_name, $doc_url, $url, $properties, $findable = false, $storable = false, $relatable = false, $parentKey = false) {
+function writeModel($model_name, $doc_url, $url, $properties, $findable = false, $storable = false, $relatable = false, $parentKey = false, $primaryKey = false) {
 	$template = file_get_contents('model.tpl');
 	
 	$properties_doc = '';
@@ -182,6 +190,15 @@ function writeModel($model_name, $doc_url, $url, $properties, $findable = false,
 	}
 	
 	$keys = '';
+    if (strlen($primaryKey)) {
+		$keys .= "
+    /**
+     * @var string Name of the primary key for this model because it is different than ID
+     */
+    protected \$primaryKey = '{$primaryKey}';
+";
+	}
+    
 	if (strlen($parentKey)) {
 		$keys .= "
     /**
