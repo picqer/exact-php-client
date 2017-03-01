@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Division
+ * Class SystemsDivision
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemDivisions
@@ -20,7 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property Boolean $IsMainDivision True if the division is the main division
  * @property Int32 $Status Follow the Division Status 0 for Inactive, 1 for Active and 2 for Archived Divisions
  */
-class Division extends Model
+class SystemsDivision extends Model
 {
     use Query\Findable;
 
