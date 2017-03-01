@@ -1,11 +1,13 @@
-<?php namespace Picqer\Financials\Exact;
+<?php 
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class SalesItemPrice
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsSalesItemPrices
- *
+ * 
  * @property Guid $ID Primary key
  * @property Guid $Account ID of the customer
  * @property String $AccountName Name of the customer account
@@ -16,7 +18,7 @@
  * @property String $DefaultItemUnit The default unit of the item
  * @property String $DefaultItemUnitDescription The description of the default item unit
  * @property Int32 $Division Division code
- * @property DateTime $EndDate Together with StartDate this determines if the item is active
+ * @property DateTime $EndDate Together with StartDate this determines whether the price is active
  * @property Guid $Item Item ID
  * @property String $ItemCode Code of Item
  * @property String $ItemDescription Description of Item
@@ -29,12 +31,9 @@
  * @property DateTime $StartDate Together with EndDate this determines whether the price is active
  * @property String $Unit The unit code of the price
  * @property String $UnitDescription Description of the price unit
-
-
  */
 class SalesItemPrice extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -61,7 +60,7 @@ class SalesItemPrice extends Model
         'Quantity',
         'StartDate',
         'Unit',
-        'UnitDescription',
+        'UnitDescription'
     ];
 
     protected $url = 'logistics/SalesItemPrices';
