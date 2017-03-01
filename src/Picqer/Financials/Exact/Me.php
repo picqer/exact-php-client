@@ -7,14 +7,14 @@ namespace Picqer\Financials\Exact;
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemMe
- * 
- * @property Guid $UserID Primary key
- * @property Int32 $CurrentDivision Division number that is currently used in the API. You should use a division number in the url
- * @property Guid $DivisionCustomer Owner account of the division
+ *
+ * @property Guid   $UserID Primary key
+ * @property Int32  $CurrentDivision Division number that is currently used in the API. You should use a division number in the url
+ * @property Guid   $DivisionCustomer Owner account of the division
  * @property String $DivisionCustomerCode Owner account code of the division
  * @property String $DivisionCustomerName Owner account name of the division
  * @property String $Email Email address of the user
- * @property Guid $EmployeeID Employee ID
+ * @property Guid   $EmployeeID Employee ID
  * @property String $FirstName First name
  * @property String $FullName Full name of the user
  * @property String $Gender Gender: M=Male, V=Female, O=Unknown
@@ -22,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property String $Language Language spoken by this user
  * @property String $LanguageCode Language (culture) that is used in Exact Online
  * @property String $LastName Last name
- * @property Int64 $Legislation Legislation
+ * @property Int64  $Legislation Legislation
  * @property String $MiddleName Middle name
  * @property String $Mobile Mobile phone
  * @property String $Nationality Nationality
@@ -38,10 +38,9 @@ namespace Picqer\Financials\Exact;
  */
 class Me extends Model
 {
-    use Query\Findable;
 
     /**
-     * @var string Name of the primary key for this model because it is different than ID
+     * @var string Name of the primary key for this model
      */
     protected $primaryKey = 'UserID';
 
@@ -75,6 +74,21 @@ class Me extends Model
         'UserName'
     ];
 
-    protected $url = '';
+    protected $url = 'current/Me';
 
+    public function find()
+    {
+        $result = $this->connection()->get($this->url);
+
+        return new self($this->connection(), $result);
+    }
+
+    public function findWithSelect($select = '')
+    {
+        $result = $this->connection()->get($this->url, [
+            '$select' => $select
+        ]);
+
+        return new self($this->connection(), $result);
+    }
 }
