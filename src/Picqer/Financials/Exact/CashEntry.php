@@ -29,7 +29,7 @@ class CashEntry extends Model
 	use Persistance\Storable;
 
 	protected $primaryKey = 'EntryID';
-	protected $generalJournalEntryLines = [];
+	protected $cashEntryLines = [];
 
 	protected $fillable = [
 		'EntryID',
