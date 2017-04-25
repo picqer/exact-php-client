@@ -1,5 +1,7 @@
 <?php
 
+namespace Picqer\Financials\Exact;
+
 /**
  * Class SalesEntryLine
  *
@@ -51,59 +53,59 @@
  * @property Double VATPercentage Vat code percentage
  * @property String VATType Type of vat code
  */
-class CashEntryLine extends \Picqer\Financials\Exact\Model
+class CashEntryLine extends Model
 {
 
-	use \Picqer\Financials\Exact\Query\Findable;
-	use \Picqer\Financials\Exact\Persistance\Storable;
+    use Query\Findable;
+    use Persistance\Storable;
 
-	protected $fillable = [
-		'ID',
-		'Account',
-		'AccountCode',
-		'AccountName',
-		'AmountDC',
-		'AmountFC',
-		'AmountVATFC',
-		'Asset',
-		'AssetCode',
-		'AssetDescription',
-		'CostCenter',
-		'CostCenterDescription',
-		'CostUnit',
-		'CostUnitDescription',
-		'Created',
-		'Creator',
-		'CreatorFullName',
-		'Date',
-		'Description',
-		'Division',
-		'Document',
-		'DocumentNumber',
-		'DocumentSubject',
-		'EntryID',
-		'EntryNumber',
-		'ExchangeRate',
-		'GLAccount',
-		'GLAccountCode',
-		'GLAccountDescription',
-		'LineNumber',
-		'Modified',
-		'Modifier',
-		'ModifierFullName',
-		'Notes',
-		'OffsetID',
-		'OurRef',
-		'Project',
-		'ProjectCode',
-		'ProjectDescription',
-		'Quantity',
-		'VATCode',
-		'VATCodeDescription',
-		'VATPercentage',
-		'VATType'
-	];
+    protected $fillable = [
+        'ID',
+        'Account',
+        'AccountCode',
+        'AccountName',
+        'AmountDC',
+        'AmountFC',
+        'AmountVATFC',
+        'Asset',
+        'AssetCode',
+        'AssetDescription',
+        'CostCenter',
+        'CostCenterDescription',
+        'CostUnit',
+        'CostUnitDescription',
+        'Created',
+        'Creator',
+        'CreatorFullName',
+        'Date',
+        'Description',
+        'Division',
+        'Document',
+        'DocumentNumber',
+        'DocumentSubject',
+        'EntryID',
+        'EntryNumber',
+        'ExchangeRate',
+        'GLAccount',
+        'GLAccountCode',
+        'GLAccountDescription',
+        'LineNumber',
+        'Modified',
+        'Modifier',
+        'ModifierFullName',
+        'Notes',
+        'OffsetID',
+        'OurRef',
+        'Project',
+        'ProjectCode',
+        'ProjectDescription',
+        'Quantity',
+        'VATCode',
+        'VATCodeDescription',
+        'VATPercentage',
+        'VATType'
+    ];
 
-	protected $url = 'financialtransaction/CashEntryLine';
+    protected $url = 'financialtransaction/CashEntryLine';
 
 }

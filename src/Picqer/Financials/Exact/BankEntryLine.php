@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class BankEntryLine
@@ -54,56 +56,56 @@
 class BankEntryLine extends Model
 {
 
-	use Query\Findable;
-	use Persistance\Storable;
+    use Query\Findable;
+    use Persistance\Storable;
 
-	protected $fillable = [
-		'ID',
-		'Account',
-		'AccountCode',
-		'AccountName',
-		'AmountDC',
-		'AmountFC',
-		'AmountVATFC',
-		'Asset',
-		'AssetCode',
-		'AssetDescription',
-		'CostCenter',
-		'CostCenterDescription',
-		'CostUnit',
-		'CostUnitDescription',
-		'Created',
-		'Creator',
-		'CreatorFullName',
-		'Date',
-		'Description',
-		'Division',
-		'Document',
-		'DocumentNumber',
-		'DocumentSubject',
-		'EntryID',
-		'EntryNumber',
-		'ExchangeRate',
-		'GLAccount',
-		'GLAccountCode',
-		'GLAccountDescription',
-		'LineNumber',
-		'Modified',
-		'Modifier',
-		'ModifierFullName',
-		'Notes',
-		'OffsetID',
-		'OurRef',
-		'Project',
-		'ProjectCode',
-		'ProjectDescription',
-		'Quantity',
-		'VATCode',
-		'VATCodeDescription',
-		'VATPercentage',
-		'VATType',
-	];
+    protected $fillable = [
+        'ID',
+        'Account',
+        'AccountCode',
+        'AccountName',
+        'AmountDC',
+        'AmountFC',
+        'AmountVATFC',
+        'Asset',
+        'AssetCode',
+        'AssetDescription',
+        'CostCenter',
+        'CostCenterDescription',
+        'CostUnit',
+        'CostUnitDescription',
+        'Created',
+        'Creator',
+        'CreatorFullName',
+        'Date',
+        'Description',
+        'Division',
+        'Document',
+        'DocumentNumber',
+        'DocumentSubject',
+        'EntryID',
+        'EntryNumber',
+        'ExchangeRate',
+        'GLAccount',
+        'GLAccountCode',
+        'GLAccountDescription',
+        'LineNumber',
+        'Modified',
+        'Modifier',
+        'ModifierFullName',
+        'Notes',
+        'OffsetID',
+        'OurRef',
+        'Project',
+        'ProjectCode',
+        'ProjectDescription',
+        'Quantity',
+        'VATCode',
+        'VATCodeDescription',
+        'VATPercentage',
+        'VATType',
+    ];
 
-	protected $url = 'financialtransaction/BankEntryLines';
+    protected $url = 'financialtransaction/BankEntryLines';
 
 }
