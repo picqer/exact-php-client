@@ -6,6 +6,7 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=logisticsItems
  *
+ * @property String $Barcode
  * @property Guid $ID Primary key
  * @property String $Class_01 Item class code referring to ItemClasses with ClassID 1
  * @property String $Class_02 Item class code referring to ItemClasses with ClassID 2
@@ -99,6 +100,7 @@ class Item extends Model
     use Persistance\Storable;
 
     protected $fillable = [
+	'Barcode',
         'ID',
         'Class_01',
         'Class_02',
