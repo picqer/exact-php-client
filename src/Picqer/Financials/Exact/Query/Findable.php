@@ -35,7 +35,7 @@ trait Findable
      */
     public function findId($code, $key='Code'){
         if ( $this->isFillable($key) ) {
-            $format = $this->url == 'crm/Accounts' ? '%18s' : '%s';
+            $format = ($this->url == 'crm/Accounts' && $key === 'Code') ? '%18s' : '%s';
             if (preg_match('/^[\w]{8}-([\w]{4}-){3}[\w]{12}$/', $code)) {
                 $format = "guid'$format'";
             }
