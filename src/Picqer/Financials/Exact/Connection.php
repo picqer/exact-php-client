@@ -193,7 +193,7 @@ class Connection
             $request = $this->createRequest('GET', $url, null, $params);
             $response = $this->client()->send($request);
 
-            return $this->parseResponse($response);
+            return $this->parseResponse($response, $url != $this->nextUrl);
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
@@ -339,10 +339,11 @@ class Connection
 
     /**
      * @param Response $response
+     * @param bool $returnSingleIfPossible
      * @return mixed
      * @throws ApiException
      */
-    private function parseResponse(Response $response)
+    private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
 
@@ -361,7 +362,7 @@ class Connection
                 }
 
                 if (array_key_exists('results', $json['d'])) {
-                    if (count($json['d']['results']) == 1) {
+                    if ($returnSingleIfPossible && count($json['d']['results']) == 1) {
                         return $json['d']['results'][0];
                     }
 
