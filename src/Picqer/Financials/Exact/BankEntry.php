@@ -27,8 +27,10 @@ class BankEntry extends Model
     protected $fillable = [
         'EntryID',
         'BankEntryLines',
+        'BankStatementDocument',
         'ClosingBalanceFC',
         'Currency',
+        'EntryNumber',
         'FinancialPeriod',
         'FinancialYear',
         'JournalCode',
