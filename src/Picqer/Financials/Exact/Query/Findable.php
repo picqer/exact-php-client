@@ -5,10 +5,12 @@ trait Findable
 
     public function find($id)
     {
-        $result = $this->connection()->get($this->url, [
-            '$filter' => $this->primaryKey . " eq guid'$id'"
+        $records = $this->connection()->get($this->url, [
+            '$filter' => $this->primaryKey . " eq guid'$id'",
+            '$top' => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
 
+        $result = isset($records[0]) ? $records[0] : null;
         return new self($this->connection(), $result);
     }
 
@@ -44,7 +46,12 @@ trait Findable
             }
 
             $filter = sprintf("$key eq $format", $code);
-            $request = array('$filter' => $filter, '$top' => 1, '$orderby' => $this->primaryKey);
+            $request = [
+                '$filter' => $filter,
+                '$top' => 1,
+                '$select' => $this->primaryKey,
+                '$orderby' => $this->primaryKey,
+            ];
             if( $records = $this->connection()->get($this->url, $request) ){
                 return $records[0][$this->primaryKey];
             }
