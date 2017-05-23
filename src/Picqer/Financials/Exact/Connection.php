@@ -485,7 +485,7 @@ class Connection
             return true;
         }
 
-        return $this->tokenExpires <= time();
+        return $this->tokenExpires <= time() + 10;
     }
 
     private function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
