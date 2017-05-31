@@ -10,7 +10,7 @@ trait Findable
             '$top' => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
 
-        $result = isset($records[0]) ? $records[0] : null;
+        $result = isset($records[0]) ? $records[0] : [];
         return new self($this->connection(), $result);
     }
 
