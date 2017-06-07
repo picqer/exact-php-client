@@ -5,10 +5,12 @@ trait Findable
 
     public function find($id)
     {
-        $result = $this->connection()->get($this->url, [
-            '$filter' => $this->primaryKey . " eq guid'$id'"
+        $records = $this->connection()->get($this->url, [
+            '$filter' => $this->primaryKey . " eq guid'$id'",
+            '$top' => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
 
+        $result = isset($records[0]) ? $records[0] : [];
         return new self($this->connection(), $result);
     }
 
@@ -35,7 +37,7 @@ trait Findable
      */
     public function findId($code, $key='Code'){
         if ( $this->isFillable($key) ) {
-            $format = $this->url == 'crm/Accounts' ? '%18s' : '%s';
+            $format = ($this->url == 'crm/Accounts' && $key === 'Code') ? '%18s' : '%s';
             if (preg_match('/^[\w]{8}-([\w]{4}-){3}[\w]{12}$/', $code)) {
                 $format = "guid'$format'";
             }
@@ -44,7 +46,12 @@ trait Findable
             }
 
             $filter = sprintf("$key eq $format", $code);
-            $request = array('$filter' => $filter, '$top' => 1, '$orderby' => $this->primaryKey);
+            $request = [
+                '$filter' => $filter,
+                '$top' => 1,
+                '$select' => $this->primaryKey,
+                '$orderby' => $this->primaryKey,
+            ];
             if( $records = $this->connection()->get($this->url, $request) ){
                 return $records[0][$this->primaryKey];
             }
