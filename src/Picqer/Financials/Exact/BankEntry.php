@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class BankEntry
@@ -16,8 +18,8 @@
  * @property String $Currency Currency code
  * @property Int32 $Division Division code
  * @property Int32 $EntryNumber Entry number
- * @property Int16 $FinancialPeriod Fiancial period
- * @property Int16 $FinancialYear Fiancial year
+ * @property Int16 $FinancialPeriod Financial period
+ * @property Int16 $FinancialYear Financial year
  * @property String $JournalCode Code of Journal
  * @property String $JournalDescription Description of Journal
  * @property DateTime $Modified Last modified date
@@ -33,7 +35,7 @@ class BankEntry extends Model
 
     protected $primaryKey = 'EntryID';
 
-    protected $bankEntryLines = [];
+    protected $bankEntryLines = [ ];
 
     protected $fillable = [
         'EntryID',
@@ -55,6 +57,14 @@ class BankEntry extends Model
         'Status',
         'StatusDescription',
     ];
+
+    public function addItem(array $array)
+    {
+        if ( ! isset( $this->attributes['BankEntryLines'] ) || $this->attributes['BankEntryLines'] == null) {
+            $this->attributes['BankEntryLines'] = [ ];
+        }
+        $this->attributes['BankEntryLines'][] = $array;
+    }
 
     protected $url = 'financialtransaction/BankEntries';
 

@@ -8,15 +8,15 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=GeneralJournalEntryGeneralJournalEntries
  *
- * @property Edm.Guid $EntryId Primary key
- * @property Edm.String $Currency Currency code
- * @property Edm.Int32 $EntryNumber Entry number
- * @property Edm.Double $ExchangeRate Exchange rate
- * @property Edm.Int16 $FinancialPeriod Financial period
- * @property Edm.Int16 $FinancialYear Financial year
+ * @property Guid $EntryId Primary key
+ * @property String $Currency Currency code
+ * @property Int32 $EntryNumber Entry number
+ * @property Double $ExchangeRate Exchange rate
+ * @property Int16 $FinancialPeriod Financial period
+ * @property Int16 $FinancialYear Financial year
  * @property GeneralJournalEntryLines $GeneralJournalEntryLines Collection of lines
- * @property Edm.String $JournalCode Code of Journal
- * @property Edm.Boolean $Reversal Indicates that amounts are reversed
+ * @property String $JournalCode Code of Journal
+ * @property Boolean $Reversal Indicates that amounts are reversed
  */
 class GeneralJournalEntry extends Model
 {
@@ -39,6 +39,14 @@ class GeneralJournalEntry extends Model
         'JournalCode',
         'Reversal',
     ];
+
+    public function addItem(array $array)
+    {
+        if ( ! isset( $this->attributes['GeneralJournalEntryLines'] ) || $this->attributes['GeneralJournalEntryLines'] == null) {
+            $this->attributes['GeneralJournalEntryLines'] = [ ];
+        }
+        $this->attributes['GeneralJournalEntryLines'][] = $array;
+    }
 
     protected $url = 'generaljournalentry/GeneralJournalEntries';
 }

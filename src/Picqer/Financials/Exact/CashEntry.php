@@ -25,43 +25,40 @@
 class CashEntry extends Model
 {
 
-	use Query\Findable;
-	use Persistance\Storable;
+    use Query\Findable;
+    use Persistance\Storable;
 
-	protected $primaryKey = 'EntryID';
-	protected $generalJournalEntryLines = [];
+    protected $primaryKey = 'EntryID';
+    protected $cashEntryLines = [];
 
-	protected $fillable = [
-		'EntryID',
-		'ClosingBalanceFC',
-		'Created',
-		'Currency',
-		'Division',
-		'EntryNumber',
-		'FinancialPeriod',
-		'FinancialYear',
-		'CashEntryLines',
-		'JournalCode',
-		'JournalDescription',
-		'Modified',
-		'OpeningBalanceFC',
-		'Status',
-		'StatusDescription'
-	];
-
-
-	public function addItem(array $array)
-	{
-		if (!isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
-			$this->attributes['CashEntryLines'] = [];
-		}
-		if (!isset($array['LineNumber'])) {
-			$array['LineNumber'] = count($this->attributes['CashEntryLines']) + 1;
-		}
-		$this->attributes['CashEntryLines'][] = $array;
-	}
+    protected $fillable = [
+        'EntryID',
+        'ClosingBalanceFC',
+        'Created',
+        'Currency',
+        'Division',
+        'EntryNumber',
+        'FinancialPeriod',
+        'FinancialYear',
+        'CashEntryLines',
+        'JournalCode',
+        'JournalDescription',
+        'Modified',
+        'OpeningBalanceFC',
+        'Status',
+        'StatusDescription'
+    ];
 
 
-	protected $url = 'financialtransaction/CashEntries';
+    public function addItem(array $array)
+    {
+        if (!isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
+            $this->attributes['CashEntryLines'] = [];
+        }
+        $this->attributes['CashEntryLines'][] = $array;
+    }
+
+
+    protected $url = 'financialtransaction/CashEntries';
 }
 
