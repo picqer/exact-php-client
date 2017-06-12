@@ -80,7 +80,7 @@ class Connection
      * @var Client
      */
     private $client;
-    
+
     /**
      * @var callable(Connection)
      */
@@ -114,6 +114,7 @@ class Connection
         $this->client = new Client([
             'http_errors' => true,
             'handler' => $handlerStack,
+            'expect' => false,
         ]);
 
         return $this->client;
@@ -441,9 +442,9 @@ class Connection
                 $this->accessToken  = $body['access_token'];
                 $this->refreshToken = $body['refresh_token'];
                 $this->tokenExpires = $this->getDateTimeFromExpires($body['expires_in']);
-                
+
                 if (is_callable($this->tokenUpdateCallback)) {
-                    call_user_func($this->tokenUpdateCallback, $this);                    
+                    call_user_func($this->tokenUpdateCallback, $this);
                 }
             } else {
                 throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
@@ -525,7 +526,7 @@ class Connection
     {
         $this->division = $division;
     }
-    
+
     /**
      * @param callable $callback
      */
