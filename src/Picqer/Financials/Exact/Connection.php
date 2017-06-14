@@ -258,6 +258,21 @@ class Connection
             $this->parseExceptionForErrorMessages($e);
         }
     }
+    
+    /**
+     * @param $url
+     * @param $filename
+     */
+    public function download($url, $filename)
+    {
+        try {
+            $request = $this->createRequest('GET', $url);
+            $response = $this->client()->send($request);
+            file_put_contents($filename, $response->getBody()->getContents());
+        } catch (Exception $e) {
+            throw new ApiException($e->getMessage());
+        }
+    }
 
     /**
      * @return string
