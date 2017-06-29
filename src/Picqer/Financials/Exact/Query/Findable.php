@@ -92,6 +92,20 @@ trait Findable
     }
 
 
+    /**
+     * Returns the first Financial model in by applying $top=1 to the query string.
+     * 
+     * @return \Picqer\Financials\Exact\Model|null
+     */
+    public function first()
+    {
+        $results = $this->filter('', '', '', ['$top'=> 1]);
+        $result = is_array($results) && count($results) > 0 ? $results[0] : null;
+
+        return $result;
+    }
+
+
     public function get()
     {
         $result = $this->connection()->get($this->url);
