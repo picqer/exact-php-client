@@ -1,18 +1,23 @@
 {
-    "name": "picqer/exact-php-client",
+    "name": "wiejeben/exact-php-client",
     "type": "library",
     "description": "A PHP Client for the Exact API",
     "keywords": [
         "api",
         "php",
-        "exact"
+        "exact",
+        "xml"
     ],
-    "homepage": "http://github.com/picqer/exact-php-client",
+    "homepage": "http://github.com/Wiejeben/exact-php-client",
     "license": "MIT",
     "authors": [
         {
             "name": "Stephan Groen",
             "email": "info@picqer.com"
+        },
+        {
+            "name": "Maarten de Graaf",
+            "email": "wiejeben@gmail.com"
         }
     ],
     "require": {
