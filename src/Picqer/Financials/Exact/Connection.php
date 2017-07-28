@@ -669,9 +669,16 @@ class Connection
                 return [];
             }
 
-            Psr7\rewind_body($response);
+            $xml = new \SimpleXMLElement($response->getBody()->getContents());
 
-            return new \SimpleXMLElement($response->getBody()->getContents());
+            // Define paam for next URL
+            if (isset($xml->Topics->Topic['ts_d'])) {
+                $this->nextUrl = (string) $xml->Topics->Topic['ts_d']; // Use this for TSPaging param
+            } else {
+                $this->nextUrl = '';
+            }
+
+            return $xml;
         } catch (\RuntimeException $e) {
             throw new ApiException($e->getMessage());
         }
