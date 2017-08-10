@@ -73,7 +73,6 @@
  * @property Byte $IsRegistrationCodeItem Indicated if the item is used in voucher functionality
  * @property Boolean $IsSalesItem Indicates if the item can be sold
  * @property Boolean $IsSerialItem Indicates that serial numbers are used for this item
- * @property Boolean $IsSerialNumberItem Used with Serial number feature. Indicates if the item can have a serial number
  * @property Boolean $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
  * @property Boolean $IsSubcontractedItem Indicates if the item is provided by an outside supplier
  * @property Byte $IsTime Indicates if the item is a time unit item (for example a labor hour item)
@@ -167,7 +166,6 @@ class Item extends Model
         'IsRegistrationCodeItem',
         'IsSalesItem',
         'IsSerialItem',
-        'IsSerialNumberItem',
         'IsStockItem',
         'IsSubcontractedItem',
         'IsTime',
