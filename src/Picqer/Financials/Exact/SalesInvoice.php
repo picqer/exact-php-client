@@ -8,12 +8,16 @@
  *
  * @property Guid $InvoiceID Primary key
  * @property Double $AmountDC For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines
+ * @property Double $AmountDiscount Discount amount in the default currency of the company
+ * @property Double $AmountDiscountExclVat Discount amount exclude VAT in the default currency of the company
  * @property Double $AmountFC For the header this is the sum of all lines, including VAT
+ * @property Double $AmountFCExclVat For the header this is the sum of all lines, excluding VAT
  * @property DateTime $Created Creation date
  * @property Guid $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
  * @property String $Currency Currency for the invoice. Default this is the currency of the administration
  * @property String $Description Description. Can be different for header and lines
+ * @property String $Discount Discount percentage
  * @property Int32 $Division Division code
  * @property Guid $Document Document that is manually linked to the invoice
  * @property Int32 $DocumentNumber Number of the document
@@ -66,12 +70,16 @@ class SalesInvoice extends Model
     protected $fillable = [
         'InvoiceID',
         'AmountDC',
+        'AmountDiscount',
+        'AmountDiscountExclVat',
         'AmountFC',
+        'AmountFCExclVat',
         'Created',
         'Creator',
         'CreatorFullName',
         'Currency',
         'Description',
+        'Discount',
         'Division',
         'Document',
         'DocumentNumber',
