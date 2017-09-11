@@ -106,9 +106,9 @@ trait Findable
     }
 
 
-    public function get()
+    public function get(array $params = [])
     {
-        $result = $this->connection()->get($this->url);
+        $result = $this->connection()->get($this->url, $params);
 
         return $this->collectionFromResult($result);
     }
