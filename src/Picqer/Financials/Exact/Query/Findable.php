@@ -5,10 +5,10 @@ trait Findable
 
     public function find($id)
     {
+    	$filter = $this->primaryKey . " eq guid'$id'";
+
         if ($this->primaryKey === 'Code') {
             $filter = $this->primaryKey . " eq $id";
-        } else {
-            $filter = $this->primaryKey . " eq guid'$id'";
         }
         
         $records = $this->connection()->get($this->url, [
