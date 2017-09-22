@@ -40,7 +40,7 @@ class Transaction extends Model
     use Query\Findable;
     use Persistance\Storable;
 
-    protected $primaryKey = EntryID;
+    protected $primaryKey = 'EntryID';
 
     protected $fillable = [
         'EntryID',
