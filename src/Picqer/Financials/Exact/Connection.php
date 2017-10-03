@@ -183,15 +183,16 @@ class Connection
     /**
      * @param $url
      * @param array $params
+     * @param array $headers
      * @return mixed
      * @throws ApiException
      */
-    public function get($url, array $params = [])
+    public function get($url, array $params = [], array $headers = [])
     {
         $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
 
         try {
-            $request = $this->createRequest('GET', $url, null, $params);
+            $request = $this->createRequest('GET', $url, null, $params, $headers);
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response, $url != $this->nextUrl);

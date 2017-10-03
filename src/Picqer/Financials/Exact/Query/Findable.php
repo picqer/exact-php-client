@@ -65,7 +65,7 @@ trait Findable
     }
 
 
-    public function filter($filter, $expand = '', $select = '', $system_query_options = null)
+    public function filter($filter, $expand = '', $select = '', $system_query_options = null, array $headers = [])
     {
         $originalDivision = $this->connection()->getDivision();
 
@@ -88,7 +88,7 @@ trait Findable
             $request = array_merge($system_query_options, $request);
         }
 
-        $result = $this->connection()->get($this->url, $request);
+        $result = $this->connection()->get($this->url, $request, $headers);
 
         if (!empty($divisionId)) {
             $this->connection()->setDivision($originalDivision); // Restore division
