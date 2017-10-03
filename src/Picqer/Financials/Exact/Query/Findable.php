@@ -5,8 +5,14 @@ trait Findable
 
     public function find($id)
     {
+    	$filter = $this->primaryKey . " eq guid'$id'";
+
+        if ($this->primaryKey === 'Code') {
+            $filter = $this->primaryKey . " eq $id";
+        }
+        
         $records = $this->connection()->get($this->url, [
-            '$filter' => $this->primaryKey . " eq guid'$id'",
+            '$filter' => $filter,
             '$top' => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
 
