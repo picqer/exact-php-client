@@ -6,6 +6,7 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=webhooksWebhookSubscriptions
  *
+ * @property  $ID
  * @property  $CallbackURL 
  * @property  $Topic 
  */
