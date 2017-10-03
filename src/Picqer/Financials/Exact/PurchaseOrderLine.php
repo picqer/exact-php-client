@@ -62,7 +62,7 @@ class PurchaseOrderLine extends Model
     use Persistance\Storable;
 
     protected $fillable = [
-        'ID ',
+        'ID',
         'AmountDC',
         'AmountFC',
         'CostCenter',
