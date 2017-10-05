@@ -10,6 +10,7 @@
  * @property Binary $Attachment Contains the attachment
  * @property Guid $Document Reference to the Document
  * @property String $FileName Filename of the attachment
+ * @property Double $FileSize File size of the attachment
  */
 class DocumentAttachment extends Model
 {
@@ -22,6 +23,7 @@ class DocumentAttachment extends Model
         'Attachment',
         'Document',
         'FileName',
+        'FileSize',
         'Url'
     ];
 
