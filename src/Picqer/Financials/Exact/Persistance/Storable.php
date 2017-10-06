@@ -12,7 +12,7 @@ trait Storable
     /**
      * @param array $attributes
      */
-    abstract function fill($attributes);
+    abstract function fill(array $attributes);
 
     /**
      * @param int $options
