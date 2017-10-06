@@ -1,4 +1,5 @@
 <?php
+
 namespace Picqer\Financials\Exact;
 
 /**
@@ -29,7 +30,7 @@ class Units extends Model
         'Division',
         'Main',
         'TimeUnit',
-        'Type'
+        'Type',
     ];
 
     protected $url = 'logistics/Units';

@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class Transaction
@@ -36,7 +38,6 @@
  */
 class Transaction extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -73,5 +74,4 @@ class Transaction extends Model
     ];
 
     protected $url = 'financialtransaction/Transactions';
-
 }

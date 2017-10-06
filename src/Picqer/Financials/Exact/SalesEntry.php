@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class SalesEntry
@@ -37,7 +39,7 @@
  * @property String $PaymentCondition The payment condition used for due date and discount calculation
  * @property String $PaymentConditionDescription Description of PaymentCondition
  * @property String $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
- * @property Int32 $ProcessNumber 
+ * @property Int32 $ProcessNumber
  * @property Double $Rate Foreign currency rate
  * @property Int16 $ReportingPeriod The period of the transaction lines. The period should exist in the period date table
  * @property Int16 $ReportingYear The financial year to which the entry belongs. The financial year should exist in the period date table
@@ -53,13 +55,12 @@
  */
 class SalesEntry extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
     protected $primaryKey = 'EntryID';
 
-    protected $saleEntryLines = [ ];
+    protected $saleEntryLines = [];
 
     protected $fillable = [
         'EntryID',
@@ -111,16 +112,14 @@ class SalesEntry extends Model
 
     public function addItem(array $array)
     {
-        if ( ! isset( $this->attributes['SalesEntryLines'] ) || $this->attributes['SalesEntryLines'] == null) {
-            $this->attributes['SalesEntryLines'] = [ ];
+        if (! isset($this->attributes['SalesEntryLines']) || $this->attributes['SalesEntryLines'] == null) {
+            $this->attributes['SalesEntryLines'] = [];
         }
-        if ( ! isset( $array['LineNumber'] )) {
+        if (! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['SalesEntryLines']) + 1;
         }
         $this->attributes['SalesEntryLines'][] = $array;
     }
-
-
+    
     protected $url = 'salesentry/SalesEntries';
-
 }

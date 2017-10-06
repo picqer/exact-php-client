@@ -1,10 +1,13 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
+
 /**
-* Class CashEntry
-*
-* @package Picqer\Financials\Exact
-* @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionCashEntries
-*
+ * Class CashEntry
+ *
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionCashEntries
+ *
  * @property Guid $EntryID Primary key (read-only)
  * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
  * @property DateTime $Created Creation date (read-only)
@@ -21,10 +24,8 @@
  * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed (read-only)
  * @property String $StatusDescription Description of Status (read-only)
  */
-
 class CashEntry extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -46,18 +47,16 @@ class CashEntry extends Model
         'Modified',
         'OpeningBalanceFC',
         'Status',
-        'StatusDescription'
+        'StatusDescription',
     ];
-
 
     public function addItem(array $array)
     {
-        if (!isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
+        if (! isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
             $this->attributes['CashEntryLines'] = [];
         }
         $this->attributes['CashEntryLines'][] = $array;
     }
-
 
     protected $url = 'financialtransaction/CashEntries';
 }

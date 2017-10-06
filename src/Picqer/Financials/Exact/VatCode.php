@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class VatCode
@@ -49,7 +51,6 @@
  */
 class VatCode extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -93,9 +94,8 @@ class VatCode extends Model
         'VatMargin',
         'VATPartialRatio',
         'VATPercentages',
-        'VATTransactionType'
+        'VATTransactionType',
     ];
 
     protected $url = 'vat/VATCodes';
-
 }

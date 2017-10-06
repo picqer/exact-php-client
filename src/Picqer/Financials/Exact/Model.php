@@ -41,7 +41,7 @@ abstract class Model implements \JsonSerializable
     protected $primaryKey = 'ID';
 
 
-    public function __construct(Connection $connection, array $attributes = [ ])
+    public function __construct(Connection $connection, array $attributes = [])
     {
         $this->connection = $connection;
         $this->fill($attributes);
@@ -125,8 +125,7 @@ abstract class Model implements \JsonSerializable
      * Resolve deferred values
      *
      * @param string $key
-     *
-     * @return boolian returns true when collection is found.
+     * @return bool Returns true when collection is found
      */
     protected function lazyLoad($key) {
         // Check previously resolved or manualy set.
@@ -146,7 +145,7 @@ abstract class Model implements \JsonSerializable
                 return true;
             }
         }
-        catch (Exception $e) {
+        catch (\Exception $e) {
             // We tried lets leave it as is.
         }
 
@@ -173,11 +172,11 @@ abstract class Model implements \JsonSerializable
                 return;
             }
 
-            return $this->setAttribute($key, $value);
+            $this->setAttribute($key, $value);
         }
     }
     
-    public function __isset(string $name) {
+    public function __isset($name) {
         return $this->__get($name) !== null;
     }
 

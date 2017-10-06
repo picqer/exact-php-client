@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class Division
@@ -30,7 +32,6 @@
  */
 class Division extends Model
 {
-
     use Query\Findable;
 
     protected $primaryKey = 'Code';
@@ -56,9 +57,8 @@ class Division extends Model
         'TaxOfficeNumber',
         'TaxReferenceNumber',
         'VATNumber',
-        'Website'
+        'Website',
     ];
 
     protected $url = 'hrm/Divisions';
-
 }

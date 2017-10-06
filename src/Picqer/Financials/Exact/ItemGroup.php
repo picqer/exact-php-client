@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class ItemGroup
@@ -29,7 +31,6 @@
  */
 class ItemGroup extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -57,5 +58,4 @@ class ItemGroup extends Model
     ];
 
     protected $url = 'logistics/ItemGroups';
-
 }

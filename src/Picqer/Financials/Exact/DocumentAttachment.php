@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class DocumentAttachment
@@ -24,9 +26,8 @@ class DocumentAttachment extends Model
         'Document',
         'FileName',
         'FileSize',
-        'Url'
+        'Url',
     ];
 
     protected $url = 'documents/DocumentAttachments';
-
 }

@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class SalesOrderLine
@@ -104,7 +106,7 @@ class SalesOrderLine extends Model
         'VATAmount',
         'VATCode',
         'VATCodeDescription',
-        'VATPercentage'
+        'VATPercentage',
     ];
 
     protected $url = 'salesorder/SalesOrderLines';

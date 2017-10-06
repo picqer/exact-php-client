@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class PurchaseEntry
@@ -14,12 +16,12 @@
  * @property DateTime $DueDate Date when payment should be done
  * @property DateTime $EntryDate Entry date
  * @property Int32 $EntryNumber Entry number
- * @property String $ExternalLinkReference 
+ * @property String $ExternalLinkReference
  * @property Int32 $InvoiceNumber Invoice number
  * @property String $Journal Journal
  * @property Int32 $OrderNumber Order number
  * @property String $PaymentCondition Payment condition
- * @property Int32 $ProcessNumber 
+ * @property Int32 $ProcessNumber
  * @property PurchaseEntryLines $PurchaseEntryLines Collection of lines
  * @property Double $Rate Currency exchange rate
  * @property Int16 $ReportingPeriod Reporting period
@@ -65,18 +67,14 @@ class PurchaseEntry extends Model
 
     public function addItem(array $array)
     {
-        if ( ! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null)
-        {
+        if (! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null) {
             $this->attributes['PurchaseEntryLines'] = [];
         }
-        if ( ! isset($array['LineNumber']))
-        {
+        if (! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['PurchaseEntryLines']) + 1;
         }
         $this->attributes['PurchaseEntryLines'][] = $array;
     }
 
-
     protected $url = 'purchaseentry/PurchaseEntries';
-
 }

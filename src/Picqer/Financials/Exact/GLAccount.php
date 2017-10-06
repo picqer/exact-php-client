@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class GLAccount
@@ -49,7 +51,6 @@
  */
 class GLAccount extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -93,9 +94,8 @@ class GLAccount extends Model
         'VATNonDeductiblePercentage',
         'VATSystem',
         'YearEndCostGLAccount',
-        'YearEndReflectionGLAccount'
+        'YearEndReflectionGLAccount',
     ];
 
     protected $url = 'financial/GLAccounts';
-
 }
