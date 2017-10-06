@@ -1,5 +1,7 @@
 # exact-php-client
 
+[![Build Status](https://travis-ci.org/picqer/exact-php-client.svg?branch=master)](https://travis-ci.org/picqer/exact-php-client)
+
 PHP client library to use the Exact Online API.
 
 Note: For Guzzle 6 use v2, for Guzzle 3 use v1.
