@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class BankAccount
@@ -31,7 +33,6 @@
  */
 class BankAccount extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -57,9 +58,8 @@ class BankAccount extends Model
         'Modifier',
         'ModifierFullName',
         'Type',
-        'TypeDescription'        
+        'TypeDescription',
     ];
 
     protected $url = 'crm/BankAccounts';
-
 }

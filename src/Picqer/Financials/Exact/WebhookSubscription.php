@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class WebhookSubscription
@@ -12,16 +14,14 @@
  */
 class WebhookSubscription extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
     protected $fillable = [
     	'ID',
         'CallbackURL',
-        'Topic'
+        'Topic',
     ];
 
     protected $url = 'webhooks/WebhookSubscriptions';
-
 }

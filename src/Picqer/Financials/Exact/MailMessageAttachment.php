@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class MailMessageAttachment
@@ -14,7 +16,6 @@
  */
 class MailMessageAttachment extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -23,9 +24,8 @@ class MailMessageAttachment extends Model
         'Attachment',
         'AttachmentFileName',
         'MailMessageID',
-        'Type'
+        'Type',
     ];
 
     protected $url = 'mailbox/MailMessageAttachments';
-
 }

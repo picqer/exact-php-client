@@ -55,7 +55,6 @@ namespace Picqer\Financials\Exact;
  */
 class BankEntryLine extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -107,5 +106,4 @@ class BankEntryLine extends Model
     ];
 
     protected $url = 'financialtransaction/BankEntryLines';
-
 }

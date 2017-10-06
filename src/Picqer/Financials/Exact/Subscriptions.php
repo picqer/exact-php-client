@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Added deprecated Subscriptions class for backward compatibility

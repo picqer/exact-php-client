@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class MailMessage
@@ -27,7 +29,6 @@
  */
 class MailMessage extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -49,9 +50,8 @@ class MailMessage extends Model
         'SenderMailboxID',
         'Subject',
         'SynchronizationCode',
-        'Type'
+        'Type',
     ];
 
     protected $url = 'mailbox/MailMessages';
-
 }

@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class PayablesList
@@ -25,7 +27,6 @@
  */
 class PayablesList extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -51,5 +52,4 @@ class PayablesList extends Model
     ];
 
     protected $url = 'read/financial/PayablesList';
-
 }

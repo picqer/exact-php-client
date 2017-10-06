@@ -20,7 +20,6 @@ namespace Picqer\Financials\Exact;
  */
 class GeneralJournalEntry extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 

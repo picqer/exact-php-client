@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class SalesInvoice
@@ -61,7 +63,6 @@
  */
 class SalesInvoice extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -119,7 +120,7 @@ class SalesInvoice extends Model
         'TypeDescription',
         'VATAmountDC',
         'VATAmountFC',
-        'YourRef'
+        'YourRef',
     ];
 
     protected $url = 'salesinvoice/SalesInvoices';
@@ -136,5 +137,4 @@ class SalesInvoice extends Model
         }
         return $this->attributes['SalesInvoiceLines'];
     }
-
 }

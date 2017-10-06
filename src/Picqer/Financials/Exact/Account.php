@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class Account
@@ -249,9 +251,8 @@ class Account extends Model
         'Type',
         'VATLiability',
         'VATNumber',
-        'Website'
+        'Website',
     ];
 
     protected $url = 'crm/Accounts';
-
 }

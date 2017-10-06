@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
  * Class InvoiceSalesOrder
@@ -21,7 +23,6 @@
  */
 class InvoiceSalesOrder extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -41,5 +42,4 @@ class InvoiceSalesOrder extends Model
     ];
 
     protected $url = 'salesinvoice/InvoiceSalesOrders';
-
 }

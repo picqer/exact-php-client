@@ -1,7 +1,15 @@
 <?php namespace Picqer\Financials\Exact\Query;
 
+use Picqer\Financials\Exact\Connection;
+
 trait Findable
 {
+    /**
+     * @return Connection
+     */
+    abstract function connection();
+
+    abstract function isFillable();
 
     public function find($id)
     {
@@ -10,7 +18,7 @@ trait Findable
         if ($this->primaryKey === 'Code') {
             $filter = $this->primaryKey . " eq $id";
         }
-        
+
         $records = $this->connection()->get($this->url, [
             '$filter' => $filter,
             '$top' => 1, // The result will always be 1 but on some entities Exact gives an error without it.
@@ -19,7 +27,6 @@ trait Findable
         $result = isset($records[0]) ? $records[0] : [];
         return new self($this->connection(), $result);
     }
-
 
     public function findWithSelect($id, $select = '')
     {
@@ -100,7 +107,7 @@ trait Findable
 
     /**
      * Returns the first Financial model in by applying $top=1 to the query string.
-     * 
+     *
      * @return \Picqer\Financials\Exact\Model|null
      */
     public function first()
