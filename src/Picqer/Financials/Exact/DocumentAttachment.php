@@ -16,9 +16,9 @@ namespace Picqer\Financials\Exact;
  */
 class DocumentAttachment extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
+    use Persistance\Downloadable;
 
     protected $fillable = [
         'ID',
