@@ -138,6 +138,12 @@ trait Findable
         while ($this->connection()->nextUrl !== null)
         {
             $nextResult = $this->connection()->get($this->connection()->nextUrl);
+            
+            // If we have one result which is not an assoc array, make it the first element of an array for the array_merge function
+            if ((bool) count(array_filter(array_keys($nextResult), 'is_string'))) {
+                $nextResult = [ $nextResult ];
+            }
+            
             $result = array_merge($result, $nextResult);
         }
         $collection = [ ];
