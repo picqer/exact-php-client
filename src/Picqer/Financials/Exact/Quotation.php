@@ -116,6 +116,19 @@ class Quotation extends Model
         'YourRef',
     ];
 
-    protected $url = 'crm/Quotations';
+    /**
+     * @param array $array
+     */
+    public function addItem(array $array)
+    {
+        if (! isset($this->attributes['QuotationLines']) || $this->attributes['QuotationLines'] == null) {
+            $this->attributes['QuotationLines'] = [];
+        }
+        if (! isset($array['LineNumber'])) {
+            $array['LineNumber'] = count($this->attributes['QuotationLines']) + 1;
+        }
+        $this->attributes['QuotationLines'][] = $array;
+    }
 
+    protected $url = 'crm/Quotations';
 }
