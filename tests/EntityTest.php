@@ -129,6 +129,11 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Journal::class);
     }
 
+    public function testLayoutEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Layout::class);
+    }
+
     public function testMailMessageEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\MailMessage::class);
