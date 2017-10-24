@@ -274,6 +274,41 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\WebhookSubscription::class);
     }
 
+    public function testStockCountEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StockCount::class);
+    }
+
+    public function testStockCountLineEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StockCountLine::class);
+    }
+
+    public function testWarehouseEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Warehouse::class);
+    }
+
+    public function testStorageLocationEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StorageLocation::class);
+    }
+
+    public function testGoodsDeliverieEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\GoodsDeliverie::class);
+    }
+
+    public function testGoodsDeliveryLineEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\GoodsDeliveryLine::class);
+    }
+
+    public function testSalesOrderIDEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesOrderID::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
