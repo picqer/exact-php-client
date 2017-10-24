@@ -79,6 +79,11 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Division::class);
     }
 
+    public function testSystemDivisionEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SystemDivision::class);
+    }
+
     public function testDocumentEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Document::class);
