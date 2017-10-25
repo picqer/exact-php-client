@@ -36,8 +36,8 @@ namespace Picqer\Financials\Exact;
  */
 class Budget extends Model
 {
-    use Findable;
-    use Storable;
+    use Query\Findable;
+    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
