@@ -44,6 +44,11 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\BankEntryLine::class);
     }
 
+    public function testBudgetEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Budget::class);
+    }
+
     public function testCashEntryEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\CashEntry::class);
