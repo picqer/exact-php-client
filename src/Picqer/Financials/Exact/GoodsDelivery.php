@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class GoodsDeliverie
+ * Class GoodsDelivery
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderGoodsDeliveries
@@ -38,7 +38,7 @@ namespace Picqer\Financials\Exact;
  * @property String $WarehouseCode Code of Warehouse
  * @property String $WarehouseDescription Description of Warehouse
  */
-class GoodsDeliverie extends Model
+class GoodsDelivery extends Model
 {
 
     use Query\Findable;
