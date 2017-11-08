@@ -51,7 +51,7 @@
   });
 
   /** Build php code **/
-  phptxt = "<?php namespace Picqer\\Financials\\Exact;\n\n/**";
+  phptxt = "<?php\n\nnamespace Picqer\\Financials\\Exact;\n\n/**";
   
   // Build docblock
   phptxt += "\n * Class " + classname;
