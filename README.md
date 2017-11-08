@@ -42,6 +42,7 @@ $connection->redirectForAuthorization();
 This will redirect the user to Exact to login and authorize your integration with their account.
 
 ### Parse callback and finish connection set up
+
 Exact will redirect back to the `callback url` you provided. The callback will receive a `code` param. 
 This is the authorization code for oAuth. Store this code.
 
@@ -85,8 +86,6 @@ setValue('refreshtoken', $connection->getRefreshToken());
 setValue('expires_in', $connection->getTokenExpires());
 ```
 
-
-
 ### About divisions (administrations)
 
 By default the library will use the default administration of the user. This means that when the user switches administrations in Exact Online. The library will also start working with this administration.
@@ -110,7 +109,6 @@ $account->Postcode = $customer['zipcode'];
 $account->Status = 'C';
 $account->save();
 
-
 // Add a product in Exact
 $item = new Item($connection);
 $item->Code = $productcode;
@@ -119,7 +117,6 @@ $item->Description = $name;
 $item->IsSalesItem = true;
 $item->SalesVatCode = 'VH';
 $item->save();
-
 
 // Retrieve an item
 $item = new Item($connection);
@@ -134,24 +131,34 @@ $item = new Item($connection);
 $items = $item->filter("Code eq '$productcode'"); // Uses filters as described in Exact API docs (odata filters)
 
 // Create new invoice with invoice lines
-$items[] = [
+$invoiceLines[] = [
 	'Item'      => $itemId,
 	'Quantity'  => $orderproduct['amount'],
 	'UnitPrice' => $orderproduct['price']
 ];
 
-$salesInvoice = new SalesInvoice($this->connection());
+$salesInvoice = new SalesInvoice($connection);
 $salesInvoice->InvoiceTo = $customer_code;
 $salesInvoice->OrderedBy = $customer_code;
 $salesInvoice->YourRef = $orderId;
-$salesInvoice->SalesInvoiceLines = $items;
+$salesInvoice->SalesInvoiceLines = $invoiceLines;
+$salesInvoice->save();
+
+// Print and email the invoice
+$printedInvoice = new PrintedSalesInvoice($connection);
+$printedInvoice->InvoiceID = $salesInvoice->InvoiceID;
+$printedInvoice->SendEmailToCustomer = true;
+$printedInvoice->SenderEmailAddress = "from@example.com";
+$printedInvoice->DocumentLayout = "401f3020-35cd-49a2-843a-d904df0c09ff";
+$printedInvoice->ExtraText = "Some additional text";
+$printedInvoice->save();
 ```
 
 ## Connect to other Exact country than NL
+
 Choose the right base URL according to [Exact developers guide](https://developers.exactonline.com/#Exact%20Online%20sites.html)
 
 ```php
-<?php
 $connection = new \Picqer\Financials\Exact\Connection();
 $connection->setRedirectUrl('CALLBACK_URL');
 $connection->setExactClientId('CLIENT_ID');
@@ -162,12 +169,14 @@ $connection->setBaseUrl('https://start.exactonline.de');
 Check [src/Picqer/Financials/Exact](src/Picqer/Financials/Exact) for all available entities.
 
 ## Webhooks
+
 Managaging webhook subscriptions is possible through the [WebhookSubscription](src/Picqer/Financials/Exact/WebhookSubscription.php) entitiy.
 
 For authenticating incoming webhook calls you can use the [Authenticatable](src/Picqer/Financials/Exact/Webhook/Authenticatable.php) trait.
 Supply the authenticate method with the full JSON request and your Webhook secret supplied by Exact, it will return true or false.
 
 ## Troubleshooting
+
 > 'Picqer\Financials\Exact\ApiException' with message 'Error 400: Please add a $select or a $top=1 statement to the query string.'
 
 In specific instances, sadly not documented in the API documentation of Exact this is a requirement. Probably to prevent overflooding requests. What you have to do when encountering this error is adding a select or top. The select is used to provide a list of fields you want to extract, the $top=1 limits the results to one item.
@@ -193,7 +202,9 @@ var_dump($test->filter('', '', '', ['$top'=> 1]));
 This error occurs because the code you get in your redirect URL is only valid for one call. When you call the authentication-process again with a "used" code. You get this error. Make sure you use the provided code by Exact Online only once to get your access token.
 
 ## Code example
+
 See for example: [example/example.php](example/example.php)
 
 ## TODO
+
 - Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them. Use the ```userscript.js``` in greasemonkey or tampermonkey to generate entities consistently and completely.

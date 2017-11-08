@@ -54,14 +54,18 @@ class PrintedSalesInvoice extends Model
         'SendOutputBasedOnAccount',
     ];
 
+    /**
+     * @return $this
+     */
     public function save()
     {
-        return $this->insert();
+        $this->fill($this->insert());
+        return $this;
     }
 
     public function insert()
     {
-        return $this->connection()->post($this->url, $this->json());
+        return $this->connection()->post($this->url, $this->json(0, true));
     }
 
     protected $url = 'salesinvoice/PrintedSalesInvoices';
