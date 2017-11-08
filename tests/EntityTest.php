@@ -199,6 +199,16 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PurchaseOrderLine::class);
     }
 
+    public function testQuotationEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Quotation::class);
+    }
+
+    public function testQuotationLineEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\QuotationLine::class);
+    }
+
     public function testReceivableListEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ReceivableList::class);
