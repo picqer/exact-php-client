@@ -309,9 +309,9 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\StorageLocation::class);
     }
 
-    public function testGoodsDeliverieEntity()
+    public function testGoodsDeliveryEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\GoodsDeliverie::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\GoodsDelivery::class);
     }
 
     public function testGoodsDeliveryLineEntity()
