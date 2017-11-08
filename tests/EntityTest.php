@@ -254,6 +254,11 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\SalesOrderLine::class);
     }
 
+    public function testShippingMethodEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ShippingMethod::class);
+    }
+
     public function testStockPositionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\StockPosition::class);
