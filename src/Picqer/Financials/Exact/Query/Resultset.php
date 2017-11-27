@@ -1,4 +1,4 @@
-<?php
+<?php namespace Picqer\Financials\Exact\Query;
 
 class Resultset
 {
