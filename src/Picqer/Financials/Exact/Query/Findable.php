@@ -118,6 +118,10 @@ trait Findable
         return $result;
     }
 
+    public function getResultSet(array $params = [])
+    {
+        return new Resultset($this->connection(), $this->url, get_class($this), $params);
+    }
 
     public function get(array $params = [])
     {
