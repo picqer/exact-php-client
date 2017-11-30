@@ -22,6 +22,7 @@ class Resultset
     {
         $result = $this->connection->get($this->url, $this->params);
         $this->url = $this->connection->nextUrl;
+        $this->params = null;
         return $this->collectionFromResult($result, $this->class);
     }
 
