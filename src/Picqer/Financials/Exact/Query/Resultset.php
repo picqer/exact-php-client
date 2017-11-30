@@ -20,7 +20,7 @@ class Resultset
 
     public function next()
     {
-        $result = $this->connection->get($this->url, $params);
+        $result = $this->connection->get($this->url, $this->params);
         $this->url = $this->connection->nextUrl;
         return $this->collectionFromResult($result, $this->class);
     }
