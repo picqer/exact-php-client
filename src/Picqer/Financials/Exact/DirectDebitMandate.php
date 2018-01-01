@@ -23,7 +23,7 @@ namespace Picqer\Financials\Exact;
  * @property Int16 $PaymentType Payment type. 0 = one-off payment, 1 = recurrent payment, 2 = AdHoc (UK only)
  * @property String $Reference Reference
  * @property DateTime $SignatureDate Signature date
- * @property Int16 $Type Payment type. 0 = one-off payment, 1 = recurrent payment, 2 = AdHoc (UK only)
+ * @property Int16 $Type Type of mandate 0 = core, 1 = B2B, 2 = bottomline (UK only)
  */
 class DirectDebitMandate extends Model
 {
