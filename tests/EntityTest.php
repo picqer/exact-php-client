@@ -189,6 +189,16 @@ class EntityTest extends \PHPUnit_Framework_TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PurchaseEntryLine::class);
     }
 
+    public function testPurchaseInvoiceEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PurchaseInvoice::class);
+    }
+
+    public function testPurchaseInvoiceLineEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PurchaseInvoiceLine::class);
+    }
+
     public function testPurchaseOrderEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\PurchaseOrder::class);
