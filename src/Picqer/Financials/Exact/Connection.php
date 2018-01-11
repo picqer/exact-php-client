@@ -190,7 +190,12 @@ class Connection
      */
     public function get($url, array $params = [], array $headers = [])
     {
-        $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
+        
+        // Check if has http/https -> if it does do not reformat URL. We assume Full URL is supplied
+        $urlbuild = parse_url($url);
+        if (empty($urlbuild['scheme'])) {
+            $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
+        }
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
