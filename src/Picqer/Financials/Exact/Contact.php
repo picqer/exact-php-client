@@ -72,6 +72,11 @@ namespace Picqer\Financials\Exact;
  * @property DateTime $StartDate Start date
  * @property String $State State
  * @property String $Title Title
+ *
+ * Note: Due to the way Storable is setup and the way the Exact Online API works certain fields overwrite
+ * each other. For example: If you fill the BusinessEmail but not the Email field the latter will overwrite
+ * the first. This also applies to the BusinessMobile and Mobile field and the BusinessPhone and Phone field.
+ * It is best practice to use the 'main' fields (Email, Mobile and Phone).
  */
 class Contact extends Model
 {
