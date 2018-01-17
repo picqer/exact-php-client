@@ -134,7 +134,8 @@ abstract class Model implements \JsonSerializable
         }
 
         try {
-            if(is_array($this->attributes[$key]) && array_key_exists('__deferred', $this->attributes[$key])) {
+            $isArray = isset($this->attributes[$key]) && is_array($this->attributes[$key]);
+            if($isArray && array_key_exists('__deferred', $this->attributes[$key])) {
                 $class = preg_replace('/(.+?)s?$/', __NAMESPACE__ . '\\\$1', $key); // Filter plural 's' and add namespace
                 $deferred = new $class($this->connection());
                 $uri = $this->attributes[$key]['__deferred']['uri'];
