@@ -1,14 +1,12 @@
 <?php
 
-use PHPUnit\Framework\TestCase;
-
 /**
  * Class EntityTest
  *
  * Tests all entities to ensure entities have no PHP parse errors and have
  * at least the properties we need to use the entity
  */
-class EntityTest extends TestCase
+class EntityTest extends \PHPUnit_Framework_TestCase
 {
 
     public function testAccountEntity()
@@ -191,16 +189,6 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PurchaseEntryLine::class);
     }
 
-    public function testPurchaseInvoiceEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\PurchaseInvoice::class);
-    }
-
-    public function testPurchaseInvoiceLineEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\PurchaseInvoiceLine::class);
-    }
-
     public function testPurchaseOrderEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\PurchaseOrder::class);
@@ -266,11 +254,6 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\SalesOrderLine::class);
     }
 
-    public function testShippingMethodEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\ShippingMethod::class);
-    }
-
     public function testStockPositionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\StockPosition::class);
@@ -289,11 +272,6 @@ class EntityTest extends TestCase
     public function testSubscriptionTypeEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\SubscriptionType::class);
-    }
-
-    public function testSupplierItemEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\SupplierItem::class);
     }
 
     public function testTransactionEntity()
@@ -356,14 +334,14 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\SalesOrderID::class);
     }
 
-    public function testGoodsReceiptEntity()
+    public function testItemWarehousePlanningDetails()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\GoodsReceipt::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\ItemWarehousePlanningDetails::class);
     }
 
-    public function testGoodsReceiptLineEntity()
+    public function testSalesShippingMethods()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\GoodsReceiptLine::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesShippingMethods::class);
     }
 
     protected function performEntityTest($entityName)
