@@ -1,12 +1,13 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
 /**
  * Class EntityTest
  *
  * Tests all entities to ensure entities have no PHP parse errors and have
  * at least the properties we need to use the entity
  */
-class EntityTest extends \PHPUnit_Framework_TestCase
+class EntityTest extends TestCase
 {
 
     public function testAccountEntity()
