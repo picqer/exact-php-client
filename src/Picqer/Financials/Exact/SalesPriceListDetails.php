@@ -36,7 +36,7 @@ namespace Picqer\Financials\Exact;
  * @property DateTime $StartDate Start date
  * @property String $Unit Unit
  */
-class SalesPriceListDetails
+class SalesPriceListDetails extends Model
 {
 
     protected $fillable = [
