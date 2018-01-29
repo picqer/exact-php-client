@@ -218,6 +218,10 @@ abstract class Model implements \JsonSerializable
 
                 $attributes[$attribute] = [];
                 foreach ($collection as $value) {
+                    if(!empty($value->deferred)) {
+                        $value->attributes = array_merge($value->attributes, $value->deferred);
+                    }
+
                     if (is_a($value, 'Picqer\Financials\Exact\Model')) {
                         array_push($attributes[$attribute], $value->attributes);
                     } else {
