@@ -27,6 +27,16 @@ trait Storable
     abstract function connection();
 
     /**
+     * @return string
+     */
+    abstract function url();
+
+    /**
+     * @return mixed
+     */
+    abstract function primaryKeyContent();
+
+    /**
      * @return $this
      */
     public function save()
@@ -42,22 +52,20 @@ trait Storable
 
     public function insert()
     {
-        return $this->connection()->post($this->url, $this->json(0, true));
+        return $this->connection()->post($this->url(), $this->json(0, true));
     }
 
     public function update()
     {
-        $key = $this->primaryKey;
-        $primarykey = $this->$key;
+        $primaryKey = $this->primaryKeyContent();
 
-        return $this->connection()->put($this->url . "(guid'$primarykey')", $this->json());
+        return $this->connection()->put($this->url() . "(guid'$primaryKey')", $this->json());
     }
 
     public function delete()
     {
-        $key = $this->primaryKey;
-        $primarykey = $this->$key;
+        $primaryKey = $this->primaryKeyContent();
 
-        return $this->connection()->delete($this->url . "(guid'$primarykey')");
+        return $this->connection()->delete($this->url() . "(guid'$primaryKey')");
     }
 }

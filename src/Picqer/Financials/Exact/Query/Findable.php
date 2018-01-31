@@ -11,15 +11,25 @@ trait Findable
 
     abstract function isFillable($key);
 
+    /**
+     * @return string
+     */
+    abstract function url();
+
+    /**
+     * @return string
+     */
+    abstract function primaryKey();
+
     public function find($id)
     {
-    	$filter = $this->primaryKey . " eq guid'$id'";
+        $filter = $this->primaryKey() . " eq guid'$id'";
 
-        if ($this->primaryKey === 'Code') {
-            $filter = $this->primaryKey . " eq $id";
+        if ($this->primaryKey() === 'Code') {
+            $filter = $this->primaryKey() . " eq $id";
         }
 
-        $records = $this->connection()->get($this->url, [
+        $records = $this->connection()->get($this->url(), [
             '$filter' => $filter,
             '$top' => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
@@ -31,8 +41,8 @@ trait Findable
     public function findWithSelect($id, $select = '')
     {
         //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
-        $result = $this->connection()->get($this->url, [
-            '$filter' => $this->primaryKey . " eq guid'$id'",
+        $result = $this->connection()->get($this->url(), [
+            '$filter' => $this->primaryKey() . " eq guid'$id'",
             '$select' => $select
         ]);
 
@@ -48,9 +58,10 @@ trait Findable
      *
      * @return string (guid)
      */
-    public function findId($code, $key='Code'){
-        if ( $this->isFillable($key) ) {
-            $format = ($this->url == 'crm/Accounts' && $key === 'Code') ? '%18s' : '%s';
+    public function findId($code, $key='Code')
+    {
+        if ($this->isFillable($key)) {
+            $format = ($this->url() == 'crm/Accounts' && $key === 'Code') ? '%18s' : '%s';
             if (preg_match('/^[\w]{8}-([\w]{4}-){3}[\w]{12}$/', $code)) {
                 $format = "guid'$format'";
             }
@@ -62,11 +73,11 @@ trait Findable
             $request = [
                 '$filter' => $filter,
                 '$top' => 1,
-                '$select' => $this->primaryKey,
-                '$orderby' => $this->primaryKey,
+                '$select' => $this->primaryKey(),
+                '$orderby' => $this->primaryKey(),
             ];
-            if( $records = $this->connection()->get($this->url, $request) ){
-                return $records[0][$this->primaryKey];
+            if ($records = $this->connection()->get($this->url(), $request)) {
+                return $records[0][$this->primaryKey()];
             }
         }
     }
@@ -95,7 +106,7 @@ trait Findable
             $request = array_merge($system_query_options, $request);
         }
 
-        $result = $this->connection()->get($this->url, $request, $headers);
+        $result = $this->connection()->get($this->url(), $request, $headers);
 
         if (!empty($divisionId)) {
             $this->connection()->setDivision($originalDivision); // Restore division
@@ -120,12 +131,12 @@ trait Findable
 
     public function getResultSet(array $params = [])
     {
-        return new Resultset($this->connection(), $this->url, get_class($this), $params);
+        return new Resultset($this->connection(), $this->url(), get_class($this), $params);
     }
 
     public function get(array $params = [])
     {
-        $result = $this->connection()->get($this->url, $params);
+        $result = $this->connection()->get($this->url(), $params);
 
         return $this->collectionFromResult($result);
     }
@@ -136,7 +147,7 @@ trait Findable
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter
         if ((bool) count(array_filter(array_keys($result), 'is_string'))) {
-            $result = [ $result ];
+            $result = [$result];
         }
 
         while ($this->connection()->nextUrl !== null)
@@ -145,12 +156,12 @@ trait Findable
             
             // If we have one result which is not an assoc array, make it the first element of an array for the array_merge function
             if ((bool) count(array_filter(array_keys($nextResult), 'is_string'))) {
-                $nextResult = [ $nextResult ];
+                $nextResult = [$nextResult];
             }
             
             $result = array_merge($result, $nextResult);
         }
-        $collection = [ ];
+        $collection = [];
         foreach ($result as $r) {
             $collection[] = new self($this->connection(), $r);
         }
