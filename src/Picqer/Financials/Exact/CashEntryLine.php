@@ -105,5 +105,5 @@ class CashEntryLine extends Model
         'VATType',
     ];
 
-    protected $url = 'financialtransaction/CashEntryLine';
+    protected $url = 'financialtransaction/CashEntryLines';
 }
