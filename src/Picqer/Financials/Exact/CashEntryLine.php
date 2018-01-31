@@ -3,10 +3,10 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesEntryLine
+ * Class CashEntryLine
  *
  * @package Picqer\Financials\Exact
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesentrySalesEntryLines
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionCashEntryLines
  *
  * @property Guid $ID Primary key
  * @property Guid Account Reference to Account
