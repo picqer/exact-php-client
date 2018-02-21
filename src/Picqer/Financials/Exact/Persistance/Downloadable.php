@@ -11,18 +11,13 @@ trait Downloadable
     abstract function connection();
 
     /**
-     * @return string
-     */
-    abstract function url();
-
-    /**
-     * @return Binary representation of file
+     * @return mixed Binary representation of file
      */
     public function download()
     {
         $client = new Client();
 
-        $uri = $this->url() . '&Download=1';
+        $uri = $this->Url . '&Download=1';
 
         $headers = [
             'Accept' => 'application/json',
