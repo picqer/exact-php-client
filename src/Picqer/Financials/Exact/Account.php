@@ -18,7 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property String $AddressLine1 Visit address first line
  * @property String $AddressLine2 Visit address second line
  * @property String $AddressLine3 Visit address third line
- * @property BankAccounts $BankAccounts Collection of Bank accounts
+ * @property BankAccount[] $BankAccounts Collection of Bank accounts
  * @property Boolean $Blocked Indicates if the account is blocked
  * @property Guid $BusinessType Reference to the business type of the account
  * @property Boolean $CanDropShip Indicates the default for the possibility to drop ship when an item is linked to a supplier
