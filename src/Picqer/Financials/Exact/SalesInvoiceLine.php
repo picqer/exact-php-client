@@ -97,6 +97,9 @@ class SalesInvoiceLine extends Model
         'VATCode',
         'VATCodeDescription',
         'VATPercentage',
+        'SalesOrder',
+        'SalesOrderLine',
+        'SalesOrderNumber',
     ];
 
     protected $url = 'salesinvoice/SalesInvoiceLines';
