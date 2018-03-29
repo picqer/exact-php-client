@@ -116,6 +116,7 @@ class Connection
             'http_errors' => true,
             'handler' => $handlerStack,
             'expect' => false,
+            'verify' => false,
         ]);
 
         return $this->client;
