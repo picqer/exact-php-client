@@ -39,6 +39,11 @@ class Connection
     private $tokenUrl = '/api/oauth2/token';
 
     /**
+     * @var string
+     */
+    private $xmlDownloadUrl = '/docs/XMLDownload.aspx';
+
+    /**
      * @var
      */
     private $exactClientId;
@@ -624,5 +629,65 @@ class Connection
     public function setTokenUrl($tokenUrl)
     {
         $this->tokenUrl = $tokenUrl;
+    }
+
+    /**
+     * @param string $xmlDownloadUrl
+     */
+    public function setXmlDownloadUrl($xmlDownloadUrl)
+    {
+        $this->xmlDownloadUrl = $xmlDownloadUrl;
+    }
+
+    /**
+     * Get data from XML API
+     *
+     * @param array $params
+     *
+     * @return array|\SimpleXMLElement
+     */
+    public function xmlDownload($params = [])
+    {
+        $url = $this->baseUrl . $this->xmlDownloadUrl;
+
+        try {
+            $request = $this->createRequest('GET', $url, null, $params);
+            $response = $this->client()->send($request);
+
+            return $this->parseXmlResponse($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
+    }
+
+    /**
+     * Parse data from XML API
+     *
+     * @param Response $response
+     *
+     * @return array|\SimpleXMLElement
+     * @throws ApiException
+     */
+    public function parseXmlResponse(Response $response)
+    {
+        try {
+
+            if ($response->getStatusCode() === 204) {
+                return [];
+            }
+
+            $xml = new \SimpleXMLElement($response->getBody()->getContents());
+
+            // Define paam for next URL
+            if (isset($xml->Topics->Topic['ts_d'])) {
+                $this->nextUrl = (string) $xml->Topics->Topic['ts_d']; // Use this for TSPaging param
+            } else {
+                $this->nextUrl = '';
+            }
+
+            return $xml;
+        } catch (\RuntimeException $e) {
+            throw new ApiException($e->getMessage());
+        }
     }
 }
