@@ -20,6 +20,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\AccountClassification::class);
     }
 
+    public function testAccountInvolvedAccountEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\AccountInvolvedAccount::class);
+    }
+
     public function testAccountItemEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\AccountItem::class);
@@ -33,6 +38,11 @@ class EntityTest extends TestCase
     public function testBankAccountEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\BankAccount::class);
+    }
+
+    public function testBankEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Bank::class);
     }
 
     public function testBankEntryEntity()
@@ -115,6 +125,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\GLAccount::class);
     }
 
+    public function testGLTransactionTypeEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\GLTransactionType::class);
+    }
+
     public function testInvoiceSalesOrdersEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\InvoiceSalesOrder::class);
@@ -158,6 +173,11 @@ class EntityTest extends TestCase
     public function testMeEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Me::class);
+    }
+
+    public function testOutstandingInvoicesOverviewEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\OutstandingInvoicesOverview::class);
     }
 
     public function testPayablesListEntity()
