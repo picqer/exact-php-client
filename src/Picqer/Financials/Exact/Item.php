@@ -101,7 +101,7 @@ class Item extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
-    use Persistance\Downloadable
+    use Persistance\Downloadable;
         
     protected $fillable = [
         'Barcode',
