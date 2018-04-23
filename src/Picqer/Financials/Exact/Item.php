@@ -93,12 +93,16 @@ namespace Picqer\Financials\Exact;
  * @property DateTime $StartDate Together with StartDate this determines if the item is active
  * @property Byte $Unit Indicates if the item is a time unit item (for example a labor hour item)
  * @property String $UnitDescription Description of Unit
+ * @property String PictureUrl
+ * @property String PictureThumbnailUrl
+ * @property String PictureName
  */
 class Item extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
-
+    use Persistance\Downloadable
+        
     protected $fillable = [
         'Barcode',
         'ID',
