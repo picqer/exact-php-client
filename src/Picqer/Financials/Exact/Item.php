@@ -186,6 +186,9 @@ class Item extends Model
         'Stock',
         'Unit',
         'UnitDescription',
+        'PictureUrl',
+        'PictureThumbnailUrl',
+        'PictureName',
     ];
 
     protected $url = 'logistics/Items';
