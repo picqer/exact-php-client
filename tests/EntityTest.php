@@ -350,6 +350,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\InvoiceTerm::class);
     }
 
+    public function testBillOfMaterialVersions()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialVersions::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
