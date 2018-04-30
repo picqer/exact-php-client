@@ -32,7 +32,6 @@ namespace Picqer\Financials\Exact;
  * @property String $TypeDescription Description of Type
  * @property Date $VersionDateTime Version date
  * @property Int32 $VersionNumber Version Number
-
  */
 class BillOfMaterialVersions extends Model
 {
