@@ -32,9 +32,9 @@ namespace Picqer\Financials\Exact;
  * @property String $PartItemDescription Part item description
  * @property Double $Quantity Quantity
  * @property Double $QuantityBatch Quantity batch
- * @property Edm.Time $syscreated Creation date
+ * @property Time $syscreated Creation date
  * @property Guid $syscreator User ID of creator
- * @property Edm.Time $sysmodified Modified date
+ * @property Time $sysmodified Modified date
  * @property Guid $sysmodifier User ID of modifier
  * @property Int32 $Type Material type 1 indicates material, 2 indicates byproduct
  */
@@ -47,34 +47,34 @@ class BillOfMaterialMaterials extends Model
 
     protected $fillable = [
         'ID',
-		'AverageCost',
-		'Backflush',
-		'CalculatorType',
-		'CostBatch',
-		'CostCenter',
-		'CostCenterDescription',
-		'CostUnit',
-		'CostUnitDescription',
-		'CreatorFullName',
-		'Description',
-		'DetailDrawing',
-		'Division',
-		'ItemVersion',
-		'LineNumber',
-		'NetWeight',
-		'NetWeightUnit',
-		'Notes',
-		'PartItem',
-		'PartItemCode',
-		'PartItemCostPriceStandard',
-		'PartItemDescription',
-		'Quantity',
-		'QuantityBatch',
-		'syscreated',
-		'syscreator',
-		'sysmodified',
-		'sysmodifier',
-		'Type'
+        'AverageCost',
+        'Backflush',
+        'CalculatorType',
+        'CostBatch',
+        'CostCenter',
+        'CostCenterDescription',
+        'CostUnit',
+        'CostUnitDescription',
+        'CreatorFullName',
+        'Description',
+        'DetailDrawing',
+        'Division',
+        'ItemVersion',
+        'LineNumber',
+        'NetWeight',
+        'NetWeightUnit',
+        'Notes',
+        'PartItem',
+        'PartItemCode',
+        'PartItemCostPriceStandard',
+        'PartItemDescription',
+        'Quantity',
+        'QuantityBatch',
+        'syscreated',
+        'syscreator',
+        'sysmodified',
+        'sysmodifier',
+        'Type'
     ];
 
     protected $url = 'manufacturing/BillOfMaterialMaterials';
