@@ -360,6 +360,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialMaterials::class);
     }
 
+    public function testProject()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Project::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
