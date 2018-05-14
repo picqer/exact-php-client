@@ -1,5 +1,7 @@
 <?php
+
 namespace Picqer\Financials\Exact;
+
 /**
  * Class Project
  *
