@@ -18,7 +18,7 @@ trait Downloadable
         $client = new Client();
 
         if ($this->Url) {
-            $uri = $this->Url;
+            $uri = $this->Url . '&Download=1';
         } elseif ($this->PictureUrl) {
             $uri = $this->PictureUrl;
         }
