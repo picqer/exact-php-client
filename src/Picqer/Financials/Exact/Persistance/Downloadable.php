@@ -17,7 +17,11 @@ trait Downloadable
     {
         $client = new Client();
 
-        $uri = $this->Url . '&Download=1';
+        if ($this->Url) {
+            $uri = $this->Url . '&Download=1';
+        } elseif ($this->PictureUrl) {
+            $uri = $this->PictureUrl;
+        }
 
         $headers = [
             'Accept' => 'application/json',
