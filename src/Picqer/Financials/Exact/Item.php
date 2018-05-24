@@ -15,6 +15,11 @@ namespace Picqer\Financials\Exact;
  * @property String $Class_03 Item class code referring to ItemClasses with ClassID 3
  * @property String $Class_04 Item class code referring to ItemClasses with ClassID 4
  * @property String $Class_05 Item class code referring to ItemClasses with ClassID 5
+ * @property String $Class_06 Item class code referring to ItemClasses with ClassID 6
+ * @property String $Class_07 Item class code referring to ItemClasses with ClassID 7
+ * @property String $Class_08 Item class code referring to ItemClasses with ClassID 8
+ * @property String $Class_09 Item class code referring to ItemClasses with ClassID 9
+ * @property String $Class_10 Item class code referring to ItemClasses with ClassID 10
  * @property String $Code Barcode of the item (numeric string)
  * @property Byte $CopyRemarks Copy remarks to sales lines
  * @property String $CostPriceCurrency The currency of the current and proposed cost price
@@ -107,6 +112,11 @@ class Item extends Model
         'Class_03',
         'Class_04',
         'Class_05',
+        'Class_06',
+        'Class_07',
+        'Class_08',
+        'Class_09',
+        'Class_10',
         'Code',
         'CopyRemarks',
         'CostPriceCurrency',
