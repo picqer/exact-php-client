@@ -108,9 +108,7 @@ trait Findable
 
         $filter = $baseName.' eq guid\''.$model->primaryKeyContent() .'\'';
 
-        $filtered = $this->filter($filter);
-
-        return $filtered;
+        return $this->filter($filter);
     }
 
     /**
