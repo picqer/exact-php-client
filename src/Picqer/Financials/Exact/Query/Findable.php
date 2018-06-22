@@ -84,7 +84,7 @@ trait Findable
     }
 
     /**
-     * @param $model
+     * @param Model $model
      * @return self|null
      */
     public function firstRelated($model)
@@ -113,6 +113,10 @@ trait Findable
         return $filtered;
     }
 
+    /**
+     * @param string|object $class
+     * @return string
+     */
     private function getModelBaseName($class)
     {
         $class = is_object($class) ? get_class($class) : $class;
