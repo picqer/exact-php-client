@@ -83,10 +83,24 @@ trait Findable
         }
     }
 
+    /**
+     * @param $model
+     * @return self|null
+     */
+    public function firstRelated($model)
+    {
+        $related = $this->findRelated($model);
+
+        if ($related) {
+            return $related[0];
+        }
+
+        return null;
+    }
 
     /**
      * @param Model $model
-     * @return null|self
+     * @return array
      */
     public function findRelated($model)
     {
@@ -96,11 +110,7 @@ trait Findable
 
         $filtered = $this->filter($filter);
 
-        if ($filtered) {
-            return $filtered[0];
-        }
-
-        return null;
+        return $filtered;
     }
 
     private function getModelBaseName($class)
