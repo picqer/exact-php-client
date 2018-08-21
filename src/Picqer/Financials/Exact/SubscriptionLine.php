@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionLines
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property Double $AmountDC Amount in the default currency of the company
  * @property Double $AmountFC Amount in the currency of the transaction
  * @property String $Costcenter Cost center
@@ -16,9 +16,9 @@ namespace Picqer\Financials\Exact;
  * @property String $Description Description
  * @property Double $Discount Discount percentage
  * @property Int32 $Division Division code
- * @property Guid $EntryID Entry ID
+ * @property string $EntryID Entry ID
  * @property DateTime $FromDate From date
- * @property Guid $Item Reference to Item
+ * @property string $Item Reference to Item
  * @property String $ItemDescription Description of Item
  * @property Int32 $LineNumber Line number
  * @property Int16 $LineType Reference to LineType

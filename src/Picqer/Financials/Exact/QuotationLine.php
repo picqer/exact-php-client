@@ -8,19 +8,19 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMQuotationLines
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property Double $AmountDC Amount in the default currency of the company
  * @property Double $AmountFC Amount in the currency of the transaction
  * @property String $Description By default this contains the item description
  * @property Double $Discount Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055
  * @property Int32 $Division Division code
- * @property Guid $Item Reference to the item that is sold in this quotation line
+ * @property string $Item Reference to the item that is sold in this quotation line
  * @property String $ItemDescription Description of the item
  * @property Int32 $LineNumber Indicates the sequence of the lines within one quotation
  * @property Double $NetPrice Net price of the quotation line
  * @property String $Notes Extra notes
  * @property Double $Quantity The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor
- * @property Guid $QuotationID Identifies the quotation. All the lines of a quotation have the same QuotationID
+ * @property string $QuotationID Identifies the quotation. All the lines of a quotation have the same QuotationID
  * @property Int32 $QuotationNumber Unique number to indentify the quotation. By default this number is based on the setting for first available number
  * @property String $UnitCode Code of the item unit
  * @property String $UnitDescription Description of the item unit

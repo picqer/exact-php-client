@@ -6,15 +6,15 @@
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostunits
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property String $Code Code (user-defined ID)
  * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
+ * @property string $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
  * @property String $Description Description (text)
  * @property Int32 $Division Division code
  * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
+ * @property string $Modifier User ID of modifier
  * @property String $ModifierFullName Name of modifier
  */
 class Costunit extends Model

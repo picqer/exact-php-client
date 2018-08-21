@@ -8,13 +8,13 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceLayouts
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
+ * @property string $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
  * @property Int32 $Division Division code
  * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
+ * @property string $Modifier User ID of modifier
  * @property String $ModifierFullName Name of modifier
  * @property String $Subject Subject
  * @property Int16 $Type 1=Layout, 2=E-mail text layout, 3=Word template 

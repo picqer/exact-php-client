@@ -8,15 +8,15 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadLogisticsAccountItems
  *
- * @property Guid $ID Item
- * @property Guid $Account Account
+ * @property string $ID Item
+ * @property string $Account Account
  * @property String $Barcode Barcode
  * @property String $Code Item code
  * @property String $CostPriceCurrency Currency of cost price
  * @property Double $CostPriceNew New cost price
  * @property Double $CostPriceStandard Standard cost price
  * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of the creator
+ * @property string $Creator User ID of the creator
  * @property String $CreatorFullName Name of the creator
  * @property Double $DefaultSalesPrice Default sales price
  * @property String $Description Item Description
@@ -27,13 +27,13 @@ namespace Picqer\Financials\Exact;
  * @property Boolean $IsStockItem Indicates if this is a stock item
  * @property Byte $IsTaxableItem Indicates if tax needs to be calculated for this item
  * @property Byte $IsWebshopItem Indicates if this is a webshop item
- * @property Guid $ItemGroup Item group
+ * @property string $ItemGroup Item group
  * @property String $ItemGroupCode Code of Item group
  * @property String $ItemGroupDescription Description of Item group
  * @property Double $Margin Margin
  * @property Double $Markup Markup
  * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of the last modifier
+ * @property string $Modifier User ID of the last modifier
  * @property String $ModifierFullName Name of the last modifier
  * @property String $Notes Extra remarks
  * @property String $PictureName File name of picture
@@ -52,7 +52,7 @@ namespace Picqer\Financials\Exact;
  * @property String $SalesVatCodeDescription Description of Sales vat code
  * @property DateTime $StartDate Start date
  * @property Double $Stock Quantity that is in stock
- * @property Guid $Unit Unit
+ * @property string $Unit Unit
  * @property String $UnitCode Code of unit
  * @property String $UnitDescription Description of unit
  * @property String $UnitType Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight

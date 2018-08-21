@@ -10,7 +10,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property Int64 $HID Primary key, human readable ID
  * @property String $AccountCode Code of Account
- * @property Guid $AccountId Reference to the account
+ * @property string $AccountId Reference to the account
  * @property String $AccountName Name of Account
  * @property Double $Amount Amount
  * @property Double $AmountInTransit Amount in transit
@@ -18,7 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property String $Description Description
  * @property DateTime $DueDate Date the invoice should be paid
  * @property Int32 $EntryNumber Entry number
- * @property Guid $Id Obsolete
+ * @property string $Id Obsolete
  * @property DateTime $InvoiceDate Invoice date
  * @property Int32 $InvoiceNumber Invoice number. The value is 0 when the invoice number of the linked transaction is empty.
  * @property String $JournalCode Code of Journal

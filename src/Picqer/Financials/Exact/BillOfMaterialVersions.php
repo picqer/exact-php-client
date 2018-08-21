@@ -8,20 +8,20 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingBillOfMaterialVersions
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property Double $BatchQuantity Batch Quantity of Item Version
  * @property String $CadDrawingUrl Cad drawing URL
  * @property Double $CalculatedCostPrice Calculated Cost Price of Item Version
  * @property Date $CreatedTime Creation date
- * @property Guid $Creator User ID of creator
+ * @property string $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
  * @property String $Description Description of the item version
  * @property Int32 $Division Division code
  * @property Byte $IsDefault Indicates if this is the default item version that will be assigned when a item is selected
- * @property Guid $Item Reference to Items table
+ * @property string $Item Reference to Items table
  * @property String $ItemDescription Description of Item
  * @property Date $ModifiedTime Last modified date
- * @property Guid $Modifier User ID of modifier
+ * @property string $Modifier User ID of modifier
  * @property String $ModifierFullName Name of modifier
  * @property String $Notes Line notes
  * @property Int32 $OrderLeadDays Order lead days for item

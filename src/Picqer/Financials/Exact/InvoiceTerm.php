@@ -6,10 +6,10 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectInvoiceTerms
  *
- * @property Guid ID Primary key
+ * @property string ID Primary key
  * @property Double Amount Amount in the currency of the transaction
  * @property DateTime Created Creation date
- * @property Guid Creator User ID of creator
+ * @property string Creator User ID of creator
  * @property String CreatorFullName Name of creator
  * @property String Deliverable WBS's deliverable linked to invoice term
  * @property String Description Description of invoice term
@@ -17,14 +17,14 @@ namespace Picqer\Financials\Exact;
  * @property DateTime ExecutionFromDate Execution date: From
  * @property DateTime ExecutionToDate Execution date: To
  * @property DateTime InvoiceDate Invoice date
- * @property Guid Item Reference to item
+ * @property string Item Reference to item
  * @property String ItemDescription Description of item
  * @property DateTime Modified Last modified date
- * @property Guid Modifier User ID of modifier
+ * @property string Modifier User ID of modifier
  * @property String ModifierFullName Name of modifier
  * @property String Notes Notes
  * @property Double Percentage Percentage of amount per project's budgeted amount
- * @property Guid Project Reference to project
+ * @property string Project Reference to project
  * @property String ProjectDescription Description of project
  * @property String VATCode Reference to VATCode
  * @property String VATCodeDescription Description of VATCode

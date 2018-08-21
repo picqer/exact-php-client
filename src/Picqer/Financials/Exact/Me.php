@@ -8,13 +8,13 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemMe
  *
- * @property Guid   $UserID Primary key
+ * @property string   $UserID Primary key
  * @property Int32  $CurrentDivision Division number that is currently used in the API. You should use a division number in the url
- * @property Guid   $DivisionCustomer Owner account of the division
+ * @property string   $DivisionCustomer Owner account of the division
  * @property String $DivisionCustomerCode Owner account code of the division
  * @property String $DivisionCustomerName Owner account name of the division
  * @property String $Email Email address of the user
- * @property Guid   $EmployeeID Employee ID
+ * @property string   $EmployeeID Employee ID
  * @property String $FirstName First name
  * @property String $FullName Full name of the user
  * @property String $Gender Gender: M=Male, V=Female, O=Unknown

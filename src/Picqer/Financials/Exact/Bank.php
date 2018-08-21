@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowBanks
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property String $BankName The name of the bank
  * @property String $BICCode The bank identification code of the bank
  * @property String $Country The country in which the bank is based

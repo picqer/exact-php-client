@@ -10,7 +10,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property Int64 $HID Human readable ID, Primary key
  * @property String $AccountCode Code of the Account
- * @property Guid $AccountId Reference to the account
+ * @property string $AccountId Reference to the account
  * @property String $AccountName Name of Account
  * @property Double $Amount Amount
  * @property Double $AmountInTransit Amount in transit
@@ -18,7 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property String $Description Description
  * @property DateTime $DueDate Date the invoice should be paid
  * @property Int32 $EntryNumber Entry number
- * @property Guid $Id Obsolete
+ * @property string $Id Obsolete
  * @property DateTime $InvoiceDate Invoice date
  * @property Int32 $InvoiceNumber Invoice number
  * @property String $JournalCode Code of Journal

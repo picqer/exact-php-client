@@ -8,12 +8,12 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=cashflowPaymentConditions
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property String $Code Code of the payment condition
  * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
+ * @property string $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
- * @property Guid $CreditManagementScenario Default credit management scenario to be used for new payment terms
+ * @property string $CreditManagementScenario Default credit management scenario to be used for new payment terms
  * @property String $CreditManagementScenarioCode Code of CreditManagementScenario
  * @property String $CreditManagementScenarioDescription Description of CreditManagementScenario
  * @property String $Description Description of CreditManagementScenario
@@ -22,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property Double $DiscountPercentage Discount percentage
  * @property Int32 $Division Division code
  * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
+ * @property string $Modifier User ID of modifier
  * @property String $ModifierFullName Name of modifier
  * @property Int32 $PaymentDays Number of days to pay within, to have the right to take the discount
  * @property String $PaymentDiscountType Type of payment discount. Values: B = Settlement discount, K = Credit surcharge

@@ -19,7 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property String $CostUnitDescription The description of the cost unit.
  * @property Int32 $Count The number of transactions in the grouping.
  * @property Int32 $Division Division code
- * @property Guid $GLAccount G/L account
+ * @property string $GLAccount G/L account
  * @property String $GLAccountCode The code of the G/L account.
  * @property String $GLAccountDescription The description of the G/L account.
  * @property Int32 $ReportingPeriod The reporting period of the transactions in the grouping.

@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsUnits
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property Boolean $Active Indicates whether a unit is in use
  * @property String $Code Unique code for the unit
  * @property String $Description Description

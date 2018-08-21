@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceInvoiceSalesOrders
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property Int32 $CreateMode Invoice creation mode- 0: Per customer 1: Per sales order
  * @property Int32 $DeliveryNumber Stock entries entry number.
  * @property DateTime $EndDate Stock entries entry end date.
