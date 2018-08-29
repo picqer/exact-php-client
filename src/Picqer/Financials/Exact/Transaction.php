@@ -8,13 +8,13 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionTransactions
  *
- * @property Guid $EntryID Primary key
+ * @property string $EntryID Primary key
  * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
  * @property DateTime $Created Creation date
  * @property DateTime $Date Date
  * @property String $Description Description
  * @property Int32 $Division Division code
- * @property Guid $Document Document linked to the sales or purchase transaction.
+ * @property string $Document Document linked to the sales or purchase transaction.
  * @property Int32 $DocumentNumber Number of the document.
  * @property String $DocumentSubject Subject of the document.
  * @property Int32 $EntryNumber Entry number

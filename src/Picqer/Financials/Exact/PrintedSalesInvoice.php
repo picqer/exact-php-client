@@ -8,20 +8,20 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesinvoicePrintedSalesInvoices
  *
- * @property Guid $InvoiceID Primary key, Reference to EntryID of SalesInvoice
+ * @property string $InvoiceID Primary key, Reference to EntryID of SalesInvoice
  * @property Int32 $Division Division code
- * @property Guid $Document Contains the id of the document that was created
+ * @property string $Document Contains the id of the document that was created
  * @property String $DocumentCreationError Contains the error message if an error occurred during the creation of the document
  * @property String $DocumentCreationSuccess Contains information if a document was succesfully created
- * @property Guid $DocumentLayout Based on this layout a PDF is created and attached to an Exact Online document and an email
+ * @property string $DocumentLayout Based on this layout a PDF is created and attached to an Exact Online document and an email
  * @property String $EmailCreationError Contains the error message if an error occurred during the creation of the email
  * @property String $EmailCreationSuccess Contains confirmation that an email was sent. If an email cannot be delivered this property will still show confirmation that the email was sent.
- * @property Guid $EmailLayout Based on this layout the email text is produced
+ * @property string $EmailLayout Based on this layout the email text is produced
  * @property String $ExtraText Extra text that can be added to the printed document and email
  * @property DateTime $InvoiceDate Date of the invoice
  * @property String $PostboxMessageCreationError Contains the error message if an error occurred during the sending of a postbox message
  * @property String $PostboxMessageCreationSuccess Contains information if a postbox message was succesfully sent
- * @property Guid $PostboxSender The postbox from where the message is sent
+ * @property string $PostboxSender The postbox from where the message is sent
  * @property Int32 $ReportingPeriod Reporting period
  * @property Int32 $ReportingYear Reporting year
  * @property Boolean $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer

@@ -8,10 +8,10 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseEntryPurchaseEntryLines
  *
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property Double $AmountDC Amount in the default currency of the company
  * @property Double $AmountFC Amount in the currency of the transaction
- * @property Guid $Asset Reference to asset
+ * @property string $Asset Reference to asset
  * @property String $AssetDescription Asset description
  * @property String $CostCenter Reference to cost center
  * @property String $CostCenterDescription Description of CostCenter
@@ -19,9 +19,9 @@ namespace Picqer\Financials\Exact;
  * @property String $CostUnitDescription Description of CostUnit
  * @property String $Description Description
  * @property Int32 $Division Division code
- * @property Guid $EntryID Reference to header of the purchase entry
+ * @property string $EntryID Reference to header of the purchase entry
  * @property DateTime $From From date for deferred revenue
- * @property Guid $GLAccount General ledger account
+ * @property string $GLAccount General ledger account
  * @property String $GLAccountCode Code of GLAccount
  * @property String $GLAccountDescription Description of GLAccount
  * @property String $IntraStatArea IntraStat area
@@ -31,7 +31,7 @@ namespace Picqer\Financials\Exact;
  * @property String $IntraStatTransportMethod IntraStat transport method
  * @property Int32 $LineNumber Line number
  * @property String $Notes Extra remarks
- * @property Guid $Project Reference to project
+ * @property string $Project Reference to project
  * @property String $ProjectDescription Description of Project
  * @property Double $Quantity Quantity
  * @property String $SerialNumber Serial number
@@ -39,10 +39,10 @@ namespace Picqer\Financials\Exact;
  * @property String $StatisticalNumber Statistical Number
  * @property Double $StatisticalQuantity Statistical Quantity
  * @property Double $StatisticalValue Statistical Value
- * @property Guid $Subscription Reference to subscription
+ * @property string $Subscription Reference to subscription
  * @property String $SubscriptionDescription Description of Subscription
  * @property DateTime $To To date for deferred revenue
- * @property Guid $TrackingNumber Reference to tracking number
+ * @property string $TrackingNumber Reference to tracking number
  * @property String $TrackingNumberDescription Description of TrackingNumber
  * @property Int32 $Type Type: 30 = Purchase entry, 31 = Purchase credit note
  * @property Double $VATAmountDC VAT amount in the default currency of the company

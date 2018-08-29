@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=logisticsItems
  *
  * @property String $Barcode
- * @property Guid $ID Primary key
+ * @property string $ID Primary key
  * @property String $Class_01 Item class code referring to ItemClasses with ClassID 1
  * @property String $Class_02 Item class code referring to ItemClasses with ClassID 2
  * @property String $Class_03 Item class code referring to ItemClasses with ClassID 3
@@ -26,7 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property Double $CostPriceNew Proposed cost price
  * @property Double $CostPriceStandard The current standard cost price
  * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
+ * @property string $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
  * @property String $Description Description of the item
  * @property Int32 $Division Division code
@@ -60,13 +60,13 @@ namespace Picqer\Financials\Exact;
  * @property String $FreeTextField_08 Free text field 8
  * @property String $FreeTextField_09 Free text field 9
  * @property String $FreeTextField_10 Free text field 10
- * @property Guid $GLCosts GL account the cost entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
+ * @property string $GLCosts GL account the cost entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
  * @property String $GLCostsCode Code of GL account for costs
  * @property String $GLCostsDescription Description of GLCosts
- * @property Guid $GLRevenue GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
+ * @property string $GLRevenue GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
  * @property String $GLRevenueCode Code of GLRevenue
  * @property String $GLRevenueDescription Description of GLRevenue
- * @property Guid $GLStock GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
+ * @property string $GLStock GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
  * @property String $GLStockCode Code of GL account for stock
  * @property String $GLStockDescription Description of GLStock
  * @property Byte $IsBatchItem Indicates if batches are used for this item
@@ -84,11 +84,11 @@ namespace Picqer\Financials\Exact;
  * @property Boolean $IsSubcontractedItem Indicates if the item is provided by an outside supplier
  * @property Byte $IsTime Indicates if the item is a time unit item (for example a labor hour item)
  * @property Byte $IsWebshopItem Indicates if the item can be exported to a web shop
- * @property Guid $ItemGroup GUID of Item group of the item
+ * @property string $ItemGroup GUID of Item group of the item
  * @property String $ItemGroupCode Code of ItemGroup
  * @property String $ItemGroupDescription Description of ItemGroup
  * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
+ * @property string $Modifier User ID of modifier
  * @property String $ModifierFullName Name of modifier
  * @property String $Notes Notes
  * @property String $SalesVatCode Code of SalesVat

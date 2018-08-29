@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionCashEntries
  *
- * @property Guid $EntryID Primary key (read-only)
+ * @property string $EntryID Primary key (read-only)
  * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
  * @property DateTime $Created Creation date (read-only)
  * @property Double $Currency Closing balance in the currency of the transaction

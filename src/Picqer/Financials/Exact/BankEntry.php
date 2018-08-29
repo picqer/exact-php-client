@@ -8,9 +8,9 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionBankEntries
  *
- * @property Guid $EntryID Primary key
+ * @property string $EntryID Primary key
  * @property BankEntryLines $BankEntryLines Collection of lines
- * @property Guid $BankStatementDocument Reference to document with bank statement
+ * @property string $BankStatementDocument Reference to document with bank statement
  * @property Int32 $BankStatementDocumentNumber Document number of document with bank statement
  * @property String $BankStatementDocumentSubject Subject of document with bank statement
  * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction

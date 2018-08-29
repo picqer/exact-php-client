@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=GeneralJournalEntryGeneralJournalEntries
  *
- * @property Guid $EntryID Primary key
+ * @property string $EntryID Primary key
  * @property String $Currency Currency code
  * @property Int32 $EntryNumber Entry number
  * @property Double $ExchangeRate Exchange rate

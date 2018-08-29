@@ -8,20 +8,20 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAddresses
  *
- * @property Guid $ID Primary key
- * @property Guid $Account Account linked to the address
+ * @property string $ID Primary key
+ * @property string $Account Account linked to the address
  * @property Boolean $AccountIsSupplier Indicates if the account is a supplier
  * @property String $AccountName Name of the account
  * @property String $AddressLine1 First address line
  * @property String $AddressLine2 Second address line
  * @property String $AddressLine3 Third address line
  * @property String $City City
- * @property Guid $Contact Contact linked to Address
+ * @property string $Contact Contact linked to Address
  * @property String $ContactName Contact name
  * @property String $Country Country code
  * @property String $CountryName Country name
  * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
+ * @property string $Creator User ID of creator
  * @property String $CreatorFullName Name of creator
  * @property Int32 $Division Division code
  * @property String $Fax Fax number
@@ -48,7 +48,7 @@ namespace Picqer\Financials\Exact;
  * @property String $Mailbox Mailbox
  * @property Boolean $Main Indicates if the address is the main address for this type
  * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
+ * @property string $Modifier User ID of modifier
  * @property String $ModifierFullName Name of modifier
  * @property String $NicNumber Last 5 digits of SIRET number which is an intern sequential number of 4 digits representing the identification of the localization of the office
  * @property String $Notes Notes for an address
@@ -58,7 +58,7 @@ namespace Picqer\Financials\Exact;
  * @property String $State State
  * @property String $StateDescription Name of the State
  * @property Int16 $Type The type of address. Visit=1, Postal=2, Invoice=3, Delivery=4
- * @property Guid $Warehouse The warehouse linked to the address, if a warehouse is linked the account will be empty. Can only be filled for type=Delivery
+ * @property string $Warehouse The warehouse linked to the address, if a warehouse is linked the account will be empty. Can only be filled for type=Delivery
  * @property String $WarehouseCode Code of the warehoude
  * @property String $WarehouseDescription Description of the warehouse
  */
