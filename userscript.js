@@ -36,6 +36,17 @@
   // Fetch entity URL and strip '/api/v1/{division}/'
   var url = $('#serviceUri').text().replace(/^\/api\/v[0-9]\/[^/]+\//, '');
   var classname = url.replace(/.+\/(.+?)s?$/,'$1'); // Last part after slash should be the (plural) classname.
+  var mapType = function(type) {
+      switch (type.toLowerCase()) {
+          case "guid":
+          case "datetime":
+              return "string";
+          case "int32":
+              return "int";
+          default:
+              return type.toLowerCase()
+      }
+  }
   
   /** Fetch attribute information **/
   $('#referencetable tr input').each(function() {
@@ -59,12 +70,12 @@
   phptxt += "\n * @see " + window.location.href;
   phptxt += "\n *";
   $.each(data,function(attribute, info){
-    phptxt += "\n * @property " + info.type + " $" + attribute + " " + info.description;
+    phptxt += "\n * @property " + mapType(info.type) + " $" + attribute + " " + info.description;
   });
   phptxt += "\n */";
   
   // Build class
-  phptxt += "\nclass " + classname + " extends Model\n{\n\n    use Query\\Findable;\n    use Persistance\\Storable;";
+  phptxt += "\nclass " + classname + " extends Model\n{\n    use Query\\Findable;\n    use Persistance\\Storable;";
   if (primarykey != 'ID') {
     phptxt += "\n\n    protected $primaryKey = '" + primarykey + "';";
   }
@@ -74,7 +85,7 @@
   });
   phptxt += "\n    ];";
   phptxt += "\n\n    protected $url = '" + url + "';";
-  phptxt += "\n\n}";
+  phptxt += "\n}\n";
   
   // Display php code
   $('#php').text(phptxt);
