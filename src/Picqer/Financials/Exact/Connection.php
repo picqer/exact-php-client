@@ -441,9 +441,10 @@ class Connection
             ];
         }
 
-        $response = $this->client()->post($this->getTokenUrl(), $body);
 
-        if ($response->getStatusCode() == 200) {
+        try {
+            $response = $this->client()->post($this->getTokenUrl(), $body);
+
             Psr7\rewind_body($response);
             $body = json_decode($response->getBody()->getContents(), true);
 
@@ -458,8 +459,8 @@ class Connection
             } else {
                 throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
             }
-        } else {
-            throw new ApiException('Could not acquire or refresh tokens');
+        } catch (BadResponseException $ex) {
+            throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']');
         }
     }
 
