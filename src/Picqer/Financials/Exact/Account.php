@@ -105,6 +105,7 @@ namespace Picqer\Financials\Exact;
  * @property Boolean $Reseller Indicates whether the account is a reseller
  * @property String $ResellerCode Code of Reseller
  * @property String $ResellerName Name of Reseller
+ * @property String $RSIN Fiscal number for NL legislation
  * @property String $SalesCurrency Currency of Sales used for Time & Billing
  * @property String $SalesCurrencyDescription Description of SalesCurrency
  * @property string $SalesTaxSchedule Default tax schedule when creating sales orders or sales invoices
@@ -231,6 +232,7 @@ class Account extends Model
         'Reseller',
         'ResellerCode',
         'ResellerName',
+        'RSIN',
         'SalesCurrency',
         'SalesCurrencyDescription',
         'SalesTaxSchedule',
