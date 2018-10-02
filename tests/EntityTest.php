@@ -395,6 +395,16 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\ShopOrder::class);
     }
 
+    public function testShopOrderMaterialPlan()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ShopOrderMaterialPlan::class);
+    }
+
+    public function testShopOrderRoutingStepPlan()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ShopOrderRoutingStepPlan::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
