@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class OperationResources
+ * Class OperationResource
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingOperationResources
@@ -34,7 +34,7 @@ namespace Picqer\Financials\Exact;
  * @property Guid $Workcenter Reference to Workcenter
  * @property String $WorkcenterDescription Description of Workcenter
  */
-class OperationResources extends Model
+class OperationResource extends Model
 {
     use Query\Findable;
     use Persistance\Storable;

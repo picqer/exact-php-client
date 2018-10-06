@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Operations
+ * Class Operation
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingOperations
@@ -25,7 +25,7 @@ namespace Picqer\Financials\Exact;
  * @property String $Searchcode Search code for the operation
  * @property Int32 $Status Status of the operation
  */
-class Operations extends Model
+class Operation extends Model
 {
     use Query\Findable;
     use Persistance\Storable;

@@ -405,14 +405,14 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\ShopOrderRoutingStepPlan::class);
     }
 
-    public function testOperations()
+    public function testOperation()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\Operations::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\Operation::class);
     }
 
-    public function testOperationResources()
+    public function testOperationResource()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\OperationResources::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\OperationResource::class);
     }
 
     protected function performEntityTest($entityName)
