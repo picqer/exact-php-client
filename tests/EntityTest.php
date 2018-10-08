@@ -375,14 +375,14 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\InvoiceTerm::class);
     }
 
-    public function testBillOfMaterialVersions()
+    public function testBillOfMaterialVersion()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialVersions::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialVersion::class);
     }
 
-    public function testBillOfMaterialMaterials()
+    public function testBillOfMaterialMaterial()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialMaterials::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialMaterial::class);
     }
 
     public function testProject()
