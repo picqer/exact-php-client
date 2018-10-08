@@ -8,29 +8,27 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingOperations
  *
- * @property Guid $ID Primary key
- * @property String $Code Code of the operation
- * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property String $Description Description of the operation
- * @property Int32 $Division Division code
- * @property Byte $HasSuppliers Indicates if the operation has suppliers associated with it
- * @property Guid $Item Reference to Items table
- * @property String $ItemDescription Description of Item
- * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $Notes Extra remarks
- * @property String $Searchcode Search code for the operation
- * @property Int32 $Status Status of the operation
+ * @property string $ID Primary key
+ * @property string $Code Code of the operation
+ * @property string $Created Creation date
+ * @property string $Creator User ID of creator
+ * @property string $CreatorFullName Name of creator
+ * @property string $Description Description of the operation
+ * @property int $Division Division code
+ * @property byte $HasSuppliers Indicates if the operation has suppliers associated with it
+ * @property string $Item Reference to Items table
+ * @property string $ItemDescription Description of Item
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of modifier
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Notes Extra remarks
+ * @property string $Searchcode Search code for the operation
+ * @property int $Status Status of the operation
  */
 class Operation extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
-
-    protected $primaryKey = 'ID';
 
     protected $fillable = [
         'ID',
@@ -48,7 +46,7 @@ class Operation extends Model
         'ModifierFullName',
         'Notes',
         'Searchcode',
-        'Status'
+        'Status',
     ];
 
     protected $url = 'manufacturing/Operations';

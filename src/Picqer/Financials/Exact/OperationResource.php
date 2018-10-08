@@ -8,42 +8,39 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingOperationResources
  *
- * @property Guid $ID Primary key
- * @property Guid $Account Reference to Accounts
- * @property Double $AttendedPercentage Attended percentage
- * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property String $Currency Reference to Currencies
- * @property Int32 $Division Division code
- * @property Double $EfficiencyPercentage Efficiency percentage
- * @property Byte $IsPrimary Indicates if this is the primary operation of the workcenter
- * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property Guid $Operation Reference to Operations
- * @property String $OperationDescription Description of Operation
- * @property Int32 $PurchaseLeadDays Lead days from purchase
- * @property String $PurchaseUnit Unit of purchased item from supplier
- * @property String $PurchaseVATCode VAT code used for purchased item from supplier
- * @property Double $Run Used in conjuction with RunMethod and EfficiencyPercentage to determine PlannedRunHours
- * @property Int32 $RunMethod Reference to OperationRunMethods
- * @property Double $Setup Used in conjunction with SetupCount and SetupUnit to determine PlannedSetupHours
- * @property String $SetupUnit Reference to TimeUnits
- * @property Int32 $Type Reference to RoutingStepTypes
- * @property Guid $Workcenter Reference to Workcenter
- * @property String $WorkcenterDescription Description of Workcenter
+ * @property string $ID Primary key
+ * @property string $Account Reference to Accounts
+ * @property double $AttendedPercentage Attended percentage
+ * @property string $Created Creation date
+ * @property string $Creator User ID of creator
+ * @property string $CreatorFullName Name of creator
+ * @property string $Currency Reference to Currencies
+ * @property int $Division Division code
+ * @property double $EfficiencyPercentage Efficiency percentage
+ * @property byte $IsPrimary Indicates if this is the primary operation of the workcenter
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of modifier
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Operation Reference to Operations
+ * @property string $OperationDescription Description of Operation
+ * @property int $PurchaseLeadDays Lead days from purchase
+ * @property string $PurchaseUnit Unit of purchased item from supplier
+ * @property string $PurchaseVATCode VAT code used for purchased item from supplier
+ * @property double $Run Used in conjuction with RunMethod and EfficiencyPercentage to determine PlannedRunHours
+ * @property int $RunMethod Reference to OperationRunMethods
+ * @property double $Setup Used in conjunction with SetupCount and SetupUnit to determine PlannedSetupHours
+ * @property string $SetupUnit Reference to TimeUnits
+ * @property int $Type Reference to RoutingStepTypes
+ * @property string $Workcenter Reference to Workcenter
+ * @property string $WorkcenterDescription Description of Workcenter
  */
 class OperationResource extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
 
-    protected $primaryKey = 'ID';
-
     protected $fillable = [
-        'Name',
-        'ID ',
+        'ID',
         'Account',
         'AttendedPercentage',
         'Created',
@@ -67,7 +64,7 @@ class OperationResource extends Model
         'SetupUnit',
         'Type',
         'Workcenter',
-        'WorkcenterDescription'
+        'WorkcenterDescription',
     ];
 
     protected $url = 'manufacturing/OperationResources';
