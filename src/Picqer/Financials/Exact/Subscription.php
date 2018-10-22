@@ -22,6 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property String $Description Description of Classification
  * @property Int32 $Division Division code
  * @property DateTime $EndDate End date
+ * @property Integer $InvoiceDay Invoice day
  * @property DateTime $InvoicedTo Invoice date
  * @property string $InvoiceTo Reference to invoice account
  * @property string $InvoiceToContactPerson Reference to contact person of invoice account
@@ -73,6 +74,7 @@ class Subscription extends Model
         'Division',
         'EndDate',
         'EntryID',
+        'InvoiceDay',
         'InvoicedTo',
         'InvoiceTo',
         'InvoiceToContactPerson',
