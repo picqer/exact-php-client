@@ -76,7 +76,7 @@ class PurchaseInvoice extends Model
      *
      * @return mixed
      */
-    public function getSalesInvoiceLines() {
+    public function getPurchaseInvoiceLines() {
         if(array_key_exists('__deferred', $this->attributes['PurchaseInvoiceLines'])) {
             $this->attributes['PurchaseInvoiceLines'] = (new PurchaseInvoiceLine($this->connection()))->filter("InvoiceID eq guid'{$this->ID}'");
         }
