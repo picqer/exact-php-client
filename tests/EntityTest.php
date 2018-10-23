@@ -394,6 +394,12 @@ class EntityTest extends TestCase
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ShopOrder::class);
     }
+    
+    public function testUser()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\User::class);
+    }
+    
 
     public function testShopOrderMaterialPlan()
     {
