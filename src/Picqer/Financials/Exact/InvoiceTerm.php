@@ -6,29 +6,29 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectInvoiceTerms
  *
- * @property string ID Primary key
- * @property Double Amount Amount in the currency of the transaction
- * @property DateTime Created Creation date
- * @property string Creator User ID of creator
- * @property String CreatorFullName Name of creator
- * @property String Deliverable WBS's deliverable linked to invoice term
- * @property String Description Description of invoice term
- * @property Int32 Division Division number
- * @property DateTime ExecutionFromDate Execution date: From
- * @property DateTime ExecutionToDate Execution date: To
- * @property DateTime InvoiceDate Invoice date
- * @property string Item Reference to item
- * @property String ItemDescription Description of item
- * @property DateTime Modified Last modified date
- * @property string Modifier User ID of modifier
- * @property String ModifierFullName Name of modifier
- * @property String Notes Notes
- * @property Double Percentage Percentage of amount per project's budgeted amount
- * @property string Project Reference to project
- * @property String ProjectDescription Description of project
- * @property String VATCode Reference to VATCode
- * @property String VATCodeDescription Description of VATCode
- * @property Double VATPercentage VATCode percentage
+ * @property string $ID Primary key
+ * @property float $Amount Amount in the currency of the transaction
+ * @property string $Created Creation date
+ * @property string $Creator User ID of creator
+ * @property string $CreatorFullName Name of creator
+ * @property string $Deliverable WBS's deliverable linked to invoice term
+ * @property string $Description Description of invoice term
+ * @property int $Division Division number
+ * @property string $ExecutionFromDate Execution date: From
+ * @property string $ExecutionToDate Execution date: To
+ * @property string $InvoiceDate Invoice date
+ * @property string $Item Reference to item
+ * @property string $ItemDescription Description of item
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of modifier
+ * @property String $ModifierFullName Name of modifier
+ * @property string $Notes Notes
+ * @property float $Percentage Percentage of amount per project's budgeted amount
+ * @property string $Project Reference to project
+ * @property string $ProjectDescription Description of project
+ * @property string $VATCode Reference to VATCode
+ * @property string $VATCodeDescription Description of VATCode
+ * @property float $VATPercentage VATCode percentage
  */
 class InvoiceTerm extends Model
 {

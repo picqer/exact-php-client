@@ -8,99 +8,99 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=logisticsItems
  *
- * @property String $Barcode
+ * @property string $Barcode
  * @property string $ID Primary key
- * @property String $Class_01 Item class code referring to ItemClasses with ClassID 1
- * @property String $Class_02 Item class code referring to ItemClasses with ClassID 2
- * @property String $Class_03 Item class code referring to ItemClasses with ClassID 3
- * @property String $Class_04 Item class code referring to ItemClasses with ClassID 4
- * @property String $Class_05 Item class code referring to ItemClasses with ClassID 5
- * @property String $Class_06 Item class code referring to ItemClasses with ClassID 6
- * @property String $Class_07 Item class code referring to ItemClasses with ClassID 7
- * @property String $Class_08 Item class code referring to ItemClasses with ClassID 8
- * @property String $Class_09 Item class code referring to ItemClasses with ClassID 9
- * @property String $Class_10 Item class code referring to ItemClasses with ClassID 10
- * @property String $Code Barcode of the item (numeric string)
- * @property Byte $CopyRemarks Copy remarks to sales lines
- * @property String $CostPriceCurrency The currency of the current and proposed cost price
- * @property Double $CostPriceNew Proposed cost price
- * @property Double $CostPriceStandard The current standard cost price
- * @property DateTime $Created Creation date
+ * @property string $Class_01 Item class code referring to ItemClasses with ClassID 1
+ * @property string $Class_02 Item class code referring to ItemClasses with ClassID 2
+ * @property string $Class_03 Item class code referring to ItemClasses with ClassID 3
+ * @property string $Class_04 Item class code referring to ItemClasses with ClassID 4
+ * @property string $Class_05 Item class code referring to ItemClasses with ClassID 5
+ * @property string $Class_06 Item class code referring to ItemClasses with ClassID 6
+ * @property string $Class_07 Item class code referring to ItemClasses with ClassID 7
+ * @property string $Class_08 Item class code referring to ItemClasses with ClassID 8
+ * @property string $Class_09 Item class code referring to ItemClasses with ClassID 9
+ * @property string $Class_10 Item class code referring to ItemClasses with ClassID 10
+ * @property string $Code Barcode of the item (numeric string)
+ * @property int $CopyRemarks Copy remarks to sales lines
+ * @property string $CostPriceCurrency The currency of the current and proposed cost price
+ * @property float $CostPriceNew Proposed cost price
+ * @property float $CostPriceStandard The current standard cost price
+ * @property string $Created Creation date
  * @property string $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property String $Description Description of the item
- * @property Int32 $Division Division code
- * @property DateTime $EndDate Together with StartDate this determines if the item is active
- * @property String $ExtraDescription Extra description text, slightly longer than the regular description (255 instead of 60)
- * @property Boolean $FreeBoolField_01 Free boolean field 1
- * @property Boolean $FreeBoolField_02 Free boolean field 2
- * @property Boolean $FreeBoolField_03 Free boolean field 3
- * @property Boolean $FreeBoolField_04 Free boolean field 4
- * @property Boolean $FreeBoolField_05 Free boolean field 5
- * @property DateTime $FreeDateField_01 Free date field 1
- * @property DateTime $FreeDateField_02 Free date field 2
- * @property DateTime $FreeDateField_03 Free date field 3
- * @property DateTime $FreeDateField_04 Free date field 4
- * @property DateTime $FreeDateField_05 Free date field 5
- * @property Double $FreeNumberField_01 Free numeric field 1
- * @property Double $FreeNumberField_02 Free numeric field 2
- * @property Double $FreeNumberField_03 Free numeric field 3
- * @property Double $FreeNumberField_04 Free numeric field 4
- * @property Double $FreeNumberField_05 Free numeric field 5
- * @property Double $FreeNumberField_06 Free numeric field 6
- * @property Double $FreeNumberField_07 Free numeric field 7
- * @property Double $FreeNumberField_08 Free numeric field 8
- * @property String $FreeTextField_01 Free text field 1
- * @property String $FreeTextField_02 Free text field 2
- * @property String $FreeTextField_03 Free text field 3
- * @property String $FreeTextField_04 Free text field 4
- * @property String $FreeTextField_05 Free text field 5
- * @property String $FreeTextField_06 Free text field 6
- * @property String $FreeTextField_07 Free text field 7
- * @property String $FreeTextField_08 Free text field 8
- * @property String $FreeTextField_09 Free text field 9
- * @property String $FreeTextField_10 Free text field 10
+ * @property string $CreatorFullName Name of creator
+ * @property string $Description Description of the item
+ * @property int $Division Division code
+ * @property string $EndDate Together with StartDate this determines if the item is active
+ * @property string $ExtraDescription Extra description text, slightly longer than the regular description (255 instead of 60)
+ * @property boolean $FreeBoolField_01 Free boolean field 1
+ * @property boolean $FreeBoolField_02 Free boolean field 2
+ * @property boolean $FreeBoolField_03 Free boolean field 3
+ * @property boolean $FreeBoolField_04 Free boolean field 4
+ * @property boolean $FreeBoolField_05 Free boolean field 5
+ * @property string $FreeDateField_01 Free date field 1
+ * @property string $FreeDateField_02 Free date field 2
+ * @property string $FreeDateField_03 Free date field 3
+ * @property string $FreeDateField_04 Free date field 4
+ * @property string $FreeDateField_05 Free date field 5
+ * @property float $FreeNumberField_01 Free numeric field 1
+ * @property float $FreeNumberField_02 Free numeric field 2
+ * @property float $FreeNumberField_03 Free numeric field 3
+ * @property float $FreeNumberField_04 Free numeric field 4
+ * @property float $FreeNumberField_05 Free numeric field 5
+ * @property float $FreeNumberField_06 Free numeric field 6
+ * @property float $FreeNumberField_07 Free numeric field 7
+ * @property float $FreeNumberField_08 Free numeric field 8
+ * @property string $FreeTextField_01 Free text field 1
+ * @property string $FreeTextField_02 Free text field 2
+ * @property string $FreeTextField_03 Free text field 3
+ * @property string $FreeTextField_04 Free text field 4
+ * @property string $FreeTextField_05 Free text field 5
+ * @property string $FreeTextField_06 Free text field 6
+ * @property string $FreeTextField_07 Free text field 7
+ * @property string $FreeTextField_08 Free text field 8
+ * @property string $FreeTextField_09 Free text field 9
+ * @property string $FreeTextField_10 Free text field 10
  * @property string $GLCosts GL account the cost entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
- * @property String $GLCostsCode Code of GL account for costs
- * @property String $GLCostsDescription Description of GLCosts
+ * @property string $GLCostsCode Code of GL account for costs
+ * @property string $GLCostsDescription Description of GLCosts
  * @property string $GLRevenue GL account the revenue will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
- * @property String $GLRevenueCode Code of GLRevenue
- * @property String $GLRevenueDescription Description of GLRevenue
+ * @property string $GLRevenueCode Code of GLRevenue
+ * @property string $GLRevenueDescription Description of GLRevenue
  * @property string $GLStock GL account the stock entries will be booked on. This overrules the GL account from the item group. If the license contains 'Intuit integration' this property overrides the value in Settings, not the item group.
- * @property String $GLStockCode Code of GL account for stock
- * @property String $GLStockDescription Description of GLStock
- * @property Byte $IsBatchItem Indicates if batches are used for this item
- * @property Byte $IsBatchNumberItem Used with Batch number feature. Indicates if the item can have a batch number
- * @property Boolean $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of this item
- * @property Byte $IsMakeItem Indicates that an Item is produced to Inventory, not purchased
- * @property Byte $IsNewContract Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package
- * @property Byte $IsOnDemandItem Is On demand Item
- * @property Byte $IsPackageItem Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package
- * @property Boolean $IsPurchaseItem Indicates if the item can be purchased
- * @property Byte $IsRegistrationCodeItem Indicated if the item is used in voucher functionality
- * @property Boolean $IsSalesItem Indicates if the item can be sold
- * @property Boolean $IsSerialItem Indicates that serial numbers are used for this item
- * @property Boolean $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
- * @property Boolean $IsSubcontractedItem Indicates if the item is provided by an outside supplier
- * @property Byte $IsTime Indicates if the item is a time unit item (for example a labor hour item)
- * @property Byte $IsWebshopItem Indicates if the item can be exported to a web shop
+ * @property string $GLStockCode Code of GL account for stock
+ * @property string $GLStockDescription Description of GLStock
+ * @property int $IsBatchItem Indicates if batches are used for this item
+ * @property int $IsBatchNumberItem Used with Batch number feature. Indicates if the item can have a batch number
+ * @property boolean $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of this item
+ * @property int $IsMakeItem Indicates that an Item is produced to Inventory, not purchased
+ * @property int $IsNewContract Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package
+ * @property int $IsOnDemandItem Is On demand Item
+ * @property int $IsPackageItem Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package
+ * @property boolean $IsPurchaseItem Indicates if the item can be purchased
+ * @property int $IsRegistrationCodeItem Indicated if the item is used in voucher functionality
+ * @property boolean $IsSalesItem Indicates if the item can be sold
+ * @property boolean $IsSerialItem Indicates that serial numbers are used for this item
+ * @property boolean $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
+ * @property boolean $IsSubcontractedItem Indicates if the item is provided by an outside supplier
+ * @property int $IsTime Indicates if the item is a time unit item (for example a labor hour item)
+ * @property int $IsWebshopItem Indicates if the item can be exported to a web shop
  * @property string $ItemGroup GUID of Item group of the item
- * @property String $ItemGroupCode Code of ItemGroup
- * @property String $ItemGroupDescription Description of ItemGroup
- * @property DateTime $Modified Last modified date
+ * @property string $ItemGroupCode Code of ItemGroup
+ * @property string $ItemGroupDescription Description of ItemGroup
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $Notes Notes
- * @property String $SalesVatCode Code of SalesVat
- * @property String $SalesVatCodeDescription Description of SalesVatCode
- * @property String $SearchCode Search code of the item
- * @property Int32 $SecurityLevel Security level (0 - 100)
- * @property DateTime $StartDate Together with StartDate this determines if the item is active
- * @property Byte $Unit Indicates if the item is a time unit item (for example a labor hour item)
- * @property String $UnitDescription Description of Unit
- * @property String PictureUrl
- * @property String PictureThumbnailUrl
- * @property String PictureName
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Notes Notes
+ * @property string $SalesVatCode Code of SalesVat
+ * @property string $SalesVatCodeDescription Description of SalesVatCode
+ * @property string $SearchCode Search code of the item
+ * @property int $SecurityLevel Security level (0 - 100)
+ * @property string $StartDate Together with StartDate this determines if the item is active
+ * @property int $Unit Indicates if the item is a time unit item (for example a labor hour item)
+ * @property string $UnitDescription Description of Unit
+ * @property string $PictureUrl
+ * @property string $PictureThumbnailUrl
+ * @property string $PictureName
  */
 class Item extends Model
 {
