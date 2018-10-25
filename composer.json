@@ -1,5 +1,5 @@
 {
-    "name": "picqer/exact-php-client",
+    "name": "codeinternetapplications/exact-php-client",
     "type": "library",
     "description": "A PHP Client for the Exact API",
     "keywords": [
@@ -13,6 +13,10 @@
         {
             "name": "Stephan Groen",
             "email": "info@picqer.com"
+        },
+        {
+            "name": "Wouter Monkhorst",
+            "email": "wouter@code.nl"
         }
     ],
     "require": {
