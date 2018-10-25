@@ -41,20 +41,26 @@
           case "guid":
           case "datetime":
               return "string";
+          case "byte":
           case "int32":
+          case "int16":
               return "int";
+          case "double":
+              return "float";
+          case "boolean":
+              return "bool";
           default:
               return type.toLowerCase()
       }
   }
-  
+
   /** Fetch attribute information **/
   $('#referencetable tr input').each(function() {
     data[$(this).attr('name')] = {
       'type' : $(this).attr('data-type').replace('Edm.', ''),
       'description' : $(this).parent().siblings('td:last-child').text().trim()
     };
-    
+
     // Set primarykey when found. Should be first itteration.
     if ($(this).attr('data-key') == "True") {
       primarykey = $(this).attr('name');
@@ -63,7 +69,7 @@
 
   /** Build php code **/
   phptxt = "<?php\n\nnamespace Picqer\\Financials\\Exact;\n\n/**";
-  
+
   // Build docblock
   phptxt += "\n * Class " + classname;
   phptxt += "\n *\n * @package Picqer\\Financials\\Exact";
@@ -73,7 +79,7 @@
     phptxt += "\n * @property " + mapType(info.type) + " $" + attribute + " " + info.description;
   });
   phptxt += "\n */";
-  
+
   // Build class
   phptxt += "\nclass " + classname + " extends Model\n{\n    use Query\\Findable;\n    use Persistance\\Storable;";
   if (primarykey != 'ID') {
@@ -86,7 +92,7 @@
   phptxt += "\n    ];";
   phptxt += "\n\n    protected $url = '" + url + "';";
   phptxt += "\n}\n";
-  
+
   // Display php code
   $('#php').text(phptxt);
 
