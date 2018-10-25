@@ -1,24 +1,6 @@
 {
     "name": "codeinternetapplications/exact-php-client",
-    "type": "library",
     "description": "A PHP Client for the Exact API",
-    "keywords": [
-        "api",
-        "php",
-        "exact"
-    ],
-    "homepage": "http://github.com/picqer/exact-php-client",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Stephan Groen",
-            "email": "info@picqer.com"
-        },
-        {
-            "name": "Wouter Monkhorst",
-            "email": "wouter@code.nl"
-        }
-    ],
     "require": {
         "php": ">=5.5.0",
         "guzzlehttp/guzzle": "~6.0"
