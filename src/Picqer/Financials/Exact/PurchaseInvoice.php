@@ -86,8 +86,8 @@ class PurchaseInvoice extends Model
     /**
      * @deprecated This function got renamed, still here for backward compatibility. To be removed in next major version. 
      */
-    public function getSalesInvoiceLines()
+    public function getSalesInvoiceLines($statement)
     {
-        return $this->getPurchaseInvoiceLines();
+        return $this->getPurchaseInvoiceLines($statement);
     }
 }
