@@ -1,5 +1,7 @@
 <?php
+
 namespace Picqer\Financials\Exact;
+
 /**
  * Class InvoiceTerm
  *
@@ -58,7 +60,7 @@ class InvoiceTerm extends Model
         'ProjectDescription',
         'VATCode',
         'VATCodeDescription',
-        'VATPercentage'
+        'VATPercentage',
     ];
 
     protected $url = 'project/InvoiceTerms';
