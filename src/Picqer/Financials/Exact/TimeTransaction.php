@@ -8,54 +8,54 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectTimeTransactions
  *
- * @property Guid $ID Primary key
- * @property Guid $Account Account linked to the transaction
- * @property String $AccountName Name of Account
- * @property Guid $Activity Reference to ProjectWBS (work breakdown structure)
- * @property String $ActivityDescription Description of ProjectWBS
- * @property Double $Amount Amount in the currency of the transaction
- * @property Double $AmountFC Amount in the currency of the transaction of the transaction
- * @property Guid $Attachment Attachment linked to the transaction
- * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property String $Currency Currency of the amount
- * @property DateTime $Date Date
- * @property Int32 $Division Division code
- * @property String $DivisionDescription Description of Division
- * @property Guid $Employee Employee linked to the transaction
- * @property DateTime $EndTime End time of the transaction
- * @property Int32 $EntryNumber Entrynumber
- * @property String $ErrorText Errortext, used for the backgroundjobs
- * @property Int16 $HourStatus Status of the transaction
- * @property Guid $Item Item linked to the transaction. Items of type 'time' are linked to time transactions. Items of other types are linked to cost transactions
- * @property String $ItemDescription Description of Item
- * @property Boolean $ItemDivisable True if you can use decimals for item quantity
- * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $Notes Notes linked to the transaction
- * @property Double $Price Price in the currency of the transaction
- * @property Double $PriceFC PriceFC (AmountFC = Quantity * PriceFC)
- * @property Guid $Project Project linked to the transaction
- * @property Guid $ProjectAccount Reference to project account
- * @property String $ProjectAccountCode Project account code
- * @property String $ProjectAccountName Project account name
- * @property String $ProjectCode Code of Project
- * @property String $ProjectDescription Description of Project
- * @property Double $Quantity Quantity of the transaction
- * @property DateTime $StartTime Start time of the transaction
- * @property Guid $Subscription Subscription linked to the transaction
- * @property Guid $SubscriptionAccount Account linked to the subscription
- * @property String $SubscriptionAccountCode Subscription account code
- * @property String $SubscriptionAccountName Subscription account name
- * @property String $SubscriptionDescription Description of the subscription
- * @property Int32 $SubscriptionNumber Subscription number
- * @property Int16 $Type Type of the transaction
+ * @property string $ID Primary key
+ * @property string $Account Account linked to the transaction
+ * @property string $AccountName Name of Account
+ * @property string $Activity Reference to ProjectWBS (work breakdown structure)
+ * @property string $ActivityDescription Description of ProjectWBS
+ * @property float $Amount This property is obsolete. Use property 'AmountFC' instead.
+ * @property float $AmountFC Amount in the currency of the transaction of the transaction
+ * @property string $Attachment Attachment linked to the transaction
+ * @property string $Created Creation date
+ * @property string $Creator User ID of creator
+ * @property string $CreatorFullName Name of creator
+ * @property string $Currency Currency of the amount
+ * @property string $Date Date
+ * @property int $Division Division code
+ * @property string $DivisionDescription Description of Division
+ * @property string $Employee Employee linked to the transaction
+ * @property string $EndTime End time of the transaction
+ * @property int $EntryNumber Entrynumber
+ * @property string $ErrorText Errortext, used for the backgroundjobs
+ * @property int $HourStatus Status of the transaction
+ * @property string $Item Item linked to the transaction. Items of type 'time' are linked to time transactions. Items of other types are linked to cost transactions
+ * @property string $ItemDescription Description of Item
+ * @property bool $ItemDivisable True if you can use decimals for item quantity
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of modifier
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Notes Notes linked to the transaction
+ * @property float $Price This property is obsolete. Use property 'PriceFC' instead.
+ * @property float $PriceFC PriceFC (AmountFC = Quantity * PriceFC)
+ * @property string $Project Project linked to the transaction
+ * @property string $ProjectAccount Reference to project account
+ * @property string $ProjectAccountCode Project account code
+ * @property string $ProjectAccountName Project account name
+ * @property string $ProjectCode Code of Project
+ * @property string $ProjectDescription Description of Project
+ * @property float $Quantity Quantity of the transaction
+ * @property bool $SkipValidation Skip validation
+ * @property string $StartTime Start time of the transaction
+ * @property string $Subscription Subscription linked to the transaction
+ * @property string $SubscriptionAccount Account linked to the subscription
+ * @property string $SubscriptionAccountCode Subscription account code
+ * @property string $SubscriptionAccountName Subscription account name
+ * @property string $SubscriptionDescription Description of the subscription
+ * @property int $SubscriptionNumber Subscription number
+ * @property int $Type Type of the transaction
  */
 class TimeTransaction extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -96,6 +96,7 @@ class TimeTransaction extends Model
         'ProjectCode',
         'ProjectDescription',
         'Quantity',
+        'SkipValidation',
         'StartTime',
         'Subscription',
         'SubscriptionAccount',

@@ -8,75 +8,75 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmployees
  *
- * @property Guid $ID Primary key
- * @property Byte $ActiveEmployment Obsolete
- * @property String $AddressLine2 Second address line
- * @property String $AddressLine3 Third address line
- * @property String $AddressStreet Street of address
- * @property String $AddressStreetNumber Street number of address
- * @property String $AddressStreetNumberSuffix Street number suffix of address
- * @property DateTime $BirthDate Birth date
- * @property String $BirthName Birth name
- * @property String $BirthNamePrefix Birth middle name
- * @property String $BirthPlace Birth place
- * @property String $BusinessEmail Email of the employee at the office
- * @property String $BusinessFax Fax number of the employee at the office
- * @property String $BusinessMobile Office mobile number of the employee
- * @property String $BusinessPhone Phone number of the employee at the office
- * @property String $BusinessPhoneExtension Phone extension of the employee at the office
- * @property String $CASONumber Obsolete
- * @property String $City City
- * @property String $Code Code of the employee
- * @property String $Country Country code
- * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property Guid $Customer Customer ID
- * @property Int32 $Division Division code
- * @property String $Email Email address
- * @property Int32 $EmployeeHID Employee number
- * @property DateTime $EndDate End date of the employee
- * @property String $FirstName First name of the employee
- * @property String $FullName Full name of the employee
- * @property String $Gender Gender
- * @property Int32 $HID Numeric ID of the employee
- * @property String $Initials Initials
- * @property Boolean $IsActive IsActive
- * @property String $Language Language code
- * @property String $LastName Last name
- * @property String $LocationDescription Description of the location of the employee (where am I?)
- * @property Guid $Manager Direct manager of the employee
- * @property DateTime $MaritalDate Date of marriage
- * @property Int16 $MaritalStatus Marital status
- * @property String $MiddleName Middle name
- * @property String $Mobile Mobile phone
- * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $Municipality Municipality
- * @property Int16 $NameComposition 
- * @property String $Nationality Nationality
- * @property String $NickName Nick name
- * @property String $Notes Additional notes
- * @property String $PartnerName Name of partner
- * @property String $PartnerNamePrefix Middle name of partner
- * @property Guid $Person Reference to the persons table in which the personal data of the employee is stored
- * @property String $Phone Phone number
- * @property String $PhoneExtension Phone number extension
- * @property String $PictureFileName Filename of picture
- * @property String $PictureUrl Url of picture
- * @property String $Postcode Postcode
- * @property String $PrivateEmail Private email address
- * @property String $SocialSecurityNumber Social security number
- * @property DateTime $StartDate Start date of the employee
- * @property String $State State
- * @property String $Title Title
- * @property Guid $User User ID of employee
- * @property String $UserFullName Name of user 
+ * @property string $ID Primary key
+ * @property int $ActiveEmployment Obsolete
+ * @property string $AddressLine2 Second address line
+ * @property string $AddressLine3 Third address line
+ * @property string $AddressStreet Street of address
+ * @property string $AddressStreetNumber Street number of address
+ * @property string $AddressStreetNumberSuffix Street number suffix of address
+ * @property string $BirthDate Birth date
+ * @property string $BirthName Birth name
+ * @property string $BirthNamePrefix Birth middle name
+ * @property string $BirthPlace Birth place
+ * @property string $BusinessEmail Email of the employee at the office
+ * @property string $BusinessFax Fax number of the employee at the office
+ * @property string $BusinessMobile Office mobile number of the employee
+ * @property string $BusinessPhone Phone number of the employee at the office
+ * @property string $BusinessPhoneExtension Phone extension of the employee at the office
+ * @property string $CASONumber Obsolete
+ * @property string $City City
+ * @property string $Code Code of the employee
+ * @property string $Country Country code
+ * @property string $Created Creation date
+ * @property string $Creator User ID of creator
+ * @property string $CreatorFullName Name of creator
+ * @property string $Customer Customer ID
+ * @property int $Division Division code
+ * @property string $Email Email address
+ * @property int $EmployeeHID Employee number
+ * @property string $EndDate End date of the employee
+ * @property string $FirstName First name of the employee
+ * @property string $FullName Full name of the employee
+ * @property string $Gender Gender
+ * @property int $HID Numeric ID of the employee
+ * @property string $Initials Initials
+ * @property bool $IsActive IsActive
+ * @property int $IsAnonymised Indicates whether the employee is anonymised.
+ * @property string $Language Language code
+ * @property string $LastName Last name
+ * @property string $LocationDescription Description of the location of the employee (where am I?)
+ * @property string $Manager Direct manager of the employee
+ * @property string $MaritalDate Date of marriage
+ * @property int $MaritalStatus Marital status
+ * @property string $MiddleName Middle name
+ * @property string $Mobile Mobile phone
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of modifier
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Municipality Municipality
+ * @property int $NameComposition 
+ * @property string $Nationality Nationality
+ * @property string $NickName Nick name
+ * @property string $Notes Additional notes
+ * @property string $PartnerName Name of partner
+ * @property string $PartnerNamePrefix Middle name of partner
+ * @property string $Person Reference to the persons table in which the personal data of the employee is stored
+ * @property string $Phone Phone number
+ * @property string $PhoneExtension Phone number extension
+ * @property string $PictureFileName Filename of picture
+ * @property string $PictureUrl Url of picture
+ * @property string $Postcode Postcode
+ * @property string $PrivateEmail Private email address
+ * @property string $SocialSecurityNumber Social security number
+ * @property string $StartDate Start date of the employee
+ * @property string $State State
+ * @property string $Title Title
+ * @property string $User User ID of employee
+ * @property string $UserFullName Name of user
  */
 class Employee extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -115,6 +115,7 @@ class Employee extends Model
         'HID',
         'Initials',
         'IsActive',
+        'IsAnonymised',
         'Language',
         'LastName',
         'LocationDescription',
