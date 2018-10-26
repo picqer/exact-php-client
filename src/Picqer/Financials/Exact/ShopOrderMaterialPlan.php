@@ -8,33 +8,33 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderMaterialPlans
  *
- * @property guid $ID Primary key
+ * @property string $ID Primary key
  * @property byte $Backflush Indicates if this is a backflush step
- * @property int32 $CalculatorType Calculator type
- * @property datetime $Created Creation date
- * @property guid $Creator User ID of creator
+ * @property int $CalculatorType Calculator type
+ * @property string $Created Creation date
+ * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Description Description of the material
  * @property string $DetailDrawing Detail drawing reference
- * @property int32 $Division Division code
- * @property guid $Item Reference to Items table
+ * @property int $Division Division code
+ * @property string $Item Reference to Items table
  * @property string $ItemCode Item Code
  * @property string $ItemDescription Description of Item
  * @property string $ItemPictureUrl URL of the material item's picture
- * @property int32 $LineNumber Line number
- * @property datetime $Modified Last modified date
- * @property guid $Modifier User ID of modifier
+ * @property int $LineNumber Line number
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Line notes
  * @property double $PlannedAmountFC Planned amount in the currency of the transaction
- * @property datetime $PlannedDate Date that the material is required.
+ * @property string $PlannedDate Date that the material is required.
  * @property double $PlannedPriceFC Planned price of the material
  * @property double $PlannedQuantity Intended quantity
  * @property double $PlannedQuantityFactor Intended quantity unit factor
- * @property guid $ShopOrder Reference to ShopOrders table
- * @property int32 $Status Line status
+ * @property string $ShopOrder Reference to ShopOrders table
+ * @property int $Status Line status
  * @property string $StatusDescription Description of Status
- * @property int32 $Type Type
+ * @property int $Type Type
  * @property string $Unit Unit
  * @property string $UnitDescription Unit description
  */
@@ -42,8 +42,6 @@ class ShopOrderMaterialPlan extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
-
-    protected $primaryKey = 'ID';
 
     protected $fillable = [
         'ID',
@@ -74,7 +72,7 @@ class ShopOrderMaterialPlan extends Model
         'StatusDescription',
         'Type',
         'Unit',
-        'UnitDescription'
+        'UnitDescription',
     ];
 
     protected $url = 'manufacturing/ShopOrderMaterialPlans';
