@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectInvoiceTerms
  *
  * @property string $ID Primary key
- * @property double $Amount Amount in the currency of the transaction
+ * @property float $Amount Amount in the currency of the transaction
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -23,14 +23,14 @@ namespace Picqer\Financials\Exact;
  * @property string $ItemDescription Description of item
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property string $ModifierFullName Name of modifier
+ * @property String $ModifierFullName Name of modifier
  * @property string $Notes Notes
- * @property double $Percentage Percentage of amount per project's budgeted amount
+ * @property float $Percentage Percentage of amount per project's budgeted amount
  * @property string $Project Reference to project
  * @property string $ProjectDescription Description of project
  * @property string $VATCode Reference to VATCode
  * @property string $VATCodeDescription Description of VATCode
- * @property double $VATPercentage VATCode percentage
+ * @property float $VATPercentage VATCode percentage
  */
 class InvoiceTerm extends Model
 {

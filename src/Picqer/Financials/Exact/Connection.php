@@ -39,47 +39,47 @@ class Connection
     private $tokenUrl = '/api/oauth2/token';
 
     /**
-     * @var
+     * @var mixed
      */
     private $exactClientId;
 
     /**
-     * @var
+     * @var mixed
      */
     private $exactClientSecret;
 
     /**
-     * @var
+     * @var mixed
      */
     private $authorizationCode;
 
     /**
-     * @var
+     * @var mixed
      */
     private $accessToken;
 
     /**
-     * @var
+     * @var mixed
      */
     private $tokenExpires;
 
     /**
-     * @var
+     * @var mixed
      */
     private $refreshToken;
 
     /**
-     * @var
+     * @var mixed
      */
     private $redirectUrl;
 
     /**
-     * @var
+     * @var mixed
      */
     private $division;
 
     /**
-     * @var Client
+     * @var Client|null
      */
     private $client;
 
@@ -89,12 +89,12 @@ class Connection
     private $tokenUpdateCallback;
 
     /**
-     *
+     * @var callable[]
      */
     protected $middleWares = [];
 
     /**
-    * @var
+    * @var string|null
     */
     public $nextUrl = null;
 
@@ -145,7 +145,7 @@ class Connection
 
     /**
      * @param string $method
-     * @param $endpoint
+     * @param string $endpoint
      * @param mixed $body
      * @param array $params
      * @param array $headers
@@ -182,7 +182,7 @@ class Connection
     }
 
     /**
-     * @param $url
+     * @param string $url
      * @param array $params
      * @param array $headers
      * @return mixed
@@ -205,8 +205,8 @@ class Connection
     }
 
     /**
-     * @param $url
-     * @param $body
+     * @param string $url
+     * @param mixed $body
      * @return mixed
      * @throws ApiException
      */
@@ -227,8 +227,8 @@ class Connection
     }
 
     /**
-     * @param $url
-     * @param $body
+     * @param string $url
+     * @param mixed $body
      * @return mixed
      * @throws ApiException
      */
@@ -249,7 +249,7 @@ class Connection
     }
 
     /**
-     * @param $url
+     * @param string $url
      * @return mixed
      * @throws ApiException
      */
