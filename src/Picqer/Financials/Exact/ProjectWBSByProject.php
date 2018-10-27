@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ProjectWBSByProject?projectId={Edm.Guid}
+ * Class ProjectWBSByProject
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectProjectWBSByProject
@@ -37,11 +37,8 @@ namespace Picqer\Financials\Exact;
  * @property float $TimeQuantityToAlert Alert when exceeding this time quantity
  * @property int $Type Type: 1-Deliverable, 2-Activity, 3-Expense
  */
-class ProjectWBSByProject
-? projectId = {
-    Edm . Guid
-}
-extends Model {
+class ProjectWBSByProject extends Model
+{
     use Query\Findable;
     use Persistance\Storable;
 
@@ -76,5 +73,5 @@ extends Model {
         'Type',
     ];
 
-    protected $url = 'read/project/ProjectWBSByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/ProjectWBSByProject';
 }
