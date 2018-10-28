@@ -35,7 +35,8 @@
   var data = {};
   // Fetch entity URL and strip '/api/v1/{division}/'
   var url = $('#serviceUri').text().replace(/^\/api\/v[0-9]\/[^/]+\//, '');
-  var classname = url.replace(/.+\/(.+?)s?$/,'$1'); // Last part after slash should be the (plural) classname.
+  // Last part after slash should be the (plural) class name without the query part
+  var classname = url.replace(/.+\/(.+?)s?$/,'$1').replace(/\?.*/,'');
   var mapType = function(type) {
       switch (type.toLowerCase()) {
           case "guid":
