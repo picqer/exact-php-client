@@ -23,7 +23,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ItemDescription Description of item
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
+ * @property string $ModifierFullName Name of modifier
  * @property string $Notes Notes
  * @property float $Percentage Percentage of amount per project's budgeted amount
  * @property string $Project Reference to project

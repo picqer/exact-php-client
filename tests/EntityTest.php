@@ -110,6 +110,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\DocumentAttachment::class);
     }
 
+    public function testEmployeeEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Employee::class);
+    }
+
     public function testGeneralJournalEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\GeneralJournalEntry::class);
@@ -390,16 +395,25 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Project::class);
     }
 
+    public function testProjectWBSByProject()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectWBSByProject::class);
+    }
+
     public function testShopOrder()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ShopOrder::class);
     }
-    
+
+    public function testTimeTransactionEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\TimeTransaction::class);
+    }
+
     public function testUser()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\User::class);
     }
-    
 
     public function testShopOrderMaterialPlan()
     {
