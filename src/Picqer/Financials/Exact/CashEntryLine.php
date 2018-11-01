@@ -9,49 +9,49 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionCashEntryLines
  *
  * @property string $ID Primary key
- * @property string Account Reference to Account
- * @property String AccountCode Code of Account
- * @property String AccountName Name of Account
- * @property Double AmountDC Amount in the default currency of the company
- * @property Double AmountFC Amount in the currency of the transaction
- * @property Double AmountVATFC Vat amount in the currency of the transaction
- * @property string Asset Reference to an asset
- * @property String AssetCode Code of Asset
- * @property String AssetDescription Description of Asset
- * @property String CostCenter Reference to a cost center
- * @property String CostCenterDescription Description of CostCenter
- * @property String CostUnit Reference to a cost unit
- * @property String CostUnitDescription Description of CostUnit
- * @property DateTime Created Creation date
- * @property string Creator User ID of creator
- * @property String CreatorFullName Name of creator
- * @property DateTime Date
- * @property String Description Description
- * @property Int32 Division Division code
- * @property string Document Reference to a document
- * @property Int32 DocumentNumber Number of Document
- * @property String DocumentSubject Subject of Document
- * @property string EntryID Reference to the header
- * @property Int32 EntryNumber Entry number of the header
- * @property Double ExchangeRate Exchange rate
- * @property string GLAccount General ledger account
- * @property String GLAccountCode Code of GLAccount
- * @property String GLAccountDescription Description of GLAccount
- * @property Int32 LineNumber Line number
- * @property DateTime Modified Last modified date
- * @property string Modifier User ID of modifier
- * @property String ModifierFullName Name of modifier
- * @property String Notes Extra remarks
- * @property string OffsetID Reference to offset line
- * @property Int32 OurRef
- * @property string Project Reference to a project
- * @property String ProjectCode Code of Project
- * @property String ProjectDescription Description of Project
- * @property Double Quantity Quantity
- * @property String VATCode Reference to vat code
- * @property String VATCodeDescription Description of VATCode
- * @property Double VATPercentage Vat code percentage
- * @property String VATType Type of vat code
+ * @property string $Account Reference to Account
+ * @property string $AccountCode Code of Account
+ * @property string $AccountName Name of Account
+ * @property float $AmountDC Amount in the default currency of the company
+ * @property float $AmountFC Amount in the currency of the transaction
+ * @property float $AmountVATFC Vat amount in the currency of the transaction
+ * @property string $Asset Reference to an asset
+ * @property string $AssetCode Code of Asset
+ * @property string $AssetDescription Description of Asset
+ * @property string $CostCenter Reference to a cost center
+ * @property string $CostCenterDescription Description of CostCenter
+ * @property string $CostUnit Reference to a cost unit
+ * @property string $CostUnitDescription Description of CostUnit
+ * @property string $Created Creation date
+ * @property string $Creator User ID of creator
+ * @property String $CreatorFullName Name of creator
+ * @property string $Date
+ * @property String $Description Description
+ * @property int $Division Division code
+ * @property string $Document Reference to a document
+ * @property int $DocumentNumber Number of Document
+ * @property string $DocumentSubject Subject of Document
+ * @property string $EntryID Reference to the header
+ * @property int $EntryNumber Entry number of the header
+ * @property float $ExchangeRate Exchange rate
+ * @property string $GLAccount General ledger account
+ * @property string $GLAccountCode Code of GLAccount
+ * @property string $GLAccountDescription Description of GLAccount
+ * @property int $LineNumber Line number
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of modifier
+ * @property String $ModifierFullName Name of modifier
+ * @property String $Notes Extra remarks
+ * @property string $OffsetID Reference to offset line
+ * @property int $OurRef
+ * @property string $Project Reference to a project
+ * @property string $ProjectCode Code of Project
+ * @property string $ProjectDescription Description of Project
+ * @property float $Quantity Quantity
+ * @property string $VATCode Reference to vat code
+ * @property string $VATCodeDescription Description of VATCode
+ * @property float $VATPercentage Vat code percentage
+ * @property string $VATType Type of vat code
  */
 class CashEntryLine extends Model
 {
