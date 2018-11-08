@@ -44,7 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property Int16 $ReportingPeriod The period of the transaction lines. The period should exist in the period date table
  * @property Int16 $ReportingYear The financial year to which the entry belongs. The financial year should exist in the period date table
  * @property Boolean $Reversal Indicates if amounts are reversed
- * @property SalesEntryLines $SalesEntryLines Collection of lines
+ * @property array $SalesEntryLines Collection of lines
  * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
  * @property String $StatusDescription Description of Status
  * @property Int32 $Type Type: 20 = Sales entry, 21 = Sales credit note
