@@ -1,16 +1,42 @@
 <?php namespace Picqer\Financials\Exact\Query;
 
+use Picqer\Financials\Exact\Connection;
+
+/**
+ * Class Resultset
+ *
+ * @package Picqer\Financials\Exact\Query
+ */
 class Resultset
 {
+    /**
+     * @var Connection
+     */
     protected $connection;
 
+    /**
+     * @var string
+     */
     protected $url;
 
+    /**
+     * @var string
+     */
     protected $class;
 
+    /**
+     * @var array
+     */
     protected $params;
 
-    public function __construct($connection, $url, $class, $params)
+    /**
+     * Resultset constructor.
+     * @param Connection $connection
+     * @param string $url
+     * @param string $class
+     * @param array $params
+     */
+    public function __construct(Connection $connection, $url, $class, array $params)
     {
         $this->connection = $connection;
         $this->url = $url;
@@ -18,6 +44,9 @@ class Resultset
         $this->params = $params;
     }
 
+    /**
+     * @return array
+     */
     public function next()
     {
         $result = $this->connection->get($this->url, $this->params);
@@ -26,11 +55,18 @@ class Resultset
         return $this->collectionFromResult($result);
     }
 
+    /**
+     * @return bool
+     */
     public function hasMore()
     {
         return $this->url !== null;
     }
 
+    /**
+     * @param array $result
+     * @return array
+     */
     protected function collectionFromResult($result)
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the
