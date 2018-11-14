@@ -38,7 +38,7 @@ namespace Picqer\Financials\Exact;
  * @property String $PaymentConditionDescription Description of PaymentCondition
  * @property String $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
  * @property Int32 $ProcessNumber
- * @property PurchaseEntryLines $PurchaseEntryLines Collection of lines
+ * @property array $PurchaseEntryLines Collection of lines
  * @property Double $Rate Currency exchange rate
  * @property Int16 $ReportingPeriod Reporting period
  * @property Int16 $ReportingYear Reporting year
