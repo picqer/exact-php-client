@@ -89,6 +89,16 @@ class Connection
     private $tokenUpdateCallback;
 
     /**
+     * @var callable(Connection)
+     */
+    private $lockAcquireAccessTokenCallback;
+
+    /**
+     * @var callable(Connection)
+     */
+    private $releaseAcquireAccessTokenCallback;
+
+    /**
      * @var callable[]
      */
     protected $middleWares = [];
@@ -443,6 +453,10 @@ class Connection
 
 
         try {
+            if (is_callable($this->lockAcquireAccessTokenCallback)) {
+                call_user_func($this->lockAcquireAccessTokenCallback, $this);
+            }
+
             $response = $this->client()->post($this->getTokenUrl(), $body);
 
             Psr7\rewind_body($response);
@@ -461,6 +475,10 @@ class Connection
             }
         } catch (BadResponseException $ex) {
             throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']');
+        } finally {
+            if (is_callable($this->releaseAcquireAccessTokenCallback)) {
+                call_user_func($this->releaseAcquireAccessTokenCallback, $this);
+            }
         }
     }
 
@@ -534,6 +552,20 @@ class Connection
     public function setDivision($division)
     {
         $this->division = $division;
+    }
+
+    /**
+     * @param callable $callback
+     */
+    public function setLockAcquireAccessTokenCallback($callback) {
+        $this->lockAcquireAccessTokenCallback = $callback;
+    }
+
+    /**
+     * @param callable $callback
+     */
+    public function setReleaseAcquireAccessTokenCallback($callback) {
+        $this->releaseAcquireAccessTokenCallback = $callback;
     }
 
     /**
