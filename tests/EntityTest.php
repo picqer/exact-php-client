@@ -110,6 +110,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\DocumentAttachment::class);
     }
 
+    public function testDocumentTypeEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DocumentType::class);
+    }
+
     public function testEmployeeEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Employee::class);
@@ -144,12 +149,12 @@ class EntityTest extends TestCase
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Item::class);
     }
-    
+
     public function testItemExtraField()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ItemExtraField::class);
     }
-        
+
     public function testItemGroupEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ItemGroup::class);
