@@ -470,11 +470,11 @@ class Connection
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
-        return $expiresIn + 600;
+        return time() + $expiresIn;
     }
 
     /**
-     * @return int
+     * @return int The Unix timestamp at which the access token expires.
      */
     public function getTokenExpires()
     {
@@ -482,7 +482,7 @@ class Connection
     }
 
     /**
-     * @param int $tokenExpires
+     * @param int $tokenExpires The Unix timestamp at which the access token expires.
      */
     public function setTokenExpires($tokenExpires)
     {
