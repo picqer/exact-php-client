@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property Boolean $DocumentIsDeletable Indicates if documents of this type can be deleted
  * @property Boolean $DocumentIsUpdatable Indicates if documents of this type can be updated
  * @property Boolean $DocumentIsViewable Indicates if documents of this type can be retrieved
- * @property DateTime $Modified	Last modified date
+ * @property DateTime $Modified Last modified date
  * @property Int32 $TypeCategory ID of the document type category
  */
 class DocumentType extends Model
