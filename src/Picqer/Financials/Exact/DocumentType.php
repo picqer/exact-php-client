@@ -10,7 +10,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property String $ID Primary key
  * @property DateTime $Created Creation date
- * @property String $Description Document type description
+ * @property string $Description Document type description
  * @property bool $DocumentIsCreatable Indicates if documents of this type can be created
  * @property bool $DocumentIsDeletable Indicates if documents of this type can be deleted
  * @property bool $DocumentIsUpdatable Indicates if documents of this type can be updated
