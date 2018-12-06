@@ -16,7 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property bool $DocumentIsUpdatable Indicates if documents of this type can be updated
  * @property bool $DocumentIsViewable Indicates if documents of this type can be retrieved
  * @property string $Modified Last modified date
- * @property Int32 $TypeCategory ID of the document type category
+ * @property int $TypeCategory ID of the document type category
  */
 class DocumentType extends Model
 {
