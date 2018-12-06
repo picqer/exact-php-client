@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentTypes
  *
  * @property String $ID Primary key
- * @property DateTime $Created Creation date
+ * @property string $Created Creation date
  * @property string $Description Document type description
  * @property bool $DocumentIsCreatable Indicates if documents of this type can be created
  * @property bool $DocumentIsDeletable Indicates if documents of this type can be deleted
