@@ -466,7 +466,7 @@ class Connection
 
     /**
      * Translates expires_in to a Unix timestamp.
-     * @param int $expiresIn Number of seconds until the token expires.
+     * @param string $expiresIn Number of seconds until the token expires.
      * @return int
      */
     private function getTimestampFromExpiresIn($expiresIn)
