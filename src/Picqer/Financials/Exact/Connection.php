@@ -471,7 +471,7 @@ class Connection
      */
     private function getTimestampFromExpiresIn($expiresIn)
     {
-        if (!is_numeric($expiresIn)) {
+        if (!ctype_digit($expiresIn)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
