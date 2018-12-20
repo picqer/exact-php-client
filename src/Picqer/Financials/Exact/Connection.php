@@ -474,7 +474,7 @@ class Connection
                 throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
             }
         } catch (BadResponseException $ex) {
-            throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']');
+            throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']', 0, $ex);
         } finally {
             if (is_callable($this->acquireAccessTokenUnlockCallback)) {
                 call_user_func($this->acquireAccessTokenUnlockCallback, $this);
