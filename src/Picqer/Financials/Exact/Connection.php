@@ -91,12 +91,12 @@ class Connection
     /**
      * @var callable(Connection)
      */
-    private $lockAcquireAccessTokenCallback;
+    private $acquireAccessTokenLockCallback;
 
     /**
      * @var callable(Connection)
      */
-    private $releaseAcquireAccessTokenCallback;
+    private $acquireAccessTokenUnlockCallback;
 
     /**
      * @var callable[]
@@ -453,8 +453,8 @@ class Connection
 
 
         try {
-            if (is_callable($this->lockAcquireAccessTokenCallback)) {
-                call_user_func($this->lockAcquireAccessTokenCallback, $this);
+            if (is_callable($this->acquireAccessTokenLockCallback)) {
+                call_user_func($this->acquireAccessTokenLockCallback, $this);
             }
 
             $response = $this->client()->post($this->getTokenUrl(), $body);
@@ -476,8 +476,8 @@ class Connection
         } catch (BadResponseException $ex) {
             throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']');
         } finally {
-            if (is_callable($this->releaseAcquireAccessTokenCallback)) {
-                call_user_func($this->releaseAcquireAccessTokenCallback, $this);
+            if (is_callable($this->acquireAccessTokenUnlockCallback)) {
+                call_user_func($this->acquireAccessTokenUnlockCallback, $this);
             }
         }
     }
@@ -557,15 +557,15 @@ class Connection
     /**
      * @param callable $callback
      */
-    public function setLockAcquireAccessTokenCallback($callback) {
-        $this->lockAcquireAccessTokenCallback = $callback;
+    public function setAcquireAccessTokenLockCallback($callback) {
+        $this->acquireAccessTokenLockCallback = $callback;
     }
 
     /**
      * @param callable $callback
      */
-    public function setReleaseAcquireAccessTokenCallback($callback) {
-        $this->releaseAcquireAccessTokenCallback = $callback;
+    public function setAcquireAccessTokenUnlockCallback($callback) {
+        $this->acquireAccessTokenUnlockCallback = $callback;
     }
 
     /**
