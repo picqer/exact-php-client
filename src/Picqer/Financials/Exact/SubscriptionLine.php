@@ -9,30 +9,30 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionLines
  *
  * @property string $ID Primary key
- * @property Double $AmountDC Amount in the default currency of the company
- * @property Double $AmountFC Amount in the currency of the transaction
- * @property String $Costcenter Cost center
- * @property String $Costunit Cost unit
- * @property String $Description Description
- * @property Double $Discount Discount percentage
- * @property Int32 $Division Division code
+ * @property float $AmountDC Amount in the default currency of the company
+ * @property float $AmountFC Amount in the currency of the transaction
+ * @property string $Costcenter Cost center
+ * @property string $Costunit Cost unit
+ * @property string $Description Description
+ * @property float $Discount Discount percentage
+ * @property int $Division Division code
  * @property string $EntryID Entry ID
- * @property DateTime $FromDate From date
+ * @property string $FromDate From date
  * @property string $Item Reference to Item
- * @property String $ItemDescription Description of Item
- * @property Int32 $LineNumber Line number
- * @property Int16 $LineType Reference to LineType
- * @property String $LineTypeDescription Description of LineType
- * @property Double $NetPrice Net price in the currency of the transaction
- * @property String $Notes Remarks
- * @property Double $Quantity Quantity
- * @property DateTime $ToDate To date
- * @property String $UnitCode Unit code
- * @property String $UnitDescription Description of Unit
- * @property Double $UnitPrice Unit price in the currency of the transaction (price * unit factor)
- * @property Double $VATAmountFC Vat Amount in the currency of the transaction
- * @property String $VATCode VATCode
- * @property String $VATCodeDescription Description of VATCode
+ * @property string $ItemDescription Description of Item
+ * @property int $LineNumber Line number
+ * @property int $LineType Reference to LineType
+ * @property string $LineTypeDescription Description of LineType
+ * @property float $NetPrice Net price in the currency of the transaction
+ * @property string $Notes Remarks
+ * @property float $Quantity Quantity
+ * @property string $ToDate To date
+ * @property string $UnitCode Unit code
+ * @property string $UnitDescription Description of Unit
+ * @property float $UnitPrice Unit price in the currency of the transaction (price * unit factor)
+ * @property float $VATAmountFC Vat Amount in the currency of the transaction
+ * @property string $VATCode VATCode
+ * @property string $VATCodeDescription Description of VATCode
  */
 class SubscriptionLine extends Model
 {

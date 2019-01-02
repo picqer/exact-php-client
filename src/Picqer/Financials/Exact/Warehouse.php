@@ -9,22 +9,22 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryWarehouses
  *
  * @property string $ID Primary key
- * @property String $Code Code of the warehouse
- * @property DateTime $Created Creation date
+ * @property string $Code Code of the warehouse
+ * @property string $Created Creation date
  * @property string $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
+ * @property string $CreatorFullName Name of creator
  * @property string $DefaultStorageLocation The default storage location of this warehouse. Warehouses can have a default storage location in packages Manufacturing Premium or Wholesale Premium
- * @property String $DefaultStorageLocationCode Default storage location's code
- * @property String $DefaultStorageLocationDescription Default storage location's description
- * @property String $Description The description of the warehouse
- * @property Int32 $Division Division code
- * @property String $EMail Email address
- * @property Byte $Main Indicates if this is the main warehouse. There's always exactly one main warehouse per administration
+ * @property string $DefaultStorageLocationCode Default storage location's code
+ * @property string $DefaultStorageLocationDescription Default storage location's description
+ * @property string $Description The description of the warehouse
+ * @property int $Division Division code
+ * @property string $EMail Email address
+ * @property int $Main Indicates if this is the main warehouse. There's always exactly one main warehouse per administration
  * @property string $ManagerUser User reponsible for the warehouse
- * @property DateTime $Modified Last modified date
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property Byte $UseStorageLocations Indicates if this warehouse is using storage locations. The storage locations will not be removed when when this is deactivated
+ * @property string $ModifierFullName Name of modifier
+ * @property int $UseStorageLocations Indicates if this warehouse is using storage locations. The storage locations will not be removed when when this is deactivated
  */
 class Warehouse extends Model
 {

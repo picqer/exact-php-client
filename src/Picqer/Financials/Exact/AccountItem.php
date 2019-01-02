@@ -10,52 +10,52 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Item
  * @property string $Account Account
- * @property String $Barcode Barcode
- * @property String $Code Item code
- * @property String $CostPriceCurrency Currency of cost price
- * @property Double $CostPriceNew New cost price
- * @property Double $CostPriceStandard Standard cost price
- * @property DateTime $Created Creation date
+ * @property string $Barcode Barcode
+ * @property string $Code Item code
+ * @property string $CostPriceCurrency Currency of cost price
+ * @property float $CostPriceNew New cost price
+ * @property float $CostPriceStandard Standard cost price
+ * @property string $Created Creation date
  * @property string $Creator User ID of the creator
- * @property String $CreatorFullName Name of the creator
- * @property Double $DefaultSalesPrice Default sales price
- * @property String $Description Item Description
- * @property Int32 $Division Division code
- * @property DateTime $EndDate End date
- * @property Boolean $IsFractionAllowedItem Indicates if decimals are allowed in quantities
- * @property Boolean $IsSalesItem Indicates if this is a sales item
- * @property Boolean $IsStockItem Indicates if this is a stock item
- * @property Byte $IsTaxableItem Indicates if tax needs to be calculated for this item
- * @property Byte $IsWebshopItem Indicates if this is a webshop item
+ * @property string $CreatorFullName Name of the creator
+ * @property float $DefaultSalesPrice Default sales price
+ * @property string $Description Item Description
+ * @property int $Division Division code
+ * @property string $EndDate End date
+ * @property bool $IsFractionAllowedItem Indicates if decimals are allowed in quantities
+ * @property bool $IsSalesItem Indicates if this is a sales item
+ * @property bool $IsStockItem Indicates if this is a stock item
+ * @property int $IsTaxableItem Indicates if tax needs to be calculated for this item
+ * @property int $IsWebshopItem Indicates if this is a webshop item
  * @property string $ItemGroup Item group
- * @property String $ItemGroupCode Code of Item group
- * @property String $ItemGroupDescription Description of Item group
- * @property Double $Margin Margin
- * @property Double $Markup Markup
- * @property DateTime $Modified Last modified date
+ * @property string $ItemGroupCode Code of Item group
+ * @property string $ItemGroupDescription Description of Item group
+ * @property float $Margin Margin
+ * @property float $Markup Markup
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of the last modifier
- * @property String $ModifierFullName Name of the last modifier
- * @property String $Notes Extra remarks
- * @property String $PictureName File name of picture
- * @property String $PictureThumbnailUrl Url where thumbnail picture can be retrieved
- * @property String $PictureUrl Url where picture can be retrieved
- * @property Double $ProjectedStock
- * @property Int32 $PurchaseLeadDays Number of days before purchase arrives
- * @property Double $QuantityToBeConsumed Quantity to be consumed
- * @property Double $QuantityToBeDelivered Quantity to be delivered
- * @property Double $QuantityToBeProduced Quantity to be produced
- * @property Double $QuantityToBeReceived Quantity to be received
- * @property Double $ReservedStock Quantity in stock that is reserved
- * @property String $SalesCurrency Currency of sales price
- * @property Double $SalesPrice Sales price
- * @property String $SalesVatCode Sales vat code
- * @property String $SalesVatCodeDescription Description of Sales vat code
- * @property DateTime $StartDate Start date
- * @property Double $Stock Quantity that is in stock
+ * @property string $ModifierFullName Name of the last modifier
+ * @property string $Notes Extra remarks
+ * @property string $PictureName File name of picture
+ * @property string $PictureThumbnailUrl Url where thumbnail picture can be retrieved
+ * @property string $PictureUrl Url where picture can be retrieved
+ * @property float $ProjectedStock
+ * @property int $PurchaseLeadDays Number of days before purchase arrives
+ * @property float $QuantityToBeConsumed Quantity to be consumed
+ * @property float $QuantityToBeDelivered Quantity to be delivered
+ * @property float $QuantityToBeProduced Quantity to be produced
+ * @property float $QuantityToBeReceived Quantity to be received
+ * @property float $ReservedStock Quantity in stock that is reserved
+ * @property string $SalesCurrency Currency of sales price
+ * @property float $SalesPrice Sales price
+ * @property string $SalesVatCode Sales vat code
+ * @property string $SalesVatCodeDescription Description of Sales vat code
+ * @property string $StartDate Start date
+ * @property float $Stock Quantity that is in stock
  * @property string $Unit Unit
- * @property String $UnitCode Code of unit
- * @property String $UnitDescription Description of unit
- * @property String $UnitType Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight
+ * @property string $UnitCode Code of unit
+ * @property string $UnitDescription Description of unit
+ * @property string $UnitType Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight
  */
 class AccountItem extends Model
 {

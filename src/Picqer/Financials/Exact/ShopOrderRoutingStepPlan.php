@@ -12,15 +12,15 @@ namespace Picqer\Financials\Exact;
  * @property string $Account Reference to Account providing the Outsourced item
  * @property string $AccountName Account name
  * @property string $AccountNumber Account number
- * @property double $AttendedPercentage Attended Percentage
- * @property byte $Backflush Indicates if this is a backflush step
- * @property double $CostPerItem Total cost / Shop order planned quantity
+ * @property float $AttendedPercentage Attended Percentage
+ * @property int $Backflush Indicates if this is a backflush step
+ * @property float $CostPerItem Total cost / Shop order planned quantity
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Description Description of the operation
  * @property int $Division Division code
- * @property double $EfficiencyPercentage Efficiency Percentage
+ * @property float $EfficiencyPercentage Efficiency Percentage
  * @property int $FactorType Conversion factor type between Shop order Item and Subcontract purchase Unit
  * @property int $LineNumber Sequential order of the operation
  * @property string $Modified Last modified date
@@ -32,26 +32,26 @@ namespace Picqer\Financials\Exact;
  * @property string $OperationDescription Description of the operation step
  * @property string $OperationResource Reference to OperationResources
  * @property string $PlannedEndDate Planned end date
- * @property double $PlannedRunHours Planned run hours
- * @property double $PlannedSetupHours Planned setup hours
+ * @property float $PlannedRunHours Planned run hours
+ * @property float $PlannedSetupHours Planned setup hours
  * @property string $PlannedStartDate Planned start date
- * @property double $PlannedTotalHours Setup hours + Run hours
+ * @property float $PlannedTotalHours Setup hours + Run hours
  * @property string $PurchaseUnit Reference to Units
- * @property double $PurchaseUnitFactor Purchase Unit Factor
- * @property double $PurchaseUnitPriceFC Purchase Unit Price in the currency of the transaction
- * @property double $PurchaseUnitQuantity Purchase unit quantity of the plan
+ * @property float $PurchaseUnitFactor Purchase Unit Factor
+ * @property float $PurchaseUnitPriceFC Purchase Unit Price in the currency of the transaction
+ * @property float $PurchaseUnitQuantity Purchase unit quantity of the plan
  * @property int $RoutingStepType Reference to RoutingStepTypes
- * @property double $Run Used in conjunction with RunMethod, and EfficiencyPercentage to determine PlannedRunHours
+ * @property float $Run Used in conjunction with RunMethod, and EfficiencyPercentage to determine PlannedRunHours
  * @property int $RunMethod Reference to OperationMethod
  * @property string $RunMethodDescription Description of RunMethod
- * @property double $Setup Used in conjunction with SetupCount and Setup Unit to determine PlannedSetupHours
+ * @property float $Setup Used in conjunction with SetupCount and Setup Unit to determine PlannedSetupHours
  * @property string $SetupUnit Reference to TimeUnits
  * @property string $ShopOrder Reference to Shop orders
  * @property int $Status Reference to OperationStatus
  * @property string $StatusDescription Description of Status
  * @property int $SubcontractedLeadDays Subcontracted lead days
  * @property timetransactions $TimeTransactions Collection of TimeTransactions
- * @property double $TotalCostDC Total cost of the routing line
+ * @property float $TotalCostDC Total cost of the routing line
  * @property string $Workcenter Reference to Workcenters
  * @property string $WorkcenterCode Workcenter code
  * @property string $WorkcenterDescription Workcenter description

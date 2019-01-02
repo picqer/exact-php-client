@@ -10,57 +10,57 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account Account linked to the address
- * @property Boolean $AccountIsSupplier Indicates if the account is a supplier
- * @property String $AccountName Name of the account
- * @property String $AddressLine1 First address line
- * @property String $AddressLine2 Second address line
- * @property String $AddressLine3 Third address line
- * @property String $City City
+ * @property bool $AccountIsSupplier Indicates if the account is a supplier
+ * @property string $AccountName Name of the account
+ * @property string $AddressLine1 First address line
+ * @property string $AddressLine2 Second address line
+ * @property string $AddressLine3 Third address line
+ * @property string $City City
  * @property string $Contact Contact linked to Address
- * @property String $ContactName Contact name
- * @property String $Country Country code
- * @property String $CountryName Country name
- * @property DateTime $Created Creation date
+ * @property string $ContactName Contact name
+ * @property string $Country Country code
+ * @property string $CountryName Country name
+ * @property string $Created Creation date
  * @property string $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property Int32 $Division Division code
- * @property String $Fax Fax number
- * @property Boolean $FreeBoolField_01 Free boolean field 1
- * @property Boolean $FreeBoolField_02 Free boolean field 2
- * @property Boolean $FreeBoolField_03 Free boolean field 3
- * @property Boolean $FreeBoolField_04 Free boolean field 4
- * @property Boolean $FreeBoolField_05 Free boolean field 5
- * @property DateTime $FreeDateField_01 Free date field 1
- * @property DateTime $FreeDateField_02 Free date field 2
- * @property DateTime $FreeDateField_03 Free date field 3
- * @property DateTime $FreeDateField_04 Free date field 4
- * @property DateTime $FreeDateField_05 Free date field 5
- * @property Double $FreeNumberField_01 Free number field 1
- * @property Double $FreeNumberField_02 Free number field 2
- * @property Double $FreeNumberField_03 Free number field 3
- * @property Double $FreeNumberField_04 Free number field 4
- * @property Double $FreeNumberField_05 Free number field 5
- * @property String $FreeTextField_01 Free text field 1
- * @property String $FreeTextField_02 Free text field 2
- * @property String $FreeTextField_03 Free text field 3
- * @property String $FreeTextField_04 Free text field 4
- * @property String $FreeTextField_05 Free text field 5
- * @property String $Mailbox Mailbox
- * @property Boolean $Main Indicates if the address is the main address for this type
- * @property DateTime $Modified Last modified date
+ * @property string $CreatorFullName Name of creator
+ * @property int $Division Division code
+ * @property string $Fax Fax number
+ * @property bool $FreeBoolField_01 Free boolean field 1
+ * @property bool $FreeBoolField_02 Free boolean field 2
+ * @property bool $FreeBoolField_03 Free boolean field 3
+ * @property bool $FreeBoolField_04 Free boolean field 4
+ * @property bool $FreeBoolField_05 Free boolean field 5
+ * @property string $FreeDateField_01 Free date field 1
+ * @property string $FreeDateField_02 Free date field 2
+ * @property string $FreeDateField_03 Free date field 3
+ * @property string $FreeDateField_04 Free date field 4
+ * @property string $FreeDateField_05 Free date field 5
+ * @property float $FreeNumberField_01 Free number field 1
+ * @property float $FreeNumberField_02 Free number field 2
+ * @property float $FreeNumberField_03 Free number field 3
+ * @property float $FreeNumberField_04 Free number field 4
+ * @property float $FreeNumberField_05 Free number field 5
+ * @property string $FreeTextField_01 Free text field 1
+ * @property string $FreeTextField_02 Free text field 2
+ * @property string $FreeTextField_03 Free text field 3
+ * @property string $FreeTextField_04 Free text field 4
+ * @property string $FreeTextField_05 Free text field 5
+ * @property string $Mailbox Mailbox
+ * @property bool $Main Indicates if the address is the main address for this type
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $NicNumber Last 5 digits of SIRET number which is an intern sequential number of 4 digits representing the identification of the localization of the office
- * @property String $Notes Notes for an address
- * @property String $Phone Phone number
- * @property String $PhoneExtension Phone extension
- * @property String $Postcode Postcode
- * @property String $State State
- * @property String $StateDescription Name of the State
- * @property Int16 $Type The type of address. Visit=1, Postal=2, Invoice=3, Delivery=4
+ * @property string $ModifierFullName Name of modifier
+ * @property string $NicNumber Last 5 digits of SIRET number which is an intern sequential number of 4 digits representing the identification of the localization of the office
+ * @property string $Notes Notes for an address
+ * @property string $Phone Phone number
+ * @property string $PhoneExtension Phone extension
+ * @property string $Postcode Postcode
+ * @property string $State State
+ * @property string $StateDescription Name of the State
+ * @property int $Type The type of address. Visit=1, Postal=2, Invoice=3, Delivery=4
  * @property string $Warehouse The warehouse linked to the address, if a warehouse is linked the account will be empty. Can only be filled for type=Delivery
- * @property String $WarehouseCode Code of the warehoude
- * @property String $WarehouseDescription Description of the warehouse
+ * @property string $WarehouseCode Code of the warehoude
+ * @property string $WarehouseDescription Description of the warehouse
  */
 class Address extends Model
 {

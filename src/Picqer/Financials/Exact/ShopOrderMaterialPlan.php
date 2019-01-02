@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderMaterialPlans
  *
  * @property string $ID Primary key
- * @property byte $Backflush Indicates if this is a backflush step
+ * @property int $Backflush Indicates if this is a backflush step
  * @property int $CalculatorType Calculator type
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -26,11 +26,11 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Line notes
- * @property double $PlannedAmountFC Planned amount in the currency of the transaction
+ * @property float $PlannedAmountFC Planned amount in the currency of the transaction
  * @property string $PlannedDate Date that the material is required.
- * @property double $PlannedPriceFC Planned price of the material
- * @property double $PlannedQuantity Intended quantity
- * @property double $PlannedQuantityFactor Intended quantity unit factor
+ * @property float $PlannedPriceFC Planned price of the material
+ * @property float $PlannedQuantity Intended quantity
+ * @property float $PlannedQuantityFactor Intended quantity unit factor
  * @property string $ShopOrder Reference to ShopOrders table
  * @property int $Status Line status
  * @property string $StatusDescription Description of Status

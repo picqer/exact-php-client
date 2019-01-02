@@ -10,68 +10,68 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account The account to which the contact belongs
- * @property Boolean $AccountIsCustomer Indicates if account is a customer
- * @property Boolean $AccountIsSupplier Indicates if account is a supplier
+ * @property bool $AccountIsCustomer Indicates if account is a customer
+ * @property bool $AccountIsSupplier Indicates if account is a supplier
  * @property string $AccountMainContact Reference to the main contact of the account
- * @property String $AccountName Name of the account
- * @property String $AddressLine2 Second address line
- * @property String $AddressStreet Street name of the address
- * @property String $AddressStreetNumber Street number of the address
- * @property String $AddressStreetNumberSuffix Street number suffix of the address
- * @property Int32 $AllowMailing Obsolete
- * @property DateTime $BirthDate Birth date
- * @property String $BirthName Last birth name
- * @property String $BirthNamePrefix Middle birth name
- * @property String $BirthPlace Birth place
- * @property String $BusinessEmail Email address of the contact
- * @property String $BusinessFax Fax of the contact
- * @property String $BusinessMobile Mobile of the contact
- * @property String $BusinessPhone Phone of the contact
- * @property String $BusinessPhoneExtension Phone extension of the contact
- * @property String $City City
- * @property String $Code Code of the account
- * @property String $Country Country code
- * @property DateTime $Created Creation date
+ * @property string $AccountName Name of the account
+ * @property string $AddressLine2 Second address line
+ * @property string $AddressStreet Street name of the address
+ * @property string $AddressStreetNumber Street number of the address
+ * @property string $AddressStreetNumberSuffix Street number suffix of the address
+ * @property int $AllowMailing Obsolete
+ * @property string $BirthDate Birth date
+ * @property string $BirthName Last birth name
+ * @property string $BirthNamePrefix Middle birth name
+ * @property string $BirthPlace Birth place
+ * @property string $BusinessEmail Email address of the contact
+ * @property string $BusinessFax Fax of the contact
+ * @property string $BusinessMobile Mobile of the contact
+ * @property string $BusinessPhone Phone of the contact
+ * @property string $BusinessPhoneExtension Phone extension of the contact
+ * @property string $City City
+ * @property string $Code Code of the account
+ * @property string $Country Country code
+ * @property string $Created Creation date
  * @property string $Creator User ID of the creator
- * @property String $CreatorFullName Name of the creator
- * @property Int32 $Division Division code
- * @property String $Email Email address of the contact
- * @property DateTime $EndDate End date
- * @property String $FirstName First name. Provide at least first name or last name to create a new contact
- * @property String $FullName Full name (First name Middle name Last name)
- * @property String $Gender Gender: M=Male, V=Female, O=Unknown
- * @property Int32 $HID Contact ID
- * @property DateTime $IdentificationDate Identification date
+ * @property string $CreatorFullName Name of the creator
+ * @property int $Division Division code
+ * @property string $Email Email address of the contact
+ * @property string $EndDate End date
+ * @property string $FirstName First name. Provide at least first name or last name to create a new contact
+ * @property string $FullName Full name (First name Middle name Last name)
+ * @property string $Gender Gender: M=Male, V=Female, O=Unknown
+ * @property int $HID Contact ID
+ * @property string $IdentificationDate Identification date
  * @property string $IdentificationDocument Reference to the identification document of the contact
  * @property string $IdentificationUser Reference to the user responsible for identification
- * @property String $Initials Initials
- * @property Boolean $IsMailingExcluded Indicates whether contacts are excluded from the marketing list
- * @property Boolean $IsMainContact Indicates if this is the main contact of the linked account
- * @property String $JobTitleDescription Jobtitle of the contact
- * @property String $Language Language code
- * @property String $LastName Last name. Provide at least first name or last name to create a new contact
- * @property String $MarketingNotes The user should be able to do a full text search on these notes to gather contacts for a marketing campaign
- * @property String $MiddleName Middle name
- * @property String $Mobile Business phone of the contact
- * @property DateTime $Modified Last modified date
+ * @property string $Initials Initials
+ * @property bool $IsMailingExcluded Indicates whether contacts are excluded from the marketing list
+ * @property bool $IsMainContact Indicates if this is the main contact of the linked account
+ * @property string $JobTitleDescription Jobtitle of the contact
+ * @property string $Language Language code
+ * @property string $LastName Last name. Provide at least first name or last name to create a new contact
+ * @property string $MarketingNotes The user should be able to do a full text search on these notes to gather contacts for a marketing campaign
+ * @property string $MiddleName Middle name
+ * @property string $Mobile Business phone of the contact
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of the last modifier
- * @property String $Nationality Nationality
- * @property String $Notes Extra remarks
- * @property String $PartnerName Last name of partner
- * @property String $PartnerNamePrefix Middlename of partner
+ * @property string $ModifierFullName Name of the last modifier
+ * @property string $Nationality Nationality
+ * @property string $Notes Extra remarks
+ * @property string $PartnerName Last name of partner
+ * @property string $PartnerNamePrefix Middlename of partner
  * @property string $Person Reference to the personal information of this contact such as name, gender, address etc.
- * @property String $Phone Phone of the contact
- * @property String $PhoneExtension Phone extension of the contact
- * @property Binary $Picture This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl.
- * @property String $PictureName Filename of the picture
- * @property String $PictureThumbnailUrl Url to retrieve the picture thumbnail
- * @property String $PictureUrl Url to retrieve the picture
- * @property String $Postcode Postcode
- * @property String $SocialSecurityNumber Social security number
- * @property DateTime $StartDate Start date
- * @property String $State State
- * @property String $Title Title
+ * @property string $Phone Phone of the contact
+ * @property string $PhoneExtension Phone extension of the contact
+ * @property string $Picture This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl.
+ * @property string $PictureName Filename of the picture
+ * @property string $PictureThumbnailUrl Url to retrieve the picture thumbnail
+ * @property string $PictureUrl Url to retrieve the picture
+ * @property string $Postcode Postcode
+ * @property string $SocialSecurityNumber Social security number
+ * @property string $StartDate Start date
+ * @property string $State State
+ * @property string $Title Title
  *
  * Note: Due to the way Storable is setup and the way the Exact Online API works certain fields overwrite
  * each other. For example: If you fill the BusinessEmail but not the Email field the latter will overwrite

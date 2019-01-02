@@ -9,32 +9,32 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemMe
  *
  * @property string   $UserID Primary key
- * @property Int32  $CurrentDivision Division number that is currently used in the API. You should use a division number in the url
+ * @property int  $CurrentDivision Division number that is currently used in the API. You should use a division number in the url
  * @property string   $DivisionCustomer Owner account of the division
- * @property String $DivisionCustomerCode Owner account code of the division
- * @property String $DivisionCustomerName Owner account name of the division
- * @property String $Email Email address of the user
+ * @property string $DivisionCustomerCode Owner account code of the division
+ * @property string $DivisionCustomerName Owner account name of the division
+ * @property string $Email Email address of the user
  * @property string   $EmployeeID Employee ID
- * @property String $FirstName First name
- * @property String $FullName Full name of the user
- * @property String $Gender Gender: M=Male, V=Female, O=Unknown
- * @property String $Initials Initials
- * @property String $Language Language spoken by this user
- * @property String $LanguageCode Language (culture) that is used in Exact Online
- * @property String $LastName Last name
- * @property Int64  $Legislation Legislation
- * @property String $MiddleName Middle name
- * @property String $Mobile Mobile phone
- * @property String $Nationality Nationality
- * @property String $Phone Phone number
- * @property String $PhoneExtension Phone number extension
- * @property String $PictureUrl Url that can be used to retrieve the picture of the user
- * @property String $ServerTime The current date and time in Exact Online
- * @property Double $ServerUtcOffset The time difference with UTC in seconds
- * @property Binary $ThumbnailPicture Binary thumbnail picture of this user
- * @property String $ThumbnailPictureFormat File type of the picture
- * @property String $Title Title
- * @property String $UserName Login name of the user
+ * @property string $FirstName First name
+ * @property string $FullName Full name of the user
+ * @property string $Gender Gender: M=Male, V=Female, O=Unknown
+ * @property string $Initials Initials
+ * @property string $Language Language spoken by this user
+ * @property string $LanguageCode Language (culture) that is used in Exact Online
+ * @property string $LastName Last name
+ * @property int  $Legislation Legislation
+ * @property string $MiddleName Middle name
+ * @property string $Mobile Mobile phone
+ * @property string $Nationality Nationality
+ * @property string $Phone Phone number
+ * @property string $PhoneExtension Phone number extension
+ * @property string $PictureUrl Url that can be used to retrieve the picture of the user
+ * @property string $ServerTime The current date and time in Exact Online
+ * @property float $ServerUtcOffset The time difference with UTC in seconds
+ * @property string $ThumbnailPicture Binary thumbnail picture of this user
+ * @property string $ThumbnailPictureFormat File type of the picture
+ * @property string $Title Title
+ * @property string $UserName Login name of the user
  */
 class Me extends Model
 {

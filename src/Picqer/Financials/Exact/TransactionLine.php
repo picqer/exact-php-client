@@ -10,72 +10,72 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account Reference to account
- * @property String $AccountCode Code of the Account
- * @property String $AccountName Name of the Account
- * @property Double $AmountDC Amount in the default currency of the company
- * @property Double $AmountFC Amount in the currency of the transaction
- * @property Double $AmountVATBaseFC Vat base amount in the currency of the transaction
- * @property Double $AmountVATFC Vat amount in the currency of the transaction
+ * @property string $AccountCode Code of the Account
+ * @property string $AccountName Name of the Account
+ * @property float $AmountDC Amount in the default currency of the company
+ * @property float $AmountFC Amount in the currency of the transaction
+ * @property float $AmountVATBaseFC Vat base amount in the currency of the transaction
+ * @property float $AmountVATFC Vat amount in the currency of the transaction
  * @property string $Asset Reference to asset
- * @property String $AssetCode Code of Asset
- * @property String $AssetDescription Description of Asset
- * @property String $CostCenter Reference to cost center
- * @property String $CostCenterDescription Description of CostCenter
- * @property String $CostUnit Reference to cost unit
- * @property String $CostUnitDescription Description of CostUnit
- * @property DateTime $Created Creation date
+ * @property string $AssetCode Code of Asset
+ * @property string $AssetDescription Description of Asset
+ * @property string $CostCenter Reference to cost center
+ * @property string $CostCenterDescription Description of CostCenter
+ * @property string $CostUnit Reference to cost unit
+ * @property string $CostUnitDescription Description of CostUnit
+ * @property string $Created Creation date
  * @property string $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property String $Currency Currency
- * @property DateTime $Date Date
- * @property String $Description Description
- * @property Int32 $Division Division code
+ * @property string $CreatorFullName Name of creator
+ * @property string $Currency Currency
+ * @property string $Date Date
+ * @property string $Description Description
+ * @property int $Division Division code
  * @property string $Document Reference to document
- * @property Int32 $DocumentNumber Number of the document
- * @property String $DocumentSubject Subject of the document
- * @property DateTime $DueDate Date that payment should be done
+ * @property int $DocumentNumber Number of the document
+ * @property string $DocumentSubject Subject of the document
+ * @property string $DueDate Date that payment should be done
  * @property string $EntryID Reference to header of the entry
- * @property Int32 $EntryNumber Entry number of the header
- * @property Double $ExchangeRate Exchange rate
- * @property Double $ExtraDutyAmountFC Extra duty amount
- * @property Double $ExtraDutyPercentage Extra duty percentage
- * @property Int16 $FinancialPeriod Financial period
- * @property Int16 $FinancialYear Financial year
+ * @property int $EntryNumber Entry number of the header
+ * @property float $ExchangeRate Exchange rate
+ * @property float $ExtraDutyAmountFC Extra duty amount
+ * @property float $ExtraDutyPercentage Extra duty percentage
+ * @property int $FinancialPeriod Financial period
+ * @property int $FinancialYear Financial year
  * @property string $GLAccount General ledger account
- * @property String $GLAccountCode Code of GLAccount
- * @property String $GLAccountDescription Description of GLAccount
- * @property Int32 $InvoiceNumber Invoice number
+ * @property string $GLAccountCode Code of GLAccount
+ * @property string $GLAccountDescription Description of GLAccount
+ * @property int $InvoiceNumber Invoice number
  * @property string $Item Reference to item
- * @property String $ItemCode Code of Item
- * @property String $ItemDescription Description of Item
- * @property String $JournalCode The journal code
- * @property String $JournalDescription The journal description
- * @property Int32 $LineNumber Line number
- * @property Int16 $LineType Line type
- * @property DateTime $Modified Last modified date
+ * @property string $ItemCode Code of Item
+ * @property string $ItemDescription Description of Item
+ * @property string $JournalCode The journal code
+ * @property string $JournalDescription The journal description
+ * @property int $LineNumber Line number
+ * @property int $LineType Line type
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $Notes Extra remarks
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Notes Extra remarks
  * @property string $OffsetID OffsetID
- * @property Int32 $OrderNumber Order number
- * @property Double $PaymentDiscountAmount Discount amount when paid in time
- * @property String $PaymentReference Payment reference
+ * @property int $OrderNumber Order number
+ * @property float $PaymentDiscountAmount Discount amount when paid in time
+ * @property string $PaymentReference Payment reference
  * @property string $Project Reference to project
- * @property String $ProjectCode Code of Project
- * @property String $ProjectDescription Description of Project
- * @property Double $Quantity Quantity
- * @property String $SerialNumber Serial number of item
- * @property Int16 $Status 20 = Open, 50 = Processed
+ * @property string $ProjectCode Code of Project
+ * @property string $ProjectDescription Description of Project
+ * @property float $Quantity Quantity
+ * @property string $SerialNumber Serial number of item
+ * @property int $Status 20 = Open, 50 = Processed
  * @property string $Subscription Reference to subscription
- * @property String $SubscriptionDescription Description of Subscription
- * @property String $TrackingNumber Tracking number of item
- * @property String $TrackingNumberDescription Tracking number description
- * @property Int32 $Type The transaction type.10 = Opening balance142 = Issue to parent20 = Sales entry145 = Shop order time entry21 = Sales credit note146 = Shop order time entry reversal30 = Purchase entry147 = Shop order by-product receipt31 = Purchase credit note148 = Shop order by-product reversal40 = Cash flow150 = Requirement issue50 = VAT return151 = Requirement reversal70 = Asset - Depreciation152 = Returned from parent71 = Asset - Investment155 = Subcontract Issue72 = Asset - Revaluation156 = Subcontract reversal73 = Asset - Transfer158 = Shop order completed74 = Asset - Split162 = Finish assembly75 = Asset - Discontinue170 = Payroll76 = Asset - Sales180 = Stock revaluation80 = Revaluation181 = Financial revaluation82 = Exchange rate difference195 = Stock count83 = Payment difference290 = Correction entry84 = Deferred revenue310 = Period closing85 = Tracking number:Revaluation320 = Year end reflection86 = Deferred cost321 = Year end costing87 = VAT on prepayment322 = Year end profits to gross profit90 = Other323 = Year end costs to gross profit120 = Delivery324 = Year end tax121 = Sales return325 = Year end gross profit to net p/l130 = Receipt326 = Year end net p/l to balance sheet131 = Purchase return327 = Year end closing balance140 = Shop order stock receipt328 = Year start opening balance141 = Shop order stock reversal3000 = Budget
- * @property String $VATCode Vat code
- * @property String $VATCodeDescription Description of VATCode
- * @property Double $VATPercentage Vat percentage
- * @property String $VATType Vat type
- * @property String $YourRef Your reference (of customer)
+ * @property string $SubscriptionDescription Description of Subscription
+ * @property string $TrackingNumber Tracking number of item
+ * @property string $TrackingNumberDescription Tracking number description
+ * @property int $Type The transaction type.10 = Opening balance142 = Issue to parent20 = Sales entry145 = Shop order time entry21 = Sales credit note146 = Shop order time entry reversal30 = Purchase entry147 = Shop order by-product receipt31 = Purchase credit note148 = Shop order by-product reversal40 = Cash flow150 = Requirement issue50 = VAT return151 = Requirement reversal70 = Asset - Depreciation152 = Returned from parent71 = Asset - Investment155 = Subcontract Issue72 = Asset - Revaluation156 = Subcontract reversal73 = Asset - Transfer158 = Shop order completed74 = Asset - Split162 = Finish assembly75 = Asset - Discontinue170 = Payroll76 = Asset - Sales180 = Stock revaluation80 = Revaluation181 = Financial revaluation82 = Exchange rate difference195 = Stock count83 = Payment difference290 = Correction entry84 = Deferred revenue310 = Period closing85 = Tracking number:Revaluation320 = Year end reflection86 = Deferred cost321 = Year end costing87 = VAT on prepayment322 = Year end profits to gross profit90 = Other323 = Year end costs to gross profit120 = Delivery324 = Year end tax121 = Sales return325 = Year end gross profit to net p/l130 = Receipt326 = Year end net p/l to balance sheet131 = Purchase return327 = Year end closing balance140 = Shop order stock receipt328 = Year start opening balance141 = Shop order stock reversal3000 = Budget
+ * @property string $VATCode Vat code
+ * @property string $VATCodeDescription Description of VATCode
+ * @property float $VATPercentage Vat percentage
+ * @property string $VATType Vat type
+ * @property string $YourRef Your reference (of customer)
  */
 class TransactionLine extends Model
 {

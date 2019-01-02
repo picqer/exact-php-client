@@ -11,21 +11,21 @@ namespace Picqer\Financials\Exact;
  * @property string $EntryID Primary key
  * @property BankEntryLines $BankEntryLines Collection of lines
  * @property string $BankStatementDocument Reference to document with bank statement
- * @property Int32 $BankStatementDocumentNumber Document number of document with bank statement
- * @property String $BankStatementDocumentSubject Subject of document with bank statement
- * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
- * @property DateTime $Created Creation date
- * @property String $Currency Currency code
- * @property Int32 $Division Division code
- * @property Int32 $EntryNumber Entry number
- * @property Int16 $FinancialPeriod Financial period
- * @property Int16 $FinancialYear Financial year
- * @property String $JournalCode Code of Journal
- * @property String $JournalDescription Description of Journal
- * @property DateTime $Modified Last modified date
- * @property Double $OpeningBalanceFC Opening balance in the currency of the transaction
- * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
- * @property String $StatusDescription Description of Status
+ * @property int $BankStatementDocumentNumber Document number of document with bank statement
+ * @property string $BankStatementDocumentSubject Subject of document with bank statement
+ * @property float $ClosingBalanceFC Closing balance in the currency of the transaction
+ * @property string $Created Creation date
+ * @property string $Currency Currency code
+ * @property int $Division Division code
+ * @property int $EntryNumber Entry number
+ * @property int $FinancialPeriod Financial period
+ * @property int $FinancialYear Financial year
+ * @property string $JournalCode Code of Journal
+ * @property string $JournalDescription Description of Journal
+ * @property string $Modified Last modified date
+ * @property float $OpeningBalanceFC Opening balance in the currency of the transaction
+ * @property int $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
+ * @property string $StatusDescription Description of Status
  */
 class BankEntry extends Model
 {

@@ -24,9 +24,9 @@ namespace Picqer\Financials\Exact;
  * @property string $CostUnitDescription Description of CostUnit
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
+ * @property string $CreatorFullName Name of creator
  * @property string $Date
- * @property String $Description Description
+ * @property string $Description Description
  * @property int $Division Division code
  * @property string $Document Reference to a document
  * @property int $DocumentNumber Number of Document
@@ -40,8 +40,8 @@ namespace Picqer\Financials\Exact;
  * @property int $LineNumber Line number
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $Notes Extra remarks
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Notes Extra remarks
  * @property string $OffsetID Reference to offset line
  * @property int $OurRef
  * @property string $Project Reference to a project

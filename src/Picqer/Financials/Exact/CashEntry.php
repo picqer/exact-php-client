@@ -9,20 +9,20 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionCashEntries
  *
  * @property string $EntryID Primary key (read-only)
- * @property Double $ClosingBalanceFC Closing balance in the currency of the transaction
- * @property DateTime $Created Creation date (read-only)
- * @property Double $Currency Closing balance in the currency of the transaction
- * @property Int32 $Division Division code (read-only)
- * @property Int32 $EntryNumber Entry number
- * @property Int16 $FinancialPeriod Fiancial period
- * @property Int16 $FinancialYear Fiancial year
+ * @property float $ClosingBalanceFC Closing balance in the currency of the transaction
+ * @property string $Created Creation date (read-only)
+ * @property float $Currency Closing balance in the currency of the transaction
+ * @property int $Division Division code (read-only)
+ * @property int $EntryNumber Entry number
+ * @property int $FinancialPeriod Fiancial period
+ * @property int $FinancialYear Fiancial year
  * @property CashEntryLines $CashEntryLines Collection of lines
- * @property String $JournalCode Code of Journal
- * @property String $JournalDescription Description of Journal (read-only)
- * @property DateTime $Modified Last modified date (read-only)
- * @property Double $OpeningBalanceFC Opening balance in the currency of the transaction
- * @property Int16 $Status Status: 5 = Rejected, 20 = Open, 50 = Processed (read-only)
- * @property String $StatusDescription Description of Status (read-only)
+ * @property string $JournalCode Code of Journal
+ * @property string $JournalDescription Description of Journal (read-only)
+ * @property string $Modified Last modified date (read-only)
+ * @property float $OpeningBalanceFC Opening balance in the currency of the transaction
+ * @property int $Status Status: 5 = Rejected, 20 = Open, 50 = Processed (read-only)
+ * @property string $StatusDescription Description of Status (read-only)
  */
 class CashEntry extends Model
 {

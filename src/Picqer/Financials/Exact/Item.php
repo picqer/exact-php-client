@@ -32,11 +32,11 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $EndDate Together with StartDate this determines if the item is active
  * @property string $ExtraDescription Extra description text, slightly longer than the regular description (255 instead of 60)
- * @property boolean $FreeBoolField_01 Free boolean field 1
- * @property boolean $FreeBoolField_02 Free boolean field 2
- * @property boolean $FreeBoolField_03 Free boolean field 3
- * @property boolean $FreeBoolField_04 Free boolean field 4
- * @property boolean $FreeBoolField_05 Free boolean field 5
+ * @property bool $FreeBoolField_01 Free boolean field 1
+ * @property bool $FreeBoolField_02 Free boolean field 2
+ * @property bool $FreeBoolField_03 Free boolean field 3
+ * @property bool $FreeBoolField_04 Free boolean field 4
+ * @property bool $FreeBoolField_05 Free boolean field 5
  * @property string $FreeDateField_01 Free date field 1
  * @property string $FreeDateField_02 Free date field 2
  * @property string $FreeDateField_03 Free date field 3
@@ -71,17 +71,17 @@ namespace Picqer\Financials\Exact;
  * @property string $GLStockDescription Description of GLStock
  * @property int $IsBatchItem Indicates if batches are used for this item
  * @property int $IsBatchNumberItem Used with Batch number feature. Indicates if the item can have a batch number
- * @property boolean $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of this item
+ * @property bool $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of this item
  * @property int $IsMakeItem Indicates that an Item is produced to Inventory, not purchased
  * @property int $IsNewContract Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package
  * @property int $IsOnDemandItem Is On demand Item
  * @property int $IsPackageItem Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package
- * @property boolean $IsPurchaseItem Indicates if the item can be purchased
+ * @property bool $IsPurchaseItem Indicates if the item can be purchased
  * @property int $IsRegistrationCodeItem Indicated if the item is used in voucher functionality
- * @property boolean $IsSalesItem Indicates if the item can be sold
- * @property boolean $IsSerialItem Indicates that serial numbers are used for this item
- * @property boolean $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
- * @property boolean $IsSubcontractedItem Indicates if the item is provided by an outside supplier
+ * @property bool $IsSalesItem Indicates if the item can be sold
+ * @property bool $IsSerialItem Indicates that serial numbers are used for this item
+ * @property bool $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
+ * @property bool $IsSubcontractedItem Indicates if the item is provided by an outside supplier
  * @property int $IsTime Indicates if the item is a time unit item (for example a labor hour item)
  * @property int $IsWebshopItem Indicates if the item can be exported to a web shop
  * @property string $ItemGroup GUID of Item group of the item

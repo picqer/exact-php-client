@@ -7,15 +7,15 @@
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostunits
  *
  * @property string $ID Primary key
- * @property String $Code Code (user-defined ID)
- * @property DateTime $Created Creation date
+ * @property string $Code Code (user-defined ID)
+ * @property string $Created Creation date
  * @property string $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property String $Description Description (text)
- * @property Int32 $Division Division code
- * @property DateTime $Modified Last modified date
+ * @property string $CreatorFullName Name of creator
+ * @property string $Description Description (text)
+ * @property int $Division Division code
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
+ * @property string $ModifierFullName Name of modifier
  */
 class Costunit extends Model
 {
