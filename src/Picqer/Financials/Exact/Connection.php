@@ -59,7 +59,7 @@ class Connection
     private $accessToken;
 
     /**
-     * @var mixed
+     * @var int The Unix timestamp at which the access token expires.
      */
     private $tokenExpires;
 
@@ -451,7 +451,7 @@ class Connection
             if (json_last_error() === JSON_ERROR_NONE) {
                 $this->accessToken  = $body['access_token'];
                 $this->refreshToken = $body['refresh_token'];
-                $this->tokenExpires = $this->getDateTimeFromExpires($body['expires_in']);
+                $this->tokenExpires = $this->getTimestampFromExpiresIn($body['expires_in']);
 
                 if (is_callable($this->tokenUpdateCallback)) {
                     call_user_func($this->tokenUpdateCallback, $this);
@@ -464,17 +464,22 @@ class Connection
         }
     }
 
-    private function getDateTimeFromExpires($expires)
+    /**
+     * Translates expires_in to a Unix timestamp.
+     * @param string $expiresIn Number of seconds until the token expires.
+     * @return int
+     */
+    private function getTimestampFromExpiresIn($expiresIn)
     {
-        if (!is_numeric($expires)) {
+        if (!ctype_digit($expiresIn)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
-        return time() + 600;
+        return time() + $expiresIn;
     }
 
     /**
-     * @return mixed
+     * @return int The Unix timestamp at which the access token expires.
      */
     public function getTokenExpires()
     {
@@ -482,7 +487,7 @@ class Connection
     }
 
     /**
-     * @param mixed $tokenExpires
+     * @param int $tokenExpires The Unix timestamp at which the access token expires.
      */
     public function setTokenExpires($tokenExpires)
     {
