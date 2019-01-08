@@ -9,10 +9,10 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingBillOfMaterialMaterials
  *
  * @property string $ID Primary key
- * @property double $AverageCost Item average cost available when average cost method is used
- * @property byte $Backflush Indicates if this is a backflush item
+ * @property float $AverageCost Item average cost available when average cost method is used
+ * @property int $Backflush Indicates if this is a backflush item
  * @property int $CalculatorType Calculator type
- * @property double $CostBatch Cost batch
+ * @property float $CostBatch Cost batch
  * @property string $CostCenter Cost center
  * @property string $CostCenterDescription Cost center description
  * @property string $CostUnit Cost unit
@@ -23,15 +23,15 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $ItemVersion Key of item version
  * @property int $LineNumber Line number
- * @property double $NetWeight Net weight
+ * @property float $NetWeight Net weight
  * @property string $NetWeightUnit Net weight unit of measure
  * @property string $Notes Notes
  * @property string $PartItem Key of part item
  * @property string $PartItemCode Part item code
- * @property double $PartItemCostPriceStandard Item standard cost available when standard cost method is used
+ * @property float $PartItemCostPriceStandard Item standard cost available when standard cost method is used
  * @property string $PartItemDescription Part item description
- * @property double $Quantity Quantity
- * @property double $QuantityBatch Quantity batch
+ * @property float $Quantity Quantity
+ * @property float $QuantityBatch Quantity batch
  * @property string $syscreated Creation date
  * @property string $syscreator User ID of creator
  * @property string $sysmodified Modified date

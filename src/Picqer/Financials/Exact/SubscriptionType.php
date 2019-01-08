@@ -9,15 +9,15 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionTypes
  *
  * @property string $ID Primary key
- * @property String $Code Code
- * @property DateTime $Created Creation date
+ * @property string $Code Code
+ * @property string $Created Creation date
  * @property string $Creator User ID of the creator
- * @property String $CreatorFullName Name of the creator
- * @property String $Description Description
- * @property Int32 $Division Division code
- * @property DateTime $Modified Last modified date
+ * @property string $CreatorFullName Name of the creator
+ * @property string $Description Description
+ * @property int $Division Division code
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of the last modifier
- * @property String $ModifierFullName Name of the last modifier
+ * @property string $ModifierFullName Name of the last modifier
  */
 class SubscriptionType extends Model
 {

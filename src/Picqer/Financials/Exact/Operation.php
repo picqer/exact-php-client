@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Description Description of the operation
  * @property int $Division Division code
- * @property byte $HasSuppliers Indicates if the operation has suppliers associated with it
+ * @property int $HasSuppliers Indicates if the operation has suppliers associated with it
  * @property string $Item Reference to Items table
  * @property string $ItemDescription Description of Item
  * @property string $Modified Last modified date

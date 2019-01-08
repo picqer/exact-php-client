@@ -20,12 +20,12 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of the shop order
  * @property int $Division Division code
  * @property string $EntryDate Date on which the shop order was placed
- * @property byte $IsBatch Does the material plan's item use batch numbers
- * @property byte $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of the material plan's item
- * @property byte $IsInPlanning Indicator that Shop order is in planning
- * @property byte $IsOnHold Indicator if the Shop order is on hold
- * @property byte $IsReleased Indicator that the Shop order has been released to production
- * @property byte $IsSerial Does the material plan's item use serial numbers
+ * @property int $IsBatch Does the material plan's item use batch numbers
+ * @property int $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of the material plan's item
+ * @property int $IsInPlanning Indicator that Shop order is in planning
+ * @property int $IsOnHold Indicator if the Shop order is on hold
+ * @property int $IsReleased Indicator that the Shop order has been released to production
+ * @property int $IsSerial Does the material plan's item use serial numbers
  * @property string $Item Reference to the item
  * @property string $ItemCode Code of the item created by this shop order
  * @property string $ItemDescription Description of the item created by this shop order
@@ -37,13 +37,13 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Notes - only viewed internally
  * @property string $PlannedDate Planned end date of this shop order
- * @property double $PlannedQuantity Planned quantity
+ * @property float $PlannedQuantity Planned quantity
  * @property string $PlannedStartDate Planned start date of this shop order
- * @property double $ProducedQuantity Produced quantity
+ * @property float $ProducedQuantity Produced quantity
  * @property int $ProductionLeadDays Production lead days
  * @property string $Project Reference to Project
  * @property string $ProjectDescription Description of Project
- * @property double $ReadyToShipQuantity Quantity ready to ship
+ * @property float $ReadyToShipQuantity Quantity ready to ship
  * @property int $SalesOrderLineCount Number of sales orders linked to this shop order
  * @property salesorderlines $SalesOrderLines Collection of Sales order lines
  * @property int $ShopOrderByProductPlanBackflushCount Number of shop order by-product plans, which are backflushed, for this shop order

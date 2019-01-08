@@ -8,23 +8,23 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialProfitLossOverview
  *
- * @property Int32 $CurrentYear Current year, Primary key
- * @property Double $CostsCurrentPeriod Costs in current period
- * @property Double $CostsCurrentYear Costs in current year
- * @property Double $CostsPreviousYear Costs in previous year
- * @property Double $CostsPreviousYearPeriod Costs in period of previous year
- * @property String $CurrencyCode Currency Code
- * @property Int32 $CurrentPeriod Current period
- * @property Int32 $PreviousYear Previous year
- * @property Int32 $PreviousYearPeriod Period in previous year
- * @property Double $ResultCurrentPeriod Results of current period
- * @property Double $ResultCurrentYear
- * @property Double $ResultPreviousYear
- * @property Double $ResultPreviousYearPeriod Results of period in previous year
- * @property Double $RevenueCurrentPeriod Revenue in current period
- * @property Double $RevenueCurrentYear Revenue in current year
- * @property Double $RevenuePreviousYear Revenue in previous year
- * @property Double $RevenuePreviousYearPeriod Revenue in period of previous year
+ * @property int $CurrentYear Current year, Primary key
+ * @property float $CostsCurrentPeriod Costs in current period
+ * @property float $CostsCurrentYear Costs in current year
+ * @property float $CostsPreviousYear Costs in previous year
+ * @property float $CostsPreviousYearPeriod Costs in period of previous year
+ * @property string $CurrencyCode Currency Code
+ * @property int $CurrentPeriod Current period
+ * @property int $PreviousYear Previous year
+ * @property int $PreviousYearPeriod Period in previous year
+ * @property float $ResultCurrentPeriod Results of current period
+ * @property float $ResultCurrentYear
+ * @property float $ResultPreviousYear
+ * @property float $ResultPreviousYearPeriod Results of period in previous year
+ * @property float $RevenueCurrentPeriod Revenue in current period
+ * @property float $RevenueCurrentYear Revenue in current year
+ * @property float $RevenuePreviousYear Revenue in previous year
+ * @property float $RevenuePreviousYearPeriod Revenue in period of previous year
  */
 class ProfitLossOverview extends Model
 {

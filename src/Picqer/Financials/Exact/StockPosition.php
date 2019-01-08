@@ -8,10 +8,10 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadLogisticsStockPosition
  *
- * @property Double $InStock Number of items in stock
+ * @property float $InStock Number of items in stock
  * @property string $ItemId Primary key, Item
- * @property Double $PlanningIn Number of items that are planned to come in
- * @property Double $PlanningOut Number of items that are planned to go out
+ * @property float $PlanningIn Number of items that are planned to come in
+ * @property float $PlanningOut Number of items that are planned to go out
  */
 class StockPosition extends Model
 {

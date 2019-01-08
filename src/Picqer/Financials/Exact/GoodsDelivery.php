@@ -9,34 +9,34 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderGoodsDeliveries
  *
  * @property string $EntryID Primary key
- * @property DateTime $Created Creation date
+ * @property string $Created Creation date
  * @property string $Creator User ID of the creator
- * @property String $CreatorFullName Name of the creator
+ * @property string $CreatorFullName Name of the creator
  * @property string $DeliveryAccount Reference to account for delivery
- * @property String $DeliveryAccountCode Delivery account code
- * @property String $DeliveryAccountName Account name
+ * @property string $DeliveryAccountCode Delivery account code
+ * @property string $DeliveryAccountName Account name
  * @property string $DeliveryAddress Reference to shipping address
  * @property string $DeliveryContact Reference to contact for delivery
- * @property String $DeliveryContactPersonFullName Name of the contact person of the customer who will receive delivered goods
- * @property DateTime $DeliveryDate Date of goods delivery
- * @property Int32 $DeliveryNumber Delivery number
- * @property String $Description Header description
- * @property Int32 $Division Division code
+ * @property string $DeliveryContactPersonFullName Name of the contact person of the customer who will receive delivered goods
+ * @property string $DeliveryDate Date of goods delivery
+ * @property int $DeliveryNumber Delivery number
+ * @property string $Description Header description
+ * @property int $Division Division code
  * @property string $Document Document that is manually linked to the sales order delivery
- * @property String $DocumentSubject Document Subject
- * @property Int32 $EntryNumber Entry number
+ * @property string $DocumentSubject Document Subject
+ * @property int $EntryNumber Entry number
  * @property GoodsDeliveryLines $GoodsDeliveryLines Collection of lines
- * @property DateTime $Modified Last modified date
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
- * @property String $Remarks Remarks
+ * @property string $ModifierFullName Name of modifier
+ * @property string $Remarks Remarks
  * @property string $ShippingMethod Reference to shipping method
- * @property String $ShippingMethodCode Code of shipping method
- * @property String $ShippingMethodDescription Description of shipping method
- * @property String $TrackingNumber Reference to header tracking number
+ * @property string $ShippingMethodCode Code of shipping method
+ * @property string $ShippingMethodDescription Description of shipping method
+ * @property string $TrackingNumber Reference to header tracking number
  * @property string $Warehouse Warehouse
- * @property String $WarehouseCode Code of Warehouse
- * @property String $WarehouseDescription Description of Warehouse
+ * @property string $WarehouseCode Code of Warehouse
+ * @property string $WarehouseDescription Description of Warehouse
  */
 class GoodsDelivery extends Model
 {

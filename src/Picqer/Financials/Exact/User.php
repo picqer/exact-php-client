@@ -8,43 +8,43 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=UsersUsers
  *
- * @property Guid $UserID Primary key
- * @property DateTime $BirthDate Birth date
- * @property String $BirthName Birth name
- * @property DateTime $Created Creation date
- * @property Guid $Creator User ID of the creator
- * @property String $CreatorFullName Name of the creator
- * @property Guid $Customer Customer the user belongs to
- * @property String $CustomerName Name of Customer
- * @property String $Email Email address of the user
- * @property DateTime $EndDate Date after which the user login is disabled. NULL means no enddate
- * @property String $FirstName First name
- * @property String $FullName Full name of the user
- * @property String $Gender Gender: M=Male, V=Female, O=Unknown
- * @property Boolean $HasRegisteredForTwoStepVerification User has completed registration of Two-Step verification
- * @property Boolean $HasTwoStepVerification User must use Two-Step verification to log in
- * @property String $Initials Initials
- * @property Byte $IsAnonymised Indicates whether the user is anonymised.
- * @property String $Language Language (culture) that is used in Exact Online
- * @property DateTime $LastLogin The last time this user logged in
- * @property String $LastName Last name
- * @property String $MiddleName Middle name
- * @property String $Mobile Mobile phone
- * @property DateTime $Modified Last modified date
- * @property Guid $Modifier User ID of the last modifier
- * @property String $ModifierFullName Name of the last modifier
- * @property String $Nationality Nationality
- * @property String $Notes Remarks
- * @property String $Phone Phone number
- * @property String $PhoneExtension Phone number extension
- * @property String $ProfileCode Profile code
- * @property DateTime $StartDate Startdate after which the login is allowed. If the start date is NULL the login is allowed as well
- * @property Int32 $StartDivision Start Division
- * @property String $Title Title
- * @property String $UserName Login name of the user
+ * @property string $UserID Primary key
+ * @property string $BirthDate Birth date
+ * @property string $BirthName Birth name
+ * @property string $Created Creation date
+ * @property string $Creator User ID of the creator
+ * @property string $CreatorFullName Name of the creator
+ * @property string $Customer Customer the user belongs to
+ * @property string $CustomerName Name of Customer
+ * @property string $Email Email address of the user
+ * @property string $EndDate Date after which the user login is disabled. NULL means no enddate
+ * @property string $FirstName First name
+ * @property string $FullName Full name of the user
+ * @property string $Gender Gender: M=Male, V=Female, O=Unknown
+ * @property bool $HasRegisteredForTwoStepVerification User has completed registration of Two-Step verification
+ * @property bool $HasTwoStepVerification User must use Two-Step verification to log in
+ * @property string $Initials Initials
+ * @property int $IsAnonymised Indicates whether the user is anonymised.
+ * @property string $Language Language (culture) that is used in Exact Online
+ * @property string $LastLogin The last time this user logged in
+ * @property string $LastName Last name
+ * @property string $MiddleName Middle name
+ * @property string $Mobile Mobile phone
+ * @property string $Modified Last modified date
+ * @property string $Modifier User ID of the last modifier
+ * @property string $ModifierFullName Name of the last modifier
+ * @property string $Nationality Nationality
+ * @property string $Notes Remarks
+ * @property string $Phone Phone number
+ * @property string $PhoneExtension Phone number extension
+ * @property string $ProfileCode Profile code
+ * @property string $StartDate Startdate after which the login is allowed. If the start date is NULL the login is allowed as well
+ * @property int $StartDivision Start Division
+ * @property string $Title Title
+ * @property string $UserName Login name of the user
  * @property UserRoles $UserRoles Collection of user roles
  * @property UserRolesPerDivision $UserRolesPerDivision Collection of user roles per division
- * @property String $UserTypesList Obsolete
+ * @property string $UserTypesList Obsolete
  */
 class User extends Model
 {

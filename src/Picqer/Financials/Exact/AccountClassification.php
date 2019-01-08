@@ -10,16 +10,16 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $AccountClassificationName Reference to Account classification name
- * @property String $AccountClassificationNameDescription Description of AccountClassificationName
- * @property String $Code Account classification code
- * @property DateTime $Created Creation date
+ * @property string $AccountClassificationNameDescription Description of AccountClassificationName
+ * @property string $Code Account classification code
+ * @property string $Created Creation date
  * @property string $Creator User ID of creator
- * @property String $CreatorFullName Name of creator
- * @property String $Description Description of AccountClassificationName
- * @property Int32 $Division Division code
- * @property DateTime $Modified Last modified date
+ * @property string $CreatorFullName Name of creator
+ * @property string $Description Description of AccountClassificationName
+ * @property int $Division Division code
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
- * @property String $ModifierFullName Name of modifier
+ * @property string $ModifierFullName Name of modifier
  */
 class AccountClassification extends Model
 {

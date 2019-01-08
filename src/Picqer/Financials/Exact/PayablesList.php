@@ -8,22 +8,22 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialPayablesList
  *
- * @property Int64 $HID Primary key, human readable ID
- * @property String $AccountCode Code of Account
+ * @property int $HID Primary key, human readable ID
+ * @property string $AccountCode Code of Account
  * @property string $AccountId Reference to the account
- * @property String $AccountName Name of Account
- * @property Double $Amount Amount
- * @property Double $AmountInTransit Amount in transit
- * @property String $CurrencyCode Code of Currency
- * @property String $Description Description
- * @property DateTime $DueDate Date the invoice should be paid
- * @property Int32 $EntryNumber Entry number
+ * @property string $AccountName Name of Account
+ * @property float $Amount Amount
+ * @property float $AmountInTransit Amount in transit
+ * @property string $CurrencyCode Code of Currency
+ * @property string $Description Description
+ * @property string $DueDate Date the invoice should be paid
+ * @property int $EntryNumber Entry number
  * @property string $Id Obsolete
- * @property DateTime $InvoiceDate Invoice date
- * @property Int32 $InvoiceNumber Invoice number. The value is 0 when the invoice number of the linked transaction is empty.
- * @property String $JournalCode Code of Journal
- * @property String $JournalDescription Description of Journal
- * @property String $YourRef Your reference
+ * @property string $InvoiceDate Invoice date
+ * @property int $InvoiceNumber Invoice number. The value is 0 when the invoice number of the linked transaction is empty.
+ * @property string $JournalCode Code of Journal
+ * @property string $JournalDescription Description of Journal
+ * @property string $YourRef Your reference
  */
 class PayablesList extends Model
 {

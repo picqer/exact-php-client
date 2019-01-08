@@ -13,20 +13,20 @@ namespace Picqer\Financials\Exact;
  * @property string $AccountCode Code of Account
  * @property string $AccountContact Contact person of Account
  * @property string $AccountName Name of Account
- * @property boolean $AllowAdditionalInvoicing Is additional invoice is allowed for project
- * @property boolean $BlockEntry Block time and cost entries
- * @property boolean $BlockRebilling Block rebilling
- * @property double $BudgetedAmount Budgeted amount of sales in the default currency of the company
- * @property double $BudgetedCosts Budgeted amount of costs in the default currency of the company
+ * @property bool $AllowAdditionalInvoicing Is additional invoice is allowed for project
+ * @property bool $BlockEntry Block time and cost entries
+ * @property bool $BlockRebilling Block rebilling
+ * @property float $BudgetedAmount Budgeted amount of sales in the default currency of the company
+ * @property float $BudgetedCosts Budgeted amount of costs in the default currency of the company
  * @property budgetedhoursperhourtype $BudgetedHoursPerHourType Collection of budgeted hours
- * @property double $BudgetedRevenue Budgeted amount of revenue in the default currency of the company
- * @property byte $BudgetOverrunHours BudgetOverrunHours: 10-Allowed, 20-Not Allowed
- * @property int16 $BudgetType Budget type
+ * @property float $BudgetedRevenue Budgeted amount of revenue in the default currency of the company
+ * @property int $BudgetOverrunHours BudgetOverrunHours: 10-Allowed, 20-Not Allowed
+ * @property int $BudgetType Budget type
  * @property string $BudgetTypeDescription Budget type description
  * @property string $Classification Used only for PSA to link a project classification to the project
  * @property string $ClassificationDescription Description of Classification
  * @property string $Code Code
- * @property double $CostsAmountFC Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only
+ * @property float $CostsAmountFC Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -38,29 +38,29 @@ namespace Picqer\Financials\Exact;
  * @property string $FixedPriceItem Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting
  * @property string $FixedPriceItemDescription Description of FixedPriceItem
  * @property string $InternalNotes Internal notes not to be printed in invoice
- * @property boolean $InvoiceAsQuoted Is invoice as quoted
+ * @property bool $InvoiceAsQuoted Is invoice as quoted
  * @property invoiceterms $InvoiceTerms Collection of invoice terms
  * @property string $Manager Responsible person for this project
  * @property string $ManagerFullname Name of Manager
- * @property double $MarkupPercentage Purchase markup percentage
+ * @property float $MarkupPercentage Purchase markup percentage
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes For additional information about projects
  * @property string $PrepaidItem Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting
  * @property string $PrepaidItemDescription Description of PrepaidItem
- * @property int16 $PrepaidType PrepaidType: 1-Retainer, 2-Hour type bundle
+ * @property int $PrepaidType PrepaidType: 1-Retainer, 2-Hour type bundle
  * @property string $PrepaidTypeDescription Description of PrepaidType
  * @property projectrestrictionemployees $ProjectRestrictionEmployees Collection of employee restrictions
  * @property projectrestrictionitems $ProjectRestrictionItems Collection of item restrictions
  * @property projectrestrictionrebillings $ProjectRestrictionRebillings Collection of rebilling restrictions
- * @property double $SalesTimeQuantity Budgeted time. Total number of hours estimated for the fixed price project
+ * @property float $SalesTimeQuantity Budgeted time. Total number of hours estimated for the fixed price project
  * @property string $SourceQuotation Source quotation
  * @property string $StartDate Start date of a project. In combination with the end date the status is determined
- * @property double $TimeQuantityToAlert Alert when exceeding (Hours)
+ * @property float $TimeQuantityToAlert Alert when exceeding (Hours)
  * @property int $Type Reference to ProjectTypes
  * @property string $TypeDescription Description of Type
- * @property boolean $UseBillingMilestones Using billing milestones
+ * @property bool $UseBillingMilestones Using billing milestones
  */
 class Project extends Model
 {

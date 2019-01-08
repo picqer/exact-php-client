@@ -9,30 +9,30 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderGoodsReceipts
  *
  * @property string $ID Primary key
- * @property DateTime $Created Creation date
+ * @property string $Created Creation date
  * @property string $Creator User ID of the creator
- * @property String $CreatorFullName Name of the creator
- * @property String $Description Description of the goods receipt
- * @property Int32 $Division Division code
+ * @property string $CreatorFullName Name of the creator
+ * @property string $Description Description of the goods receipt
+ * @property int $Division Division code
  * @property string $Document Document that is linked to the goods receipt
- * @property String $DocumentSubject Document subject
- * @property Int32 $EntryNumber Entry number of the resulting stock entry
+ * @property string $DocumentSubject Document subject
+ * @property int $EntryNumber Entry number of the resulting stock entry
  * @property GoodsReceiptLines $GoodsReceiptLines Collection of receipt lines
- * @property DateTime $Modified Last modified date
+ * @property string $Modified Last modified date
  * @property string $Modifier User ID of the last modifier
- * @property String $ModifierFullName Name of the last modifier
- * @property DateTime $ReceiptDate Date of the goods receipt
- * @property Int32 $ReceiptNumber Receipt number
- * @property String $Remarks Receipt note
+ * @property string $ModifierFullName Name of the last modifier
+ * @property string $ReceiptDate Date of the goods receipt
+ * @property int $ReceiptNumber Receipt number
+ * @property string $Remarks Receipt note
  * @property string $Supplier Account ID of the supplier
- * @property String $SupplierCode Supplier code
+ * @property string $SupplierCode Supplier code
  * @property string $SupplierContact ID of the contact person at the supplier
- * @property String $SupplierContactFullName Name of the contact person at the supplier
- * @property String $SupplierName Supplier name
+ * @property string $SupplierContactFullName Name of the contact person at the supplier
+ * @property string $SupplierName Supplier name
  * @property string $Warehouse Warehouse ID
- * @property String $WarehouseCode Warehouse code
- * @property String $WarehouseDescription Description of the warehouse
- * @property String $YourRef The purchase invoice number provided by the supplier
+ * @property string $WarehouseCode Warehouse code
+ * @property string $WarehouseDescription Description of the warehouse
+ * @property string $YourRef The purchase invoice number provided by the supplier
  */
 class GoodsReceipt extends Model
 {

@@ -8,11 +8,11 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=logisticsItemExtraField
  *
- * @property String $Description Description of item
+ * @property string $Description Description of item
  * @property ItemID $ItemID Primary key
- * @property DateTime $Modified Last modified date
- * @property Double $Number Number of Field Order
- * @property String $Value Value of the selected List
+ * @property string $Modified Last modified date
+ * @property float $Number Number of Field Order
+ * @property string $Value Value of the selected List
  *
  */
 
