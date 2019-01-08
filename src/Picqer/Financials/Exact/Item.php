@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=logisticsItems
  *
- * @property string $Barcode
+ * @property string $Barcode Barcode of the item (numeric string)
  * @property string $ID Primary key
  * @property string $Class_01 Item class code referring to ItemClasses with ClassID 1
  * @property string $Class_02 Item class code referring to ItemClasses with ClassID 2
@@ -20,7 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Class_08 Item class code referring to ItemClasses with ClassID 8
  * @property string $Class_09 Item class code referring to ItemClasses with ClassID 9
  * @property string $Class_10 Item class code referring to ItemClasses with ClassID 10
- * @property string $Code Barcode of the item (numeric string)
+ * @property string $Code Item code
  * @property int $CopyRemarks Copy remarks to sales lines
  * @property string $CostPriceCurrency The currency of the current and proposed cost price
  * @property float $CostPriceNew Proposed cost price
