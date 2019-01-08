@@ -108,6 +108,12 @@ class EntityTest extends TestCase
     public function testDocumentAttachmentEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\DocumentAttachment::class);
+
+        $connection = $this->getMock(\Picqer\Financials\Exact\Connection::class);
+        $documentAttachment = new \Picqer\Financials\Exact\DocumentAttachment($connection);
+        $documentAttachment->Url = 'http://www.example.org/index.html?id=123';
+
+        $this->assertSame('http://www.example.org/index.html?id=123&Download=1', $documentAttachment->getDownloadUrl());
     }
 
     public function testDocumentTypeEntity()
@@ -148,6 +154,12 @@ class EntityTest extends TestCase
     public function testItemEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Item::class);
+
+        $connection = $this->getMock(\Picqer\Financials\Exact\Connection::class);
+        $item = new \Picqer\Financials\Exact\Item($connection);
+        $item->PictureUrl = 'http://www.example.org/index.html?id=123';
+
+        $this->assertSame('http://www.example.org/index.html?id=123', $item->getDownloadUrl());
     }
 
     public function testItemExtraField()
