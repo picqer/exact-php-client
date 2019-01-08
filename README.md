@@ -84,6 +84,10 @@ setValue('refreshtoken', $connection->getRefreshToken());
 
 // Optionally, save the expiry-timestamp. This prevents exchanging valid tokens (ie. saves you some requests)
 setValue('expires_in', $connection->getTokenExpires());
+
+// Optionally, set the lock and unlock callbacks to prevent multiple request for acquiring a new refresh token with the same refresh token.
+$connection->setAcquireAccessTokenLockCallback('CALLBACK_FUNCTION');
+$connection->setAcquireAccessTokenUnlockCallback('CALLBACK_FUNCTION');
 ```
 
 ### About divisions (administrations)
