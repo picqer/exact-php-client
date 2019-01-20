@@ -110,6 +110,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\DocumentAttachment::class);
     }
 
+    public function testDocumentCategoryEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DocumentCategory::class);
+    }
+
     public function testDocumentTypeEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\DocumentType::class);
