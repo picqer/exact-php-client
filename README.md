@@ -6,6 +6,9 @@ PHP client library to use the Exact Online API.
 
 Note: For Guzzle 6 use v2, for Guzzle 3 use v1.
 
+## Direct link to Exact Online docs
+https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-getting-started
+
 ## Composer install
 Installing this Exact client for PHP can be done through Composer.
 
