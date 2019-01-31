@@ -1,6 +1,8 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use Picqer\Financials\Exact\Connection;
+
 /**
  * Class EntityTest
  *
@@ -108,9 +110,7 @@ class EntityTest extends TestCase
     public function testDocumentAttachmentEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\DocumentAttachment::class);
-
-        $connection = $this->getMock(\Picqer\Financials\Exact\Connection::class);
-        $documentAttachment = new \Picqer\Financials\Exact\DocumentAttachment($connection);
+        $documentAttachment = new \Picqer\Financials\Exact\DocumentAttachment(new Connection());
         $documentAttachment->Url = 'http://www.example.org/index.html?id=123';
 
         $this->assertSame('http://www.example.org/index.html?id=123&Download=1', $documentAttachment->getDownloadUrl());
@@ -154,9 +154,7 @@ class EntityTest extends TestCase
     public function testItemEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Item::class);
-
-        $connection = $this->getMock(\Picqer\Financials\Exact\Connection::class);
-        $item = new \Picqer\Financials\Exact\Item($connection);
+        $item = new \Picqer\Financials\Exact\Item(new Connection());
         $item->PictureUrl = 'http://www.example.org/index.html?id=123';
 
         $this->assertSame('http://www.example.org/index.html?id=123', $item->getDownloadUrl());
