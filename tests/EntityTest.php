@@ -131,6 +131,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Employee::class);
     }
 
+    public function testExchangeRateEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ExchangeRate::class);
+    }
+
     public function testGeneralJournalEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\GeneralJournalEntry::class);
