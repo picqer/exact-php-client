@@ -8,7 +8,12 @@ trait Downloadable
     /**
      * @return Connection
      */
-    abstract function connection();
+    abstract public function connection();
+
+    /**
+     * @return string
+     */
+    abstract public function getDownloadUrl();
 
     /**
      * @return mixed Binary representation of file
@@ -17,12 +22,6 @@ trait Downloadable
     {
         $client = new Client();
 
-        if ($this->Url) {
-            $uri = $this->Url . '&Download=1';
-        } elseif ($this->PictureUrl) {
-            $uri = $this->PictureUrl;
-        }
-
         $headers = [
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
@@ -30,7 +29,7 @@ trait Downloadable
             'Authorization' => 'Bearer ' . $this->connection()->getAccessToken(),
         ];
 
-        $res = $client->get($uri, [
+        $res = $client->get($this->getDownloadUrl(), [
           'headers' => $headers
         ]);
 
