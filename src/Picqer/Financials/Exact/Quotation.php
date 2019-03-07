@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Quotation
+ * Class Quotation.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMQuotations
  *
  * @property string $QuotationID Identifier of the quotation
@@ -60,7 +59,6 @@ namespace Picqer\Financials\Exact;
  */
 class Quotation extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -123,10 +121,10 @@ class Quotation extends Model
      */
     public function addItem(array $array)
     {
-        if (! isset($this->attributes['QuotationLines']) || $this->attributes['QuotationLines'] == null) {
+        if (!isset($this->attributes['QuotationLines']) || $this->attributes['QuotationLines'] == null) {
             $this->attributes['QuotationLines'] = [];
         }
-        if (! isset($array['LineNumber'])) {
+        if (!isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['QuotationLines']) + 1;
         }
         $this->attributes['QuotationLines'][] = $array;

@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class AccountInvolvedAccount
+ * Class AccountInvolvedAccount.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyAccountInvolvedAccounts
  *
  * @property string $ID Primary key
@@ -26,7 +25,6 @@ namespace Picqer\Financials\Exact;
  */
 class AccountInvolvedAccount extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -49,5 +47,4 @@ class AccountInvolvedAccount extends Model
     ];
 
     protected $url = 'accountancy/AccountInvolvedAccounts';
-
 }

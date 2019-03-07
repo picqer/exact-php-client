@@ -4,14 +4,13 @@ use PHPUnit\Framework\TestCase;
 use Picqer\Financials\Exact\Connection;
 
 /**
- * Class EntityTest
+ * Class EntityTest.
  *
  * Tests all entities to ensure entities have no PHP parse errors and have
  * at least the properties we need to use the entity
  */
 class EntityTest extends TestCase
 {
-
     public function testAccountEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Account::class);
@@ -470,5 +469,4 @@ class EntityTest extends TestCase
         $this->assertEquals('Picqer\Financials\Exact', $reflectionClass->getNamespaceName());
         $this->assertEquals('Picqer\Financials\Exact\Model', $reflectionClass->getParentClass()->getName());
     }
-
 }

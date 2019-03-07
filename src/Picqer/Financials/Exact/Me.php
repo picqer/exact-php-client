@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Me
+ * Class Me.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemMe
  *
  * @property string   $UserID Primary key
@@ -70,7 +69,7 @@ class Me extends Model
         'ThumbnailPicture',
         'ThumbnailPictureFormat',
         'Title',
-        'UserName'
+        'UserName',
     ];
 
     protected $url = 'current/Me';
@@ -85,7 +84,7 @@ class Me extends Model
     public function findWithSelect($select = '')
     {
         $result = $this->connection()->get($this->url, [
-            '$select' => $select
+            '$select' => $select,
         ]);
 
         return new self($this->connection(), $result);

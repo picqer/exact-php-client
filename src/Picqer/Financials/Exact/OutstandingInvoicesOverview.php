@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class OutstandingInvoicesOverview
+ * Class OutstandingInvoicesOverview.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialOutstandingInvoicesOverview
  *
  * @property string $CurrencyCode Primary key
@@ -20,7 +19,6 @@ namespace Picqer\Financials\Exact;
  */
 class OutstandingInvoicesOverview extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -39,5 +37,4 @@ class OutstandingInvoicesOverview extends Model
     ];
 
     protected $url = 'read/financial/OutstandingInvoicesOverview';
-
 }

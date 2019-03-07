@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Bank
+ * Class Bank.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowBanks
  *
  * @property string $ID Primary key
@@ -21,7 +20,6 @@ namespace Picqer\Financials\Exact;
  */
 class Bank extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -39,5 +37,4 @@ class Bank extends Model
     ];
 
     protected $url = 'cashflow/Banks';
-
 }

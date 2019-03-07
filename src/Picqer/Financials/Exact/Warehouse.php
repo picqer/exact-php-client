@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Warehouse
+ * Class Warehouse.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryWarehouses
  *
  * @property string $ID Primary key
@@ -28,7 +27,6 @@ namespace Picqer\Financials\Exact;
  */
 class Warehouse extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -53,5 +51,4 @@ class Warehouse extends Model
     ];
 
     protected $url = 'inventory/Warehouses';
-
 }

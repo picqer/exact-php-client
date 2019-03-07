@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PrintedSalesInvoice
+ * Class PrintedSalesInvoice.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesinvoicePrintedSalesInvoices
  *
  * @property string $InvoiceID Primary key, Reference to EntryID of SalesInvoice
@@ -60,6 +59,7 @@ class PrintedSalesInvoice extends Model
     public function save()
     {
         $this->fill($this->insert());
+
         return $this;
     }
 

@@ -1,11 +1,11 @@
-<?php namespace Picqer\Financials\Exact\Query;
+<?php
+
+namespace Picqer\Financials\Exact\Query;
 
 use Picqer\Financials\Exact\Connection;
 
 /**
- * Class Resultset
- *
- * @package Picqer\Financials\Exact\Query
+ * Class Resultset.
  */
 class Resultset
 {
@@ -31,10 +31,11 @@ class Resultset
 
     /**
      * Resultset constructor.
+     *
      * @param Connection $connection
-     * @param string $url
-     * @param string $class
-     * @param array $params
+     * @param string     $url
+     * @param string     $class
+     * @param array      $params
      */
     public function __construct(Connection $connection, $url, $class, array $params)
     {
@@ -52,6 +53,7 @@ class Resultset
         $result = $this->connection->get($this->url, $this->params);
         $this->url = $this->connection->nextUrl;
         $this->params = null;
+
         return $this->collectionFromResult($result);
     }
 
@@ -65,6 +67,7 @@ class Resultset
 
     /**
      * @param array $result
+     *
      * @return array
      */
     protected function collectionFromResult($result)
@@ -72,7 +75,7 @@ class Resultset
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter
         if ((bool) count(array_filter(array_keys($result), 'is_string'))) {
-            $result = [ $result ];
+            $result = [$result];
         }
 
         $class = $this->class;

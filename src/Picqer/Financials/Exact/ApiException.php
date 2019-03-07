@@ -3,12 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ApiException
- *
- * @package Picqer\Financials\Exact
- *
+ * Class ApiException.
  */
 class ApiException extends \Exception
 {
-
 }

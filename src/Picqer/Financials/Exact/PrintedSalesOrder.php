@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PrintedSalesOrder
+ * Class PrintedSalesOrder.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesorderPrintedSalesOrders
  *
  * @property string $OrderId Primary key, Reference to OrderId of SalesOrder
@@ -37,7 +36,7 @@ class PrintedSalesOrder extends Model
         'EmailLayout',
         'ExtraText',
         'SendEmailToCustomer',
-        'SenderEmailAddress'
+        'SenderEmailAddress',
     ];
 
     /**
@@ -46,6 +45,7 @@ class PrintedSalesOrder extends Model
     public function save()
     {
         $this->fill($this->insert());
+
         return $this;
     }
 

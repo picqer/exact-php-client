@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseEntryLine
+ * Class PurchaseEntryLine.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseEntryPurchaseEntryLines
  *
  * @property string $ID Primary key
@@ -58,7 +57,6 @@ namespace Picqer\Financials\Exact;
  */
 class PurchaseEntryLine extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -113,5 +111,4 @@ class PurchaseEntryLine extends Model
     ];
 
     protected $url = 'purchaseentry/PurchaseEntryLines';
-
 }

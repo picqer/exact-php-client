@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class QuotationLine
+ * Class QuotationLine.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMQuotationLines
  *
  * @property string $ID Primary key
@@ -33,7 +32,6 @@ namespace Picqer\Financials\Exact;
  */
 class QuotationLine extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -63,5 +61,4 @@ class QuotationLine extends Model
     ];
 
     protected $url = 'crm/QuotationLines';
-
 }

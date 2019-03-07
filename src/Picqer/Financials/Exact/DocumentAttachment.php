@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class DocumentAttachment
+ * Class DocumentAttachment.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=documentsDocumentAttachments
  *
  * @property string $ID Primary key
@@ -37,6 +36,6 @@ class DocumentAttachment extends Model
      */
     public function getDownloadUrl()
     {
-        return $this->Url . '&Download=1';
+        return $this->Url.'&Download=1';
     }
 }

@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class GoodsDeliveryLine
+ * Class GoodsDeliveryLine.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderGoodsDeliveryLines
  *
  * @property string $ID Primary key
@@ -39,7 +38,6 @@ namespace Picqer\Financials\Exact;
  */
 class GoodsDeliveryLine extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -75,5 +73,4 @@ class GoodsDeliveryLine extends Model
     ];
 
     protected $url = 'salesorder/GoodsDeliveryLines';
-
 }
