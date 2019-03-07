@@ -87,6 +87,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Name Name of the account manager
+ * @property string $OINNumber Dutch government identification number / organisation identification number
  * @property string $PaymentConditionPurchase Code of default payment condition for purchase
  * @property string $PaymentConditionPurchaseDescription Description of PaymentConditionPurchase
  * @property string $PaymentConditionSales Code of default payment condition for sales
@@ -214,6 +215,7 @@ class Account extends Model
         'Modifier',
         'ModifierFullName',
         'Name',
+        'OINNumber',
         'PaymentConditionPurchase',
         'PaymentConditionPurchaseDescription',
         'PaymentConditionSales',
