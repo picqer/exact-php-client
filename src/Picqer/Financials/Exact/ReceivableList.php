@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ReceivableList
+ * Class ReceivableList.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReceivablesList
  *
  * @property int $HID Human readable ID, Primary key
@@ -32,22 +31,22 @@ class ReceivableList extends Model
     protected $primaryKey = 'HID';
 
     protected $fillable = [
-		'AccountCode',
-		'AccountId',
-		'AccountName',
-		'Amount',
-		'AmountInTransit',
-		'CurrencyCode',
-		'Description',
-		'DueDate',
-		'EntryNumber',
-		'HID',
-		'Id',
-		'InvoiceDate',
-		'InvoiceNumber',
-		'JournalCode',
-		'JournalDescription',
-		'YourRef',
+        'AccountCode',
+        'AccountId',
+        'AccountName',
+        'Amount',
+        'AmountInTransit',
+        'CurrencyCode',
+        'Description',
+        'DueDate',
+        'EntryNumber',
+        'HID',
+        'Id',
+        'InvoiceDate',
+        'InvoiceNumber',
+        'JournalCode',
+        'JournalDescription',
+        'YourRef',
     ];
 
     protected $url = 'read/financial/ReceivablesList';

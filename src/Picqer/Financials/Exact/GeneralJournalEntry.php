@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class GeneralJournalEntry
+ * Class GeneralJournalEntry.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=GeneralJournalEntryGeneralJournalEntries
  *
  * @property string $EntryID Primary key
@@ -41,8 +40,8 @@ class GeneralJournalEntry extends Model
 
     public function addItem(array $array)
     {
-        if ( ! isset( $this->attributes['GeneralJournalEntryLines'] ) || $this->attributes['GeneralJournalEntryLines'] == null) {
-            $this->attributes['GeneralJournalEntryLines'] = [ ];
+        if (!isset($this->attributes['GeneralJournalEntryLines']) || $this->attributes['GeneralJournalEntryLines'] == null) {
+            $this->attributes['GeneralJournalEntryLines'] = [];
         }
         $this->attributes['GeneralJournalEntryLines'][] = $array;
     }

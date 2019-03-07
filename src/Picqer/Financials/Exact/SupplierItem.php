@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SupplierItem
+ * Class SupplierItem.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsSupplierItem
  *
  * @property string $ID Primary key
@@ -40,7 +39,6 @@ namespace Picqer\Financials\Exact;
  */
 class SupplierItem extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -77,5 +75,4 @@ class SupplierItem extends Model
     ];
 
     protected $url = 'logistics/SupplierItem';
-
 }

@@ -6,15 +6,12 @@ use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
-use GuzzleHttp\Psr7;
 
 /**
- * Class Connection
- *
- * @package Picqer\Financials\Exact
- *
+ * Class Connection.
  */
 class Connection
 {
@@ -104,8 +101,8 @@ class Connection
     protected $middleWares = [];
 
     /**
-    * @var string|null
-    */
+     * @var string|null
+     */
     public $nextUrl = null;
 
     /**
@@ -124,8 +121,8 @@ class Connection
 
         $this->client = new Client([
             'http_errors' => true,
-            'handler' => $handlerStack,
-            'expect' => false,
+            'handler'     => $handlerStack,
+            'expect'      => false,
         ]);
 
         return $this->client;
@@ -156,18 +153,19 @@ class Connection
     /**
      * @param string $method
      * @param string $endpoint
-     * @param mixed $body
-     * @param array $params
-     * @param array $headers
+     * @param mixed  $body
+     * @param array  $params
+     * @param array  $headers
+     *
      * @return Request
      */
-    private function createRequest($method = 'GET', $endpoint, $body = null, array $params = [], array $headers = [])
+    private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = [])
     {
         // Add default json headers to the request
         $headers = array_merge($headers, [
-            'Accept' => 'application/json',
+            'Accept'       => 'application/json',
             'Content-Type' => 'application/json',
-            'Prefer' => 'return=representation'
+            'Prefer'       => 'return=representation',
         ]);
 
         // If access token is not set or token has expired, acquire new token
@@ -177,12 +175,12 @@ class Connection
 
         // If we have a token, sign the request
         if (!$this->needsAuthentication() && !empty($this->accessToken)) {
-            $headers['Authorization'] = 'Bearer ' . $this->accessToken;
+            $headers['Authorization'] = 'Bearer '.$this->accessToken;
         }
 
         // Create param string
         if (!empty($params)) {
-            $endpoint .= '?' . http_build_query($params);
+            $endpoint .= '?'.http_build_query($params);
         }
 
         // Create the request
@@ -193,10 +191,12 @@ class Connection
 
     /**
      * @param string $url
-     * @param array $params
-     * @param array $headers
-     * @return mixed
+     * @param array  $params
+     * @param array  $headers
+     *
      * @throws ApiException
+     *
+     * @return mixed
      */
     public function get($url, array $params = [], array $headers = [])
     {
@@ -210,73 +210,71 @@ class Connection
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
-        
-        return null;
     }
 
     /**
      * @param string $url
-     * @param mixed $body
-     * @return mixed
+     * @param mixed  $body
+     *
      * @throws ApiException
+     *
+     * @return mixed
      */
     public function post($url, $body)
     {
         $url = $this->formatUrl($url);
 
         try {
-            $request  = $this->createRequest('POST', $url, $body);
+            $request = $this->createRequest('POST', $url, $body);
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
-
-        return null;
     }
 
     /**
      * @param string $url
-     * @param mixed $body
-     * @return mixed
+     * @param mixed  $body
+     *
      * @throws ApiException
+     *
+     * @return mixed
      */
     public function put($url, $body)
     {
         $url = $this->formatUrl($url);
 
         try {
-            $request  = $this->createRequest('PUT', $url, $body);
+            $request = $this->createRequest('PUT', $url, $body);
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
-
-        return null;
     }
 
     /**
      * @param string $url
-     * @return mixed
+     *
      * @throws ApiException
+     *
+     * @return mixed
      */
     public function delete($url)
     {
         $url = $this->formatUrl($url);
 
         try {
-            $request  = $this->createRequest('DELETE', $url);
+            $request = $this->createRequest('DELETE', $url);
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
-
-        return null;
     }
 
     /**
@@ -284,11 +282,11 @@ class Connection
      */
     public function getAuthUrl()
     {
-        return $this->baseUrl . $this->authUrl . '?' . http_build_query(array(
-            'client_id' => $this->exactClientId,
-            'redirect_uri' => $this->redirectUrl,
-            'response_type' => 'code'
-        ));
+        return $this->baseUrl.$this->authUrl.'?'.http_build_query([
+            'client_id'     => $this->exactClientId,
+            'redirect_uri'  => $this->redirectUrl,
+            'response_type' => 'code',
+        ]);
     }
 
     /**
@@ -331,13 +329,10 @@ class Connection
         $this->refreshToken = $refreshToken;
     }
 
-    /**
-     *
-     */
     public function redirectForAuthorization()
     {
         $authUrl = $this->getAuthUrl();
-        header('Location: ' . $authUrl);
+        header('Location: '.$authUrl);
         exit;
     }
 
@@ -359,14 +354,15 @@ class Connection
 
     /**
      * @param Response $response
-     * @param bool $returnSingleIfPossible
-     * @return mixed
+     * @param bool     $returnSingleIfPossible
+     *
      * @throws ApiException
+     *
+     * @return mixed
      */
     private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
-
             if ($response->getStatusCode() === 204) {
                 return [];
             }
@@ -376,8 +372,7 @@ class Connection
             if (array_key_exists('d', $json)) {
                 if (array_key_exists('__next', $json['d'])) {
                     $this->nextUrl = $json['d']['__next'];
-                }
-                else {
+                } else {
                     $this->nextUrl = null;
                 }
 
@@ -404,7 +399,7 @@ class Connection
     private function getCurrentDivisionNumber()
     {
         if (empty($this->division)) {
-            $me             = new Me($this);
+            $me = new Me($this);
             $this->division = $me->find()->CurrentDivision;
         }
 
@@ -433,24 +428,23 @@ class Connection
         if (empty($this->refreshToken)) {
             $body = [
                 'form_params' => [
-                    'redirect_uri' => $this->redirectUrl,
-                    'grant_type' => 'authorization_code',
-                    'client_id' => $this->exactClientId,
+                    'redirect_uri'  => $this->redirectUrl,
+                    'grant_type'    => 'authorization_code',
+                    'client_id'     => $this->exactClientId,
                     'client_secret' => $this->exactClientSecret,
-                    'code' => $this->authorizationCode
-                ]
+                    'code'          => $this->authorizationCode,
+                ],
             ];
         } else { // else do refresh token request
             $body = [
                 'form_params' => [
                     'refresh_token' => $this->refreshToken,
-                    'grant_type' => 'refresh_token',
-                    'client_id' => $this->exactClientId,
+                    'grant_type'    => 'refresh_token',
+                    'client_id'     => $this->exactClientId,
                     'client_secret' => $this->exactClientSecret,
-                ]
+                ],
             ];
         }
-
 
         try {
             if (is_callable($this->acquireAccessTokenLockCallback)) {
@@ -463,7 +457,7 @@ class Connection
             $body = json_decode($response->getBody()->getContents(), true);
 
             if (json_last_error() === JSON_ERROR_NONE) {
-                $this->accessToken  = $body['access_token'];
+                $this->accessToken = $body['access_token'];
                 $this->refreshToken = $body['refresh_token'];
                 $this->tokenExpires = $this->getTimestampFromExpiresIn($body['expires_in']);
 
@@ -471,10 +465,10 @@ class Connection
                     call_user_func($this->tokenUpdateCallback, $this);
                 }
             } else {
-                throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
+                throw new ApiException('Could not acquire tokens, json decode failed. Got response: '.$response->getBody()->getContents());
             }
         } catch (BadResponseException $ex) {
-            throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']', 0, $ex);
+            throw new ApiException('Could not acquire or refresh tokens [http '.$ex->getResponse()->getStatusCode().']', 0, $ex);
         } finally {
             if (is_callable($this->acquireAccessTokenUnlockCallback)) {
                 call_user_func($this->acquireAccessTokenUnlockCallback, $this);
@@ -484,7 +478,9 @@ class Connection
 
     /**
      * Translates expires_in to a Unix timestamp.
+     *
      * @param string $expiresIn Number of seconds until the token expires.
+     *
      * @return int
      */
     private function getTimestampFromExpiresIn($expiresIn)
@@ -531,16 +527,15 @@ class Connection
             return implode('/', [
                 $this->getApiUrl(),
                 $this->getCurrentDivisionNumber(),
-                $endPoint
+                $endPoint,
             ]);
         }
 
         return implode('/', [
             $this->getApiUrl(),
-            $endPoint
+            $endPoint,
         ]);
     }
-
 
     /**
      * @return mixed
@@ -549,7 +544,6 @@ class Connection
     {
         return $this->division;
     }
-
 
     /**
      * @param mixed $division
@@ -562,32 +556,37 @@ class Connection
     /**
      * @param callable $callback
      */
-    public function setAcquireAccessTokenLockCallback($callback) {
+    public function setAcquireAccessTokenLockCallback($callback)
+    {
         $this->acquireAccessTokenLockCallback = $callback;
     }
 
     /**
      * @param callable $callback
      */
-    public function setAcquireAccessTokenUnlockCallback($callback) {
+    public function setAcquireAccessTokenUnlockCallback($callback)
+    {
         $this->acquireAccessTokenUnlockCallback = $callback;
     }
 
     /**
      * @param callable $callback
      */
-    public function setTokenUpdateCallback($callback) {
+    public function setTokenUpdateCallback($callback)
+    {
         $this->tokenUpdateCallback = $callback;
     }
 
     /**
-     * Parse the reponse in the Exception to return the Exact error messages
+     * Parse the reponse in the Exception to return the Exact error messages.
+     *
      * @param Exception $e
+     *
      * @throws ApiException
      */
     private function parseExceptionForErrorMessages(Exception $e)
     {
-        if (! $e instanceof BadResponseException) {
+        if (!$e instanceof BadResponseException) {
             throw new ApiException($e->getMessage());
         }
 
@@ -596,13 +595,13 @@ class Connection
         $responseBody = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
 
-        if (! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
+        if (!is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
             $errorMessage = $decodedResponseBody['error']['message']['value'];
         } else {
             $errorMessage = $responseBody;
         }
 
-        throw new ApiException('Error ' . $response->getStatusCode() .': ' . $errorMessage);
+        throw new ApiException('Error '.$response->getStatusCode().': '.$errorMessage);
     }
 
     /**
@@ -618,7 +617,7 @@ class Connection
      */
     private function getApiUrl()
     {
-        return $this->baseUrl . $this->apiUrl;
+        return $this->baseUrl.$this->apiUrl;
     }
 
     /**
@@ -626,12 +625,12 @@ class Connection
      */
     private function getTokenUrl()
     {
-        return $this->baseUrl . $this->tokenUrl;
+        return $this->baseUrl.$this->tokenUrl;
     }
 
     /**
      * Set base URL for different countries according to
-     * https://developers.exactonline.com/#Exact%20Online%20sites.html
+     * https://developers.exactonline.com/#Exact%20Online%20sites.html.
      *
      * @param string $baseUrl
      */

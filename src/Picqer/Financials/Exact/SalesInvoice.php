@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesInvoice
+ * Class SalesInvoice.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceSalesInvoices
  *
  * @property string $InvoiceID Primary key
@@ -75,7 +74,6 @@ namespace Picqer\Financials\Exact;
  */
 class SalesInvoice extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -156,10 +154,12 @@ class SalesInvoice extends Model
      *
      * @return mixed
      */
-    public function getSalesInvoiceLines() {
-        if(array_key_exists('__deferred', $this->attributes['SalesInvoiceLines'])) {
+    public function getSalesInvoiceLines()
+    {
+        if (array_key_exists('__deferred', $this->attributes['SalesInvoiceLines'])) {
             $this->attributes['SalesInvoiceLines'] = (new SalesInvoiceLine($this->connection()))->filter("InvoiceID eq guid'{$this->InvoiceID}'");
         }
+
         return $this->attributes['SalesInvoiceLines'];
     }
 }

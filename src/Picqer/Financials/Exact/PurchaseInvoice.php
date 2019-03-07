@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseInvoice
+ * Class PurchaseInvoice.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchasePurchaseInvoices
  *
  * @property string $ID A guid that is the unique identifier of the purchase invoice.
@@ -36,7 +35,6 @@ namespace Picqer\Financials\Exact;
  */
 class PurchaseInvoice extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -76,15 +74,17 @@ class PurchaseInvoice extends Model
      *
      * @return mixed
      */
-    public function getPurchaseInvoiceLines($statement = '') {
-        if(array_key_exists('__deferred', $this->attributes['PurchaseInvoiceLines'])) {
-            $this->attributes['PurchaseInvoiceLines'] = (new PurchaseInvoiceLine($this->connection()))->filter("InvoiceID eq guid'{$this->ID}'", "", "", $statement);
+    public function getPurchaseInvoiceLines($statement = '')
+    {
+        if (array_key_exists('__deferred', $this->attributes['PurchaseInvoiceLines'])) {
+            $this->attributes['PurchaseInvoiceLines'] = (new PurchaseInvoiceLine($this->connection()))->filter("InvoiceID eq guid'{$this->ID}'", '', '', $statement);
         }
+
         return $this->attributes['PurchaseInvoiceLines'];
     }
-    
+
     /**
-     * @deprecated This function got renamed, still here for backward compatibility. To be removed in next major version. 
+     * @deprecated This function got renamed, still here for backward compatibility. To be removed in next major version.
      */
     public function getSalesInvoiceLines($statement = '')
     {

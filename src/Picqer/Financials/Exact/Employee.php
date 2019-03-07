@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Employee
+ * Class Employee.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmployees
  *
  * @property string $ID Primary key
@@ -55,7 +54,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Municipality Municipality
- * @property int $NameComposition 
+ * @property int $NameComposition
  * @property string $Nationality Nationality
  * @property string $NickName Nick name
  * @property string $Notes Additional notes

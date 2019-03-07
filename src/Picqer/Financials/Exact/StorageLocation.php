@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class StorageLocation
+ * Class StorageLocation.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStorageLocations
  *
  * @property string $ID Primary key
@@ -25,7 +24,6 @@ namespace Picqer\Financials\Exact;
  */
 class StorageLocation extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -47,5 +45,4 @@ class StorageLocation extends Model
     ];
 
     protected $url = 'inventory/StorageLocations';
-
 }

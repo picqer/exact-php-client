@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Subscription
+ * Class Subscription.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=subscriptionSubscriptions
  *
  * @property string $EntryID ID of the entry, Primary key
@@ -22,7 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of Classification
  * @property int $Division Division code
  * @property string $EndDate End date
- * @property Integer $InvoiceDay Invoice day
+ * @property int $InvoiceDay Invoice day
  * @property string $InvoicedTo Invoice date
  * @property string $InvoiceTo Reference to invoice account
  * @property string $InvoiceToContactPerson Reference to contact person of invoice account
@@ -56,7 +55,7 @@ class Subscription extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
-    
+
     protected $primaryKey = 'EntryID';
 
     protected $fillable = [

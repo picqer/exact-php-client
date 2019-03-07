@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class GLTransactionType
+ * Class GLTransactionType.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLTransactionTypes
  *
  * @property int $ID
@@ -14,7 +13,6 @@ namespace Picqer\Financials\Exact;
  */
 class GLTransactionType extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -25,5 +23,4 @@ class GLTransactionType extends Model
     ];
 
     protected $url = 'financial/GLTransactionTypes';
-
 }

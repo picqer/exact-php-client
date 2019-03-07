@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class StockCountLine
+ * Class StockCountLine.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStockCountLines
  *
  * @property string $ID Primary key
@@ -37,7 +36,6 @@ namespace Picqer\Financials\Exact;
  */
 class StockCountLine extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -71,5 +69,4 @@ class StockCountLine extends Model
     ];
 
     protected $url = 'inventory/StockCountLines';
-
 }

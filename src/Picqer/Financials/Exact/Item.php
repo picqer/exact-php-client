@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Item
+ * Class Item.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=logisticsItems
  *
  * @property string $Barcode Barcode of the item (numeric string)
@@ -107,7 +106,7 @@ class Item extends Model
     use Query\Findable;
     use Persistance\Storable;
     use Persistance\Downloadable;
-        
+
     protected $fillable = [
         'Barcode',
         'ID',

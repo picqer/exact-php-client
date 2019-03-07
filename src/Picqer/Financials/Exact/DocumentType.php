@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class DocumentType
+ * Class DocumentType.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentTypes
  *
  * @property string $ID Primary key
@@ -24,14 +23,14 @@ class DocumentType extends Model
 
     protected $fillable = [
       'ID',
-    	'Created',
-    	'Description',
-    	'DocumentIsCreatable',
-    	'DocumentIsDeletable',
-    	'DocumentIsUpdatable',
-    	'DocumentIsViewable',
-    	'Modified',
-    	'TypeCategory'
+        'Created',
+        'Description',
+        'DocumentIsCreatable',
+        'DocumentIsDeletable',
+        'DocumentIsUpdatable',
+        'DocumentIsViewable',
+        'Modified',
+        'TypeCategory',
     ];
 
     protected $url = 'documents/DocumentTypes';

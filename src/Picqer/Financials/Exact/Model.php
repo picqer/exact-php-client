@@ -1,15 +1,12 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
- * Class Model
- *
- * @package Picqer\Financials\Exact
- *
+ * Class Model.
  */
-
 abstract class Model implements \JsonSerializable
 {
-
     /**
      * @var Connection
      */
@@ -19,7 +16,7 @@ abstract class Model implements \JsonSerializable
      * @var array The model's attributes
      */
     protected $attributes = [];
-    
+
     /**
      * @deferred array The model's collection values
      */
@@ -40,16 +37,14 @@ abstract class Model implements \JsonSerializable
      */
     protected $primaryKey = 'ID';
 
-
     public function __construct(Connection $connection, array $attributes = [])
     {
         $this->connection = $connection;
         $this->fill($attributes);
     }
 
-
     /**
-     * Get the connection instance
+     * Get the connection instance.
      *
      * @return Connection
      */
@@ -58,9 +53,8 @@ abstract class Model implements \JsonSerializable
         return $this->connection;
     }
 
-
     /**
-     * Get the model's attributes
+     * Get the model's attributes.
      *
      * @return array
      */
@@ -70,7 +64,7 @@ abstract class Model implements \JsonSerializable
     }
 
     /**
-     * Get the model's url
+     * Get the model's url.
      *
      * @return string
      */
@@ -80,7 +74,7 @@ abstract class Model implements \JsonSerializable
     }
 
     /**
-     * Get the model's primary key
+     * Get the model's primary key.
      *
      * @return string
      */
@@ -90,7 +84,7 @@ abstract class Model implements \JsonSerializable
     }
 
     /**
-     * Get the model's primary key value
+     * Get the model's primary key value.
      *
      * @return mixed
      */
@@ -100,7 +94,7 @@ abstract class Model implements \JsonSerializable
     }
 
     /**
-     * Fill the entity from an array
+     * Fill the entity from an array.
      *
      * @param array $attributes
      */
@@ -113,9 +107,8 @@ abstract class Model implements \JsonSerializable
         }
     }
 
-
     /**
-     * Get the fillable attributes of an array
+     * Get the fillable attributes of an array.
      *
      * @param array $attributes
      *
@@ -130,22 +123,21 @@ abstract class Model implements \JsonSerializable
         return $attributes;
     }
 
-
     protected function isFillable($key)
     {
         return in_array($key, $this->fillable);
     }
 
-
     protected function setAttribute($key, $value)
     {
         $this->attributes[$key] = $value;
     }
-    
+
     /**
-     * Resolve deferred values
+     * Resolve deferred values.
      *
      * @param string $key
+     *
      * @return bool Returns true when collection is found
      */
     protected function lazyLoad($key)
@@ -157,7 +149,7 @@ abstract class Model implements \JsonSerializable
 
         try {
             if (array_key_exists($key, $this->attributes) && is_array($this->attributes[$key]) && array_key_exists('__deferred', $this->attributes[$key])) {
-                $class = preg_replace('/(.+?)s?$/', __NAMESPACE__ . '\\\$1', $key); // Filter plural 's' and add namespace
+                $class = preg_replace('/(.+?)s?$/', __NAMESPACE__.'\\\$1', $key); // Filter plural 's' and add namespace
                 $deferred = new $class($this->connection());
                 $uri = $this->attributes[$key]['__deferred']['uri'];
                 $deferred->connection()->nextUrl = $uri; // $uri is complete, by setting it to nextUrl Connection->formatUrl leaves it as is.
@@ -166,8 +158,7 @@ abstract class Model implements \JsonSerializable
 
                 return true;
             }
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
             // We tried lets leave it as is.
         }
 
@@ -179,25 +170,25 @@ abstract class Model implements \JsonSerializable
         if ($this->lazyLoad($key)) {
             return $this->deferred[$key];
         }
-        
+
         if (isset($this->attributes[$key])) {
             return $this->attributes[$key];
         }
     }
-
 
     public function __set($key, $value)
     {
         if ($this->isFillable($key)) {
             if (is_array($value)) {
                 $this->deferred[$key] = $value;
+
                 return;
             }
 
             $this->setAttribute($key, $value);
         }
     }
-    
+
     public function __isset($name)
     {
         return $this->__get($name) !== null;
@@ -209,22 +200,21 @@ abstract class Model implements \JsonSerializable
     }
 
     /**
-     * Checks if primaryKey holds a value
+     * Checks if primaryKey holds a value.
      *
-     * @return boolean
+     * @return bool
      */
     public function exists()
     {
-        if ( ! array_key_exists($this->primaryKey, $this->attributes)) {
+        if (!array_key_exists($this->primaryKey, $this->attributes)) {
             return false;
         }
 
-        return ! empty($this->attributes[$this->primaryKey]);
+        return !empty($this->attributes[$this->primaryKey]);
     }
 
-
     /**
-     * Return the JSON representation of the data
+     * Return the JSON representation of the data.
      *
      * @param int $options http://php.net/manual/en/json.constants.php
      *
@@ -241,7 +231,7 @@ abstract class Model implements \JsonSerializable
 
                 $attributes[$attribute] = [];
                 foreach ($collection as $value) {
-                    if(!empty($value->deferred)) {
+                    if (!empty($value->deferred)) {
                         $value->attributes = array_merge($value->attributes, $value->deferred);
                     }
 
@@ -257,9 +247,8 @@ abstract class Model implements \JsonSerializable
         return json_encode($attributes, $options);
     }
 
-
     /**
-     * Return serializable data
+     * Return serializable data.
      *
      * @return array
      */
@@ -268,23 +257,22 @@ abstract class Model implements \JsonSerializable
         return $this->attributes;
     }
 
-
     /**
      * Check whether the current user has rights for an action on this endpoint
-     * https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10
+     * https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10.
      *
      * @param string $action
      *
-     * @return boolean
+     * @return bool
      */
     public function userHasRights($action = 'GET')
     {
         $action = preg_match('/^GET|POST|PUT|DELETE$/i', $action) ? strtoupper($action) : 'GET';
         $result = $this->connection()->get('users/UserHasRights', [
             'endpoint' => "'{$this->url}'",
-            'action' => "'{$action}'"
+            'action'   => "'{$action}'",
         ]);
+
         return isset($result['UserHasRights']) ? $result['UserHasRights'] : null;
     }
-
 }

@@ -3,16 +3,14 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesOrderID
+ * Class SalesOrderID.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceSalesOrderID
  *
  * @property string $ID
  */
 class SalesOrderID extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -21,5 +19,4 @@ class SalesOrderID extends Model
     ];
 
     protected $url = 'salesinvoice/SalesOrderID';
-
 }
