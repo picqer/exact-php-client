@@ -460,6 +460,61 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\OperationResource::class);
     }
 
+    public function testAbsenceRegistration()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\AbsenceRegistration::class);
+    }
+
+    public function testAbsenceRegistrationTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\AbsenceRegistrationTransaction::class);
+    }
+
+    public function testDepartment()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Department::class);
+    }
+
+    public function testDivisionClass()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClass::class);
+    }
+
+    public function testDivisionClassName()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClassName::class);
+    }
+
+    public function testDivisionClassValue()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClassValue::class);
+    }
+
+    public function testJobGroup()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\JobGroup::class);
+    }
+
+    public function testJobTitle()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\JobTitle::class);
+    }
+
+    public function testLeaveBuildUpRegistration()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\LeaveBuildUpRegistration::class);
+    }
+
+    public function testLeaveRegistration()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\LeaveRegistration::class);
+    }
+
+    public function testSchedule()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Schedule::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
