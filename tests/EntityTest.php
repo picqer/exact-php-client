@@ -550,6 +550,56 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Workcenter::class);
     }
 
+    public function testCostTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\CostTransaction::class);
+    }
+
+    public function testProjectHourBudget()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectHourBudget::class);
+    }
+
+    public function testProjectPlanning()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectPlanning::class);
+    }
+
+    public function testProjectPlanningRecurring()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectPlanningRecurring::class);
+    }
+
+    public function testProjectRestrictionEmployee()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectRestrictionEmployee::class);
+    }
+
+    public function testProjectRestrictionItem()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectRestrictionItem::class);
+    }
+
+    public function testProjectRestrictionRebilling()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectRestrictionRebilling::class);
+    }
+
+    public function testRecentCost()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RecentCost::class);
+    }
+
+    public function testRecentHour()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RecentHour::class);
+    }
+
+    public function testTimeCorrection()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\TimeCorrection::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
