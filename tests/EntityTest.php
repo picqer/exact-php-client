@@ -535,6 +535,21 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\WarehouseTransfer::class);
     }
 
+    public function testProductionArea()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProductionArea::class);
+    }
+
+    public function testTimedTimeTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\TimedTimeTransaction::class);
+    }
+
+    public function testWorkcenter()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Workcenter::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
