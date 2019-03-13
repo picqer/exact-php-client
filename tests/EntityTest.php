@@ -515,6 +515,26 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Schedule::class);
     }
 
+    public function testStockBatchNumber()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StockBatchNumber::class);
+    }
+
+    public function testStockSerialNumber()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StockSerialNumber::class);
+    }
+
+    public function testWarehouseTransferLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\WarehouseTransferLine::class);
+    }
+
+    public function testWarehouseTransfer()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\WarehouseTransfer::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
