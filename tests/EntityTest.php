@@ -600,6 +600,21 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\TimeCorrection::class);
     }
 
+    public function testEmployment()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Employment::class);
+    }
+
+    public function testEmploymentContract()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\EmploymentContract::class);
+    }
+
+    public function testActiveEmployment()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ActiveEmployment::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
