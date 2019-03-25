@@ -460,6 +460,161 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\OperationResource::class);
     }
 
+    public function testAbsenceRegistration()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\AbsenceRegistration::class);
+    }
+
+    public function testAbsenceRegistrationTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\AbsenceRegistrationTransaction::class);
+    }
+
+    public function testDepartment()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Department::class);
+    }
+
+    public function testDivisionClass()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClass::class);
+    }
+
+    public function testDivisionClassName()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClassName::class);
+    }
+
+    public function testDivisionClassValue()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClassValue::class);
+    }
+
+    public function testJobGroup()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\JobGroup::class);
+    }
+
+    public function testJobTitle()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\JobTitle::class);
+    }
+
+    public function testLeaveBuildUpRegistration()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\LeaveBuildUpRegistration::class);
+    }
+
+    public function testLeaveRegistration()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\LeaveRegistration::class);
+    }
+
+    public function testSchedule()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Schedule::class);
+    }
+
+    public function testStockBatchNumber()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StockBatchNumber::class);
+    }
+
+    public function testStockSerialNumber()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StockSerialNumber::class);
+    }
+
+    public function testWarehouseTransferLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\WarehouseTransferLine::class);
+    }
+
+    public function testWarehouseTransfer()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\WarehouseTransfer::class);
+    }
+
+    public function testProductionArea()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProductionArea::class);
+    }
+
+    public function testTimedTimeTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\TimedTimeTransaction::class);
+    }
+
+    public function testWorkcenter()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Workcenter::class);
+    }
+
+    public function testCostTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\CostTransaction::class);
+    }
+
+    public function testProjectHourBudget()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectHourBudget::class);
+    }
+
+    public function testProjectPlanning()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectPlanning::class);
+    }
+
+    public function testProjectPlanningRecurring()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectPlanningRecurring::class);
+    }
+
+    public function testProjectRestrictionEmployee()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectRestrictionEmployee::class);
+    }
+
+    public function testProjectRestrictionItem()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectRestrictionItem::class);
+    }
+
+    public function testProjectRestrictionRebilling()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectRestrictionRebilling::class);
+    }
+
+    public function testRecentCost()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RecentCost::class);
+    }
+
+    public function testRecentHour()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RecentHour::class);
+    }
+
+    public function testTimeCorrection()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\TimeCorrection::class);
+    }
+
+    public function testEmployment()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Employment::class);
+    }
+
+    public function testEmploymentContract()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\EmploymentContract::class);
+    }
+
+    public function testActiveEmployment()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ActiveEmployment::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new ReflectionClass($entityName);
