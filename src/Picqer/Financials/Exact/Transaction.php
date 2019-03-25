@@ -7,6 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionTransactions
+ * @deprecated As of the 1st of April the “/financialtransaction/Transactions” API will be deprecated.
  *
  * @property string $EntryID Primary key
  * @property float $ClosingBalanceFC Closing balance in the currency of the transaction
