@@ -110,10 +110,10 @@ class SalesEntry extends Model
 
     public function addItem(array $array)
     {
-        if (!isset($this->attributes['SalesEntryLines']) || $this->attributes['SalesEntryLines'] == null) {
+        if ( ! isset($this->attributes['SalesEntryLines']) || $this->attributes['SalesEntryLines'] == null) {
             $this->attributes['SalesEntryLines'] = [];
         }
-        if (!isset($array['LineNumber'])) {
+        if ( ! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['SalesEntryLines']) + 1;
         }
         $this->attributes['SalesEntryLines'][] = $array;

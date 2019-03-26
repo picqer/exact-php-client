@@ -56,7 +56,7 @@ class Connection
     private $accessToken;
 
     /**
-     * @var int The Unix timestamp at which the access token expires.
+     * @var int the Unix timestamp at which the access token expires
      */
     private $tokenExpires;
 
@@ -174,13 +174,13 @@ class Connection
         }
 
         // If we have a token, sign the request
-        if (!$this->needsAuthentication() && !empty($this->accessToken)) {
-            $headers['Authorization'] = 'Bearer '.$this->accessToken;
+        if ( ! $this->needsAuthentication() && ! empty($this->accessToken)) {
+            $headers['Authorization'] = 'Bearer ' . $this->accessToken;
         }
 
         // Create param string
-        if (!empty($params)) {
-            $endpoint .= '?'.http_build_query($params);
+        if ( ! empty($params)) {
+            $endpoint .= '?' . http_build_query($params);
         }
 
         // Create the request
@@ -282,7 +282,7 @@ class Connection
      */
     public function getAuthUrl()
     {
-        return $this->baseUrl.$this->authUrl.'?'.http_build_query([
+        return $this->baseUrl . $this->authUrl . '?' . http_build_query([
             'client_id'     => $this->exactClientId,
             'redirect_uri'  => $this->redirectUrl,
             'response_type' => 'code',
@@ -332,7 +332,7 @@ class Connection
     public function redirectForAuthorization()
     {
         $authUrl = $this->getAuthUrl();
-        header('Location: '.$authUrl);
+        header('Location: ' . $authUrl);
         exit;
     }
 
@@ -465,10 +465,10 @@ class Connection
                     call_user_func($this->tokenUpdateCallback, $this);
                 }
             } else {
-                throw new ApiException('Could not acquire tokens, json decode failed. Got response: '.$response->getBody()->getContents());
+                throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
             }
         } catch (BadResponseException $ex) {
-            throw new ApiException('Could not acquire or refresh tokens [http '.$ex->getResponse()->getStatusCode().']', 0, $ex);
+            throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']', 0, $ex);
         } finally {
             if (is_callable($this->acquireAccessTokenUnlockCallback)) {
                 call_user_func($this->acquireAccessTokenUnlockCallback, $this);
@@ -479,13 +479,13 @@ class Connection
     /**
      * Translates expires_in to a Unix timestamp.
      *
-     * @param string $expiresIn Number of seconds until the token expires.
+     * @param string $expiresIn number of seconds until the token expires
      *
      * @return int
      */
     private function getTimestampFromExpiresIn($expiresIn)
     {
-        if (!ctype_digit($expiresIn)) {
+        if ( ! ctype_digit($expiresIn)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
@@ -493,7 +493,7 @@ class Connection
     }
 
     /**
-     * @return int The Unix timestamp at which the access token expires.
+     * @return int the Unix timestamp at which the access token expires
      */
     public function getTokenExpires()
     {
@@ -501,7 +501,7 @@ class Connection
     }
 
     /**
-     * @param int $tokenExpires The Unix timestamp at which the access token expires.
+     * @param int $tokenExpires the Unix timestamp at which the access token expires
      */
     public function setTokenExpires($tokenExpires)
     {
@@ -586,7 +586,7 @@ class Connection
      */
     private function parseExceptionForErrorMessages(Exception $e)
     {
-        if (!$e instanceof BadResponseException) {
+        if ( ! $e instanceof BadResponseException) {
             throw new ApiException($e->getMessage());
         }
 
@@ -595,13 +595,13 @@ class Connection
         $responseBody = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
 
-        if (!is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
+        if ( ! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
             $errorMessage = $decodedResponseBody['error']['message']['value'];
         } else {
             $errorMessage = $responseBody;
         }
 
-        throw new ApiException('Error '.$response->getStatusCode().': '.$errorMessage);
+        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage);
     }
 
     /**
@@ -617,7 +617,7 @@ class Connection
      */
     private function getApiUrl()
     {
-        return $this->baseUrl.$this->apiUrl;
+        return $this->baseUrl . $this->apiUrl;
     }
 
     /**
@@ -625,7 +625,7 @@ class Connection
      */
     private function getTokenUrl()
     {
-        return $this->baseUrl.$this->tokenUrl;
+        return $this->baseUrl . $this->tokenUrl;
     }
 
     /**

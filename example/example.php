@@ -1,7 +1,7 @@
 <?php
 
 // Autoload composer installed libraries
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 /**
  * Function to retrieve persisted data for the example.
@@ -100,7 +100,7 @@ function connect()
     try {
         $connection->connect();
     } catch (\Exception $e) {
-        throw new Exception('Could not connect to Exact: '.$e->getMessage());
+        throw new Exception('Could not connect to Exact: ' . $e->getMessage());
     }
 
     return $connection;
@@ -124,8 +124,8 @@ try {
     $journals = new \Picqer\Financials\Exact\Journal($connection);
     $result = $journals->get();
     foreach ($result as $journal) {
-        echo 'Journal: '.$journal->Description.'<br>';
+        echo 'Journal: ' . $journal->Description . '<br>';
     }
 } catch (\Exception $e) {
-    echo get_class($e).' : '.$e->getMessage();
+    echo get_class($e) . ' : ' . $e->getMessage();
 }
