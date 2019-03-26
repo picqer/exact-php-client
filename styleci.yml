@@ -1,0 +1,9 @@
+preset: recommended
+risky: false
+enabled:
+    not_operator_with_space
+disabled:
+    concat_without_spaces
+    phpdoc_annotation_without_dot
+finder:
+  name: "*.php"
