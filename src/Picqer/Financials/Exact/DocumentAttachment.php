@@ -36,6 +36,6 @@ class DocumentAttachment extends Model
      */
     public function getDownloadUrl()
     {
-        return $this->Url.'&Download=1';
+        return $this->Url . '&Download=1';
     }
 }

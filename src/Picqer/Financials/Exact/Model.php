@@ -149,7 +149,7 @@ abstract class Model implements \JsonSerializable
 
         try {
             if (array_key_exists($key, $this->attributes) && is_array($this->attributes[$key]) && array_key_exists('__deferred', $this->attributes[$key])) {
-                $class = preg_replace('/(.+?)s?$/', __NAMESPACE__.'\\\$1', $key); // Filter plural 's' and add namespace
+                $class = preg_replace('/(.+?)s?$/', __NAMESPACE__ . '\\\$1', $key); // Filter plural 's' and add namespace
                 $deferred = new $class($this->connection());
                 $uri = $this->attributes[$key]['__deferred']['uri'];
                 $deferred->connection()->nextUrl = $uri; // $uri is complete, by setting it to nextUrl Connection->formatUrl leaves it as is.
@@ -206,11 +206,11 @@ abstract class Model implements \JsonSerializable
      */
     public function exists()
     {
-        if (!array_key_exists($this->primaryKey, $this->attributes)) {
+        if ( ! array_key_exists($this->primaryKey, $this->attributes)) {
             return false;
         }
 
-        return !empty($this->attributes[$this->primaryKey]);
+        return ! empty($this->attributes[$this->primaryKey]);
     }
 
     /**
@@ -231,7 +231,7 @@ abstract class Model implements \JsonSerializable
 
                 $attributes[$attribute] = [];
                 foreach ($collection as $value) {
-                    if (!empty($value->deferred)) {
+                    if ( ! empty($value->deferred)) {
                         $value->attributes = array_merge($value->attributes, $value->deferred);
                     }
 

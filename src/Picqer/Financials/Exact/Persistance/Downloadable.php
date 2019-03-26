@@ -28,7 +28,7 @@ trait Downloadable
             'Accept'        => 'application/json',
             'Content-Type'  => 'application/json',
             'Prefer'        => 'return=representation',
-            'Authorization' => 'Bearer '.$this->connection()->getAccessToken(),
+            'Authorization' => 'Bearer ' . $this->connection()->getAccessToken(),
         ];
 
         $res = $client->get($this->getDownloadUrl(), [
