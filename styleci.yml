@@ -1,9 +1,10 @@
 preset: recommended
 risky: false
 enabled:
-    not_operator_with_space
+    - concat_with_spaces
+    - not_operator_with_space
+    - phpdoc_annotation_without_dot
 disabled:
-    concat_without_spaces
-    phpdoc_annotation_without_dot
+    - concat_without_spaces
 finder:
-  name: "*.php"
+    name: "*.php"
