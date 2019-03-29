@@ -18,6 +18,12 @@ use GuzzleHttp\Psr7;
  */
 class Connection
 {
+    
+    /**
+     * Limit of calls per minute.
+     */
+    const CALLS_LIMIT_PER_MINUTE = 60;
+    
     /**
      * @var string
      */
@@ -67,6 +73,36 @@ class Connection
      * @var mixed
      */
     private $refreshToken;
+    
+    /**
+     * @var bool Pauses a request to make sure the calls per minute restriction is respected.
+     */
+    private $pauseForMinuteLimit = false;
+    
+    /**
+     * @var bool Pauses a request to make sure the calls are not made during maintenance.
+     */
+    private $pauseForMaintenance = false;
+    
+    /**
+     * @var int
+     */
+    private $callsLimit = self::CALLS_LIMIT_PER_MINUTE;
+    
+    /**
+     * @var int
+     */
+    private $callsLeft = self::CALLS_LIMIT_PER_MINUTE;
+    
+    /**
+     * @var array Start time of the maintenance in array format [H, m, i].
+     */
+    private $startMaintenance = [4, 0, 0];
+    
+    /**
+     * @var array End time of the maintenance in array format [H, m, i].
+     */
+    private $endMaintenance = [4, 30, 0];
 
     /**
      * @var mixed
@@ -152,6 +188,90 @@ class Connection
 
         return $client;
     }
+    
+    /**
+     * @return bool
+     */
+    public function pauseForMinuteLimitEnabled()
+    {
+        return $this->pauseForMinuteLimit;
+    }
+    
+    /**
+     * @return self
+     */
+    public function enablePauseForMinuteLimit()
+    {
+        $this->pauseForMinuteLimit = true;
+        return $this;
+    }
+    
+    /**
+     * @return self
+     */
+    public function disablePauseForMinuteLimit()
+    {
+        $this->pauseForMinuteLimit = true;
+        return $this;
+    }
+    
+    /**
+     * @return bool
+     */
+    public function pauseForMaintenanceEnabled()
+    {
+        return $this->pauseForMaintenance;
+    }
+    
+    /**
+     * @return self
+     */
+    public function enablePauseForMaintenance()
+    {
+        $this->pauseForMaintenance = true;
+        return $this;
+    }
+    
+    /**
+     * @return self
+     */
+    public function disablePauseForMaintenance()
+    {
+        $this->pauseForMaintenance = false;
+        return $this;
+    }
+    
+    /**
+     * Pauses the process until time limit is over
+     */
+    private function pause()
+    {
+        if ($this->pauseForMinuteLimitEnabled()) {
+            // take 90% of callsLimit so we have some tolerance when multiple process are running
+            if($this->callsLeft <= ($this->callsLimit * 0.10)) {
+                sleep(60);
+            }
+        }
+        
+        if ($this->pauseForMaintenanceEnabled()) {
+            $startMaintenance = mktime(
+                $this->startMaintenance[0],
+                $this->startMaintenance[1],
+                $this->startMaintenance[2]
+            );
+            
+            $endMaintenance = mktime(
+                $this->endMaintenance[0],
+                $this->endMaintenance[1],
+                $this->endMaintenance[2]
+            );
+            
+            $now = time();
+            if ($now >= $startMaintenance && $now <= $endMaintenance) {
+                sleep($endMaintenance - $now);
+            }
+        }
+    }
 
     /**
      * @param string $method
@@ -192,15 +312,19 @@ class Connection
     }
 
     /**
-     * @param string $url
+     * @param       $url
      * @param array $params
      * @param array $headers
-     * @return mixed
-     * @throws ApiException
+     *
+     * @return mixed|null
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Picqer\Financials\Exact\ApiException
      */
     public function get($url, array $params = [], array $headers = [])
     {
         $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
+    
+        $this->pause();
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
@@ -213,16 +337,20 @@ class Connection
         
         return null;
     }
-
+    
     /**
-     * @param string $url
-     * @param mixed $body
-     * @return mixed
-     * @throws ApiException
+     * @param $url
+     * @param $body
+     *
+     * @return mixed|null
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Picqer\Financials\Exact\ApiException
      */
     public function post($url, $body)
     {
         $url = $this->formatUrl($url);
+    
+        $this->pause();
 
         try {
             $request  = $this->createRequest('POST', $url, $body);
@@ -235,16 +363,20 @@ class Connection
 
         return null;
     }
-
+    
     /**
-     * @param string $url
-     * @param mixed $body
-     * @return mixed
-     * @throws ApiException
+     * @param $url
+     * @param $body
+     *
+     * @return mixed|null
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Picqer\Financials\Exact\ApiException
      */
     public function put($url, $body)
     {
         $url = $this->formatUrl($url);
+    
+        $this->pause();
 
         try {
             $request  = $this->createRequest('PUT', $url, $body);
@@ -257,15 +389,19 @@ class Connection
 
         return null;
     }
-
+    
     /**
-     * @param string $url
-     * @return mixed
-     * @throws ApiException
+     * @param $url
+     *
+     * @return mixed|null
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Picqer\Financials\Exact\ApiException
      */
     public function delete($url)
     {
         $url = $this->formatUrl($url);
+    
+        $this->pause();
 
         try {
             $request  = $this->createRequest('DELETE', $url);
@@ -366,6 +502,10 @@ class Connection
     private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
+            $this->callsLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
+            $this->callsLeft = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
+            
+            $this->pause();
 
             if ($response->getStatusCode() === 204) {
                 return [];
