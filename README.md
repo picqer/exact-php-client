@@ -182,6 +182,37 @@ Managaging webhook subscriptions is possible through the [WebhookSubscription](s
 For authenticating incoming webhook calls you can use the [Authenticatable](src/Picqer/Financials/Exact/Webhook/Authenticatable.php) trait.
 Supply the authenticate method with the full JSON request and your Webhook secret supplied by Exact, it will return true or false.
 
+## Integrate with Laravel
+
+We've tested this with Laravel 5.5. If you encounter any issues, please open a pull request or ticket.
+In this laravel package we encounter the feedback provided by Exact about their API limits.
+To integrate this package in your Laravel application follow the following steps. 
+
+Add our service provider to your `config/app.php` file.
+```php
+\Picqer\Laravel\Exact\Providers\ExactServiceProvider::class
+```
+
+Add the following code before making the connection with Exact. 
+Be aware that this will literally pause your script for a minute (minute limit) or hours (maintenance limit).
+You should only use this in Console commands.
+```php
+$connection->enablePauseForMinuteLimit();
+$connection->enablePauseForMaintenance();
+```
+
+If you want to use your own profile for locking before saving tokens, you can create a `config/exact.php` file with following contents. 
+Your class must extend our profile: `\Picqer\Laravel\Exact\DefaultProfile`.
+```php
+<?php
+
+return [
+    'profile' => \App\CustomExactProfile::class,
+]
+```
+
+> Never forget to save your new tokens to the database after finishing your process.  
+
 ## Troubleshooting
 
 > 'Picqer\Financials\Exact\ApiException' with message 'Error 400: Please add a $select or a $top=1 statement to the query string.'
@@ -215,3 +246,4 @@ See for example: [example/example.php](example/example.php)
 ## TODO
 
 - Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them. Use the ```userscript.js``` in greasemonkey or tampermonkey to generate entities consistently and completely.
+- Improve Laravel support: test in newer versions, provide a config file, routes and migrations so it'll become super easy to get started 

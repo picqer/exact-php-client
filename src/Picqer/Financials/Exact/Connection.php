@@ -87,12 +87,17 @@ class Connection
     /**
      * @var int
      */
-    private $callsLimit = self::CALLS_LIMIT_PER_MINUTE;
+    protected $callsLimit = self::CALLS_LIMIT_PER_MINUTE;
     
     /**
      * @var int
      */
-    private $callsLeft = self::CALLS_LIMIT_PER_MINUTE;
+    protected $callsLeft = self::CALLS_LIMIT_PER_MINUTE;
+    
+    /**
+     * @var int
+     */
+    protected $responseTimestamp = 0;
     
     /**
      * @var array Start time of the maintenance in array format [H, m, i].
@@ -244,11 +249,10 @@ class Connection
     /**
      * Pauses the process until time limit is over
      */
-    private function pause()
+    protected function pause()
     {
         if ($this->pauseForMinuteLimitEnabled()) {
-            // take 90% of callsLimit so we have some tolerance when multiple process are running
-            if($this->callsLeft <= ($this->callsLimit * 0.10)) {
+            if($this->minuteLimitExceeded()) {
                 sleep(60);
             }
         }
@@ -272,16 +276,26 @@ class Connection
             }
         }
     }
-
+    
+    /**
+     * @return bool
+     */
+    protected function minuteLimitExceeded()
+    {
+        return $this->callsLeft <= 0;
+    }
+    
     /**
      * @param string $method
-     * @param string $endpoint
-     * @param mixed $body
-     * @param array $params
-     * @param array $headers
-     * @return Request
+     * @param        $endpoint
+     * @param null   $body
+     * @param array  $params
+     * @param array  $headers
+     *
+     * @return \GuzzleHttp\Psr7\Request
+     * @throws \Picqer\Financials\Exact\ApiException
      */
-    private function createRequest($method = 'GET', $endpoint, $body = null, array $params = [], array $headers = [])
+    private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = [])
     {
         // Add default json headers to the request
         $headers = array_merge($headers, [
@@ -289,6 +303,8 @@ class Connection
             'Content-Type' => 'application/json',
             'Prefer' => 'return=representation'
         ]);
+        
+        $this->pause();
 
         // If access token is not set or token has expired, acquire new token
         if (empty($this->accessToken) || $this->tokenHasExpired()) {
@@ -310,6 +326,11 @@ class Connection
 
         return $request;
     }
+    
+    protected function beforeValidatingAccessToken()
+    {
+        $this->pause();
+    }
 
     /**
      * @param       $url
@@ -323,8 +344,6 @@ class Connection
     public function get($url, array $params = [], array $headers = [])
     {
         $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
-    
-        $this->pause();
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
@@ -349,8 +368,6 @@ class Connection
     public function post($url, $body)
     {
         $url = $this->formatUrl($url);
-    
-        $this->pause();
 
         try {
             $request  = $this->createRequest('POST', $url, $body);
@@ -375,8 +392,6 @@ class Connection
     public function put($url, $body)
     {
         $url = $this->formatUrl($url);
-    
-        $this->pause();
 
         try {
             $request  = $this->createRequest('PUT', $url, $body);
@@ -400,8 +415,6 @@ class Connection
     public function delete($url)
     {
         $url = $this->formatUrl($url);
-    
-        $this->pause();
 
         try {
             $request  = $this->createRequest('DELETE', $url);
@@ -499,13 +512,10 @@ class Connection
      * @return mixed
      * @throws ApiException
      */
-    private function parseResponse(Response $response, $returnSingleIfPossible = true)
+    protected function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
-            $this->callsLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
-            $this->callsLeft = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
-            
-            $this->pause();
+            $this->handleRateLimitsFromResponse($response);
 
             if ($response->getStatusCode() === 204) {
                 return [];
@@ -537,6 +547,20 @@ class Connection
             throw new ApiException($e->getMessage());
         }
     }
+    
+    /**
+     * @param Response $response
+     *
+     * @return void
+     */
+    protected function handleRateLimitsFromResponse(Response $response)
+    {
+        $this->callsLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
+        $this->callsLeft = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
+        $this->responseTimestamp = microtime(true);
+        
+        $this->pause();
+    }
 
     /**
      * @return mixed
@@ -566,31 +590,43 @@ class Connection
     {
         return $this->accessToken;
     }
-
-    private function acquireAccessToken()
+    
+    /**
+     * @return int
+     */
+    public function getResponseTimestamp()
     {
+        return $this->responseTimestamp;
+    }
+    
+    /**
+     * @throws \Picqer\Financials\Exact\ApiException
+     */
+    protected function acquireAccessToken()
+    {
+        $this->beforeValidatingAccessToken();
+        
         // If refresh token not yet acquired, do token request
         if (empty($this->refreshToken)) {
             $body = [
                 'form_params' => [
-                    'redirect_uri' => $this->redirectUrl,
-                    'grant_type' => 'authorization_code',
-                    'client_id' => $this->exactClientId,
+                    'redirect_uri'  => $this->redirectUrl,
+                    'grant_type'    => 'authorization_code',
+                    'client_id'     => $this->exactClientId,
                     'client_secret' => $this->exactClientSecret,
-                    'code' => $this->authorizationCode
-                ]
+                    'code'          => $this->authorizationCode,
+                ],
             ];
         } else { // else do refresh token request
             $body = [
                 'form_params' => [
                     'refresh_token' => $this->refreshToken,
-                    'grant_type' => 'refresh_token',
-                    'client_id' => $this->exactClientId,
+                    'grant_type'    => 'refresh_token',
+                    'client_id'     => $this->exactClientId,
                     'client_secret' => $this->exactClientSecret,
-                ]
+                ],
             ];
         }
-
 
         try {
             if (is_callable($this->acquireAccessTokenLockCallback)) {
@@ -606,6 +642,9 @@ class Connection
                 $this->accessToken  = $body['access_token'];
                 $this->refreshToken = $body['refresh_token'];
                 $this->tokenExpires = $this->getTimestampFromExpiresIn($body['expires_in']);
+                $this->responseTimestamp = strtotime($response->getHeaderLine('Date'));
+                
+                $this->refreshTokens();
 
                 if (is_callable($this->tokenUpdateCallback)) {
                     call_user_func($this->tokenUpdateCallback, $this);
@@ -620,6 +659,11 @@ class Connection
                 call_user_func($this->acquireAccessTokenUnlockCallback, $this);
             }
         }
+    }
+    
+    protected function refreshTokens()
+    {
+    
     }
 
     /**
