@@ -36,7 +36,7 @@ class Connection extends BaseConnection
      */
     protected function minuteLimitExceeded()
     {
-        return $this->getProfile()->getRemainingMinuteLimit() <= 20;
+        return $this->getProfile()->getRemainingMinuteLimit() <= $this->callsLimit * 0.10;
     }
     
     /**
