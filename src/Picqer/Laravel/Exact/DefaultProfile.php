@@ -2,6 +2,8 @@
 
 namespace Picqer\Laravel\Exact;
 
+use DateInterval;
+use DateTime;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Str;
 
@@ -110,6 +112,8 @@ class DefaultProfile
      * @param $response_timestamp
      * @param $refresh_token
      * @param $access_token
+     *
+     * @throws \Exception
      */
     protected function saveTokenToHistory($response_timestamp, $refresh_token, $access_token)
     {
@@ -123,15 +127,17 @@ class DefaultProfile
             ]
         ]);
         
-        Cache::put($this->token_history_name, $merged_history, date('Y-m-d H:i:s', strtotime('+2 minutes')));
+        Cache::put($this->token_history_name, $merged_history, $this->getDateTimeCacheTTL());
     }
     
     /**
-     * @param string $refresh_token
+     * @param $refresh_token
+     *
+     * @throws \Exception
      */
     protected function saveLastToken($refresh_token)
     {
-        Cache::put($this->token_last_value, $refresh_token, date('Y-m-d H:i:s', strtotime('+2 minutes')));
+        Cache::put($this->token_last_value, $refresh_token, $this->getDateTimeCacheTTL());
     }
     
     /**
@@ -169,7 +175,7 @@ class DefaultProfile
             throw new \Exception('Could not acquire lock..');
         }
         
-        Cache::put($this->limit_cache_name, $limit, date('Y-m-d H:i:s', strtotime('+2 minutes')));
+        Cache::put($this->limit_cache_name, $limit, $this->getDateTimeCacheTTL());
     
         $this->releaseLock($this->limit_lock_name);
     }
@@ -181,7 +187,7 @@ class DefaultProfile
      */
     protected function saveMinuteLimit($limit)
     {
-        Cache::put($this->limit_cache_name, $limit, date('Y-m-d H:i:s', strtotime('+2 minutes')));
+        Cache::put($this->limit_cache_name, $limit, $this->getDateTimeCacheTTL());
     }
     
     protected function resetAcquiringLockTries()
@@ -190,9 +196,10 @@ class DefaultProfile
     }
     
     /**
-     * @param string $key
+     * @param $key
      *
      * @return bool
+     * @throws \Exception
      */
     protected function acquireLock($key)
     {
@@ -208,7 +215,7 @@ class DefaultProfile
         }
         
         $random_value = Str::random();
-        Cache::put($key, $random_value, date('Y-m-d H:i:s', strtotime('+5 seconds')));
+        Cache::put($key, $random_value, $this->getDateTimeCacheTTL(5));
         
         $this->sleepForLock();
         
@@ -233,6 +240,17 @@ class DefaultProfile
     protected function sleepForLock()
     {
         usleep(rand(20000, 50000));
+    }
+    
+    /**
+     * @param int $seconds
+     *
+     * @return \DateTime
+     * @throws \Exception
+     */
+    protected function getDateTimeCacheTTL($seconds = 120)
+    {
+        return (new DateTime())->add(new DateInterval('PT' . $seconds . 'S'));
     }
     
 }
