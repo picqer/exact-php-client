@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class TimedTimeTransaction
+ * Class TimedTimeTransaction.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingTimedTimeTransactions
  *
  * @property string $ID Primary key
