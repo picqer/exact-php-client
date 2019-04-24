@@ -174,12 +174,12 @@ class Connection
         }
 
         // If we have a token, sign the request
-        if ( ! $this->needsAuthentication() && ! empty($this->accessToken)) {
+        if (! $this->needsAuthentication() && ! empty($this->accessToken)) {
             $headers['Authorization'] = 'Bearer ' . $this->accessToken;
         }
 
         // Create param string
-        if ( ! empty($params)) {
+        if (! empty($params)) {
             $endpoint .= '?' . http_build_query($params);
         }
 
@@ -485,7 +485,7 @@ class Connection
      */
     private function getTimestampFromExpiresIn($expiresIn)
     {
-        if ( ! ctype_digit($expiresIn)) {
+        if (! ctype_digit($expiresIn)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
@@ -586,7 +586,7 @@ class Connection
      */
     private function parseExceptionForErrorMessages(Exception $e)
     {
-        if ( ! $e instanceof BadResponseException) {
+        if (! $e instanceof BadResponseException) {
             throw new ApiException($e->getMessage());
         }
 
@@ -595,7 +595,7 @@ class Connection
         $responseBody = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
 
-        if ( ! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
+        if (! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
             $errorMessage = $decodedResponseBody['error']['message']['value'];
         } else {
             $errorMessage = $responseBody;

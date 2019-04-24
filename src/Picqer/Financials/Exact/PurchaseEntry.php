@@ -110,10 +110,10 @@ class PurchaseEntry extends Model
 
     public function addItem(array $array)
     {
-        if ( ! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null) {
+        if (! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null) {
             $this->attributes['PurchaseEntryLines'] = [];
         }
-        if ( ! isset($array['LineNumber'])) {
+        if (! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['PurchaseEntryLines']) + 1;
         }
         $this->attributes['PurchaseEntryLines'][] = $array;
