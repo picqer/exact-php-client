@@ -4,7 +4,7 @@ use PHPUnit\Framework\TestCase;
 use Picqer\Financials\Exact\Connection;
 
 /**
- * Class EntityTest
+ * Class EntityTest.
  *
  * Tests all entities to ensure entities have no PHP parse errors and have
  * at least the properties we need to use the entity
@@ -255,7 +255,8 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PurchaseOrderLine::class);
     }
 
-    public function testRevenueListEntity(){
+    public function testRevenueListEntity()
+    {
         $this->performEntityTest(\Picqer\Financials\Exact\RevenueList::class);
     }
 
