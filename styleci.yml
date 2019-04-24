@@ -2,7 +2,7 @@ preset: recommended
 risky: false
 enabled:
     - concat_with_spaces
-    - not_operator_with_space
+    - not_operator_with_successor_space
     - phpdoc_annotation_without_dot
 disabled:
     - concat_without_spaces
