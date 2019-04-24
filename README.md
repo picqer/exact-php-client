@@ -4,7 +4,7 @@
 
 PHP client library to use the Exact Online API.
 
-Note: For Guzzle 6 use v2, for Guzzle 3 use v1.
+Note: For Guzzle 6 use v3, for Guzzle 3 use v1.
 
 ## Direct link to Exact Online docs
 https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-getting-started
