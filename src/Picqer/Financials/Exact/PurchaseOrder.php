@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseOrder
+ * Class PurchaseOrder.
  *
- * @package Picqer\Financials\Exact
  * @See https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderPurchaseOrders
  *
  * @property string $PurchaseOrderID Primary key
@@ -124,10 +123,10 @@ class PurchaseOrder extends Model
      */
     public function addItem(array $array)
     {
-        if (! isset($this->attributes['PurchaseOrderLines']) || $this->attributes['PurchaseOrderLines'] == null) {
+        if ( ! isset($this->attributes['PurchaseOrderLines']) || $this->attributes['PurchaseOrderLines'] == null) {
             $this->attributes['PurchaseOrderLines'] = [];
         }
-        if (! isset($array['LineNumber'])) {
+        if ( ! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['PurchaseOrderLines']) + 1;
         }
         $this->attributes['PurchaseOrderLines'][] = $array;

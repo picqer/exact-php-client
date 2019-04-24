@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Journal
+ * Class Journal.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialJournals
  *
  * @property string $ID Primary Key
@@ -46,7 +45,6 @@ namespace Picqer\Financials\Exact;
  */
 class Journal extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -89,5 +87,4 @@ class Journal extends Model
     ];
 
     protected $url = 'financial/Journals';
-
 }

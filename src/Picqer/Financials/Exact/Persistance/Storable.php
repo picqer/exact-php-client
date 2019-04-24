@@ -1,40 +1,43 @@
-<?php namespace Picqer\Financials\Exact\Persistance;
+<?php
+
+namespace Picqer\Financials\Exact\Persistance;
 
 use Picqer\Financials\Exact\Connection;
 
 trait Storable
 {
     /**
-     * @return boolean
+     * @return bool
      */
-    abstract function exists();
+    abstract public function exists();
 
     /**
      * @param array $attributes
      */
-    abstract function fill(array $attributes);
+    abstract public function fill(array $attributes);
 
     /**
-     * @param int $options
+     * @param int  $options
      * @param bool $withDeferred
+     *
      * @return string
      */
-    abstract function json($options = 0, $withDeferred = false);
+    abstract public function json($options = 0, $withDeferred = false);
 
     /**
      * @return Connection
      */
-    abstract function connection();
+    abstract public function connection();
 
     /**
      * @return string
      */
-    abstract function url();
+    abstract public function url();
 
     /**
      * @return mixed
      */
-    abstract function primaryKeyContent();
+    abstract public function primaryKeyContent();
 
     /**
      * @return $this

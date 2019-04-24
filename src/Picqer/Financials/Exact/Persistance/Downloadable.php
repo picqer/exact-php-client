@@ -1,6 +1,8 @@
-<?php namespace Picqer\Financials\Exact\Persistance;
+<?php
 
-use \GuzzleHttp\Client;
+namespace Picqer\Financials\Exact\Persistance;
+
+use GuzzleHttp\Client;
 use Picqer\Financials\Exact\Connection;
 
 trait Downloadable
@@ -23,14 +25,14 @@ trait Downloadable
         $client = new Client();
 
         $headers = [
-            'Accept' => 'application/json',
-            'Content-Type' => 'application/json',
-            'Prefer' => 'return=representation',
+            'Accept'        => 'application/json',
+            'Content-Type'  => 'application/json',
+            'Prefer'        => 'return=representation',
             'Authorization' => 'Bearer ' . $this->connection()->getAccessToken(),
         ];
 
         $res = $client->get($this->getDownloadUrl(), [
-          'headers' => $headers
+          'headers' => $headers,
         ]);
 
         return $res->getBody();

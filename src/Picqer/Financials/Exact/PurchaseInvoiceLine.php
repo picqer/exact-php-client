@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseInvoiceLine
+ * Class PurchaseInvoiceLine.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchasePurchaseInvoiceLines
  *
  * @property string $ID A guid that uniqely identifies the invoice line.
@@ -38,7 +37,6 @@ namespace Picqer\Financials\Exact;
  */
 class PurchaseInvoiceLine extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -73,5 +71,4 @@ class PurchaseInvoiceLine extends Model
     ];
 
     protected $url = 'purchase/PurchaseInvoiceLines';
-
 }

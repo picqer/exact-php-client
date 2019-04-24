@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseEntry
+ * Class PurchaseEntry.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseEntryPurchaseEntries
  *
  * @property string $EntryID Primary key
@@ -111,10 +110,10 @@ class PurchaseEntry extends Model
 
     public function addItem(array $array)
     {
-        if (! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null) {
+        if ( ! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null) {
             $this->attributes['PurchaseEntryLines'] = [];
         }
-        if (! isset($array['LineNumber'])) {
+        if ( ! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['PurchaseEntryLines']) + 1;
         }
         $this->attributes['PurchaseEntryLines'][] = $array;

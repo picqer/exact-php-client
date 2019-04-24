@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class DocumentCategory
+ * Class DocumentCategory.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentCategories
  *
  * @property string $ID Primary key
@@ -21,7 +20,7 @@ class DocumentCategory extends Model
         'ID',
         'Created',
         'Description',
-        'Modified'
+        'Modified',
     ];
 
     protected $url = 'documents/DocumentCategories';

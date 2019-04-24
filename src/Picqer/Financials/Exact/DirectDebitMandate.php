@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class DirectDebitMandate
+ * Class DirectDebitMandate.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=cashflowDirectDebitMandates
  *
  * @property string $ID Primary key
@@ -51,4 +50,3 @@ class DirectDebitMandate extends Model
 
     protected $url = 'cashflow/DirectDebitMandates';
 }
-

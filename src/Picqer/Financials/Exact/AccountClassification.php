@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class AccountClassification
+ * Class AccountClassification.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=crmAccountClassifications
  *
  * @property string $ID Primary key
@@ -23,7 +22,6 @@ namespace Picqer\Financials\Exact;
  */
 class AccountClassification extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 

@@ -1,4 +1,6 @@
-<?php namespace Picqer\Financials\Exact\Query;
+<?php
+
+namespace Picqer\Financials\Exact\Query;
 
 use Picqer\Financials\Exact\Connection;
 
@@ -7,19 +9,19 @@ trait Findable
     /**
      * @return Connection
      */
-    abstract function connection();
+    abstract public function connection();
 
-    abstract function isFillable($key);
-
-    /**
-     * @return string
-     */
-    abstract function url();
+    abstract public function isFillable($key);
 
     /**
      * @return string
      */
-    abstract function primaryKey();
+    abstract public function url();
+
+    /**
+     * @return string
+     */
+    abstract public function primaryKey();
 
     public function find($id)
     {
@@ -31,10 +33,11 @@ trait Findable
 
         $records = $this->connection()->get($this->url(), [
             '$filter' => $filter,
-            '$top' => 1, // The result will always be 1 but on some entities Exact gives an error without it.
+            '$top'    => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
 
         $result = isset($records[0]) ? $records[0] : [];
+
         return new self($this->connection(), $result);
     }
 
@@ -43,37 +46,35 @@ trait Findable
         //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
         $result = $this->connection()->get($this->url(), [
             '$filter' => $this->primaryKey() . " eq guid'$id'",
-            '$select' => $select
+            '$select' => $select,
         ]);
 
         return new self($this->connection(), $result);
     }
 
-
     /**
-     * Return the value of the primary key
+     * Return the value of the primary key.
      *
      * @param string $code the value to search for
      * @param string $key  the key being searched (defaults to 'Code')
      *
      * @return string (guid)
      */
-    public function findId($code, $key='Code')
+    public function findId($code, $key = 'Code')
     {
         if ($this->isFillable($key)) {
             $format = ($this->url() == 'crm/Accounts' && $key === 'Code') ? '%18s' : '%s';
             if (preg_match('/^[\w]{8}-([\w]{4}-){3}[\w]{12}$/', $code)) {
                 $format = "guid'$format'";
-            }
-            elseif (is_string($code)) {
+            } elseif (is_string($code)) {
                 $format = "'$format'";
             }
 
             $filter = sprintf("$key eq $format", $code);
             $request = [
-                '$filter' => $filter,
-                '$top' => 1,
-                '$select' => $this->primaryKey(),
+                '$filter'  => $filter,
+                '$top'     => 1,
+                '$select'  => $this->primaryKey(),
                 '$orderby' => $this->primaryKey(),
             ];
             if ($records = $this->connection()->get($this->url(), $request)) {
@@ -81,7 +82,6 @@ trait Findable
             }
         }
     }
-
 
     public function filter($filter, $expand = '', $select = '', $system_query_options = null, array $headers = [])
     {
@@ -92,7 +92,7 @@ trait Findable
         }
 
         $request = [
-            '$filter' => $filter
+            '$filter' => $filter,
         ];
         if (strlen($expand) > 0) {
             $request['$expand'] = $expand;
@@ -108,13 +108,12 @@ trait Findable
 
         $result = $this->connection()->get($this->url(), $request, $headers);
 
-        if (!empty($divisionId)) {
+        if ( ! empty($divisionId)) {
             $this->connection()->setDivision($originalDivision); // Restore division
         }
 
         return $this->collectionFromResult($result);
     }
-
 
     /**
      * Returns the first Financial model in by applying $top=1 to the query string.
@@ -141,7 +140,6 @@ trait Findable
         return $this->collectionFromResult($result);
     }
 
-
     public function collectionFromResult($result)
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the
@@ -150,15 +148,14 @@ trait Findable
             $result = [$result];
         }
 
-        while ($this->connection()->nextUrl !== null)
-        {
+        while ($this->connection()->nextUrl !== null) {
             $nextResult = $this->connection()->get($this->connection()->nextUrl);
-            
+
             // If we have one result which is not an assoc array, make it the first element of an array for the array_merge function
             if ((bool) count(array_filter(array_keys($nextResult), 'is_string'))) {
                 $nextResult = [$nextResult];
             }
-            
+
             $result = array_merge($result, $nextResult);
         }
         $collection = [];

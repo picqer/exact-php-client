@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Item
+ * Class Item.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesShippingMethods
  *
  * @property string $ID Primary key
@@ -42,7 +41,7 @@ class SalesShippingMethods extends Model
         'ModifierFullName',
         'Notes',
         'ShippingRatesURL',
-        'TrackingURL'
+        'TrackingURL',
     ];
 
     protected $url = 'sales/ShippingMethods';

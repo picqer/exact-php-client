@@ -1,11 +1,10 @@
-<?php 
+<?php
 
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ShippingMethod
+ * Class ShippingMethod.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesShippingMethods
  *
  * @property string $ID Primary key
@@ -25,7 +24,6 @@ namespace Picqer\Financials\Exact;
  */
 class ShippingMethod extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -47,5 +45,4 @@ class ShippingMethod extends Model
     ];
 
     protected $url = 'sales/ShippingMethods';
-
 }

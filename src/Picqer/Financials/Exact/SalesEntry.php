@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesEntry
+ * Class SalesEntry.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesentrySalesEntries
  *
  * @property string $EntryID The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved
@@ -109,17 +108,16 @@ class SalesEntry extends Model
         'YourRef',
     ];
 
-
     public function addItem(array $array)
     {
-        if (! isset($this->attributes['SalesEntryLines']) || $this->attributes['SalesEntryLines'] == null) {
+        if ( ! isset($this->attributes['SalesEntryLines']) || $this->attributes['SalesEntryLines'] == null) {
             $this->attributes['SalesEntryLines'] = [];
         }
-        if (! isset($array['LineNumber'])) {
+        if ( ! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['SalesEntryLines']) + 1;
         }
         $this->attributes['SalesEntryLines'][] = $array;
     }
-    
+
     protected $url = 'salesentry/SalesEntries';
 }

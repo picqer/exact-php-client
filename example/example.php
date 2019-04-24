@@ -4,8 +4,10 @@
 require __DIR__ . '/../vendor/autoload.php';
 
 /**
- * Function to retrieve persisted data for the example
+ * Function to retrieve persisted data for the example.
+ *
  * @param string $key
+ *
  * @return null|string
  */
 function getValue($key)
@@ -14,24 +16,24 @@ function getValue($key)
     if (array_key_exists($key, $storage)) {
         return $storage[$key];
     }
-    return null;
 }
 
 /**
- * Function to persist some data for the example
+ * Function to persist some data for the example.
+ *
  * @param string $key
  * @param string $value
  */
 function setValue($key, $value)
 {
-    $storage       = json_decode(file_get_contents('storage.json'), true);
+    $storage = json_decode(file_get_contents('storage.json'), true);
     $storage[$key] = $value;
     file_put_contents('storage.json', json_encode($storage));
 }
 
 /**
  * Function to authorize with Exact, this redirects to Exact login promt and retrieves authorization code
- * to set up requests for oAuth tokens
+ * to set up requests for oAuth tokens.
  */
 function authorize()
 {
@@ -47,7 +49,8 @@ function authorize()
  *
  * @param \Picqer\Financials\Exact\Connection $connection
  */
-function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection) {
+function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection)
+{
     // Save the new tokens for next connections
     setValue('accesstoken', $connection->getAccessToken());
     setValue('refreshtoken', $connection->getRefreshToken());
@@ -57,10 +60,11 @@ function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection) {
 }
 
 /**
- * Function to connect to Exact, this creates the client and automatically retrieves oAuth tokens if needed
+ * Function to connect to Exact, this creates the client and automatically retrieves oAuth tokens if needed.
+ *
+ * @throws Exception
  *
  * @return \Picqer\Financials\Exact\Connection
- * @throws Exception
  */
 function connect()
 {
@@ -118,7 +122,7 @@ $connection = connect();
 // Get the journals from our administration
 try {
     $journals = new \Picqer\Financials\Exact\Journal($connection);
-    $result   = $journals->get();
+    $result = $journals->get();
     foreach ($result as $journal) {
         echo 'Journal: ' . $journal->Description . '<br>';
     }

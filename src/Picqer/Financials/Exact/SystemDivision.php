@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SystemDivision
+ * Class SystemDivision.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemDivisions
  *
  * @property int $Code Primary key
@@ -61,7 +60,7 @@ class SystemDivision extends Model
         'Postcode',
         'State',
         'Status',
-        'VATNumber'
+        'VATNumber',
     ];
 
     protected $url = 'system/Divisions';

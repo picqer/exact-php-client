@@ -1,9 +1,10 @@
-<?php namespace Picqer\Financials\Exact;
+<?php
+
+namespace Picqer\Financials\Exact;
 
 /**
- * Class Costunit
+ * Class Costunit.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostunits
  *
  * @property string $ID Primary key
@@ -19,7 +20,6 @@
  */
 class Costunit extends Model
 {
-
     use Query\Findable;
     use Persistance\Storable;
 
@@ -33,7 +33,7 @@ class Costunit extends Model
         'Division',
         'Modified',
         'Modifier',
-        'ModifierFullName'
+        'ModifierFullName',
     ];
 
     protected $url = 'hrm/Costunits';

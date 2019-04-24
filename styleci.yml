@@ -1,0 +1,10 @@
+preset: recommended
+risky: false
+enabled:
+    - concat_with_spaces
+    - not_operator_with_space
+    - phpdoc_annotation_without_dot
+disabled:
+    - concat_without_spaces
+finder:
+    name: "*.php"
