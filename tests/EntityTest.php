@@ -11,7 +11,6 @@ use Picqer\Financials\Exact\Connection;
  */
 class EntityTest extends TestCase
 {
-
     public function testAccountEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Account::class);
@@ -475,5 +474,4 @@ class EntityTest extends TestCase
         $this->assertEquals('Picqer\Financials\Exact', $reflectionClass->getNamespaceName());
         $this->assertEquals('Picqer\Financials\Exact\Model', $reflectionClass->getParentClass()->getName());
     }
-
 }
