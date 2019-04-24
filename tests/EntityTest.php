@@ -254,6 +254,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PurchaseOrderLine::class);
     }
 
+    public function testRevenueListEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RevenueList::class);
+    }
+
     public function testQuotationEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Quotation::class);
