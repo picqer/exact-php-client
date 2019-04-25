@@ -106,6 +106,31 @@ class Connection
     public $nextUrl = null;
 
     /**
+     * @var int|null
+     */
+    protected $dailyLimit;
+
+    /**
+     * @var int|null
+     */
+    protected $dailyLimitRemaining;
+
+    /**
+     * @var int|null
+     */
+    protected $dailyLimitReset;
+
+    /**
+     * @var int|null
+     */
+    protected $minutelyLimit;
+
+    /**
+     * @var int|null
+     */
+    protected $minutelyLimitRemaining;
+
+    /**
      * @return Client
      */
     private function client()
@@ -367,6 +392,8 @@ class Connection
                 return [];
             }
 
+            $this->extractRateLimits($response);
+
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
             if (array_key_exists('d', $json)) {
@@ -601,7 +628,47 @@ class Connection
             $errorMessage = $responseBody;
         }
 
-        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage);
+        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode());
+    }
+
+    /**
+     * @return int|null The maximum number of API calls that your app is permitted to make per company, per day
+     */
+    public function getDailyLimit()
+    {
+        return $this->dailyLimit;
+    }
+
+    /**
+     * @return int|null The remaining number of API calls that your app is permitted to make for a company, per day
+     */
+    public function getDailyLimitRemaining()
+    {
+        return $this->dailyLimitRemaining;
+    }
+
+    /**
+     * @return int|null The time at which the rate limit window resets in UTC epoch milliseconds
+     */
+    public function getDailyLimitReset()
+    {
+        return $this->dailyLimitReset;
+    }
+
+    /**
+     * @return int|null The maximum number of API calls that your app is permitted to make per company, per minute
+     */
+    public function getMinutelyLimit()
+    {
+        return $this->minutelyLimit;
+    }
+
+    /**
+     * @return int|null The remaining number of API calls that your app is permitted to make for a company, per minute
+     */
+    public function getMinutelyLimitRemaining()
+    {
+        return $this->minutelyLimitRemaining;
     }
 
     /**
@@ -661,5 +728,15 @@ class Connection
     public function setTokenUrl($tokenUrl)
     {
         $this->tokenUrl = $tokenUrl;
+    }
+
+    private function extractRateLimits(Response $response)
+    {
+        $this->dailyLimit = (int) $response->getHeaderLine('X-RateLimit-Limit');
+        $this->dailyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Remaining');
+        $this->dailyLimitReset = (int) $response->getHeaderLine('X-RateLimit-Reset');
+
+        $this->minutelyLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
+        $this->minutelyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
     }
 }
