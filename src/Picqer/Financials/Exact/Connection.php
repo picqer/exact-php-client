@@ -632,7 +632,7 @@ class Connection
     }
 
     /**
-     * @return string|null The maximum number of API calls that your app is permitted to make per company, per day
+     * @return int|null The maximum number of API calls that your app is permitted to make per company, per day
      */
     public function getDailyLimit()
     {
@@ -640,7 +640,7 @@ class Connection
     }
 
     /**
-     * @return string|null The remaining number of API calls that your app is permitted to make for a company, per day
+     * @return int|null The remaining number of API calls that your app is permitted to make for a company, per day
      */
     public function getDailyLimitRemaining()
     {
@@ -648,7 +648,7 @@ class Connection
     }
 
     /**
-     * @return string|null The time at which the rate limit window resets in UTC epoch milliseconds
+     * @return int|null The time at which the rate limit window resets in UTC epoch milliseconds
      */
     public function getDailyLimitReset()
     {
@@ -656,7 +656,7 @@ class Connection
     }
 
     /**
-     * @return string|null The maximum number of API calls that your app is permitted to make per company, per minute
+     * @return int|null The maximum number of API calls that your app is permitted to make per company, per minute
      */
     public function getMinutelyLimit()
     {
@@ -664,7 +664,7 @@ class Connection
     }
 
     /**
-     * @return string|null The remaining number of API calls that your app is permitted to make for a company, per minute
+     * @return int|null The remaining number of API calls that your app is permitted to make for a company, per minute
      */
     public function getMinutelyLimitRemaining()
     {
