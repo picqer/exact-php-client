@@ -628,7 +628,7 @@ class Connection
             $errorMessage = $responseBody;
         }
 
-        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage);
+        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode());
     }
 
     /**

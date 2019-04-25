@@ -101,6 +101,8 @@ By default the library will use the default administration of the user. This mea
 Exact uses a minutely and daily rate limit. There are a maximum number of calls per day you can do per company, and to prevent bursting they have also implemented a limit per minute. This PR stores this information in the `Connection` and adds methods to read the rate limits so you can handle these as appropriate for your app.
 Exact documentation on rate limits is found here: https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Simulation-gen-apilimits
 
+If you hit a rate limit, an `ApiException` will be thrown with code 429. At that point you can determine whether you've hit the minutely or the daily limit. If you've hit the minutely limit, try again after 60 seconds. If you've hit the daily limit, try again after the daily reset.
+
 You can use the following methods on the `Connection`, which will return the limits after your first API call (based on the headers from Exact).
 
 ```php
