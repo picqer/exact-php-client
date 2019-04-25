@@ -632,7 +632,7 @@ class Connection
     }
 
     /**
-     * @return string|null The maximum number of API calls that your app is permitted to make per company, per day.
+     * @return string|null The maximum number of API calls that your app is permitted to make per company, per day
      */
     public function getDailyLimit()
     {
@@ -640,7 +640,7 @@ class Connection
     }
 
     /**
-     * @return string|null The remaining number of API calls that your app is permitted to make for a company, per day.
+     * @return string|null The remaining number of API calls that your app is permitted to make for a company, per day
      */
     public function getDailyLimitRemaining()
     {
@@ -648,7 +648,7 @@ class Connection
     }
 
     /**
-     * @return string|null The time at which the rate limit window resets in UTC epoch milliseconds.
+     * @return string|null The time at which the rate limit window resets in UTC epoch milliseconds
      */
     public function getDailyLimitReset()
     {
@@ -656,7 +656,7 @@ class Connection
     }
 
     /**
-     * @return string|null The maximum number of API calls that your app is permitted to make per company, per minute.
+     * @return string|null The maximum number of API calls that your app is permitted to make per company, per minute
      */
     public function getMinutelyLimit()
     {
@@ -664,7 +664,7 @@ class Connection
     }
 
     /**
-     * @return string|null The remaining number of API calls that your app is permitted to make for a company, per minute.
+     * @return string|null The remaining number of API calls that your app is permitted to make for a company, per minute
      */
     public function getMinutelyLimitRemaining()
     {
@@ -732,11 +732,11 @@ class Connection
 
     private function extractRateLimits(Response $response)
     {
-        $this->dailyLimit = (int)$response->getHeaderLine('X-RateLimit-Limit');
-        $this->dailyLimitRemaining = (int)$response->getHeaderLine('X-RateLimit-Remaining');
-        $this->dailyLimitReset = (int)$response->getHeaderLine('X-RateLimit-Reset');
+        $this->dailyLimit = (int) $response->getHeaderLine('X-RateLimit-Limit');
+        $this->dailyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Remaining');
+        $this->dailyLimitReset = (int) $response->getHeaderLine('X-RateLimit-Reset');
 
-        $this->minutelyLimit = (int)$response->getHeaderLine('X-RateLimit-Minutely-Limit');
-        $this->minutelyLimitRemaining = (int)$response->getHeaderLine('X-RateLimit-Minutely-Remaining');
+        $this->minutelyLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
+        $this->minutelyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
     }
 }
