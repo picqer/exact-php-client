@@ -97,6 +97,20 @@ $connection->setAcquireAccessTokenUnlockCallback('CALLBACK_FUNCTION');
 
 By default the library will use the default administration of the user. This means that when the user switches administrations in Exact Online. The library will also start working with this administration.
 
+### Rate limits
+Exact uses a minutely and daily rate limit. There are a maximum number of calls per day you can do per company, and to prevent bursting they have also implemented a limit per minute. This PR stores this information in the `Connection` and adds methods to read the rate limits so you can handle these as appropriate for your app.
+Exact documentation on rate limits is found here: https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Simulation-gen-apilimits
+
+You can use the following methods on the `Connection`, which will return the limits after your first API call (based on the headers from Exact).
+
+```php
+$connection->getDailyLimit(); // Retrieve your daily limit
+$connection->getDailyLimitRemaining(); // Retrieve the remaining amount of API calls for this day
+$connection->getDailyLimitReset(); // Retrieve the timestamp for when the limit will reset
+$connection->getMinutelyLimit(); // Retrieve your limit per minute
+$connection->getMinutelyLimitRemaining(); // Retrieve the amount of API calls remaining for this minute
+```
+
 ### Use the library to do stuff (examples)
 
 ```php
