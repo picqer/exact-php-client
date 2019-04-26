@@ -139,7 +139,7 @@ class Connection
      * @var mixed
      */
     private $responseStatusCode;
-    
+
     /**
      * @return Client
      */
@@ -209,12 +209,12 @@ class Connection
         }
 
         // If we have a token, sign the request
-        if (! $this->needsAuthentication() && ! empty($this->accessToken)) {
+        if ( ! $this->needsAuthentication() && ! empty($this->accessToken)) {
             $headers['Authorization'] = 'Bearer ' . $this->accessToken;
         }
 
         // Create param string
-        if (! empty($params)) {
+        if ( ! empty($params)) {
             $endpoint .= '?' . http_build_query($params);
         }
 
@@ -400,7 +400,7 @@ class Connection
         try {
             $this->setResponseHeaders($response->getHeaders());
             $this->setResponseStatusCode($response->getStatusCode());
-            
+
             if ($response->getStatusCode() === 204) {
                 return [];
             }
@@ -510,7 +510,7 @@ class Connection
         } catch (BadResponseException $ex) {
             $this->setResponseHeaders($ex->getResponse()->getHeaders());
             $this->setResponseStatusCode($ex->getResponse()->getStatusCode());
-            
+
             throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']', 0, $ex);
         } finally {
             if (is_callable($this->acquireAccessTokenUnlockCallback)) {
@@ -528,7 +528,7 @@ class Connection
      */
     private function getTimestampFromExpiresIn($expiresIn)
     {
-        if (! ctype_digit($expiresIn)) {
+        if ( ! ctype_digit($expiresIn)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
@@ -629,20 +629,20 @@ class Connection
      */
     private function parseExceptionForErrorMessages(Exception $e)
     {
-        if (! $e instanceof BadResponseException) {
+        if ( ! $e instanceof BadResponseException) {
             throw new ApiException($e->getMessage());
         }
 
         $response = $e->getResponse();
-        
+
         $this->setResponseHeaders($response->getHeaders());
         $this->setResponseStatusCode($response->getStatusCode());
-        
+
         Psr7\rewind_body($response);
         $responseBody = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
 
-        if (! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
+        if ( ! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
             $errorMessage = $decodedResponseBody['error']['message']['value'];
         } else {
             $errorMessage = $responseBody;
@@ -722,7 +722,7 @@ class Connection
     {
         return $this->responseStatusCode;
     }
-    
+
     /**
      * @return string
      */
@@ -773,7 +773,7 @@ class Connection
     {
         $this->responseStatusCode = $responseStatusCode;
     }
-    
+
     /**
      * @param string $tokenUrl
      */

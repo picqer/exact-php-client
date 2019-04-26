@@ -40,7 +40,7 @@ class GeneralJournalEntry extends Model
 
     public function addItem(array $array)
     {
-        if (! isset($this->attributes['GeneralJournalEntryLines']) || $this->attributes['GeneralJournalEntryLines'] == null) {
+        if ( ! isset($this->attributes['GeneralJournalEntryLines']) || $this->attributes['GeneralJournalEntryLines'] == null) {
             $this->attributes['GeneralJournalEntryLines'] = [];
         }
         $this->attributes['GeneralJournalEntryLines'][] = $array;
