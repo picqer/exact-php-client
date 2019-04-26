@@ -131,6 +131,16 @@ class Connection
     protected $minutelyLimitRemaining;
 
     /**
+     * @var array
+     */
+    private $responseHeaders;
+
+    /**
+     * @var mixed
+     */
+    private $responseStatusCode;
+    
+    /**
      * @return Client
      */
     private function client()
@@ -388,6 +398,9 @@ class Connection
     private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
+            $this->setResponseHeaders($response->getHeaders());
+            $this->setResponseStatusCode($response->getStatusCode());
+            
             if ($response->getStatusCode() === 204) {
                 return [];
             }
@@ -495,6 +508,9 @@ class Connection
                 throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
             }
         } catch (BadResponseException $ex) {
+            $this->setResponseHeaders($ex->getResponse()->getHeaders());
+            $this->setResponseStatusCode($ex->getResponse()->getStatusCode());
+            
             throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']', 0, $ex);
         } finally {
             if (is_callable($this->acquireAccessTokenUnlockCallback)) {
@@ -618,6 +634,10 @@ class Connection
         }
 
         $response = $e->getResponse();
+        
+        $this->setResponseHeaders($response->getHeaders());
+        $this->setResponseStatusCode($response->getStatusCode());
+        
         Psr7\rewind_body($response);
         $responseBody = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
@@ -688,6 +708,22 @@ class Connection
     }
 
     /**
+     * @return array
+     */
+    public function getResponseHeaders()
+    {
+        return $this->responseHeaders;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResponseStatusCode()
+    {
+        return $this->responseStatusCode;
+    }
+    
+    /**
      * @return string
      */
     private function getTokenUrl()
@@ -722,6 +758,22 @@ class Connection
         $this->authUrl = $authUrl;
     }
 
+    /**
+     * @param array $responseHeaders
+     */
+    public function setResponseHeaders($responseHeaders)
+    {
+        $this->responseHeaders = $responseHeaders;
+    }
+
+    /**
+     * @param int $responseStatusCode
+     */
+    public function setResponseStatusCode($responseStatusCode)
+    {
+        $this->responseStatusCode = $responseStatusCode;
+    }
+    
     /**
      * @param string $tokenUrl
      */
