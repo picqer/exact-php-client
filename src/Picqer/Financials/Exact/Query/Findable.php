@@ -108,7 +108,7 @@ trait Findable
 
         $result = $this->connection()->get($this->url(), $request, $headers);
 
-        if (! empty($divisionId)) {
+        if ( ! empty($divisionId)) {
             $this->connection()->setDivision($originalDivision); // Restore division
         }
 

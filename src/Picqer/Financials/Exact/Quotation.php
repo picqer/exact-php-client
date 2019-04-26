@@ -121,10 +121,10 @@ class Quotation extends Model
      */
     public function addItem(array $array)
     {
-        if (! isset($this->attributes['QuotationLines']) || $this->attributes['QuotationLines'] == null) {
+        if ( ! isset($this->attributes['QuotationLines']) || $this->attributes['QuotationLines'] == null) {
             $this->attributes['QuotationLines'] = [];
         }
-        if (! isset($array['LineNumber'])) {
+        if ( ! isset($array['LineNumber'])) {
             $array['LineNumber'] = count($this->attributes['QuotationLines']) + 1;
         }
         $this->attributes['QuotationLines'][] = $array;

@@ -206,7 +206,7 @@ abstract class Model implements \JsonSerializable
      */
     public function exists()
     {
-        if (! array_key_exists($this->primaryKey, $this->attributes)) {
+        if ( ! array_key_exists($this->primaryKey, $this->attributes)) {
             return false;
         }
 
@@ -231,7 +231,7 @@ abstract class Model implements \JsonSerializable
 
                 $attributes[$attribute] = [];
                 foreach ($collection as $value) {
-                    if (! empty($value->deferred)) {
+                    if ( ! empty($value->deferred)) {
                         $value->attributes = array_merge($value->attributes, $value->deferred);
                     }
 

@@ -51,7 +51,7 @@ class CashEntry extends Model
 
     public function addItem(array $array)
     {
-        if (! isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
+        if ( ! isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
             $this->attributes['CashEntryLines'] = [];
         }
         $this->attributes['CashEntryLines'][] = $array;
