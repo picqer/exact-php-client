@@ -618,6 +618,9 @@ class Connection
         }
 
         $response = $e->getResponse();
+
+        $this->extractRateLimits($response);
+
         Psr7\rewind_body($response);
         $responseBody = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
