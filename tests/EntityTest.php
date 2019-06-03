@@ -1,5 +1,7 @@
 <?php
 
+namespace Picqer\Tests;
+
 use PHPUnit\Framework\TestCase;
 use Picqer\Financials\Exact\Connection;
 
@@ -626,7 +628,7 @@ class EntityTest extends TestCase
 
     protected function performEntityTest($entityName)
     {
-        $reflectionClass = new ReflectionClass($entityName);
+        $reflectionClass = new \ReflectionClass($entityName);
 
         $this->assertTrue($reflectionClass->isInstantiable());
         $this->assertTrue($reflectionClass->hasProperty('fillable'));
