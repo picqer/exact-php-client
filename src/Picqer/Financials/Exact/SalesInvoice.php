@@ -67,6 +67,7 @@ namespace Picqer\Financials\Exact;
  * @property string $TypeDescription Description of the type
  * @property float $VATAmountDC Total VAT amount in the default currency of the company
  * @property float $VATAmountFC Total VAT amount in the currency of the transaction
+ * @property string $Warehouse Mandatory for direct sales invoice/credit note, cannot be set for normal sales invoice/credit note.
  * @property float $WithholdingTaxAmountFC Withholding tax amount applied to sales invoice
  * @property float $WithholdingTaxBaseAmount Withholding tax base amount to calculate withholding amount
  * @property float $WithholdingTaxPercentage Withholding tax percentage applied to sales invoice
@@ -140,6 +141,7 @@ class SalesInvoice extends Model
         'TypeDescription',
         'VATAmountDC',
         'VATAmountFC',
+        'Warehouse',
         'WithholdingTaxAmountFC',
         'WithholdingTaxBaseAmount',
         'WithholdingTaxPercentage',
