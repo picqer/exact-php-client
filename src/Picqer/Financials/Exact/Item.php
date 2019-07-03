@@ -89,6 +89,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
+ * @property string $NetWeight Net Weight of the item
  * @property string $Notes Notes
  * @property string $SalesVatCode Code of SalesVat
  * @property string $SalesVatCodeDescription Description of SalesVatCode
@@ -190,6 +191,7 @@ class Item extends Model
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'NetWeight',
         'Notes',
         'SalesVatCode',
         'SalesVatCodeDescription',
