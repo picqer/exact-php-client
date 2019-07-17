@@ -378,8 +378,8 @@ class Connection
     }
 
     /**
-     * 
      * @param mixed $data
+     *
      * @return mixed
      */
     private function parseJsonDates($data)
@@ -400,7 +400,7 @@ class Connection
         });
         return $data;
     }
-    
+
     /**
      * @param Response $response
      * @param bool     $returnSingleIfPossible
