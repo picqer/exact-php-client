@@ -378,6 +378,30 @@ class Connection
     }
 
     /**
+     * 
+     * @param mixed $data
+     * @return mixed
+     */
+    private function parseJsonDates($data)
+    {
+        array_walk_recursive($data, function (&$item, $key) {
+            $matches = null;
+            if (preg_match('/\/Date\((\d+)\)\//', $item, $matches)) {
+                $microtime = ((int) $matches[1]) / 1000;
+                if ($microtime == ((int) $microtime)) {
+                    $microtime = "$microtime.000";
+                } else {
+                    $microtime = "$microtime";
+                }
+                $date = \DateTime::createFromFormat('U.u', $microtime);
+                $date->setTimezone(new \DateTimeZone('UTC'));
+                $item = $date->format('Y-m-d\TH:i:s.u');
+            }
+        });
+        return $data;
+    }
+    
+    /**
      * @param Response $response
      * @param bool     $returnSingleIfPossible
      *
@@ -395,7 +419,7 @@ class Connection
             $this->extractRateLimits($response);
 
             Psr7\rewind_body($response);
-            $json = json_decode($response->getBody()->getContents(), true);
+            $json = $this->parseJsonDates(json_decode($response->getBody()->getContents(), true));
             if (array_key_exists('d', $json)) {
                 if (array_key_exists('__next', $json['d'])) {
                     $this->nextUrl = $json['d']['__next'];
