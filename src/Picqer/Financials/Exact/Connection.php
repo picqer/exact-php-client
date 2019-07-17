@@ -398,6 +398,7 @@ class Connection
                 $item = $date->format('Y-m-d\TH:i:s.u');
             }
         });
+
         return $data;
     }
 
