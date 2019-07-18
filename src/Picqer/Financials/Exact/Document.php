@@ -9,8 +9,8 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account ID of the related account of this document
- * @property string $AccountCode code of Account
- * @property string $AccountName Name of Account
+ * @property string $AccountCode Code of account
+ * @property string $AccountName Name of account
  * @property float $AmountFC Amount in the currency of the transaction
  * @property string $Body Body of this document
  * @property string $Category ID of the category of this document
@@ -26,7 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DocumentFolderDescription The Description of document folder 
  * @property string $DocumentViewUrl Url to view the document  
  * @property string $FinancialTransactionEntryID Reference to the financial transaction
- * @property boolean $HasEmptyBody Indicates that the document body is empty 
+ * @property bool $HasEmptyBody Indicates that the document body is empty 
  * @property int $HID Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
  * @property string $Language The language code of the document
  * @property string $Modified Last modified date 
