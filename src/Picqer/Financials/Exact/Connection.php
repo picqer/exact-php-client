@@ -451,31 +451,31 @@ class Connection
 
     private function acquireAccessToken()
     {
-        // If refresh token not yet acquired, do token request
-        if (empty($this->refreshToken)) {
-            $body = [
-                'form_params' => [
-                    'redirect_uri'  => $this->redirectUrl,
-                    'grant_type'    => 'authorization_code',
-                    'client_id'     => $this->exactClientId,
-                    'client_secret' => $this->exactClientSecret,
-                    'code'          => $this->authorizationCode,
-                ],
-            ];
-        } else { // else do refresh token request
-            $body = [
-                'form_params' => [
-                    'refresh_token' => $this->refreshToken,
-                    'grant_type'    => 'refresh_token',
-                    'client_id'     => $this->exactClientId,
-                    'client_secret' => $this->exactClientSecret,
-                ],
-            ];
-        }
-
         try {
             if (is_callable($this->acquireAccessTokenLockCallback)) {
                 call_user_func($this->acquireAccessTokenLockCallback, $this);
+            }
+
+            // If refresh token not yet acquired, do token request
+            if (empty($this->refreshToken)) {
+                $body = [
+                    'form_params' => [
+                        'redirect_uri'  => $this->redirectUrl,
+                        'grant_type'    => 'authorization_code',
+                        'client_id'     => $this->exactClientId,
+                        'client_secret' => $this->exactClientSecret,
+                        'code'          => $this->authorizationCode,
+                    ],
+                ];
+            } else { // else do refresh token request
+                $body = [
+                    'form_params' => [
+                        'refresh_token' => $this->refreshToken,
+                        'grant_type'    => 'refresh_token',
+                        'client_id'     => $this->exactClientId,
+                        'client_secret' => $this->exactClientSecret,
+                    ],
+                ];
             }
 
             $response = $this->client()->post($this->getTokenUrl(), $body);
