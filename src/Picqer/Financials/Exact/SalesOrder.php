@@ -28,6 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property int $DeliveryStatus Shipping status
  * @property string $DeliveryStatusDescription Description of DeliveryStatus
  * @property string $Description Description
+ * @property float $Discount Discount percentage
  * @property int $Division Division code
  * @property string $Document Document that is manually linked to the sales order
  * @property int $DocumentNumber Number of the document
@@ -97,6 +98,7 @@ class SalesOrder extends Model
         'DeliveryStatus',
         'DeliveryStatusDescription',
         'Description',
+        'Discount',
         'Division',
         'Document',
         'DocumentNumber',
