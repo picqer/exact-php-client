@@ -24,12 +24,21 @@ namespace Picqer\Financials\Exact;
  * @property string $GLAccount The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory
  * @property string $GLAccountCode Code of GLAccount
  * @property string $GLAccountDescription Description of GLAccount
+ * @property string $IntraStatArea IntraStat Area
+ * @property string $IntraStatCountry IntraStat Country
+ * @property string $IntraStatDeliveryTerm IntraStat delivery term
+ * @property string $IntraStatTransactionA IntraStat transaction a
+ * @property string $IntraStatTransportMethod IntraStat transport method
  * @property int $LineNumber Indicates the sequence of the lines within one entry
  * @property string $Notes Extra notes
  * @property string $Project The project to which the sales transaction line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used
  * @property string $ProjectDescription Description of Project
  * @property float $Quantity The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor
  * @property string $SerialNumber Serial number
+ * @property float $StatisticalNetWeight Statistical NetWeight
+ * @property string $StatisticalNumber Statistical Number
+ * @property float $StatisticalQuantity Statistical Quantity
+ * @property float $StatisticalValue Statistical Value
  * @property string $Subscription When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines
  * @property string $SubscriptionDescription Description of Subscription
  * @property string $TaxSchedule Obsolete
@@ -67,12 +76,21 @@ class SalesEntryLine extends Model
         'GLAccount',
         'GLAccountCode',
         'GLAccountDescription',
+        'IntraStatArea',
+        'IntraStatCountry',
+        'IntraStatDeliveryTerm',
+        'IntraStatTransactionA',
+        'IntraStatTransportMethod',
         'LineNumber',
         'Notes',
         'Project',
         'ProjectDescription',
         'Quantity',
         'SerialNumber',
+        'StatisticalNetWeight',
+        'StatisticalNumber',
+        'StatisticalQuantity',
+        'StatisticalValue',
         'Subscription',
         'SubscriptionDescription',
         'TaxSchedule',
