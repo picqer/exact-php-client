@@ -24,7 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Type Type
  * @property int $Year Year
  */
-class Return extends Model
+class Returns extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
