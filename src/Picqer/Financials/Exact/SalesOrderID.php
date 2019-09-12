@@ -3,11 +3,12 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesOrderID.
+ * Class SalesOrderID
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceSalesOrderID
  *
- * @property string $ID
+ * @property string $ID 
  */
 class SalesOrderID extends Model
 {

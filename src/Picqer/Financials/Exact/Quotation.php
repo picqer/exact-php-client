@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Quotation.
+ * Class Quotation
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMQuotations
  *
  * @property string $QuotationID Identifier of the quotation

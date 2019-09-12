@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ShopOrder.
+ * Class ShopOrder
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrders
  *
  * @property string $ID Primary key

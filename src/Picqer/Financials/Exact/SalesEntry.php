@@ -3,9 +3,10 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesEntry.
+ * Class SalesEntrie
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesentrySalesEntries
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesEntrySalesEntries
  *
  * @property string $EntryID The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved
  * @property float $AmountDC Amount in the default currency of the company. For the header lines (LineNumber = 0) of an entry this is the SUM(AmountDC) of all lines
@@ -27,6 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property int $EntryNumber Entry number
  * @property string $ExternalLinkDescription Description of ExternalLink
  * @property string $ExternalLinkReference Reference of ExternalLink
+ * @property float $GAccountAmountFC A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.
  * @property int $InvoiceNumber Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry
  * @property bool $IsExtraDuty Indicates whether the invoice has extra duty
  * @property string $Journal The journal code. Every invoice should be linked to a sales journal
@@ -38,18 +40,21 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentCondition The payment condition used for due date and discount calculation
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
- * @property int $ProcessNumber
+ * @property int $ProcessNumber 
  * @property float $Rate Foreign currency rate
  * @property int $ReportingPeriod The period of the transaction lines. The period should exist in the period date table
  * @property int $ReportingYear The financial year to which the entry belongs. The financial year should exist in the period date table
  * @property bool $Reversal Indicates if amounts are reversed
- * @property array $SalesEntryLines Collection of lines
- * @property int $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
+ * @property salesentrylines $SalesEntryLines Collection of lines
+ * @property int $Status Status: 20 = Open, 50 = Processed
  * @property string $StatusDescription Description of Status
  * @property int $Type Type: 20 = Sales entry, 21 = Sales credit note
  * @property string $TypeDescription Description of Type
  * @property float $VATAmountDC Vat amount in the default currency of the company
  * @property float $VATAmountFC Vat amount in the currency of the transaction
+ * @property float $WithholdingTaxAmountDC Withholding tax amount
+ * @property float $WithholdingTaxBaseAmount Withholding tax base amount to calculate withholding amount
+ * @property float $WithholdingTaxPercentage Withholding tax percentage
  * @property string $YourRef The invoice number of the customer
  */
 class SalesEntry extends Model
@@ -82,6 +87,7 @@ class SalesEntry extends Model
         'EntryNumber',
         'ExternalLinkDescription',
         'ExternalLinkReference',
+        'GAccountAmountFC',
         'InvoiceNumber',
         'IsExtraDuty',
         'Journal',
@@ -105,6 +111,9 @@ class SalesEntry extends Model
         'TypeDescription',
         'VATAmountDC',
         'VATAmountFC',
+        'WithholdingTaxAmountDC',
+        'WithholdingTaxBaseAmount',
+        'WithholdingTaxPercentage',
         'YourRef',
     ];
 
@@ -118,6 +127,6 @@ class SalesEntry extends Model
         }
         $this->attributes['SalesEntryLines'][] = $array;
     }
-
+    
     protected $url = 'salesentry/SalesEntries';
 }

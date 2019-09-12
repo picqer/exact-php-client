@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Project.
+ * Class Project
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjects
  *
  * @property string $ID Primary key

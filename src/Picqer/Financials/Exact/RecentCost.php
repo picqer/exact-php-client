@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class RecentCost.
+ * Class RecentCost
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectRecentCosts
  *
  * @property int $Id Primary key

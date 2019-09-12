@@ -3,11 +3,12 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class GoodsReceiptLine.
+ * Class GoodsReceiptLine
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderGoodsReceiptLines
  *
- * @property string $ID Primary key
+ * @property string $ID The unique identifier of a stock transaction for a goods receipt line. A goods receipt line can be split into multiple storage locations. In this case, multiple storage locations will have the same stock transaction ID.
  * @property StockBatchNumbers $BatchNumbers Collection of batch numbers
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator

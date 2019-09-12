@@ -3,9 +3,10 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesEntryLine.
+ * Class SalesEntryLine
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesentrySalesEntryLines
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesEntrySalesEntryLines
  *
  * @property string $ID Primary key
  * @property float $AmountDC Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC.
@@ -21,11 +22,12 @@ namespace Picqer\Financials\Exact;
  * @property string $EntryID The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved
  * @property float $ExtraDutyAmountFC Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated.
  * @property float $ExtraDutyPercentage Extra duty percentage for the item
+ * @property string $From From date for deferred revenue
  * @property string $GLAccount The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory
  * @property string $GLAccountCode Code of GLAccount
  * @property string $GLAccountDescription Description of GLAccount
- * @property string $IntraStatArea IntraStat Area
- * @property string $IntraStatCountry IntraStat Country
+ * @property string $IntraStatArea IntraStat area
+ * @property string $IntraStatCountry IntraStatCountry
  * @property string $IntraStatDeliveryTerm IntraStat delivery term
  * @property string $IntraStatTransactionA IntraStat transaction a
  * @property string $IntraStatTransportMethod IntraStat transport method
@@ -42,6 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Subscription When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines
  * @property string $SubscriptionDescription Description of Subscription
  * @property string $TaxSchedule Obsolete
+ * @property string $To To date for deferred revenue
  * @property string $TrackingNumber Reference to TrackingNumber
  * @property string $TrackingNumberDescription Description of TrackingNumber
  * @property int $Type Type: 20 = Sales entry, 21 = Sales credit note
@@ -73,6 +76,7 @@ class SalesEntryLine extends Model
         'EntryID',
         'ExtraDutyAmountFC',
         'ExtraDutyPercentage',
+        'From',
         'GLAccount',
         'GLAccountCode',
         'GLAccountDescription',
@@ -94,6 +98,7 @@ class SalesEntryLine extends Model
         'Subscription',
         'SubscriptionDescription',
         'TaxSchedule',
+        'To',
         'TrackingNumber',
         'TrackingNumberDescription',
         'Type',

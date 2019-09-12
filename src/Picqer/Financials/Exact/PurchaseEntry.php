@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseEntry.
+ * Class PurchaseEntrie
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseEntryPurchaseEntries
  *
  * @property string $EntryID Primary key
@@ -36,8 +37,8 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentCondition Payment condition
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
- * @property int $ProcessNumber
- * @property array $PurchaseEntryLines Collection of lines
+ * @property int $ProcessNumber 
+ * @property purchaseentrylines $PurchaseEntryLines Collection of lines
  * @property float $Rate Currency exchange rate
  * @property int $ReportingPeriod Reporting period
  * @property int $ReportingYear Reporting year
@@ -118,6 +119,6 @@ class PurchaseEntry extends Model
         }
         $this->attributes['PurchaseEntryLines'][] = $array;
     }
-
+    
     protected $url = 'purchaseentry/PurchaseEntries';
 }

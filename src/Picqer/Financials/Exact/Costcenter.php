@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Costcenter.
+ * Class Costcenter
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostcenters
  *
  * @property string $ID Primary key
@@ -15,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Description Description (text)
  * @property int $Division Division code
+ * @property string $EndDate The end date by which the cost center has to be inactive
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -33,6 +35,7 @@ class Costcenter extends Model
         'CreatorFullName',
         'Description',
         'Division',
+        'EndDate',
         'Modified',
         'Modifier',
         'ModifierFullName',

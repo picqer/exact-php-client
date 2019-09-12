@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseEntryLine.
+ * Class PurchaseEntryLine
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseEntryPurchaseEntryLines
  *
  * @property string $ID Primary key
@@ -30,6 +31,7 @@ namespace Picqer\Financials\Exact;
  * @property string $IntraStatTransportMethod IntraStat transport method
  * @property int $LineNumber Line number
  * @property string $Notes Extra remarks
+ * @property float $PrivateUsePercentage Percentage of re-invoice part of a cost to the owner of the company.
  * @property string $Project Reference to project
  * @property string $ProjectDescription Description of Project
  * @property float $Quantity Quantity
@@ -84,6 +86,7 @@ class PurchaseEntryLine extends Model
         'IntraStatTransportMethod',
         'LineNumber',
         'Notes',
+        'PrivateUsePercentage',
         'Project',
         'ProjectDescription',
         'Quantity',

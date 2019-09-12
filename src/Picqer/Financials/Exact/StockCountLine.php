@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class StockCountLine.
+ * Class StockCountLine
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStockCountLines
  *
  * @property string $ID Primary key
@@ -16,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property int $Division Division code
  * @property string $Item Reference to the item for which the stock is counted
+ * @property string $ItemBarcode Item Barcode
  * @property string $ItemCode Item code
  * @property float $ItemCostPrice Current standard/actual item cost price
  * @property string $ItemDescription Description of item
@@ -28,11 +30,14 @@ namespace Picqer\Financials\Exact;
  * @property float $QuantityInStock The current quantity available in stock
  * @property float $QuantityNew The new quantity in stock. Use this field to correct the quantity when the items in stock are physically counted.
  * @property SerialNumbers $SerialNumbers The collection of serial numbers that belong to the items included in this stock count
+ * @property int $Source Source of stock count entry: 1-Manual entry, 2-Import, 3-Stock count, 4-Web service
+ * @property int $Status Stock count status: 12-Draft, 21-Processed
  * @property string $StockCountID Identifies the stock count. All the lines of a stock count have the same StockCountID
  * @property string $StockKeepingUnit Stock item's unit description
  * @property string $StorageLocation This property is package specific (Stock count can have multiple lines for the same item only if it is for multiple storage locations).
  * @property string $StorageLocationCode Storage location code
  * @property string $StorageLocationDescription Storage location description
+ * @property string $Warehouse Warehouse
  */
 class StockCountLine extends Model
 {
@@ -49,6 +54,7 @@ class StockCountLine extends Model
         'CreatorFullName',
         'Division',
         'Item',
+        'ItemBarcode',
         'ItemCode',
         'ItemCostPrice',
         'ItemDescription',
@@ -61,11 +67,14 @@ class StockCountLine extends Model
         'QuantityInStock',
         'QuantityNew',
         'SerialNumbers',
+        'Source',
+        'Status',
         'StockCountID',
         'StockKeepingUnit',
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
+        'Warehouse',
     ];
 
     protected $url = 'inventory/StockCountLines';

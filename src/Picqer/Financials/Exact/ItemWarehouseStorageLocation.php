@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ItemWarehouseStorageLocation.
+ * Class ItemWarehouseStorageLocation
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehouseStorageLocations
  *
  * @property string $ID Uniquely identifies the item, warehouse, storage location combination

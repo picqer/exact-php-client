@@ -3,8 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class StockSerialNumber.
+ * Class StockSerialNumber
  *
+ * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStockSerialNumbers
  *
  * @property string $ID Primary key
@@ -23,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Remarks Remarks
+ * @property string $SalesReturnLine ID of sales return entry in which this serial number was used
  * @property string $SerialNumber Human readable serial number
  * @property string $SerialNumberID Serial number ID
  * @property string $StartDate Start date of effective period for serial number
@@ -58,6 +60,7 @@ class StockSerialNumber extends Model
         'Modifier',
         'ModifierFullName',
         'Remarks',
+        'SalesReturnLine',
         'SerialNumber',
         'SerialNumberID',
         'StartDate',

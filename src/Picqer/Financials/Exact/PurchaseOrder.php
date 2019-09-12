@@ -3,9 +3,10 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PurchaseOrder.
+ * Class PurchaseOrder
  *
- * @See https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderPurchaseOrders
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderPurchaseOrders
  *
  * @property string $PurchaseOrderID Primary key
  * @property float $AmountDC Total amount in the default currency of the company

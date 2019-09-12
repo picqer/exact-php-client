@@ -3,9 +3,10 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PrintedSalesInvoice.
+ * Class PrintedSalesInvoice
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesinvoicePrintedSalesInvoices
+ * @package Picqer\Financials\Exact
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoicePrintedSalesInvoices
  *
  * @property string $InvoiceID Primary key, Reference to EntryID of SalesInvoice
  * @property int $Division Division code
@@ -23,12 +24,16 @@ namespace Picqer\Financials\Exact;
  * @property string $PostboxSender The postbox from where the message is sent
  * @property int $ReportingPeriod Reporting period
  * @property int $ReportingYear Reporting year
- * @property bool $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer
+ * @property bool $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer. This option overrules SendInvoiceToCustomerPostbox.
+ * @property string $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  * @property bool $SendInvoiceToCustomerPostbox Set to True if a postbox message containing the invoice should be sent to the invoice customer
- * @property bool $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Paper, Email, Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox.
+ * @property bool $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Document only, Email or Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox.
  */
 class PrintedSalesInvoice extends Model
 {
+    use Query\Findable;
+    use Persistance\Storable;
+
     protected $primaryKey = 'InvoiceID';
 
     protected $fillable = [
@@ -49,11 +54,12 @@ class PrintedSalesInvoice extends Model
         'ReportingPeriod',
         'ReportingYear',
         'SendEmailToCustomer',
+        'SenderEmailAddress',
         'SendInvoiceToCustomerPostbox',
         'SendOutputBasedOnAccount',
     ];
 
-    /**
+     /**
      * @return $this
      */
     public function save()
@@ -67,6 +73,6 @@ class PrintedSalesInvoice extends Model
     {
         return $this->connection()->post($this->url, $this->json(0, true));
     }
-
+    
     protected $url = 'salesinvoice/PrintedSalesInvoices';
 }
