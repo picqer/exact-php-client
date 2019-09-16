@@ -18,7 +18,7 @@ class StockPosition extends Model
     use Query\Findable;
     use Persistance\Storable;
 
-     /**
+    /**
      * The fillable properties for the StockPosition model.
      *
      * @var string[]

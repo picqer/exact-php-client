@@ -144,7 +144,7 @@ class SalesOrder extends Model
         'YourRef',
     ];
 
-     /**
+    /**
      * @param array $array
      */
     public function addItem(array $array)

@@ -127,6 +127,5 @@ class SalesEntry extends Model
         $this->attributes['SalesEntryLines'][] = $array;
     }
 
-
     protected $url = 'salesentry/SalesEntries';
 }
