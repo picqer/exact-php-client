@@ -56,6 +56,6 @@ class PrintedSalesOrder extends Model
     {
         return $this->connection()->post($this->url, $this->json(0, true));
     }
-    
+
     protected $url = 'salesorder/PrintedSalesOrders';
 }

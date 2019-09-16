@@ -118,6 +118,6 @@ class PurchaseEntry extends Model
         }
         $this->attributes['PurchaseEntryLines'][] = $array;
     }
-    
+
     protected $url = 'purchaseentry/PurchaseEntries';
 }

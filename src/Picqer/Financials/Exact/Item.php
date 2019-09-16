@@ -218,7 +218,7 @@ class Item extends Model
     ];
 
     protected $url = 'logistics/Items';
-    
+
     /**
      * @return string
      */

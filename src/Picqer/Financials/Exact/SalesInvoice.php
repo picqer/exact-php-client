@@ -151,7 +151,7 @@ class SalesInvoice extends Model
     ];
 
     protected $url = 'salesinvoice/SalesInvoices';
-    
+
     /**
      * Updates the SalesInvoiceLines collection on a SalesInvoice if it's been detected as a deferred collection.
      * Fetches results and stores them on this object.

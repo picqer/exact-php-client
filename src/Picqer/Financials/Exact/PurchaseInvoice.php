@@ -67,7 +67,7 @@ class PurchaseInvoice extends Model
     ];
 
     protected $url = 'purchase/PurchaseInvoices';
-    
+
     /**
      * Updates the PurchaseInvoiceLines collection on a PurchaseInvoice if it's been detected as a deferred collection.
      * Fetches results and stores them on this object.

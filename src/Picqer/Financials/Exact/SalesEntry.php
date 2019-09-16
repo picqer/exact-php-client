@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SalesEntrie.
+ * Class SalesEntry.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesEntrySalesEntries
  *
@@ -126,6 +126,7 @@ class SalesEntry extends Model
         }
         $this->attributes['SalesEntryLines'][] = $array;
     }
-    
+
+
     protected $url = 'salesentry/SalesEntries';
 }

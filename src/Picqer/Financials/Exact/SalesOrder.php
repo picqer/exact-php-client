@@ -157,6 +157,6 @@ class SalesOrder extends Model
         }
         $this->attributes['SalesOrderLines'][] = $array;
     }
-    
+
     protected $url = 'salesorder/SalesOrders';
 }
