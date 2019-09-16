@@ -18,11 +18,11 @@ namespace Picqer\Financials\Exact;
  * @property string $ChamberOfCommerceEstablishment Chamber of commerce establishment
  * @property string $ChamberOfCommerceNumber Chamber of commerce number
  * @property string $City City
- * @property exact.web.api.models.hrm.divisionclass $Class_01 First division classification. User should have access rights to view division classifications.
- * @property exact.web.api.models.hrm.divisionclass $Class_02 Second division classification. User should have access rights to view division classifications.
- * @property exact.web.api.models.hrm.divisionclass $Class_03 Third division classification. User should have access rights to view division classifications.
- * @property exact.web.api.models.hrm.divisionclass $Class_04 Fourth division classification. User should have access rights to view division classifications.
- * @property exact.web.api.models.hrm.divisionclass $Class_05 Fifth division classification. User should have access rights to view division classifications.
+ * @property DivisionClass $Class_01 First division classification. User should have access rights to view division classifications.
+ * @property DivisionClass $Class_02 Second division classification. User should have access rights to view division classifications.
+ * @property DivisionClass $Class_03 Third division classification. User should have access rights to view division classifications.
+ * @property DivisionClass $Class_04 Fourth division classification. User should have access rights to view division classifications.
+ * @property DivisionClass $Class_05 Fifth division classification. User should have access rights to view division classifications.
  * @property string $CompanySizeCode Company Size Code
  * @property string $CompanySizeDescription Company Size Description
  * @property string $Country Country of the division. Is used for determination of legislation

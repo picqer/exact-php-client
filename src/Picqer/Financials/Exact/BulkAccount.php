@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * @inheritDoc
+ *  {@inheritDoc}
  */
 class BulkAccount extends Account
 {

@@ -10,7 +10,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property int $Backflush Indicates if this is a backflush step
- * @property exact.web.api.models.manufacturing.materialplancalculator $Calculator The calculator associated with this material plan
+ * @property $Calculator The calculator associated with this material plan
  * @property int $CalculatorType Calculator type
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -44,7 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Status Line status
  * @property string $StatusDescription Description of Status
  * @property float $Stock Number of items in stock
- * @property itemwarehousestoragelocations $StockLocations Collection of Manufacturing stock locations
+ * @property ItemWarehouseStorageLocation $StockLocations Collection of Manufacturing stock locations
  * @property string $SubShopOrder ID of the shop order linked to this material
  * @property int $SubShopOrderNumber Number of the shop order linked to this material
  * @property int $Type Type

@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * @inheritDoc
+ *  {@inheritDoc}
  */
 class BulkDocumentAttachment extends DocumentAttachment
 {
