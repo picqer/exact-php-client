@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- *  {@inheritDoc}
+ *  {@inheritdoc}
  */
 class BulkSalesInvoice extends SalesInvoice
 {

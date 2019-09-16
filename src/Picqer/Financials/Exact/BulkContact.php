@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- *  {@inheritDoc}
+ *  {@inheritdoc}
  */
 class BulkContact extends Contact
 {
