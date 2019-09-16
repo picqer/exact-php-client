@@ -7,9 +7,9 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLTransactionSources
  *
- * @property int $ID 
- * @property string $Description 
- * @property string $DescriptionSuffix 
+ * @property int $ID
+ * @property string $Description
+ * @property string $DescriptionSuffix
  */
 class GLTransactionSource extends Model
 {

@@ -17,8 +17,8 @@ namespace Picqer\Financials\Exact;
  * @property int $PreviousYear Previous year
  * @property int $PreviousYearPeriod Period in previous year
  * @property float $ResultCurrentPeriod Results of current period
- * @property float $ResultCurrentYear 
- * @property float $ResultPreviousYear 
+ * @property float $ResultCurrentYear
+ * @property float $ResultPreviousYear
  * @property float $ResultPreviousYearPeriod Results of period in previous year
  * @property float $RevenueCurrentPeriod Revenue in current period
  * @property float $RevenueCurrentYear Revenue in current year

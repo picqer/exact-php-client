@@ -38,7 +38,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PictureName File name of picture
  * @property string $PictureThumbnailUrl Url where thumbnail picture can be retrieved
  * @property string $PictureUrl Url where picture can be retrieved
- * @property float $ProjectedStock 
+ * @property float $ProjectedStock
  * @property int $PurchaseLeadDays Number of days before purchase arrives
  * @property float $QuantityToBeConsumed Quantity to be consumed
  * @property float $QuantityToBeDelivered Quantity to be delivered

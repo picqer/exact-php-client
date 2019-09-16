@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account The account for this project
- * @property string $AccountName 
+ * @property string $AccountName
  * @property string $Code Code of project
  * @property string $Description Description of the project
  * @property int $Type Reference to ProjectTypes

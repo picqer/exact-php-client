@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentTypeFolders
  *
- * @property string $ID 
+ * @property string $ID
  * @property string $Created Date created
  * @property string $Creator User id of creator
  * @property int $Division Division code

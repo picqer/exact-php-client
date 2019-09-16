@@ -39,7 +39,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentCondition The payment condition used for due date and discount calculation
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
- * @property int $ProcessNumber 
+ * @property int $ProcessNumber
  * @property float $Rate Foreign currency rate
  * @property int $ReportingPeriod The period of the transaction lines. The period should exist in the period date table
  * @property int $ReportingYear The financial year to which the entry belongs. The financial year should exist in the period date table
