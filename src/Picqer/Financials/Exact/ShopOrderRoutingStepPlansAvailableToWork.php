@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ShopOrderRoutingStepPlansAvailableToWork
+ * Class ShopOrderRoutingStepPlansAvailableToWork.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadManufacturingShopOrderRoutingStepPlansAvailableToWork
  *

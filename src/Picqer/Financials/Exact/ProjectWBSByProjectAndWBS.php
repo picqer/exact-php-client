@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ProjectWBSByProjectAndWBS
+ * Class ProjectWBSByProjectAndWBS.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectProjectWBSByProjectAndWBS
  *

@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class StartedTimedTimeTransaction
+ * Class StartedTimedTimeTransaction.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadManufacturingStartedTimedTimeTransactions
  *

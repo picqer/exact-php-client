@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ReceivablesListByAccountAndAgeGroup
+ * Class ReceivablesListByAccountAndAgeGroup.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReceivablesListByAccountAndAgeGroup
  *

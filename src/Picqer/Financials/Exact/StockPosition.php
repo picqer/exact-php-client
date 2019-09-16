@@ -4,7 +4,7 @@ namespace Picqer\Financials\Exact;
 
 /**
  * Entity holding stock position details.
- * Class StockPosition
+ * Class StockPosition.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadLogisticsStockPosition
  *
