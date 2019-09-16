@@ -58,7 +58,7 @@ class PrintedSalesInvoice extends Model
         'SendOutputBasedOnAccount',
     ];
 
-     /**
+    /**
      * @return $this
      */
     public function save()

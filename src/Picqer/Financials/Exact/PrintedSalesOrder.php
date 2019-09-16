@@ -42,7 +42,7 @@ class PrintedSalesOrder extends Model
         'SenderEmailAddress',
     ];
 
-     /**
+    /**
      * @return $this
      */
     public function save()

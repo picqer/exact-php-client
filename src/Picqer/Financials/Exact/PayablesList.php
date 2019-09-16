@@ -14,11 +14,11 @@ namespace Picqer\Financials\Exact;
  * @property float $Amount Amount
  * @property float $AmountInTransit Amount in transit
  * @property int $ApprovalStatus Approval status:
-						null - Invoice was entered before approval functionality was activated (treated as Approved for payments)
-						1 - N/A (used for non-electronic payment methods)
-						2 - Awaiting review
-						3 - Awaiting approval
-						4 - Approved
+ *						null - Invoice was entered before approval functionality was activated (treated as Approved for payments)
+ *						1 - N/A (used for non-electronic payment methods)
+ *						2 - Awaiting review
+ *						3 - Awaiting approval
+ *						4 - Approved
  * @property string $CurrencyCode Code of Currency
  * @property string $Description Description
  * @property string $DueDate Date the invoice is due (This due date is not the discount due date)

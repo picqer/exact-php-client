@@ -6,7 +6,6 @@ namespace Picqer\Financials\Exact;
  * Class OpportunityDocumentsCount.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMOpportunityDocumentsCount
- *
  */
 class OpportunityDocumentsCount extends Model
 {

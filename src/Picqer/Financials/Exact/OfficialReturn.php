@@ -23,14 +23,13 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property int $Period Financial period (for annual returns = 0)
  * @property string $PresentationData Registration data of the presenting proof document, JSON serialized dictionary
-
-Spanish legislation Keys:
-registrationEntryNumberRegistration entry number
-safeCodeVerificationTax authorities CSV
-vatPresenterVAT number of the presenter
-surnameNameCompanyNameName of the presenter
-capacityOfCOLABORADOR
-receiptNumberReceipt number
+ * Spanish legislation Keys:
+ * registrationEntryNumberRegistration entry number
+ * safeCodeVerificationTax authorities CSV
+ * vatPresenterVAT number of the presenter
+ * surnameNameCompanyNameName of the presenter
+ * capacityOfCOLABORADOR
+ * receiptNumberReceipt number
  * @property string $PresentationDate Presentation date of the official return to the tax authorities
  * @property binary $PresentationFile For performance reasons presentation attachment is Write-Only.
  * @property string $PresentationFileName File name of presentation attachment.
