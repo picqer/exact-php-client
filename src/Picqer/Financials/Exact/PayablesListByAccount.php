@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class PayablesListByAccount
+ * Class PayablesListByAccount.
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialPayablesListByAccount
  *
  * @property int64 $HID Primary key, human readable ID

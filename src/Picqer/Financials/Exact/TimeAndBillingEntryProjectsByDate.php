@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class TimeAndBillingEntryProjectsByDate
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingEntryProjectsByDate
  *
  * @property string $ProjectId Primary key

@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Receivable
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowReceivables
  *
  * @property string $ID Identifier of the receivable.

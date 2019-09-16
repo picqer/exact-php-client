@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SubscriptionReasonCode
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionReasonCodes
  *
  * @property string $ID Primary key

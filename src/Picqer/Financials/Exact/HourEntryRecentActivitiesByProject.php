@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class HourEntryRecentActivitiesByProject
+ * Class HourEntryRecentActivitiesByProject.
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHourEntryRecentActivitiesByProject
  *
  * @property string $ID Primary key

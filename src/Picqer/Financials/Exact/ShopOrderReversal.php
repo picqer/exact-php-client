@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ShopOrderReversal
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderReversals
  *
  * @property string $ReversalStockTransactionId ID of stock transaction related to this ShopOrderReversal

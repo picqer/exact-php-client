@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ShopOrderReceipt
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderReceipts
  *
  * @property string $StockTransactionId ID of stock transaction of this ShopOrderReceipt

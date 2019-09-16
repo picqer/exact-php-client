@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProcessWarehouseTransfer
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryProcessWarehouseTransfer
  *
  * @property string $TransferID Primary key

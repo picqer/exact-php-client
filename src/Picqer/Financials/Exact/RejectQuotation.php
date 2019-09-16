@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class RejectQuotation
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMRejectQuotation
  *
  * @property string $QuotationID Identifier of the quotation.

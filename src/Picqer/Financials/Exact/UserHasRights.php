@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class UserHasRights
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=UsersUserHasRights
  *
  */

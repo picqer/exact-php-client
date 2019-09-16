@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class JournalStatusByFinancialPeriod
+ * Class JournalStatusByFinancialPeriod.
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialJournalStatusByFinancialPeriod
  *
  * @property string $Journal Reference to Journal

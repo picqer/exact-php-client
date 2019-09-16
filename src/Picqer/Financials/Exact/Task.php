@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Task
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesTasks
  *
  * @property string $ID The Primary key

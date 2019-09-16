@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class UserRole
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=UsersUserRoles
  *
  * @property string $ID Primary key

@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PlannedSalesReturnLine
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderPlannedSalesReturnLines
  *
  * @property string $ID Primary key

@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Return
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReturns
  *
  * @property string $DocumentID Primary key, document ID

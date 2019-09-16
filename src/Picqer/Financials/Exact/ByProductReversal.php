@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ByProductReversal
+ * Class ByProductReversal.
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingByProductReversals
  *
  * @property string $ReversalStockTransactionId ID of stock transaction related to this ByProductReversal

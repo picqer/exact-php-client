@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class DepreciationMethod
+ * Class DepreciationMethod.
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AssetsDepreciationMethods
  *
  * @property string $ID Primary key

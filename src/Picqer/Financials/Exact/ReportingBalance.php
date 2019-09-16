@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ReportingBalance
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialReportingBalance
  *
  * @property int64 $ID Record ID

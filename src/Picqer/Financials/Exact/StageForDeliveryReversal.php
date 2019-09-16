@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class StageForDeliveryReversal
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingStageForDeliveryReversals
  *
  * @property string $Id ID of this StageForDeliveryReversal

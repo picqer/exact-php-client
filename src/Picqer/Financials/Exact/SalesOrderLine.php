@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SalesOrderLine
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderSalesOrderLines
  *
  * @property string $ID Primary key

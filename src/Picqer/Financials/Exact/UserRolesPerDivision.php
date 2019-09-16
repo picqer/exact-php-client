@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class UserRolesPerDivision
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=UsersUserRolesPerDivision
  *
  * @property string $ID Primary key

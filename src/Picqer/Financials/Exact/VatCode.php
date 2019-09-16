@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class VATCode
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=VATVATCodes
  *
  * @property string $ID Primary key

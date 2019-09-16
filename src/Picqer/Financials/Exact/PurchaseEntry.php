@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PurchaseEntrie
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseEntryPurchaseEntries
  *
  * @property string $EntryID Primary key

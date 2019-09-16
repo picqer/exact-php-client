@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SalesEntrie
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesEntrySalesEntries
  *
  * @property string $EntryID The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved

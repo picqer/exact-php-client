@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProjectBudgetType
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjectBudgetTypes
  *
  * @property int $ID Primary key

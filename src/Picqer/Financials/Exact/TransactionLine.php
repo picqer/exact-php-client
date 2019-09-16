@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class TransactionLine
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionTransactionLines
  *
  * @property string $ID Primary key

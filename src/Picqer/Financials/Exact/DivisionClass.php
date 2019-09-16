@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class DivisionClass.
+ * Class DivisionClass..
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMDivisionClasses
  *
@@ -22,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property int $SequenceNr Related classification sequence number
  */
-class DivisionClass extends Model
+class DivisionClass extends. Model
 {
     use Query\Findable;
     use Persistance\Storable;

@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class BulkGoodsDeliverie
+ * Class BulkGoodsDeliverie.
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=BulkSalesOrderGoodsDeliveries
  *
  * @property string $EntryID Primary key

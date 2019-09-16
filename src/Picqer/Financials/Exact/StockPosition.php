@@ -6,7 +6,7 @@ namespace Picqer\Financials\Exact;
  * Entity holding stock position details.
  * Class StockPosition
  *
- * @package Picqer\Financials\Exact
+ *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadLogisticsStockPosition
  *
  * @property float $InStock Number of items in stock
