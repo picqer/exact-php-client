@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AddressState.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAddressStates
  *
  * @property string $ID Primary key

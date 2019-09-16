@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProjectRestrictionRebilling
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjectRestrictionRebillings
  *
  * @property string $ID Primary key

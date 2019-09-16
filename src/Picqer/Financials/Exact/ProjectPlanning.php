@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProjectPlanning
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjectPlanning
  *
  * @property string $ID Primary key

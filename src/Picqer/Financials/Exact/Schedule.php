@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Schedule
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMSchedules
  *
  * @property string $ID Primary key

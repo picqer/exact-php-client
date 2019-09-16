@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Item.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItems
  *
  * @property string $ID Primary key

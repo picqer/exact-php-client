@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AccountantInfo.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemAccountantInfo
  *
  * @property string $ID The account ID of the accountant.

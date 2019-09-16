@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class User
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=UsersUsers
  *
  * @property string $UserID Primary key

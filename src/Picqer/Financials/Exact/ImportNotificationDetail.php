@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ImportNotificationDetail.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowImportNotificationDetails
  *
  * @property string $ID Primary key

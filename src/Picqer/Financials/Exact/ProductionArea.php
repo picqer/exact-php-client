@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProductionArea
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingProductionAreas
  *
  * @property string $ID Primary key

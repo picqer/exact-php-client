@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ReceivablesListByAccount
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialReceivablesListByAccount
  *
  * @property int64 $HID Primary key, human readable ID

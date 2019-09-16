@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Layout.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceLayouts
  *
  * @property string $ID Primary key

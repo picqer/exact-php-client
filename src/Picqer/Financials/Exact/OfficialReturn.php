@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class OfficialReturn.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialOfficialReturns
  *
  * @property string $ID Primary key

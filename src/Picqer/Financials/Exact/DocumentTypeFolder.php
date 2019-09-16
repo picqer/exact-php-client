@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class DocumentTypeFolder.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentTypeFolders
  *
  * @property string $ID 

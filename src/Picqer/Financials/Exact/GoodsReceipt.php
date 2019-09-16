@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class GoodsReceipt.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderGoodsReceipts
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class HourTypesByProjectAndDate.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHourTypesByProjectAndDate
  *
  * @property string $ItemId Primary key

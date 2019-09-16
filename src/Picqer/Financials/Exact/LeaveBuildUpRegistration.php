@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class LeaveBuildUpRegistration.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMLeaveBuildUpRegistrations
  *
  * @property string $ID Primary key

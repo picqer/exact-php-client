@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class FinancialPeriod.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialFinancialPeriods
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class GetMostRecentlyUsedDivision.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemGetMostRecentlyUsedDivisions
  *
  * @property int $Code Primary key

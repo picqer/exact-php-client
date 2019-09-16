@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ShopOrderMaterialPlanDetail
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingShopOrderMaterialPlanDetails
  *
  * @property string $ID Primary key

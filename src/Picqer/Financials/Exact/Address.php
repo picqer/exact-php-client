@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Address.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAddresses
  *
  * @property string $ID Primary key

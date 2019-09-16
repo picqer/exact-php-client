@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ByProductReceipt.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingByProductReceipts
  *
  * @property string $StockTransactionId ID of stock transaction related to this by-product finish

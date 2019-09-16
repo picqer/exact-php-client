@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Journal.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialJournals
  *
  * @property string $ID Primary Key

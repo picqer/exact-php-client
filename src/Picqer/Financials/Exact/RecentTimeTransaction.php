@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class RecentTimeTransaction
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadManufacturingRecentTimeTransactions
  *
  * @property string $ID Primary key

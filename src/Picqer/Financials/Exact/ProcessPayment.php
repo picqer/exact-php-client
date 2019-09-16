@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProcessPayment
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowProcessPayments
  *
  * @property string $ID Primary key.

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class MailMessagesSent.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=MailboxMailMessagesSent
  *
  * @property string $ID The primary key of the mail message.

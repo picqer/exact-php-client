@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class EmploymentContractFlexPhase.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentContractFlexPhases
  *
  * @property int $ID Primary key

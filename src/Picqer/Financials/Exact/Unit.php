@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Unit
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsUnits
  *
  * @property string $ID Primary key

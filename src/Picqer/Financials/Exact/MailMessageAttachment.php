@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class MailMessageAttachment.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=MailboxMailMessageAttachments
  *
  * @property string $ID Primary key

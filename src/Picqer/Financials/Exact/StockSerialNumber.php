@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class StockSerialNumber
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStockSerialNumbers
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Payment.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowPayments
  *
  * @property string $ID Identifier of the payment.

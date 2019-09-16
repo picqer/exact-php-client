@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class OutstandingInvoicesOverview.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialOutstandingInvoicesOverview
  *
  * @property string $CurrencyCode Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SubscriptionRestrictionItem
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionRestrictionItems
  *
  * @property string $ID Primary key

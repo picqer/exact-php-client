@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Subscription
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptions
  *
  * @property string $EntryID Primary key

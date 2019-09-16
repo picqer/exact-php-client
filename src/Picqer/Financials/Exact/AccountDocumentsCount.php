@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AccountDocumentsCount.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMAccountDocumentsCount
  *
  */

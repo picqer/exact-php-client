@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class BatchNumber.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryBatchNumbers
  *
  * @property string $ID Primary key

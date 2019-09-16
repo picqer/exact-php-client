@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Division.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMDivisions
  *
  * @property int $Code Primary key

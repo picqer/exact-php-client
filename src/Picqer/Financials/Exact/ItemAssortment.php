@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ItemAssortment.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItemAssortment
  *
  * @property string $ID ID of ItemAssortment

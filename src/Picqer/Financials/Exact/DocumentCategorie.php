@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class DocumentCategorie.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentCategories
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PurchaseInvoice
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchasePurchaseInvoices
  *
  * @property string $ID A guid that is the unique identifier of the purchase invoice.

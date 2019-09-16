@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ManufacturingSetting.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingManufacturingSettings
  *
  * @property int $Division This division.

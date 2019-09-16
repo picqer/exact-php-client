@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class EmploymentOrganization.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentOrganizations
  *
  * @property string $ID Primary key

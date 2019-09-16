@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class CostEntryRecentProject.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectCostEntryRecentProjects
  *
  * @property string $ProjectId Primary key

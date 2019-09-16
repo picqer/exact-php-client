@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class CostTypesByProjectAndDate.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectCostTypesByProjectAndDate
  *
  * @property string $ItemId Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Complaint.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesComplaints
  *
  * @property string $ID The Primary key

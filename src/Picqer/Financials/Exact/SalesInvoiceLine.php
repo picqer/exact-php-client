@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SalesInvoiceLine
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceSalesInvoiceLines
  *
  * @property string $ID Primary key

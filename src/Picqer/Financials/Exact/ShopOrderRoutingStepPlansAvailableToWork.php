@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ShopOrderRoutingStepPlansAvailableToWork
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadManufacturingShopOrderRoutingStepPlansAvailableToWork
  *
  * @property string $RoutingStep Routing Step ID

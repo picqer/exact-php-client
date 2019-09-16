@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class DefaultAddressForAccount.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMDefaultAddressForAccount
  *
  * @property string $ID Primary key

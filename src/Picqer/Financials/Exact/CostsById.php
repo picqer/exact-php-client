@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class CostsById.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectCostsById
  *
  * @property int $Id Primary key

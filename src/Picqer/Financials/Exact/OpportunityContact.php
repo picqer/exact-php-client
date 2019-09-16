@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class OpportunityContact.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMOpportunityContacts
  *
  * @property string $ID Primary key

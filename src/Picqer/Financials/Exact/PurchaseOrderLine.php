@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PurchaseOrderLine
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderPurchaseOrderLines
  *
  * @property string $ID Primary key

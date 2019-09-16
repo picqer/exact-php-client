@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class DepreciationMethod.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AssetsDepreciationMethods
  *
  * @property string $ID Primary key

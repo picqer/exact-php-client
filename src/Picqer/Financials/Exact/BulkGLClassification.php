@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class BulkGLClassification.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=BulkFinancialGLClassifications
  *
  * @property string $ID Primary key

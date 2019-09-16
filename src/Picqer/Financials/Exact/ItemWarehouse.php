@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ItemWarehouse.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehouses
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProjectRestrictionEmployee
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjectRestrictionEmployees
  *
  * @property string $ID Primary key

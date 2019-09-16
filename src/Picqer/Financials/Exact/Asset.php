@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Asset.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AssetsAssets
  *
  * @property string $ID Primary key

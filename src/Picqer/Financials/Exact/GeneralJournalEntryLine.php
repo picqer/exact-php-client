@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class GeneralJournalEntryLine.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=GeneralJournalEntryGeneralJournalEntryLines
  *
  * @property string $ID Primary key

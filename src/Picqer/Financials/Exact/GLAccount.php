@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class GLAccount.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLAccounts
  *
  * @property string $ID Primary Key

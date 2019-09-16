@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class WarehouseTransfer
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryWarehouseTransfers
  *
  * @property string $TransferID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class CommunicationNote.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ActivitiesCommunicationNotes
  *
  * @property string $ID The Primary key

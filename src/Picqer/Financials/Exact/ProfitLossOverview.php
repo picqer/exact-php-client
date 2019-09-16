@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProfitLossOverview
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialProfitLossOverview
  *
  * @property int $CurrentYear Primary key, Current year

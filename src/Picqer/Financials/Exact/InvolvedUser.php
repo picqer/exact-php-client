@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class InvolvedUser.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyInvolvedUsers
  *
  * @property string $ID Primary key

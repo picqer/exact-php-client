@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ItemVersion.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItemVersions
  *
  * @property string $ID Primary key

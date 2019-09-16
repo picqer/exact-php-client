@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SalesOrderID
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceSalesOrderID
  *
  * @property string $ID 

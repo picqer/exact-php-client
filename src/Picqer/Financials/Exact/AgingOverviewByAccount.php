@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AgingOverviewByAccount.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialAgingOverviewByAccount
  *
  * @property int $AgeGroup Primary key

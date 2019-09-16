@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Costunit.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostunits
  *
  * @property string $ID Primary key

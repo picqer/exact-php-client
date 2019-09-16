@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AcceptQuotation.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAcceptQuotation
  *
  * @property string $QuotationID Identifier of the quotation.

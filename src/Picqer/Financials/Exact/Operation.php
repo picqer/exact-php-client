@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Operation.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingOperations
  *
  * @property string $ID Primary key

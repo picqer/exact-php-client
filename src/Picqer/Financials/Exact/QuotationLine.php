@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class QuotationLine
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMQuotationLines
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PreferredMailbox
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadMailboxPreferredMailbox
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class JournalStatusList.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialJournalStatusList
  *
  * @property string $Journal Reference to Journal

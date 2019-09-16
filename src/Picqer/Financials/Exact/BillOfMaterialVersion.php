@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class BillOfMaterialVersion.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingBillOfMaterialVersions
  *
  * @property string $ID Primary key

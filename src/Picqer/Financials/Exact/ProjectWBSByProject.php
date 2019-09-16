@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProjectWBSByProject
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectProjectWBSByProject
  *
  * @property string $ID Primary key

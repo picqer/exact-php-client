@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class RecentCostsByNumberOfWeeks
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectRecentCostsByNumberOfWeeks
  *
  * @property int $Id Primary key

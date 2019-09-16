@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class MaterialIssue.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingMaterialIssues
  *
  * @property string $StockTransactionId ID of stock transaction related to this material issue

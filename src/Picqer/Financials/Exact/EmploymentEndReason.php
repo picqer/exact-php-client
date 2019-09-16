@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class EmploymentEndReason.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentEndReasons
  *
  * @property int $ID Primary key

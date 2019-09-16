@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ReviewQuotation
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMReviewQuotation
  *
  * @property string $QuotationID Identifier of the quotation.

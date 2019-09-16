@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class HourCostType.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHourCostTypes
  *
  * @property string $ItemId Primary key

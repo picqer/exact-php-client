@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class CashEntryLine.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionCashEntryLines
  *
  * @property string $ID Primary key

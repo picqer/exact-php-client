@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class StorageLocation
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStorageLocations
  *
  * @property string $ID Primary key

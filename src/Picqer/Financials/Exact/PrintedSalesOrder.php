@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PrintedSalesOrder
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderPrintedSalesOrders
  *
  * @property string $OrderId Primary key, Reference to OrderID of SalesOrder

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class StageForDeliveryReceipt
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingStageForDeliveryReceipts
  *
  * @property string $Id ID of staged for delivery entry

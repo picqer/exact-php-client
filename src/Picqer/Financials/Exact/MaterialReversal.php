@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class MaterialReversal.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingMaterialReversals
  *
  * @property string $ReversalStockTransactionId ID of stock transaction related to this material issue

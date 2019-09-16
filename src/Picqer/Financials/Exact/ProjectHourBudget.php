@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProjectHourBudget
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectProjectHourBudgets
  *
  * @property string $ID Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class BankAccount.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMBankAccounts
  *
  * @property string $ID Primary key

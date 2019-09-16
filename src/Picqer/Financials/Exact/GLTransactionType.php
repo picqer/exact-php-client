@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class GLTransactionType.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLTransactionTypes
  *
  * @property int $ID 

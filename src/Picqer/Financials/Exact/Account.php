@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Account.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAccounts
  *
  * @property string $ID Primary key

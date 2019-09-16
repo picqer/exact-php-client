@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class HostingOpportunity.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMHostingOpportunities
  *
  * @property string $ID Primary key

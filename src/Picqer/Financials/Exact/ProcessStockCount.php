@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ProcessStockCount
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryProcessStockCount
  *
  * @property string $StockCountID Primary key

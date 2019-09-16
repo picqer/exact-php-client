@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class ReasonCode
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMReasonCodes
  *
  * @property string $ID Primary key.

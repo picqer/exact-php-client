@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Currency.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=GeneralCurrencies
  *
  * @property string $Code Primary key

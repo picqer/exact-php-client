@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class WebhookSubscription
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=WebhooksWebhookSubscriptions
  *
  * @property string $ID Primary key

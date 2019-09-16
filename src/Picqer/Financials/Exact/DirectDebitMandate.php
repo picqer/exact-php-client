@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class DirectDebitMandate.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowDirectDebitMandates
  *
  * @property string $ID Primary key

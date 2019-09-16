@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class RevenueList
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialRevenueList
  *
  * @property int $Period Reporting period

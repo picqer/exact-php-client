@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SubOrderReversal
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingSubOrderReversals
  *
  * @property string $MaterialReversalStockTransactionId MaterialReversal.StockTransactionId related to this SubOrderReversal's MaterialReversal

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AvailableFeature.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemSystemAvailableFeatures
  *
  * @property int $ID The ID of the feature.

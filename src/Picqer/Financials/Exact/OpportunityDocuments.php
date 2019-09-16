@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class OpportunityDocuments.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMOpportunityDocuments
  *
  * @property string $ID Primary key

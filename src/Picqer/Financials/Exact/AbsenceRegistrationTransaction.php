@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AbsenceRegistrationTransaction.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMAbsenceRegistrationTransactions
  *
  * @property string $ID Primary key

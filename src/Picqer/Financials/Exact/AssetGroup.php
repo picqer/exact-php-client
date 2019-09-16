@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AssetGroup.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AssetsAssetGroups
  *
  * @property string $ID Primary key

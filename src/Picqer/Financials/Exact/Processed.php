@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Processed
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=OpeningBalanceCurrentYearProcessed
  *
  * @property int $Division Division code.

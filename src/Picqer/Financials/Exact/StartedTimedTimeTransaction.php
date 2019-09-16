@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class StartedTimedTimeTransaction
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadManufacturingStartedTimedTimeTransactions
  *
  * @property string $ID Primary key

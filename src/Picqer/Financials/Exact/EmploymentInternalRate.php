@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class EmploymentInternalRate.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectEmploymentInternalRates
  *
  * @property string $ID Primary key

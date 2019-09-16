@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Costcenter.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostcenters
  *
  * @property string $ID Primary key

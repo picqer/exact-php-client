@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class DocumentsAttachment.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMDocumentsAttachments
  *
  * @property string $ID Primary key

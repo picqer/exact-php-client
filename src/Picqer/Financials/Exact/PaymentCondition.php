@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PaymentCondition.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowPaymentConditions
  *
  * @property string $ID Primary key

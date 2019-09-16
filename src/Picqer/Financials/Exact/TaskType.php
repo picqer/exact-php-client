@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class TaskType
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancyTaskTypes
  *
  * @property string $ID Primary key

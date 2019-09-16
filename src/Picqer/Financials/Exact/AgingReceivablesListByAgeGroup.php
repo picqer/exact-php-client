@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class AgingReceivablesListByAgeGroup.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialAgingReceivablesListByAgeGroup
  *
  * @property string $AccountId Primary key

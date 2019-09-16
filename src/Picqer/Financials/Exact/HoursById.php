@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class HoursById.
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHoursById
  *
  * @property int $Id Primary key

@@ -5,7 +5,6 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SolutionLink
  *
- *  
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=AccountancySolutionLinks
  *
  * @property string $ID Primary key
