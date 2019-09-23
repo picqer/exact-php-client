@@ -40,5 +40,5 @@ class BudgetScenario extends Model
         'ToYear',
     ];
 
-    protected $url = 'budget/BudgetScenarios';
+    protected $url = 'beta/{division}/budget/BudgetScenarios';
 }
