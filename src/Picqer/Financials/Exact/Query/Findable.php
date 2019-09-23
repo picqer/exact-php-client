@@ -148,6 +148,10 @@ trait Findable
             $result = [$result];
         }
 
+        foreach($result as $row){
+            yield new self($this->connection(), $row);
+        }
+
         while ($this->connection()->nextUrl !== null) {
             $nextResult = $this->connection()->get($this->connection()->nextUrl);
 
@@ -156,13 +160,12 @@ trait Findable
                 $nextResult = [$nextResult];
             }
 
-            $result = array_merge($result, $nextResult);
-        }
-        $collection = [];
-        foreach ($result as $r) {
-            $collection[] = new self($this->connection(), $r);
+            foreach($nextResult as $row){
+                yield new self($this->connection(), $row);
+            }
         }
 
-        return $collection;
+
+        return;
     }
 }
