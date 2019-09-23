@@ -81,7 +81,7 @@ class Resultset
         $class = $this->class;
 
         foreach ($result as $r) {
-           yield new $class($this->connection, $r);
+            yield new $class($this->connection, $r);
         }
     }
 }

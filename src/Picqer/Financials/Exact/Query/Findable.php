@@ -148,7 +148,7 @@ trait Findable
             $result = [$result];
         }
 
-        foreach($result as $row){
+        foreach ($result as $row) {
             yield new self($this->connection(), $row);
         }
 
@@ -160,12 +160,9 @@ trait Findable
                 $nextResult = [$nextResult];
             }
 
-            foreach($nextResult as $row){
+            foreach ($nextResult as $row) {
                 yield new self($this->connection(), $row);
             }
         }
-
-
-        return;
     }
 }
