@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class AccountDocuments.
+ * Class AccountDocument.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMAccountDocuments
  *
@@ -32,7 +32,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Type The document type
  * @property string $TypeDescription Translated description of the document type. $filter and $orderby are not supported for this property.
  */
-class AccountDocuments extends Model
+class AccountDocument extends Model
 {
     use Query\Findable;
     use Persistance\Storable;

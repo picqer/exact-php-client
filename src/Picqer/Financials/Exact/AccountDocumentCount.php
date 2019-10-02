@@ -3,11 +3,11 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class AccountDocumentsCount.
+ * Class AccountDocumentCount.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMAccountDocumentsCount
  */
-class AccountDocumentsCount extends Model
+class AccountDocumentCount extends Model
 {
     use Query\Findable;
     use Persistance\Storable;

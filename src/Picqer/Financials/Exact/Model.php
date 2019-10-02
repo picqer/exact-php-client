@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Model..
+ * Class Model.
  */
 abstract class Model implements \JsonSerializable
 {

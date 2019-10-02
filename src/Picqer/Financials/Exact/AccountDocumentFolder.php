@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class AccountDocumentFolders.
+ * Class AccountDocumentFolder.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadCRMAccountDocumentFolders
  *
@@ -20,7 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $ParentFolder Document folder parent folder ID
  */
-class AccountDocumentFolders extends Model
+class AccountDocumentFolder extends Model
 {
     use Query\Findable;
     use Persistance\Storable;

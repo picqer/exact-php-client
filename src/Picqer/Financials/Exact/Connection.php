@@ -11,7 +11,7 @@ use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\Psr7\Response;
 
 /**
- * Class Connection..
+ * Class Connection.
  */
 class Connection
 {
