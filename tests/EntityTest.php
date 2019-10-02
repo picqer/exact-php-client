@@ -13,7 +13,6 @@ use Picqer\Financials\Exact\Connection;
  */
 class EntityTest extends TestCase
 {
-
     public function testAbsenceRegistrationEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\AbsenceRegistration::class);

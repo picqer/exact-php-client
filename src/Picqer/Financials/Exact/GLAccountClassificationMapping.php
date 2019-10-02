@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class GLAccountClassificationMapping
+ * Class GLAccountClassificationMapping.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLAccountClassificationMappings
  *
  * @property string $ID Primary key
