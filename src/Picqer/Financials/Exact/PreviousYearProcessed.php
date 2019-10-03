@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class AfterEntry.
+ * Class PreviousYearProcessed.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=OpeningBalanceCurrentYearAfterEntry
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=OpeningBalancePreviousYearProcessed
  *
  * @property int $Division Division code.
  * @property string $GLAccount The balance sheet account.
@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $GLAccountCode The code of the G/L account.
  * @property string $GLAccountDescription The description of the G/L account.
  */
-class AfterEntry extends Model
+class PreviousYearProcessed extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
@@ -32,5 +32,5 @@ class AfterEntry extends Model
         'GLAccountDescription',
     ];
 
-    protected $url = 'openingbalance/CurrentYear/AfterEntry';
+    protected $url = 'openingbalance/PreviousYear/Processed';
 }
