@@ -97,7 +97,7 @@ class SalesEntryLine extends Model
         'Subscription',
         'SubscriptionDescription',
         'TaxSchedule',
-        'To'
+        'To',
         'TrackingNumber',
         'TrackingNumberDescription',
         'Type',
