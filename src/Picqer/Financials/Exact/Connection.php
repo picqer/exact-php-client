@@ -396,8 +396,7 @@ class Connection
 
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
-            if (false === is_array($json))
-            {
+            if (false === is_array($json)) {
                 throw new ApiException('JSON decode failed', 400);
             }
             if (array_key_exists('d', $json)) {
