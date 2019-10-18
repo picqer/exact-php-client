@@ -193,6 +193,8 @@ class Connection
             'Prefer'       => 'return=representation',
         ], $headers);
 
+
+        //TODO fix this when headers are different
         // If access token is not set or token has expired, acquire new token
         if (empty($this->accessToken) || $this->tokenHasExpired()) {
             $this->acquireAccessToken();
