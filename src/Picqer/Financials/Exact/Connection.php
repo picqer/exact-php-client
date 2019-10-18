@@ -187,11 +187,11 @@ class Connection
     private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = [])
     {
         // Add default json headers to the request
-        $headers = array_merge($headers, [
+        $headers = array_merge([
             'Accept'       => 'application/json',
             'Content-Type' => 'application/json',
             'Prefer'       => 'return=representation',
-        ]);
+        ], $headers);
 
         // If access token is not set or token has expired, acquire new token
         if (empty($this->accessToken) || $this->tokenHasExpired()) {
