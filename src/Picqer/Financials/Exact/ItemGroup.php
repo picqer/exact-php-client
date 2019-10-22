@@ -27,6 +27,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Notes
+ * @property int $IsDefault IsDefault
  */
 class ItemGroup extends Model
 {
@@ -54,6 +55,7 @@ class ItemGroup extends Model
         'Modifier',
         'ModifierFullName',
         'Notes',
+        'IsDefault'
     ];
 
     protected $url = 'logistics/ItemGroups';
