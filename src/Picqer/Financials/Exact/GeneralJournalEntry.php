@@ -13,7 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property float $ExchangeRate Exchange rate
  * @property int $FinancialPeriod Financial period
  * @property int $FinancialYear Financial year
- * @property GeneralJournalEntryLines $GeneralJournalEntryLines Collection of lines
+ * @property GeneralJournalEntryLine[] $GeneralJournalEntryLines Collection of lines
  * @property string $JournalCode Code of Journal
  * @property bool $Reversal Indicates that amounts are reversed
  */
