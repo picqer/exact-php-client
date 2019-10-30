@@ -614,7 +614,7 @@ class Connection
     private function parseExceptionForErrorMessages(Exception $e)
     {
         if (! $e instanceof BadResponseException) {
-            throw new ApiException($e->getMessage());
+            throw new ApiException($e->getMessage(), 0, $e);
         }
 
         $response = $e->getResponse();
@@ -631,7 +631,7 @@ class Connection
             $errorMessage = $responseBody;
         }
 
-        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode());
+        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode(), $e);
     }
 
     /**
