@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $GLAccountCode The code of the G/L account.
  * @property string $GLAccountDescription The description of the G/L account.
  */
-class Processed extends Model
+class CurrentYearProcessed extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
