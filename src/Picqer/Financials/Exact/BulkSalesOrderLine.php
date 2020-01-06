@@ -49,6 +49,6 @@ class BulkSalesOrderLine extends SalesOrderLine
         'VATCodeDescription',
         'VATPercentage',
     ];
-    
+
     protected $url = 'bulk/SalesOrder/SalesOrderLines';
 }
