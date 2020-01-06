@@ -98,9 +98,14 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\AddressState::class);
     }
 
-    public function testAfterEntryEntity()
+    public function testCurrentYearAfterEntryEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\AfterEntry::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\CurrentYearAfterEntry::class);
+    }
+
+    public function testPreviousYearAfterEntryEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PreviousYearAfterEntry::class);
     }
 
     public function testAgingOverviewByAccountEntity()
@@ -183,11 +188,6 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialMaterial::class);
     }
 
-    public function testBillOfMaterialMaterialsEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialMaterials::class);
-    }
-
     public function testBillOfMaterialVersionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialVersion::class);
@@ -195,7 +195,7 @@ class EntityTest extends TestCase
 
     public function testBillOfMaterialVersionsEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialVersions::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialVersion::class);
     }
 
     public function testBudgetEntity()
@@ -454,7 +454,7 @@ class EntityTest extends TestCase
 
     public function testDivisionClasseEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClasse::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\DivisionClass::class);
     }
 
     public function testDivisionClassNameEntity()
@@ -728,7 +728,7 @@ class EntityTest extends TestCase
 
     public function testInvoiceSalesOrdersEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\InvoiceSalesOrders::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\InvoiceSalesOrder::class);
     }
 
     public function testInvoiceTermEntity()
@@ -990,9 +990,14 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PrintQuotation::class);
     }
 
-    public function testProcessedEntity()
+    public function testCurrentYearProcessedEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\Processed::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\CurrentYearProcessed::class);
+    }
+
+    public function testPreviousYearProcessedEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PreviousYearProcessed::class);
     }
 
     public function testProcessPaymentEntity()
@@ -1115,9 +1120,9 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\ReasonCode::class);
     }
 
-    public function testReceivableListEntity()
+    public function testReceivablesListEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\ReceivableList::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\ReceivablesList::class);
     }
 
     public function testReceivableEntity()
@@ -1138,11 +1143,6 @@ class EntityTest extends TestCase
     public function testReceivablesListByAgeGroupEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ReceivablesListByAgeGroup::class);
-    }
-
-    public function testReceivablesListEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\ReceivablesList::class);
     }
 
     public function testRecentCostEntity()
@@ -1370,11 +1370,6 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\SubscriptionLine::class);
     }
 
-    public function testSubscriptionLinesEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\SubscriptionLines::class);
-    }
-
     public function testSubscriptionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Subscription::class);
@@ -1397,17 +1392,12 @@ class EntityTest extends TestCase
 
     public function testSubscriptionsEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\Subscriptions::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\Subscription::class);
     }
 
     public function testSubscriptionTypeEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\SubscriptionType::class);
-    }
-
-    public function testSubscriptionTypesEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\SubscriptionTypes::class);
     }
 
     public function testSupplierItemEntity()
@@ -1548,11 +1538,6 @@ class EntityTest extends TestCase
     public function testTransactionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Transaction::class);
-    }
-
-    public function testTransactionsEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\Transactions::class);
     }
 
     public function testUnitEntity()

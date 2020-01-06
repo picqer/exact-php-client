@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property int $Backflush Indicates if this is a backflush step
- * @property $Calculator The calculator associated with this material plan
+ * @property string $Calculator The calculator associated with this material plan
  * @property int $CalculatorType Calculator type
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
