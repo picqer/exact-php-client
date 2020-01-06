@@ -200,6 +200,20 @@ abstract class Model implements \JsonSerializable
     }
 
     /**
+     * Refresh deferred item by clearing and then lazy loading it.
+     *
+     * @param $key
+     *
+     * @return mixed
+     */
+    public function refresh($key)
+    {
+        unset($this->deferred[$key]);
+
+        return $this->__get($key);
+    }
+
+    /**
      * Checks if primaryKey holds a value.
      *
      * @return bool

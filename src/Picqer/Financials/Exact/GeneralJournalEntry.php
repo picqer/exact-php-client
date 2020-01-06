@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property float $ExchangeRate Exchange rate
  * @property int $FinancialPeriod Financial period
  * @property int $FinancialYear Financial year
- * @property GeneralJournalEntryLines $GeneralJournalEntryLines Collection of lines
+ * @property GeneralJournalEntryLine[] $GeneralJournalEntryLines Collection of lines
  * @property string $JournalCode Code of Journal
  * @property string $JournalDescription Description of Journal
  * @property string $Modified Last modified date
