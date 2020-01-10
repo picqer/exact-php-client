@@ -340,12 +340,12 @@ class EntityTest extends TestCase
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Transaction::class);
     }
-
+    
     public function testTransactionLineEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\TransactionLine::class);
     }
-
+    
     public function testUnitsEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Units::class);
