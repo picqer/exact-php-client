@@ -334,10 +334,12 @@ class EntityTest extends TestCase
     public function testSubscriptionTypeEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\SubscriptionType::class);
-    }public function testTaskEntity()
+    }
+    public function testTaskEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Task::class);
-    }public function testTransactionEntity()
+    }
+    public function testTransactionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Transaction::class);
     }
