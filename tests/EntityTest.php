@@ -335,10 +335,7 @@ class EntityTest extends TestCase
     {
         $this->performEntityTest(\Picqer\Financials\Exact\SubscriptionType::class);
     }
-    public function testTaskEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\Task::class);
-    }
+    
     public function testTransactionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Transaction::class);
@@ -632,6 +629,11 @@ class EntityTest extends TestCase
     public function testItemWarehouseStorageLocation()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ItemWarehouseStorageLocation::class);
+    }
+    
+    public function testTaskEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Task::class);
     }
 
     protected function performEntityTest($entityName)
