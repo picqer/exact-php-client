@@ -339,7 +339,6 @@ class EntityTest extends TestCase
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Task::class);
     }
-    
     public function testTransactionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\Transaction::class);
