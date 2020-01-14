@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Picqer\Financials\Exact;
 
 /**
@@ -32,24 +31,25 @@ class MailBox extends Model
     use Persistance\Storable;
 
     protected $fillable = [
-      'ID',
-      'Account',
-      'AccountName',
-      'Created',
-      'Creator',
-      'CreatorFullName',
-      'Description',
-      'ForDivision',
-      'ForDivisionDescription',
-      'Mailbox',
-      'Modified',
-      'Modifier',
-      'ModifierFullName',
-      'Publish',
-      'Type',
-      'ValidFrom',
-      'ValidTo'
+        'ID',
+        'Account',
+        'AccountName',
+        'Created',
+        'Creator',
+        'CreatorFullName',
+        'Description',
+        'ForDivision',
+        'ForDivisionDescription',
+        'Mailbox',
+        'Modified',
+        'Modifier',
+        'ModifierFullName',
+        'Publish',
+        'Type',
+        'ValidFrom',
+        'ValidTo'
     ];
 
     protected $url = 'mailbox/Mailboxes';
+
 }
