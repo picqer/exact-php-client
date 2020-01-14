@@ -51,5 +51,4 @@ class MailBox extends Model
     ];
 
     protected $url = 'mailbox/Mailboxes';
-
 }
