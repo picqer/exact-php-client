@@ -47,9 +47,8 @@ class MailBox extends Model
         'Publish',
         'Type',
         'ValidFrom',
-        'ValidTo'
+        'ValidTo',
     ];
 
     protected $url = 'mailbox/Mailboxes';
-
 }
