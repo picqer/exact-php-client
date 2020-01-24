@@ -153,6 +153,9 @@ class Connection
         return $this->client;
     }
 
+    /**
+     * @param Client $client
+     */
     public function setClient($client)
     {
         $this->client = $client;
@@ -163,6 +166,9 @@ class Connection
         $this->middleWares[] = $middleWare;
     }
 
+    /**
+     * @return Client
+     */
     public function connect()
     {
         // Redirect for authorization if needed (no access token or refresh token given)
