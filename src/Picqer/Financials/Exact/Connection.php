@@ -154,7 +154,7 @@ class Connection
     }
 
     /**
-     * Insert a custom Guzzle client
+     * Insert a custom Guzzle client.
      *
      * @param Client $client
      */
@@ -163,7 +163,7 @@ class Connection
         $this->client = $client;
     }
 
-     /**
+    /**
      * Insert a Middleware for the Guzzle Client.
      *
      * @param $middleWare
