@@ -153,6 +153,11 @@ class Connection
         return $this->client;
     }
 
+    public function setClient($client)
+    {
+        $this->client = $client;
+    }
+
     public function insertMiddleWare($middleWare)
     {
         $this->middleWares[] = $middleWare;
