@@ -52,7 +52,7 @@ class Resultset
     {
         $result = $this->connection->get($this->url, $this->params);
         $this->url = $this->connection->nextUrl;
-        $this->params = null;
+        $this->params = [];
 
         return $this->collectionFromResult($result);
     }
