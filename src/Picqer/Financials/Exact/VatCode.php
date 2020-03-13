@@ -49,7 +49,7 @@ namespace Picqer\Financials\Exact;
  * @property vatpercentages $VATPercentages VAT percentages. You can have several VAT percentages, with start and end dates
  * @property string $VATTransactionType Indicates the type of transactions for which the VAT code may be used. B = Both, P = Purchase, S = Sales
  */
-class VATCode extends Model
+class VatCode extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
