@@ -1174,11 +1174,6 @@ class EntityTest extends TestCase
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ReopenQuotation::class);
     }
-
-    public function testMailBoxEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\MailBox::class);
-    }
      
     public function testReportingBalanceEntity()
     {
@@ -1418,11 +1413,6 @@ class EntityTest extends TestCase
     public function testSystemDivisionEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\SystemDivision::class);
-    }
-
-    public function testTaskEntity()
-    {
-        $this->performEntityTest(\Picqer\Financials\Exact\Task::class);
     }
 
     public function testTaskTypeEntity()
