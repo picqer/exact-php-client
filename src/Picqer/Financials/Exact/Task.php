@@ -16,7 +16,6 @@ namespace Picqer\Financials\Exact;
  * @property guid $Modifier User ID of the last modifier
  * @property string $Notes The notes of the task
  * @property guid $User The user that has to realize the task
- *
  */
 class Task extends Model
 {
