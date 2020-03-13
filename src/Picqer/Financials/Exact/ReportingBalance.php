@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialReportingBalance
  *
- * @property int64 $ID Record ID
+ * @property int $ID Record ID
  * @property float $Amount The sum of the amounts of all transactions in the grouping.
  * @property float $AmountCredit The sum of the amounts of all credit transactions in the grouping.
  * @property float $AmountDebit The sum of the amounts of all debit transactions in the grouping.
