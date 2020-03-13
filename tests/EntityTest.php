@@ -1174,7 +1174,7 @@ class EntityTest extends TestCase
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ReopenQuotation::class);
     }
-     
+
     public function testReportingBalanceEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\ReportingBalance::class);
