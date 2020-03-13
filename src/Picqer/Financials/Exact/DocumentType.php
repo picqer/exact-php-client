@@ -22,7 +22,7 @@ class DocumentType extends Model
     use Query\Findable;
 
     protected $fillable = [
-      'ID',
+        'ID',
         'Created',
         'Description',
         'DocumentIsCreatable',
