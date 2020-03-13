@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class GoodsDeliverie.
+ * Class GoodsDelivery.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderGoodsDeliveries
  *
