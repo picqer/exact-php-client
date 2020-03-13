@@ -196,6 +196,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Layout::class);
     }
 
+    public function testMailBoxEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\MailBox::class);
+    }
+
     public function testMailMessageEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\MailMessage::class);
