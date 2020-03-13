@@ -5,9 +5,9 @@ namespace Picqer\Financials\Exact;
 /**
  * Class PrintedSalesOrder.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesorderPrintedSalesOrders
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderPrintedSalesOrders
  *
- * @property string $OrderId Primary key, Reference to OrderId of SalesOrder
+ * @property string $OrderId Primary key, Reference to OrderID of SalesOrder
  * @property int $Division Division code
  * @property string $Document Contains the id of the document that was created
  * @property string $DocumentCreationError Contains the error message if an error occurred during the creation of the document
@@ -17,11 +17,14 @@ namespace Picqer\Financials\Exact;
  * @property string $EmailCreationSuccess Contains confirmation that an email was sent. If an email cannot be delivered this property will still show confirmation that the email was sent.
  * @property string $EmailLayout Based on this layout the email text is produced
  * @property string $ExtraText Extra text that can be added to the printed document and email
- * @property bool $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer
+ * @property bool $SendEmailToCustomer Set to True if an email containing the sales order should be sent to the customer
  * @property string $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  */
 class PrintedSalesOrder extends Model
 {
+    use Query\Findable;
+    use Persistance\Storable;
+
     protected $primaryKey = 'OrderId';
 
     protected $fillable = [

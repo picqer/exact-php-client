@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class SalesEntryLine.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=salesentrySalesEntryLines
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesEntrySalesEntryLines
  *
  * @property string $ID Primary key
  * @property float $AmountDC Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC.
@@ -25,8 +25,8 @@ namespace Picqer\Financials\Exact;
  * @property string $GLAccount The GL Account of the invoice line. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory
  * @property string $GLAccountCode Code of GLAccount
  * @property string $GLAccountDescription Description of GLAccount
- * @property string $IntraStatArea IntraStat Area
- * @property string $IntraStatCountry IntraStat Country
+ * @property string $IntraStatArea IntraStat area
+ * @property string $IntraStatCountry IntraStatCountry
  * @property string $IntraStatDeliveryTerm IntraStat delivery term
  * @property string $IntraStatTransactionA IntraStat transaction a
  * @property string $IntraStatTransportMethod IntraStat transport method
