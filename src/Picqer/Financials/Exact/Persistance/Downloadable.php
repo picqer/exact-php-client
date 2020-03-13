@@ -32,7 +32,7 @@ trait Downloadable
         ];
 
         $res = $client->get($this->getDownloadUrl(), [
-          'headers' => $headers,
+            'headers' => $headers,
         ]);
 
         return $res->getBody();
