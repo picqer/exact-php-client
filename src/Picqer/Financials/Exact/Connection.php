@@ -56,7 +56,7 @@ class Connection
     private $accessToken;
 
     /**
-     * @var int the Unix timestamp at which the access token expires
+     * @var int the Unix timestamp at which the access tokens
      */
     private $tokenExpires;
 
@@ -166,11 +166,10 @@ class Connection
         }
 
         // If access token is not set or token has expired, acquire new token
-		if (empty($this->accessToken)){
+		if (empty($this->accessToken)) {
 			$this->acquireAccessToken();
-		}else if($this->tokenHasExpired()){
+		} else if($this->tokenHasExpired()) {
 			return 'expired';
-			/*throw new Exception("token is expired and need to update");*/
 		}
 		
         $client = $this->client();
