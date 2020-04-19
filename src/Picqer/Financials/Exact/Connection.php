@@ -56,7 +56,7 @@ class Connection
     private $accessToken;
 
     /**
-     * @var int the Unix timestamp at which the access tokens
+     * @var int the Unix timestamp at which the access tokens expires
      */
     private $tokenExpires;
 
