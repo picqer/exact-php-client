@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentTypes
  *
- * @property string $ID Primary key
+ * @property int $ID Primary key
  * @property string $Created Creation date
  * @property string $Description Document type description
  * @property bool $DocumentIsCreatable Indicates if documents of this type can be created
@@ -20,9 +20,10 @@ namespace Picqer\Financials\Exact;
 class DocumentType extends Model
 {
     use Query\Findable;
+    use Persistance\Storable;
 
     protected $fillable = [
-      'ID',
+        'ID',
         'Created',
         'Description',
         'DocumentIsCreatable',

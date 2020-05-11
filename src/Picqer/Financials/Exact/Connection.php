@@ -153,11 +153,31 @@ class Connection
         return $this->client;
     }
 
+    /**
+     * Insert a custom Guzzle client.
+     *
+     * @param Client $client
+     */
+    public function setClient($client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * Insert a Middleware for the Guzzle Client.
+     *
+     * @param $middleWare
+     */
     public function insertMiddleWare($middleWare)
     {
         $this->middleWares[] = $middleWare;
     }
 
+    /**
+     * @throws ApiException
+     *
+     * @return Client
+     */
     public function connect()
     {
         // Redirect for authorization if needed (no access token or refresh token given)

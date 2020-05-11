@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DeliverToName Name of the delivery account's customer as per invoice
  * @property string $Description Description. Can be different for header and lines
  * @property float $Discount Discount percentage
+ * @property int $DiscountType Leading field of total discount. 1=Discount percentage, 2=Discount amount excl. VAT, 3=Discount amount incl. VAT, 4=Total amount excl. VAT, 5=Total amount incl. VAT
  * @property int $Division Division code
  * @property string $Document Document that is manually linked to the invoice
  * @property int $DocumentNumber Number of the document
@@ -53,7 +54,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales invoice
  * @property string $Remarks Extra remarks
- * @property SalesInvoiceLines $SalesInvoiceLines Collection of lines
+ * @property salesinvoicelines $SalesInvoiceLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
  * @property int $StarterSalesInvoiceStatus Starter Sales invoice status (for starter functionality)
@@ -63,7 +64,7 @@ namespace Picqer\Financials\Exact;
  * @property string $TaxSchedule Obsolete
  * @property string $TaxScheduleCode Obsolete
  * @property string $TaxScheduleDescription Obsolete
- * @property int $Type Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note
+ * @property int $Type Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note
  * @property string $TypeDescription Description of the type
  * @property float $VATAmountDC Total VAT amount in the default currency of the company
  * @property float $VATAmountFC Total VAT amount in the currency of the transaction
@@ -98,6 +99,7 @@ class SalesInvoice extends Model
         'DeliverToName',
         'Description',
         'Discount',
+        'DiscountType',
         'Division',
         'Document',
         'DocumentNumber',

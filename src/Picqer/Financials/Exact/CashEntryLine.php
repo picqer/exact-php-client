@@ -24,7 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
- * @property string $Date
+ * @property string $Date Date
  * @property string $Description Description
  * @property int $Division Division code
  * @property string $Document Reference to a document
@@ -42,7 +42,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Extra remarks
  * @property string $OffsetID Reference to offset line
- * @property int $OurRef
+ * @property int $OurRef Invoice number
  * @property string $Project Reference to a project
  * @property string $ProjectCode Code of Project
  * @property string $ProjectDescription Description of Project
