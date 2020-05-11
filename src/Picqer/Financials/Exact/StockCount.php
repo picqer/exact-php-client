@@ -14,7 +14,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Description Description of the stock count
  * @property int $Division Division code
- * @property int $EntryNumber Entry number of the stock transactions
+ * @property int $EntryNumber Entry number of the stock transaction
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier

@@ -7,15 +7,21 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialPayablesList
  *
- * @property int $HID Primary key, human readable ID
+ * @property int64 $HID Primary key, human readable ID
  * @property string $AccountCode Code of Account
  * @property string $AccountId Reference to the account
  * @property string $AccountName Name of Account
  * @property float $Amount Amount
  * @property float $AmountInTransit Amount in transit
+ * @property int $ApprovalStatus Approval status:
+ *						null - Invoice was entered before approval functionality was activated (treated as Approved for payments)
+ *						1 - N/A (used for non-electronic payment methods)
+ *						2 - Awaiting review
+ *						3 - Awaiting approval
+ *						4 - Approved
  * @property string $CurrencyCode Code of Currency
  * @property string $Description Description
- * @property string $DueDate Date the invoice should be paid
+ * @property string $DueDate Date the invoice is due (This due date is not the discount due date)
  * @property int $EntryNumber Entry number
  * @property string $Id Obsolete
  * @property string $InvoiceDate Invoice date
@@ -38,6 +44,7 @@ class PayablesList extends Model
         'AccountName',
         'Amount',
         'AmountInTransit',
+        'ApprovalStatus',
         'CurrencyCode',
         'Description',
         'DueDate',

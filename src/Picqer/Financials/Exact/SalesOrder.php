@@ -9,7 +9,10 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $OrderID Primary key
  * @property float $AmountDC Amount in the default currency of the company
+ * @property float $AmountDiscount Discount amount in the default currency of the company
+ * @property float $AmountDiscountExclVat Discount amount excluding VAT in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
+ * @property float $AmountFCExclVat Amount exclude VAT in the currency of the transaction
  * @property int $ApprovalStatus Shows if this sales order is approved
  * @property string $ApprovalStatusDescription Description of ApprovalStatus
  * @property string $Approved Approval datetime
@@ -19,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency code
- * @property string $DeliverTo Reference to delivery customer
+ * @property string $DeliverTo Reference to the delivery customer. For an existing sales order this value can not be changed.
  * @property string $DeliverToContactPerson Reference to contact person of delivery customer
  * @property string $DeliverToContactPersonFullName Name of contact person of delivery customer
  * @property string $DeliverToName Name of delivery customer
@@ -35,15 +38,15 @@ namespace Picqer\Financials\Exact;
  * @property string $DocumentSubject Subject of the document
  * @property int $InvoiceStatus Invoice status
  * @property string $InvoiceStatusDescription Description of InvoiceStatus
- * @property string $InvoiceTo Reference to the Customer who will receive the invoice
- * @property string $InvoiceToContactPerson Reference to the Contact person of the customer who will receive the invoice
+ * @property string $InvoiceTo Reference to the customer who will receive the invoice. For an existing sales order this value can not be changed.
+ * @property string $InvoiceToContactPerson Reference to the contact person of the customer who will receive the invoice
  * @property string $InvoiceToContactPersonFullName Name of the contact person of the customer who will receive the invoice
  * @property string $InvoiceToName Name of the customer who will receive the invoice
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $OrderDate Order date
- * @property string $OrderedBy Customer who ordered the sales order
+ * @property string $OrderedBy Customer who ordered the sales order. For an existing sales order this value can not be changed.
  * @property string $OrderedByContactPerson Contact person of the customer who ordered the sales order
  * @property string $OrderedByContactPersonFullName Name of contact person of the customer who ordered the sales order
  * @property string $OrderedByName Name of the customer who ordered the sales order
@@ -52,16 +55,16 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales order
  * @property string $Remarks Extra remarks
- * @property SalesOrderLines $SalesOrderLines Collection of lines
+ * @property salesorderlines $SalesOrderLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
  * @property string $ShippingMethod ShippingMethod
  * @property string $ShippingMethodDescription Description of ShippingMethod
  * @property int $Status The status of the sales order. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled.
  * @property string $StatusDescription Description of Status
- * @property string $TaxSchedule Tax schedule linked
- * @property string $TaxScheduleCode Code of the tax schedule
- * @property string $TaxScheduleDescription Description of the tax schedule
+ * @property string $TaxSchedule Obsolete
+ * @property string $TaxScheduleCode Obsolete
+ * @property string $TaxScheduleDescription Obsolete
  * @property string $WarehouseCode Code of Warehouse
  * @property string $WarehouseDescription Description of Warehouse
  * @property string $WarehouseID Warehouse
@@ -79,7 +82,10 @@ class SalesOrder extends Model
     protected $fillable = [
         'OrderID',
         'AmountDC',
+        'AmountDiscount',
+        'AmountDiscountExclVat',
         'AmountFC',
+        'AmountFCExclVat',
         'ApprovalStatus',
         'ApprovalStatusDescription',
         'Approved',

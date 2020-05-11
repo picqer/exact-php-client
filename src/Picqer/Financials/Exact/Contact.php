@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Contact.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=crmContacts
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMContacts
  *
  * @property string $ID Primary key
  * @property string $Account The account to which the contact belongs
@@ -19,8 +19,8 @@ namespace Picqer\Financials\Exact;
  * @property string $AddressStreetNumberSuffix Street number suffix of the address
  * @property int $AllowMailing Obsolete
  * @property string $BirthDate Birth date
- * @property string $BirthName Last birth name
- * @property string $BirthNamePrefix Middle birth name
+ * @property string $BirthName Obsolete. Please don't use this field anymore as it may overwrite LastName.
+ * @property string $BirthNamePrefix Obsolete. Please don't use this field anymore as it may overwrite MiddleName.
  * @property string $BirthPlace Birth place
  * @property string $BusinessEmail Email address of the contact
  * @property string $BusinessFax Fax of the contact
@@ -38,17 +38,20 @@ namespace Picqer\Financials\Exact;
  * @property string $EndDate End date
  * @property string $FirstName First name. Provide at least first name or last name to create a new contact
  * @property string $FullName Full name (First name Middle name Last name)
- * @property string $Gender Gender: M=Male, V=Female, O=Unknown
+ * @property string $Gender Gender
  * @property int $HID Contact ID
  * @property string $IdentificationDate Identification date
  * @property string $IdentificationDocument Reference to the identification document of the contact
  * @property string $IdentificationUser Reference to the user responsible for identification
  * @property string $Initials Initials
+ * @property int $IsAnonymised Indicates whether the contact is anonymised.
  * @property bool $IsMailingExcluded Indicates whether contacts are excluded from the marketing list
  * @property bool $IsMainContact Indicates if this is the main contact of the linked account
  * @property string $JobTitleDescription Jobtitle of the contact
  * @property string $Language Language code
  * @property string $LastName Last name. Provide at least first name or last name to create a new contact
+ * @property string $LeadPurpose Reference to purpose of an contact
+ * @property string $LeadSource Reference to source of an contact
  * @property string $MarketingNotes The user should be able to do a full text search on these notes to gather contacts for a marketing campaign
  * @property string $MiddleName Middle name
  * @property string $Mobile Business phone of the contact
@@ -62,7 +65,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Person Reference to the personal information of this contact such as name, gender, address etc.
  * @property string $Phone Phone of the contact
  * @property string $PhoneExtension Phone extension of the contact
- * @property string $Picture This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl.
+ * @property binary $Picture This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl.
  * @property string $PictureName Filename of the picture
  * @property string $PictureThumbnailUrl Url to retrieve the picture thumbnail
  * @property string $PictureUrl Url to retrieve the picture
@@ -120,11 +123,14 @@ class Contact extends Model
         'IdentificationDocument',
         'IdentificationUser',
         'Initials',
+        'IsAnonymised',
         'IsMailingExcluded',
         'IsMainContact',
         'JobTitleDescription',
         'Language',
         'LastName',
+        'LeadPurpose',
+        'LeadSource',
         'MarketingNotes',
         'MiddleName',
         'Mobile',

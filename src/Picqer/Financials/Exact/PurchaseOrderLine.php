@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchaseOrderPurchaseOrderLines
  *
- * @property string $ID  Primary key
+ * @property string $ID Primary key
  * @property float $AmountDC Amount in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
  * @property string $CostCenter Reference to Cost center
@@ -49,6 +49,7 @@ namespace Picqer\Financials\Exact;
  * @property int $SalesOrderLineNumber Number of the sales order line
  * @property int $SalesOrderNumber Number of the sales order
  * @property string $SupplierItemCode Code the supplier uses for this item
+ * @property int $SupplierItemCopyRemarks Indicate if the notes content should be copied from SupplierItem's remarks. The default follows the CopyRemarks value from SupplierItem. Values: 0 = Do not copy remark, 1 = Copy remark
  * @property string $Unit Code of item unit
  * @property string $UnitDescription Description of unit
  * @property float $UnitPrice Item price per purchase unit
@@ -105,6 +106,7 @@ class PurchaseOrderLine extends Model
         'SalesOrderLineNumber',
         'SalesOrderNumber',
         'SupplierItemCode',
+        'SupplierItemCopyRemarks',
         'Unit',
         'UnitDescription',
         'UnitPrice',

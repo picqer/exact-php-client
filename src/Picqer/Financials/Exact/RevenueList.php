@@ -7,19 +7,20 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialRevenueList
  *
- * @property int $Year Year
- * @property int $Period Period
- * @property float $Amount amount of revenue
+ * @property int $Period Reporting period
+ * @property int $Year Current Reporting year
+ * @property float $Amount Total amount in the default currency of the company
  */
 class RevenueList extends Model
 {
     use Query\Findable;
+    use Persistance\Storable;
 
     protected $primaryKey = 'Year';
 
     protected $fillable = [
-        'Year',
         'Period',
+        'Year',
         'Amount',
     ];
 
