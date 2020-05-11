@@ -396,6 +396,9 @@ class Connection
 
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
+            if (false === is_array($json)) {
+                throw new ApiException('Json decode failed. Got response: ' . $response->getBody()->getContents());
+            }
             if (array_key_exists('d', $json)) {
                 if (array_key_exists('__next', $json['d'])) {
                     $this->nextUrl = $json['d']['__next'];
@@ -541,7 +544,7 @@ class Connection
             return true;
         }
 
-        return $this->tokenExpires <= time() + 10;
+        return ($this->tokenExpires - 60) < time();
     }
 
     private function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
@@ -614,7 +617,7 @@ class Connection
     private function parseExceptionForErrorMessages(Exception $e)
     {
         if (! $e instanceof BadResponseException) {
-            throw new ApiException($e->getMessage());
+            throw new ApiException($e->getMessage(), 0, $e);
         }
 
         $response = $e->getResponse();
@@ -631,7 +634,7 @@ class Connection
             $errorMessage = $responseBody;
         }
 
-        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode());
+        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode(), $e);
     }
 
     /**
