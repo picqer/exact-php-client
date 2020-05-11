@@ -128,7 +128,8 @@ abstract class Model implements \JsonSerializable
         return in_array($key, $this->fillable);
     }
 
-    public function getFillable(){
+    public function getFillable()
+    {
         return $this->fillable;
     }
 
