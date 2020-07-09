@@ -160,7 +160,7 @@ trait Findable
         }
         $collection = [];
         foreach ($result as $r) {
-            $collection[] = new self($this->connection(), $r);
+            $collection[] = new static($this->connection(), $r);
         }
 
         return $collection;
