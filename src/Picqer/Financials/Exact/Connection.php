@@ -169,7 +169,7 @@ class Connection
 		if (empty($this->accessToken)){
 			$this->acquireAccessToken();
 		}else if($this->tokenHasExpired()){
-			$this->aquire_accesstoken_by_refreshtoken();
+			$this->acquireAccessToken_by_refreshtoken();
 		}
 		
         $client = $this->client();
@@ -177,8 +177,8 @@ class Connection
         return $client;
     }
 	
-	// Refresh token when Token has Expired
-	private function aquire_accesstoken_by_refreshtoken() {
+	// Acquire AccessToken by RefreshToken
+	private function acquireAccessToken_by_refreshtoken() {
 		$headers = array("Content-Type: application/x-www-form-urlencoded", "Cache-Control: no-cache");	
 		$params = array(
 			'refresh_token' => $this->refreshToken,
