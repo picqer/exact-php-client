@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionLineTypes
  *
- * @property string $ID Primary key
+ * @property string $ID          Primary key
  * @property string $Description Description
  */
 class SubscriptionLineType extends Model
