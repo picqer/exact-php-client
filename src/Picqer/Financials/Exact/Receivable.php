@@ -7,13 +7,14 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowReceivables
  *
- * @property string $ID  Identifier of the receivable.
+ * @property string $ID Identifier of the receivable.
  * @property string $Account The customer from which the receivable will come.
  * @property string $AccountBankAccountID The bank account of the customer, from which the receivable will come.
  * @property string $AccountBankAccountNumber The bank account number of the customer, from which the receivable will come.
  * @property string $AccountCode The code of the customer from which the receivable will come.
  * @property string $AccountContact Contact person copied from the purchase invoice linked to the related purchase entry.
  * @property string $AccountContactName Name of the contact person of the customer.
+ * @property string $AccountCountry Country code of the customer.
  * @property string $AccountName Name of the customer.
  * @property float $AmountDC The amount in default currency (division currency). Receivables are matched on this amount.
  * @property float $AmountDiscountDC The amount of the discount in the default currency.
@@ -29,12 +30,12 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description.
  * @property string $DirectDebitMandate Direct Debit Mandate used to collect the receivable.
  * @property string $DirectDebitMandateDescription Description of the mandate.
- * @property int $DirectDebitMandatePaymentType Payment type of the mandate.
+ * @property int $DirectDebitMandatePaymentType Payment type of the mandate. 0 = One off payment 1 = Recurrent payment.
  * @property string $DirectDebitMandateReference Unique mandate reference.
- * @property int $DirectDebitMandateType Type of the mandate.
+ * @property int $DirectDebitMandateType Type of the mandate. 0 = Core 1 = Business-to-business.
  * @property string $DiscountDueDate Date before which the payment by the customer must be done to be eligible for discount.
  * @property int $Division Division code.
- * @property string $Document Document that is created when processing collections. The bank export file is attached to the document.
+ * @property string $Document Document that is created when processing collections.  The bank export file is attached to the document.
  * @property int $DocumentNumber Number of the document.
  * @property string $DocumentSubject Subject of the document.
  * @property string $DueDate Date before which the payment by the customer must be done.
@@ -64,7 +65,7 @@ namespace Picqer\Financials\Exact;
  * @property int $PaymentDaysDiscount Number of days between invoice date and due date of the discount.
  * @property float $PaymentDiscountPercentage Payment discount percentage.
  * @property string $PaymentInformationID PaymentInformationID tag from the SEPA xml file.
- * @property string $PaymentMethod Method of payment.
+ * @property string $PaymentMethod Method of payment. B = On credit (default) I = Collection K = Cash V = Credit card
  * @property string $PaymentReference Payment reference for the receivable that may be included In the bank export file
  * @property float $RateFC Exchange rate from receivable currency to division currency. AmountFC * RateFC = AmountDC.
  * @property int $ReceivableBatchNumber Number assigned during the processing of receivables.
@@ -72,7 +73,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ReceivableSelector User who selected the receivable to be collected.
  * @property string $ReceivableSelectorFullName Name of the receivable selector.
  * @property int $Source The source of the receivable.
- * @property int $Status The status of the receivable.
+ * @property int $Status The status of the receivable. 20 = open 30 = selected - receivable is selected to be collected 40 = processed - collection has been done 50 = matched - receivable is matched with one or more other outstanding items or financial statement lines
  * @property float $TransactionAmountDC Total amount of the linked transaction in default currency (division currency).
  * @property float $TransactionAmountFC Total amount of the linked transaction in the selected currency.
  * @property string $TransactionDueDate Due date of the linked transaction.
@@ -88,16 +89,19 @@ namespace Picqer\Financials\Exact;
 class Receivable extends Model
 {
     use Query\Findable;
+    use Persistance\Storable;
 
     protected $primaryKey = 'ID';
 
     protected $fillable = [
+        'ID',
         'Account',
         'AccountBankAccountID',
         'AccountBankAccountNumber',
         'AccountCode',
         'AccountContact',
         'AccountContactName',
+        'AccountCountry',
         'AccountName',
         'AmountDC',
         'AmountDiscountDC',

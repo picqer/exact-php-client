@@ -5,9 +5,9 @@ namespace Picqer\Financials\Exact;
 /**
  * Class Subscription.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=subscriptionSubscriptions
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptions
  *
- * @property string $EntryID ID of the entry, Primary key
+ * @property string $EntryID Primary key
  * @property bool $BlockEntry Indicates if subscription is blocked for time cost entry
  * @property string $CancellationDate Date of cancellation
  * @property string $Classification Reference to Classification
@@ -18,10 +18,10 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency code
  * @property string $CustomerPONumber Purchase order number of customer
- * @property string $Description Description of Classification
+ * @property string $Description Description
  * @property int $Division Division code
  * @property string $EndDate End date
- * @property int $InvoiceDay Invoice day
+ * @property int $InvoiceDay Invoice Day
  * @property string $InvoicedTo Invoice date
  * @property string $InvoiceTo Reference to invoice account
  * @property string $InvoiceToContactPerson Reference to contact person of invoice account
@@ -32,7 +32,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Remarks
- * @property string $Number Purchase order number of customer
+ * @property int $Number Number
  * @property string $OrderedBy Reference to order account
  * @property string $OrderedByContactPerson Reference of contact person of order account
  * @property string $OrderedByContactPersonFullName Name of contact person of order account
@@ -43,7 +43,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ReasonCancelled Reference to reason cancelled
  * @property string $ReasonCancelledCode Code of ReasonCancelled
  * @property string $ReasonCancelledDescription Description of ReasonCancelled
- * @property string $StartDate Invoicing start date
+ * @property string $StartDate Start date
  * @property SubscriptionLines $SubscriptionLines Collection of subscription lines
  * @property SubscriptionRestrictionEmployees $SubscriptionRestrictionEmployees Collection of restriction employees
  * @property SubscriptionRestrictionItems $SubscriptionRestrictionItems Collection of restriction items
@@ -59,6 +59,7 @@ class Subscription extends Model
     protected $primaryKey = 'EntryID';
 
     protected $fillable = [
+        'EntryID',
         'BlockEntry',
         'CancellationDate',
         'Classification',
@@ -72,7 +73,6 @@ class Subscription extends Model
         'Description',
         'Division',
         'EndDate',
-        'EntryID',
         'InvoiceDay',
         'InvoicedTo',
         'InvoiceTo',

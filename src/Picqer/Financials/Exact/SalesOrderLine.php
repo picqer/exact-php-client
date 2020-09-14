@@ -42,9 +42,9 @@ namespace Picqer\Financials\Exact;
  * @property float $QuantityDelivered The number of items delivered
  * @property float $QuantityInvoiced The number of items invoiced
  * @property string $ShopOrder Reference to ShopOrder
- * @property string $TaxSchedule Tax schedule linked
- * @property string $TaxScheduleCode Code of the tax schedule
- * @property string $TaxScheduleDescription Description of the tax schedule
+ * @property string $TaxSchedule Obsolete
+ * @property string $TaxScheduleCode Obsolete
+ * @property string $TaxScheduleDescription Obsolete
  * @property string $UnitCode Code of item unit
  * @property string $UnitDescription Description of Unit
  * @property float $UnitPrice Price per unit in the currency of the transaction

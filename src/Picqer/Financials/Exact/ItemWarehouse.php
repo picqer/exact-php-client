@@ -16,7 +16,8 @@ namespace Picqer\Financials\Exact;
  * @property string $DefaultStorageLocationCode Default storage location's code
  * @property string $DefaultStorageLocationDescription Default storage location's description
  * @property int $Division Division code
- * @property string $item Item ID
+ * @property string $Item Item ID
+ * @property string $ItemBarcode Barcode of item
  * @property string $ItemCode Code of item
  * @property string $ItemDescription Description of item
  * @property bool $ItemIsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of this item
@@ -54,6 +55,7 @@ class ItemWarehouse extends Model
         'DefaultStorageLocationDescription',
         'Division',
         'Item',
+        'ItemBarcode',
         'ItemCode',
         'ItemDescription',
         'ItemIsFractionAllowedItem',

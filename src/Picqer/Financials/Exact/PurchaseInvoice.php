@@ -9,10 +9,10 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID A guid that is the unique identifier of the purchase invoice.
  * @property float $Amount The amount including VAT in the currency of the invoice.
- * @property string $ContactPerson string identifying the contact person of the supplier.
+ * @property string $ContactPerson Guid identifying the contact person of the supplier.
  * @property string $Currency The code of the currency of the invoiced amount.
  * @property string $Description The description of the invoice.
- * @property string $Document string identifying a document that is attached to the invoice.
+ * @property string $Document Guid identifying a document that is attached to the invoice.
  * @property string $DueDate The date before which the invoice has to be paid.
  * @property int $EntryNumber The unique number of the purchase invoice. The entry number is based on a setting in the purchase journal and incremented for each new purchase invoice.
  * @property float $ExchangeRate The exchange rate between the invoice currency and the default currency of the division.
@@ -23,14 +23,14 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified The date and time the invoice was last modified.
  * @property string $PaymentCondition The code of the payment condition that is used to calculate the due date and discount.
  * @property string $PaymentReference Unique reference to match payments and invoices.
- * @property PurchaseInvoiceLines $PurchaseInvoiceLines The collection of lines that belong to the purchase invoice.
+ * @property purchaseinvoicelines $PurchaseInvoiceLines The collection of lines that belong to the purchase invoice.
  * @property string $Remarks The user can enter remarks related to the invoice here.
  * @property int $Source Indicates the origin of the invoice. 1 Manual entry, 3 Purchase invoice, 4 Purchase order, 5 Web service.
  * @property int $Status The status of the invoice. 10 Draft, 20 Open, 50 Processed.
- * @property string $Supplier string that identifies the supplier.
+ * @property string $Supplier Guid that identifies the supplier.
  * @property int $Type Indicates the type of the purchase invoice. 8030 Direct purchase invoice, 8031 Direct purchase invoice (Credit), 8033 Purchase invoice, 8034 Purchase invoice (Credit)
  * @property float $VATAmount The total VAT amount of the purchase invoice.
- * @property string $Warehouse string that identifies the warehouse that will receive the purchased goods. This is mandatory for creating a direct purchase invoice.
+ * @property string $Warehouse Guid that identifies the warehouse that will receive the purchased goods. This is mandatory for creating a direct purchase invoice.
  * @property string $YourRef The invoice number provided by the supplier.
  */
 class PurchaseInvoice extends Model

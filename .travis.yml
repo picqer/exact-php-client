@@ -1,4 +1,5 @@
 language: php
+dist: trusty
 
 php:
   - 5.5
@@ -12,4 +13,4 @@ install:
   - composer self-update
   - composer install --prefer-dist --no-interaction
 
-script: phpunit
+script: ./vendor/bin/phpunit

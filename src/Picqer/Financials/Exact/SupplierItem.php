@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsSupplierItem
  *
  * @property string $ID Primary key
+ * @property int $CopyRemarks Copy purchase remarks to purchase lines
  * @property string $CountryOfOrigin Country of origin code
  * @property string $CountryOfOriginDescription Description of country of origin
  * @property string $Created Creation date
@@ -25,6 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
+ * @property string $Notes Notes
  * @property int $PurchaseLeadTime The number of days between placing an order with a supplier and receiving items from the supplier
  * @property float $PurchasePrice Purchase price
  * @property string $PurchaseUnit Unit code
@@ -44,6 +46,7 @@ class SupplierItem extends Model
 
     protected $fillable = [
         'ID',
+        'CopyRemarks',
         'CountryOfOrigin',
         'CountryOfOriginDescription',
         'Created',
@@ -61,6 +64,7 @@ class SupplierItem extends Model
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'Notes',
         'PurchaseLeadTime',
         'PurchasePrice',
         'PurchaseUnit',
