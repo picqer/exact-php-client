@@ -1,9 +1,9 @@
 name: Run phpunit
-on: [push]
+on: [push, pull_request]
 
 jobs:
-  run:
-    stategy:
+  test:
+    strategy:
       matrix:
         php-versions: ['7.2', '7.3', '7.4']
     name: PHP ${{ matrix.php-versions }}
