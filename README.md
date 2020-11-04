@@ -1,10 +1,10 @@
 # exact-php-client
 
-[![Build Status](https://travis-ci.org/picqer/exact-php-client.svg?branch=master)](https://travis-ci.org/picqer/exact-php-client)
+![Run phpunit](https://github.com/picqer/exact-php-client/workflows/Run%20phpunit/badge.svg)
 
 PHP client library to use the Exact Online API.
 
-Note: For Guzzle 6 use v3, for Guzzle 3 use v1.
+Note: For Guzzle 6/7 use v3, for Guzzle 3 use v1.
 
 ## Direct link to Exact Online docs
 https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-getting-started

@@ -1,0 +1,23 @@
+name: Run phpunit
+on: [ push ]
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        php-versions: [ '7.2', '7.3', '7.4', '8.0' ]
+    name: PHP ${{ matrix.php-versions }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-versions }}
+      - name: PHP version check
+        run: php -v
+      - name: Composer install
+        run: composer install --prefer-dist --no-interaction  --no-progress --no-suggest
+      - name: Run tests
+        run: vendor/bin/phpunit
