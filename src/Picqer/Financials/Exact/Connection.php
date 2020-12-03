@@ -491,7 +491,7 @@ class Connection
 
             if (is_callable($this->refreshAccessTokenCallback)) {
                 call_user_func($this->refreshAccessTokenCallback, $this);
-                if (!$this->tokenHasExpired()) {
+                if (! $this->tokenHasExpired()) {
                     // the refreshed token has not expired, so we are fine to keep using it
                     return;
                 }
