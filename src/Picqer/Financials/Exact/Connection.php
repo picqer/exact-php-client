@@ -654,6 +654,10 @@ class Connection
             $errorMessage = $responseBody;
         }
 
+        if ($reason = $response->getHeaderLine('Reason')) {
+            $errorMessage .= " (Reason: {$reason})";
+        }
+
         throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode(), $e);
     }
 
