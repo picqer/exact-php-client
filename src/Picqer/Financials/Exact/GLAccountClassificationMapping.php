@@ -38,5 +38,5 @@ class GLAccountClassificationMapping extends Model
         'GLSchemeID',
     ];
 
-    protected $url = 'beta/{division}/financial/GLAccountClassificationMappings';
+    protected $url = 'financial/GLAccountClassificationMappings';
 }
