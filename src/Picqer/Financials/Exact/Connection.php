@@ -129,7 +129,7 @@ class Connection
      * @var int|null
      */
     protected $minutelyLimitRemaining;
-    
+
     /**
      * @var int|null
      */
@@ -414,7 +414,7 @@ class Connection
     {
         try {
             $this->extractRateLimits($response);
-            
+
             if ($response->getStatusCode() === 204) {
                 return [];
             }
@@ -705,6 +705,7 @@ class Connection
     {
         return $this->minutelyLimitRemaining;
     }
+
     /**
      * @return int|null The time at which the minutely rate limit window resets in UTC epoch milliseconds
      */
