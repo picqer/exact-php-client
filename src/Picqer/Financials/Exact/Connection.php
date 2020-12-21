@@ -413,11 +413,11 @@ class Connection
     private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
+            $this->extractRateLimits($response);
+            
             if ($response->getStatusCode() === 204) {
                 return [];
             }
-
-            $this->extractRateLimits($response);
 
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
