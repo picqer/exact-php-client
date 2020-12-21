@@ -113,7 +113,7 @@ $connection->getMinutelyLimit(); // Retrieve your limit per minute
 $connection->getMinutelyLimitRemaining(); // Retrieve the amount of API calls remaining for this minute
 $connection->getMinutelyLimitReset(); // Retrieve the timestamp for when the minutely limit will reset
 ```
-_Do note that when you have no more minutely calls available, Exact only sends the Minutely Limit headers. So in that case, the Daily Limit headers will remain 0 untill the minutely reset rolls over._
+_Do note when you have no more minutely calls available, Exact only sends the Minutely Limit headers. So in that case, the Daily Limit headers will remain 0 until the minutely reset rolls over._
 
 
 ### Use the library to do stuff (examples)
