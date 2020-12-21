@@ -129,6 +129,11 @@ class Connection
      * @var int|null
      */
     protected $minutelyLimitRemaining;
+    
+    /**
+     * @var int|null
+     */
+    protected $minutelyLimitReset;
 
     /**
      * @return Client
@@ -700,6 +705,13 @@ class Connection
     {
         return $this->minutelyLimitRemaining;
     }
+    /**
+     * @return int|null The time at which the minutely rate limit window resets in UTC epoch milliseconds
+     */
+    public function getMinutelyLimitReset()
+    {
+        return $this->minutelyLimitReset;
+    }
 
     /**
      * @return string
@@ -768,5 +780,6 @@ class Connection
 
         $this->minutelyLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
         $this->minutelyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
+        $this->minutelyLimitReset = (int) $response->getHeaderLine('X-RateLimit-Minutely-Reset');
     }
 }
