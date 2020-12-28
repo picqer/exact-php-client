@@ -131,6 +131,11 @@ class Connection
     protected $minutelyLimitRemaining;
 
     /**
+     * @var int|null
+     */
+    protected $minutelyLimitReset;
+
+    /**
      * @return Client
      */
     private function client()
@@ -408,11 +413,11 @@ class Connection
     private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
+            $this->extractRateLimits($response);
+
             if ($response->getStatusCode() === 204) {
                 return [];
             }
-
-            $this->extractRateLimits($response);
 
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
@@ -702,6 +707,14 @@ class Connection
     }
 
     /**
+     * @return int|null The time at which the minutely rate limit window resets in UTC epoch milliseconds
+     */
+    public function getMinutelyLimitReset()
+    {
+        return $this->minutelyLimitReset;
+    }
+
+    /**
      * @return string
      */
     protected function getBaseUrl()
@@ -768,5 +781,6 @@ class Connection
 
         $this->minutelyLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
         $this->minutelyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
+        $this->minutelyLimitReset = (int) $response->getHeaderLine('X-RateLimit-Minutely-Reset');
     }
 }
