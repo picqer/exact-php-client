@@ -190,11 +190,6 @@ class Connection
             $this->redirectForAuthorization();
         }
 
-        if (is_callable($this->refreshAccessTokenCallback)) {
-            // check if the token has been refreshed by some other means
-            call_user_func($this->refreshAccessTokenCallback, $this);
-        }
-
         // If access token is not set or token has expired, acquire new token
         if (empty($this->accessToken) || $this->tokenHasExpired()) {
             $this->acquireAccessToken();
@@ -646,7 +641,7 @@ class Connection
     }
 
     /**
-     * @param $callback
+     * @param callable $callback
      */
     public function setRefreshAccessTokenCallback($callback)
     {
