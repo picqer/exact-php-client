@@ -41,8 +41,9 @@ trait Storable
     abstract public function primaryKeyContent();
 
     /**
-     * @return $this
      * @throws ApiException
+     *
+     * @return $this
      */
     public function save()
     {
@@ -56,8 +57,9 @@ trait Storable
     }
 
     /**
-     * @return array|mixed
      * @throws ApiException
+     *
+     * @return array|mixed
      */
     public function insert()
     {
@@ -65,8 +67,9 @@ trait Storable
     }
 
     /**
-     * @return array|mixed
      * @throws ApiException
+     *
+     * @return array|mixed
      */
     public function update()
     {
@@ -76,8 +79,9 @@ trait Storable
     }
 
     /**
-     * @return array|mixed
      * @throws ApiException
+     *
+     * @return array|mixed
      */    
     public function delete()
     {
