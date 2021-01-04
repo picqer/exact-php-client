@@ -96,6 +96,11 @@ class Connection
     private $acquireAccessTokenUnlockCallback;
 
     /**
+     * @var callable(Connection)
+     */
+    private $refreshAccessTokenCallback;
+
+    /**
      * @var callable[]
      */
     protected $middleWares = [];
@@ -484,6 +489,14 @@ class Connection
                 call_user_func($this->acquireAccessTokenLockCallback, $this);
             }
 
+            if (is_callable($this->refreshAccessTokenCallback)) {
+                call_user_func($this->refreshAccessTokenCallback, $this);
+                if (! $this->tokenHasExpired()) {
+                    // the refreshed token has not expired, so we are fine to keep using it
+                    return;
+                }
+            }
+
             // If refresh token not yet acquired, do token request
             if (empty($this->refreshToken)) {
                 $body = [
@@ -630,6 +643,14 @@ class Connection
     public function setTokenUpdateCallback($callback)
     {
         $this->tokenUpdateCallback = $callback;
+    }
+
+    /**
+     * @param callable $callback
+     */
+    public function setRefreshAccessTokenCallback($callback)
+    {
+        $this->refreshAccessTokenCallback = $callback;
     }
 
     /**
