@@ -82,7 +82,7 @@ trait Storable
      * @throws ApiException
      *
      * @return array|mixed
-     */    
+     */
     public function delete()
     {
         $primaryKey = $this->primaryKeyContent();
