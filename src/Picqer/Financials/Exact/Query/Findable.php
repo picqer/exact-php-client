@@ -112,7 +112,7 @@ trait Findable
             $this->connection()->setDivision($originalDivision); // Restore division
         }
 
-        return $this->collectionFromResult($result);
+        return $this->collectionFromResult($result, $headers);
     }
 
     /**
@@ -140,7 +140,7 @@ trait Findable
         return $this->collectionFromResult($result);
     }
 
-    public function collectionFromResult($result)
+    public function collectionFromResult($result, array $headers = [])
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter
@@ -149,7 +149,7 @@ trait Findable
         }
 
         while ($this->connection()->nextUrl !== null) {
-            $nextResult = $this->connection()->get($this->connection()->nextUrl);
+            $nextResult = $this->connection()->get($this->connection()->nextUrl, [], $headers);
 
             // If we have one result which is not an assoc array, make it the first element of an array for the array_merge function
             if ((bool) count(array_filter(array_keys($nextResult), 'is_string'))) {
