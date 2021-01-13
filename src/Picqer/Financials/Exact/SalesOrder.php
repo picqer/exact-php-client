@@ -58,6 +58,9 @@ namespace Picqer\Financials\Exact;
  * @property salesorderlines $SalesOrderLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
+ * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCodeCode Code of selection code
+ * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod ShippingMethod
  * @property string $ShippingMethodDescription Description of ShippingMethod
  * @property int $Status The status of the sales order. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled.
@@ -131,6 +134,9 @@ class SalesOrder extends Model
         'SalesOrderLines',
         'Salesperson',
         'SalespersonFullName',
+        'SelectionCode',
+        'SelectionCodeCode',
+        'SelectionCodeDescription',
         'ShippingMethod',
         'ShippingMethodDescription',
         'Status',
