@@ -73,7 +73,7 @@ class Connection
     /**
      * @var mixed
      */
-    private $division;
+    protected $division;
 
     /**
      * @var Client|null
@@ -451,7 +451,7 @@ class Connection
     /**
      * @return mixed
      */
-    private function getCurrentDivisionNumber()
+    protected function getCurrentDivisionNumber()
     {
         if (empty($this->division)) {
             $me = new Me($this);
@@ -580,7 +580,7 @@ class Connection
         return ($this->tokenExpires - 60) < time();
     }
 
-    private function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
+    protected function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
     {
         if ($formatNextUrl) {
             return $endPoint;
