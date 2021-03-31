@@ -92,8 +92,8 @@ trait Findable
         }
 
         $request = [];
-        if ( !empty($filter)) {
-            $request ['$filter'] = $filter;
+        if (! empty($filter)) {
+            $request['$filter'] = $filter;
         }
 
         if (strlen($expand) > 0) {
