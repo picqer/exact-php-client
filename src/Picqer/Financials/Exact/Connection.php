@@ -536,7 +536,7 @@ class Connection
                 throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
             }
         } catch (BadResponseException $ex) {
-            if ((int)$ex->getResponse()->getStatusCode() === 503) {
+            if ((int) $ex->getResponse()->getStatusCode() === 503) {
                 // wait for 30 seconds and try again, these 503's are temporary at exact due to a reboot of server of some kind
                 sleep(30);
                 // unlock it if need be
