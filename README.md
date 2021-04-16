@@ -1,10 +1,10 @@
 # exact-php-client
 
-[![Build Status](https://travis-ci.org/picqer/exact-php-client.svg?branch=master)](https://travis-ci.org/picqer/exact-php-client)
+![Run phpunit](https://github.com/picqer/exact-php-client/workflows/Run%20phpunit/badge.svg)
 
 PHP client library to use the Exact Online API.
 
-Note: For Guzzle 6 use v3, for Guzzle 3 use v1.
+Note: For Guzzle 6/7 use v3, for Guzzle 3 use v1.
 
 ## Direct link to Exact Online docs
 https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-getting-started
@@ -111,7 +111,10 @@ $connection->getDailyLimitRemaining(); // Retrieve the remaining amount of API c
 $connection->getDailyLimitReset(); // Retrieve the timestamp for when the limit will reset
 $connection->getMinutelyLimit(); // Retrieve your limit per minute
 $connection->getMinutelyLimitRemaining(); // Retrieve the amount of API calls remaining for this minute
+$connection->getMinutelyLimitReset(); // Retrieve the timestamp for when the minutely limit will reset
 ```
+_Do note when you have no more minutely calls available, Exact only sends the Minutely Limit headers. So in that case, the Daily Limit headers will remain 0 until the minutely reset rolls over._
+
 
 ### Use the library to do stuff (examples)
 

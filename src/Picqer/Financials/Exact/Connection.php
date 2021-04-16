@@ -96,6 +96,11 @@ class Connection
     private $acquireAccessTokenUnlockCallback;
 
     /**
+     * @var callable(Connection)
+     */
+    private $refreshAccessTokenCallback;
+
+    /**
      * @var callable[]
      */
     protected $middleWares = [];
@@ -129,6 +134,11 @@ class Connection
      * @var int|null
      */
     protected $minutelyLimitRemaining;
+
+    /**
+     * @var int|null
+     */
+    protected $minutelyLimitReset;
 
     /**
      * @return Client
@@ -408,11 +418,11 @@ class Connection
     private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
+            $this->extractRateLimits($response);
+
             if ($response->getStatusCode() === 204) {
                 return [];
             }
-
-            $this->extractRateLimits($response);
 
             Psr7\rewind_body($response);
             $json = json_decode($response->getBody()->getContents(), true);
@@ -477,6 +487,14 @@ class Connection
         try {
             if (is_callable($this->acquireAccessTokenLockCallback)) {
                 call_user_func($this->acquireAccessTokenLockCallback, $this);
+            }
+
+            if (is_callable($this->refreshAccessTokenCallback)) {
+                call_user_func($this->refreshAccessTokenCallback, $this);
+                if (! $this->tokenHasExpired()) {
+                    // the refreshed token has not expired, so we are fine to keep using it
+                    return;
+                }
             }
 
             // If refresh token not yet acquired, do token request
@@ -628,6 +646,14 @@ class Connection
     }
 
     /**
+     * @param callable $callback
+     */
+    public function setRefreshAccessTokenCallback($callback)
+    {
+        $this->refreshAccessTokenCallback = $callback;
+    }
+
+    /**
      * Parse the reponse in the Exception to return the Exact error messages.
      *
      * @param Exception $e
@@ -652,6 +678,10 @@ class Connection
             $errorMessage = $decodedResponseBody['error']['message']['value'];
         } else {
             $errorMessage = $responseBody;
+        }
+
+        if ($reason = $response->getHeaderLine('Reason')) {
+            $errorMessage .= " (Reason: {$reason})";
         }
 
         throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode(), $e);
@@ -695,6 +725,14 @@ class Connection
     public function getMinutelyLimitRemaining()
     {
         return $this->minutelyLimitRemaining;
+    }
+
+    /**
+     * @return int|null The time at which the minutely rate limit window resets in UTC epoch milliseconds
+     */
+    public function getMinutelyLimitReset()
+    {
+        return $this->minutelyLimitReset;
     }
 
     /**
@@ -764,5 +802,6 @@ class Connection
 
         $this->minutelyLimit = (int) $response->getHeaderLine('X-RateLimit-Minutely-Limit');
         $this->minutelyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Minutely-Remaining');
+        $this->minutelyLimitReset = (int) $response->getHeaderLine('X-RateLimit-Minutely-Reset');
     }
 }

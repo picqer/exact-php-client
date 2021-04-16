@@ -6,5 +6,6 @@ enabled:
     - phpdoc_annotation_without_dot
 disabled:
     - concat_without_spaces
+    - phpdoc_align
 finder:
     name: "*.php"

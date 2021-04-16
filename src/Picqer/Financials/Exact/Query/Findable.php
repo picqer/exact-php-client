@@ -38,7 +38,7 @@ trait Findable
 
         $result = isset($records[0]) ? $records[0] : [];
 
-        return new self($this->connection(), $result);
+        return new static($this->connection(), $result);
     }
 
     public function findWithSelect($id, $select = '')
@@ -49,7 +49,7 @@ trait Findable
             '$select' => $select,
         ]);
 
-        return new self($this->connection(), $result);
+        return new static($this->connection(), $result);
     }
 
     /**
