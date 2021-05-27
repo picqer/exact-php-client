@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItems
  *
  * @property string $ID Primary key
+ * @property float $AverageCost The current average cost price
  * @property string $Barcode Barcode of the item (numeric string)
  * @property string $Class_01 Item class code referring to ItemClasses with ClassID 1
  * @property string $Class_02 Item class code referring to ItemClasses with ClassID 2
