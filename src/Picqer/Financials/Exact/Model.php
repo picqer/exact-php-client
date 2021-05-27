@@ -68,10 +68,10 @@ abstract class Model implements \JsonSerializable
      *
      * @return string
      */
-    public function url($id=null)
+    public function url($id = null)
     {
         if (isset($id)) {
-            return str_replace("{Edm.Guid}", "guid'".$id."'", $this->url);
+            return str_replace("{Edm.Guid}", "guid'" . $id . "'", $this->url);
         }
         return $this->url;
     }
