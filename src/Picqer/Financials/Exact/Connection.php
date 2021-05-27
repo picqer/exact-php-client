@@ -235,7 +235,7 @@ class Connection
 
         // Create param string
         if (! empty($params)) {
-            $endpoint .= strpos($endpoint, '?') === false ? "?" : "&";
+            $endpoint .= strpos($endpoint, '?') === false ? '?' : '&';
             $endpoint .= http_build_query($params);
         }
 
