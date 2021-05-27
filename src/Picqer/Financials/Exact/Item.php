@@ -116,6 +116,7 @@ class Item extends Model
 
     protected $fillable = [
         'ID',
+        'AverageCost',
         'Barcode',
         'Class_01',
         'Class_02',
