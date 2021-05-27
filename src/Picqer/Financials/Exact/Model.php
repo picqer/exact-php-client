@@ -70,7 +70,7 @@ abstract class Model implements \JsonSerializable
      */
     public function url()
     {
-        return $this->url;
+        return str_replace("{Edm.Guid}", "guid'".$this->primaryKeyContent()."'", $this->url);
     }
 
     /**
