@@ -101,6 +101,16 @@ class Connection
     private $refreshAccessTokenCallback;
 
     /**
+     * @var callable(Connection, Request)
+     */
+    private $createRequestCallback;
+
+    /**
+     * @var callable(Connection, Response)
+     */
+    private $parseResponseCallback;
+
+    /**
      * @var callable[]
      */
     protected $middleWares = [];
@@ -240,6 +250,10 @@ class Connection
 
         // Create the request
         $request = new Request($method, $endpoint, $headers, $body);
+
+        if (is_callable($this->createRequestCallback)) {
+            call_user_func($this->createRequestCallback, $this, $request);
+        }
 
         return $request;
     }
@@ -418,6 +432,10 @@ class Connection
     private function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
+            if (is_callable($this->parseResponseCallback)) {
+                call_user_func($this->parseResponseCallback, $this, $response);
+            }
+
             $this->extractRateLimits($response);
 
             if ($response->getStatusCode() === 204) {
@@ -643,6 +661,22 @@ class Connection
     public function setTokenUpdateCallback($callback)
     {
         $this->tokenUpdateCallback = $callback;
+    }
+
+    /**
+     * @param callable(Connection, Request) $callback
+     */
+    public function setCreateRequestCallback($callback)
+    {
+        $this->createRequestCallback = $callback;
+    }
+
+    /**
+     * @param callable(Connection, Response) $callback
+     */
+    public function setParseResponseCallback($callback)
+    {
+        $this->parseResponseCallback = $callback;
     }
 
     /**
