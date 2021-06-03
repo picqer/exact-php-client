@@ -207,7 +207,8 @@ class Connection
      *
      * @throws \Picqer\Financials\Exact\ApiException
      */
-    public function checkOrAcquireAccessToken() {
+    public function checkOrAcquireAccessToken()
+    {
         // If access token is not set or token has expired, acquire new token
         if (empty($this->accessToken) || $this->tokenHasExpired()) {
             $this->acquireAccessToken();
