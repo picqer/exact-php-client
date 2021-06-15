@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SyncAccount
+ * Class SyncAccount.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncCRMAccounts
  *
  * @property int64 $Timestamp Timestamp
@@ -55,10 +54,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CustomerSince Obsolete
  * @property string $DatevCreditorCode DATEV creditor code for Germany legislation
  * @property string $DatevDebtorCode DATEV debtor code for Germany legislation
- * @property int $DeliveryAdvice Allows a customer to do goods delivery based on setting complete, partial or partial no back order. Values:
-0 = Partial,
-1 = Complete,
-2 = PartialNoBackOrder
+ * @property int $DeliveryAdvice Allows a customer to do goods delivery based on setting complete, partial or partial no back order. Values: 0 = Partial, 1 = Complete, 2 = PartialNoBackOrder
  * @property float $DiscountPurchase Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055
  * @property float $DiscountSales Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code

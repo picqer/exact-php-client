@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SyncDocumentAttachment
+ * Class SyncDocumentAttachment.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncDocumentsDocumentAttachments
  *
  * @property int64 $Timestamp Timestamp

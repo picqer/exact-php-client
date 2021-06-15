@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SyncPaymentTerm
+ * Class SyncPaymentTerm.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncCashflowPaymentTerms
  *
  * @property int64 $Timestamp Timestamp

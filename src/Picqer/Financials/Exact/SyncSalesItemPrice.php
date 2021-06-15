@@ -3,9 +3,8 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SyncSalesItemPrice
+ * Class SyncSalesItemPrice.
  *
- * @package Picqer\Financials\Exact
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncLogisticsSalesItemPrices
  *
  * @property int64 $Timestamp Timestamp
