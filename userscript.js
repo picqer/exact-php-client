@@ -76,9 +76,8 @@
   phptxt = "<?php\n\nnamespace Picqer\\Financials\\Exact;\n\n/**";
 
   // Build docblock
-  phptxt += "\n * Class " + classname;
-  phptxt += "\n *\n * @package Picqer\\Financials\\Exact";
-  phptxt += "\n * @see " + window.location.href;
+  phptxt += "\n * Class " + classname + ".";
+  phptxt += "\n *\n * @see " + window.location.href;
   phptxt += "\n *";
   $.each(data,function(attribute, info){
     phptxt += "\n * @property " + mapType(info.type) + " $" + attribute + " " + info.description;
