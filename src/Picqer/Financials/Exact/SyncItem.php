@@ -109,8 +109,11 @@ namespace Picqer\Financials\Exact;
  * @property string $UnitDescription Description of Unit
  * @property string $UnitType Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight
  */
-class SyncItem extends Item
+class SyncItem extends Model
 {
+    use Query\Findable;
+    use Persistance\Storable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
