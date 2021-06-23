@@ -37,11 +37,8 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseCode Code of Warehouse
  * @property string $WarehouseDescription Description of Warehouse
  */
-class SyncGoodsDelivery extends Model
+class SyncGoodsDelivery extends GoodsDelivery
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

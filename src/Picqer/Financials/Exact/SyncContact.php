@@ -76,11 +76,8 @@ namespace Picqer\Financials\Exact;
  * @property string $State State
  * @property string $Title Title
  */
-class SyncContact extends Model
+class SyncContact extends Contact
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

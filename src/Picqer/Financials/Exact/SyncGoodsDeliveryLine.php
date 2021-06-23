@@ -38,11 +38,8 @@ namespace Picqer\Financials\Exact;
  * @property string $TrackingNumber Reference to tracking number
  * @property string $Unitcode Code of item unit
  */
-class SyncGoodsDeliveryLine extends Model
+class SyncGoodsDeliveryLine extends GoodsDeliveryLine
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

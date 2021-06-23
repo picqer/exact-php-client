@@ -32,11 +32,8 @@ namespace Picqer\Financials\Exact;
  * @property string $Unit The unit code of the price
  * @property string $UnitDescription Description of the price unit
  */
-class SyncSalesItemPrice extends Model
+class SyncSalesItemPrice extends SalesItemPrice
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

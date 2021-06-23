@@ -30,11 +30,8 @@ namespace Picqer\Financials\Exact;
  * @property string $TaxonomyNamespaceDescription Description of TaxonomyNamespace
  * @property string $Type Type of the element
  */
-class SyncGLClassification extends Model
+class SyncGLClassification extends GLClassification
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

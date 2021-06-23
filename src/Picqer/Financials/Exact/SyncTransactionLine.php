@@ -77,11 +77,8 @@ namespace Picqer\Financials\Exact;
  * @property string $VATType Vat type
  * @property string $YourRef Your reference (of customer)
  */
-class SyncTransactionLine extends Model
+class SyncTransactionLine extends TransactionLine
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

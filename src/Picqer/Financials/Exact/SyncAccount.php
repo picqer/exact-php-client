@@ -159,11 +159,8 @@ namespace Picqer\Financials\Exact;
  * @property string $VATNumber The number under which the account is known at the Value Added Tax collection agency
  * @property string $Website Website of the account
  */
-class SyncAccount extends Model
+class SyncAccount extends Account
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

@@ -26,11 +26,8 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseCode Code of warehouse
  * @property string $WarehouseDescription Description of warehouse
  */
-class SyncStockPosition extends Model
+class SyncStockPosition extends StockPosition
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

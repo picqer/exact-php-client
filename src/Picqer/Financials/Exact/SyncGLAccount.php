@@ -51,11 +51,8 @@ namespace Picqer\Financials\Exact;
  * @property string $YearEndCostGLAccount Indicates the costing account for year end calculations
  * @property string $YearEndReflectionGLAccount Indicates the reflection account that is used by year end application
  */
-class SyncGLAccount extends Model
+class SyncGLAccount extends GLAccount
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

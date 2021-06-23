@@ -112,11 +112,8 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseID Warehouse
  * @property string $YourRef The reference number of the customer
  */
-class SyncSalesOrder extends Model
+class SyncSalesOrder extends SalesOrder
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

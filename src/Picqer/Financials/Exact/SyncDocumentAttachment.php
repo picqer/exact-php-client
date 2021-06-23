@@ -15,11 +15,8 @@ namespace Picqer\Financials\Exact;
  * @property string $ID Primary key
  * @property string $Url Url of the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append &Download=1 to the url.
  */
-class SyncDocumentAttachment extends Model
+class SyncDocumentAttachment extends DocumentAttachment
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

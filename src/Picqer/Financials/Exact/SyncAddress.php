@@ -62,11 +62,8 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseCode Code of the warehoude
  * @property string $WarehouseDescription Description of the warehouse
  */
-class SyncAddress extends Model
+class SyncAddress extends Address
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

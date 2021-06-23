@@ -48,11 +48,8 @@ namespace Picqer\Financials\Exact;
  * @property int $Type ID of the type of this document
  * @property string $TypeDescription Description of Type
  */
-class SyncDocument extends Model
+class SyncDocument extends Document
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

@@ -75,11 +75,8 @@ namespace Picqer\Financials\Exact;
  * @property int $VersionNumber Number indicating the different reviews which are made for the quotation
  * @property string $YourRef The number by which this quotation is identified by the order account
  */
-class SyncQuotation extends Model
+class SyncQuotation extends Quotation
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

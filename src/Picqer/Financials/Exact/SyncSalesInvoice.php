@@ -116,11 +116,8 @@ namespace Picqer\Financials\Exact;
  * @property float $WithholdingTaxPercentage Withholding tax percentage applied to sales invoice. Not supported in The Netherlands.
  * @property string $YourRef The invoice number of the customer
  */
-class SyncSalesInvoice extends Model
+class SyncSalesInvoice extends SalesInvoice
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
