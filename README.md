@@ -61,24 +61,32 @@ $connection->setRedirectUrl('CALLBACK_URL');
 $connection->setExactClientId('CLIENT_ID');
 $connection->setExactClientSecret('CLIENT_SECRET');
 
-if (getValue('authorizationcode')) // Retrieves authorizationcode from database
-	$connection->setAuthorizationCode(getValue('authorizationcode'));
+if (getValue('authorizationcode')) {
+    // Retrieves authorizationcode from database
+    $connection->setAuthorizationCode(getValue('authorizationcode'));
+}
 
-if (getValue('accesstoken')) // Retrieves accesstoken from database
-	$connection->setAccessToken(unserialize(getValue('accesstoken')));
+if (getValue('accesstoken')) {
+    // Retrieves accesstoken from database
+    $connection->setAccessToken(unserialize(getValue('accesstoken')));
+}
 
-if (getValue('refreshtoken')) // Retrieves refreshtoken from database
-	$connection->setRefreshToken(getValue('refreshtoken'));
+if (getValue('refreshtoken')) {
+    // Retrieves refreshtoken from database
+    $connection->setRefreshToken(getValue('refreshtoken'));
+}
 
-if (getValue('expires_in'))  // Retrieves expires timestamp from database
-	$connection->setTokenExpires(getValue('expires_in'));
+if (getValue('expires_in')) {
+    // Retrieves expires timestamp from database
+    $connection->setTokenExpires(getValue('expires_in'));
+}
 
 // Make the client connect and exchange tokens
 try {
-	$connection->connect();
+    $connection->connect();
 } catch (\Exception $e)
 {
-	throw new Exception('Could not connect to Exact: ' . $e->getMessage());
+    throw new Exception('Could not connect to Exact: ' . $e->getMessage());
 }
 
 // Save the new tokens for next connections
@@ -158,9 +166,9 @@ $items = $item->filter("Code eq '$productcode'"); // Uses filters as described i
 
 // Create new invoice with invoice lines
 $invoiceLines[] = [
-	'Item'      => $itemId,
-	'Quantity'  => $orderproduct['amount'],
-	'UnitPrice' => $orderproduct['price']
+    'Item'      => $itemId,
+    'Quantity'  => $orderproduct['amount'],
+    'UnitPrice' => $orderproduct['price']
 ];
 
 $salesInvoice = new SalesInvoice($connection);
