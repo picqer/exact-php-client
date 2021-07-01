@@ -31,7 +31,7 @@ trait Findable
             $filter = $this->primaryKey() . " eq $id";
         }
 
-        $records = $this->connection()->get($this->url(), [
+        $records = $this->connection()->get($this->url($id), [
             '$filter' => $filter,
             '$top'    => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
@@ -44,7 +44,7 @@ trait Findable
     public function findWithSelect($id, $select = '')
     {
         //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
-        $result = $this->connection()->get($this->url(), [
+        $result = $this->connection()->get($this->url($id), [
             '$filter' => $this->primaryKey() . " eq guid'$id'",
             '$select' => $select,
         ]);
