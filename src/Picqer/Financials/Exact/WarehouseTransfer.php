@@ -21,7 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PlannedReceiptDate Planned receipt date It shows the date the items will arrive at the warehouse location.
  * @property string $Remarks Remarks
  * @property int $Source Source of warehouse transfer entry: 1-Manual entry, 2-Import, 3-Transfer advice, 4-Web service
- * @property int $Status Warehouse transfer status: 10-Draft, 50-Processed
+ * @property int $Status Warehouse transfer status: 10-Open, 50-Complete
  * @property string $TransferDate Transfer Date of the processed warehouse transfer
  * @property int $TransferNumber Transfer Number
  * @property string $WarehouseFrom ID of warehouse to transfer item from
@@ -30,7 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseTo ID of warehouse to transfer item to
  * @property string $WarehouseToCode Code of warehouse to transfer item to
  * @property string $WarehouseToDescription Description of warehouse to transfer item to
- * @property warehousetransferlines $WarehouseTransferLines Collection of warehouse transfer lines
+ * @property WarehouseTransferLine[] $WarehouseTransferLines Collection of warehouse transfer lines
  */
 class WarehouseTransfer extends Model
 {

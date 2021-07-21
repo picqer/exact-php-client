@@ -17,7 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DefaultItemUnit The default unit of the item
  * @property string $DefaultItemUnitDescription The description of the default item unit
  * @property int $Division Division code
- * @property string $EndDate Together with StartDate this determines if the item is active
+ * @property string $EndDate Together with StartDate this determines whether the price is active
  * @property string $Item Item ID
  * @property string $ItemCode Code of Item
  * @property string $ItemDescription Description of Item

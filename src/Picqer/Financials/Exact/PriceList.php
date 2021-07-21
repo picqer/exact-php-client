@@ -25,7 +25,6 @@ namespace Picqer\Financials\Exact;
 class PriceList extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -20,7 +20,6 @@ namespace Picqer\Financials\Exact;
 class OutstandingInvoicesOverview extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'CurrencyCode';
 

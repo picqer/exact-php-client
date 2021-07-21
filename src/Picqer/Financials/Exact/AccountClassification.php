@@ -23,7 +23,6 @@ namespace Picqer\Financials\Exact;
 class AccountClassification extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -46,11 +46,17 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectCode The code of the project
  * @property string $ProjectDescription The description of the project
  * @property string $QuotationDate Date on which the quotation version is entered or printed. Both during entering and printing this date can be adjusted
- * @property QuotationLines $QuotationLines The collection of quotation lines
+ * @property QuotationLine[] $QuotationLines The collection of quotation lines
  * @property int $QuotationNumber Unique number to indentify the quotation. By default this number is based on the setting for first available number
  * @property string $Remarks Extra text that can be added to the quotation
+ * @property string $SalesChannel ID of Sales channel.
+ * @property string $SalesChannelCode Code of Sales channel.
+ * @property string $SalesChannelDescription Description of Sales channel.
  * @property string $SalesPerson The user that is responsible for the quotation version
  * @property string $SalesPersonFullName Full name of the sales person
+ * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCodeCode Code of selection code
+ * @property string $SelectionCodeDescription Description of selection code
  * @property int $Status The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted
  * @property string $StatusDescription The description of the status
  * @property float $VATAmountFC Total VAT amount in the currency of the transaction
@@ -107,14 +113,22 @@ class Quotation extends Model
         'QuotationLines',
         'QuotationNumber',
         'Remarks',
+        'SalesChannel',
+        'SalesChannelCode',
+        'SalesChannelDescription',
         'SalesPerson',
         'SalesPersonFullName',
+        'SelectionCode',
+        'SelectionCodeCode',
+        'SelectionCodeDescription',
         'Status',
         'StatusDescription',
         'VATAmountFC',
         'VersionNumber',
         'YourRef',
     ];
+
+    protected $url = 'crm/Quotations';
 
     /**
      * @param array $array
@@ -129,6 +143,4 @@ class Quotation extends Model
         }
         $this->attributes['QuotationLines'][] = $array;
     }
-
-    protected $url = 'crm/Quotations';
 }

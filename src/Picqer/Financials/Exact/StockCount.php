@@ -24,7 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Source Source of stock count entry: 1-Manual entry, 2-Import, 3-Stock count, 4-Web service
  * @property int $Status Stock count status: 12-Draft, 21-Processed
  * @property string $StockCountDate Stock count date
- * @property StockCountLines $StockCountLines Collection of stock count lines
+ * @property StockCountLine[] $StockCountLines Collection of stock count lines
  * @property int $StockCountNumber Human readable id of the stock count
  * @property string $Warehouse Warehouse
  * @property string $WarehouseCode Code of Warehouse

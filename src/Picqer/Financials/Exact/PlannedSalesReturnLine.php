@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderPlannedSalesReturnLines
  *
  * @property string $ID Primary key
- * @property stockbatchnumbers $BatchNumbers The collection of batch numbers that belong to the items included in this planned sales return
+ * @property StockBatchNumber[] $BatchNumbers The collection of batch numbers that belong to the items included in this planned sales return
  * @property int $CreateCredit Option to redeliver to replace the goods or to create a credit note for the returned item: 0-Redelivery, 1-Credit Note
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -28,7 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property float $ReceivedQuantity Actual quantity returned
  * @property string $SalesOrderLineID Sales order line of the particular item
  * @property int $SalesOrderNumber Saler order of the particular item
- * @property stockserialnumbers $SerialNumbers The collection of serial numbers that belong to the items included in this planned sales return
+ * @property StockSerialNumber[] $SerialNumbers The collection of serial numbers that belong to the items included in this planned sales return
  * @property string $StockTransactionEntryID Entry number of the stock transaction
  * @property string $StorageLocation Storage location
  * @property string $StorageLocationCode Storage location code

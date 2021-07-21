@@ -24,7 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
- * @property string $Date Date
+ * @property string $Date Date of the entry
  * @property string $Description Description
  * @property int $Division Division code
  * @property string $Document Reference to a document
@@ -47,7 +47,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectCode Code of Project
  * @property string $ProjectDescription Description of Project
  * @property float $Quantity Quantity
- * @property string $VATCode Reference to vat code
+ * @property string $VATCode Reference to vat code. If this property is not filled, it will use the default VAT code of the G/L account property
  * @property string $VATCodeDescription Description of VATCode
  * @property float $VATPercentage Vat code percentage
  * @property string $VATType Type of vat code

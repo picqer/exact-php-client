@@ -8,19 +8,19 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionRestrictionItems
  *
  * @property string $ID Primary key
- * @property string $Created Creation date
- * @property string $Creator User ID of the creator
- * @property string $CreatorFullName Name of the creator
+ * @property string $Created Date and time when the subscription restriction was created
+ * @property string $Creator ID of user that created the subscription restriction
+ * @property string $CreatorFullName Full name of user that created the subscription restriction
  * @property int $Division Division code
- * @property string $Item Item linked to the restriction
- * @property string $ItemCode Code of item
- * @property string $ItemDescription Description of item
- * @property string $Modified Last modified date
- * @property string $Modifier User ID of the last modifier
- * @property string $ModifierFullName Name of the last modifier
- * @property string $Subscription Reference to subscription
- * @property string $SubscriptionDescription Description of subscription
- * @property int $SubscriptionNumber Number of subscription
+ * @property string $Item Id of item linked to the subscription restriction
+ * @property string $ItemCode Code of item that linked to the subscription restriction
+ * @property string $ItemDescription Description of item that linked to the subscription restriction
+ * @property string $Modified Last modified date of subscription restriction
+ * @property string $Modifier ID of last user that modified the subscription restriction
+ * @property string $ModifierFullName Full name of last user that modified the subscription restriction
+ * @property string $Subscription Subscription ID that the restriction is referenced to
+ * @property string $SubscriptionDescription Subscription description that the restriction is referenced to
+ * @property int $SubscriptionNumber Subscription number that the restriction is referenced to
  */
 class SubscriptionRestrictionItem extends Model
 {

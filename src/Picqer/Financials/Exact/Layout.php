@@ -16,12 +16,11 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of the last modifier
  * @property string $ModifierFullName Name of the last modifier
  * @property string $Subject Layout name
- * @property int $Type Type: 1=Layout, 2=E-mail text layout, 3=Word template
+ * @property int $Type Type: 1=Layout, 2=E-mail text layout
  */
 class Layout extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

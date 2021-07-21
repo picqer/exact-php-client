@@ -22,6 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property int $EmploymentSalaryType Salary type of employment. 1 - Periodical (fixed), 2 - Per hour (variable)
  * @property string $EmploymentSalaryTypeDescription Salary type description
  * @property string $EndDate Salary record end date
+ * @property int $Frequency Frequency: 1 - Yearly, 2 - Quarterly, 3 - Monthly, 4 - 4-weekly, 5 - Weekly, 11 - Yearly (Pro forma), 12 - Quarterly (Pro forma), 13 - Monthly (Pro forma), 14 - 4-Weekly (Pro forma), 15 - Weekly (Pro forma)
  * @property float $FulltimeAmount Salary when working fulltime
  * @property float $HourlyWage Hourly wage
  * @property float $InternalRate Internal rate for time & billing or professional service user
@@ -40,7 +41,6 @@ namespace Picqer\Financials\Exact;
 class EmploymentSalary extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -58,6 +58,7 @@ class EmploymentSalary extends Model
         'EmploymentSalaryType',
         'EmploymentSalaryTypeDescription',
         'EndDate',
+        'Frequency',
         'FulltimeAmount',
         'HourlyWage',
         'InternalRate',

@@ -17,14 +17,14 @@ namespace Picqer\Financials\Exact;
  * @property string $Currency Currency for the invoice. By default this is the currency of the administration
  * @property string $Customer Reference to customer (account)
  * @property string $CustomerName Name of customer
- * @property string $Description Description. Can be different for header and lines
+ * @property string $Description Description of the entry. Can be different for the sales entry lines
  * @property int $Division Division code
  * @property string $Document Document that is manually linked to the invoice
  * @property int $DocumentNumber Number of the document
  * @property string $DocumentSubject Subject of the document
  * @property string $DueDate The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition
- * @property string $EntryDate The date when the invoice is entered
- * @property int $EntryNumber Entry number
+ * @property string $EntryDate Invoice date
+ * @property int $EntryNumber Entry number, for sales invoices this is the invoice number
  * @property string $ExternalLinkDescription Description of ExternalLink
  * @property string $ExternalLinkReference Reference of ExternalLink
  * @property float $GAccountAmountFC A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.
@@ -39,22 +39,22 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentCondition The payment condition used for due date and discount calculation
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
- * @property int $ProcessNumber
+ * @property int $ProcessNumber Internal processing number, only relevant for Germany
  * @property float $Rate Foreign currency rate
  * @property int $ReportingPeriod The period of the transaction lines. The period should exist in the period date table
  * @property int $ReportingYear The financial year to which the entry belongs. The financial year should exist in the period date table
  * @property bool $Reversal Indicates if amounts are reversed
- * @property salesentrylines $SalesEntryLines Collection of lines
+ * @property SalesEntryLine[] $SalesEntryLines Collection of lines
  * @property int $Status Status: 20 = Open, 50 = Processed
  * @property string $StatusDescription Description of Status
  * @property int $Type Type: 20 = Sales entry, 21 = Sales credit note
  * @property string $TypeDescription Description of Type
  * @property float $VATAmountDC Vat amount in the default currency of the company
  * @property float $VATAmountFC Vat amount in the currency of the transaction
- * @property float $WithholdingTaxAmountDC Withholding tax amount
- * @property float $WithholdingTaxBaseAmount Withholding tax base amount to calculate withholding amount
- * @property float $WithholdingTaxPercentage Withholding tax percentage
- * @property string $YourRef The invoice number of the customer
+ * @property float $WithholdingTaxAmountDC Withholding tax amount, Spanish legislation only
+ * @property float $WithholdingTaxBaseAmount Withholding tax base amount to calculate withholding amount, Spanish legislation only
+ * @property float $WithholdingTaxPercentage Withholding tax percentage, Spanish legislation only
+ * @property string $YourRef Reference of the customer, like order number
  */
 class SalesEntry extends Model
 {
@@ -116,6 +116,8 @@ class SalesEntry extends Model
         'YourRef',
     ];
 
+    protected $url = 'salesentry/SalesEntries';
+
     public function addItem(array $array)
     {
         if (! isset($this->attributes['SalesEntryLines']) || $this->attributes['SalesEntryLines'] == null) {
@@ -126,6 +128,4 @@ class SalesEntry extends Model
         }
         $this->attributes['SalesEntryLines'][] = $array;
     }
-
-    protected $url = 'salesentry/SalesEntries';
 }

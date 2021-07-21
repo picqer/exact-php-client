@@ -5,23 +5,23 @@ namespace Picqer\Financials\Exact;
 /**
  * Class CashEntry.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=financialtransactionCashEntries
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialTransactionCashEntries
  *
- * @property string $EntryID Primary key (read-only)
+ * @property string $EntryID Primary key
+ * @property CashEntryLine[] $CashEntryLines Collection of lines
  * @property float $ClosingBalanceFC Closing balance in the currency of the transaction
- * @property string $Created Creation date (read-only)
- * @property float $Currency Closing balance in the currency of the transaction
- * @property int $Division Division code (read-only)
+ * @property string $Created Creation date
+ * @property string $Currency Currency code
+ * @property int $Division Division code
  * @property int $EntryNumber Entry number
- * @property int $FinancialPeriod Fiancial period
- * @property int $FinancialYear Fiancial year
- * @property CashEntryLines $CashEntryLines Collection of lines
+ * @property int $FinancialPeriod The period of the transaction lines. The period should exist in the period date table
+ * @property int $FinancialYear The financial year to which the entry belongs. The financial year should exist in the period date table
  * @property string $JournalCode Code of Journal
- * @property string $JournalDescription Description of Journal (read-only)
- * @property string $Modified Last modified date (read-only)
+ * @property string $JournalDescription Description of Journal
+ * @property string $Modified Last modified date
  * @property float $OpeningBalanceFC Opening balance in the currency of the transaction
- * @property int $Status Status: 5 = Rejected, 20 = Open, 50 = Processed (read-only)
- * @property string $StatusDescription Description of Status (read-only)
+ * @property int $Status Status: 20 = Open, 50 = Processed
+ * @property string $StatusDescription Description of Status
  */
 class CashEntry extends Model
 {
@@ -29,10 +29,12 @@ class CashEntry extends Model
     use Persistance\Storable;
 
     protected $primaryKey = 'EntryID';
+
     protected $cashEntryLines = [];
 
     protected $fillable = [
         'EntryID',
+        'CashEntryLines',
         'ClosingBalanceFC',
         'Created',
         'Currency',
@@ -40,7 +42,6 @@ class CashEntry extends Model
         'EntryNumber',
         'FinancialPeriod',
         'FinancialYear',
-        'CashEntryLines',
         'JournalCode',
         'JournalDescription',
         'Modified',
@@ -49,6 +50,8 @@ class CashEntry extends Model
         'StatusDescription',
     ];
 
+    protected $url = 'financialtransaction/CashEntries';
+
     public function addItem(array $array)
     {
         if (! isset($this->attributes['CashEntryLines']) || $this->attributes['CashEntryLines'] == null) {
@@ -56,6 +59,4 @@ class CashEntry extends Model
         }
         $this->attributes['CashEntryLines'][] = $array;
     }
-
-    protected $url = 'financialtransaction/CashEntries';
 }

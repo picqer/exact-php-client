@@ -28,6 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Notes
  * @property int $PurchaseLeadTime The number of days between placing an order with a supplier and receiving items from the supplier
+ * @property int $PurchaseLotSize Lot size of the item for purchase
  * @property float $PurchasePrice Purchase price
  * @property string $PurchaseUnit Unit code
  * @property string $PurchaseUnitDescription Description of unit
@@ -66,6 +67,7 @@ class SupplierItem extends Model
         'ModifierFullName',
         'Notes',
         'PurchaseLeadTime',
+        'PurchaseLotSize',
         'PurchasePrice',
         'PurchaseUnit',
         'PurchaseUnitDescription',

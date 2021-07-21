@@ -10,6 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ID The primary key of the mail message.
  * @property string $Bank Bank to/from which the mail message is sent/received. This is only used for mail messages of type 'Bank'. It has an attachment containing the bank file.
  * @property string $BankAccount Bank account for which the mail message is sent. This is only used for mail messages of type 'Bank'. It has an attachment containing the bank export file.
+ * @property string $Country Country code
  * @property string $Created The date and time on which the mail message was created.
  * @property string $Creator The user ID of the creator of the mail message.
  * @property string $CreatorFullName The name of the creator of the mail message.
@@ -49,6 +50,7 @@ class MailMessagesSent extends Model
         'ID',
         'Bank',
         'BankAccount',
+        'Country',
         'Created',
         'Creator',
         'CreatorFullName',
