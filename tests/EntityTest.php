@@ -1260,6 +1260,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Schedule::class);
     }
 
+    public function testSelectionCodeEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SelectionCode::class);
+    }
+
     public function testSerialNumberEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\SerialNumber::class);
