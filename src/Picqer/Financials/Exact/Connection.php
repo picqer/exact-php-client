@@ -310,6 +310,28 @@ class Connection
      *
      * @return mixed
      */
+    public function upload($topic, $body)
+    {
+        $url = $this->getBaseUrl() . '/docs/XMLUpload.aspx?Topic=' . $topic . '&_Division=' . $this->getDivision();
+
+        try {
+            $request = $this->createRequest('POST', $url, $body);
+            $response = $this->client()->send($request);
+
+            return $this->parseResponseXml($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
+    }
+
+    /**
+     * @param string $url
+     * @param mixed  $body
+     *
+     * @throws ApiException
+     *
+     * @return mixed
+     */
     public function put($url, $body)
     {
         $url = $this->formatUrl($url);
@@ -463,6 +485,35 @@ class Connection
             }
 
             return $json;
+        } catch (\RuntimeException $e) {
+            throw new ApiException($e->getMessage());
+        }
+    }
+
+    /**
+     * @param Response $response
+     *
+     * @throws ApiException
+     *
+     * @return mixed
+     */
+    private function parseResponseXml(Response $response)
+    {
+        try {
+            if ($response->getStatusCode() === 204) {
+                return [];
+            }
+
+            $answer = [];
+            Psr7\rewind_body($response);
+            $simpleXml = new \SimpleXMLElement($response->getBody()->getContents());
+
+            foreach ($simpleXml->Messages as $message) {
+                $keyAlt = (string) $message->Message->Topic->Data->attributes()['keyAlt'];
+                $answer[$keyAlt] = (string) $message->Message->Description;
+            }
+
+            return $answer;
         } catch (\RuntimeException $e) {
             throw new ApiException($e->getMessage());
         }
