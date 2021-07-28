@@ -16,9 +16,11 @@ namespace Picqer\Financials\Exact;
  * @property string $CostUnit Reference to Cost unit
  * @property string $CostUnitDescription Description of CostUnit
  * @property string $DeliveryDate Delivery date of this line
+ * @property int $DeliveryStatus Shipping status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled
  * @property string $Description Description
  * @property float $Discount Discount given on the default price. Discount = (DefaultPrice of Item - PriceItem in line) / DefaultPrice of Item
  * @property int $Division Division code
+ * @property int $InvoiceStatus Invoice status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled
  * @property string $Item Reference to the item that is sold in this sales order line
  * @property string $ItemCode Code of Item
  * @property string $ItemDescription Description of Item
@@ -30,6 +32,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Notes Extra notes
  * @property string $OrderID The OrderID identifies the sales order. All the lines of a sales order have the same OrderID
  * @property int $OrderNumber Number of sales order
+ * @property int $OrderStatus The status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled
  * @property string $Pricelist Price list
  * @property string $PricelistDescription Description of Pricelist
  * @property string $Project The project to which the sales order line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used
@@ -69,9 +72,11 @@ class SalesOrderLine extends Model
         'CostUnit',
         'CostUnitDescription',
         'DeliveryDate',
+        'DeliveryStatus',
         'Description',
         'Discount',
         'Division',
+        'InvoiceStatus',
         'Item',
         'ItemCode',
         'ItemDescription',
@@ -83,6 +88,7 @@ class SalesOrderLine extends Model
         'Notes',
         'OrderID',
         'OrderNumber',
+        'OrderStatus',
         'Pricelist',
         'PricelistDescription',
         'Project',
