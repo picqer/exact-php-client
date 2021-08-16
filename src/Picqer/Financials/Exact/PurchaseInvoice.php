@@ -13,7 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Currency The code of the currency of the invoiced amount.
  * @property string $Description The description of the invoice.
  * @property string $Document Guid identifying a document that is attached to the invoice.
- * @property string $DueDate The date before which the invoice has to be paid.
+ * @property string $DueDate The date before which the invoice has to be paid. This by default will be set according to the payment condition.
  * @property int $EntryNumber The unique number of the purchase invoice. The entry number is based on a setting in the purchase journal and incremented for each new purchase invoice.
  * @property float $ExchangeRate The exchange rate between the invoice currency and the default currency of the division.
  * @property int $FinancialPeriod The financial period in which the invoice is entered.
@@ -23,7 +23,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified The date and time the invoice was last modified.
  * @property string $PaymentCondition The code of the payment condition that is used to calculate the due date and discount.
  * @property string $PaymentReference Unique reference to match payments and invoices.
- * @property purchaseinvoicelines $PurchaseInvoiceLines The collection of lines that belong to the purchase invoice.
+ * @property PurchaseInvoiceLine[] $PurchaseInvoiceLines The collection of lines that belong to the purchase invoice.
  * @property string $Remarks The user can enter remarks related to the invoice here.
  * @property int $Source Indicates the origin of the invoice. 1 Manual entry, 3 Purchase invoice, 4 Purchase order, 5 Web service.
  * @property int $Status The status of the invoice. 10 Draft, 20 Open, 50 Processed.

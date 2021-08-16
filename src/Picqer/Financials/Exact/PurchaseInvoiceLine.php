@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchasePurchaseInvoiceLines
  *
- * @property string $ID A guid that uniqely identifies the invoice line.
+ * @property string $ID A guid that uniquely identifies the purchase invoice line.
  * @property float $Amount In a GET request the line amount is always returned excluding VAT.In a POST request the line amount has to be submitted either including or excluding the VAT amount. This depends on the type (including or excluding) of the VAT code.
  * @property string $CostCenter The code of the cost center that is linked to this invoice line.
  * @property string $CostUnit The code of the cost unit that is linked to this invoice line.

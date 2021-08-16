@@ -7,8 +7,8 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryBatchNumbers
  *
- * @property string $ID Primary key
- * @property float $AvailableQuantity Available quantity of this batch number
+ * @property string $ID A guid that is the unique identifier of the batch number
+ * @property float $AvailableQuantity Available quantity of this batch number. If available quantity is empty, the batch number is available quantity is 0
  * @property string $BatchNumber Human readable batch number
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -23,13 +23,12 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Remarks Remarks
- * @property storagelocations $StorageLocations Total quantity available per location
- * @property warehouses $Warehouses Total quantity available per warehouse
+ * @property StorageLocation[] $StorageLocations Total quantity available per location
+ * @property Warehouse[] $Warehouses Total quantity available per warehouse
  */
 class BatchNumber extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -13,13 +13,13 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property int $EntryNumber Entry number
  * @property float $ExchangeRate Exchange rate
- * @property int $FinancialPeriod Financial period
- * @property int $FinancialYear Financial year
+ * @property int $FinancialPeriod The period of the transaction lines. The period should exist in the period date table
+ * @property int $FinancialYear The financial year to which the entry belongs. The financial year should exist in the period date table
  * @property GeneralJournalEntryLine[] $GeneralJournalEntryLines Collection of lines
  * @property string $JournalCode Code of Journal
  * @property string $JournalDescription Description of Journal
  * @property string $Modified Last modified date
- * @property bool $Reversal Indicates that amounts are reversed
+ * @property bool $Reversal Indicates that amounts are reversed, reversal allows to create correction entries with negative amounts on same side (debit/credit) as the original entry.
  * @property int $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
  * @property string $StatusDescription Description of Status
  * @property int $Type Type: 10 = Opening balance, 90 = Other
@@ -33,6 +33,7 @@ class GeneralJournalEntry extends Model
     protected $primaryKey = 'EntryID';
 
     protected $generalJournalEntryLines = [];
+
     protected $fillable = [
         'EntryID',
         'Created',
@@ -53,6 +54,8 @@ class GeneralJournalEntry extends Model
         'TypeDescription',
     ];
 
+    protected $url = 'generaljournalentry/GeneralJournalEntries';
+
     public function addItem(array $array)
     {
         if (! isset($this->attributes['GeneralJournalEntryLines']) || $this->attributes['GeneralJournalEntryLines'] == null) {
@@ -60,6 +63,4 @@ class GeneralJournalEntry extends Model
         }
         $this->attributes['GeneralJournalEntryLines'][] = $array;
     }
-
-    protected $url = 'generaljournalentry/GeneralJournalEntries';
 }

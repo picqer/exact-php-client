@@ -8,15 +8,15 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMDivisionClassValues
  *
  * @property string $ID Primary key
- * @property class_01 $Class_01 First classification
+ * @property DivisionClass $Class_01 First classification
  * @property string $Class_01_ID First classification ID
- * @property class_02 $Class_02 Second classification
+ * @property DivisionClass $Class_02 Second classification
  * @property string $Class_02_ID Second classification ID
- * @property class_03 $Class_03 Third classification
+ * @property DivisionClass $Class_03 Third classification
  * @property string $Class_03_ID Third classification ID
- * @property class_04 $Class_04 Fourth classification
+ * @property DivisionClass $Class_04 Fourth classification
  * @property string $Class_04_ID Fourth classification ID
- * @property class_05 $Class_05 Fifth classification
+ * @property DivisionClass $Class_05 Fifth classification
  * @property string $Class_05_ID Fifth classification ID
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -30,7 +30,6 @@ namespace Picqer\Financials\Exact;
 class DivisionClassValue extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

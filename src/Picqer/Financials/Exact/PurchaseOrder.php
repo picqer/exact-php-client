@@ -37,15 +37,20 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of payment condition
  * @property string $PurchaseAgent Purchase agent
  * @property string $PurchaseAgentFullName Name of purchase agent
- * @property PurchaseOrderLines $PurchaseOrderLines Collection of lines
+ * @property int $PurchaseOrderLineCount Total row count of lines
+ * @property PurchaseOrderLine[] $PurchaseOrderLines Collection of lines
  * @property string $ReceiptDate This field shows the date the goods are expected to be received.
  * @property int $ReceiptStatus Receipt status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled
  * @property string $Remarks Include any relevant remarks regarding the purchase order.
- * @property string $SalesOrder Reference to sales order when purchase order generated via back to back sales order
- * @property int $SalesOrderNumber Number of the sales order
+ * @property string $SalesOrder Reference to sales order when purchase order generated via back to back sales order. Show NULL if more than one sales order is linked to the purchase order.
+ * @property int $SalesOrderNumber Number of the sales order. Show NULL if more than one sales order is linked to the purchase order.
+ * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCodeCode Code of selection code
+ * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod ShippingMethod
+ * @property string $ShippingMethodCode Code of ShippingMethod
  * @property string $ShippingMethodDescription Description of ShippingMethod
- * @property int $Source This shows how the purchase order was created: 1-Manual entry, 2-Import, 3-Other, 4-Purchase order, 5-Sales order, 6-Supplier's items, 7-Subcontract, 8-Purchase order advice, 9-Shop order, 10-MRP calculation
+ * @property int $Source This shows how the purchase order was created: 1-Manual entry, 2-Import, 3-Other, 4-Purchase order, 5-Sales order, 6-Supplier's items, 7-Subcontract, 8-Purchase order advice, 9-Shop order, 10-MRP calculation, 11-Rest API, 12-Merge purchase orders
  * @property string $Supplier Reference to supplier account
  * @property string $SupplierCode Code of supplier
  * @property string $SupplierContact Contact of supplier
@@ -97,13 +102,18 @@ class PurchaseOrder extends Model
         'PaymentConditionDescription',
         'PurchaseAgent',
         'PurchaseAgentFullName',
+        'PurchaseOrderLineCount',
         'PurchaseOrderLines',
         'ReceiptDate',
         'ReceiptStatus',
         'Remarks',
         'SalesOrder',
         'SalesOrderNumber',
+        'SelectionCode',
+        'SelectionCodeCode',
+        'SelectionCodeDescription',
         'ShippingMethod',
+        'ShippingMethodCode',
         'ShippingMethodDescription',
         'Source',
         'Supplier',
@@ -118,6 +128,8 @@ class PurchaseOrder extends Model
         'YourRef',
     ];
 
+    protected $url = 'purchaseorder/PurchaseOrders';
+
     /**
      * @param array $array
      */
@@ -131,6 +143,4 @@ class PurchaseOrder extends Model
         }
         $this->attributes['PurchaseOrderLines'][] = $array;
     }
-
-    protected $url = 'purchaseorder/PurchaseOrders';
 }

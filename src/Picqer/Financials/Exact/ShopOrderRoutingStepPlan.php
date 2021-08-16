@@ -49,7 +49,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Status Reference to OperationStatus
  * @property string $StatusDescription Description of Status
  * @property int $SubcontractedLeadDays Subcontracted lead days
- * @property timetransactions $TimeTransactions Collection of TimeTransactions
+ * @property TimeTransaction[] $TimeTransactions Collection of TimeTransactions
  * @property float $TotalCostDC Total cost of the routing line
  * @property string $Workcenter Reference to Workcenters
  * @property string $WorkcenterCode Workcenter code

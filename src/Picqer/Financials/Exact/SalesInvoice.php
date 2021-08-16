@@ -54,24 +54,27 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales invoice
  * @property string $Remarks Extra remarks
- * @property salesinvoicelines $SalesInvoiceLines Collection of lines
+ * @property string $SalesChannel ID of Sales channel.
+ * @property string $SalesChannelCode Code of Sales channel.
+ * @property string $SalesChannelDescription Description of Sales channel.
+ * @property SalesInvoiceLine[] $SalesInvoiceLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
+ * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCodeCode Code of selection code
+ * @property string $SelectionCodeDescription Description of selection code
  * @property int $StarterSalesInvoiceStatus Starter Sales invoice status (for starter functionality)
  * @property string $StarterSalesInvoiceStatusDescription Description of StarterSalesInvoiceStatus
  * @property int $Status The status of the entry. 10 = draft. During the creation of an invoice draft records occur in the draft modus if during an invoice a new page with lines is triggered. If the user leaves the invoice in an abnormal way the draft invoices can be recovered. Draft invoices are not included in financial reports, balances etc. 20 = open. Open invoices can be changed. New invoices get the status open by default. 50 = processed. Processed invoices can't be changed anymore. Processing is done via printing. Processed invoices can't be reopened
  * @property string $StatusDescription Description of Status
- * @property string $TaxSchedule Obsolete
- * @property string $TaxScheduleCode Obsolete
- * @property string $TaxScheduleDescription Obsolete
- * @property int $Type Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note
+ * @property int $Type Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note. Type 8023 and 8024 are only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $TypeDescription Description of the type
  * @property float $VATAmountDC Total VAT amount in the default currency of the company
  * @property float $VATAmountFC Total VAT amount in the currency of the transaction
  * @property string $Warehouse Mandatory for direct sales invoice/credit note, cannot be set for normal sales invoice/credit note.
- * @property float $WithholdingTaxAmountFC Withholding tax amount applied to sales invoice
- * @property float $WithholdingTaxBaseAmount Withholding tax base amount to calculate withholding amount
- * @property float $WithholdingTaxPercentage Withholding tax percentage applied to sales invoice
+ * @property float $WithholdingTaxAmountFC Withholding tax amount applied to sales invoice. Not supported in The Netherlands.
+ * @property float $WithholdingTaxBaseAmount Withholding tax base amount to calculate withholding amount. Not supported in The Netherlands.
+ * @property float $WithholdingTaxPercentage Withholding tax percentage applied to sales invoice. Not supported in The Netherlands.
  * @property string $YourRef The invoice number of the customer
  */
 class SalesInvoice extends Model
@@ -129,16 +132,19 @@ class SalesInvoice extends Model
         'PaymentConditionDescription',
         'PaymentReference',
         'Remarks',
+        'SalesChannel',
+        'SalesChannelCode',
+        'SalesChannelDescription',
         'SalesInvoiceLines',
         'Salesperson',
         'SalespersonFullName',
+        'SelectionCode',
+        'SelectionCodeCode',
+        'SelectionCodeDescription',
         'StarterSalesInvoiceStatus',
         'StarterSalesInvoiceStatusDescription',
         'Status',
         'StatusDescription',
-        'TaxSchedule',
-        'TaxScheduleCode',
-        'TaxScheduleDescription',
         'Type',
         'TypeDescription',
         'VATAmountDC',

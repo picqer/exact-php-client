@@ -24,7 +24,10 @@ namespace Picqer\Financials\Exact;
  * @property string $ExpenseDescription Description of expense. Only available with a professional service license
  * @property float $InStock The current stock level of items shown in stock unit. The information is displayed only for items with the stock property selected.
  * @property float $InvoicedQuantity Quantity of item that has been invoiced
+ * @property int $IsBatchNumberItem Indicates that an Item is an batch item
+ * @property int $IsSerialNumberItem Indicates that an Item is an serial item
  * @property string $Item Reference to the item for purchase order
+ * @property string $ItemBarcode Barcode of the item (numeric string)
  * @property string $ItemCode Item code
  * @property string $ItemDescription Description of item
  * @property bool $ItemDivisable Indicates if fractional quantities of the item can be used, for example quantity = 0.4
@@ -44,10 +47,10 @@ namespace Picqer\Financials\Exact;
  * @property bool $Rebill Indicates whether the purchase order line needs to be rebilled. Only available with a professional service license
  * @property string $ReceiptDate Date the goods are expected to be received
  * @property float $ReceivedQuantity Quantity of goods received
- * @property string $SalesOrder Sales order that is linked to a back to back sales order in purchase order
- * @property string $SalesOrderLine Sales order line of the sales order that is linked to a back to back sales order in purchase order
- * @property int $SalesOrderLineNumber Number of the sales order line
- * @property int $SalesOrderNumber Number of the sales order
+ * @property string $SalesOrder Sales order that is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line.
+ * @property string $SalesOrderLine Sales order line of the sales order that Is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line.
+ * @property int $SalesOrderLineNumber Number of the sales order line. Show NULL if more than one sales order is linked to the purchase order line.
+ * @property int $SalesOrderNumber Number of the sales order. Show NULL if more than one sales order is linked to the purchase order line.
  * @property string $SupplierItemCode Code the supplier uses for this item
  * @property int $SupplierItemCopyRemarks Indicate if the notes content should be copied from SupplierItem's remarks. The default follows the CopyRemarks value from SupplierItem. Values: 0 = Do not copy remark, 1 = Copy remark
  * @property string $Unit Code of item unit
@@ -81,7 +84,10 @@ class PurchaseOrderLine extends Model
         'ExpenseDescription',
         'InStock',
         'InvoicedQuantity',
+        'IsBatchNumberItem',
+        'IsSerialNumberItem',
         'Item',
+        'ItemBarcode',
         'ItemCode',
         'ItemDescription',
         'ItemDivisable',

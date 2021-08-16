@@ -21,7 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property int $Publish Customers can decide if they want this mailbox to be visible by all. i.e. some other customer can see this in address maintenance for digital postbox of type Exact
- * @property int $Type Type of mailbox. Exact / Government / Manual
+ * @property int $Type Type of mailbox: 0-Unknown, 1-Exact, 2-Government, 3-Manual input
  * @property string $ValidFrom Date that this mailbox became valid
  * @property string $ValidTo Date that this mailbox will not be valid anymore
  */

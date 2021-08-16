@@ -13,7 +13,6 @@ namespace Picqer\Financials\Exact;
 class EmploymentContractFlexPhase extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

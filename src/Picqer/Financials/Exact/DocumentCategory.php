@@ -15,7 +15,6 @@ namespace Picqer\Financials\Exact;
 class DocumentCategory extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

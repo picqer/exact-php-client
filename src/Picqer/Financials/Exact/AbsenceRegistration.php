@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMAbsenceRegistrations
  *
  * @property string $ID Primary key
- * @property absenceregistrationtransactions $AbsenceRegistrationTransactions Collection of absence registration transactions
+ * @property AbsenceRegistrationTransaction[] $AbsenceRegistrationTransactions Collection of absence registration transactions
  * @property int $Cause Absence cause, only supported for the Netherland legislation
  * @property string $CauseCode Code for the absence cause, only supported for the Netherland legislation
  * @property string $CauseDescription Description for the absence cause, only supported for the Netherland legislation
@@ -30,7 +30,6 @@ namespace Picqer\Financials\Exact;
 class AbsenceRegistration extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

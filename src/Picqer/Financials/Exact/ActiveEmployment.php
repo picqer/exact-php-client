@@ -55,7 +55,6 @@ namespace Picqer\Financials\Exact;
 class ActiveEmployment extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

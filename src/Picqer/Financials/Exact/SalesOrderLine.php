@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property float $CostPriceFC Item cost price
  * @property string $CostUnit Reference to Cost unit
  * @property string $CostUnitDescription Description of CostUnit
+ * @property string $CustomerItemCode Code the customer uses for this item
  * @property string $DeliveryDate Delivery date of this line
  * @property int $DeliveryStatus Shipping status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled
  * @property string $Description Description
@@ -41,13 +42,10 @@ namespace Picqer\Financials\Exact;
  * @property string $PurchaseOrderLine Purchase order line of the purchase order that is linked to the sales order
  * @property int $PurchaseOrderLineNumber Number of the purchase order line
  * @property int $PurchaseOrderNumber Number of the purchase order
- * @property float $Quantity The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor
+ * @property float $Quantity The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor.Positive quantity = Sales order lines, Negative quantity = Trade-in lines.
  * @property float $QuantityDelivered The number of items delivered
  * @property float $QuantityInvoiced The number of items invoiced
  * @property string $ShopOrder Reference to ShopOrder
- * @property string $TaxSchedule Obsolete
- * @property string $TaxScheduleCode Obsolete
- * @property string $TaxScheduleDescription Obsolete
  * @property string $UnitCode Code of item unit
  * @property string $UnitDescription Description of Unit
  * @property float $UnitPrice Price per unit in the currency of the transaction
@@ -71,6 +69,7 @@ class SalesOrderLine extends Model
         'CostPriceFC',
         'CostUnit',
         'CostUnitDescription',
+        'CustomerItemCode',
         'DeliveryDate',
         'DeliveryStatus',
         'Description',
@@ -101,9 +100,6 @@ class SalesOrderLine extends Model
         'QuantityDelivered',
         'QuantityInvoiced',
         'ShopOrder',
-        'TaxSchedule',
-        'TaxScheduleCode',
-        'TaxScheduleDescription',
         'UnitCode',
         'UnitDescription',
         'UnitPrice',

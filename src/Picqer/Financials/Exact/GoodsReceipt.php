@@ -16,7 +16,8 @@ namespace Picqer\Financials\Exact;
  * @property string $Document Document that is linked to the goods receipt
  * @property string $DocumentSubject Document subject
  * @property int $EntryNumber Entry number of the resulting stock entry
- * @property GoodsReceiptLines $GoodsReceiptLines Collection of receipt lines
+ * @property int $GoodsReceiptLineCount Total row count of lines
+ * @property GoodsReceiptLine[] $GoodsReceiptLines Collection of receipt lines
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of the last modifier
  * @property string $ModifierFullName Name of the last modifier
@@ -48,6 +49,7 @@ class GoodsReceipt extends Model
         'Document',
         'DocumentSubject',
         'EntryNumber',
+        'GoodsReceiptLineCount',
         'GoodsReceiptLines',
         'Modified',
         'Modifier',

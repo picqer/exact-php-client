@@ -22,8 +22,8 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $EndDate End date
  * @property bool $IsFractionAllowedItem Indicates if decimals are allowed in quantities
- * @property bool $IsSalesItem Indicates if this is a sales item
- * @property bool $IsStockItem Indicates if this is a stock item
+ * @property bool $IsSalesItem Indicates if the item can be sold
+ * @property bool $IsStockItem If you have the Trade or Manufacturing license and you check this property, the item will be shown in the stock positions overview, stock counts and transaction lists
  * @property int $IsTaxableItem Indicates if tax needs to be calculated for this item
  * @property int $IsWebshopItem Indicates if this is a webshop item
  * @property string $ItemGroup Item group
@@ -38,7 +38,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PictureName File name of picture
  * @property string $PictureThumbnailUrl Url where thumbnail picture can be retrieved
  * @property string $PictureUrl Url where picture can be retrieved
- * @property float $ProjectedStock
+ * @property float $ProjectedStock The quantity of stock projected given all planned future stock changes
  * @property int $PurchaseLeadDays Number of days before purchase arrives
  * @property float $QuantityToBeConsumed Quantity to be consumed
  * @property float $QuantityToBeDelivered Quantity to be delivered

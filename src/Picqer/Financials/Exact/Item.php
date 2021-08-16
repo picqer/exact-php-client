@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItems
  *
- * @property string $ID Primary key
+ * @property string $ID A guid that is the unique identifier of the item
  * @property float $AverageCost The current average cost price
  * @property string $Barcode Barcode of the item (numeric string)
  * @property string $Class_01 Item class code referring to ItemClasses with ClassID 1
@@ -104,6 +104,10 @@ namespace Picqer\Financials\Exact;
  * @property string $SearchCode Search code of the item
  * @property int $SecurityLevel Security level (0 - 100)
  * @property string $StartDate Together with EndDate this determines if the item is active
+ * @property string $StatisticalCode Statistical code
+ * @property float $StatisticalNetWeight Statistical net weight
+ * @property float $StatisticalUnits Statistical units
+ * @property float $StatisticalValue Statistical value
  * @property float $Stock Quantity that is in stock
  * @property string $Unit The standard unit of this item
  * @property string $UnitDescription Description of Unit
@@ -213,6 +217,10 @@ class Item extends Model
         'SearchCode',
         'SecurityLevel',
         'StartDate',
+        'StatisticalCode',
+        'StatisticalNetWeight',
+        'StatisticalUnits',
+        'StatisticalValue',
         'Stock',
         'Unit',
         'UnitDescription',

@@ -8,13 +8,12 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLTransactionSources
  *
  * @property int $ID
- * @property string $Description
- * @property string $DescriptionSuffix
+ * @property string $Description See https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Reference-restapi-transactionsourcesr for more explanation
+ * @property string $DescriptionSuffix See https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Reference-restapi-transactionsourcesr for more explanation
  */
 class GLTransactionSource extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

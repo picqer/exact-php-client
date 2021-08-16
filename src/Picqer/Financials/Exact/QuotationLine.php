@@ -10,6 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ID Primary key
  * @property float $AmountDC Amount in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
+ * @property string $CustomerItemCode Code the customer uses for this item
  * @property string $Description By default this contains the item description
  * @property float $Discount Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
@@ -39,6 +40,7 @@ class QuotationLine extends Model
         'ID',
         'AmountDC',
         'AmountFC',
+        'CustomerItemCode',
         'Description',
         'Discount',
         'Division',

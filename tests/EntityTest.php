@@ -1695,6 +1695,41 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\Workcenter::class);
     }
 
+    public function testCustomerItemEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\CustomerItem::class);
+    }
+
+    public function testDeductibilityPercentageEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DeductibilityPercentage::class);
+    }
+
+    public function testDigitalOrderPickingEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DigitalOrderPicking::class);
+    }
+
+    public function testDigitalOrderPickingLineEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DigitalOrderPickingLine::class);
+    }
+
+    public function testEmploymentEndReasonsOnFocusDateEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\EmploymentEndReasonsOnFocusDate::class);
+    }
+
+    public function testSalesChannelEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesChannel::class);
+    }
+
+    public function testSystemUserEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SystemUser::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);

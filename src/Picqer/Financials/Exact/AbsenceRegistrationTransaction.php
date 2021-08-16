@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $EndTime End time on the last day of absence stored as DateTime, and the date should be ignored
  * @property string $ExpectedEndDate Expected end date of absence
- * @property float $Hours Total number of absence hours
+ * @property float $Hours Differentiation of absence hours of the absence registration transaction between previous and current status
  * @property float $HoursFirstDay Hours of absence on the first day
  * @property float $HoursLastDay Hours of absence on the last day
  * @property string $Modified Last modified date
@@ -31,7 +31,6 @@ namespace Picqer\Financials\Exact;
 class AbsenceRegistrationTransaction extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

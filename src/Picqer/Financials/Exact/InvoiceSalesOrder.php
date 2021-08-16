@@ -16,7 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $JournalCode Code of Journal
  * @property int $NumberOfCreatedInvoices Number of invoices successfully created.
  * @property int $NumberOfFailedInvoices Number of invoices failed to create.
- * @property SalesOrderIDs $SalesOrderIDs Collection of Sales order IDs.
+ * @property SalesOrderID[] $SalesOrderIDs Collection of Sales order IDs.
  * @property string $StartDate Stock entries entry start date.
  * @property string $UserInvoiceDate Possibility to override the InvoiceDate during creation of sales invoice from sales orders. Works only for integration with Intuit QuickBooks.
  */

@@ -19,7 +19,6 @@ namespace Picqer\Financials\Exact;
 class Unit extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -18,7 +18,6 @@ namespace Picqer\Financials\Exact;
 class AddressState extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -8,7 +8,6 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmployees
  *
  * @property string $ID Primary key
- * @property int $ActiveEmployment Obsolete
  * @property string $AddressLine2 Second address line
  * @property string $AddressLine3 Third address line
  * @property string $AddressStreet Street of address
@@ -23,7 +22,6 @@ namespace Picqer\Financials\Exact;
  * @property string $BusinessMobile Office mobile number of the employee
  * @property string $BusinessPhone Phone number of the employee at the office
  * @property string $BusinessPhoneExtension Phone extension of the employee at the office
- * @property string $CASONumber Obsolete
  * @property string $City City
  * @property string $Code Code of the employee
  * @property string $Country Country code
@@ -77,11 +75,9 @@ namespace Picqer\Financials\Exact;
 class Employee extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
-        'ActiveEmployment',
         'AddressLine2',
         'AddressLine3',
         'AddressStreet',
@@ -96,7 +92,6 @@ class Employee extends Model
         'BusinessMobile',
         'BusinessPhone',
         'BusinessPhoneExtension',
-        'CASONumber',
         'City',
         'Code',
         'Country',

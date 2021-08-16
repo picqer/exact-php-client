@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryWarehouses
  *
- * @property string $ID Primary key
+ * @property string $ID A guid that is the unique identifier of the warehouse
  * @property string $Code Code of the warehouse
  * @property string $Created Creation date
  * @property string $Creator User ID of creator

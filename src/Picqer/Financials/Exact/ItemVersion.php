@@ -27,12 +27,12 @@ namespace Picqer\Financials\Exact;
  * @property string $StatusDescription Description of Status
  * @property int $Type Type of Item version: 10-Sales bill of material, 20-Manufacturing recipe
  * @property string $TypeDescription Description of Type
+ * @property string $VersionDate Version date
  * @property int $VersionNumber Version Number
  */
 class ItemVersion extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -55,6 +55,7 @@ class ItemVersion extends Model
         'StatusDescription',
         'Type',
         'TypeDescription',
+        'VersionDate',
         'VersionNumber',
     ];
 

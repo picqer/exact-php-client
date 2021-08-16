@@ -37,7 +37,6 @@ namespace Picqer\Financials\Exact;
 class EmploymentOrganization extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -41,7 +41,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Extra remarks
- * @property string $OffsetID OffsetID
+ * @property string $OffsetID OffsetID - The GUID of the entryline which contain the off set amount of this entry
  * @property int $OurRef Our ref of general journal entry
  * @property string $Project Reference to project
  * @property string $ProjectCode Code of Project
@@ -49,7 +49,7 @@ namespace Picqer\Financials\Exact;
  * @property float $Quantity Quantity
  * @property float $VATBaseAmountDC VAT base amount in the default currency of the company
  * @property float $VATBaseAmountFC VAT base amount in the currency of the transaction
- * @property string $VATCode VATCode can only be used if the general journal has VAT enabled. VAT Lines will be automatically created if the VATCode is specified when creating a new general journal entry.
+ * @property string $VATCode VATCode can only be used if the general journal has VAT enabled. VAT Lines will be automatically created if the VATCode is specified when creating a new general journal entry. If this property is not filled, it will use the default VAT code of the G/L account property
  * @property string $VATCodeDescription Description of VATCode
  * @property float $VATPercentage Vat percentage
  * @property string $VATType The VAT type determines what the values are in relation to VAT returns. The following values are supported:A Sales VAT to pay,D Credit note extra duty to claim,I Purchase basis,M Credit note purchase non-deductible,N Purchase non-deductible,O Purchase VAT to claim,P Purchase VAT to pay,Q Credit note purchase VAT to claim,R Extra duty to pay,S No VAT,V Sales basis,W Credit note purchase basis,X Credit note sales basis,Y Credit note purchase VAT to pay,Z Credit note sales VAT to claim

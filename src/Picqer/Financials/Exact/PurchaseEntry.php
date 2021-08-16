@@ -10,7 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property string $EntryID Primary key
  * @property float $AmountDC Amount in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
- * @property int $BatchNumber Batch number
+ * @property int $BatchNumber The number of the batch of entries. Normally a batch consists of multiple entries. Batchnumbers are filled for invoices created by: - Fixed entries - Prolongation (only available with module hosting)
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -21,7 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property int $DocumentNumber Document number
  * @property string $DocumentSubject Document subject
  * @property string $DueDate Date when payment should be done
- * @property string $EntryDate Entry date
+ * @property string $EntryDate Invoice date
  * @property int $EntryNumber Entry number
  * @property string $ExternalLinkDescription Description of ExternalLink
  * @property string $ExternalLinkReference External link
@@ -36,11 +36,11 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentCondition Payment condition
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
- * @property int $ProcessNumber
- * @property array $PurchaseEntryLines Collection of lines
+ * @property int $ProcessNumber Internal processing number, only relevant for Germany
+ * @property PurchaseEntryLine[] $PurchaseEntryLines Collection of lines
  * @property float $Rate Currency exchange rate
- * @property int $ReportingPeriod Reporting period
- * @property int $ReportingYear Reporting year
+ * @property int $ReportingPeriod The period of the transaction lines. The period should exist in the period date table
+ * @property int $ReportingYear The financial year to which the entry belongs. The financial year should exist in the period date table
  * @property bool $Reversal Indicates that amounts are reversed
  * @property int $Status Status: 5 = Rejected, 20 = Open, 50 = Processed
  * @property string $StatusDescription Description of Status
@@ -108,6 +108,8 @@ class PurchaseEntry extends Model
         'YourRef',
     ];
 
+    protected $url = 'purchaseentry/PurchaseEntries';
+
     public function addItem(array $array)
     {
         if (! isset($this->attributes['PurchaseEntryLines']) || $this->attributes['PurchaseEntryLines'] == null) {
@@ -118,6 +120,4 @@ class PurchaseEntry extends Model
         }
         $this->attributes['PurchaseEntryLines'][] = $array;
     }
-
-    protected $url = 'purchaseentry/PurchaseEntries';
 }
