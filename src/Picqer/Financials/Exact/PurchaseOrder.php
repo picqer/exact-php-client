@@ -10,6 +10,11 @@ namespace Picqer\Financials\Exact;
  * @property string $PurchaseOrderID Primary key
  * @property float $AmountDC Total amount in the default currency of the company
  * @property float $AmountFC Total amount in the currency of the transaction
+ * @property int $ApprovalStatus Shows if this purchase order is approved
+ * @property string $ApprovalStatusDescription Description of ApprovalStatus
+ * @property string $Approved Approval datetime
+ * @property string $Approver User who approved the purchase order
+ * @property string $ApproverFullName Name of approver
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -25,7 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Document Document that is manually linked to the purchase order
  * @property string $DocumentSubject Subject of the document
  * @property bool $DropShipment Shows if it is a drop shipment purchase order
- * @property float $ExchangeRate Allows you to set the currency for the invoice. You can only do this if you have checked the Variable: Currency and Variable: Exchange rate fields in the sales journal settings. Once a line has been created in the invoice, the currency can no longer be changed.
+ * @property float $ExchangeRate The exchange rate between the invoice currency and the default currency of the division.
  * @property int $InvoiceStatus Invoice status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -75,6 +80,11 @@ class PurchaseOrder extends Model
         'PurchaseOrderID',
         'AmountDC',
         'AmountFC',
+        'ApprovalStatus',
+        'ApprovalStatusDescription',
+        'Approved',
+        'Approver',
+        'ApproverFullName',
         'Created',
         'Creator',
         'CreatorFullName',

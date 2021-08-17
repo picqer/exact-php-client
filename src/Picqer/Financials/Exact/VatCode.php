@@ -39,6 +39,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName User name of modifier
+ * @property string $OssCountry OSS country. Available when OneStopShop featureset is enabled in the administration.
  * @property float $Percentage Percentage of the VAT code
  * @property int $TaxReturnType Indicates what type of Taxcode it is: can be VAT, IncomeTax
  * @property string $Type Indicates how the VAT amount should be calculated in relation to the invoice amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT
@@ -86,6 +87,7 @@ class VatCode extends Model
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'OssCountry',
         'Percentage',
         'TaxReturnType',
         'Type',

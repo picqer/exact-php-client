@@ -10,6 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property string $UserID Primary key
  * @property int $AccountingDivision Accounting division number
  * @property int $CurrentDivision Division number that is currently used in the API. You should use a division number in the url
+ * @property string $CustomerCode Account code of the logged in user.
  * @property string $DivisionCustomer Owner account of the division
  * @property string $DivisionCustomerCode Owner account code of the division
  * @property string $DivisionCustomerName Owner account name of the division
@@ -51,6 +52,7 @@ class Me extends Model
         'UserID',
         'AccountingDivision',
         'CurrentDivision',
+        'CustomerCode',
         'DivisionCustomer',
         'DivisionCustomerCode',
         'DivisionCustomerName',
