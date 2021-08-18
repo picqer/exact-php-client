@@ -39,6 +39,7 @@ namespace Picqer\Financials\Exact;
  * @property string $FixedPriceItemDescription Description of FixedPriceItem
  * @property bool $HasWBSLines Indicates if whether the Project has WBS
  * @property int $IncludeInvoiceSpecification Include invoice specification. E.g: 1 = Based on account, 2 = Always, 3 = Never
+ * @property bool $IncludeSpecificationInInvoicePdf Indicates whether to include invoice specification in invoice PDF
  * @property string $InternalNotes Internal notes not to be printed in invoice
  * @property string $InvoiceAddress Invoice address
  * @property bool $InvoiceAsQuoted Indicates whether the project is invoice as quoted
@@ -103,6 +104,7 @@ class Project extends Model
         'FixedPriceItemDescription',
         'HasWBSLines',
         'IncludeInvoiceSpecification',
+        'IncludeSpecificationInInvoicePdf',
         'InternalNotes',
         'InvoiceAddress',
         'InvoiceAsQuoted',
