@@ -49,9 +49,6 @@ namespace Picqer\Financials\Exact;
  * @property QuotationLine[] $QuotationLines The collection of quotation lines
  * @property int $QuotationNumber Unique number to indentify the quotation. By default this number is based on the setting for first available number
  * @property string $Remarks Extra text that can be added to the quotation
- * @property string $SalesChannel ID of Sales channel.
- * @property string $SalesChannelCode Code of Sales channel.
- * @property string $SalesChannelDescription Description of Sales channel.
  * @property string $SalesPerson The user that is responsible for the quotation version
  * @property string $SalesPersonFullName Full name of the sales person
  * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
@@ -113,9 +110,6 @@ class Quotation extends Model
         'QuotationLines',
         'QuotationNumber',
         'Remarks',
-        'SalesChannel',
-        'SalesChannelCode',
-        'SalesChannelDescription',
         'SalesPerson',
         'SalesPersonFullName',
         'SelectionCode',

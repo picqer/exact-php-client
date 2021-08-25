@@ -10,11 +10,6 @@ namespace Picqer\Financials\Exact;
  * @property string $PurchaseOrderID Primary key
  * @property float $AmountDC Total amount in the default currency of the company
  * @property float $AmountFC Total amount in the currency of the transaction
- * @property int $ApprovalStatus Shows if this purchase order is approved
- * @property string $ApprovalStatusDescription Description of ApprovalStatus
- * @property string $Approved Approval datetime
- * @property string $Approver User who approved the purchase order
- * @property string $ApproverFullName Name of approver
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -80,11 +75,6 @@ class PurchaseOrder extends Model
         'PurchaseOrderID',
         'AmountDC',
         'AmountFC',
-        'ApprovalStatus',
-        'ApprovalStatusDescription',
-        'Approved',
-        'Approver',
-        'ApproverFullName',
         'Created',
         'Creator',
         'CreatorFullName',

@@ -46,7 +46,6 @@ namespace Picqer\Financials\Exact;
  * @property float $CreditLineSales Maximum amount of credit for sales. If no value has been defined, there is no credit limit
  * @property string $DatevCreditorCode DATEV creditor code for Germany legislation
  * @property string $DatevDebtorCode DATEV debtor code for Germany legislation
- * @property int $DeliveryAdvice Allows a customer to do goods delivery based on setting complete, partial or partial no back order. Values: 0 = Partial, 1 = Complete, 2 = PartialNoBackOrder
  * @property float $DiscountPurchase Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055
  * @property float $DiscountSales Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
@@ -125,7 +124,6 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesVATCodeDescription Description of SalesVATCode
  * @property string $SearchCode Search code
  * @property int $SecurityLevel Security level (0 - 100)
- * @property int $SeparateInvPerProject Separate invoice per project (Time & Billing)
  * @property int $SeparateInvPerSubscription Indicates how invoices are generated from subscriptions. 0 = subscriptions belonging to the same customer are combined in a single invoice. 1 = each subscription results in one invoice. In both cases, each individual subscription line results in one invoice line
  * @property int $ShippingLeadDays Indicates the number of days it takes to send goods to the customer. Acts as a default
  * @property string $ShippingMethod Default shipping method
@@ -186,7 +184,6 @@ class Account extends Model
         'CreditLineSales',
         'DatevCreditorCode',
         'DatevDebtorCode',
-        'DeliveryAdvice',
         'DiscountPurchase',
         'DiscountSales',
         'Division',
@@ -265,7 +262,6 @@ class Account extends Model
         'SalesVATCodeDescription',
         'SearchCode',
         'SecurityLevel',
-        'SeparateInvPerProject',
         'SeparateInvPerSubscription',
         'ShippingLeadDays',
         'ShippingMethod',

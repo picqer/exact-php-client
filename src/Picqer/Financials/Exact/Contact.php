@@ -18,8 +18,6 @@ namespace Picqer\Financials\Exact;
  * @property string $AddressStreetNumber Street number of the address
  * @property string $AddressStreetNumberSuffix Street number suffix of the address
  * @property string $BirthDate Birth date
- * @property string $BirthName Obsolete. Please don't use this field anymore as it may overwrite LastName.
- * @property string $BirthNamePrefix Obsolete. Please don't use this field anymore as it may overwrite MiddleName.
  * @property string $BirthPlace Birth place
  * @property string $BusinessEmail Email address of the contact
  * @property string $BusinessFax Fax of the contact
@@ -96,8 +94,6 @@ class Contact extends Model
         'AddressStreetNumber',
         'AddressStreetNumberSuffix',
         'BirthDate',
-        'BirthName',
-        'BirthNamePrefix',
         'BirthPlace',
         'BusinessEmail',
         'BusinessFax',

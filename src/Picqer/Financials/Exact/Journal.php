@@ -19,8 +19,6 @@ namespace Picqer\Financials\Exact;
  * @property string $BankAccountIBAN IBAN of the bank account. Only Bank journal type will have a value
  * @property string $BankAccountID Reference to the Bank Account linked to the Journal. Only Bank journal type will have a value
  * @property string $BankAccountIncludingMask Bank account number. Is mandatory for Journals that have Type = Bank
- * @property bool $BankAccountUseSEPA Obsolete. Whether or not use SEPA for the bank account
- * @property bool $BankAccountUseSepaDirectDebit Obsolete. Whether or not use SEPA direct debit for the bank account
  * @property string $BankName Name of bank account. Only Bank journal type will have a value
  * @property string $Code Primary key
  * @property string $Created Creation date
@@ -62,8 +60,6 @@ class Journal extends Model
         'BankAccountIBAN',
         'BankAccountID',
         'BankAccountIncludingMask',
-        'BankAccountUseSEPA',
-        'BankAccountUseSepaDirectDebit',
         'BankName',
         'Code',
         'Created',

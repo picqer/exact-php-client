@@ -8,7 +8,6 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryStockCounts
  *
  * @property string $StockCountID Primary key
- * @property string $CountedBy Stock count user
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -39,7 +38,6 @@ class StockCount extends Model
 
     protected $fillable = [
         'StockCountID',
-        'CountedBy',
         'Created',
         'Creator',
         'CreatorFullName',
