@@ -50,21 +50,20 @@ namespace Picqer\Financials\Exact;
  * @property string $Parent Parent asset
  * @property string $ParentCode Code of Parent
  * @property string $ParentDescription Description of Parent
- * @property binary $Picture Image for an asset
+ * @property string $Picture Image for an asset
  * @property string $PictureFileName Filename of the image
  * @property string $PrimaryMethod First method of depreciation. Currently, it is the only one used
  * @property string $PrimaryMethodCode Code of PrimaryMethod
  * @property string $PrimaryMethodDescription Description of PrimaryMethod
  * @property float $ResidualValue Indicates the residual value of the asset at the end of the depreciation
  * @property string $StartDate Asset Depreciation StartDate
- * @property int $Status Identifies the status of the Asset. (see AssetStatus table to see the possibilities)
+ * @property int $Status Identifies the status of the Asset. (1 = Active, 2 = Not validated, 3 = Inactive, 4 = Depreciated, 5 = Blocked, 6 = Sold)
  * @property string $TransactionEntryID Reference to the transaction lines that make up the financial entry.
  * @property int $TransactionEntryNo Entry number of transaction
  */
 class Asset extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

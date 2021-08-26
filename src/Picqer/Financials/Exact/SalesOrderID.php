@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesInvoiceSalesOrderID
  *
- * @property string $ID
+ * @property string $ID Use this ID to pass sales order IDs in a POST to InvoiceSalesOrders
  */
 class SalesOrderID extends Model
 {

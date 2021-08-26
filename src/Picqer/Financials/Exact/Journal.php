@@ -10,18 +10,18 @@ namespace Picqer\Financials\Exact;
  * @property string $ID Primary Key
  * @property bool $AllowVariableCurrency Indicates if the journal allows variable currency
  * @property bool $AllowVariableExchangeRate Indicates if the journal allows the exchange rate of the currency of the amounts in the journal entry to be changed
- * @property bool $AllowVAT Indicates if the journal allows the use of VAT in the financial entry. Especially true for general journals
- * @property bool $AutoSave Indicates if the journal automatically saves the entries when the amount is in balance with the entry lines
- * @property string $Bank Reference to bank account
- * @property string $BankAccountBICCode BIC code of the bank where the bank account is held
- * @property string $BankAccountCountry Country of bank account
- * @property string $BankAccountDescription Description of BankAccount
- * @property string $BankAccountIBAN IBAN of the bank account
- * @property string $BankAccountID Reference to the Bank Account linked to the Journal
+ * @property bool $AllowVAT Indicates if the journal allows the use of VAT in the financial entry. Applicable only for General Journals
+ * @property bool $AutoSave Indicates if the journal automatically saves the entries when the amount is in balance with the entry lines. Applicable for all types except cash. In the UI is called 'Exit Automatically'
+ * @property string $Bank Reference to bank account. Only Bank journal type will have a value
+ * @property string $BankAccountBICCode BIC code of the bank where the bank account is held. Only Bank journal type will have a value
+ * @property string $BankAccountCountry Country of bank account. Only Bank journal type will have a value
+ * @property string $BankAccountDescription Description of BankAccount. Only Bank journal type will have a value
+ * @property string $BankAccountIBAN IBAN of the bank account. Only Bank journal type will have a value
+ * @property string $BankAccountID Reference to the Bank Account linked to the Journal. Only Bank journal type will have a value
  * @property string $BankAccountIncludingMask Bank account number. Is mandatory for Journals that have Type = Bank
  * @property bool $BankAccountUseSEPA Obsolete. Whether or not use SEPA for the bank account
  * @property bool $BankAccountUseSepaDirectDebit Obsolete. Whether or not use SEPA direct debit for the bank account
- * @property string $BankName Name of bank account
+ * @property string $BankName Name of bank account. Only Bank journal type will have a value
  * @property string $Code Primary key
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -34,6 +34,7 @@ namespace Picqer\Financials\Exact;
  * @property string $GLAccountCode Code of GLAccount
  * @property string $GLAccountDescription Description of GLAccount
  * @property int $GLAccountType Type of GLAccount
+ * @property bool $IsBlocked Indicates whether the journal is blocked or not.
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -76,6 +77,7 @@ class Journal extends Model
         'GLAccountCode',
         'GLAccountDescription',
         'GLAccountType',
+        'IsBlocked',
         'Modified',
         'Modifier',
         'ModifierFullName',

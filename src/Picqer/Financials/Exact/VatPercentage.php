@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class VatPercentage.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=VATVatPercentages
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=VatVatPercentages
  *
  * @property string $ID Primary key
  * @property string $Created Creation date
@@ -25,7 +25,6 @@ namespace Picqer\Financials\Exact;
 class VatPercentage extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventorySerialNumbers
  *
- * @property string $ID Primary key
+ * @property string $ID A guid that is the unique identifier of the serial number
  * @property int $Available Availability of this serial number
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -34,7 +34,6 @@ namespace Picqer\Financials\Exact;
 class SerialNumber extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

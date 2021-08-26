@@ -17,10 +17,10 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property float $Rate The exchange rate is stored as 1 TARGET CURRENCY = x SOURCE CURRENCY
  * @property string $SourceCurrency The foreign currency
- * @property string $SourceCurrencyDescription Description of SourceCurrency
+ * @property string $SourceCurrencyDescription Description of the foreign currency
  * @property string $StartDate The date as of which the rate is valid. The rate is valid until a next rate is defined
  * @property string $TargetCurrency The default currency of the division
- * @property string $TargetCurrencyDescription Description of TargetCurrency
+ * @property string $TargetCurrencyDescription Description of the default currency
  */
 class ExchangeRate extends Model
 {

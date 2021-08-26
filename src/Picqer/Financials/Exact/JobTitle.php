@@ -28,7 +28,6 @@ namespace Picqer\Financials\Exact;
 class JobTitle extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsItemGroups
  *
- * @property string $ID Primary key
+ * @property string $ID A guid that is the unique identifier of the item group
  * @property string $Code Code of the item group
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -41,7 +41,6 @@ namespace Picqer\Financials\Exact;
 class ItemGroup extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

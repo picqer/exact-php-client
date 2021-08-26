@@ -2,6 +2,7 @@
 
 namespace Picqer\Financials\Exact\Persistance;
 
+use Picqer\Financials\Exact\ApiException;
 use Picqer\Financials\Exact\Connection;
 
 trait Storable
@@ -40,6 +41,8 @@ trait Storable
     abstract public function primaryKeyContent();
 
     /**
+     * @throws ApiException
+     *
      * @return $this
      */
     public function save()
@@ -53,11 +56,21 @@ trait Storable
         return $this;
     }
 
+    /**
+     * @throws ApiException
+     *
+     * @return array|mixed
+     */
     public function insert()
     {
         return $this->connection()->post($this->url(), $this->json(0, true));
     }
 
+    /**
+     * @throws ApiException
+     *
+     * @return array|mixed
+     */
     public function update()
     {
         $primaryKey = $this->primaryKeyContent();
@@ -65,6 +78,11 @@ trait Storable
         return $this->connection()->put($this->url() . "(guid'$primaryKey')", $this->json());
     }
 
+    /**
+     * @throws ApiException
+     *
+     * @return array|mixed
+     */
     public function delete()
     {
         $primaryKey = $this->primaryKeyContent();

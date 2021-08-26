@@ -14,7 +14,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Customer ID of customer
  * @property string $Description Description of classification
  * @property int $DescriptionTermID Term ID of the classification
- * @property divisionclasses $DivisionClasses Collection of classification properties
+ * @property DivisionClass[] $DivisionClasses Collection of classification properties
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -23,7 +23,6 @@ namespace Picqer\Financials\Exact;
 class DivisionClassName extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

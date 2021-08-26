@@ -8,7 +8,6 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMSchedules
  *
  * @property string $ID Primary key
- * @property int $Active Obsolete
  * @property float $AverageHours Average hours per week in a schedule
  * @property string $Code Schedule code
  * @property string $Created Creation date
@@ -35,11 +34,9 @@ namespace Picqer\Financials\Exact;
 class Schedule extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
-        'Active',
         'AverageHours',
         'Code',
         'Created',

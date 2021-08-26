@@ -12,12 +12,13 @@ namespace Picqer\Financials\Exact;
  * @property string $AccountCode Code of Account
  * @property string $AccountContact Contact person of Account
  * @property string $AccountName Name of Account
- * @property bool $AllowAdditionalInvoicing Is additional invoice is allowed for project
+ * @property bool $AllowAdditionalInvoicing Indicates if additional invoice is allowed for project
  * @property bool $BlockEntry Block time and cost entries
+ * @property bool $BlockPurchasing Block purchasing
  * @property bool $BlockRebilling Block rebilling
  * @property float $BudgetedAmount Budgeted amount of sales in the default currency of the company
  * @property float $BudgetedCosts Budgeted amount of costs in the default currency of the company
- * @property budgetedhoursperhourtype $BudgetedHoursPerHourType Collection of budgeted hours
+ * @property BudgetedHoursPerHourType[] $BudgetedHoursPerHourType Collection of budgeted hours
  * @property float $BudgetedRevenue Budgeted amount of revenue in the default currency of the company
  * @property int $BudgetOverrunHours BudgetOverrunHours: 10-Allowed, 20-Not Allowed
  * @property int $BudgetType Budget type
@@ -36,9 +37,13 @@ namespace Picqer\Financials\Exact;
  * @property string $EndDate End date of the project. In combination with the start date the status is determined
  * @property string $FixedPriceItem Item used for fixed price invoicing. To be defined per project. If empty the functionality relies on the setting
  * @property string $FixedPriceItemDescription Description of FixedPriceItem
+ * @property bool $HasWBSLines Indicates if whether the Project has WBS
+ * @property int $IncludeInvoiceSpecification Include invoice specification. E.g: 1 = Based on account, 2 = Always, 3 = Never
+ * @property bool $IncludeSpecificationInInvoicePdf Indicates whether to include invoice specification in invoice PDF
  * @property string $InternalNotes Internal notes not to be printed in invoice
- * @property bool $InvoiceAsQuoted Is invoice as quoted
- * @property invoiceterms $InvoiceTerms Collection of invoice terms
+ * @property string $InvoiceAddress Invoice address
+ * @property bool $InvoiceAsQuoted Indicates whether the project is invoice as quoted
+ * @property InvoiceTerm[] $InvoiceTerms Collection of invoice terms
  * @property string $Manager Responsible person for this project
  * @property string $ManagerFullname Name of Manager
  * @property float $MarkupPercentage Purchase markup percentage
@@ -50,16 +55,16 @@ namespace Picqer\Financials\Exact;
  * @property string $PrepaidItemDescription Description of PrepaidItem
  * @property int $PrepaidType PrepaidType: 1-Retainer, 2-Hour type bundle
  * @property string $PrepaidTypeDescription Description of PrepaidType
- * @property projectrestrictionemployees $ProjectRestrictionEmployees Collection of employee restrictions
- * @property projectrestrictionitems $ProjectRestrictionItems Collection of item restrictions
- * @property projectrestrictionrebillings $ProjectRestrictionRebillings Collection of rebilling restrictions
+ * @property ProjectRestrictionEmployee[] $ProjectRestrictionEmployees Collection of employee restrictions
+ * @property ProjectRestrictionItem[] $ProjectRestrictionItems Collection of item restrictions
+ * @property ProjectRestrictionRebilling[] $ProjectRestrictionRebillings Collection of rebilling restrictions
  * @property float $SalesTimeQuantity Budgeted time. Total number of hours estimated for the fixed price project
  * @property string $SourceQuotation Source quotation
  * @property string $StartDate Start date of a project. In combination with the end date the status is determined
  * @property float $TimeQuantityToAlert Alert when exceeding (Hours)
- * @property int $Type Reference to ProjectTypes
+ * @property int $Type Reference to ProjectTypes. E.g: 1 = Campaign , 2 = Fixed Price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid
  * @property string $TypeDescription Description of Type
- * @property bool $UseBillingMilestones Using billing milestones
+ * @property bool $UseBillingMilestones Indicates whether the Project is using billing milestones
  */
 class Project extends Model
 {
@@ -74,6 +79,7 @@ class Project extends Model
         'AccountName',
         'AllowAdditionalInvoicing',
         'BlockEntry',
+        'BlockPurchasing',
         'BlockRebilling',
         'BudgetedAmount',
         'BudgetedCosts',
@@ -96,7 +102,11 @@ class Project extends Model
         'EndDate',
         'FixedPriceItem',
         'FixedPriceItemDescription',
+        'HasWBSLines',
+        'IncludeInvoiceSpecification',
+        'IncludeSpecificationInInvoicePdf',
         'InternalNotes',
+        'InvoiceAddress',
         'InvoiceAsQuoted',
         'InvoiceTerms',
         'Manager',

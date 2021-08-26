@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $ParentFolder Document folder parent folder ID
+ * @property int $Share Document folder share level
  */
 class DocumentFolder extends Model
 {
@@ -36,6 +37,7 @@ class DocumentFolder extends Model
         'Modifier',
         'ModifierFullName',
         'ParentFolder',
+        'Share',
     ];
 
     protected $url = 'documents/DocumentFolders';

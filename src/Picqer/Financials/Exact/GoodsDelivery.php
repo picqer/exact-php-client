@@ -24,7 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Document Document that is manually linked to the sales order delivery
  * @property string $DocumentSubject Document Subject
  * @property int $EntryNumber Entry number
- * @property GoodsDeliveryLines $GoodsDeliveryLines Collection of lines
+ * @property GoodsDeliveryLine[] $GoodsDeliveryLines Collection of lines
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier

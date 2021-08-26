@@ -26,7 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency
- * @property string $Date Date
+ * @property string $Date Entry date
  * @property string $Description Description
  * @property int $Division Division code
  * @property string $Document Reference to document
@@ -63,7 +63,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectCode Code of Project
  * @property string $ProjectDescription Description of Project
  * @property float $Quantity Quantity
- * @property string $SerialNumber Serial number of item
+ * @property string $ShopOrder Reference to shop order
  * @property int $Status 20 = Open, 50 = Processed
  * @property string $Subscription Reference to subscription line
  * @property string $SubscriptionDescription Description of subscription line
@@ -79,9 +79,6 @@ namespace Picqer\Financials\Exact;
 class TransactionLine extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
-
-    protected $primaryKey = 'ID';
 
     protected $fillable = [
         'ID',
@@ -140,7 +137,7 @@ class TransactionLine extends Model
         'ProjectCode',
         'ProjectDescription',
         'Quantity',
-        'SerialNumber',
+        'ShopOrder',
         'Status',
         'Subscription',
         'SubscriptionDescription',

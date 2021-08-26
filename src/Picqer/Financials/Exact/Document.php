@@ -27,6 +27,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DocumentFolderCode The Code of document folder
  * @property string $DocumentFolderDescription The Decsription of document folder
  * @property string $DocumentViewUrl Url to view the document
+ * @property string $ExpiryDate Expiry date of this document
  * @property string $FinancialTransactionEntryID Reference to the transaction lines of the financial entry. For a document of type sales invoice it will return the InvoiceID of the sales invoice (SalesInvoices API).
  * @property bool $HasEmptyBody Indicates that the document body is empty
  * @property int $HID Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
@@ -72,6 +73,7 @@ class Document extends Model
         'DocumentFolderCode',
         'DocumentFolderDescription',
         'DocumentViewUrl',
+        'ExpiryDate',
         'FinancialTransactionEntryID',
         'HasEmptyBody',
         'HID',

@@ -17,14 +17,13 @@ namespace Picqer\Financials\Exact;
  * @property string $AddressLine1 Visit address first line
  * @property string $AddressLine2 Visit address second line
  * @property string $AddressLine3 Visit address third line
- * @property bankaccounts $BankAccounts Collection of Bank accounts
+ * @property BankAccount[] $BankAccounts Collection of Bank accounts
  * @property bool $Blocked Indicates if the account is blocked
- * @property string $BRIN Obsolete
+ * @property string $BSN Citizen Service Number for the Netherlands
  * @property string $BusinessType Reference to the business type of the account
  * @property bool $CanDropShip Indicates the default for the possibility to drop ship when an item is linked to a supplier
  * @property string $ChamberOfCommerce Chamber of commerce number
  * @property string $City Visit address City
- * @property string $Classification Obsolete
  * @property string $Classification1 Account classification 1
  * @property string $Classification2 Account classification 2
  * @property string $Classification3 Account classification 3
@@ -33,15 +32,11 @@ namespace Picqer\Financials\Exact;
  * @property string $Classification6 Account classification 6
  * @property string $Classification7 Account classification 7
  * @property string $Classification8 Account classification 8
- * @property string $ClassificationDescription Obsolete
  * @property string $Code Unique key, fixed length numeric string with leading spaces, length 18. IMPORTANT: When you use OData $filter on this field you have to make sure the filter parameter contains the leading spaces
  * @property string $CodeAtSupplier Code under which your own company is known at the account
  * @property string $CompanySize Reference to Company size of the account
  * @property int $ConsolidationScenario Consolidation scenario (Time & Billing). Values: 0 = No consolidation, 1 = Item, 2 = Item + Project, 3 = Item + Employee, 4 = Item + Employee + Project, 5 = Project + WBS + Item, 6 = Project + WBS + Item + Employee. Item means in this case including Unit and Price, these also have to be the same to consolidate
  * @property string $ControlledDate Date of the latest control of account data with external web service
- * @property string $Costcenter Obsolete
- * @property string $CostcenterDescription Obsolete
- * @property int $CostPaid Obsolete
  * @property string $Country Country code
  * @property string $CountryName Country name
  * @property string $Created Creation date
@@ -49,15 +44,12 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property float $CreditLinePurchase Maximum amount of credit for Purchase. If no value has been defined, there is no credit limit
  * @property float $CreditLineSales Maximum amount of credit for sales. If no value has been defined, there is no credit limit
- * @property string $Currency Obsolete
- * @property string $CustomerSince Obsolete
  * @property string $DatevCreditorCode DATEV creditor code for Germany legislation
  * @property string $DatevDebtorCode DATEV debtor code for Germany legislation
+ * @property int $DeliveryAdvice Allows a customer to do goods delivery based on setting complete, partial or partial no back order. Values: 0 = Partial, 1 = Complete, 2 = PartialNoBackOrder
  * @property float $DiscountPurchase Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055
  * @property float $DiscountSales Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
- * @property string $Document Obsolete
- * @property string $DunsNumber Obsolete
  * @property string $Email E-Mail address of the account
  * @property string $EndDate Determines in combination with the start date if the account is active. If the current date is > end date the account is inactive
  * @property string $EstablishedDate RegistrationDate
@@ -79,17 +71,14 @@ namespace Picqer\Financials\Exact;
  * @property string $InvoiceAccountCode Code of InvoiceAccount
  * @property string $InvoiceAccountName Name of InvoiceAccount
  * @property int $InvoiceAttachmentType Indicates which attachment types should be sent when a sales invoice is printed. Only values in related table with Invoice=1 are allowed
- * @property int $InvoicingMethod Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange)
+ * @property int $InvoicingMethod Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange), 8: Send and track
  * @property int $IsAccountant Indicates whether the account is an accountant. Values: 0 = No accountant, 1 = True, but accountant doesn't want his name to be published in the list of accountants, 2 = True, and accountant is published in the list of accountants
  * @property int $IsAgency Indicates whether the accounti is an agency
  * @property int $IsAnonymised Indicates whtether the account is anonymised.
- * @property bool $IsBank Obsolete
  * @property int $IsCompetitor Indicates whether the account is a competitor
  * @property bool $IsExtraDuty Indicates whether a customer is eligible for extra duty
  * @property int $IsMailing Indicates if the account is excluded from mailing marketing information
- * @property bool $IsMember Obsolete
  * @property bool $IsPilot Indicates whether the account is a pilot account
- * @property bool $IsPurchase Obsolete
  * @property bool $IsReseller Indicates whether the account is a reseller
  * @property bool $IsSales Indicates whether the account is allowed for sales
  * @property bool $IsSupplier Indicates whether the account is a supplier
@@ -98,7 +87,7 @@ namespace Picqer\Financials\Exact;
  * @property float $Latitude Latitude (used by Google maps)
  * @property string $LeadPurpose Reference to Lead purpose of an account
  * @property string $LeadSource Reference to Lead source of an account
- * @property binary $Logo Bytes of the logo image
+ * @property string $Logo Bytes of the logo image
  * @property string $LogoFileName The file name (without path, but with extension) of the image
  * @property string $LogoThumbnailUrl Thumbnail url of the logo
  * @property string $LogoUrl Url to retrieve the logo
@@ -132,9 +121,6 @@ namespace Picqer\Financials\Exact;
  * @property string $RSIN Fiscal number for NL legislation
  * @property string $SalesCurrency Currency of Sales used for Time & Billing
  * @property string $SalesCurrencyDescription Description of SalesCurrency
- * @property string $SalesTaxSchedule Obsolete
- * @property string $SalesTaxScheduleCode Obsolete
- * @property string $SalesTaxScheduleDescription Obsolete
  * @property string $SalesVATCode Default VAT code for a sales entry
  * @property string $SalesVATCodeDescription Description of SalesVATCode
  * @property string $SearchCode Search code
@@ -143,11 +129,11 @@ namespace Picqer\Financials\Exact;
  * @property int $SeparateInvPerSubscription Indicates how invoices are generated from subscriptions. 0 = subscriptions belonging to the same customer are combined in a single invoice. 1 = each subscription results in one invoice. In both cases, each individual subscription line results in one invoice line
  * @property int $ShippingLeadDays Indicates the number of days it takes to send goods to the customer. Acts as a default
  * @property string $ShippingMethod Default shipping method
+ * @property bool $ShowRemarkForSales Indicates whether to display Ordered by account's remarks when creating a new sales order
  * @property string $StartDate Indicates in combination with the end date if the account is active
  * @property string $State State/Province/County code When changing the Country and the State is filled, the State must be assigned with a valid value from the selected country or set to empty
  * @property string $StateName Name of State
  * @property string $Status If the status field is filled this means the account is a customer. The value indicates the customer status. Possible values: A=None, S=Suspect, P=Prospect, C=Customer
- * @property string $StatusSince Obsolete
  * @property string $TradeName Trade name can be registered and shown with the client (for all legislations)
  * @property string $Type Account type: Values: A = Relation, D = Division
  * @property string $UniqueTaxpayerReference Unique taxpayer reference for UK legislation
@@ -173,12 +159,11 @@ class Account extends Model
         'AddressLine3',
         'BankAccounts',
         'Blocked',
-        'BRIN',
+        'BSN',
         'BusinessType',
         'CanDropShip',
         'ChamberOfCommerce',
         'City',
-        'Classification',
         'Classification1',
         'Classification2',
         'Classification3',
@@ -187,15 +172,11 @@ class Account extends Model
         'Classification6',
         'Classification7',
         'Classification8',
-        'ClassificationDescription',
         'Code',
         'CodeAtSupplier',
         'CompanySize',
         'ConsolidationScenario',
         'ControlledDate',
-        'Costcenter',
-        'CostcenterDescription',
-        'CostPaid',
         'Country',
         'CountryName',
         'Created',
@@ -203,15 +184,12 @@ class Account extends Model
         'CreatorFullName',
         'CreditLinePurchase',
         'CreditLineSales',
-        'Currency',
-        'CustomerSince',
         'DatevCreditorCode',
         'DatevDebtorCode',
+        'DeliveryAdvice',
         'DiscountPurchase',
         'DiscountSales',
         'Division',
-        'Document',
-        'DunsNumber',
         'Email',
         'EndDate',
         'EstablishedDate',
@@ -237,13 +215,10 @@ class Account extends Model
         'IsAccountant',
         'IsAgency',
         'IsAnonymised',
-        'IsBank',
         'IsCompetitor',
         'IsExtraDuty',
         'IsMailing',
-        'IsMember',
         'IsPilot',
-        'IsPurchase',
         'IsReseller',
         'IsSales',
         'IsSupplier',
@@ -286,9 +261,6 @@ class Account extends Model
         'RSIN',
         'SalesCurrency',
         'SalesCurrencyDescription',
-        'SalesTaxSchedule',
-        'SalesTaxScheduleCode',
-        'SalesTaxScheduleDescription',
         'SalesVATCode',
         'SalesVATCodeDescription',
         'SearchCode',
@@ -297,11 +269,11 @@ class Account extends Model
         'SeparateInvPerSubscription',
         'ShippingLeadDays',
         'ShippingMethod',
+        'ShowRemarkForSales',
         'StartDate',
         'State',
         'StateName',
         'Status',
-        'StatusSince',
         'TradeName',
         'Type',
         'UniqueTaxpayerReference',

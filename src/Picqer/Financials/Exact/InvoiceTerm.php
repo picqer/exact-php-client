@@ -9,27 +9,27 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property float $Amount Amount in the currency of the transaction
- * @property string $Created Creation date
- * @property string $Creator User ID of creator
- * @property string $CreatorFullName Name of creator
- * @property string $Deliverable WBS's deliverable linked to invoice term
+ * @property string $Created Date and time when the invoice term was created
+ * @property string $Creator ID of user that created the invoice term
+ * @property string $CreatorFullName Full name of user that created the record
+ * @property string $Deliverable WBS's deliverable linked to the invoice term
  * @property string $Description Description of invoice term
  * @property int $Division Division number
- * @property string $ExecutionFromDate Execution date: From
- * @property string $ExecutionToDate Execution date: To
- * @property string $InvoiceDate Invoice date
- * @property string $Item Reference to item
- * @property string $ItemDescription Description of item
- * @property string $Modified Last modified date
- * @property string $Modifier User ID of modifier
- * @property string $ModifierFullName Name of modifier
- * @property string $Notes Notes
+ * @property string $ExecutionFromDate Execution date: From of invoice term
+ * @property string $ExecutionToDate Execution date: To of invoice term
+ * @property string $InvoiceDate Invoice date of invoice term
+ * @property string $Item Item that linked to the invoice term
+ * @property string $ItemDescription Description of item that linked to the invoice term
+ * @property string $Modified Last modified date of invoice term
+ * @property string $Modifier ID of user that modified the record
+ * @property string $ModifierFullName Full name of user that modified the record
+ * @property string $Notes Notes linked to the invoice term for providing additional information
  * @property float $Percentage Percentage of amount per project's budgeted amount
- * @property string $Project Reference to project
- * @property string $ProjectDescription Description of project
- * @property string $VATCode Reference to VATCode
- * @property string $VATCodeDescription Description of VATCode
- * @property float $VATPercentage VATCode percentage
+ * @property string $Project ID of project that linked to the invoice term
+ * @property string $ProjectDescription Project description that linked to the invoice term
+ * @property string $VATCode VAT code that used in the invoice term
+ * @property string $VATCodeDescription Description of VAT code that used in the invoice term
+ * @property float $VATPercentage Percentage of VAT code that used in the invoice term
  */
 class InvoiceTerm extends Model
 {

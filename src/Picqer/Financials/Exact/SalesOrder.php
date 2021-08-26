@@ -55,19 +55,22 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales order
  * @property string $Remarks Extra remarks
- * @property salesorderlines $SalesOrderLines Collection of lines
+ * @property string $SalesChannel ID of Sales channel.
+ * @property string $SalesChannelCode Code of Sales channel
+ * @property string $SalesChannelDescription Description of Sales channel
+ * @property SalesOrderLine[] $SalesOrderLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
+ * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCodeCode Code of selection code
+ * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod ShippingMethod
  * @property string $ShippingMethodDescription Description of ShippingMethod
  * @property int $Status The status of the sales order. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled.
  * @property string $StatusDescription Description of Status
- * @property string $TaxSchedule Obsolete
- * @property string $TaxScheduleCode Obsolete
- * @property string $TaxScheduleDescription Obsolete
  * @property string $WarehouseCode Code of Warehouse
  * @property string $WarehouseDescription Description of Warehouse
- * @property string $WarehouseID Warehouse
+ * @property string $WarehouseID Warehouse. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $YourRef The reference number of the customer
  */
 class SalesOrder extends Model
@@ -128,21 +131,26 @@ class SalesOrder extends Model
         'PaymentConditionDescription',
         'PaymentReference',
         'Remarks',
+        'SalesChannel',
+        'SalesChannelCode',
+        'SalesChannelDescription',
         'SalesOrderLines',
         'Salesperson',
         'SalespersonFullName',
+        'SelectionCode',
+        'SelectionCodeCode',
+        'SelectionCodeDescription',
         'ShippingMethod',
         'ShippingMethodDescription',
         'Status',
         'StatusDescription',
-        'TaxSchedule',
-        'TaxScheduleCode',
-        'TaxScheduleDescription',
         'WarehouseCode',
         'WarehouseDescription',
         'WarehouseID',
         'YourRef',
     ];
+
+    protected $url = 'salesorder/SalesOrders';
 
     /**
      * @param array $array
@@ -157,6 +165,4 @@ class SalesOrder extends Model
         }
         $this->attributes['SalesOrderLines'][] = $array;
     }
-
-    protected $url = 'salesorder/SalesOrders';
 }

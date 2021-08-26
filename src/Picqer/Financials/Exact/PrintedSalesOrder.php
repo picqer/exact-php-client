@@ -42,6 +42,8 @@ class PrintedSalesOrder extends Model
         'SenderEmailAddress',
     ];
 
+    protected $url = 'salesorder/PrintedSalesOrders';
+
     /**
      * @return $this
      */
@@ -56,6 +58,4 @@ class PrintedSalesOrder extends Model
     {
         return $this->connection()->post($this->url, $this->json(0, true));
     }
-
-    protected $url = 'salesorder/PrintedSalesOrders';
 }

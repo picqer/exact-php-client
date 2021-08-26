@@ -31,7 +31,7 @@ trait Findable
             $filter = $this->primaryKey() . " eq $id";
         }
 
-        $records = $this->connection()->get($this->url(), [
+        $records = $this->connection()->get($this->url($id), [
             '$filter' => $filter,
             '$top'    => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
@@ -44,7 +44,7 @@ trait Findable
     public function findWithSelect($id, $select = '')
     {
         //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
-        $result = $this->connection()->get($this->url(), [
+        $result = $this->connection()->get($this->url($id), [
             '$filter' => $this->primaryKey() . " eq guid'$id'",
             '$select' => $select,
         ]);
@@ -91,9 +91,11 @@ trait Findable
             $this->connection()->setDivision($divisionId[1]); // Fix division
         }
 
-        $request = [
-            '$filter' => $filter,
-        ];
+        $request = [];
+        if (! empty($filter)) {
+            $request['$filter'] = $filter;
+        }
+
         if (strlen($expand) > 0) {
             $request['$expand'] = $expand;
         }
@@ -112,7 +114,7 @@ trait Findable
             $this->connection()->setDivision($originalDivision); // Restore division
         }
 
-        return $this->collectionFromResult($result);
+        return $this->collectionFromResult($result, $headers);
     }
 
     /**
@@ -140,7 +142,7 @@ trait Findable
         return $this->collectionFromResult($result);
     }
 
-    public function collectionFromResult($result)
+    public function collectionFromResult($result, array $headers = [])
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter
@@ -153,7 +155,7 @@ trait Findable
         }
 
         while ($this->connection()->nextUrl !== null) {
-            $nextResult = $this->connection()->get($this->connection()->nextUrl);
+            $nextResult = $this->connection()->get($this->connection()->nextUrl, [], $headers);
 
             // If we have one result which is not an assoc array, make it the first element of an array for the array_merge function
             if ((bool) count(array_filter(array_keys($nextResult), 'is_string'))) {

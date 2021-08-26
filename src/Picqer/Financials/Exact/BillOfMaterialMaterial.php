@@ -20,7 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of the material
  * @property string $DetailDrawing Detail drawing reference
  * @property int $Division Division code
- * @property string $ItemVersion Key of item version
+ * @property string $ItemVersion Bill of material version
  * @property int $LineNumber Line number
  * @property float $NetWeight Net weight
  * @property string $NetWeightUnit Net weight unit of measure
@@ -29,13 +29,14 @@ namespace Picqer\Financials\Exact;
  * @property string $PartItemCode Part item code
  * @property float $PartItemCostPriceStandard Item standard cost available when standard cost method is used
  * @property string $PartItemDescription Part item description
- * @property float $Quantity Quantity
- * @property float $QuantityBatch Quantity batch
+ * @property float $Quantity Quantity of the material that ends up in the produced item
+ * @property float $QuantityBatch Quantity of the material needed to produce the batch including the waste
  * @property string $syscreated Creation date
  * @property string $syscreator User ID of creator
  * @property string $sysmodified Modified date
  * @property string $sysmodifier User ID of modifier
  * @property int $Type Material type 1 indicates material, 2 indicates byproduct
+ * @property float $WastePercentage Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Premium)
  */
 class BillOfMaterialMaterial extends Model
 {
@@ -72,6 +73,7 @@ class BillOfMaterialMaterial extends Model
         'sysmodified',
         'sysmodifier',
         'Type',
+        'WastePercentage',
     ];
 
     protected $url = 'manufacturing/BillOfMaterialMaterials';

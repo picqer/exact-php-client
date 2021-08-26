@@ -7,23 +7,22 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SubscriptionSubscriptionReasonCodes
  *
- * @property string $ID Primary key
- * @property bool $Active Indicates if the reason code is active
- * @property string $Code Subscription reason code
- * @property string $Created Creation date
- * @property string $Creator User ID of creator
- * @property string $CreatorFullName Name of creator
- * @property string $Description Description
- * @property int $Division Division code
- * @property string $Modified Last modified date
- * @property string $Modifier User ID of modifier
- * @property string $ModifierFullName Name of modifier
- * @property string $Notes Remarks
+ * @property string $ID The GUID id of the record
+ * @property bool $Active Boolean values to indicate if the reason code is still active
+ * @property string $Code Code of the reason of cancellation of the subscription
+ * @property string $Created Date and time of the creation of the reason of cancellation of the subscription record
+ * @property string $Creator GUID id of the user that created the reason of cancellation of the subscription
+ * @property string $CreatorFullName Full name of the user that created the reason of cancellation of the subscription
+ * @property string $Description The description written for the cancellation of the subscription
+ * @property int $Division The division that the record was created in
+ * @property string $Modified The date and time the record was modified
+ * @property string $Modifier Guid id of the user that modified the reason of cancellation of the subscription record
+ * @property string $ModifierFullName Full name of the user that modified the reason of cancellation of the subscription record
+ * @property string $Notes Remarks written link to the reason of cancellation of the subscription
  */
 class SubscriptionReasonCode extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

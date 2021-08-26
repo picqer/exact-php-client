@@ -3,7 +3,6 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Entity holding stock position details.
  * Class StockPosition.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadLogisticsStockPosition
@@ -16,13 +15,7 @@ namespace Picqer\Financials\Exact;
 class StockPosition extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
-    /**
-     * The fillable properties for the StockPosition model.
-     *
-     * @var string[]
-     */
     protected $fillable = [
         'InStock',
         'ItemId',
@@ -30,17 +23,5 @@ class StockPosition extends Model
         'PlanningOut',
     ];
 
-    /**
-     * The API request URL slug.
-     *
-     * @var string
-     */
     protected $url = 'read/logistics/StockPosition';
-
-    /**
-     * The primary key for the current entity.
-     *
-     * @var string
-     */
-    protected $primaryKey = 'ItemId';
 }

@@ -24,7 +24,6 @@ namespace Picqer\Financials\Exact;
 class UserRole extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

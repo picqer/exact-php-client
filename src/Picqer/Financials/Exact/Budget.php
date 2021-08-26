@@ -25,8 +25,8 @@ namespace Picqer\Financials\Exact;
  * @property string $GLAccountDescription Description of GLAccount
  * @property int $HID Numerical ID. Never displayed to the user, but it may have its use for performance reasons
  * @property string $Item Used for item-specific budgets - NULL otherwise
- * @property string $ItemCode Code of item
- * @property string $ItemDescription Description of item
+ * @property string $ItemCode Code of Item
+ * @property string $ItemDescription Description of Item
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -36,7 +36,6 @@ namespace Picqer\Financials\Exact;
 class Budget extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

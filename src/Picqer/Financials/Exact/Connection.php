@@ -195,14 +195,24 @@ class Connection
             $this->redirectForAuthorization();
         }
 
-        // If access token is not set or token has expired, acquire new token
-        if (empty($this->accessToken) || $this->tokenHasExpired()) {
-            $this->acquireAccessToken();
-        }
+        $this->checkOrAcquireAccessToken();
 
         $client = $this->client();
 
         return $client;
+    }
+
+    /**
+     * Checks whether the access token is still valid.
+     *
+     * @throws \Picqer\Financials\Exact\ApiException
+     */
+    public function checkOrAcquireAccessToken()
+    {
+        // If access token is not set or token has expired, acquire new token
+        if (empty($this->accessToken) || $this->tokenHasExpired()) {
+            $this->acquireAccessToken();
+        }
     }
 
     /**
@@ -235,7 +245,8 @@ class Connection
 
         // Create param string
         if (! empty($params)) {
-            $endpoint .= '?' . http_build_query($params);
+            $endpoint .= strpos($endpoint, '?') === false ? '?' : '&';
+            $endpoint .= http_build_query($params);
         }
 
         // Create the request
@@ -259,6 +270,7 @@ class Connection
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
+            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response, $url != $this->nextUrl);
@@ -281,9 +293,32 @@ class Connection
 
         try {
             $request = $this->createRequest('POST', $url, $body);
+            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
+    }
+
+    /**
+     * @param string $url
+     * @param mixed  $body
+     *
+     * @throws ApiException
+     *
+     * @return mixed
+     */
+    public function upload($topic, $body)
+    {
+        $url = $this->getBaseUrl() . '/docs/XMLUpload.aspx?Topic=' . $topic . '&_Division=' . $this->getDivision();
+
+        try {
+            $request = $this->createRequest('POST', $url, $body);
+            $response = $this->client()->send($request);
+
+            return $this->parseResponseXml($response);
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
@@ -303,6 +338,7 @@ class Connection
 
         try {
             $request = $this->createRequest('PUT', $url, $body);
+            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
@@ -324,6 +360,7 @@ class Connection
 
         try {
             $request = $this->createRequest('DELETE', $url);
+            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
@@ -424,7 +461,7 @@ class Connection
                 return [];
             }
 
-            Psr7\rewind_body($response);
+            Psr7\Message::rewindBody($response);
             $json = json_decode($response->getBody()->getContents(), true);
             if (false === is_array($json)) {
                 throw new ApiException('Json decode failed. Got response: ' . $response->getBody()->getContents());
@@ -448,6 +485,35 @@ class Connection
             }
 
             return $json;
+        } catch (\RuntimeException $e) {
+            throw new ApiException($e->getMessage());
+        }
+    }
+
+    /**
+     * @param Response $response
+     *
+     * @throws ApiException
+     *
+     * @return mixed
+     */
+    private function parseResponseXml(Response $response)
+    {
+        try {
+            if ($response->getStatusCode() === 204) {
+                return [];
+            }
+
+            $answer = [];
+            Psr7\rewind_body($response);
+            $simpleXml = new \SimpleXMLElement($response->getBody()->getContents());
+
+            foreach ($simpleXml->Messages as $message) {
+                $keyAlt = (string) $message->Message->Topic->Data->attributes()['keyAlt'];
+                $answer[$keyAlt] = (string) $message->Message->Description;
+            }
+
+            return $answer;
         } catch (\RuntimeException $e) {
             throw new ApiException($e->getMessage());
         }
@@ -521,7 +587,7 @@ class Connection
 
             $response = $this->client()->post($this->getTokenUrl(), $body);
 
-            Psr7\rewind_body($response);
+            Psr7\Message::rewindBody($response);
             $body = json_decode($response->getBody()->getContents(), true);
 
             if (json_last_error() === JSON_ERROR_NONE) {
@@ -582,7 +648,7 @@ class Connection
             return true;
         }
 
-        return ($this->tokenExpires - 60) < time();
+        return ($this->tokenExpires - 10) < time();
     }
 
     private function formatUrl($endPoint, $includeDivision = true, $formatNextUrl = false)
@@ -670,7 +736,7 @@ class Connection
 
         $this->extractRateLimits($response);
 
-        Psr7\rewind_body($response);
+        Psr7\Message::rewindBody($response);
         $responseBody = $response->getBody()->getContents();
         $decodedResponseBody = json_decode($responseBody, true);
 

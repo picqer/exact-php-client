@@ -8,27 +8,26 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadFinancialProfitLossOverview
  *
  * @property int $CurrentYear Primary key, Current year
- * @property float $CostsCurrentPeriod Costs in current period
- * @property float $CostsCurrentYear Costs in current year
- * @property float $CostsPreviousYear Costs in previous year
- * @property float $CostsPreviousYearPeriod Costs in period of previous year
+ * @property float $CostsCurrentPeriod Total cost for the current year and period
+ * @property float $CostsCurrentYear Total cost for the current year
+ * @property float $CostsPreviousYear Total cost for the previous year
+ * @property float $CostsPreviousYearPeriod Total cost for the previous year and period
  * @property string $CurrencyCode Currency code
  * @property int $CurrentPeriod Current period
  * @property int $PreviousYear Previous year
  * @property int $PreviousYearPeriod Period in previous year
- * @property float $ResultCurrentPeriod Results of current period
- * @property float $ResultCurrentYear
- * @property float $ResultPreviousYear
- * @property float $ResultPreviousYearPeriod Results of period in previous year
- * @property float $RevenueCurrentPeriod Revenue in current period
- * @property float $RevenueCurrentYear Revenue in current year
- * @property float $RevenuePreviousYear Revenue in previous year
- * @property float $RevenuePreviousYearPeriod Revenue in period of previous year
+ * @property float $ResultCurrentPeriod Results of current year and period
+ * @property float $ResultCurrentYear Results of current year
+ * @property float $ResultPreviousYear Results of previous year
+ * @property float $ResultPreviousYearPeriod Results of previous year and period
+ * @property float $RevenueCurrentPeriod Total revenue for the current year and period
+ * @property float $RevenueCurrentYear Total revenue for the current year
+ * @property float $RevenuePreviousYear Total revenue for the previous year
+ * @property float $RevenuePreviousYearPeriod Total revenue for the previous year and period
  */
 class ProfitLossOverview extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'CurrentYear';
 
