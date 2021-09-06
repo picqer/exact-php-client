@@ -54,9 +54,6 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales invoice
  * @property string $Remarks Extra remarks
- * @property string $SalesChannel ID of Sales channel.
- * @property string $SalesChannelCode Code of Sales channel.
- * @property string $SalesChannelDescription Description of Sales channel.
  * @property SalesInvoiceLine[] $SalesInvoiceLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
@@ -132,9 +129,6 @@ class SalesInvoice extends Model
         'PaymentConditionDescription',
         'PaymentReference',
         'Remarks',
-        'SalesChannel',
-        'SalesChannelCode',
-        'SalesChannelDescription',
         'SalesInvoiceLines',
         'Salesperson',
         'SalespersonFullName',

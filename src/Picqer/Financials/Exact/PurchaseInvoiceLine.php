@@ -17,7 +17,6 @@ namespace Picqer\Financials\Exact;
  * @property string $Expense Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license
  * @property string $ExpenseDescription Description of expense. Only available with a professional service license
  * @property string $InvoiceID The unique identifier of the purchase invoice this line belongs to.
- * @property int $InvoiceType Purchase invoice type.
  * @property string $Item Guid that identifies the purchase item. In a POST request either the Item or the PurchaseOrderLine has to be supplied.
  * @property string $ItemUnit The default unit of the purchased item.
  * @property int $LineNumber The sequence number of the line.
@@ -51,7 +50,6 @@ class PurchaseInvoiceLine extends Model
         'Expense',
         'ExpenseDescription',
         'InvoiceID',
-        'InvoiceType',
         'Item',
         'ItemUnit',
         'LineNumber',

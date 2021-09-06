@@ -71,17 +71,14 @@ namespace Picqer\Financials\Exact;
  * @property string $GLStockDescription Description of GLStock
  * @property float $GrossWeight Gross weight for international goods shipments
  * @property int $IsBatchItem Indicates if batches are used for this item
- * @property int $IsBatchNumberItem This property is obsolete. Use property 'IsBatchItem' instead.
  * @property bool $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of this item
  * @property int $IsMakeItem Indicates that an Item is produced to Inventory, not purchased
  * @property int $IsNewContract Only used for packages (IsPackageItem=1). To indicate if this package is a new contract type package
  * @property int $IsOnDemandItem Is On demand Item
  * @property bool $IsPackageItem Indicates if the item is a package item. Can only be created in the hosting administration
  * @property bool $IsPurchaseItem Indicates if the item can be purchased
- * @property int $IsRegistrationCodeItem Indicated if the item is used in voucher functionality
  * @property bool $IsSalesItem Indicates if the item can be sold
  * @property bool $IsSerialItem Indicates that serial numbers are used for this item
- * @property bool $IsSerialNumberItem This property is obsolete. Use property 'IsSerialItem' instead.
  * @property bool $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
  * @property bool $IsSubcontractedItem Indicates if the item is provided by an outside supplier
  * @property int $IsTaxableItem Indicates if tax needs to be calculated for this item
@@ -184,17 +181,14 @@ class Item extends Model
         'GLStockDescription',
         'GrossWeight',
         'IsBatchItem',
-        'IsBatchNumberItem',
         'IsFractionAllowedItem',
         'IsMakeItem',
         'IsNewContract',
         'IsOnDemandItem',
         'IsPackageItem',
         'IsPurchaseItem',
-        'IsRegistrationCodeItem',
         'IsSalesItem',
         'IsSerialItem',
-        'IsSerialNumberItem',
         'IsStockItem',
         'IsSubcontractedItem',
         'IsTaxableItem',

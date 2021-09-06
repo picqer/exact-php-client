@@ -11,7 +11,6 @@ namespace Picqer\Financials\Exact;
  * @property int $IsFractionAllowedItem Does the item allow partial quantities (1.75 meters)
  * @property int $IsStockItem Indicates if this is a stock item
  * @property string $Item Item
- * @property string $ItemBarcode Barcode of the item of this stock quantity
  * @property string $ItemCode Code of the item of this stock quantity
  * @property string $ItemDescription Description of the item of this stock quantity
  * @property string $ItemEndDate Together with ItemStartDate this determines if the item is active
@@ -35,7 +34,6 @@ class ItemWarehouseStorageLocation extends Model
         'IsFractionAllowedItem',
         'IsStockItem',
         'Item',
-        'ItemBarcode',
         'ItemCode',
         'ItemDescription',
         'ItemEndDate',

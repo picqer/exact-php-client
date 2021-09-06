@@ -10,7 +10,6 @@ namespace Picqer\Financials\Exact;
  * @property string $ID Primary key
  * @property string $Account Guid ID of account that is linked to the project
  * @property string $AccountName Name of account that is linked to the project
- * @property float $Amount This property is obsolete. Use property 'AmountFC' instead.
  * @property float $AmountFC Calculated amount of the transaction based on (Quantity * PriceFC)
  * @property string $Attachment Attachment linked to the transaction (not mandatory)
  * @property string $Created Date and time the transaction was created
@@ -33,7 +32,6 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier The ID of the user that modified the records
  * @property string $ModifierFullName The full name of the user that modified the record
  * @property string $Notes Notes linked to the transaction for providing additional information (not mandatory)
- * @property float $Price This property is obsolete. Use property 'PriceFC' instead.
  * @property float $PriceFC For use in AmountFC (Quantiy * Price FC)
  * @property string $Project Project that is linked to the transaction
  * @property string $ProjectAccount Project account ID that is linked to the transaction (not mandatory)
@@ -41,7 +39,6 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectAccountName Project account name that is linked to the transaction
  * @property string $ProjectDescription Project description that is linked to the transaction
  * @property float $Quantity Quantity of the item that is linked to the transaction
- * @property bool $SkipValidation Skip validation
  * @property string $Subscription Subscription that is linked to the transaction
  * @property string $SubscriptionAccount Subscription account that is linked to the transaction, this is to identify the referenced subscription
  * @property string $SubscriptionAccountCode Subscription account code that is linked to the transaction
@@ -59,7 +56,6 @@ class CostTransaction extends Model
         'ID',
         'Account',
         'AccountName',
-        'Amount',
         'AmountFC',
         'Attachment',
         'Created',
@@ -82,7 +78,6 @@ class CostTransaction extends Model
         'Modifier',
         'ModifierFullName',
         'Notes',
-        'Price',
         'PriceFC',
         'Project',
         'ProjectAccount',
@@ -90,7 +85,6 @@ class CostTransaction extends Model
         'ProjectAccountName',
         'ProjectDescription',
         'Quantity',
-        'SkipValidation',
         'Subscription',
         'SubscriptionAccount',
         'SubscriptionAccountCode',

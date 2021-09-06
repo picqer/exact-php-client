@@ -24,7 +24,6 @@ namespace Picqer\Financials\Exact;
  * @property bool $HasTwoStepVerification User must use Two-Step verification to log in
  * @property string $Initials Initials
  * @property bool $IsAnonymised Indicates whether the user is anonymised.
- * @property bool $IsAPICall To validate default values for API
  * @property string $Language Language (culture) that is used in Exact Online
  * @property string $LastLogin The last time this user logged in
  * @property string $LastName Last name
@@ -69,7 +68,6 @@ class SystemUser extends Model
         'HasTwoStepVerification',
         'Initials',
         'IsAnonymised',
-        'IsAPICall',
         'Language',
         'LastLogin',
         'LastName',

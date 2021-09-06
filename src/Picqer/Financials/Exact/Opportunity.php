@@ -9,9 +9,6 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account Lead to which the opportunity applies
- * @property string $Accountant Accountant linked to the opportunity
- * @property string $AccountantCode Code of the Accountant
- * @property string $AccountantName Name of the Accountant
  * @property string $AccountCode Code of Account
  * @property string $AccountName Name of Account
  * @property string $ActionDate Indicates the date before/on the NextAction is supposed to be done
@@ -19,8 +16,6 @@ namespace Picqer\Financials\Exact;
  * @property float $AmountFC Amount in the currency of the transaction
  * @property string $Campaign Reference to the campaign opportunity is related to
  * @property string $CampaignDescription Description of Campaign
- * @property int $Channel Reference to the channel opportunity is related to
- * @property string $ChannelDescription Description of Channel
  * @property string $CloseDate The date when the opportunity is expected to be closed
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -35,13 +30,9 @@ namespace Picqer\Financials\Exact;
  * @property string $Name Name of the opportunity
  * @property string $NextAction Indicates what follow up action is to be undertaken to move the opportunity towards a deal. Is used in combination with ActionDate
  * @property string $Notes Notes of the opportunity
- * @property int $OpportunityDepartmentCode Code of Opportunity Department
- * @property string $OpportunityDepartmentDescription Description of Opportunity Department
  * @property string $OpportunityStage The stage of the opportunity. This is a list defined by the user
  * @property string $OpportunityStageDescription Description of OpportunityStage
  * @property int $OpportunityStatus Status: 1=Open, 2=Closed won, 3=Closed lost
- * @property int $OpportunityType Code of Opportunity Type
- * @property string $OpportunityTypeDescription Description of Opportunity Type
  * @property string $Owner The resource who owns the opportunity and is responsible to close the opportunity (either won or lost)
  * @property string $OwnerFullName Name of Owner
  * @property float $Probability The chance that the opportunity will be closed and won. The default for the probability depends on the default from the opportunity stage
@@ -51,9 +42,6 @@ namespace Picqer\Financials\Exact;
  * @property float $RateFC Exchange rate from original to division currency
  * @property string $ReasonCode Indicates the reason why the opportunity was lost.
  * @property string $ReasonCodeDescription Description of ReasonCode
- * @property string $Reseller Reseller linked to the opportunity
- * @property string $ResellerCode Code of the Reseller
- * @property string $ResellerName Name of the Reseller
  * @property string $SalesType Reference to Sales type
  * @property string $SalesTypeDescription Description of SalesType
  */
@@ -65,9 +53,6 @@ class Opportunity extends Model
     protected $fillable = [
         'ID',
         'Account',
-        'Accountant',
-        'AccountantCode',
-        'AccountantName',
         'AccountCode',
         'AccountName',
         'ActionDate',
@@ -75,8 +60,6 @@ class Opportunity extends Model
         'AmountFC',
         'Campaign',
         'CampaignDescription',
-        'Channel',
-        'ChannelDescription',
         'CloseDate',
         'Created',
         'Creator',
@@ -91,13 +74,9 @@ class Opportunity extends Model
         'Name',
         'NextAction',
         'Notes',
-        'OpportunityDepartmentCode',
-        'OpportunityDepartmentDescription',
         'OpportunityStage',
         'OpportunityStageDescription',
         'OpportunityStatus',
-        'OpportunityType',
-        'OpportunityTypeDescription',
         'Owner',
         'OwnerFullName',
         'Probability',
@@ -107,9 +86,6 @@ class Opportunity extends Model
         'RateFC',
         'ReasonCode',
         'ReasonCodeDescription',
-        'Reseller',
-        'ResellerCode',
-        'ResellerName',
         'SalesType',
         'SalesTypeDescription',
     ];

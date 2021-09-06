@@ -12,7 +12,6 @@ namespace Picqer\Financials\Exact;
  * @property string $AccountName Name of account that is linked to the project
  * @property string $Activity Guid ID of activity that is linked to project WBS (work breakdown structure)
  * @property string $ActivityDescription Name of activity that is linked to project WBS (work breakdown structure)
- * @property float $Amount This property is obsolete. Use property 'AmountFC' instead.
  * @property float $AmountFC Calculated amount of the transaction based on (Quantity * PriceFC)
  * @property string $Attachment Attachment linked to the transaction (not mandatory)
  * @property string $Created Date and time the transaction was created
@@ -34,7 +33,6 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier The Guid ID of the user that modified the records
  * @property string $ModifierFullName The full name of the user that modified the record
  * @property string $Notes Notes linked to the transaction for providing additional information (not mandatory)
- * @property float $Price This property is obsolete. Use property 'PriceFC' instead.
  * @property float $PriceFC For use in AmountFC (Quantiy * Price FC)
  * @property string $Project Guid ID of project that is linked to the transaction
  * @property string $ProjectAccount Project account ID that is linked to the transaction (not mandatory)
@@ -43,7 +41,6 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectCode Project code that is linked to the transaction
  * @property string $ProjectDescription Project description that is linked to the transaction
  * @property float $Quantity Quantity of the item that is linked to the transaction
- * @property bool $SkipValidation Skip validation
  * @property string $StartTime Start time of the time transaction
  * @property string $Subscription Guid ID of subscription that is linked to the transaction
  * @property string $SubscriptionAccount Subscription account ID that is linked to the transaction, this is to identify the referenced subscription
@@ -64,7 +61,6 @@ class TimeTransaction extends Model
         'AccountName',
         'Activity',
         'ActivityDescription',
-        'Amount',
         'AmountFC',
         'Attachment',
         'Created',
@@ -86,7 +82,6 @@ class TimeTransaction extends Model
         'Modifier',
         'ModifierFullName',
         'Notes',
-        'Price',
         'PriceFC',
         'Project',
         'ProjectAccount',
@@ -95,7 +90,6 @@ class TimeTransaction extends Model
         'ProjectCode',
         'ProjectDescription',
         'Quantity',
-        'SkipValidation',
         'StartTime',
         'Subscription',
         'SubscriptionAccount',
