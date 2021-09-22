@@ -79,12 +79,9 @@ class Resultset
         }
 
         $class = $this->class;
-        $collection = [];
 
         foreach ($result as $r) {
-            $collection[] = new $class($this->connection, $r);
+            yield new $class($this->connection, $r);
         }
-
-        return $collection;
     }
 }
