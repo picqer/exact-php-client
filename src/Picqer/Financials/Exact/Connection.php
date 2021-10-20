@@ -885,9 +885,9 @@ class Connection
         if (! $this->waitOnMinutelyRateLimitHit) {
             return;
         }
-        
+
         $minutelyReset = $this->getMinutelyLimitReset();
-        
+
         if ($this->getMinutelyLimitRemaining() === 0 && $minutelyReset) {
             // add a second for rounding differences
             $resetsInSeconds = (($minutelyReset / 1000) - time()) + 1;
