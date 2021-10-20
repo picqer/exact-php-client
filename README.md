@@ -123,6 +123,11 @@ $connection->getMinutelyLimitReset(); // Retrieve the timestamp for when the min
 ```
 _Do note when you have no more minutely calls available, Exact only sends the Minutely Limit headers. So in that case, the Daily Limit headers will remain 0 until the minutely reset rolls over._
 
+There is basic support to `sleep` upon hitting the minutely rate limits. If you enable "Wait on minutely rate limit hit", the client will sleep until the limit is reset. Daily limits are not considered.
+
+```php
+$connection->setWaitOnMinutelyRateLimitHit(true);
+```
 
 ### Use the library to do stuff (examples)
 
