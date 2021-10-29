@@ -17,7 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ContactFullName The name of the contact person
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
- * @property string $CreatorFullName Name of the creator 
+ * @property string $CreatorFullName Name of the creator
  * @property string $Description The description of the event
  * @property int $Division The division of the event
  * @property string $Document The document that is linked to the event
@@ -26,14 +26,14 @@ namespace Picqer\Financials\Exact;
  * @property int $HID The human readable key
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of the last modifier
- * @property string $ModifierFullName Name of the last modifier * 
- * @property string $Notes The notes of the event * 
+ * @property string $ModifierFullName Name of the last modifier *
+ * @property string $Notes The notes of the event *
  * @property string $Opportunity The opportunity linked to the event
  * @property string $OpportunityName The name of the opportunity
  * @property string $Project The project linked to the event
  * @property string $ProjectDescription The description of the project
  * @property string $StartDate The start date and time
- * @property int $Status Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed 
+ * @property int $Status Status: 0 = Void, 5 = Rejected, 10 = Draft, 20 = Open, 30 = Approved, 40 = Realized, 50 = Processed
  * @property string $StatusDescription The description of the status
  * @property string $User The user that has the event
  * @property string $UserFullName The user name
@@ -58,7 +58,7 @@ class Event extends Model
         'Description',
         'Division',
         'Document',
-        'DocumentSubject',        
+        'DocumentSubject',
         'EndDate',
         'HID',
         'Modified',
