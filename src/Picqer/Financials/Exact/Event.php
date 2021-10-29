@@ -38,7 +38,7 @@ namespace Picqer\Financials\Exact;
  * @property string $User The user that has the event
  * @property string $UserFullName The user name
  */
-class Events extends Model
+class Event extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
