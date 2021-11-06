@@ -11,6 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AddressLine1 Address line 1
  * @property string $AddressLine2 Address line 2
  * @property string $AddressLine3 Address line 3
+ * @property string $ArchiveDate Date on which the division is archived
  * @property int $BlockingStatus Values: 0 = Not blocked, 1 = Backup/restore, 2 = Conversion busy, 3 = Conversion shadow, 4 = Conversion waiting, 5 = Copy data waiting, 6 = Copy data busy
  * @property string $BusinessTypeCode Business type code
  * @property string $BusinessTypeDescription Business type description
@@ -77,6 +78,7 @@ class SystemDivision extends Model
         'AddressLine1',
         'AddressLine2',
         'AddressLine3',
+        'ArchiveDate',
         'BlockingStatus',
         'BusinessTypeCode',
         'BusinessTypeDescription',
