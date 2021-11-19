@@ -69,4 +69,5 @@ class PlannedSalesReturn extends Model
     ];
 
     protected $url = 'salesorder/PlannedSalesReturns';
+
 }

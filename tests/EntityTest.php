@@ -960,7 +960,8 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PlannedSalesReturnLine::class);
     }
 
-    public function testPlannedSalesReturnEntity() {
+    public function testPlannedSalesReturnEntity()
+    {
         $this->performEntityTest(\Picqer\Financials\Exact\PlannedSalesReturn::class);
     }
 
