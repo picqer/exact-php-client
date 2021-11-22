@@ -286,7 +286,7 @@ abstract class Model implements \JsonSerializable
      *
      * @param string $action
      *
-     * @return bool
+     * @return bool|null
      */
     public function userHasRights($action = 'GET')
     {

@@ -11,7 +11,7 @@ trait Findable
      */
     abstract public function connection();
 
-    abstract public function isFillable($key);
+    abstract protected function isFillable($key);
 
     /**
      * @return string
