@@ -179,9 +179,9 @@ class Connection
     }
 
     /**
-     * Insert a Middleware for the Guzzle Client.
+     * Insert a Middleware for the Guzzle-Client.
      *
-     * @param $middleWare
+     * @param callable $middleWare
      */
     public function insertMiddleWare($middleWare)
     {
@@ -310,7 +310,7 @@ class Connection
     }
 
     /**
-     * @param string $url
+     * @param string $topic
      * @param mixed  $body
      *
      * @throws ApiException
