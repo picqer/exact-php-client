@@ -1735,6 +1735,16 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\SystemUser::class);
     }
 
+    public function testEventEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Event::class);
+    }
+
+    public function testRequestAttachmentEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RequestAttachment::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);

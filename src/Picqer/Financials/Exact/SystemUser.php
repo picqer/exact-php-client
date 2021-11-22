@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemUsers
  *
  * @property string $UserID Primary key
- * @property int $AuthenticationType Authentication Type: 2=Forms, 8=Totp, 16=Auth0FederatedSSO, 32=Auth0Login. It is a bitwise enumerator, e.g. Forms + Totp = 10
+ * @property int $AuthenticationType Authentication Type: 2=Forms, 8=Totp, 16=Auth0FederatedSSO, 32=Auth0Login, 64=B2CFederatedLogin, 128=B2CLogin. It is a bitwise enumerator, e.g. Forms + Totp = 10
  * @property string $BirthDate Birth date
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
