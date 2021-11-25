@@ -19,7 +19,6 @@ namespace Picqer\Financials\Exact;
 class JournalStatusList extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'Year';
 

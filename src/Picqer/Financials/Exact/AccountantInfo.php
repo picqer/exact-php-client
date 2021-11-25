@@ -14,7 +14,7 @@ namespace Picqer\Financials\Exact;
  * @property string $City City.
  * @property string $Email Email.
  * @property bool $IsAccountant Indicates if the customer is an accountant himself.
- * @property binary $Logo Logo.
+ * @property string $Logo Logo.
  * @property string $MenuLogoUrl Url to retrieve the logo of the accountant.
  * @property string $Name The name of the accountant.
  * @property string $Phone Phone.
@@ -24,7 +24,6 @@ namespace Picqer\Financials\Exact;
 class AccountantInfo extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

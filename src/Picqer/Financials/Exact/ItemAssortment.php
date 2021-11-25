@@ -11,12 +11,11 @@ namespace Picqer\Financials\Exact;
  * @property int $Code Code of ItemAssortment
  * @property string $Description Description of ItemAssortment
  * @property int $Division Division
- * @property properties $Properties Properties of this ItemAssortment
+ * @property Property[] $Properties Properties of this ItemAssortment
  */
 class ItemAssortment extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

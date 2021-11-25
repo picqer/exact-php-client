@@ -7,27 +7,26 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectEmploymentInternalRates
  *
- * @property string $ID Primary key
- * @property string $Created Creation date
- * @property string $Creator Creator
- * @property string $CreatorFullName Name of creator
+ * @property string $ID ID of internal rate
+ * @property string $Created Date and time when the internal rates was created
+ * @property string $Creator ID of user that created the internal rate
+ * @property string $CreatorFullName Full name of user that created the record
  * @property int $Division Division code
- * @property string $Employee Employee
- * @property string $EmployeeFullName Name of employee
- * @property int $EmployeeHID Employee number
- * @property string $Employment Employment
- * @property int $EmploymentHID Employment number
- * @property string $EndDate End date
- * @property float $InternalRate Internal rate
- * @property string $Modified Last modified date
- * @property string $Modifier Modifier
- * @property string $ModifierFullName Name of modifier
- * @property string $StartDate Start date
+ * @property string $Employee ID of employee that linked to the internal rate
+ * @property string $EmployeeFullName Name of employee that linked to the internal rate
+ * @property int $EmployeeHID Employee number that linked to the internal rate
+ * @property string $Employment ID of employment that linked to the internal rate
+ * @property int $EmploymentHID Employement number that linked to the internal rate
+ * @property string $EndDate End date of internal rate
+ * @property float $InternalRate Amount of internal rate
+ * @property string $Modified Last modified date of internal rate
+ * @property string $Modifier ID of user that modified the internal rate
+ * @property string $ModifierFullName Full name of user that modified the internal rate
+ * @property string $StartDate Start date of internal rate
  */
 class EmploymentInternalRate extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ParentShopOrder Parent shop order if this ShopOrderReceipt is part of a SubOrderReceipt
  * @property int $ParentShopOrderNumber Parent shop order number if this ShopOrderReceipt is part of a SubOrderReceipt
  * @property float $Quantity Quantity of this ShopOrderReceipt
+ * @property int $ReceiptNumber Number to identify the shop order stock receipts of a finished item
  * @property string $RelatedStockTransaction If this transaction was part of a SubOrderReceipt, this ID is the related MaterialIssue.StockTransactionID.
  * @property string $ShopOrder Shop order finished
  * @property int $ShopOrderNumber Number of shop order finished
@@ -62,6 +63,7 @@ class ShopOrderReceipt extends Model
         'ParentShopOrder',
         'ParentShopOrderNumber',
         'Quantity',
+        'ReceiptNumber',
         'RelatedStockTransaction',
         'ShopOrder',
         'ShopOrderNumber',

@@ -29,7 +29,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Extra description for the payment that may be included in the bank export file.
  * @property string $DiscountDueDate Date before which the payment must be done to be eligible for discount.
  * @property int $Division Division code.
- * @property string $Document Document that is created when processing payments.  The bank export file is attached to the document.
+ * @property string $Document Document that is created when processing payments. The bank export file is attached to the document.
  * @property int $DocumentNumber Number of the document.
  * @property string $DocumentSubject Subject of the document.
  * @property string $DueDate Date before which the payment must be done.
@@ -68,7 +68,7 @@ namespace Picqer\Financials\Exact;
  * @property float $TransactionAmountFC Total amount of the linked transaction in the selected currency.
  * @property string $TransactionDueDate Due date of the linked transaction.
  * @property string $TransactionEntryID Linked transaction. Use this as reference to PurchaseEntries.
- * @property string $TransactionID Linked transaction line. Use this as reference to BankEntryLines and CashEntryLines.
+ * @property string $TransactionID Linked transaction line. Use this as reference to PurchaseEntryLines
  * @property bool $TransactionIsReversal Indicates if the linked transaction is a reversal entry.
  * @property int $TransactionReportingPeriod Period of the linked transaction.
  * @property int $TransactionReportingYear Year of the linked transaction.
@@ -79,7 +79,6 @@ namespace Picqer\Financials\Exact;
 class Payment extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

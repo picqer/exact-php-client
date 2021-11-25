@@ -16,7 +16,6 @@ namespace Picqer\Financials\Exact;
 class AgingOverviewByAccount extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'AgeGroup';
 

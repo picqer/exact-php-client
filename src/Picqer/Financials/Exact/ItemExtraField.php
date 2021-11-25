@@ -16,7 +16,6 @@ namespace Picqer\Financials\Exact;
 class ItemExtraField extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'Description',

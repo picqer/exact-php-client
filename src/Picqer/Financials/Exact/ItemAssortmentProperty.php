@@ -16,7 +16,6 @@ namespace Picqer\Financials\Exact;
 class ItemAssortmentProperty extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

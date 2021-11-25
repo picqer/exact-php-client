@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentAttachments
  *
  * @property string $ID Primary key
- * @property string $Attachment Contains the attachment (Format: Base64 encoded)
+ * @property string $Attachment Contains the attachment(Format: Base64 encoded)
  * @property string $Document Reference to the Document
  * @property string $FileName Filename of the attachment
  * @property float $FileSize File size of the attachment
