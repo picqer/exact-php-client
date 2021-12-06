@@ -17,7 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AddressLine1 Visit address first line
  * @property string $AddressLine2 Visit address second line
  * @property string $AddressLine3 Visit address third line
- * @property bankaccounts $BankAccounts Collection of Bank accounts
+ * @property BankAccount[] $BankAccounts Collection of Bank accounts
  * @property bool $Blocked Indicates if the account is blocked
  * @property string $BRIN Obsolete
  * @property string $BSN Citizen Service Number for the Netherlands
