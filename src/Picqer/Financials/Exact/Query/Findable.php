@@ -11,7 +11,7 @@ trait Findable
      */
     abstract public function connection();
 
-    abstract public function isFillable($key);
+    abstract protected function isFillable($key);
 
     /**
      * @return string
@@ -58,7 +58,7 @@ trait Findable
      * @param string $code the value to search for
      * @param string $key  the key being searched (defaults to 'Code')
      *
-     * @return string (guid)
+     * @return string|void (guid)
      */
     public function findId($code, $key = 'Code')
     {

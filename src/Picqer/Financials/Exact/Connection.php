@@ -179,9 +179,9 @@ class Connection
     }
 
     /**
-     * Insert a Middleware for the Guzzle Client.
+     * Insert a Middleware for the Guzzle-Client.
      *
-     * @param $middleWare
+     * @param callable $middleWare
      */
     public function insertMiddleWare($middleWare)
     {
@@ -310,7 +310,7 @@ class Connection
     }
 
     /**
-     * @param string $url
+     * @param string $topic
      * @param mixed  $body
      *
      * @throws ApiException
@@ -514,7 +514,7 @@ class Connection
             }
 
             $answer = [];
-            Psr7\rewind_body($response);
+            Psr7\Message::rewindBody($response);
             $simpleXml = new \SimpleXMLElement($response->getBody()->getContents());
 
             foreach ($simpleXml->Messages as $message) {
@@ -632,7 +632,7 @@ class Connection
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
-        return time() + $expiresIn;
+        return time() + (int) $expiresIn;
     }
 
     /**
