@@ -1,13 +1,14 @@
-# exact-php-client
-
+# Exact PHP Client
 ![Run phpunit](https://github.com/picqer/exact-php-client/workflows/Run%20phpunit/badge.svg)
 
-PHP client library to use the Exact Online API.
+PHP client library for the Exact Online API. This client lets you integrate with Exact Online, for example by:
+- creating and sending invoices, 
+- add journal entries, 
+- or upload received invoices.
 
-Note: For Guzzle 6/7 use v3, for Guzzle 3 use v1.
+This client uses the same naming and conventions as the Exact API itself, so best way to find out how this client works is by [looking at the Exact Online documentation](https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-restrefdocs) and [API reference](https://start.exactonline.nl/docs/HlpRestAPIResources.aspx?SourceAction=10).
 
-## Direct link to Exact Online docs
-https://support.exactonline.com/community/s/knowledge-base#All-All-DNO-Content-getting-started
+This library is created and maintained by [Picqer](https://picqer.com). We are [looking for PHP developers to join our team](https://picqer.com/nl/vacatures/senior-php-developer)!
 
 ## Composer install
 Installing this Exact client for PHP can be done through Composer.
@@ -244,6 +245,9 @@ This error occurs because the code you get in your redirect URL is only valid fo
 ## Code example
 
 See for example: [example/example.php](example/example.php)
+
+## Guzzle versions
+Guzzle 6 and 7 is supported starting from v3. For Guzzle 3 use [v1](https://github.com/picqer/exact-php-client/releases?q=v1&expanded=true).
 
 ## TODO
 
