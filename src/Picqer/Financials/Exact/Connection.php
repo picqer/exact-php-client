@@ -227,8 +227,9 @@ class Connection
      * @param array  $params
      * @param array  $headers
      *
-     * @return Request
      * @throws ApiException
+     *
+     * @return Request
      */
     private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = [])
     {
