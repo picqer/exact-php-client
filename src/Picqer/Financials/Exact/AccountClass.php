@@ -22,7 +22,6 @@ namespace Picqer\Financials\Exact;
 class AccountClass extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

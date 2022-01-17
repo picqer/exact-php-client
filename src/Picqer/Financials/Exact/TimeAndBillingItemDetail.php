@@ -8,17 +8,16 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingItemDetails
  *
  * @property string $ID Primary key
- * @property string $Code Item code
- * @property string $Description Description of the item code
- * @property bool $IsFractionAllowedItem Indicates if fractions are allowed for quantities of this item
- * @property bool $IsSalesItem Indicates if the item can be sold
- * @property string $SalesCurrency Sales currency code
- * @property float $SalesPrice Sales price
+ * @property string $Code The code of the item used in time and billing projects
+ * @property string $Description The description of the item used in time and billing projects
+ * @property bool $IsFractionAllowedItem A boolean field to indicated if this item's quantity is allowed to be used in fraction's, which changes the calculation of the total amount invoiced
+ * @property bool $IsSalesItem A boolean field to indicated if this item is enabled to be used in a invoice proposal
+ * @property string $SalesCurrency The code of the sales currency used in this item
+ * @property float $SalesPrice Sales price of the item which is used when processing sales invoice
  */
 class TimeAndBillingItemDetail extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

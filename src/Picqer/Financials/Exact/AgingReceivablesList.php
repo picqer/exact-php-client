@@ -28,7 +28,6 @@ namespace Picqer\Financials\Exact;
 class AgingReceivablesList extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'AccountId';
 

@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account ID of the related account of this document
- * @property attachments $Attachments Attachments linked to the document. Binaries are not sent in the response.
+ * @property DocumentAttachment[] $Attachments Attachments linked to the document. Binaries are not sent in the response.
  * @property string $Contact ID of the related contact of this document
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -28,6 +28,11 @@ namespace Picqer\Financials\Exact;
  * @property int $SalesInvoiceNumber 'Our reference' of the transaction that belongs to this document
  * @property int $SalesOrderNumber Number of the sales order
  * @property int $SendMethod Send Method
+ * @property int $Share
+ * @property int $SharePointConnectionStatus SharePointConnectionStatus of this document
+ * @property string $SharePointID SharePointID of this document
+ * @property int $Source Source
+ * @property string $SourceDescription Translated description of the Source type
  * @property string $Subject Subject of this document
  * @property int $Type The document type
  * @property string $TypeDescription Translated description of the document type. $filter and $orderby are not supported for this property.
@@ -35,7 +40,6 @@ namespace Picqer\Financials\Exact;
 class AccountDocument extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -59,6 +63,11 @@ class AccountDocument extends Model
         'SalesInvoiceNumber',
         'SalesOrderNumber',
         'SendMethod',
+        'Share',
+        'SharePointConnectionStatus',
+        'SharePointID',
+        'Source',
+        'SourceDescription',
         'Subject',
         'Type',
         'TypeDescription',

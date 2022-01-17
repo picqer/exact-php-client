@@ -11,7 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property string $BankExportDocumentsUrl This is a URL to get the documents that were created after the payments were successfully processed. These documents have to be sent to the bank in order to do the payments.
  * @property int $Division Division code
  * @property string $ErrorMessage Contains the error message if an error occurred during the processing of the payment(s).
- * @property paymentids $PaymentIDs Use this field to pass a collection of GUIDs representing the IDs of the payments that have to be processed.
+ * @property PaymentID[] $PaymentIDs Use this field to pass a collection of GUIDs representing the IDs of the payments that have to be processed.
  * @property string $SuccessMessage Contains information if the payments were successfully processed.
  */
 class ProcessPayment extends Model

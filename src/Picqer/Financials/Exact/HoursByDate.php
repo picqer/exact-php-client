@@ -8,34 +8,33 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHoursByDate
  *
  * @property int $Id Primary key
- * @property string $AccountCode Code of Account
- * @property string $AccountId Reference to Account
- * @property string $AccountName Name of Account
- * @property string $Activity Reference to Activity
- * @property string $ActivityDescription Description of Activity
- * @property string $Date Date
- * @property string $EntryId Entry ID
+ * @property string $AccountCode Code of account linked to the project that hours are being entered to
+ * @property string $AccountId ID of account linked to the project that hours are being entered to
+ * @property string $AccountName Name of account linked to the project that hours are being entered to
+ * @property string $Activity The activity of the project that the hours are entered to
+ * @property string $ActivityDescription Name of activity of the project that the hours are entered to
+ * @property string $Date Date of hour entry record by week
+ * @property string $EntryId Entry ID of record
  * @property float $HoursApproved Hours approved
- * @property float $HoursApprovedBillable Billable hours approved
- * @property float $HoursDraft Hours draft
- * @property float $HoursDraftBillable Billable hours draft
- * @property float $HoursRejected Hours rejected
- * @property float $HoursRejectedBillable Billable hours rejected
- * @property float $HoursSubmitted Hours submitted
- * @property float $HoursSubmittedBillable Billable hours submitted
- * @property string $ItemCode Code of Item
- * @property string $ItemDescription Description of Item
- * @property string $ItemId Reference to Item
- * @property string $Notes Remarks
- * @property string $ProjectCode Code of Project
- * @property string $ProjectDescription Description of Project
- * @property string $ProjectId Reference to Project
- * @property int $WeekNumber Week number
+ * @property float $HoursApprovedBillable Billable hours that is approved
+ * @property float $HoursDraft Hours saved as draft
+ * @property float $HoursDraftBillable Billable hours saved as draft
+ * @property float $HoursRejected Hours that are rejected
+ * @property float $HoursRejectedBillable Billable hours that are rejected
+ * @property float $HoursSubmitted Hours that are submitted
+ * @property float $HoursSubmittedBillable Billable hours that are submitted
+ * @property string $ItemCode Code of the item that is used for hours
+ * @property string $ItemDescription Description of the item that is used for hours
+ * @property string $ItemId ID of the item that is used for hours
+ * @property string $Notes Notes entered regarding the information of the hours entered
+ * @property string $ProjectCode Code of project that the hours are entered on
+ * @property string $ProjectDescription Description of project that the hours are entered on
+ * @property string $ProjectId ID of project that the hours are entered on
+ * @property int $WeekNumber The week number that the hours are entered on
  */
 class HoursByDate extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'Id';
 

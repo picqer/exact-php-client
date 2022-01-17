@@ -7,14 +7,13 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingEntryProjectsByDate
  *
- * @property string $ProjectId Primary key
- * @property string $ProjectCode Code
- * @property string $ProjectDescription Description
+ * @property string $ProjectId GUID id of the project
+ * @property string $ProjectCode Code of the project
+ * @property string $ProjectDescription Description of the project
  */
 class TimeAndBillingEntryProjectsByDate extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'ProjectId';
 

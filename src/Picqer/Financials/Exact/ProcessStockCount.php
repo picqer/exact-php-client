@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryProcessStockCount
  *
- * @property string $StockCountID Primary key
+ * @property string $StockCountID A guid that is the unique identifier of the stock count.
  * @property int $Division Division code
  * @property string $ErrorMessage Contains the error message if an error occurred during the processing of the stock count.
  * @property string $SuccessMessage Contains information if the stock count was successfully processed.

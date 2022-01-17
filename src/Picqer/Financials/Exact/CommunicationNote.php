@@ -10,7 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ID The Primary key
  * @property string $Account The account that is related to the communication note
  * @property string $AccountName The name of the account
- * @property requestattachments $Attachments Attachments linked to the communication note
+ * @property RequestAttachment[] $Attachments Attachments linked to the communication note
  * @property string $Campaign The campaign linked to the communication note
  * @property string $CampaignDescription Description of the campaign
  * @property string $Contact The contact person that is related to the communication note

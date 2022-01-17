@@ -7,15 +7,14 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHourEntryRecentProjects
  *
- * @property string $ProjectId Primary key
- * @property string $DateLastUsed Date last used
- * @property string $ProjectCode Code of project
- * @property string $ProjectDescription Description of project
+ * @property string $ProjectId The Id of the project that hours entries are entered
+ * @property string $DateLastUsed The datetime the hour entries have been entered on the project
+ * @property string $ProjectCode The code of the project that the hour entries have been entered on
+ * @property string $ProjectDescription The description of the project that the hour entries have been entered on
  */
 class HourEntryRecentProject extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'ProjectId';
 

@@ -19,11 +19,13 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $ParentFolder Document folder parent folder ID
+ * @property int $Share Share status of this folder
+ * @property int $SharePointConnectionStatus SharePointConnectionStatus of this folder
+ * @property string $SharePointID SharePointID of this folder
  */
 class AccountDocumentFolder extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -38,6 +40,9 @@ class AccountDocumentFolder extends Model
         'Modifier',
         'ModifierFullName',
         'ParentFolder',
+        'Share',
+        'SharePointConnectionStatus',
+        'SharePointID',
     ];
 
     protected $url = 'read/crm/AccountDocumentFolders?accountId={Edm.Guid}';

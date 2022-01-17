@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadLogisticsItemDetailsByID
  *
- * @property string $ID Primary key
+ * @property string $ID A guid that is the unique identifier of the item
  * @property string $Code Item code
  * @property string $Description Description of the item
  * @property bool $IsFractionAllowedItem Indicates if fractions (for example 0.35) are allowed for quantities of this item
@@ -18,7 +18,6 @@ namespace Picqer\Financials\Exact;
 class ItemDetailsByID extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
