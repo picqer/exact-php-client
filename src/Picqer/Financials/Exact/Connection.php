@@ -392,6 +392,7 @@ class Connection
             'client_id'     => $this->exactClientId,
             'redirect_uri'  => $this->redirectUrl,
             'response_type' => 'code',
+            'state' => $this->state,
         ]);
     }
 
