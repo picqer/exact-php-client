@@ -71,6 +71,11 @@ class Connection
     private $redirectUrl;
 
     /**
+     * @var string
+     */
+    private $state = null;
+
+    /**
      * @var mixed
      */
     private $division;
@@ -443,6 +448,14 @@ class Connection
     public function setRedirectUrl($redirectUrl)
     {
         $this->redirectUrl = $redirectUrl;
+    }
+
+    /**
+     * @param string $state
+     */
+    public function setState(string $state)
+    {
+        $this->state = $state;
     }
 
     /**
