@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property float $NetPrice Net price in the currency of the transaction
  * @property string $Notes To add or retrieve additional information in the subscription line
  * @property float $Quantity Quantity of item used in the subscription line
+ * @property int $SubscriptionNumber Subscription number of the subscription line per subscription
  * @property string $ToDate The date the subscription line ends
  * @property string $UnitCode The code of the unit used in the subscription line. E.g: kg, meter
  * @property string $UnitDescription Description of Unit used in the subscription line
@@ -59,6 +60,7 @@ class SubscriptionLine extends Model
         'NetPrice',
         'Notes',
         'Quantity',
+        'SubscriptionNumber',
         'ToDate',
         'UnitCode',
         'UnitDescription',
