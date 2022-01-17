@@ -227,6 +227,8 @@ class Connection
      * @param array  $params
      * @param array  $headers
      *
+     * @throws ApiException
+     *
      * @return Request
      */
     private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = [])
@@ -238,10 +240,7 @@ class Connection
             'Prefer'       => 'return=representation',
         ]);
 
-        // If access token is not set or token has expired, acquire new token
-        if (empty($this->accessToken) || $this->tokenHasExpired()) {
-            $this->acquireAccessToken();
-        }
+        $this->checkOrAcquireAccessToken();
 
         // If we have a token, sign the request
         if (! $this->needsAuthentication() && ! empty($this->accessToken)) {
@@ -276,7 +275,6 @@ class Connection
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response, $url != $this->nextUrl);
@@ -300,7 +298,6 @@ class Connection
 
         try {
             $request = $this->createRequest('POST', $url, $body);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
@@ -346,7 +343,6 @@ class Connection
 
         try {
             $request = $this->createRequest('PUT', $url, $body);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
@@ -369,7 +365,6 @@ class Connection
 
         try {
             $request = $this->createRequest('DELETE', $url);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
