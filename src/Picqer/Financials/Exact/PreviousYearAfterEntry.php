@@ -18,7 +18,6 @@ namespace Picqer\Financials\Exact;
 class PreviousYearAfterEntry extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'ReportingYear';
 
