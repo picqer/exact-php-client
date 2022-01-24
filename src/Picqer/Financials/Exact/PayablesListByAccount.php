@@ -49,5 +49,5 @@ class PayablesListByAccount extends Model
         'YourRef',
     ];
 
-    protected $url = 'read/financial/PayablesListByAccount?accountId={Edm.Guid}';
+    protected $url = 'read/financial/PayablesListByAccount';
 }

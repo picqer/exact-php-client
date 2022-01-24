@@ -23,5 +23,5 @@ class CostEntryRecentCostTypesByProject extends Model
         'ItemDescription',
     ];
 
-    protected $url = 'read/project/CostEntryRecentCostTypesByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/CostEntryRecentCostTypesByProject';
 }

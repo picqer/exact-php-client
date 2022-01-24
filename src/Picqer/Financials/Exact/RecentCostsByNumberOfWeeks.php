@@ -68,5 +68,5 @@ class RecentCostsByNumberOfWeeks extends Model
         'WeekNumber',
     ];
 
-    protected $url = 'read/project/RecentCostsByNumberOfWeeks?numberOfWeeks={Edm.Int32}';
+    protected $url = 'read/project/RecentCostsByNumberOfWeeks';
 }

@@ -37,5 +37,5 @@ class PreferredMailboxForOperation extends Model
         'ValidTo',
     ];
 
-    protected $url = 'read/mailbox/PreferredMailboxForOperation?operation={Edm.Int32}';
+    protected $url = 'read/mailbox/PreferredMailboxForOperation';
 }

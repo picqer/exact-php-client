@@ -23,5 +23,5 @@ class CostEntryRecentAccountsByProject extends Model
         'DateLastUsed',
     ];
 
-    protected $url = 'read/project/CostEntryRecentAccountsByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/CostEntryRecentAccountsByProject';
 }

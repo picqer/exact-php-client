@@ -121,5 +121,5 @@ class DefaultAddressForAccount extends Model
         'WarehouseDescription',
     ];
 
-    protected $url = 'read/crm/DefaultAddressForAccount?accountId={Edm.Guid}&addressType={Edm.Int32}';
+    protected $url = 'read/crm/DefaultAddressForAccount';
 }

@@ -27,5 +27,5 @@ class TimeAndBillingProjectDetailsByID extends Model
         'Type',
     ];
 
-    protected $url = 'read/project/TimeAndBillingProjectDetailsByID?projectId={Edm.Guid}';
+    protected $url = 'read/project/TimeAndBillingProjectDetailsByID';
 }

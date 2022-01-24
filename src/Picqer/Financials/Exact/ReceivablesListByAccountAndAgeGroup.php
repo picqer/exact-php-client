@@ -47,5 +47,5 @@ class ReceivablesListByAccountAndAgeGroup extends Model
         'YourRef',
     ];
 
-    protected $url = 'read/financial/ReceivablesListByAccountAndAgeGroup?accountId={Edm.Guid}&ageGroup={Edm.Int32}';
+    protected $url = 'read/financial/ReceivablesListByAccountAndAgeGroup';
 }

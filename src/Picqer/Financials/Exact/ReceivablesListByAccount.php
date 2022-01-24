@@ -47,5 +47,5 @@ class ReceivablesListByAccount extends Model
         'YourRef',
     ];
 
-    protected $url = 'read/financial/ReceivablesListByAccount?accountId={Edm.Guid}';
+    protected $url = 'read/financial/ReceivablesListByAccount';
 }

@@ -45,5 +45,5 @@ class AccountDocumentFolder extends Model
         'SharePointID',
     ];
 
-    protected $url = 'read/crm/AccountDocumentFolders?accountId={Edm.Guid}';
+    protected $url = 'read/crm/AccountDocumentFolders';
 }

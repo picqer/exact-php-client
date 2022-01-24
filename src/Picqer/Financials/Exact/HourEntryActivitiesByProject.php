@@ -21,5 +21,5 @@ class HourEntryActivitiesByProject extends Model
         'ParentDescription',
     ];
 
-    protected $url = 'read/project/HourEntryActivitiesByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/HourEntryActivitiesByProject';
 }

@@ -65,5 +65,5 @@ class HoursByDate extends Model
         'WeekNumber',
     ];
 
-    protected $url = 'read/project/HoursByDate?checkDate={Edm.DateTime}';
+    protected $url = 'read/project/HoursByDate';
 }

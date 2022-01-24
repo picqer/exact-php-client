@@ -67,5 +67,5 @@ class CostsByDate extends Model
         'WeekNumber',
     ];
 
-    protected $url = 'read/project/CostsByDate?checkDate={Edm.DateTime}';
+    protected $url = 'read/project/CostsByDate';
 }
