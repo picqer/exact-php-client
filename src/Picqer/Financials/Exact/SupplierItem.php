@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CurrencyDescription Description of currency of item price
  * @property int $Division Division code
  * @property int $DropShipment Indicates that the supplier will deliver the item directly to customer. Values: 0 = No, 1 = Yes, 2 = Optional
+ * @property string $EndDate Together with StartDate this determines whether the price is active
  * @property string $Item Item ID
  * @property string $ItemCode Item code
  * @property string $ItemDescription Description of Item
@@ -28,12 +29,13 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Notes
  * @property int $PurchaseLeadTime The number of days between placing an order with a supplier and receiving items from the supplier
- * @property float $PurchasePrice Purchase price
+ * @property float $PurchasePrice Purchase price. If neither active nor future price exists, it shows 0 when GET
  * @property string $PurchaseUnit Unit code
  * @property string $PurchaseUnitDescription Description of unit
  * @property float $PurchaseUnitFactor This is the multiplication factor when going from default item unit to the unit of this price
  * @property string $PurchaseVATCode VAT code
  * @property string $PurchaseVATCodeDescription Description of VAT
+ * @property string $StartDate Together with EndDate this determines whether the price is active
  * @property string $Supplier Supplier ID
  * @property string $SupplierCode Supplier code
  * @property string $SupplierDescription Description of supplier
@@ -56,6 +58,7 @@ class SupplierItem extends Model
         'CurrencyDescription',
         'Division',
         'DropShipment',
+        'EndDate',
         'Item',
         'ItemCode',
         'ItemDescription',
@@ -72,6 +75,7 @@ class SupplierItem extends Model
         'PurchaseUnitFactor',
         'PurchaseVATCode',
         'PurchaseVATCodeDescription',
+        'StartDate',
         'Supplier',
         'SupplierCode',
         'SupplierDescription',

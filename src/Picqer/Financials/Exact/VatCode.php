@@ -20,6 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of the VAT code
  * @property int $Division Division code
  * @property string $EUSalesListing Used in all legislations except France. Indicates if and how transactions using the VAT code appear on the ICT return (EU sales list). L = Listing goods, N = No listing, S = Listing services, T = Triangulation
+ * @property int $ExcludeVATListing ExcludeVATListing. Used in Belgium Legislation to indicate whether the entries need to be excluded from the VAT Listing.
  * @property string $GLDiscountPurchase Indicates the purchase discount GL account linked to the VAT codes for German legislation
  * @property string $GLDiscountPurchaseCode Code of the G/L account used for VAT corrections of settlement discount purchase (Germany only)
  * @property string $GLDiscountPurchaseDescription Description of the G/L account used for VAT corrections of settlement discount purchase (Germany only)
@@ -68,6 +69,7 @@ class VatCode extends Model
         'Description',
         'Division',
         'EUSalesListing',
+        'ExcludeVATListing',
         'GLDiscountPurchase',
         'GLDiscountPurchaseCode',
         'GLDiscountPurchaseDescription',

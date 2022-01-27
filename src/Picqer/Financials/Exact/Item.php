@@ -100,6 +100,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesVatCodeDescription Description of SalesVatCode
  * @property string $SearchCode Search code of the item
  * @property int $SecurityLevel Security level (0 - 100)
+ * @property float $StandardSalesPrice Standard sales price
  * @property string $StartDate Together with EndDate this determines if the item is active
  * @property string $StatisticalCode Statistical code
  * @property float $StatisticalNetWeight Statistical net weight
@@ -210,6 +211,7 @@ class Item extends Model
         'SalesVatCodeDescription',
         'SearchCode',
         'SecurityLevel',
+        'StandardSalesPrice',
         'StartDate',
         'StatisticalCode',
         'StatisticalNetWeight',
