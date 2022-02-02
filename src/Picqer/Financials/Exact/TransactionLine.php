@@ -36,6 +36,8 @@ namespace Picqer\Financials\Exact;
  * @property string $EntryID The transaction lines that make up a financial entry share the same EntryID
  * @property int $EntryNumber Entry number of the header
  * @property float $ExchangeRate Exchange rate
+ * @property string $ExternalLinkDescription Description of ExternalLink
+ * @property string $ExternalLinkReference External link
  * @property float $ExtraDutyAmountFC Extra duty amount
  * @property float $ExtraDutyPercentage Extra duty percentage
  * @property int $FinancialPeriod Financial period
@@ -110,6 +112,8 @@ class TransactionLine extends Model
         'EntryID',
         'EntryNumber',
         'ExchangeRate',
+        'ExternalLinkDescription',
+        'ExternalLinkReference',
         'ExtraDutyAmountFC',
         'ExtraDutyPercentage',
         'FinancialPeriod',

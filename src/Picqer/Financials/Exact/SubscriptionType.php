@@ -22,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Full name of user that created the subscription type
  * @property string $Description Description of subscription type
  * @property int $Division Division code
- * @property int $InvoiceCorrectionMethod Invoice correction method: 1=Ratio based, 2=Zero Invoice
+ * @property int $InvoiceCorrectionMethod Invoice correction method: 1=Ratio based, 2=Zero Invoice, 3=Never invoiced
  * @property string $Modified Last modified date of subscription type
  * @property string $Modifier ID of user that modified the subscription type
  * @property string $ModifierFullName Full name of user that modified the subscription type
