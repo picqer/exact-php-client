@@ -73,5 +73,5 @@ class AccountDocument extends Model
         'TypeDescription',
     ];
 
-    protected $url = 'read/crm/AccountDocuments?accountId={Edm.Guid}&searchText={Edm.String}&useFullTextSearch={Edm.Boolean}';
+    protected $url = 'read/crm/AccountDocuments';
 }

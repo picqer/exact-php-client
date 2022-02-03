@@ -72,5 +72,5 @@ class ProjectWBSByProjectAndWBS extends Model
         'Type',
     ];
 
-    protected $url = 'read/project/ProjectWBSByProjectAndWBS?projectId={Edm.Guid}&projectWBSId={Edm.Guid}&wbsType={Edm.Int16}';
+    protected $url = 'read/project/ProjectWBSByProjectAndWBS';
 }

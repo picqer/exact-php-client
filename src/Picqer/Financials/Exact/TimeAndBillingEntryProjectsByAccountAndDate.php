@@ -23,5 +23,5 @@ class TimeAndBillingEntryProjectsByAccountAndDate extends Model
         'ProjectDescription',
     ];
 
-    protected $url = 'read/project/TimeAndBillingEntryProjectsByAccountAndDate?accountId={Edm.Guid}&checkDate={Edm.DateTime}';
+    protected $url = 'read/project/TimeAndBillingEntryProjectsByAccountAndDate';
 }

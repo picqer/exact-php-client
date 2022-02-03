@@ -23,5 +23,5 @@ class HourEntryRecentHourTypesByProject extends Model
         'ItemDescription',
     ];
 
-    protected $url = 'read/project/HourEntryRecentHourTypesByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/HourEntryRecentHourTypesByProject';
 }

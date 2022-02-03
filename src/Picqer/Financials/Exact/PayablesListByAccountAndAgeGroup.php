@@ -49,5 +49,5 @@ class PayablesListByAccountAndAgeGroup extends Model
         'YourRef',
     ];
 
-    protected $url = 'read/financial/PayablesListByAccountAndAgeGroup?accountId={Edm.Guid}&ageGroup={Edm.Int32}';
+    protected $url = 'read/financial/PayablesListByAccountAndAgeGroup';
 }

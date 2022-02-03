@@ -21,5 +21,5 @@ class HourTypesByProjectAndDate extends Model
         'ItemDescription',
     ];
 
-    protected $url = 'read/project/HourTypesByProjectAndDate?projectId={Edm.Guid}&checkDate={Edm.DateTime}';
+    protected $url = 'read/project/HourTypesByProjectAndDate';
 }

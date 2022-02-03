@@ -27,5 +27,5 @@ class AgingOverviewByAccount extends Model
         'CurrencyCode',
     ];
 
-    protected $url = 'read/financial/AgingOverviewByAccount?accountId={Edm.Guid}';
+    protected $url = 'read/financial/AgingOverviewByAccount';
 }

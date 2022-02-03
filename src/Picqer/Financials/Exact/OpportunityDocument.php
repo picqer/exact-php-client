@@ -73,5 +73,5 @@ class OpportunityDocument extends Model
         'TypeDescription',
     ];
 
-    protected $url = 'read/crm/OpportunityDocuments?opportunityId={Edm.Guid}&searchText={Edm.String}';
+    protected $url = 'read/crm/OpportunityDocuments';
 }

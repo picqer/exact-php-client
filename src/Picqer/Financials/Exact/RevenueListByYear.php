@@ -23,5 +23,5 @@ class RevenueListByYear extends Model
         'Amount',
     ];
 
-    protected $url = 'read/financial/RevenueListByYear?year={Edm.Int32}';
+    protected $url = 'read/financial/RevenueListByYear';
 }

@@ -21,5 +21,5 @@ class CostTypesByDate extends Model
         'ItemDescription',
     ];
 
-    protected $url = 'read/project/CostTypesByDate?checkDate={Edm.DateTime}';
+    protected $url = 'read/project/CostTypesByDate';
 }

@@ -29,5 +29,5 @@ class ItemDetailsByID extends Model
         'SalesPrice',
     ];
 
-    protected $url = 'read/logistics/ItemDetailsByID?itemId={Edm.Guid}';
+    protected $url = 'read/logistics/ItemDetailsByID';
 }

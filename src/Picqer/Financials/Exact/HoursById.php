@@ -65,5 +65,5 @@ class HoursById extends Model
         'WeekNumber',
     ];
 
-    protected $url = 'read/project/HoursById?entryId={Edm.Guid}';
+    protected $url = 'read/project/HoursById';
 }

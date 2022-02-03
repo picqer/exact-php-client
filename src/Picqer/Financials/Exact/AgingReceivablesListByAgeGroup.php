@@ -51,5 +51,5 @@ class AgingReceivablesListByAgeGroup extends Model
         'TotalAmount',
     ];
 
-    protected $url = 'read/financial/AgingReceivablesListByAgeGroup?ageGroup={Edm.Int32}';
+    protected $url = 'read/financial/AgingReceivablesListByAgeGroup';
 }

@@ -23,5 +23,5 @@ class CostEntryRecentExpensesByProject extends Model
         'ParentDescription',
     ];
 
-    protected $url = 'read/project/CostEntryRecentExpensesByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/CostEntryRecentExpensesByProject';
 }

@@ -15,5 +15,5 @@ class UserHasRights extends Model
     protected $fillable = [
     ];
 
-    protected $url = 'users/UserHasRights?endpoint={Edm.String}&action={Edm.String}';
+    protected $url = 'users/UserHasRights';
 }

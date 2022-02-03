@@ -15,5 +15,5 @@ class AccountDocumentCount extends Model
     protected $fillable = [
     ];
 
-    protected $url = 'read/crm/AccountDocumentsCount?accountId={Edm.Guid}&searchText={Edm.String}&useFullTextSearch={Edm.Boolean}';
+    protected $url = 'read/crm/AccountDocumentsCount';
 }

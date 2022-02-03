@@ -21,5 +21,5 @@ class HourTypesByDate extends Model
         'ItemDescription',
     ];
 
-    protected $url = 'read/project/HourTypesByDate?checkDate={Edm.DateTime}';
+    protected $url = 'read/project/HourTypesByDate';
 }

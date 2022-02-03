@@ -15,5 +15,5 @@ class OpportunityDocumentsCount extends Model
     protected $fillable = [
     ];
 
-    protected $url = 'read/crm/OpportunityDocumentsCount?opportunityId={Edm.Guid}&searchText={Edm.String}';
+    protected $url = 'read/crm/OpportunityDocumentsCount';
 }

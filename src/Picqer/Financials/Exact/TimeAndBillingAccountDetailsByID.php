@@ -19,5 +19,5 @@ class TimeAndBillingAccountDetailsByID extends Model
         'Name',
     ];
 
-    protected $url = 'read/project/TimeAndBillingAccountDetailsByID?accountId={Edm.Guid}';
+    protected $url = 'read/project/TimeAndBillingAccountDetailsByID';
 }

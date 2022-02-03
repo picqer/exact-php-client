@@ -29,5 +29,5 @@ class TimeAndBillingItemDetailsByID extends Model
         'SalesPrice',
     ];
 
-    protected $url = 'read/project/TimeAndBillingItemDetailsByID?itemId={Edm.Guid}';
+    protected $url = 'read/project/TimeAndBillingItemDetailsByID';
 }
