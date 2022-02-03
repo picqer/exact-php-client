@@ -62,6 +62,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date.
  * @property string $Modifier User ID of modifier.
  * @property string $ModifierFullName Name of modifier.
+ * @property int $OrderNumber Order number of the linked transaction.
  * @property int $PaymentBatchNumber Number assigned during the of processing payments. When payments are processed a bank export file is created. This file contains one or more batches that contain one or more payments. Each batch gets a sequence number that is stored for each payment in that batch.
  * @property string $PaymentCondition Payment condition of the linked transaction.
  * @property string $PaymentConditionDescription Description of the payment condition.
@@ -153,6 +154,7 @@ class SyncPaymentTerm extends Payment
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'OrderNumber',
         'PaymentBatchNumber',
         'PaymentCondition',
         'PaymentConditionDescription',

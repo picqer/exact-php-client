@@ -59,6 +59,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date.
  * @property string $Modifier User ID of modifier.
  * @property string $ModifierFullName Name of modifier.
+ * @property int $OrderNumber Order number of the linked transaction.
  * @property string $PaymentCondition Payment condition of the linked transaction.
  * @property string $PaymentConditionDescription Description of the payment condition.
  * @property int $PaymentDays Number of days between invoice date and due date.
@@ -143,6 +144,7 @@ class Receivable extends Model
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'OrderNumber',
         'PaymentCondition',
         'PaymentConditionDescription',
         'PaymentDays',
