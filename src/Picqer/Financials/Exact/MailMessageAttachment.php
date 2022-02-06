@@ -13,7 +13,6 @@ namespace Picqer\Financials\Exact;
  * @property string $AttachmentFileName File name of attachment
  * @property int $FileSize File size
  * @property string $MailMessageID Reference to Mail message
- * @property int $MailMessageOrigin Indicates the SourceEntry of Scanning service
  * @property string $RecipientAccount Reference to recipient account
  * @property string $SenderAccount Reference to sender account
  * @property int $Type Type of mail message attachment 0-Unknown 10-PDF 11-XML (ZUGFeRD) 20-UBL 2.0 21-SIB 22-Simplerinvoicing 1.0 23-PEPPOL 24-eFFF 25-Simplerinvoicing 1.1 26-Simplerinvoicing 1.2 30-Finvoice 40-eInvoice 50-XML 60-XBRL 70-Bank import 71-Internal bank statement (TestAutomation) 72-XLSM 73-BankGateway source 80-Bank export 81-Direct debit 82-Mandates 85-Message 86-Status update 90-Statistics 91-Statistics Json 100-TXT 110-Soda 120-OfficialReturnProof 130-UBL 2.1
@@ -32,7 +31,6 @@ class MailMessageAttachment extends Model
         'AttachmentFileName',
         'FileSize',
         'MailMessageID',
-        'MailMessageOrigin',
         'RecipientAccount',
         'SenderAccount',
         'Type',

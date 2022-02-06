@@ -8,7 +8,6 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehouses
  *
  * @property string $ID A guid that is the unique identifier of the linkage between item and warehouse
- * @property int $CountingCycle Indicates the number of days for next cycle count.
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -18,7 +17,6 @@ namespace Picqer\Financials\Exact;
  * @property string $DefaultStorageLocationDescription Default storage location's description
  * @property int $Division Division code
  * @property string $Item Item ID
- * @property string $ItemBarcode Barcode of item
  * @property string $ItemCode Code of item
  * @property string $ItemDescription Description of item
  * @property string $ItemEndDate Together with ItemStartDate this determines if the item is active
@@ -31,7 +29,6 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
- * @property string $NextCountingCycle Indicates the date for next cycle count
  * @property int $OrderPolicy Order Policy options: 1-Lot for lot, 2-Fixed order quantity, 3-Min / Max, 4-Order
  * @property int $Period Period that work together with replenishment in MRP
  * @property float $PlannedStockIn The quantity still open to be received based on i.e. purchase orders and assembly orders.
@@ -55,7 +52,6 @@ class ItemWarehouse extends Model
 
     protected $fillable = [
         'ID',
-        'CountingCycle',
         'Created',
         'Creator',
         'CreatorFullName',
@@ -65,7 +61,6 @@ class ItemWarehouse extends Model
         'DefaultStorageLocationDescription',
         'Division',
         'Item',
-        'ItemBarcode',
         'ItemCode',
         'ItemDescription',
         'ItemEndDate',
@@ -78,7 +73,6 @@ class ItemWarehouse extends Model
         'Modified',
         'Modifier',
         'ModifierFullName',
-        'NextCountingCycle',
         'OrderPolicy',
         'Period',
         'PlannedStockIn',

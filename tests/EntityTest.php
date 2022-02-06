@@ -960,6 +960,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\PlannedSalesReturnLine::class);
     }
 
+    public function testPlannedSalesReturnEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PlannedSalesReturn::class);
+    }
+
     public function testPreferredMailboxForOperationEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\PreferredMailboxForOperation::class);
@@ -1728,6 +1733,16 @@ class EntityTest extends TestCase
     public function testSystemUserEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\SystemUser::class);
+    }
+
+    public function testEventEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Event::class);
+    }
+
+    public function testRequestAttachmentEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RequestAttachment::class);
     }
 
     protected function performEntityTest($entityName)

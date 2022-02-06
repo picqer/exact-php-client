@@ -55,9 +55,6 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales order
  * @property string $Remarks Extra remarks
- * @property string $SalesChannel ID of Sales channel.
- * @property string $SalesChannelCode Code of Sales channel
- * @property string $SalesChannelDescription Description of Sales channel
  * @property SalesOrderLine[] $SalesOrderLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
@@ -131,9 +128,6 @@ class SalesOrder extends Model
         'PaymentConditionDescription',
         'PaymentReference',
         'Remarks',
-        'SalesChannel',
-        'SalesChannelCode',
-        'SalesChannelDescription',
         'SalesOrderLines',
         'Salesperson',
         'SalespersonFullName',

@@ -31,6 +31,7 @@ namespace Picqer\Financials\Exact;
  * @property string $FinancialTransactionEntryID Reference to the transaction lines of the financial entry. For a document of type sales invoice it will return the InvoiceID of the sales invoice (SalesInvoices API).
  * @property bool $HasEmptyBody Indicates that the document body is empty
  * @property int $HID Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
+ * @property bool $InheritShare InheritShare value
  * @property string $Language The language code of the document
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -77,6 +78,7 @@ class Document extends Model
         'FinancialTransactionEntryID',
         'HasEmptyBody',
         'HID',
+        'InheritShare',
         'Language',
         'Modified',
         'Modifier',

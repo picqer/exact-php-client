@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SystemUsers
  *
  * @property string $UserID Primary key
- * @property int $AuthenticationType Authentication Type: 2=Forms, 8=Totp, 16=Auth0FederatedSSO, 32=Auth0Login. It is a bitwise enumerator, e.g. Forms + Totp = 10
+ * @property int $AuthenticationType Authentication Type: 2=Forms, 8=Totp, 16=Auth0FederatedSSO, 32=Auth0Login, 64=B2CFederatedLogin, 128=B2CLogin. It is a bitwise enumerator, e.g. Forms + Totp = 10
  * @property string $BirthDate Birth date
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
@@ -24,7 +24,6 @@ namespace Picqer\Financials\Exact;
  * @property bool $HasTwoStepVerification User must use Two-Step verification to log in
  * @property string $Initials Initials
  * @property bool $IsAnonymised Indicates whether the user is anonymised.
- * @property bool $IsAPICall To validate default values for API
  * @property string $Language Language (culture) that is used in Exact Online
  * @property string $LastLogin The last time this user logged in
  * @property string $LastName Last name
@@ -69,7 +68,6 @@ class SystemUser extends Model
         'HasTwoStepVerification',
         'Initials',
         'IsAnonymised',
-        'IsAPICall',
         'Language',
         'LastLogin',
         'LastName',
