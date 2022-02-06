@@ -16,7 +16,6 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Description Description of the element. Note that this description is only used for division-specific taxonomies (or reporting schemes).
  * @property int $Division Division is optional. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory
- * @property bool $IsTupleSubElement Obsolete
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -32,7 +31,6 @@ namespace Picqer\Financials\Exact;
 class GLClassification extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -44,7 +42,6 @@ class GLClassification extends Model
         'CreatorFullName',
         'Description',
         'Division',
-        'IsTupleSubElement',
         'Modified',
         'Modifier',
         'ModifierFullName',

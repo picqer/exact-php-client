@@ -15,7 +15,6 @@ namespace Picqer\Financials\Exact;
 class CostEntryRecentExpensesByProject extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -24,5 +23,5 @@ class CostEntryRecentExpensesByProject extends Model
         'ParentDescription',
     ];
 
-    protected $url = 'read/project/CostEntryRecentExpensesByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/CostEntryRecentExpensesByProject';
 }

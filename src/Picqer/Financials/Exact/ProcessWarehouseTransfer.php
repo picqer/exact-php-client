@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryProcessWarehouseTransfer
  *
- * @property string $TransferID Primary key
+ * @property string $TransferID A guid that is the unique identifier of the warehouse transfer
  * @property int $Division Division code
  * @property string $TransferDate Transfer Date
  */

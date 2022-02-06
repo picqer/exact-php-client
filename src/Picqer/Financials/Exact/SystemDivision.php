@@ -43,6 +43,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Hid Company number that is assigned by the customer
  * @property bool $IsDossierDivision True if the division is a dossier division
  * @property bool $IsMainDivision True if the division is the main division
+ * @property bool $IsPracticeDivision True if the division is a practice division
  * @property string $Legislation Legislation
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -110,6 +111,7 @@ class SystemDivision extends Model
         'Hid',
         'IsDossierDivision',
         'IsMainDivision',
+        'IsPracticeDivision',
         'Legislation',
         'Modified',
         'Modifier',

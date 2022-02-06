@@ -16,7 +16,6 @@ namespace Picqer\Financials\Exact;
 class AgingOverviewByAccount extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'AgeGroup';
 
@@ -28,5 +27,5 @@ class AgingOverviewByAccount extends Model
         'CurrencyCode',
     ];
 
-    protected $url = 'read/financial/AgingOverviewByAccount?accountId={Edm.Guid}';
+    protected $url = 'read/financial/AgingOverviewByAccount';
 }

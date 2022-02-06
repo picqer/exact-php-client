@@ -11,7 +11,7 @@ trait Findable
      */
     abstract public function connection();
 
-    abstract public function isFillable($key);
+    abstract protected function isFillable($key);
 
     /**
      * @return string
@@ -31,7 +31,7 @@ trait Findable
             $filter = $this->primaryKey() . " eq $id";
         }
 
-        $records = $this->connection()->get($this->url($id), [
+        $records = $this->connection()->get($this->url(), [
             '$filter' => $filter,
             '$top'    => 1, // The result will always be 1 but on some entities Exact gives an error without it.
         ]);
@@ -44,7 +44,7 @@ trait Findable
     public function findWithSelect($id, $select = '')
     {
         //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
-        $result = $this->connection()->get($this->url($id), [
+        $result = $this->connection()->get($this->url(), [
             '$filter' => $this->primaryKey() . " eq guid'$id'",
             '$select' => $select,
         ]);
@@ -58,7 +58,7 @@ trait Findable
      * @param string $code the value to search for
      * @param string $key  the key being searched (defaults to 'Code')
      *
-     * @return string (guid)
+     * @return string|void (guid)
      */
     public function findId($code, $key = 'Code')
     {

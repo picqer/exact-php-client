@@ -18,7 +18,6 @@ namespace Picqer\Financials\Exact;
 class ManufacturingSetting extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'Division';
 

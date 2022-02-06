@@ -13,12 +13,11 @@ namespace Picqer\Financials\Exact;
 class TimeAndBillingAccountDetailsByID extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
         'Name',
     ];
 
-    protected $url = 'read/project/TimeAndBillingAccountDetailsByID?accountId={Edm.Guid}';
+    protected $url = 'read/project/TimeAndBillingAccountDetailsByID';
 }

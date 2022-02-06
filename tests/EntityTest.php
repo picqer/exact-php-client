@@ -195,7 +195,7 @@ class EntityTest extends TestCase
 
     public function testBillOfMaterialVersionsEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\BillOfMaterialVersion::class);
+        $this->performEntityTest('\Picqer\Financials\Exact\BillOfMaterialVersions');
     }
 
     public function testBudgetEntity()
@@ -912,7 +912,12 @@ class EntityTest extends TestCase
 
     public function testOpportunityDocumentsEntity()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\OpportunityDocuments::class);
+        $this->performEntityTest('\Picqer\Financials\Exact\OpportunityDocuments');
+    }
+
+    public function testOpportunityDocumentEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\OpportunityDocument::class);
     }
 
     public function testOpportunityEntity()
@@ -1743,6 +1748,121 @@ class EntityTest extends TestCase
     public function testRequestAttachmentEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\RequestAttachment::class);
+    }
+
+    public function testAllDivisionEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\AllDivision::class);
+    }
+
+    public function testEmployeeRestrictionItemEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\EmployeeRestrictionItem::class);
+    }
+
+    public function testEmploymentConditionGroupEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\EmploymentConditionGroup::class);
+    }
+
+    public function testEmploymentTaxAuthoritiesGeneralEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\EmploymentTaxAuthoritiesGeneral::class);
+    }
+
+    public function testIndicatorDeviatingAmountEnteredEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorDeviatingAmountEntered::class);
+    }
+
+    public function testIndicatorDifferenceByPeriodEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorDifferenceByPeriod::class);
+    }
+
+    public function testIndicatorDifferentVatCodeEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorDifferentVatCode::class);
+    }
+
+    public function testIndicatorGLAccountEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorGLAccount::class);
+    }
+
+    public function testIndicatorLiquidityEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorLiquidity::class);
+    }
+
+    public function testIndicatorSignalEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorSignal::class);
+    }
+
+    public function testIndicatorStateEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorState::class);
+    }
+
+    public function testIndicatorUsageOfJournalEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\IndicatorUsageOfJournal::class);
+    }
+
+    public function testItemChargeRelationEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ItemChargeRelation::class);
+    }
+
+    public function testPayrollComponentEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PayrollComponent::class);
+    }
+
+    public function testPayrollTransactionsByPayrollYearEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PayrollTransactionsByPayrollYear::class);
+    }
+
+    public function testProjectAccountMutationEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectAccountMutation::class);
+    }
+
+    public function testProjectRestrictionEmployeeItemEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectRestrictionEmployeeItem::class);
+    }
+
+    public function testReportingBalanceByClassificationEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ReportingBalanceByClassification::class);
+    }
+
+    public function testSalesPriceListLinkedAccountEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesPriceListLinkedAccount::class);
+    }
+
+    public function testSalesPriceListPeriodEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesPriceListPeriod::class);
+    }
+
+    public function testSalesPriceListVolumeDiscountEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesPriceListVolumeDiscount::class);
+    }
+
+    public function testSubOrderReceiptEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SubOrderReceipt::class);
+    }
+
+    public function testWBSActivityEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\WBSActivity::class);
     }
 
     protected function performEntityTest($entityName)

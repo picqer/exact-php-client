@@ -15,7 +15,6 @@ namespace Picqer\Financials\Exact;
 class TimeAndBillingEntryRecentActivitiesAndExpense extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

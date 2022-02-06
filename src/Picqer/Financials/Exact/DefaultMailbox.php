@@ -22,7 +22,6 @@ namespace Picqer\Financials\Exact;
 class DefaultMailbox extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',

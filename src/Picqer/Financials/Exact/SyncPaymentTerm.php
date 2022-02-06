@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncCashflowPaymentTerms
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property string $Account The supplier to which the payment has to be done.
  * @property string $AccountBankAccountID The bank account of the supplier, to which the payment has to be done.
  * @property string $AccountBankAccountNumber The bank account number of the supplier, to which the payment has to be done.
@@ -36,7 +36,7 @@ namespace Picqer\Financials\Exact;
  * @property int $DirectDebitMandateType Type of the mandate. 0 = Core 1 = Business-to-business.
  * @property string $DiscountDueDate Date before which the payment must be done to be eligible for discount.
  * @property int $Division Division code.
- * @property string $Document Document that is created when processing payments.  The bank export file is attached to the document.
+ * @property string $Document Document that is created when processing payments. The bank export file is attached to the document.
  * @property int $DocumentNumber Number of the document.
  * @property string $DocumentSubject Subject of the document.
  * @property string $DueDate Date before which the payment must be done.

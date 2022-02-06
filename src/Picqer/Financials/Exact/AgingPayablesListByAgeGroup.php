@@ -28,7 +28,6 @@ namespace Picqer\Financials\Exact;
 class AgingPayablesListByAgeGroup extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'AccountId';
 
@@ -52,5 +51,5 @@ class AgingPayablesListByAgeGroup extends Model
         'TotalAmount',
     ];
 
-    protected $url = 'read/financial/AgingPayablesListByAgeGroup?ageGroup={Edm.Int32}';
+    protected $url = 'read/financial/AgingPayablesListByAgeGroup';
 }

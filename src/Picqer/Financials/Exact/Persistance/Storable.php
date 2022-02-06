@@ -15,7 +15,7 @@ trait Storable
     /**
      * @param array $attributes
      */
-    abstract public function fill(array $attributes);
+    abstract protected function fill(array $attributes);
 
     /**
      * @param int  $options

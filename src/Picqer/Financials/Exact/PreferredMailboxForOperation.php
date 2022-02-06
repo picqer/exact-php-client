@@ -22,7 +22,6 @@ namespace Picqer\Financials\Exact;
 class PreferredMailboxForOperation extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -38,5 +37,5 @@ class PreferredMailboxForOperation extends Model
         'ValidTo',
     ];
 
-    protected $url = 'read/mailbox/PreferredMailboxForOperation?operation={Edm.Int32}';
+    protected $url = 'read/mailbox/PreferredMailboxForOperation';
 }

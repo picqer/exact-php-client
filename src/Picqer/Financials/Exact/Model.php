@@ -68,12 +68,8 @@ abstract class Model implements \JsonSerializable
      *
      * @return string
      */
-    public function url($id = null)
+    public function url()
     {
-        if (isset($id)) {
-            return str_replace('{Edm.Guid}', "guid'" . $id . "'", $this->url);
-        }
-
         return $this->url;
     }
 
@@ -211,7 +207,7 @@ abstract class Model implements \JsonSerializable
     /**
      * Refresh deferred item by clearing and then lazy loading it.
      *
-     * @param $key
+     * @param mixed $key
      *
      * @return mixed
      */
@@ -249,7 +245,7 @@ abstract class Model implements \JsonSerializable
         if ($withDeferred) {
             foreach ($this->deferred as $attribute => $collection) {
                 if (empty($collection)) {
-                    continue; // Leave orriginal array with __deferred key
+                    continue; // Leave original array with __deferred key
                 }
 
                 $attributes[$attribute] = [];
@@ -286,7 +282,7 @@ abstract class Model implements \JsonSerializable
      *
      * @param string $action
      *
-     * @return bool
+     * @return bool|null
      */
     public function userHasRights($action = 'GET')
     {

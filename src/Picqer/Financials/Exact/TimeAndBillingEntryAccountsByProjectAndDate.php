@@ -7,13 +7,12 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectTimeAndBillingEntryAccountsByProjectAndDate
  *
- * @property string $AccountId Primary key
+ * @property string $AccountId ID of account used for entries
  * @property string $AccountName Name of account
  */
 class TimeAndBillingEntryAccountsByProjectAndDate extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'AccountId';
 
@@ -22,5 +21,5 @@ class TimeAndBillingEntryAccountsByProjectAndDate extends Model
         'AccountName',
     ];
 
-    protected $url = 'read/project/TimeAndBillingEntryAccountsByProjectAndDate?projectId={Edm.Guid}&checkDate={Edm.DateTime}';
+    protected $url = 'read/project/TimeAndBillingEntryAccountsByProjectAndDate';
 }

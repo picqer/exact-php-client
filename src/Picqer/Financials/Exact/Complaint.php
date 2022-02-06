@@ -12,7 +12,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AccountName The name of the account
  * @property string $AssignedTo The user that the complaint is assigned to
  * @property string $AssignedToFullName The user name
- * @property requestattachments $Attachments Attachments linked to the complaint
+ * @property RequestAttachment[] $Attachments Attachments linked to the complaint
  * @property string $Complaint A short description of the complaint
  * @property string $Contact The contact person that is related to the complaint
  * @property string $ContactFullName The name of the contact person

@@ -64,7 +64,6 @@ namespace Picqer\Financials\Exact;
 class DefaultAddressForAccount extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -122,5 +121,5 @@ class DefaultAddressForAccount extends Model
         'WarehouseDescription',
     ];
 
-    protected $url = 'read/crm/DefaultAddressForAccount?accountId={Edm.Guid}&addressType={Edm.Int32}';
+    protected $url = 'read/crm/DefaultAddressForAccount';
 }

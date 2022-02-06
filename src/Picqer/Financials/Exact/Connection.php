@@ -71,6 +71,11 @@ class Connection
     private $redirectUrl;
 
     /**
+     * @var string
+     */
+    private $state = null;
+
+    /**
      * @var mixed
      */
     private $division;
@@ -179,9 +184,9 @@ class Connection
     }
 
     /**
-     * Insert a Middleware for the Guzzle Client.
+     * Insert a Middleware for the Guzzle-Client.
      *
-     * @param $middleWare
+     * @param callable $middleWare
      */
     public function insertMiddleWare($middleWare)
     {
@@ -227,6 +232,8 @@ class Connection
      * @param array  $params
      * @param array  $headers
      *
+     * @throws ApiException
+     *
      * @return Request
      */
     private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = [])
@@ -238,10 +245,7 @@ class Connection
             'Prefer'       => 'return=representation',
         ]);
 
-        // If access token is not set or token has expired, acquire new token
-        if (empty($this->accessToken) || $this->tokenHasExpired()) {
-            $this->acquireAccessToken();
-        }
+        $this->checkOrAcquireAccessToken();
 
         // If we have a token, sign the request
         if (! $this->needsAuthentication() && ! empty($this->accessToken)) {
@@ -276,7 +280,6 @@ class Connection
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response, $url != $this->nextUrl);
@@ -300,7 +303,6 @@ class Connection
 
         try {
             $request = $this->createRequest('POST', $url, $body);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
@@ -310,7 +312,7 @@ class Connection
     }
 
     /**
-     * @param string $url
+     * @param string $topic
      * @param mixed  $body
      *
      * @throws ApiException
@@ -346,7 +348,6 @@ class Connection
 
         try {
             $request = $this->createRequest('PUT', $url, $body);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
@@ -369,7 +370,6 @@ class Connection
 
         try {
             $request = $this->createRequest('DELETE', $url);
-            $this->checkOrAcquireAccessToken();
             $response = $this->client()->send($request);
 
             return $this->parseResponse($response);
@@ -387,6 +387,7 @@ class Connection
             'client_id'     => $this->exactClientId,
             'redirect_uri'  => $this->redirectUrl,
             'response_type' => 'code',
+            'state'         => $this->state,
         ]);
     }
 
@@ -443,6 +444,14 @@ class Connection
     public function setRedirectUrl($redirectUrl)
     {
         $this->redirectUrl = $redirectUrl;
+    }
+
+    /**
+     * @param string $state
+     */
+    public function setState(string $state)
+    {
+        $this->state = $state;
     }
 
     /**
@@ -514,7 +523,7 @@ class Connection
             }
 
             $answer = [];
-            Psr7\rewind_body($response);
+            Psr7\Message::rewindBody($response);
             $simpleXml = new \SimpleXMLElement($response->getBody()->getContents());
 
             foreach ($simpleXml->Messages as $message) {
@@ -611,7 +620,7 @@ class Connection
                 throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
             }
         } catch (BadResponseException $ex) {
-            throw new ApiException('Could not acquire or refresh tokens [http ' . $ex->getResponse()->getStatusCode() . ']', 0, $ex);
+            $this->parseExceptionForErrorMessages($ex);
         } finally {
             if (is_callable($this->acquireAccessTokenUnlockCallback)) {
                 call_user_func($this->acquireAccessTokenUnlockCallback, $this);
@@ -632,7 +641,7 @@ class Connection
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
-        return time() + $expiresIn;
+        return time() + (int) $expiresIn;
     }
 
     /**

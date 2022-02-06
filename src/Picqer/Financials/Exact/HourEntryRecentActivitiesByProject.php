@@ -15,7 +15,6 @@ namespace Picqer\Financials\Exact;
 class HourEntryRecentActivitiesByProject extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
@@ -24,5 +23,5 @@ class HourEntryRecentActivitiesByProject extends Model
         'ParentDescription',
     ];
 
-    protected $url = 'read/project/HourEntryRecentActivitiesByProject?projectId={Edm.Guid}';
+    protected $url = 'read/project/HourEntryRecentActivitiesByProject';
 }

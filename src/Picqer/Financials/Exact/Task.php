@@ -11,7 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Account The account that is related to the task
  * @property string $AccountName The name of the account
  * @property string $ActionDate The end date by which the task has to be realized
- * @property requestattachments $Attachments Attachments linked to the task
+ * @property RequestAttachment[] $Attachments Attachments linked to the task
  * @property string $Contact The contact person that is related to the task
  * @property string $ContactFullName The name of the contact person
  * @property string $Created Creation date

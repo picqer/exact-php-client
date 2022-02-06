@@ -29,7 +29,7 @@ namespace Picqer\Financials\Exact;
  * @property string $IntraStatCountry IntraStatCountry (only relevant when IntraStat for sales is enabled in the administration)
  * @property string $IntraStatDeliveryTerm IntraStat delivery term (only relevant when IntraStat for sales is enabled in the administration)
  * @property string $IntraStatTransactionA IntraStat transaction A (only relevant when IntraStat for sales is enabled in the administration)
- * @property string $IntraStatTransactionB IntraStat transaction B (only relevant when IntraStat for sales is enabled in the Luxembourg, France & United Kingdom administration)
+ * @property string $IntraStatTransactionB IntraStat transaction B (only relevant when IntraStat for sales is enabled in the Belgium, Luxembourg, France & United Kingdom administration)
  * @property string $IntraStatTransportMethod IntraStat transport method (only relevant when IntraStat for sales is enabled in the administration)
  * @property int $LineNumber Indicates the sequence of the lines within one entry
  * @property string $Notes Extra notes

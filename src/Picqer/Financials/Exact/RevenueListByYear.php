@@ -14,7 +14,6 @@ namespace Picqer\Financials\Exact;
 class RevenueListByYear extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'Year';
 
@@ -24,5 +23,5 @@ class RevenueListByYear extends Model
         'Amount',
     ];
 
-    protected $url = 'read/financial/RevenueListByYear?year={Edm.Int32}';
+    protected $url = 'read/financial/RevenueListByYear';
 }
