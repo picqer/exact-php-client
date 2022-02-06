@@ -26,7 +26,7 @@ trait MocksExactConnection
     /**
      * @param GuzzleHttp\Psr7\Response|array|string|null $response
      * 
-     * @return MockHandler 
+     * @return MockHandler
      */
     protected function createMockHandler($response = null): MockHandler
     {
