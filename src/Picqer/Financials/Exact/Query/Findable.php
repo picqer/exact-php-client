@@ -2,6 +2,7 @@
 
 namespace Picqer\Financials\Exact\Query;
 
+use Generator;
 use Picqer\Financials\Exact\Connection;
 
 trait Findable
@@ -148,12 +149,17 @@ trait Findable
 
     public function get(array $params = [])
     {
+        return iterator_to_array($this->getGenerator($params));
+    }
+
+    public function getGenerator(array $params = []): Generator
+    {
         $result = $this->connection()->get($this->url(), $params);
 
         return $this->collectionFromResult($result);
     }
 
-    public function collectionFromResult($result, array $headers = [])
+    public function collectionFromResult($result, array $headers = []): Generator
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter

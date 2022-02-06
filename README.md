@@ -167,6 +167,10 @@ $item->find($id);
 $item = new \Picqer\Financials\Exact\Item($connection);
 $item->get();
 
+// List items as a generator
+$item = new \Picqer\Financials\Exact\Item($connection);
+$item->getGenerator();
+
 // List items with filter (using a filter always returns a collection)
 $item = new \Picqer\Financials\Exact\Item($connection);
 $items = $item->filter("Code eq '$item->Code'"); // Uses filters as described in Exact API docs (odata filters)
