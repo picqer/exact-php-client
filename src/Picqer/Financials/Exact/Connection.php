@@ -348,6 +348,7 @@ class Connection
         try {
             $request = $this->createRequest('GET', $url, null, $params);
             $response = $this->client()->send($request);
+            
             return $this->parseDownloadResponseXml($response);
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
