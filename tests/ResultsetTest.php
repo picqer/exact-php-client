@@ -28,7 +28,6 @@ class ResultsetTest extends TestCase
         $this->assertCount(2, $response);
     }
 
-    /** @test */
     public function testCanGetNextAsGenerator()
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
