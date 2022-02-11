@@ -22,7 +22,6 @@ class ModelTest extends TestCase
         $this->assertCount(2, $response);
     }
 
-    /** @test */
     public function testCanGetModelsAsGenerator()
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
