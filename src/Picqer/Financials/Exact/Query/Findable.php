@@ -180,7 +180,7 @@ trait Findable
             }
 
             foreach ($nextResult as $row) {
-                yield new self($this->connection(), $row);
+                yield new static($this->connection(), $row);
             }
         }
     }
