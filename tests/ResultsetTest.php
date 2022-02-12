@@ -38,7 +38,7 @@ class ResultsetTest extends TestCase
             'logistics/Items',
             Item::class,
             []
-        ))->nextGenerator();
+        ))->nextAsGenerator();
 
         $this->assertIsIterable($response);
         $this->assertCount(2, $response);
