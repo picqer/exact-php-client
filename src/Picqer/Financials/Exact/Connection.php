@@ -276,7 +276,7 @@ class Connection
     public function get($url, array $params = [], array $headers = [])
     {
         $this->waitIfMinutelyRateLimitHit();
-        $url = $this->formatUrl($url, $url !== 'current/Me', $url == $this->nextUrl);
+        $url = $this->formatUrl($url, $this->requiresDivisionInRequestUrl($url), $url === $this->nextUrl);
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
@@ -907,5 +907,13 @@ class Connection
     public function setWaitOnMinutelyRateLimitHit(bool $waitOnMinutelyRateLimitHit)
     {
         $this->waitOnMinutelyRateLimitHit = $waitOnMinutelyRateLimitHit;
+    }
+
+    private function requiresDivisionInRequestUrl(string $endpointUrl): bool
+    {
+        return ! in_array($endpointUrl, [
+            (new SystemUser($this))->url(),
+            (new Me($this))->url(),
+        ], true);
     }
 }
