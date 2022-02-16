@@ -321,7 +321,7 @@ class Connection
      */
     public function upload($topic, $body)
     {
-        $url = $this->getBaseUrl() . '/docs/XMLUpload.aspx?Topic=' . $topic . '&_Division=' . $this->getDivision();
+        $url = $this->getBaseUrl() . '/docs/XMLUpload.aspx?Topic=' . $topic . '&_Division_=' . $this->getDivision();
 
         try {
             $request = $this->createRequest('POST', $url, $body);
