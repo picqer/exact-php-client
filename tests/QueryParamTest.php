@@ -4,22 +4,21 @@ declare(strict_types=1);
 
 namespace Picqer\Tests;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Picqer\Financials\Exact;
-use Picqer\Financials\Exact\Connection;
+use Picqer\Tests\Support\MocksExactConnection;
 
 class QueryParamTest extends TestCase
 {
+    use MocksExactConnection;
+
     /**
      * @dataProvider ModelsWithSupportQueryParams
      */
     public function testGetRequestHasCorrectlyFormattedQueryParam(string $classString, array $supportedParams): void
     {
-        $mockHandler = $this->createMockHandler();
+        $mockHandler = $this->createMockHandler(new Response(200, [], json_encode((object) [])));
         $connection = $this->createMockConnection($mockHandler);
         $sut = new $classString($connection);
         $params = array_fill_keys($supportedParams, '00000000-0000-0000-0000-000000000000');
@@ -27,26 +26,6 @@ class QueryParamTest extends TestCase
         $sut->get($params);
 
         $this->assertEquals(http_build_query($params), $mockHandler->getLastRequest()->getUri()->getQuery());
-    }
-
-    private function createMockConnection(callable $mockHandler): Connection
-    {
-        $handlerStack = HandlerStack::create($mockHandler);
-        $client = new Client(['handler' => $handlerStack]);
-        $connection = new Connection();
-        $connection->setClient($client);
-        $connection->setDivision('1234567890');
-        $connection->setAccessToken('1234567890');
-        $connection->setTokenExpires(time() + 60);
-
-        return $connection;
-    }
-
-    private function createMockHandler(): MockHandler
-    {
-        return new MockHandler([
-            new Response(200, [], json_encode((object) [])),
-        ]);
     }
 
     public function ModelsWithSupportQueryParams(): array

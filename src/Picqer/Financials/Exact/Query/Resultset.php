@@ -2,6 +2,7 @@
 
 namespace Picqer\Financials\Exact\Query;
 
+use Generator;
 use Picqer\Financials\Exact\Connection;
 
 /**
@@ -45,16 +46,18 @@ class Resultset
         $this->params = $params;
     }
 
-    /**
-     * @return array
-     */
-    public function next()
+    public function next(): array
+    {
+        return iterator_to_array($this->nextAsGenerator());
+    }
+
+    public function nextAsGenerator(): Generator
     {
         $result = $this->connection->get($this->url, $this->params);
         $this->url = $this->connection->nextUrl;
         $this->params = [];
 
-        return $this->collectionFromResult($result);
+        return $this->collectionFromResultAsGenerator($result);
     }
 
     /**
@@ -65,12 +68,14 @@ class Resultset
         return $this->url !== null;
     }
 
-    /**
-     * @param array $result
-     *
-     * @return array
-     */
-    protected function collectionFromResult($result)
+    protected function collectionFromResult(array $result): array
+    {
+        return iterator_to_array(
+            $this->collectionFromResultAsGenerator($result)
+        );
+    }
+
+    protected function collectionFromResultAsGenerator(array $result): Generator
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter
@@ -79,12 +84,9 @@ class Resultset
         }
 
         $class = $this->class;
-        $collection = [];
 
         foreach ($result as $r) {
-            $collection[] = new $class($this->connection, $r);
+            yield new $class($this->connection, $r);
         }
-
-        return $collection;
     }
 }

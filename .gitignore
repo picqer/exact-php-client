@@ -5,3 +5,4 @@ index.php
 storage.txt
 composer.lock
 .idea
+.phpunit.result.cache
