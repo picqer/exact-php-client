@@ -26,6 +26,8 @@ namespace Picqer\Financials\Exact;
  * @property float $PlannedReturnQuantity Expected quantity to be returned
  * @property string $PlannedSalesReturnID Entry number of the planned sales return
  * @property float $ReceivedQuantity Actual quantity returned
+ * @property string $ReturnReasonCodeDescription Description of ReasonCode
+ * @property string $ReturnReasonCodeID Indicates the reason why the planned sales was returned
  * @property string $SalesOrderLineID Sales order line of the particular item
  * @property int $SalesOrderNumber Saler order of the particular item
  * @property StockSerialNumber[] $SerialNumbers The collection of serial numbers that belong to the items included in this planned sales return
@@ -61,6 +63,8 @@ class PlannedSalesReturnLine extends Model
         'PlannedReturnQuantity',
         'PlannedSalesReturnID',
         'ReceivedQuantity',
+        'ReturnReasonCodeDescription',
+        'ReturnReasonCodeID',
         'SalesOrderLineID',
         'SalesOrderNumber',
         'SerialNumbers',

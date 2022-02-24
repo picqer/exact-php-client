@@ -5,7 +5,7 @@ namespace Picqer\Financials\Exact;
 /**
  * Class VatPercentage.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=VatVatPercentages
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=VATVatPercentages
  *
  * @property string $ID Primary key
  * @property string $Created Creation date

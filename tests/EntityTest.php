@@ -1865,6 +1865,36 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\WBSActivity::class);
     }
 
+    public function testEmploymentContractFlexPhasesOnFocusDate()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\EmploymentContractFlexPhasesOnFocusDate::class);
+    }
+
+    public function testReasonForLogistic()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ReasonForLogistic::class);
+    }
+
+    public function testReasonForLogisticsLinkType()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ReasonForLogisticsLinkType::class);
+    }
+
+    public function testStorageLocationStockPosition()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\StorageLocationStockPosition::class);
+    }
+
+    public function testTimeCostTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\TimeCostTransaction::class);
+    }
+
+    public function testWBSExpense()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\WBSExpense::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);
