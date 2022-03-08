@@ -1,5 +1,5 @@
 {
-    "name": "picqer/exact-php-client",
+    "name": "cihanarik/exact-php-client",
     "type": "library",
     "description": "A PHP Client for the Exact API",
     "keywords": [
@@ -7,7 +7,7 @@
         "php",
         "exact"
     ],
-    "homepage": "http://github.com/picqer/exact-php-client",
+    "homepage": "http://github.com/cihanarik/exact-php-client",
     "license": "MIT",
     "authors": [
         {
