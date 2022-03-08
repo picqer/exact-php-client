@@ -153,7 +153,7 @@ class Connection
     /**
      * @return Client
      */
-    private function client()
+    protected function client()
     {
         if ($this->client) {
             return $this->client;
@@ -470,7 +470,7 @@ class Connection
      *
      * @return mixed
      */
-    private function parseResponse(Response $response, $returnSingleIfPossible = true)
+    public function parseResponse(Response $response, $returnSingleIfPossible = true)
     {
         try {
             $this->extractRateLimits($response);
@@ -878,7 +878,7 @@ class Connection
         $this->tokenUrl = $tokenUrl;
     }
 
-    private function extractRateLimits(Response $response)
+    public function extractRateLimits(Response $response)
     {
         $this->dailyLimit = (int) $response->getHeaderLine('X-RateLimit-Limit');
         $this->dailyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Remaining');
