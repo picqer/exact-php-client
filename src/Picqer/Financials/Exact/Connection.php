@@ -609,6 +609,7 @@ class Connection
     public function nextExpand($url, $headers = [], $body = null)
     {
         $this->waitIfMinutelyRateLimitHit();
+
         $headers = array_merge($headers, [
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
@@ -624,6 +625,8 @@ class Connection
         $request = new Request('GET', $url, $headers, $body);
 
         $response = $this->client()->send($request);
+        
+        $this->extractRateLimits($response);
 
         Psr7\Message::rewindBody($response);
 
