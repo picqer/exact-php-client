@@ -14,7 +14,7 @@ This library is created and maintained by [Picqer](https://picqer.com). We are [
 Installing this Exact client for PHP can be done through Composer.
 
 ```
-composer require picqer/exact-php-client
+composer require cihanarik/exact-php-client
 ```
 
 ## Usage
