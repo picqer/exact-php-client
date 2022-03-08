@@ -608,6 +608,7 @@ class Connection
      */
     public function nextExpand($url, $headers = [], $body = null)
     {
+        $this->waitIfMinutelyRateLimitHit();
         $headers = array_merge($headers, [
             'Accept' => 'application/json',
             'Content-Type' => 'application/json',
