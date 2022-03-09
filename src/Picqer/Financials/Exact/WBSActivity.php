@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator The ID of the user that created the WBS activity
  * @property string $CreatorFullName The full name of the user that created the WBS activity
  * @property string $DefaultItem Default Item to used for time entry
+ * @property bool $DefaultItemIsMandatory To indicated if only default item is allowed
  * @property string $Description Description of the WBS activity
  * @property int $Division Division code
  * @property string $EndDate End date of the WBS activity
@@ -51,6 +52,7 @@ class WBSActivity extends Model
         'Creator',
         'CreatorFullName',
         'DefaultItem',
+        'DefaultItemIsMandatory',
         'Description',
         'Division',
         'EndDate',

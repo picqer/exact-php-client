@@ -1895,6 +1895,46 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\WBSExpense::class);
     }
 
+    public function testIncoterm()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\Incoterm::class);
+    }
+
+    public function testInventoryItemWarehouse()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\InventoryItemWarehouse::class);
+    }
+
+    public function testLogisticsReasonsCodes()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\LogisticsReasonsCodes::class);
+    }
+
+    public function testProjectWBS()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectWBS::class);
+    }
+
+    public function testReasonCodesLinkType()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ReasonCodesLinkType::class);
+    }
+
+    public function testRecentHoursByNumberOfWeeks()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\RecentHoursByNumberOfWeeks::class);
+    }
+
+    public function testSyncInventoryStockPosition()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncInventoryStockPosition::class);
+    }
+
+    public function testSyncProjects()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncProjects::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);

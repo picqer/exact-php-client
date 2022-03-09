@@ -3,9 +3,9 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ProjectWBSByProjectAndWBS.
+ * Class ProjectWBS.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectProjectWBSByProjectAndWBS
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=BulkProjectProjectWBS
  *
  * @property string $ID Primary key
  * @property int $AdditionalInvoicing A boolean field to indicated if additional invoice is allowed on this WBS
@@ -33,11 +33,12 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectTerm ID of invoice planning
  * @property float $PurchaseMarkupPercentage Markup percentage
  * @property float $Revenue Revenue of the WBS
+ * @property int $SequenceNumber Sequence Number
  * @property string $StartDate Startdate of the WBS. If it is a deliverable then StartDate is the earliest StartDate of its children
  * @property float $TimeQuantityToAlert Alert when exceeding this time quantity
  * @property int $Type The type of project WBS. E.g: 1 = Deliverable, 2 = Activity, 3 = Expense
  */
-class ProjectWBSByProjectAndWBS extends Model
+class ProjectWBS extends Model
 {
     use Query\Findable;
 
@@ -68,10 +69,11 @@ class ProjectWBSByProjectAndWBS extends Model
         'ProjectTerm',
         'PurchaseMarkupPercentage',
         'Revenue',
+        'SequenceNumber',
         'StartDate',
         'TimeQuantityToAlert',
         'Type',
     ];
 
-    protected $url = 'read/project/ProjectWBSByProjectAndWBS';
+    protected $url = 'bulk/Project/ProjectWBS';
 }

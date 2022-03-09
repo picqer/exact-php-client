@@ -27,6 +27,9 @@ namespace Picqer\Financials\Exact;
  * @property string $Document Document linked to the quotation
  * @property string $DocumentSubject The subject of the document
  * @property string $DueDate Date after which the quotation is no longer valid
+ * @property string $IncotermAddress Address of Incoterm
+ * @property string $IncotermCode Code of Incoterm
+ * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property string $InvoiceAccount The account to which the invoice is sent
  * @property string $InvoiceAccountCode The code of the invoice account
  * @property string $InvoiceAccountContact The contact person of the invoice account
@@ -49,6 +52,9 @@ namespace Picqer\Financials\Exact;
  * @property QuotationLine[] $QuotationLines The collection of quotation lines
  * @property int $QuotationNumber Unique number to indentify the quotation. By default this number is based on the setting for first available number
  * @property string $Remarks Extra text that can be added to the quotation
+ * @property string $SalesChannel ID of Sales channel.
+ * @property string $SalesChannelCode Code of Sales channel.
+ * @property string $SalesChannelDescription Description of Sales channel.
  * @property string $SalesPerson The user that is responsible for the quotation version
  * @property string $SalesPersonFullName Full name of the sales person
  * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
@@ -88,6 +94,9 @@ class Quotation extends Model
         'Document',
         'DocumentSubject',
         'DueDate',
+        'IncotermAddress',
+        'IncotermCode',
+        'IncotermVersion',
         'InvoiceAccount',
         'InvoiceAccountCode',
         'InvoiceAccountContact',
@@ -110,6 +119,9 @@ class Quotation extends Model
         'QuotationLines',
         'QuotationNumber',
         'Remarks',
+        'SalesChannel',
+        'SalesChannelCode',
+        'SalesChannelDescription',
         'SalesPerson',
         'SalesPersonFullName',
         'SelectionCode',

@@ -26,6 +26,9 @@ namespace Picqer\Financials\Exact;
  * @property string $DocumentSubject Subject of the document
  * @property bool $DropShipment Shows if it is a drop shipment purchase order
  * @property float $ExchangeRate The exchange rate between the invoice currency and the default currency of the division.
+ * @property string $IncotermAddress Address of Incoterm
+ * @property string $IncotermCode Code of Incoterm
+ * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property int $InvoiceStatus Invoice status of purchase order: 10-Open, 20-Partial, 30-Complete, 40-Canceled
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -91,6 +94,9 @@ class PurchaseOrder extends Model
         'DocumentSubject',
         'DropShipment',
         'ExchangeRate',
+        'IncotermAddress',
+        'IncotermCode',
+        'IncotermVersion',
         'InvoiceStatus',
         'Modified',
         'Modifier',
