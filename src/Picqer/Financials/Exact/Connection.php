@@ -105,6 +105,11 @@ class Connection
      */
     private $refreshAccessTokenCallback;
 
+    /*
+     * @var callable(ApiException)
+     */
+    private $exceptionOccurredCallBack;
+
     /**
      * @var callable[]
      */
@@ -738,6 +743,14 @@ class Connection
     }
 
     /**
+     * @param $callback
+     */
+    public function setExceptionOccurredCallback($callback)
+    {
+        $this->exceptionOccurredCallBack = $callback;
+    }
+
+    /**
      * Parse the reponse in the Exception to return the Exact error messages.
      *
      * @param Exception $e
@@ -747,28 +760,34 @@ class Connection
     private function parseExceptionForErrorMessages(Exception $e)
     {
         if (! $e instanceof BadResponseException) {
-            throw new ApiException($e->getMessage(), 0, $e);
-        }
-
-        $response = $e->getResponse();
-
-        $this->extractRateLimits($response);
-
-        Psr7\Message::rewindBody($response);
-        $responseBody = $response->getBody()->getContents();
-        $decodedResponseBody = json_decode($responseBody, true);
-
-        if (! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
-            $errorMessage = $decodedResponseBody['error']['message']['value'];
+            $exception = new ApiException($e->getMessage(), 0, $e);
         } else {
-            $errorMessage = $responseBody;
+            $response = $e->getResponse();
+
+            $this->extractRateLimits($response);
+
+            Psr7\Message::rewindBody($response);
+            $responseBody = $response->getBody()->getContents();
+            $decodedResponseBody = json_decode($responseBody, true);
+
+            if (! is_null($decodedResponseBody) && isset($decodedResponseBody['error']['message']['value'])) {
+                $errorMessage = $decodedResponseBody['error']['message']['value'];
+            } else {
+                $errorMessage = $responseBody;
+            }
+
+            if ($reason = $response->getHeaderLine('Reason')) {
+                $errorMessage .= " (Reason: {$reason})";
+            }
+
+            $exception = new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode(), $e);
         }
 
-        if ($reason = $response->getHeaderLine('Reason')) {
-            $errorMessage .= " (Reason: {$reason})";
+        if (is_callable($this->exceptionOccurredCallBack)) {
+            call_user_func($this->exceptionOccurredCallBack, $exception);
         }
 
-        throw new ApiException('Error ' . $response->getStatusCode() . ': ' . $errorMessage, $response->getStatusCode(), $e);
+        throw $exception;
     }
 
     /**
