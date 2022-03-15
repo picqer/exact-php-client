@@ -590,6 +590,7 @@ class Connection
                         'client_id'     => $this->exactClientId,
                         'client_secret' => $this->exactClientSecret,
                         'code'          => $this->authorizationCode,
+                        'state'         => $this->state,
                     ],
                 ];
             } else { // else do refresh token request
