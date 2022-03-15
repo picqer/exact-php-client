@@ -526,9 +526,13 @@ class Connection
             Psr7\Message::rewindBody($response);
             $simpleXml = new \SimpleXMLElement($response->getBody()->getContents());
 
-            foreach ($simpleXml->Messages as $message) {
-                $keyAlt = (string) $message->Message->Topic->Data->attributes()['keyAlt'];
-                $answer[$keyAlt] = (string) $message->Message->Description;
+            foreach ($simpleXml->Messages->Message as $message) {
+                if (null === $message->Topic->Data->attributes()) {
+                    $answer[] = (string) $message->Description;
+                } else {
+                    $keyAlt = (string) $message->Topic->Data->attributes()['keyAlt'];
+                    $answer[$keyAlt] = (string) $message->Description;
+                }
             }
 
             return $answer;
