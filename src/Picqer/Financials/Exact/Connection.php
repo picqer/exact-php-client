@@ -389,11 +389,11 @@ class Connection
     public function getAuthUrl()
     {
         return $this->baseUrl . $this->authUrl . '?' . http_build_query([
-                'client_id'     => $this->exactClientId,
-                'redirect_uri'  => $this->redirectUrl,
-                'response_type' => 'code',
-                'state'         => $this->state,
-            ]);
+            'client_id'     => $this->exactClientId,
+            'redirect_uri'  => $this->redirectUrl,
+            'response_type' => 'code',
+            'state'         => $this->state,
+        ]);
     }
 
     /**
