@@ -1630,6 +1630,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\TimeTransaction::class);
     }
 
+    public function testProjectTimeTransactionEntity()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ProjectTimeTransaction::class);
+    }
+
     public function testTransactionLineEntity()
     {
         $this->performEntityTest(\Picqer\Financials\Exact\TransactionLine::class);
@@ -2005,9 +2010,9 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\UpdateCustomField::class);
     }
 
-    public function testManufacturingTimeTransactions()
+    public function testManufacturingTimeTransaction()
     {
-        $this->performEntityTest(\Picqer\Financials\Exact\ManufacturingTimeTransactions::class);
+        $this->performEntityTest(\Picqer\Financials\Exact\ManufacturingTimeTransaction::class);
     }
 
     protected function performEntityTest($entityName)

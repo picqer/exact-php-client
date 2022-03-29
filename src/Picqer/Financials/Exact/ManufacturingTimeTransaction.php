@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ManufacturingTimeTransactions.
+ * Class ManufacturingTimeTransaction.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingTimeTransactions
  *
@@ -30,7 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property string $TimedTimeTransaction Timed time transaction linked to the transaction
  * @property string $WorkCenter Workcenter linked to the transaction
  */
-class ManufacturingTimeTransactions extends Model
+class ManufacturingTimeTransaction extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
