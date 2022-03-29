@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncFinancialGLAccounts
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property int $AssimilatedVATBox AssimilatedVATBox (France)
  * @property string $BalanceSide The following values are supported: D (Debit) C (Credit)
  * @property string $BalanceType The following values are supported: B (Balance Sheet) W (Profit & Loss)
@@ -21,9 +21,8 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
- * @property deductibilitypercentages $DeductibilityPercentages Deductibility percentages. You can have several Deductibility percentages, with start and end dates
+ * @property DeductibilityPercentage[] $DeductibilityPercentages Deductibility percentages. You can have several Deductibility percentages, with start and end dates
  * @property string $Description Name of the G/L account. If Multilanguage featureset is enabled in the administration and the G/L account already has a set of termed description, this field is not allowed to change.
- * @property int $DescriptionTermID Term ID for description
  * @property int $Division Division code
  * @property int $ExcludeVATListing General ledger transactions on this G/L account should not appear on the VAT listing
  * @property float $ExpenseNonDeductiblePercentage Expenses on this G/L account can not be used to reduce the incomes
@@ -51,8 +50,10 @@ namespace Picqer\Financials\Exact;
  * @property string $YearEndCostGLAccount Indicates the costing account for year end calculations
  * @property string $YearEndReflectionGLAccount Indicates the reflection account that is used by year end application
  */
-class SyncGLAccount extends GLAccount
+class SyncGLAccount extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -72,7 +73,6 @@ class SyncGLAccount extends GLAccount
         'CreatorFullName',
         'DeductibilityPercentages',
         'Description',
-        'DescriptionTermID',
         'Division',
         'ExcludeVATListing',
         'ExpenseNonDeductiblePercentage',

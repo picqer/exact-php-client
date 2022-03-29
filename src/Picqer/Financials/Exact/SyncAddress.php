@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncCRMAddresses
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property string $Account Account linked to the address
  * @property bool $AccountIsSupplier Indicates if the account is a supplier
  * @property string $AccountName Name of the account
@@ -62,8 +62,10 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseCode Code of the warehoude
  * @property string $WarehouseDescription Description of the warehouse
  */
-class SyncAddress extends Address
+class SyncAddress extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

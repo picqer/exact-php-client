@@ -7,12 +7,12 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncSalesOrderSalesOrders
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property float $AmountDC Amount in the default currency of the company
- * @property float $AmountDiscount Discount amount in the default currency of the company
- * @property float $AmountDiscountExclVat Discount amount excluding VAT in the default currency of the company
+ * @property float $AmountDiscount Discount amount in the default currency of the company. Only supported for header
+ * @property float $AmountDiscountExclVat Discount amount excluding VAT in the default currency of the company. Only supported for header
  * @property float $AmountFC Amount in the currency of the transaction
- * @property float $AmountFCExclVat Amount exclude VAT in the currency of the transaction
+ * @property float $AmountFCExclVat Amount exclude VAT in the currency of the transaction. Only supported for header
  * @property int $ApprovalStatus Shows if this sales order is approved
  * @property string $ApprovalStatusDescription Description of ApprovalStatus
  * @property string $Approved Approval datetime
@@ -43,6 +43,9 @@ namespace Picqer\Financials\Exact;
  * @property int $DocumentNumber Number of the document
  * @property string $DocumentSubject Subject of the document
  * @property string $ID Primary key
+ * @property string $IncotermAddress Address of Incoterm
+ * @property string $IncotermCode Code of Incoterm
+ * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property int $InvoiceStatus Invoice status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled
  * @property string $InvoiceStatusDescription Description of InvoiceStatus
  * @property string $InvoiceTo Reference to the customer who will receive the invoice. For an existing sales order this value can not be changed.
@@ -74,6 +77,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Pricelist Price list
  * @property string $PricelistDescription Description of Pricelist
  * @property string $Project The project to which the sales order line is linked. The project can be different per line. Sometimes also the project in the header is filled although this is not really used
+ * @property string $ProjectCode Code of Project
  * @property string $ProjectDescription Description of Project
  * @property string $PurchaseOrder Purchase order that is linked to the sales order
  * @property string $PurchaseOrderLine Purchase order line of the purchase order that is linked to the sales order
@@ -92,13 +96,12 @@ namespace Picqer\Financials\Exact;
  * @property string $SelectionCodeCode Code of selection code
  * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod ShippingMethod
- * @property string $ShippingMethodDescription Description of ShippingMethod
+ * @property string $ShippingMethodCode Code of Shipping Method
+ * @property string $ShippingMethodDescription Description of Shipping Method
  * @property string $ShopOrder Reference to ShopOrder
+ * @property int $ShopOrderNumber Number of shop order
  * @property int $Status The status of the sales order. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled.
  * @property string $StatusDescription Description of Status
- * @property string $TaxSchedule Obsolete
- * @property string $TaxScheduleCode Obsolete
- * @property string $TaxScheduleDescription Obsolete
  * @property string $UnitCode Code of item unit
  * @property string $UnitDescription Description of Unit
  * @property float $UnitPrice Price per unit in the currency of the transaction
@@ -112,8 +115,10 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseID Warehouse
  * @property string $YourRef The reference number of the customer
  */
-class SyncSalesOrder extends SalesOrder
+class SyncSalesOrder extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -153,6 +158,9 @@ class SyncSalesOrder extends SalesOrder
         'DocumentNumber',
         'DocumentSubject',
         'ID',
+        'IncotermAddress',
+        'IncotermCode',
+        'IncotermVersion',
         'InvoiceStatus',
         'InvoiceStatusDescription',
         'InvoiceTo',
@@ -184,6 +192,7 @@ class SyncSalesOrder extends SalesOrder
         'Pricelist',
         'PricelistDescription',
         'Project',
+        'ProjectCode',
         'ProjectDescription',
         'PurchaseOrder',
         'PurchaseOrderLine',
@@ -202,13 +211,12 @@ class SyncSalesOrder extends SalesOrder
         'SelectionCodeCode',
         'SelectionCodeDescription',
         'ShippingMethod',
+        'ShippingMethodCode',
         'ShippingMethodDescription',
         'ShopOrder',
+        'ShopOrderNumber',
         'Status',
         'StatusDescription',
-        'TaxSchedule',
-        'TaxScheduleCode',
-        'TaxScheduleDescription',
         'UnitCode',
         'UnitDescription',
         'UnitPrice',

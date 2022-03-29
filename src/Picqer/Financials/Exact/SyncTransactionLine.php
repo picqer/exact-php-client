@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncFinancialTransactionLines
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property string $Account Reference to account
  * @property string $AccountCode Code of the Account
  * @property string $AccountName Name of the Account
@@ -36,6 +36,8 @@ namespace Picqer\Financials\Exact;
  * @property string $EntryID The transaction lines that make up a financial entry share the same EntryID
  * @property int $EntryNumber Entry number of the header
  * @property float $ExchangeRate Exchange rate
+ * @property string $ExternalLinkDescription Description of ExternalLink
+ * @property string $ExternalLinkReference External link
  * @property float $ExtraDutyAmountFC Extra duty amount
  * @property float $ExtraDutyPercentage Extra duty percentage
  * @property int $FinancialPeriod Financial period
@@ -64,7 +66,6 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectCode Code of Project
  * @property string $ProjectDescription Description of Project
  * @property float $Quantity Quantity
- * @property string $SerialNumber Obsolete
  * @property int $Status 20 = Open, 50 = Processed
  * @property string $Subscription Reference to subscription line
  * @property string $SubscriptionDescription Description of subscription line
@@ -77,8 +78,10 @@ namespace Picqer\Financials\Exact;
  * @property string $VATType Vat type
  * @property string $YourRef Your reference (of customer)
  */
-class SyncTransactionLine extends TransactionLine
+class SyncTransactionLine extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -111,6 +114,8 @@ class SyncTransactionLine extends TransactionLine
         'EntryID',
         'EntryNumber',
         'ExchangeRate',
+        'ExternalLinkDescription',
+        'ExternalLinkReference',
         'ExtraDutyAmountFC',
         'ExtraDutyPercentage',
         'FinancialPeriod',
@@ -139,7 +144,6 @@ class SyncTransactionLine extends TransactionLine
         'ProjectCode',
         'ProjectDescription',
         'Quantity',
-        'SerialNumber',
         'Status',
         'Subscription',
         'SubscriptionDescription',

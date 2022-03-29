@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncDocumentsDocuments
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property string $Account ID of the related account of this document
  * @property string $AccountCode Code of Account
  * @property string $AccountName Name of Account
@@ -32,6 +32,7 @@ namespace Picqer\Financials\Exact;
  * @property bool $HasEmptyBody Indicates that the document body is empty
  * @property int $HID Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
  * @property string $ID Primary key
+ * @property bool $InheritShare InheritShare value
  * @property string $Language The language code of the document
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -48,8 +49,10 @@ namespace Picqer\Financials\Exact;
  * @property int $Type ID of the type of this document
  * @property string $TypeDescription Description of Type
  */
-class SyncDocument extends Document
+class SyncDocument extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -78,6 +81,7 @@ class SyncDocument extends Document
         'HasEmptyBody',
         'HID',
         'ID',
+        'InheritShare',
         'Language',
         'Modified',
         'Modifier',

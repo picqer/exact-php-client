@@ -3,17 +3,17 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SyncGoodsDelivery.
+ * Class DropShipment.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncSalesOrderGoodsDeliveries
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderDropShipments
  *
- * @property int $Timestamp Timestamp
+ * @property string $EntryID Primary key
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
  * @property string $DeliveryAccount Reference to account for delivery
  * @property string $DeliveryAccountCode Delivery account code
- * @property string $DeliveryAccountName Account name
+ * @property string $DeliveryAccountName Delivery account name
  * @property string $DeliveryAddress Reference to shipping address
  * @property string $DeliveryContact Reference to contact for delivery
  * @property string $DeliveryContactPersonFullName Name of the contact person of the customer who will receive delivered goods
@@ -23,7 +23,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $Document Document that is manually linked to the sales order delivery
  * @property string $DocumentSubject Document Subject
- * @property string $EntryID Primary key
+ * @property DropShipmentLine[] $DropShipmentLines Collection of lines
  * @property int $EntryNumber Entry number
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -33,18 +33,16 @@ namespace Picqer\Financials\Exact;
  * @property string $ShippingMethodCode Code of shipping method
  * @property string $ShippingMethodDescription Description of shipping method
  * @property string $TrackingNumber Reference to header tracking number
- * @property string $Warehouse Warehouse
- * @property string $WarehouseCode Code of Warehouse
- * @property string $WarehouseDescription Description of Warehouse
  */
-class SyncGoodsDelivery extends Model
+class DropShipment extends Model
 {
     use Query\Findable;
+    use Persistance\Storable;
 
-    protected $primaryKey = 'Timestamp';
+    protected $primaryKey = 'EntryID';
 
     protected $fillable = [
-        'Timestamp',
+        'EntryID',
         'Created',
         'Creator',
         'CreatorFullName',
@@ -60,7 +58,7 @@ class SyncGoodsDelivery extends Model
         'Division',
         'Document',
         'DocumentSubject',
-        'EntryID',
+        'DropShipmentLines',
         'EntryNumber',
         'Modified',
         'Modifier',
@@ -70,10 +68,7 @@ class SyncGoodsDelivery extends Model
         'ShippingMethodCode',
         'ShippingMethodDescription',
         'TrackingNumber',
-        'Warehouse',
-        'WarehouseCode',
-        'WarehouseDescription',
     ];
 
-    protected $url = 'sync/SalesOrder/GoodsDeliveries';
+    protected $url = 'salesorder/DropShipments';
 }

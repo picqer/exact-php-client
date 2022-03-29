@@ -1935,6 +1935,81 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\SyncProjects::class);
     }
 
+    public function testCustomField()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\CustomField::class);
+    }
+
+    public function testDropShipment()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DropShipment::class);
+    }
+
+    public function testDropShipmentLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\DropShipmentLine::class);
+    }
+
+    public function testHrmDivision()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\HrmDivision::class);
+    }
+
+    public function testPurchaseReturn()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PurchaseReturn::class);
+    }
+
+    public function testPurchaseReturnLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\PurchaseReturnLine::class);
+    }
+
+    public function testSyncDeleted()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncDeleted::class);
+    }
+
+    public function testSyncProject()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncProject::class);
+    }
+
+    public function testSyncProjectWBS()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncProjectWBS::class);
+    }
+
+    public function testSyncStorageLocationStockPosition()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncStorageLocationStockPosition::class);
+    }
+
+    public function testSyncSubscription()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncSubscription::class);
+    }
+
+    public function testSyncSubscriptionLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncSubscriptionLine::class);
+    }
+
+    public function testSyncTimeCostTransaction()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncTimeCostTransaction::class);
+    }
+
+    public function testUpdateCustomField()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\UpdateCustomField::class);
+    }
+
+    public function testManufacturingTimeTransactions()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\ManufacturingTimeTransactions::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);
