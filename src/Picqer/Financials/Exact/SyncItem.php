@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncLogisticsItems
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property float $AverageCost The current average cost price
  * @property string $Barcode Barcode of the item (numeric string)
  * @property string $Class_01 Item class code referring to ItemClasses with ClassID 1
@@ -78,7 +78,6 @@ namespace Picqer\Financials\Exact;
  * @property int $IsOnDemandItem Is On demand Item
  * @property bool $IsPackageItem Indicates if the item is a package item. Can only be created in the hosting administration
  * @property bool $IsPurchaseItem Indicates if the item can be purchased
- * @property int $IsRegistrationCodeItem Indicated if the item is used in voucher functionality
  * @property bool $IsSalesItem Indicates if the item can be sold
  * @property bool $IsSerialItem Indicates that serial numbers are used for this item
  * @property bool $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
@@ -103,13 +102,19 @@ namespace Picqer\Financials\Exact;
  * @property string $SearchCode Search code of the item
  * @property int $SecurityLevel Security level (0 - 100)
  * @property string $StartDate Together with EndDate this determines if the item is active
+ * @property string $StatisticalCode Statistical code
+ * @property float $StatisticalNetWeight Statistical net weight
+ * @property float $StatisticalUnits Statistical units
+ * @property float $StatisticalValue Statistical value
  * @property float $Stock Quantity that is in stock
  * @property string $Unit The standard unit of this item
  * @property string $UnitDescription Description of Unit
  * @property string $UnitType Type of unit: A=Area, L=Length, O=Other, T=Time, V=Volume, W=Weight
  */
-class SyncItem extends Item
+class SyncItem extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -184,7 +189,6 @@ class SyncItem extends Item
         'IsOnDemandItem',
         'IsPackageItem',
         'IsPurchaseItem',
-        'IsRegistrationCodeItem',
         'IsSalesItem',
         'IsSerialItem',
         'IsStockItem',
@@ -209,6 +213,10 @@ class SyncItem extends Item
         'SearchCode',
         'SecurityLevel',
         'StartDate',
+        'StatisticalCode',
+        'StatisticalNetWeight',
+        'StatisticalUnits',
+        'StatisticalValue',
         'Stock',
         'Unit',
         'UnitDescription',

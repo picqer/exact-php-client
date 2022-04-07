@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncInventoryStockPositions
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property float $CurrentStock Number of items in stock
  * @property int $Division Division code
  * @property float $FreeStock Quantity of available stock
@@ -26,8 +26,10 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseCode Code of warehouse
  * @property string $WarehouseDescription Description of warehouse
  */
-class SyncStockPosition extends StockPosition
+class SyncStockPosition extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

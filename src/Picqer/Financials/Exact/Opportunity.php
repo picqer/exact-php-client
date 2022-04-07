@@ -21,6 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of the creator
  * @property string $Currency Currency code
+ * @property string $CustomField Custom field endpoint
  * @property int $Division Division code
  * @property string $LeadSource The source of the lead/opportunity
  * @property string $LeadSourceDescription Description of LeadSource
@@ -65,6 +66,7 @@ class Opportunity extends Model
         'Creator',
         'CreatorFullName',
         'Currency',
+        'CustomField',
         'Division',
         'LeadSource',
         'LeadSourceDescription',

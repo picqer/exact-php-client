@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncLogisticsSalesItemPrices
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property string $Account ID of the customer
  * @property string $AccountName Name of the customer account
  * @property string $Created Creation date
@@ -32,8 +32,10 @@ namespace Picqer\Financials\Exact;
  * @property string $Unit The unit code of the price
  * @property string $UnitDescription Description of the price unit
  */
-class SyncSalesItemPrice extends SalesItemPrice
+class SyncSalesItemPrice extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
