@@ -18,6 +18,14 @@ class Connection
     /**
      * @var string
      */
+    public $nextExpandUrl = null;
+    /**
+     * @var array[]
+     */
+    private $results = [];
+    /**
+     * @var string
+     */
     private $baseUrl = 'https://start.exactonline.nl';
 
     /**
@@ -492,6 +500,34 @@ class Connection
                 }
 
                 if (array_key_exists('results', $json['d'])) {
+
+
+                    $expand = null;
+                    if (count($json['d']['results']) > 0) {
+                        foreach ($json['d']['results'][0] as $keyLine => $checkLine) {
+
+                            if (gettype($checkLine) == "array" && $keyLine != "__metadata") {
+                                $expand = $keyLine;
+                                break;
+                            }
+                        }
+                        if ($expand != null) {
+                            foreach ($json['d']['results'] as $key => $row) {
+                                if (is_array($row[$expand])) {
+                                    if (array_key_exists('__next', $row[$expand])) {
+                                        $this->nextExpandUrl = $row[$expand]['__next'];
+                                        if ($this->nextExpandUrl != null) {
+                                            $json['d']['results'][$key][$expand]['results'] = array_merge($json['d']['results'][$key][$expand]['results'], $this->nextExpand());
+                                        }
+                                        $this->results = [];
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+
                     if ($returnSingleIfPossible && count($json['d']['results']) == 1) {
                         return $json['d']['results'][0];
                     }
@@ -919,5 +955,52 @@ class Connection
             (new SystemUser($this))->url(),
             (new Me($this))->url(),
         ], true);
+    }
+    /**
+     * @param $url
+     * @param array $headers
+     * @param null $body
+     * @return array
+     * @throws ApiException
+     */
+    public function nextExpand($headers = [], $body = null)
+    {
+        $this->waitIfMinutelyRateLimitHit();
+
+        $headers = array_merge($headers, [
+            'Accept' => 'application/json',
+            'Content-Type' => 'application/json',
+            'Prefer' => 'return=representation',
+        ]);
+
+        $this->checkOrAcquireAccessToken();
+
+        if (!$this->needsAuthentication() && !empty($this->getAccessToken())) {
+            $headers['Authorization'] = 'Bearer ' . $this->getAccessToken();
+        }
+
+        $request = new Request('GET', $this->nextExpandUrl, $headers, $body);
+
+        $response = $this->client()->send($request);
+
+        $this->extractRateLimits($response);
+
+        Psr7\Message::rewindBody($response);
+
+        $json = json_decode($response->getBody()->getContents(), true);
+
+        if (array_key_exists('__next', $json['d'])) {
+            $this->nextExpandUrl = $json['d']['__next'];
+        } else {
+            $this->nextExpandUrl = null;
+        }
+
+        $this->results = array_merge($this->results, $json['d']['results']);
+
+        if ($this->nextExpandUrl != null) {
+            $this->nextExpand($headers, $body);
+        }
+
+        return $this->results;
     }
 }
