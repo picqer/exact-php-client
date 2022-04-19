@@ -31,6 +31,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $CustomerPOnumber Used only for PSA to store the customer's PO number
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description of the project
  * @property int $Division Division code
  * @property string $DivisionName Name of Division
@@ -96,6 +97,7 @@ class Project extends Model
         'Creator',
         'CreatorFullName',
         'CustomerPOnumber',
+        'CustomField',
         'Description',
         'Division',
         'DivisionName',

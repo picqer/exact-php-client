@@ -32,6 +32,9 @@ namespace Picqer\Financials\Exact;
  * @property string $DueDate The due date for payments. This date is calculated based on the EntryDate and the Paymentcondition
  * @property float $ExtraDutyAmountFC Extra duty amount in the currency of the transaction. Both extra duty amount and VAT amount need to be specified in order to differ this property from automatically calculated.
  * @property float $GAccountAmountFC A positive value of the amount indicates that the amount is to be paid by the customer to your G bank account.In case of a credit invoice the amount should have negative value when retrieved or posted to Exact.
+ * @property string $IncotermAddress Address of Incoterm
+ * @property string $IncotermCode Code of Incoterm
+ * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property string $InvoiceDate Official date for the invoice. When the invoice is entered it's equal to the field 'EntryDate'. During the printing process the invoice date can be entered
  * @property int $InvoiceNumber Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry
  * @property string $InvoiceTo Reference to the Customer who will receive the invoice
@@ -54,6 +57,9 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales invoice
  * @property string $Remarks Extra remarks
+ * @property string $SalesChannel ID of Sales channel.
+ * @property string $SalesChannelCode Code of Sales channel.
+ * @property string $SalesChannelDescription Description of Sales channel.
  * @property SalesInvoiceLine[] $SalesInvoiceLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
@@ -107,6 +113,9 @@ class SalesInvoice extends Model
         'DueDate',
         'ExtraDutyAmountFC',
         'GAccountAmountFC',
+        'IncotermAddress',
+        'IncotermCode',
+        'IncotermVersion',
         'InvoiceDate',
         'InvoiceNumber',
         'InvoiceTo',
@@ -129,6 +138,9 @@ class SalesInvoice extends Model
         'PaymentConditionDescription',
         'PaymentReference',
         'Remarks',
+        'SalesChannel',
+        'SalesChannelCode',
+        'SalesChannelDescription',
         'SalesInvoiceLines',
         'Salesperson',
         'SalespersonFullName',

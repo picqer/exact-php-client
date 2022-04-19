@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Date and time the project was created
  * @property string $Creator The Guid ID of user that created the project
  * @property string $DefaultItem Default Item to used for timecost entry
+ * @property int $DefaultItemIsMandatory To indicated if only default item is allowed
  * @property string $Description Description of the project WBS
  * @property int $Division Division code
  * @property string $EndDate EndDate of the WBS. If it is a deliverable then EndDate is the lastest EndDate of its children
@@ -52,6 +53,7 @@ class ProjectWBSByProject extends Model
         'Created',
         'Creator',
         'DefaultItem',
+        'DefaultItemIsMandatory',
         'Description',
         'Division',
         'EndDate',

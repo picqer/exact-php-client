@@ -20,6 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PeriodDescription Description of period
  * @property string $Request Reference to request
  * @property int $Status The status of the request
+ * @property string $Subject The subject of the return documet
  * @property int $Type Return Type (31 - VAT, 32-EC Sales list, 146-Payroll declaration)
  * @property int $Year Return year
  */
@@ -43,6 +44,7 @@ class Returns extends Model
         'PeriodDescription',
         'Request',
         'Status',
+        'Subject',
         'Type',
         'Year',
     ];

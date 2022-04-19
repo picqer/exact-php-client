@@ -44,6 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property float $CreditLinePurchase Maximum amount of credit for Purchase. If no value has been defined, there is no credit limit
  * @property float $CreditLineSales Maximum amount of credit for sales. If no value has been defined, there is no credit limit
+ * @property string $CustomField Custom field endpoint
  * @property string $DatevCreditorCode DATEV creditor code for Germany legislation
  * @property string $DatevDebtorCode DATEV debtor code for Germany legislation
  * @property float $DiscountPurchase Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055
@@ -60,6 +61,12 @@ namespace Picqer\Financials\Exact;
  * @property string $GlnNumber Global Location Number can be used by companies to identify their locations, giving them complete flexibility to identify any type or level of location required
  * @property bool $HasWithholdingTaxSales Indicates whether a customer has withholding tax on sales
  * @property bool $IgnoreDatevWarningMessage Suppressed warning message when there is duplication on the DATEV code
+ * @property string $IncotermAddressPurchase Address of Incoterm for Purchase
+ * @property string $IncotermAddressSales Address of Incoterm for Sales
+ * @property string $IncotermCodePurchase Code of Incoterm for Purchase
+ * @property string $IncotermCodeSales Code of Incoterm for Sales
+ * @property int $IncotermVersionPurchase Version of Incoterm for Purchase Supported version for Incoterms : 2010, 2020
+ * @property int $IncotermVersionSales Version of Incoterm for Sales Supported version for Incoterms : 2010, 2020
  * @property string $IntraStatArea Intrastat Area
  * @property string $IntraStatDeliveryTerm Intrastat delivery method
  * @property string $IntraStatSystem System for Intrastat
@@ -182,6 +189,7 @@ class Account extends Model
         'CreatorFullName',
         'CreditLinePurchase',
         'CreditLineSales',
+        'CustomField',
         'DatevCreditorCode',
         'DatevDebtorCode',
         'DiscountPurchase',
@@ -198,6 +206,12 @@ class Account extends Model
         'GlnNumber',
         'HasWithholdingTaxSales',
         'IgnoreDatevWarningMessage',
+        'IncotermAddressPurchase',
+        'IncotermAddressSales',
+        'IncotermCodePurchase',
+        'IncotermCodeSales',
+        'IncotermVersionPurchase',
+        'IncotermVersionSales',
         'IntraStatArea',
         'IntraStatDeliveryTerm',
         'IntraStatSystem',

@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncSalesOrderGoodsDeliveries
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
@@ -37,8 +37,10 @@ namespace Picqer\Financials\Exact;
  * @property string $WarehouseCode Code of Warehouse
  * @property string $WarehouseDescription Description of Warehouse
  */
-class SyncGoodsDelivery extends GoodsDelivery
+class SyncGoodsDelivery extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

@@ -7,12 +7,12 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncSalesInvoiceSalesInvoices
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property float $AmountDC Amount in the default currency of the company. For almost all lines this can be calculated like: AmountDC = AmountFC * RateFC
- * @property float $AmountDiscount Discount amount in the default currency of the company
- * @property float $AmountDiscountExclVat Discount amount exclude VAT in the default currency of the company
+ * @property float $AmountDiscount Discount amount in the default currency of the company. Only supported for header
+ * @property float $AmountDiscountExclVat Discount amount exclude VAT in the default currency of the company. Only supported for header
  * @property float $AmountFC For normal lines it's the amount excluding VAT
- * @property float $AmountFCExclVat For the header this is the sum of all lines, excluding VAT
+ * @property float $AmountFCExclVat Sum of all lines, excluding VAT. Only supported for header
  * @property string $CostCenter Reference to Cost center
  * @property string $CostCenterDescription Description of CostCenter
  * @property string $CostUnit Reference to Cost unit
@@ -45,6 +45,9 @@ namespace Picqer\Financials\Exact;
  * @property string $GLAccount The GL Account of the sales invoice line. This field is mandatory. This field is generated based on the revenue account of the item (or the related item group). G/L Account is also used to determine whether the costcenter / costunit is mandatory
  * @property string $GLAccountDescription Description of GLAccount
  * @property string $ID Primary key
+ * @property string $IncotermAddress Address of Incoterm
+ * @property string $IncotermCode Code of Incoterm
+ * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property string $InvoiceDate Official date for the invoice. When the invoice is entered it's equal to the field 'EntryDate'. During the printing process the invoice date can be entered
  * @property string $InvoiceID The InvoiceID identifies the sales invoice. All the lines of a sales invoice have the same InvoiceID
  * @property int $InvoiceNumber Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry
@@ -97,9 +100,6 @@ namespace Picqer\Financials\Exact;
  * @property string $StatusDescription Description of Status
  * @property string $Subscription When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines
  * @property string $SubscriptionDescription Description of subscription line
- * @property string $TaxSchedule Obsolete
- * @property string $TaxScheduleCode Obsolete
- * @property string $TaxScheduleDescription Obsolete
  * @property int $Type Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note. Type 8023 and 8024 are only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $TypeDescription Description of the type
  * @property string $UnitCode Code of Unit
@@ -116,8 +116,10 @@ namespace Picqer\Financials\Exact;
  * @property float $WithholdingTaxPercentage Withholding tax percentage applied to sales invoice. Not supported in The Netherlands.
  * @property string $YourRef The invoice number of the customer
  */
-class SyncSalesInvoice extends SalesInvoice
+class SyncSalesInvoice extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -159,6 +161,9 @@ class SyncSalesInvoice extends SalesInvoice
         'GLAccount',
         'GLAccountDescription',
         'ID',
+        'IncotermAddress',
+        'IncotermCode',
+        'IncotermVersion',
         'InvoiceDate',
         'InvoiceID',
         'InvoiceNumber',
@@ -211,9 +216,6 @@ class SyncSalesInvoice extends SalesInvoice
         'StatusDescription',
         'Subscription',
         'SubscriptionDescription',
-        'TaxSchedule',
-        'TaxScheduleCode',
-        'TaxScheduleDescription',
         'Type',
         'TypeDescription',
         'UnitCode',

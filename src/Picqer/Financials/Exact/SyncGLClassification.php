@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncFinancialGLClassifications
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property bool $Abstract Abstract elements are only used in presentation linkbases to group other elements. They are not supposed to be used in instance documents
  * @property string $Balance Only used for amount concepts: in that case either 'debit' or 'credit'
  * @property string $Code The Code is unique
@@ -17,7 +17,6 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of the element. Note that this description is only used for division-specific taxonomies (or reporting schemes).
  * @property int $Division Division is optional. For taxonomies of Taxonomies.Type = 0 (general taxonomies), the Division is empty. For division specific taxonomies it is mandatory
  * @property string $ID Primary key
- * @property bool $IsTupleSubElement Obsolete
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -30,8 +29,10 @@ namespace Picqer\Financials\Exact;
  * @property string $TaxonomyNamespaceDescription Description of TaxonomyNamespace
  * @property string $Type Type of the element
  */
-class SyncGLClassification extends GLClassification
+class SyncGLClassification extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -45,7 +46,6 @@ class SyncGLClassification extends GLClassification
         'Description',
         'Division',
         'ID',
-        'IsTupleSubElement',
         'Modified',
         'Modifier',
         'ModifierFullName',

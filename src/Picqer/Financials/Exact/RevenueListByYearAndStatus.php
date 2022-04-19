@@ -14,7 +14,6 @@ namespace Picqer\Financials\Exact;
 class RevenueListByYearAndStatus extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
 
     protected $primaryKey = 'Year';
 

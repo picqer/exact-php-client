@@ -28,6 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description of the item
  * @property int $Division Division code
  * @property string $EndDate Together with StartDate this determines if the item is active
@@ -139,6 +140,7 @@ class Item extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Description',
         'Division',
         'EndDate',

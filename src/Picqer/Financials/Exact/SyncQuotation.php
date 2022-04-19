@@ -7,7 +7,7 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncCRMQuotations
  *
- * @property int64 $Timestamp Timestamp
+ * @property int $Timestamp Timestamp
  * @property float $AmountDC Amount in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
  * @property string $CloseDate Date on which the customer accepted or rejected the quotation version
@@ -30,6 +30,9 @@ namespace Picqer\Financials\Exact;
  * @property string $DocumentSubject The subject of the document
  * @property string $DueDate Date after which the quotation is no longer valid
  * @property string $ID Primary key
+ * @property string $IncotermAddress Address of Incoterm
+ * @property string $IncotermCode Code of Incoterm
+ * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property string $InvoiceAccount The account to which the invoice is sent
  * @property string $InvoiceAccountCode The code of the invoice account
  * @property string $InvoiceAccountContact The contact person of the invoice account
@@ -75,8 +78,10 @@ namespace Picqer\Financials\Exact;
  * @property int $VersionNumber Number indicating the different reviews which are made for the quotation
  * @property string $YourRef The number by which this quotation is identified by the order account
  */
-class SyncQuotation extends Quotation
+class SyncQuotation extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
@@ -103,6 +108,9 @@ class SyncQuotation extends Quotation
         'DocumentSubject',
         'DueDate',
         'ID',
+        'IncotermAddress',
+        'IncotermCode',
+        'IncotermVersion',
         'InvoiceAccount',
         'InvoiceAccountCode',
         'InvoiceAccountContact',

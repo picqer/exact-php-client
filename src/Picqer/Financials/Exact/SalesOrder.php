@@ -36,6 +36,9 @@ namespace Picqer\Financials\Exact;
  * @property string $Document Document that is manually linked to the sales order
  * @property int $DocumentNumber Number of the document
  * @property string $DocumentSubject Subject of the document
+ * @property string $IncotermAddress Address of Incoterm
+ * @property string $IncotermCode Code of Incoterm
+ * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property int $InvoiceStatus Invoice status
  * @property string $InvoiceStatusDescription Description of InvoiceStatus
  * @property string $InvoiceTo Reference to the customer who will receive the invoice. For an existing sales order this value can not be changed.
@@ -55,6 +58,9 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionDescription Description of PaymentCondition
  * @property string $PaymentReference Payment reference for sales order
  * @property string $Remarks Extra remarks
+ * @property string $SalesChannel ID of Sales channel.
+ * @property string $SalesChannelCode Code of Sales channel
+ * @property string $SalesChannelDescription Description of Sales channel
  * @property SalesOrderLine[] $SalesOrderLines Collection of lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
@@ -109,6 +115,9 @@ class SalesOrder extends Model
         'Document',
         'DocumentNumber',
         'DocumentSubject',
+        'IncotermAddress',
+        'IncotermCode',
+        'IncotermVersion',
         'InvoiceStatus',
         'InvoiceStatusDescription',
         'InvoiceTo',
@@ -128,6 +137,9 @@ class SalesOrder extends Model
         'PaymentConditionDescription',
         'PaymentReference',
         'Remarks',
+        'SalesChannel',
+        'SalesChannelCode',
+        'SalesChannelDescription',
         'SalesOrderLines',
         'Salesperson',
         'SalespersonFullName',

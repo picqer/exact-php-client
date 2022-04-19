@@ -94,8 +94,10 @@ namespace Picqer\Financials\Exact;
  * @property int $TransactionType Type of the linked transaction.
  * @property string $YourRef Invoice number of the supplier. In case the payment belongs to a bank entry line and is matched with one invoice, YourRef is filled with the YourRef of this invoice.
  */
-class SyncPaymentTerm extends Payment
+class SyncPaymentTerm extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [

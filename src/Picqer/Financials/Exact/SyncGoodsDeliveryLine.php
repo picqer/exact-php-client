@@ -7,8 +7,8 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncSalesOrderGoodsDeliveryLines
  *
- * @property int64 $Timestamp Timestamp
- * @property stockbatchnumbers $BatchNumbers Collection of batch numbers
+ * @property int $Timestamp Timestamp
+ * @property StockBatchNumber[] $BatchNumbers Collection of batch numbers
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -31,15 +31,17 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesOrderLineID Reference to sales order
  * @property int $SalesOrderLineNumber Sales order line number
  * @property int $SalesOrderNumber Sales order number
- * @property stockserialnumbers $SerialNumbers Collection of serial numbers
+ * @property StockSerialNumber[] $SerialNumbers Collection of serial numbers
  * @property string $StorageLocation Reference to storage location
  * @property string $StorageLocationCode Storage location code
  * @property string $StorageLocationDescription Storage location description
  * @property string $TrackingNumber Reference to tracking number
  * @property string $Unitcode Code of item unit
  */
-class SyncGoodsDeliveryLine extends GoodsDeliveryLine
+class SyncGoodsDeliveryLine extends Model
 {
+    use Query\Findable;
+
     protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
