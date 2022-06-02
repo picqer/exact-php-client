@@ -9,6 +9,8 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $QuotationID Identifier of the quotation
  * @property float $AmountDC Amount in the default currency of the company
+ * @property float $AmountDiscount Discount Amount in the currency of the transaction
+ * @property float $AmountDiscountExclVat Discount Amount excluding VAT in the currency of the transaction
  * @property float $AmountFC Amount in the currency of the transaction
  * @property string $CloseDate Date on which the customer accepted or rejected the quotation version
  * @property string $ClosingDate Date on which you expect to close/win the deal
@@ -45,6 +47,8 @@ namespace Picqer\Financials\Exact;
  * @property string $OrderAccountContact The contact person of the order account
  * @property string $OrderAccountContactFullName Full name of the order account contact person
  * @property string $OrderAccountName The name of the order account
+ * @property string $PaymentCondition Payment condition code
+ * @property string $PaymentConditionDescription Payment condition description
  * @property string $Project The project linked to the quotation
  * @property string $ProjectCode The code of the project
  * @property string $ProjectDescription The description of the project
@@ -60,6 +64,8 @@ namespace Picqer\Financials\Exact;
  * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $SelectionCodeCode Code of selection code
  * @property string $SelectionCodeDescription Description of selection code
+ * @property string $ShippingMethod Shipping method ID
+ * @property string $ShippingMethodDescription Shipping method description
  * @property int $Status The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted
  * @property string $StatusDescription The description of the status
  * @property float $VATAmountFC Total VAT amount in the currency of the transaction
@@ -76,6 +82,8 @@ class Quotation extends Model
     protected $fillable = [
         'QuotationID',
         'AmountDC',
+        'AmountDiscount',
+        'AmountDiscountExclVat',
         'AmountFC',
         'CloseDate',
         'ClosingDate',
@@ -112,6 +120,8 @@ class Quotation extends Model
         'OrderAccountContact',
         'OrderAccountContactFullName',
         'OrderAccountName',
+        'PaymentCondition',
+        'PaymentConditionDescription',
         'Project',
         'ProjectCode',
         'ProjectDescription',
@@ -127,6 +137,8 @@ class Quotation extends Model
         'SelectionCode',
         'SelectionCodeCode',
         'SelectionCodeDescription',
+        'ShippingMethod',
+        'ShippingMethodDescription',
         'Status',
         'StatusDescription',
         'VATAmountFC',

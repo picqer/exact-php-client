@@ -18,6 +18,8 @@ namespace Picqer\Financials\Exact;
  * @property string $ExecutionFromDate Execution date: From of invoice term
  * @property string $ExecutionToDate Execution date: To of invoice term
  * @property string $InvoiceDate Invoice date of invoice term
+ * @property string $InvoiceId ID of sales invoice
+ * @property int $InvoiceStatus The invoice status of the invoice term. E.g: 10 = Draft, 20 = Open, 30 = Processing..., 50 = Processed
  * @property string $Item Item that linked to the invoice term
  * @property string $ItemDescription Description of item that linked to the invoice term
  * @property string $Modified Last modified date of invoice term
@@ -30,6 +32,7 @@ namespace Picqer\Financials\Exact;
  * @property string $VATCode VAT code that used in the invoice term
  * @property string $VATCodeDescription Description of VAT code that used in the invoice term
  * @property float $VATPercentage Percentage of VAT code that used in the invoice term
+ * @property string $WBS ID of WBS that linked to the invoice term
  */
 class InvoiceTerm extends Model
 {
@@ -48,6 +51,8 @@ class InvoiceTerm extends Model
         'ExecutionFromDate',
         'ExecutionToDate',
         'InvoiceDate',
+        'InvoiceId',
+        'InvoiceStatus',
         'Item',
         'ItemDescription',
         'Modified',
@@ -60,6 +65,7 @@ class InvoiceTerm extends Model
         'VATCode',
         'VATCodeDescription',
         'VATPercentage',
+        'WBS',
     ];
 
     protected $url = 'project/InvoiceTerms';

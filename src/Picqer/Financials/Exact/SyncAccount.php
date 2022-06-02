@@ -44,6 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property float $CreditLinePurchase Maximum amount of credit for Purchase. If no value has been defined, there is no credit limit
  * @property float $CreditLineSales Maximum amount of credit for sales. If no value has been defined, there is no credit limit
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DatevCreditorCode DATEV creditor code for Germany legislation
  * @property string $DatevDebtorCode DATEV debtor code for Germany legislation
  * @property float $DiscountPurchase Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055
@@ -51,6 +52,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $Email E-Mail address of the account
  * @property string $EndDate Determines in combination with the start date if the account is active. If the current date is > end date the account is inactive
+ * @property string $EORINumber EORI number
  * @property string $EstablishedDate RegistrationDate
  * @property string $Fax Fax number
  * @property string $GLAccountPurchase Default (corporate) GL offset account for purchase (cost)
@@ -190,6 +192,7 @@ class SyncAccount extends Model
         'CreatorFullName',
         'CreditLinePurchase',
         'CreditLineSales',
+        'CustomField',
         'DatevCreditorCode',
         'DatevDebtorCode',
         'DiscountPurchase',
@@ -197,6 +200,7 @@ class SyncAccount extends Model
         'Division',
         'Email',
         'EndDate',
+        'EORINumber',
         'EstablishedDate',
         'Fax',
         'GLAccountPurchase',

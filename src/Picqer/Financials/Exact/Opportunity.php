@@ -17,11 +17,13 @@ namespace Picqer\Financials\Exact;
  * @property string $Campaign Reference to the campaign opportunity is related to
  * @property string $CampaignDescription Description of Campaign
  * @property string $CloseDate The date when the opportunity is expected to be closed
+ * @property string $Contact Contact ID of main contact person
+ * @property string $ContactFullName Name of the main contact person
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of the creator
  * @property string $Currency Currency code
- * @property string $CustomField Custom field endpoint
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property int $Division Division code
  * @property string $LeadSource The source of the lead/opportunity
  * @property string $LeadSourceDescription Description of LeadSource
@@ -62,6 +64,8 @@ class Opportunity extends Model
         'Campaign',
         'CampaignDescription',
         'CloseDate',
+        'Contact',
+        'ContactFullName',
         'Created',
         'Creator',
         'CreatorFullName',
