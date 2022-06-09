@@ -22,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division number of the company that the subscription is linked to
  * @property string $EndDate The date and time when the subscription ends
  * @property string $EntryID Primary key
- * @property int $InvoiceDay The day number of the month when the invoice of the subscription is sent
+ * @property int $InvoiceDay For monthly, quaterly, half-year and yearly invoice period, the day number of the month when the invoice of the subscription is sent. While for weekly invoice period, the weekday number of the week when the invoice of the subscription is sent: 0=Monday 1=Tuesday 2=Wednesday 3=Thursday 4=Friday 5=Saturday 6=Sunday
  * @property string $InvoicedTo The date when the invoice of the subscription is sent
  * @property string $InvoiceTo The account which the subsciption is invoiced to
  * @property string $InvoiceToContactPerson The ID of the contact person that is linked to the account the subscription is invoice to

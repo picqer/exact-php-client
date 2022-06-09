@@ -23,6 +23,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $EndDate EndDate of the WBS. If it is a deliverable then EndDate is the lastest EndDate of its children
  * @property float $Hours Budget quantity of the WBS
+ * @property int $InvoiceMethod The invoice method of the WBS. E.g: 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid
  * @property int $IsBaseline A boolean field to indicated if this is a baseline
  * @property int $Milestone A boolean field to indicated if this is a milestone
  * @property string $Modified Last modified date and time
@@ -30,7 +31,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Notes For additional information about wbs
  * @property string $Parent ID of the parent WBS
  * @property string $Project ID of the project that linked to WBS
- * @property string $ProjectTerm ID of invoice planning
+ * @property string $ProjectTerm ID of the invoice term that linked to the WBS
  * @property float $PurchaseMarkupPercentage Markup percentage
  * @property float $Revenue Revenue of the WBS
  * @property string $StartDate Startdate of the WBS. If it is a deliverable then StartDate is the earliest StartDate of its children
@@ -58,6 +59,7 @@ class ProjectWBSByProject extends Model
         'Division',
         'EndDate',
         'Hours',
+        'InvoiceMethod',
         'IsBaseline',
         'Milestone',
         'Modified',

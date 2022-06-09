@@ -41,6 +41,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Project The project linked to the document
  * @property string $ProjectCode Code of project
  * @property string $ProjectDescription Description of project
+ * @property int $ProposedEntryStatus ProposedEntryStatus, 0 = Void, 5 = Rejected, 20 = Open, 50 = Processed
  * @property int $SalesInvoiceNumber 'Our reference' of the transaction that belongs to this document
  * @property int $SalesOrderNumber Number of the sales order
  * @property int $SendMethod Send method
@@ -90,6 +91,7 @@ class SyncDocument extends Model
         'Project',
         'ProjectCode',
         'ProjectDescription',
+        'ProposedEntryStatus',
         'SalesInvoiceNumber',
         'SalesOrderNumber',
         'SendMethod',

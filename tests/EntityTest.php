@@ -2015,6 +2015,26 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\ManufacturingTimeTransaction::class);
     }
 
+    public function testLeadPurpose()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\LeadPurpose::class);
+    }
+
+    public function testLeadSource()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\LeadSource::class);
+    }
+
+    public function testSyncProjectPlanning()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncProjectPlanning::class);
+    }
+
+    public function testSyncPurchaseOrder()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncPurchaseOrder::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);
