@@ -255,7 +255,7 @@ class Connection
         // Create param string
         if (! empty($params)) {
             $endpoint .= strpos($endpoint, '?') === false ? '?' : '&';
-            $endpoint .= http_build_query($params);
+            $endpoint .= http_build_query($params, '', '&');
         }
 
         // Create the request
@@ -388,7 +388,7 @@ class Connection
             'redirect_uri'  => $this->redirectUrl,
             'response_type' => 'code',
             'state'         => $this->state,
-        ]);
+        ], '', '&');
     }
 
     /**
