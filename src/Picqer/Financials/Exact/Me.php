@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Gender Gender: M=Male, V=Female, O=Unknown
  * @property string $Initials Initials
  * @property bool $IsClientUser Client user of an accountant: either a portal user or a non-accountant user with his own license (internal use)
+ * @property bool $IsMyFirmLiteUser MyFirm lite user of accountant with limited access and specific start page (internal use)
  * @property bool $IsMyFirmPortalUser MyFirm user of accountant with limited access and specific start page (internal use)
  * @property string $Language Language spoken by this user
  * @property string $LanguageCode Language (culture) that is used in Exact Online
@@ -66,6 +67,7 @@ class Me extends Model
         'Gender',
         'Initials',
         'IsClientUser',
+        'IsMyFirmLiteUser',
         'IsMyFirmPortalUser',
         'Language',
         'LanguageCode',

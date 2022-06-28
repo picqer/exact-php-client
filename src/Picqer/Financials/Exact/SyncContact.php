@@ -30,6 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property int $Division Division code
  * @property string $Email Email address of the contact
  * @property string $EndDate End date
@@ -103,6 +104,7 @@ class SyncContact extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Division',
         'Email',
         'EndDate',

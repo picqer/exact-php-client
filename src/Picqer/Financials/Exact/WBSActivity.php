@@ -22,7 +22,9 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of the WBS activity
  * @property int $Division Division code
  * @property string $EndDate End date of the WBS activity
+ * @property int $InvoiceMethod The invoice method of the WBS. E.g: 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid
  * @property bool $InvoiceSeparately To indicated if additional invoice is allowed on this WBS expense. Additional invoice can only be set when the project type is fixed price or prepaid and the project allow additional invoices.
+ * @property string $InvoiceTerm ID of the invoice term that linked to the WBS
  * @property string $Modified The date when the WBS activity was modified
  * @property string $Modifier The ID of the user that modified the WBS activity
  * @property string $ModifierFullName The full name of the user that modified the WBS activity
@@ -56,7 +58,9 @@ class WBSActivity extends Model
         'Description',
         'Division',
         'EndDate',
+        'InvoiceMethod',
         'InvoiceSeparately',
+        'InvoiceTerm',
         'Modified',
         'Modifier',
         'ModifierFullName',
