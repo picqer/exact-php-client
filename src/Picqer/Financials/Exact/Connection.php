@@ -573,8 +573,7 @@ class Connection
                 return [];
             }
 
-            Psr7\Message::rewindBody($response);
-            $simpleXml = new \SimpleXMLElement($response->getBody()->getContents());
+            $simpleXml = new \SimpleXMLElement($response->getBody()->__toString());
 
             return $simpleXml;
         } catch (\RuntimeException $e) {
