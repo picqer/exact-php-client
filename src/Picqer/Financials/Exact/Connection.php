@@ -907,7 +907,7 @@ class Connection
 
             // In some rare occasions the outcome of $resetsInSeconds computes into a value that is less than 0.
             // The sleep() method will in this case throw an exception.
-            if($resetsInSeconds < 0) {
+            if ($resetsInSeconds < 0) {
                 $resetsInSeconds = 0;
             }
 
