@@ -12,19 +12,21 @@ namespace Picqer\Financials\Exact;
  * @property int $BlockRebilling A boolean field to indicated if rebilling is blocked. Only for expense
  * @property float $BudgetedCost Budget cost of the WBS activity and expense
  * @property float $BudgetedHours Budget hours of the WBS. Only for activity
+ * @property float $BudgetedQuantity Budget quantity of the WBS. Only for expense
  * @property float $BudgetedRevenue Revenue of the WBS. Only for activity and expense
  * @property int $BudgetOverrunHours BudgetOverrunHours: 10-Allowed, 20-Not Allowed. Only for activity
  * @property int $Completed A boolean field to indicated if the project WBS deliverable is completed.
  * @property string $Created The date and time when the WBS was created
  * @property string $Creator The ID of the user that created the WBS
  * @property string $CreatorFullName The full name of the user that created the WBS
- * @property string $DefaultItem Default item to used for time entries
+ * @property string $DefaultItem Default item to used for timecost entry
  * @property int $DefaultItemIsMandatory To indicated if only default item is allowed. Only for activity
  * @property string $Description Description of the project WBS
  * @property int $Division Division code
  * @property string $EndDate EndDate of the WBS. If it is a deliverable then EndDate is the lastest EndDate of its children
  * @property string $ID Primary key
- * @property int $InvoiceSeparately To indicated if additional invoice is allowed on this WBS. Additional invoice can only be set when the project type is fixed price or prepaid and the project allow additional invoices. Only for activity and expense
+ * @property string $InvoiceDate The invoice date of the WBS when invoice term is generated
+ * @property int $InvoiceMethod The invoice method of the WBS. For activity: 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid. For expense: 6 = Fixed, 7 = Rebill, 8 = Non re-billable
  * @property float $MarkupPercentage Markup percentage for WBS expense
  * @property int $Milestone To indicated if this is a milestone for WBS deliverable
  * @property string $Modified Last modified date and time
@@ -37,8 +39,10 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectDescription Description of the project that linked to WBS
  * @property string $ProjectTerm ID of invoice term that linked to the WBS deliverable. Invoice term can only be linked when the project is using billing milestones and the deliverable is set as a milestone
  * @property string $ProjectTermDescription Description of invoice term that linked to the WBS deliverable
+ * @property float $PurchasePrice Purchase price of the item. Only for expense
  * @property int $SequenceNumber Sequence number of the WBS. Last sequence will be selected if not specified
  * @property string $StartDate Startdate of the WBS. If it is a deliverable then StartDate is the earliest StartDate of its children
+ * @property string $Supplier Supplier of the item. Only for expense
  * @property float $TimeQuantityToAlert Alert when exceeding this time quantity for WBS activity
  * @property int $Type The type of project WBS. E.g: 1 = Deliverable, 2 = Activity, 3 = Expense
  */
@@ -54,6 +58,7 @@ class SyncProjectWBS extends Model
         'BlockRebilling',
         'BudgetedCost',
         'BudgetedHours',
+        'BudgetedQuantity',
         'BudgetedRevenue',
         'BudgetOverrunHours',
         'Completed',
@@ -66,7 +71,8 @@ class SyncProjectWBS extends Model
         'Division',
         'EndDate',
         'ID',
-        'InvoiceSeparately',
+        'InvoiceDate',
+        'InvoiceMethod',
         'MarkupPercentage',
         'Milestone',
         'Modified',
@@ -79,8 +85,10 @@ class SyncProjectWBS extends Model
         'ProjectDescription',
         'ProjectTerm',
         'ProjectTermDescription',
+        'PurchasePrice',
         'SequenceNumber',
         'StartDate',
+        'Supplier',
         'TimeQuantityToAlert',
         'Type',
     ];

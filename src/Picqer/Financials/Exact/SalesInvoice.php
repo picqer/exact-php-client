@@ -61,11 +61,15 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesChannelCode Code of Sales channel.
  * @property string $SalesChannelDescription Description of Sales channel.
  * @property SalesInvoiceLine[] $SalesInvoiceLines Collection of lines
+ * @property SalesInvoiceOrderChargeLine[] $SalesInvoiceOrderChargeLines Collection of shipping cost and order charge lines. Only applicable in POST. Ignore the URL returns in GET.
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
  * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $SelectionCodeCode Code of selection code
  * @property string $SelectionCodeDescription Description of selection code
+ * @property string $ShippingMethod Shipping method ID
+ * @property string $ShippingMethodCode Shipping method code
+ * @property string $ShippingMethodDescription Shipping method description
  * @property int $StarterSalesInvoiceStatus Starter Sales invoice status (for starter functionality)
  * @property string $StarterSalesInvoiceStatusDescription Description of StarterSalesInvoiceStatus
  * @property int $Status The status of the entry. 10 = draft. During the creation of an invoice draft records occur in the draft modus if during an invoice a new page with lines is triggered. If the user leaves the invoice in an abnormal way the draft invoices can be recovered. Draft invoices are not included in financial reports, balances etc. 20 = open. Open invoices can be changed. New invoices get the status open by default. 50 = processed. Processed invoices can't be changed anymore. Processing is done via printing. Processed invoices can't be reopened
@@ -142,11 +146,15 @@ class SalesInvoice extends Model
         'SalesChannelCode',
         'SalesChannelDescription',
         'SalesInvoiceLines',
+        'SalesInvoiceOrderChargeLines',
         'Salesperson',
         'SalespersonFullName',
         'SelectionCode',
         'SelectionCodeCode',
         'SelectionCodeDescription',
+        'ShippingMethod',
+        'ShippingMethodCode',
+        'ShippingMethodDescription',
         'StarterSalesInvoiceStatus',
         'StarterSalesInvoiceStatusDescription',
         'Status',
