@@ -904,6 +904,13 @@ class Connection
         if ($this->getMinutelyLimitRemaining() === 0 && $minutelyReset) {
             // add a second for rounding differences
             $resetsInSeconds = (($minutelyReset / 1000) - time()) + 1;
+
+            // In some rare occasions the outcome of $resetsInSeconds computes into a value that is less than 0.
+            // The sleep() method will in this case throw an exception.
+            if ($resetsInSeconds < 0) {
+                $resetsInSeconds = 0;
+            }
+
             sleep($resetsInSeconds);
         }
     }
