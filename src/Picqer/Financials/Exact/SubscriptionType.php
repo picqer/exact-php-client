@@ -23,9 +23,11 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of subscription type
  * @property int $Division Division code
  * @property int $InvoiceCorrectionMethod Invoice correction method: 1=Ratio based, 2=Zero Invoice, 3=Never invoiced
+ * @property int $ManualRenewalMethod Manual renewal method: 1=Use item prices, 2=Use current subscription prices
  * @property string $Modified Last modified date of subscription type
  * @property string $Modifier ID of user that modified the subscription type
  * @property string $ModifierFullName Full name of user that modified the subscription type
+ * @property int $ProlongationType Prolongation type: 0=No, 1=Manual, 2=Automatic
  */
 class SubscriptionType extends Model
 {
@@ -48,9 +50,11 @@ class SubscriptionType extends Model
         'Description',
         'Division',
         'InvoiceCorrectionMethod',
+        'ManualRenewalMethod',
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'ProlongationType',
     ];
 
     protected $url = 'subscription/SubscriptionTypes';

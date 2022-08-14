@@ -3,11 +3,11 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class SupplierItem.
+ * Class SyncSupplierItem.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsSupplierItem
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncLogisticsSupplierItem
  *
- * @property string $ID Primary key
+ * @property int $Timestamp Timestamp
  * @property int $CopyRemarks Copy purchase remarks to purchase lines
  * @property string $CountryOfOrigin Country of origin code
  * @property string $CountryOfOriginDescription Description of country of origin
@@ -19,6 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property int $DropShipment Indicates that the supplier will deliver the item directly to customer. Values: 0 = No, 1 = Yes, 2 = Optional
  * @property string $EndDate Together with StartDate this determines whether the price is active
+ * @property string $ID Primary key
  * @property string $Item Item ID
  * @property string $ItemCode Item code
  * @property string $ItemDescription Description of Item
@@ -44,13 +45,14 @@ namespace Picqer\Financials\Exact;
  * @property string $SupplierDescription Description of supplier
  * @property string $SupplierItemCode Supplier’s item code
  */
-class SupplierItem extends Model
+class SyncSupplierItem extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
+
+    protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
-        'ID',
+        'Timestamp',
         'CopyRemarks',
         'CountryOfOrigin',
         'CountryOfOriginDescription',
@@ -62,6 +64,7 @@ class SupplierItem extends Model
         'Division',
         'DropShipment',
         'EndDate',
+        'ID',
         'Item',
         'ItemCode',
         'ItemDescription',
@@ -88,5 +91,5 @@ class SupplierItem extends Model
         'SupplierItemCode',
     ];
 
-    protected $url = 'logistics/SupplierItem';
+    protected $url = 'sync/Logistics/SupplierItem';
 }

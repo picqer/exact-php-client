@@ -9,6 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property StockBatchNumber[] $BatchNumbers The collection of batch numbers that belong to the items included in this pick order
+ * @property string $Bin Bin value for particular order
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
@@ -53,6 +54,7 @@ class DigitalOrderPickingLine extends Model
     protected $fillable = [
         'ID',
         'BatchNumbers',
+        'Bin',
         'Created',
         'Creator',
         'CreatorFullName',
