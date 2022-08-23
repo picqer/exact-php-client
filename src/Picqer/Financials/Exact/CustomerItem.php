@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
 class CustomerItem extends Model
 {
     use Query\Findable;
+    use Persistance\Storable;
 
     protected $fillable = [
         'ID',
