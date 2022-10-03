@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator The Guid ID of user that created the transaction
  * @property string $CreatorFullName The full name of the user that created the record
  * @property string $Currency Currency of amount FC
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $Date Date and time the time transaction was done
  * @property int $Division Division code
  * @property string $DivisionDescription Description of Division
@@ -67,6 +68,7 @@ class ProjectTimeTransaction extends Model
         'Creator',
         'CreatorFullName',
         'Currency',
+        'CustomField',
         'Date',
         'Division',
         'DivisionDescription',

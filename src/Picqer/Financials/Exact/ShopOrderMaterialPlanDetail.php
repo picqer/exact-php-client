@@ -50,7 +50,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Unit Unit
  * @property string $UnitDescription Unit description
  * @property string $Warehouse Shop order warehouse
- * @property float $WastePercentage Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Premium)
+ * @property float $WastePercentage Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)
  */
 class ShopOrderMaterialPlanDetail extends Model
 {

@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created The date and time when the WBS expense was created
  * @property string $Creator The ID of the user that created the WBS expense
  * @property string $CreatorFullName The full name of the user that created the WBS expense
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $Description Description of the WBS expense
  * @property int $Division Division code
  * @property string $EndDate End date of the WBS expense
@@ -53,6 +54,7 @@ class WBSExpense extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Description',
         'Division',
         'EndDate',

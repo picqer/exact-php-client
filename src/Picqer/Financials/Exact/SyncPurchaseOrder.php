@@ -10,6 +10,11 @@ namespace Picqer\Financials\Exact;
  * @property int $Timestamp Timestamp
  * @property float $AmountDC Amount in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
+ * @property int $ApprovalStatus Approval status of purchase order. 0=Awaiting approval, 1=Automatically, 2=Approved. Approve a new purchase order by giving value 2 if user has PurchaseOrderApproval right.
+ * @property string $ApprovalStatusDescription Description of ApprovalStatus
+ * @property string $Approved Approval datetime
+ * @property string $Approver User who approved the purchase order
+ * @property string $ApproverFullName Name of approver
  * @property string $CostCenter Reference to Cost center
  * @property string $CostCenterCode Code of Cost Center (user-defined ID)
  * @property string $CostCenterDescription Description of Cost Center
@@ -77,7 +82,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesOrderLine Sales order line of the sales order that Is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line.
  * @property int $SalesOrderLineNumber Number of the sales order line. Show NULL if more than one sales order is linked to the purchase order line.
  * @property int $SalesOrderNumber Number of the sales order. Show NULL if more than one sales order is linked to the purchase order line.
- * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCode ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing
  * @property string $SelectionCodeCode Code of selection code
  * @property string $SelectionCodeDescription Description of selection code
  * @property int $SendingMethod SendingMethod
@@ -114,6 +119,11 @@ class SyncPurchaseOrder extends Model
         'Timestamp',
         'AmountDC',
         'AmountFC',
+        'ApprovalStatus',
+        'ApprovalStatusDescription',
+        'Approved',
+        'Approver',
+        'ApproverFullName',
         'CostCenter',
         'CostCenterCode',
         'CostCenterDescription',

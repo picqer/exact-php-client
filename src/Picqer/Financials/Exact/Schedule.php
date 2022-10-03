@@ -9,6 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property float $AverageHours Average hours per week in a schedule
+ * @property float $BillabilityTarget Billability target
  * @property string $Code Schedule code
  * @property string $Created Creation date
  * @property string $Creator ID of creator
@@ -38,6 +39,7 @@ class Schedule extends Model
     protected $fillable = [
         'ID',
         'AverageHours',
+        'BillabilityTarget',
         'Code',
         'Created',
         'Creator',

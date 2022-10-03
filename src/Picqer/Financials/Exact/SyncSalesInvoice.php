@@ -100,7 +100,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StatusDescription Description of Status
  * @property string $Subscription When generating invoices from subscriptions, this field records the link between invoice lines and subscription lines
  * @property string $SubscriptionDescription Description of subscription line
- * @property int $Type Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note. Type 8023 and 8024 are only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property int $Type Indicates the type of invoice Values: 8020 - Sales invoices, 8021 - Sales credit note, 8023 - Direct sales invoice, 8024 - Direct credit note. Type 8023 and 8024 are only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing
  * @property string $TypeDescription Description of the type
  * @property string $UnitCode Code of Unit
  * @property string $UnitDescription Description of Unit

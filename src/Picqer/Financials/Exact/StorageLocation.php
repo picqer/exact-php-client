@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
+ * @property int $PickSequence Sequence for locations
  * @property string $Warehouse Warehouse ID
  * @property string $WarehouseCode Warehouse Code
  * @property string $WarehouseDescription Description of warehouse
@@ -38,6 +39,7 @@ class StorageLocation extends Model
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'PickSequence',
         'Warehouse',
         'WarehouseCode',
         'WarehouseDescription',

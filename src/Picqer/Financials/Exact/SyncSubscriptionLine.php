@@ -12,6 +12,7 @@ namespace Picqer\Financials\Exact;
  * @property float $AmountFC Amount in the currency of the transaction
  * @property string $Costcenter Cost center linked to the subscription line
  * @property string $Costunit Cost unit linked to the subscription line
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $Description Description of the subscription line
  * @property float $Discount Discount percentage of the subscription line
  * @property int $Division Code of division the subscription line is made
@@ -48,6 +49,7 @@ class SyncSubscriptionLine extends Model
         'AmountFC',
         'Costcenter',
         'Costunit',
+        'CustomField',
         'Description',
         'Discount',
         'Division',

@@ -23,10 +23,10 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property float $Quantity Quantity of transfer
  * @property SerialNumber[] $SerialNumbers The collection of serial numbers that belong to the items included in this warehouse transfer
- * @property string $StorageLocationFrom ID of storage location to transfer item from (Premium Only)
+ * @property string $StorageLocationFrom ID of storage location to transfer item from (Professional and Premium Only)
  * @property string $StorageLocationFromCode Code of storage location to transfer item from
  * @property string $StorageLocationFromDescription Description of storage location to transfer item from
- * @property string $StorageLocationTo ID of storage location to transfer item to (Premium Only)
+ * @property string $StorageLocationTo ID of storage location to transfer item to (Professional and Premium Only)
  * @property string $StorageLocationToCode Code of storage location to transfer item to
  * @property string $StorageLocationToDescription Description of storage location to transfer item to
  * @property string $TransferID Entry number of the stock transaction

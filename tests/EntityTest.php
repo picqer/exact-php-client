@@ -2100,6 +2100,11 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\CommercialBuildingValue::class);
     }
 
+    public function testSyncTimestamp()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncTimestamp::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);

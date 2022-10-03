@@ -19,6 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created The date and time when the WBS was created
  * @property string $Creator The ID of the user that created the WBS
  * @property string $CreatorFullName The full name of the user that created the WBS
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DefaultItem Default item to used for timecost entry
  * @property int $DefaultItemIsMandatory To indicated if only default item is allowed. Only for activity
  * @property string $Description Description of the project WBS
@@ -65,6 +66,7 @@ class SyncProjectWBS extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'DefaultItem',
         'DefaultItemIsMandatory',
         'Description',
