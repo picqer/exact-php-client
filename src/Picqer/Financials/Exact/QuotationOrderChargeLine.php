@@ -18,7 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $OrderCharge ID of order charges is mandatory for order charge. However, it is not required for shipping cost
  * @property string $OrderChargeCode Code of shipping method or order charges
  * @property string $OrderChargeDescription Description from shipping method or order charges master
- * @property string $OrderChargesLineDescription Line description of shipping cost or order charges (only available in WD Premium package)
+ * @property string $OrderChargesLineDescription Line description of shipping cost or order charges (only available in WD Premium packages)
  * @property string $QuotationID The OrderID identifies the quotation. All the lines of aquotation have the same QuotationID
  * @property string $VATCode VAT code that is used for shipping cost or order charges based on master
  * @property string $VATDescription VAT description for shipping cost or order charges

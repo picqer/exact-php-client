@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created The date and time when the WBS activity was created
  * @property string $Creator The ID of the user that created the WBS activity
  * @property string $CreatorFullName The full name of the user that created the WBS activity
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DefaultItem Default Item to used for time entry
  * @property bool $DefaultItemIsMandatory To indicated if only default item is allowed
  * @property string $Description Description of the WBS activity
@@ -56,6 +57,7 @@ class WBSActivity extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'DefaultItem',
         'DefaultItemIsMandatory',
         'Description',

@@ -27,7 +27,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ItemUnitCode Item Unit Code
  * @property string $ItemUnitDescription Item Unit Description
  * @property bool $MainSupplier Indicates this is a main supplier
- * @property float $MinimumQuantity Minimum quantity of the item for purchase, only available for Wholesale & Distribution (Premium only)
+ * @property float $MinimumQuantity Minimum quantity of the item for purchase, only available for Wholesale & Distribution (Professional and Premium only)
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier

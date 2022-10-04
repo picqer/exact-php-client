@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property float $Cost Budget cost of the WBS
  * @property string $Created Date and time the project was created
  * @property string $Creator The Guid ID of user that created the project
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DefaultItem Default Item to used for timecost entry
  * @property int $DefaultItemIsMandatory To indicated if only default item is allowed
  * @property string $Description Description of the project WBS
@@ -54,6 +55,7 @@ class ProjectWBSByProjectAndWBS extends Model
         'Cost',
         'Created',
         'Creator',
+        'CustomField',
         'DefaultItem',
         'DefaultItemIsMandatory',
         'Description',

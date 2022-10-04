@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property float $PlannedReturnQuantity Expected quantity to be returned
  * @property string $PlannedSalesReturnID Entry number of the planned sales return
  * @property float $ReceivedQuantity Actual quantity returned
+ * @property string $ReturnReasonCodeCode Code of ReasonCode
  * @property string $ReturnReasonCodeDescription Description of ReasonCode
  * @property string $ReturnReasonCodeID Indicates the reason why the planned sales was returned
  * @property string $SalesOrderLineID Sales order line of the particular item
@@ -63,6 +64,7 @@ class PlannedSalesReturnLine extends Model
         'PlannedReturnQuantity',
         'PlannedSalesReturnID',
         'ReceivedQuantity',
+        'ReturnReasonCodeCode',
         'ReturnReasonCodeDescription',
         'ReturnReasonCodeID',
         'SalesOrderLineID',

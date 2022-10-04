@@ -12,7 +12,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
- * @property string $DefaultStorageLocation The default storage location of this warehouse. Warehouses can have a default storage location in packages Manufacturing Premium or Wholesale Premium
+ * @property string $DefaultStorageLocation The default storage location of this warehouse. Warehouses can have a default storage location in packages Manufacturing Professional & Premium or Wholesale Professional & Premium
  * @property string $DefaultStorageLocationCode Default storage location's code
  * @property string $DefaultStorageLocationDescription Default storage location's description
  * @property string $Description The description of the warehouse

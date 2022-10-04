@@ -13,7 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property float $AmountDiscountExclVat Discount amount excluding VAT in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
  * @property float $AmountFCExclVat Amount exclude VAT in the currency of the transaction
- * @property int $ApprovalStatus Shows if this sales order is approved
+ * @property int $ApprovalStatus Approval status of sales order. 0=Awaiting approval, 1=Automatically, 2=Approved. Approve a new sales order by giving value 2 if user has SalesOrderApproval right.
  * @property string $ApprovalStatusDescription Description of ApprovalStatus
  * @property string $Approved Approval datetime
  * @property string $Approver User who approved the sales order
@@ -65,7 +65,7 @@ namespace Picqer\Financials\Exact;
  * @property SalesOrderOrderChargeLine[] $SalesOrderOrderChargeLines Collection of order charge lines
  * @property string $Salesperson Sales representative
  * @property string $SalespersonFullName Name of sales representative
- * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCode ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing
  * @property string $SelectionCodeCode Code of selection code
  * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod ShippingMethod
@@ -74,7 +74,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StatusDescription Description of Status
  * @property string $WarehouseCode Code of Warehouse
  * @property string $WarehouseDescription Description of Warehouse
- * @property string $WarehouseID Warehouse. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $WarehouseID Warehouse. Only supported by the Plus, Professional and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $YourRef The reference number of the customer
  */
 class SalesOrder extends Model

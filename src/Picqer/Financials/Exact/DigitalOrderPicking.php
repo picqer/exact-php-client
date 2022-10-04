@@ -28,7 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Remarks Remarks
  * @property int $SalesOrderCount Sales order count
  * @property int $SalesOrderNumber Sales order Number
- * @property int $Status Picking status: 12-Open, 20-Partial, 21-Completed, 22-Picked, 40-Delivered
+ * @property int $Status Picking status: 12-Open, 20-Partial, 21-Completed, 22-Picked, 23=InProcess, 40-Delivered
  * @property int $Type Picking type: 1-Order, 2-Batch
  * @property string $Warehouse Warehouse ID
  * @property string $WarehouseCode Warehouse code
