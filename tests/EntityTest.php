@@ -34,10 +34,10 @@ class EntityTest extends TestCase
         $notAnEntity = [
             'Connection.php',
             'ApiException.php',
-            'Model.php'
+            'Model.php',
         ];
 
-        while($iterator->valid()) {
+        while ($iterator->valid()) {
             /** @var \SplFileInfo $file */
             $file = $iterator->current();
 
