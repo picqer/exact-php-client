@@ -37,6 +37,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Warehouse Warehouse which this serial/batch number is entering or leaving
  * @property string $WarehouseCode Code of the warehouse which this serial/batch number is entering or leaving
  * @property string $WarehouseDescription Description of the warehouse which this serial/batch number is entering or leaving
+ * @property string $WarehouseTransferLine ID of warehouse transfer associated with this serial/batch number.
  */
 class SyncStockSerialBatchNumber extends Model
 {
@@ -75,6 +76,7 @@ class SyncStockSerialBatchNumber extends Model
         'Warehouse',
         'WarehouseCode',
         'WarehouseDescription',
+        'WarehouseTransferLine',
     ];
 
     protected $url = 'sync/Inventory/StockSerialBatchNumbers';

@@ -37,6 +37,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Warehouse Warehouse which this serial number is entering or leaving
  * @property string $WarehouseCode Code of the warehouse which this serial number is entering or leaving
  * @property string $WarehouseDescription Description of the warehouse which this serial number is entering or leaving
+ * @property string $WarehouseTransferLine ID of warehouse transfer entry
  */
 class StockSerialNumber extends Model
 {
@@ -74,6 +75,7 @@ class StockSerialNumber extends Model
         'Warehouse',
         'WarehouseCode',
         'WarehouseDescription',
+        'WarehouseTransferLine',
     ];
 
     protected $url = 'inventory/StockSerialNumbers';
