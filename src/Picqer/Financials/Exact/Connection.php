@@ -334,6 +334,28 @@ class Connection
     }
 
     /**
+     * @param string $topic
+     * @param mixed  $params
+     *
+     * @throws ApiException
+     *
+     * @return mixed
+     */
+    public function download($topic, $params = null)
+    {
+        $url = $this->getBaseUrl() . '/docs/XMLDownload.aspx?Topic=' . $topic . '&_Division_=' . $this->getDivision();
+
+        try {
+            $request = $this->createRequest('GET', $url, null, $params);
+            $response = $this->client()->send($request);
+
+            return $this->parseDownloadResponseXml($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
+    }
+
+    /**
      * @param string $url
      * @param mixed  $body
      *
@@ -536,6 +558,28 @@ class Connection
             }
 
             return $answer;
+        } catch (\RuntimeException $e) {
+            throw new ApiException($e->getMessage());
+        }
+    }
+
+    /**
+     * @param Response $response
+     *
+     * @throws ApiException
+     *
+     * @return mixed
+     */
+    private function parseDownloadResponseXml(Response $response)
+    {
+        try {
+            if ($response->getStatusCode() === 204) {
+                return [];
+            }
+
+            $simpleXml = new \SimpleXMLElement($response->getBody()->__toString());
+
+            return $simpleXml;
         } catch (\RuntimeException $e) {
             throw new ApiException($e->getMessage());
         }
