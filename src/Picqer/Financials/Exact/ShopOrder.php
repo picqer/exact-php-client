@@ -45,7 +45,7 @@ namespace Picqer\Financials\Exact;
  * @property float $ReadyToShipQuantity Quantity ready to ship
  * @property int $SalesOrderLineCount Number of sales orders linked to this shop order
  * @property SalesOrderline[] $SalesOrderLines Collection of Sales order lines
- * @property string $SelectionCode ID of selection code. Only supported by the Advanced and Premium editions for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCode ID of selection code. Only supported by the Plus, Professional and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $SelectionCodeCode Code of Selection code
  * @property string $SelectionCodeDescription Description of Selection code
  * @property int $ShopOrderByProductPlanBackflushCount Number of shop order by-product plans, which are backflushed, for this shop order

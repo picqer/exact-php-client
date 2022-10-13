@@ -2035,6 +2035,76 @@ class EntityTest extends TestCase
         $this->performEntityTest(\Picqer\Financials\Exact\SyncPurchaseOrder::class);
     }
 
+    public function testQuotationOrderChargeLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\QuotationOrderChargeLine::class);
+    }
+
+    public function testSalesInvoiceOrderChargeLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesInvoiceOrderChargeLine::class);
+    }
+
+    public function testSalesOrderOrderChargeLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SalesOrderOrderChargeLine::class);
+    }
+
+    public function testSyncPurchaseItemPrice()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncPurchaseItemPrice::class);
+    }
+
+    public function testSyncQuotationHeader()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncQuotationHeader::class);
+    }
+
+    public function testSyncQuotationLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncQuotationLine::class);
+    }
+
+    public function testSyncSalesOrderHeader()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncSalesOrderHeader::class);
+    }
+
+    public function testSyncSalesOrderLine()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncSalesOrderLine::class);
+    }
+
+    public function testSyncSalesPriceListVolumeDiscount()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncSalesPriceListVolumeDiscount::class);
+    }
+
+    public function testSyncSerialBatchNumber()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncSerialBatchNumber::class);
+    }
+
+    public function testSyncStockSerialBatchNumber()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncStockSerialBatchNumber::class);
+    }
+
+    public function testSyncSupplierItem()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncSupplierItem::class);
+    }
+
+    public function testCommercialBuildingValue()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\CommercialBuildingValue::class);
+    }
+
+    public function testSyncTimestamp()
+    {
+        $this->performEntityTest(\Picqer\Financials\Exact\SyncTimestamp::class);
+    }
+
     protected function performEntityTest($entityName)
     {
         $reflectionClass = new \ReflectionClass($entityName);

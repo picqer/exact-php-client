@@ -36,7 +36,7 @@ namespace Picqer\Financials\Exact;
  * @property string $sysmodified Modified date
  * @property string $sysmodifier User ID of modifier
  * @property int $Type Material type 1 indicates material, 2 indicates byproduct
- * @property float $WastePercentage Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Premium)
+ * @property float $WastePercentage Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)
  */
 class BillOfMaterialMaterial extends Model
 {

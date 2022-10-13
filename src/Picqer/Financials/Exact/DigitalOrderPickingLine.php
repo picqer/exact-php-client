@@ -9,6 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property StockBatchNumber[] $BatchNumbers The collection of batch numbers that belong to the items included in this pick order
+ * @property string $Bin Bin value for particular order
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
@@ -21,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ItemBarcode Barcode of the item (numeric string)
  * @property string $ItemCode Item code
  * @property string $ItemDescription Description of item
- * @property string $ItemUnitcode Item unit code
+ * @property string $ItemUnitcode Item unit code from sales order
  * @property int $LineNumber Line number
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -42,6 +43,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocation Storage location ID
  * @property string $StorageLocationCode Item default storage location code
  * @property string $StorageLocationDescription Description of item default storage location
+ * @property float $UnitFactor This is the multiplication factor when going from default item unit to the unit of sales order
  * @property string $Warehouse Warehouse ID
  * @property string $WarehouseCode Warehouse code
  * @property string $WarehouseDescription Description of warehouse
@@ -53,6 +55,7 @@ class DigitalOrderPickingLine extends Model
     protected $fillable = [
         'ID',
         'BatchNumbers',
+        'Bin',
         'Created',
         'Creator',
         'CreatorFullName',
@@ -86,6 +89,7 @@ class DigitalOrderPickingLine extends Model
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
+        'UnitFactor',
         'Warehouse',
         'WarehouseCode',
         'WarehouseDescription',

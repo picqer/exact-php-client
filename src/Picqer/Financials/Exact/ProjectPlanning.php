@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Date and time the record was created
  * @property string $Creator The GUID ID of the user that created the project planning
  * @property string $CreatorFullName The full name of the user that created the project planning
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $Description The description of the project planning
  * @property int $Division The code of the company that the record is stored in
  * @property string $Employee The GUID ID of the employee that is linked to the project planning
@@ -57,6 +58,7 @@ class ProjectPlanning extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Description',
         'Division',
         'Employee',

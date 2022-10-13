@@ -19,8 +19,8 @@ namespace Picqer\Financials\Exact;
  * @property int $Period Return period
  * @property string $PeriodDescription Description of period
  * @property string $Request Reference to request
- * @property int $Status The status of the request
- * @property string $Subject The subject of the return documet
+ * @property int $Status The status of the request (-10 - NULL, 0 - Void, 5 - Rejected, 10 - Draft, 20 - Open, 30 - Approved, 40 - Realized, 50 - Processed)
+ * @property string $Subject The subject of the return document
  * @property int $Type Return Type (31 - VAT, 32-EC Sales list, 146-Payroll declaration)
  * @property int $Year Return year
  */

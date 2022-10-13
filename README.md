@@ -167,9 +167,14 @@ $item->find($id);
 $item = new \Picqer\Financials\Exact\Item($connection);
 $item->get();
 
-// List items with filter (using a filter always returns a collection)
+// List items with filter (using a filter always returns a collection) and loop through the result
 $item = new \Picqer\Financials\Exact\Item($connection);
 $items = $item->filter("Code eq '$item->Code'"); // Uses filters as described in Exact API docs (odata filters)
+foreach($items as $itemObject){
+    $attrs = (array) $itemObject->attributes(); // Turns the endpoint properties into an array
+    $picture = $itemObject->download();         // Fetches an image string instead of the url
+    // Do something with $attrs and or $picture, e.g. imagecreatefromstring($picture) 
+}
 
 // Create new invoice with invoice lines
 $invoiceLines[] = [

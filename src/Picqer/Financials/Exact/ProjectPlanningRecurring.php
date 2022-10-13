@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property int $DayOrThe Indicates whether the recurring planning is day of the month or weekday of the month
  * @property string $Description Description of recurring planning
  * @property int $Division Division code
@@ -70,6 +71,7 @@ class ProjectPlanningRecurring extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'DayOrThe',
         'Description',
         'Division',
