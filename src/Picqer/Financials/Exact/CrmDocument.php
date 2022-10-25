@@ -9,7 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account ID of the related account of this document
- * @property DocumentAttachment[] $Attachments Attachments linked to the document. Binaries are not sent in the response.
+ * @property CrmDocumentAttachment[] $Attachments Attachments linked to the document. Binaries are not sent in the response.
  * @property string $Contact ID of the related contact of this document
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
