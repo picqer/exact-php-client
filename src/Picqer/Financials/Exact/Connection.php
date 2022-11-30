@@ -341,7 +341,7 @@ class Connection
      *
      * @return mixed
      */
-    public function download($topic, $params = null)
+    public function download($topic, $params = [])
     {
         $url = $this->getBaseUrl() . '/docs/XMLDownload.aspx?Topic=' . $topic . '&_Division_=' . $this->getDivision();
 
