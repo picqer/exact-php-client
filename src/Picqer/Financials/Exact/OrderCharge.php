@@ -3,30 +3,30 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class ShippingMethod.
+ * Class OrderCharge.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesShippingMethods
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesOrderCharges
  *
  * @property string $ID Primary key
  * @property bool $Active Active
- * @property float $Amount Amount of Shipping Cost
- * @property string $Code Code of the shipping method
+ * @property float $Amount Amount of order charge
+ * @property string $Code Code of the order charge
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
- * @property string $Description Description of shipping method
+ * @property string $Description Description of order charge
  * @property int $Division Division code
+ * @property string $GLAccount ID of GLAccount
+ * @property string $GLAccountCode Code of GLAccount
+ * @property string $GLAccountDescription Description of GLAccount
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
- * @property string $Notes Notes
- * @property string $ShippingRatesURL Shipping method rates URL
- * @property string $TrackingURL Tracking URL
  * @property string $VATCode VAT Code
- * @property string $VATCodeDescription Description of VAT Code
- * @property float $VATPercentage The VAT Percentage of the VAT code
+ * @property string $VATDescription Description of VAT Code
+ * @property float $VATPercentage The VAT Percentage of the VAT Code
  */
-class ShippingMethod extends Model
+class OrderCharge extends Model
 {
     use Query\Findable;
 
@@ -40,16 +40,16 @@ class ShippingMethod extends Model
         'CreatorFullName',
         'Description',
         'Division',
+        'GLAccount',
+        'GLAccountCode',
+        'GLAccountDescription',
         'Modified',
         'Modifier',
         'ModifierFullName',
-        'Notes',
-        'ShippingRatesURL',
-        'TrackingURL',
         'VATCode',
-        'VATCodeDescription',
+        'VATDescription',
         'VATPercentage',
     ];
 
-    protected $url = 'sales/ShippingMethods';
+    protected $url = 'sales/OrderCharges';
 }

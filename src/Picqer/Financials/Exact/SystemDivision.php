@@ -37,11 +37,13 @@ namespace Picqer\Financials\Exact;
  * @property string $DatevAccountantNumber Accountant number DATEV (Germany)
  * @property string $DatevClientNumber Client number DATEV (Germany)
  * @property string $Description Description
+ * @property string $DivisionHRLinkUnlinkDate Date when the division was linked or unlinked to Exact Online HR. Please resync all data when this value changes because value of Timestamp is regenerated.
  * @property string $DivisionMoveDate Date when the division was moved. Please resync all data when this value changes because value of Timestamp is regenerated.
  * @property string $Email Email address
  * @property string $Fax Fax number
  * @property int $Hid Company number that is assigned by the customer
  * @property bool $IsDossierDivision True if the division is a dossier division
+ * @property bool $IsHRDivision True if the division is linked to Exact Online HR
  * @property bool $IsMainDivision True if the division is the main division
  * @property bool $IsPracticeDivision True if the division is a practice division
  * @property string $Legislation Legislation
@@ -105,11 +107,13 @@ class SystemDivision extends Model
         'DatevAccountantNumber',
         'DatevClientNumber',
         'Description',
+        'DivisionHRLinkUnlinkDate',
         'DivisionMoveDate',
         'Email',
         'Fax',
         'Hid',
         'IsDossierDivision',
+        'IsHRDivision',
         'IsMainDivision',
         'IsPracticeDivision',
         'Legislation',
