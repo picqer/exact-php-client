@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DeliveryAccountContactFullName Full name of the delivery account contact person
  * @property string $DeliveryAccountName The name of the delivery account
  * @property string $DeliveryAddress The id of the delivery address
+ * @property string $DeliveryDate The date of the delivery
  * @property string $Description By default this contains the item description
  * @property float $Discount Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
@@ -95,6 +96,7 @@ class SyncQuotationHeader extends Model
         'DeliveryAccountContactFullName',
         'DeliveryAccountName',
         'DeliveryAddress',
+        'DeliveryDate',
         'Description',
         'Discount',
         'Division',

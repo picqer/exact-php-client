@@ -14,6 +14,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AccountName Name of Account
  * @property bool $AllowAdditionalInvoicing Indicates if additional invoice is allowed for project
  * @property bool $BlockEntry Block time and cost entries
+ * @property bool $BlockPlanning Block planning and reservations
  * @property bool $BlockPurchasing Block purchasing
  * @property bool $BlockRebilling Block rebilling
  * @property float $BudgetedAmount Budgeted amount of sales in the default currency of the company
@@ -80,6 +81,7 @@ class Project extends Model
         'AccountName',
         'AllowAdditionalInvoicing',
         'BlockEntry',
+        'BlockPlanning',
         'BlockPurchasing',
         'BlockRebilling',
         'BudgetedAmount',

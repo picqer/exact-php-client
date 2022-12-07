@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $ErrorMessage Contains the error message if an error occurred during the acception of the quotation.
  * @property string $InvoiceJournal The journal in which the sales invoice will be booked. Mandatory for Action = 2.
+ * @property string $NotificationLayout Based on this layout the notification email is sent. In case it is not specified, then no email is sent.
  * @property int $ProjectBudgetType The budget type of the project that will be created. Default = 0.
  * @property string $ProjectCode The code of the project that will be created. Mandatory for Action = 3.
  * @property string $ProjectDescription The description of the project that will be created. Mandatory for Action = 3.
@@ -31,6 +32,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesOrderSuccess Contains information if the sales order was successfully created.
  * @property string $SuccessMessage Contains information if the quotation was successfully accepted.
  * @property bool $UpdateProjectBudgetAndPriceAgreement Update project budget, price agreement and hours. Only needed when Action = 4. Default = True.
+ * @property string $YourRef The number by which this quotation is identified by the order account
  */
 class AcceptQuotation extends Model
 {
@@ -48,6 +50,7 @@ class AcceptQuotation extends Model
         'Division',
         'ErrorMessage',
         'InvoiceJournal',
+        'NotificationLayout',
         'ProjectBudgetType',
         'ProjectCode',
         'ProjectDescription',
@@ -64,6 +67,7 @@ class AcceptQuotation extends Model
         'SalesOrderSuccess',
         'SuccessMessage',
         'UpdateProjectBudgetAndPriceAgreement',
+        'YourRef',
     ];
 
     protected $url = 'crm/AcceptQuotation';

@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DeliveryAccountContactFullName Full name of the delivery account contact person
  * @property string $DeliveryAccountName The name of the delivery account
  * @property string $DeliveryAddress The id of the delivery address
+ * @property string $DeliveryDate The date of the delivery
  * @property string $Description The description of the quotation
  * @property int $Division Division code
  * @property string $Document Document linked to the quotation
@@ -67,7 +68,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod Shipping method ID
  * @property string $ShippingMethodDescription Shipping method description
- * @property int $Status The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted
+ * @property int $Status The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted, 60 = Awaiting online acceptance, 70 = Accepted but an error occurred during processing
  * @property string $StatusDescription The description of the status
  * @property float $VATAmountFC Total VAT amount in the currency of the transaction
  * @property int $VersionNumber Number indicating the different reviews which are made for the quotation
@@ -98,6 +99,7 @@ class Quotation extends Model
         'DeliveryAccountContactFullName',
         'DeliveryAccountName',
         'DeliveryAddress',
+        'DeliveryDate',
         'Description',
         'Division',
         'Document',

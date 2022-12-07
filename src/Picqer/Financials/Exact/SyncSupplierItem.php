@@ -33,6 +33,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes Notes
  * @property int $PurchaseLeadTime The number of days between placing an order with a supplier and receiving items from the supplier
+ * @property int $PurchaseLotSize Lot size of the item for purchase, only available for Wholesale & Distribution (Premium only)
  * @property float $PurchasePrice Purchase price. If neither active nor future price exists, it shows 0 when GET
  * @property string $PurchaseUnit Unit code
  * @property string $PurchaseUnitDescription Description of unit
@@ -43,7 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Supplier Supplier ID
  * @property string $SupplierCode Supplier code
  * @property string $SupplierDescription Description of supplier
- * @property string $SupplierItemCode Supplier’s item code
+ * @property string $SupplierItemCode Supplier's item code
  */
 class SyncSupplierItem extends Model
 {
@@ -78,6 +79,7 @@ class SyncSupplierItem extends Model
         'ModifierFullName',
         'Notes',
         'PurchaseLeadTime',
+        'PurchaseLotSize',
         'PurchasePrice',
         'PurchaseUnit',
         'PurchaseUnitDescription',

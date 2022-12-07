@@ -28,6 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property int $IsSerialNumberItem Indicates that an Item is an serial item
  * @property string $Item Reference to the item for purchase order
  * @property string $ItemBarcode Barcode of the item (numeric string)
+ * @property string $ItemBarcodeAdditional This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale & Distribution and Manufacturing
  * @property string $ItemCode Item code
  * @property string $ItemDescription Description of item
  * @property bool $ItemDivisable Indicates if fractional quantities of the item can be used, for example quantity = 0.4
@@ -88,6 +89,7 @@ class PurchaseOrderLine extends Model
         'IsSerialNumberItem',
         'Item',
         'ItemBarcode',
+        'ItemBarcodeAdditional',
         'ItemCode',
         'ItemDescription',
         'ItemDivisable',
