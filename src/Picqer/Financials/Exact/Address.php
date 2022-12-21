@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAddresses
  *
  * @property string $ID Primary key
- * @property string $Account Account linked to the address
+ * @property Account $Account Account linked to the address
  * @property bool $AccountIsSupplier Indicates if the account is a supplier
  * @property string $AccountName Name of the account
  * @property string $AddressLine1 First address line
