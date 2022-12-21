@@ -24,14 +24,14 @@ namespace Picqer\Financials\Exact;
  * @property bool $CanDropShip Indicates the default for the possibility to drop ship when an item is linked to a supplier
  * @property string $ChamberOfCommerce Chamber of commerce number
  * @property string $City Visit address City
- * @property string $Classification1 Account classification 1
- * @property string $Classification2 Account classification 2
- * @property string $Classification3 Account classification 3
- * @property string $Classification4 Account classification 4
- * @property string $Classification5 Account classification 5
- * @property string $Classification6 Account classification 6
- * @property string $Classification7 Account classification 7
- * @property string $Classification8 Account classification 8
+ * @property AccountClassification $Classification1 Account classification 1
+ * @property AccountClassification $Classification2 Account classification 2
+ * @property AccountClassification $Classification3 Account classification 3
+ * @property AccountClassification $Classification4 Account classification 4
+ * @property AccountClassification $Classification5 Account classification 5
+ * @property AccountClassification $Classification6 Account classification 6
+ * @property AccountClassification $Classification7 Account classification 7
+ * @property AccountClassification $Classification8 Account classification 8
  * @property string $Code Unique key, fixed length numeric string with leading spaces, length 18. IMPORTANT: When you use OData $filter on this field you have to make sure the filter parameter contains the leading spaces
  * @property string $CodeAtSupplier Code under which your own company is known at the account
  * @property string $CompanySize Reference to Company size of the account
