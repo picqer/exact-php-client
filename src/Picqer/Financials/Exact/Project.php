@@ -53,6 +53,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes For additional information about projects
+ * @property string $PaymentCondition Payment condition code for this project
  * @property string $PrepaidItem Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting
  * @property string $PrepaidItemDescription Description of PrepaidItem
  * @property int $PrepaidType PrepaidType: 1-Retainer, 2-Hour type bundle
@@ -120,6 +121,7 @@ class Project extends Model
         'Modifier',
         'ModifierFullName',
         'Notes',
+        'PaymentCondition',
         'PrepaidItem',
         'PrepaidItemDescription',
         'PrepaidType',
