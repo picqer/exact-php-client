@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=FinancialGLAccounts
  *
  * @property string $ID Primary Key
+ * @property int $AllowCostsInSales Allow cost base amount and vat amount to be generated in sales entries
  * @property int $AssimilatedVATBox AssimilatedVATBox (France)
  * @property string $BalanceSide The following values are supported: D (Debit) C (Credit)
  * @property string $BalanceType The following values are supported: B (Balance Sheet) W (Profit & Loss)
@@ -56,6 +57,7 @@ class GLAccount extends Model
 
     protected $fillable = [
         'ID',
+        'AllowCostsInSales',
         'AssimilatedVATBox',
         'BalanceSide',
         'BalanceType',

@@ -12,6 +12,10 @@ namespace Picqer\Financials\Exact;
  * @property float $AmountDiscount Discount amount in the currency of the transaction
  * @property float $AmountDiscountExclVat Discount amount excluding VAT in the currency of the transaction
  * @property float $AmountFC Amount in the currency of the transaction
+ * @property string $CostCenter Reference to Cost center
+ * @property string $CostCenterDescription Description of CostCenter
+ * @property string $CostUnit Reference to Cost unit
+ * @property string $CostUnitDescription Description of CostUnit
  * @property string $Created Date and time on which the quotation was created
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
@@ -51,6 +55,10 @@ class SyncQuotationLine extends Model
         'AmountDiscount',
         'AmountDiscountExclVat',
         'AmountFC',
+        'CostCenter',
+        'CostCenterDescription',
+        'CostUnit',
+        'CostUnitDescription',
         'Created',
         'Creator',
         'CreatorFullName',

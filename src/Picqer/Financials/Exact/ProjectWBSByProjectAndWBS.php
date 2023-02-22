@@ -23,7 +23,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $EndDate EndDate of the WBS. If it is a deliverable then EndDate is the lastest EndDate of its children
  * @property float $Hours Budget quantity of the WBS
- * @property int $InvoiceMethod The invoice method of the WBS. For activity: 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid. For expense: 6 = Fixed, 7 = Rebill, 8 = Non re-billable
+ * @property int $InvoiceMethod The invoice method of the WBS. For activity: null = According to parent, 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid. For expense: null = According to parent, 6 = Fixed, 7 = Rebill, 8 = Non re-billable
  * @property int $IsBaseline A boolean field to indicated if this is a baseline
  * @property int $Milestone A boolean field to indicated if this is a milestone
  * @property string $Modified Last modified date and time

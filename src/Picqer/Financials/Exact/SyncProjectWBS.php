@@ -27,7 +27,7 @@ namespace Picqer\Financials\Exact;
  * @property string $EndDate EndDate of the WBS. If it is a deliverable then EndDate is the lastest EndDate of its children
  * @property string $ID Primary key
  * @property string $InvoiceDate The invoice date of the WBS when invoice term is generated
- * @property int $InvoiceMethod The invoice method of the WBS. For activity: 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid. For expense: 6 = Fixed, 7 = Rebill, 8 = Non re-billable
+ * @property int $InvoiceMethod The invoice method of the WBS. For activity: null = According to parent, 2 = Fixed price, 3 = Time and Material, 4 = Non billable, 5 = Prepaid. For expense: null = According to parent, 6 = Fixed, 7 = Rebill, 8 = Non re-billable
  * @property float $MarkupPercentage Markup percentage for WBS expense
  * @property int $Milestone To indicated if this is a milestone for WBS deliverable
  * @property string $Modified Last modified date and time

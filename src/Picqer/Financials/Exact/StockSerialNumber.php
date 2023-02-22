@@ -22,6 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
+ * @property string $ParentID ID to link part item to assembled item (assembly order only)
  * @property string $PickOrderLine ID of pick order entry in which this serial or batch number was used
  * @property string $Remarks Remarks
  * @property string $SalesReturnLine ID of sales return entry in which this serial or batch number was used
@@ -60,6 +61,7 @@ class StockSerialNumber extends Model
         'Modified',
         'Modifier',
         'ModifierFullName',
+        'ParentID',
         'PickOrderLine',
         'Remarks',
         'SalesReturnLine',
