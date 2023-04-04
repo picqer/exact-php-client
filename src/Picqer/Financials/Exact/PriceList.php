@@ -6,6 +6,7 @@ namespace Picqer\Financials\Exact;
  * Class PriceList.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesPriceLists
+ * @deprecated ExactOnline has indicated this endpoint is deprecated, for more details see the documentation page
  *
  * @property string $ID Primary key
  * @property string $Code Code to indicate the price list
