@@ -27,6 +27,9 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of the last modifier
  * @property string $ModifierFullName Name of the last modifier
  * @property string $Notes Notes related to the return
+ * @property string $Project Reference to project. Only available with a professional service license
+ * @property string $ProjectCode Project code. Only available with a professional service license
+ * @property string $ProjectDescription Description of the project. Only available with a professional service license
  * @property string $PurchaseOrderLineID ID of the purchase order line that is returned
  * @property int $PurchaseOrderNumber Order number of the purchase order that is returned
  * @property int $ReceiptNumber Receipt number of the return
@@ -64,6 +67,9 @@ class PurchaseReturnLine extends Model
         'Modifier',
         'ModifierFullName',
         'Notes',
+        'Project',
+        'ProjectCode',
+        'ProjectDescription',
         'PurchaseOrderLineID',
         'PurchaseOrderNumber',
         'ReceiptNumber',

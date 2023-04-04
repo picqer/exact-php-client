@@ -25,6 +25,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency code
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DeliveryAccount Reference to account for delivery
  * @property string $DeliveryAccountCode Delivery account code
  * @property string $DeliveryAccountName Account name
@@ -134,6 +135,7 @@ class SyncPurchaseOrder extends Model
         'Creator',
         'CreatorFullName',
         'Currency',
+        'CustomField',
         'DeliveryAccount',
         'DeliveryAccountCode',
         'DeliveryAccountName',

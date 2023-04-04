@@ -25,6 +25,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ParentID ID to link part item to assembled item (assembly order only)
  * @property string $PickOrderLine ID of pick order entry in which this serial or batch number was used
  * @property string $Remarks Remarks
+ * @property string $SalesOrderLine ID of sales order line
  * @property string $SalesReturnLine ID of sales return entry in which this serial or batch number was used
  * @property string $SerialNumber Human readable serial number
  * @property string $SerialNumberID Serial number ID
@@ -64,6 +65,7 @@ class StockSerialNumber extends Model
         'ParentID',
         'PickOrderLine',
         'Remarks',
+        'SalesOrderLine',
         'SalesReturnLine',
         'SerialNumber',
         'SerialNumberID',

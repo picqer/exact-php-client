@@ -12,6 +12,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property int $Division Division code
  * @property string $EndDate End date of effective period for serial number
  * @property int $IsBlocked Boolean value indicating whether or not the serial number is blocked
@@ -41,6 +42,7 @@ class SerialNumber extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Division',
         'EndDate',
         'IsBlocked',

@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CostCenterDescription Description of CostCenter
  * @property string $CostUnit Reference to cost unit
  * @property string $CostUnitDescription Description of CostUnit
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description
  * @property int $Division Division code
  * @property string $EntryID Reference to header of the purchase entry
@@ -72,6 +73,7 @@ class PurchaseEntryLine extends Model
         'CostCenterDescription',
         'CostUnit',
         'CostUnitDescription',
+        'CustomField',
         'Description',
         'Division',
         'EntryID',

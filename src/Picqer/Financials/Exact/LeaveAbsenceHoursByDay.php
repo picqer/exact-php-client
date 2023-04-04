@@ -17,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Employment Employment ID
  * @property int $EmploymentHID Numeric ID of the employment
  * @property string $EndTime End time of leave or absence
+ * @property int $ExternalIDInt Unique ID from external source. Eg. Exact Online HR
  * @property float $Hours Hours of leave or absence
  * @property string $Modified Last modified date
  * @property string $StartTime Start time of leave or absence
@@ -38,6 +39,7 @@ class LeaveAbsenceHoursByDay extends Model
         'Employment',
         'EmploymentHID',
         'EndTime',
+        'ExternalIDInt',
         'Hours',
         'Modified',
         'StartTime',

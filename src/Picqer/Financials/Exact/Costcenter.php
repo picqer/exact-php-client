@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description (text)
  * @property int $Division Division code
  * @property string $EndDate The end date by which the cost center has to be inactive
@@ -32,6 +33,7 @@ class Costcenter extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Description',
         'Division',
         'EndDate',

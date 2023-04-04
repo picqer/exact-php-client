@@ -72,6 +72,8 @@ namespace Picqer\Financials\Exact;
  * @property string $StartDate Start date
  * @property string $State State
  * @property string $Title Title
+ * @property string $TitleAbbreviation TitleAbbreviation
+ * @property string $TitleDescription TitleDescription
  *
  * Note: Due to the way Storable is setup and the way the Exact Online API works certain fields overwrite
  * each other. For example: If you fill the BusinessEmail but not the Email field the latter will overwrite
@@ -149,6 +151,8 @@ class Contact extends Model
         'StartDate',
         'State',
         'Title',
+        'TitleAbbreviation',
+        'TitleDescription',
     ];
 
     protected $url = 'crm/Contacts';

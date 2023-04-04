@@ -43,7 +43,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Language Language code
  * @property string $LastName Last name
  * @property string $LocationDescription Description of the location of the employee (where am I?)
- * @property string $Manager Direct manager of the employee
+ * @property string $Manager Direct manager of the employeeNote: The manager must be in the same division as the employeeThe manager should not be subordinate of their employee
  * @property string $MaritalDate Date of marriageNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
  * @property int $MaritalStatus Marital statusNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
  * @property string $MiddleName Middle name
