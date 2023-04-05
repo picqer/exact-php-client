@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint
  * @property float $DeductionPercentage Used for Belgium legislation. Used to produce the official 'Investment deduction' report
  * @property float $DepreciatedAmount Amount that is already depreciated when adding an existing asset. Can only be filled when 'Alreadydepreciated' is on
  * @property int $DepreciatedPeriods Number of periods that already have been depreciated for the asset. Can only be filled when 'Alreadydepreciated' is on
@@ -85,6 +86,7 @@ class Asset extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'DeductionPercentage',
         'DepreciatedAmount',
         'DepreciatedPeriods',

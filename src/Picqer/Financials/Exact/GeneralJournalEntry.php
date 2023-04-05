@@ -10,6 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property string $EntryID Primary key
  * @property string $Created Creation date
  * @property string $Currency Currency code
+ * @property string $CustomField Custom field endpoint
  * @property int $Division Division code
  * @property int $EntryNumber Entry number
  * @property float $ExchangeRate Exchange rate
@@ -38,6 +39,7 @@ class GeneralJournalEntry extends Model
         'EntryID',
         'Created',
         'Currency',
+        'CustomField',
         'Division',
         'EntryNumber',
         'ExchangeRate',

@@ -25,6 +25,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint
  * @property string $Date Entry date
  * @property string $Description Description
  * @property int $Division Division code
@@ -78,6 +79,7 @@ class GeneralJournalEntryLine extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Date',
         'Description',
         'Division',

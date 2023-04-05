@@ -24,6 +24,9 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocation Reference to storage location
  * @property string $StorageLocationCode Storage location code
  * @property string $StorageLocationDescription Storage location description
+ * @property string $Unit The standard unit of the assembled item
+ * @property string $UnitCode Code of Unit
+ * @property string $UnitDescription Description of Unit
  * @property string $Warehouse Warehouse
  * @property string $WarehouseCode Code of Warehouse
  * @property string $WarehouseDescription Description of Warehouse
@@ -50,6 +53,9 @@ class AssemblyOrder extends Model
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
+        'Unit',
+        'UnitCode',
+        'UnitDescription',
         'Warehouse',
         'WarehouseCode',
         'WarehouseDescription',

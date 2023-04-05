@@ -6,6 +6,7 @@ namespace Picqer\Financials\Exact;
  * Class SyncSalesOrder.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncSalesOrderSalesOrders
+ * @deprecated ExactOnline has indicated this endpoint is deprecated, for more details see the documentation page
  *
  * @property int $Timestamp Timestamp
  * @property float $AmountDC Amount in the default currency of the company

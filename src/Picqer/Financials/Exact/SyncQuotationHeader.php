@@ -65,6 +65,9 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesChannelDescription Description of Sales channel.
  * @property string $SalesPerson The user that is responsible for the quotation version
  * @property string $SalesPersonFullName Full name of the sales person
+ * @property string $SelectionCode ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCodeCode Code of selection code
+ * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod Shipping method ID
  * @property string $ShippingMethodDescription Shipping method description
  * @property int $Status The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted
@@ -137,6 +140,9 @@ class SyncQuotationHeader extends Model
         'SalesChannelDescription',
         'SalesPerson',
         'SalesPersonFullName',
+        'SelectionCode',
+        'SelectionCodeCode',
+        'SelectionCodeDescription',
         'ShippingMethod',
         'ShippingMethodDescription',
         'Status',

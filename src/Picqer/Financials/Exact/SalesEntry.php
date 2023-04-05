@@ -17,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Currency Currency for the invoice. By default this is the currency of the administration
  * @property string $Customer Reference to customer (account)
  * @property string $CustomerName Name of customer
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description of the entry. Can be different for the sales entry lines
  * @property int $Division Division code
  * @property string $Document Document that is manually linked to the invoice
@@ -38,6 +39,7 @@ namespace Picqer\Financials\Exact;
  * @property int $OrderNumber Number to indentify the invoice. Order numbers are not unique. Default the number is based on a setting for the first free number
  * @property string $PaymentCondition The payment condition used for due date and discount calculation
  * @property string $PaymentConditionDescription Description of PaymentCondition
+ * @property string $PaymentConditionPaymentMethod Payment method of Payment condition. Values: B = On credit, I = Collection, K = Cash
  * @property string $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
  * @property int $ProcessNumber Internal processing number, only relevant for Germany
  * @property float $Rate Foreign currency rate
@@ -76,6 +78,7 @@ class SalesEntry extends Model
         'Currency',
         'Customer',
         'CustomerName',
+        'CustomField',
         'Description',
         'Division',
         'Document',
@@ -97,6 +100,7 @@ class SalesEntry extends Model
         'OrderNumber',
         'PaymentCondition',
         'PaymentConditionDescription',
+        'PaymentConditionPaymentMethod',
         'PaymentReference',
         'ProcessNumber',
         'Rate',

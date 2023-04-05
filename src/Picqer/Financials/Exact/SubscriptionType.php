@@ -25,6 +25,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $Description Description of subscription type
  * @property int $Division Division code
+ * @property int $EnablePaymentLink Enable payment link: 0=Never, 1=Always, 2=Based on account
  * @property int $InvoiceCorrectionMethod Invoice correction method: 1=Ratio based, 2=Zero Invoice, 3=Never invoiced
  * @property int $InvoicePeriod Invoice period of subscription type
  * @property string $InvoicePeriodUnit Unit of invoice period: wk=Week, mm=Month, yy=Year, hy=Half-year, qt=Quarter
@@ -64,6 +65,7 @@ class SubscriptionType extends Model
         'CustomField',
         'Description',
         'Division',
+        'EnablePaymentLink',
         'InvoiceCorrectionMethod',
         'InvoicePeriod',
         'InvoicePeriodUnit',

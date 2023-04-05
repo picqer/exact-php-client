@@ -20,7 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $OrderChargeDescription Description from shipping method or order charges master
  * @property string $OrderChargesLineDescription Line description of shipping cost or order charges (only available in WD Premium packages)
  * @property string $QuotationID The OrderID identifies the quotation. All the lines of aquotation have the same QuotationID
- * @property string $VATCode VAT code that is used for shipping cost or order charges based on master
+ * @property string $VATCode VAT code that is used for shipping cost or order charges
  * @property string $VATDescription VAT description for shipping cost or order charges
  * @property float $VATPercentage The vat percentage of the VAT code. This is the percentage at the moment the invoice is created. It's also used for the default calculation of VAT amounts and VAT base amounts
  */

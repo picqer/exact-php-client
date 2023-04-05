@@ -22,6 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency for the invoice. Default this is the currency of the administration
  * @property string $CustomerItemCode Code the customer uses for this item
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DeliverTo Delivery account for invoice
  * @property string $DeliverToAddress Address of delivery as per invoice delivery account
  * @property string $DeliverToContactPerson Delivery account person for invoice
@@ -138,6 +139,7 @@ class SyncSalesInvoice extends Model
         'CreatorFullName',
         'Currency',
         'CustomerItemCode',
+        'CustomField',
         'DeliverTo',
         'DeliverToAddress',
         'DeliverToContactPerson',

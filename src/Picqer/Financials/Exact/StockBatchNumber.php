@@ -28,6 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PickOrderLine ID of pick order entry in which this serial or batch number was used
  * @property float $Quantity Quantity of this batch number entering or leaving inventory
  * @property string $Remarks Remarks
+ * @property string $SalesOrderLine ID of sales order line
  * @property string $SalesReturnLine ID of sales return entry in which this serial or batch number was used
  * @property string $StockCountLine ID of stock count entry
  * @property string $StockTransactionID ID of the stock transaction in which this serial or batch number was used
@@ -67,6 +68,7 @@ class StockBatchNumber extends Model
         'PickOrderLine',
         'Quantity',
         'Remarks',
+        'SalesOrderLine',
         'SalesReturnLine',
         'StockCountLine',
         'StockTransactionID',

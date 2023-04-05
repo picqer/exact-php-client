@@ -74,6 +74,8 @@ namespace Picqer\Financials\Exact;
  * @property string $StartDate Start date
  * @property string $State State
  * @property string $Title Title
+ * @property string $TitleAbbreviation TitleAbbreviation
+ * @property string $TitleDescription TitleDescription
  */
 class OpportunityContact extends Model
 {
@@ -147,6 +149,8 @@ class OpportunityContact extends Model
         'StartDate',
         'State',
         'Title',
+        'TitleAbbreviation',
+        'TitleDescription',
     ];
 
     protected $url = 'read/crm/OpportunityContacts';

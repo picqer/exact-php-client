@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CostUnit Reference to Cost unit
  * @property string $CostUnitDescription Description of CostUnit
  * @property string $CustomerItemCode Code the customer uses for this item
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DeliveryDate Delivery date of an item in a sales invoice. This is used for VAT on prepayments, only if sales order is not used in the license.
  * @property string $Description Description. Can be different for header and lines
  * @property float $Discount Discount given on the default price. Discount = (DefaultPrice of Item - PriceItem in line) / DefaultPrice of Item
@@ -70,6 +71,7 @@ class SalesInvoiceLine extends Model
         'CostUnit',
         'CostUnitDescription',
         'CustomerItemCode',
+        'CustomField',
         'DeliveryDate',
         'Description',
         'Discount',

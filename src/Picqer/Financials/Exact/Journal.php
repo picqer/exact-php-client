@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Default Currency of the Journal. If AllowVariableCurrency is false this is the only currency that can be used
  * @property string $CurrencyDescription Description of Currency
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Name of the Journal
  * @property int $Division Division code
  * @property string $GLAccount Suspense general ledger account
@@ -67,6 +68,7 @@ class Journal extends Model
         'CreatorFullName',
         'Currency',
         'CurrencyDescription',
+        'CustomField',
         'Description',
         'Division',
         'GLAccount',

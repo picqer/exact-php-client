@@ -6,6 +6,7 @@ namespace Picqer\Financials\Exact;
  * Class SalesPriceListDetail.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SalesSalesPriceListDetails
+ * @deprecated ExactOnline has indicated this endpoint is deprecated, for more details see the documentation page
  *
  * @property string $ID Primary key
  * @property string $Account Customer account Id
