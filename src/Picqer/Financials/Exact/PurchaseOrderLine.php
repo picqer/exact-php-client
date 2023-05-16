@@ -53,6 +53,12 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesOrderLine Sales order line of the sales order that Is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line.
  * @property int $SalesOrderLineNumber Number of the sales order line. Show NULL if more than one sales order is linked to the purchase order line.
  * @property int $SalesOrderNumber Number of the sales order. Show NULL if more than one sales order is linked to the purchase order line.
+ * @property string $ShopOrder Shop order that is linked to the purchase order line. Show NULL if the purchase order line is not linked to any shop order.
+ * @property string $ShopOrderMaterialPlan Shop order material plan that is linked to the purchase order line. Show NULL if the purchase order line is for purchase subcontract.
+ * @property int $ShopOrderMaterialPlanLineNumber Number of the shop order material plan line that is linked to the purchase order line. Show NULL if the purchase order line is for purchase subcontract.
+ * @property int $ShopOrderNumber Number of the shop order that is linked to the purchase order line. Show NULL if the purchase order line is not linked to any shop order.
+ * @property string $ShopOrderRoutingStepPlan Shop order routing step plan that is linked to the purchase order line. Show NULL if the purchase order line is for purchase material.
+ * @property int $ShopOrderRoutingStepPlanLineNumber Number of the shop order routing step plan line that is linked to the purchase order line. Show NULL if the purchase order line is for purchase material.
  * @property string $SupplierItemCode Code the supplier uses for this item
  * @property int $SupplierItemCopyRemarks Indicate if the notes content should be copied from SupplierItem's remarks. The default follows the CopyRemarks value from SupplierItem. Values: 0 = Do not copy remark, 1 = Copy remark
  * @property string $Unit Code of item unit
@@ -115,6 +121,12 @@ class PurchaseOrderLine extends Model
         'SalesOrderLine',
         'SalesOrderLineNumber',
         'SalesOrderNumber',
+        'ShopOrder',
+        'ShopOrderMaterialPlan',
+        'ShopOrderMaterialPlanLineNumber',
+        'ShopOrderNumber',
+        'ShopOrderRoutingStepPlan',
+        'ShopOrderRoutingStepPlanLineNumber',
         'SupplierItemCode',
         'SupplierItemCopyRemarks',
         'Unit',

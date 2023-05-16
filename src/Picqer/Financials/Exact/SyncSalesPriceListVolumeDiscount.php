@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property float $Discount Discount
  * @property int $Division Division code
- * @property int $EntryMethod Indicates whether discount or the new price is leading : 1-Discount, 2-New price. Scenario 1. When entry method is Discount and use base price, Discounted price = (1 - SalesPriceListDetails.Discount) * SalesPriceListDetails.BasePriceAmount 2. When entry method is Discount and use Item's standard sales price, Discounted price = (1 - SalesPriceListDetails.Discount) * SalesItemPrices.Price 3. When entry method is New price, Discounted price = SalesPriceListDetails.NewPrice
+ * @property int $EntryMethod Indicates whether discount or the new price is leading : 1-Discount, 2-New price. Scenario 1. When entry method is Discount and use base price, Discounted price = (1 - SalesPriceListVolumeDiscounts.Discount) * SalesPriceListVolumeDiscounts.BasePriceAmount 2. When entry method is Discount and use Item's standard sales price, Discounted price = (1 - SalesPriceListVolumeDiscounts.Discount) * SalesItemPrices.Price 3. When entry method is New price, Discounted price = SalesPriceListVolumeDiscounts.NewPrice
  * @property string $ID Primary key
  * @property string $Item Item ID
  * @property string $ItemCode Item code

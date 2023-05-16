@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property string $BankAccount The bank account number
  * @property string $BankAccountHolderName Name of the holder of the bank account, as known by the bank
  * @property string $BICCode BIC code of the bank where the bank account is held
+ * @property bool $Blocked Indicates if the bank account is blocked
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -39,6 +40,7 @@ class BankAccount extends Model
         'BankAccount',
         'BankAccountHolderName',
         'BICCode',
+        'Blocked',
         'Created',
         'Creator',
         'CreatorFullName',

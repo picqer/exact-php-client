@@ -9,6 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $QuotationID Identifier of the quotation.
  * @property string $AcceptEmailLayout If you enter for this field, your customer receives an email with the quotation after approval of the quotation.
+ * @property string $AcceptOpportunityStage The stage of the opportunity after approval of the quotation.
  * @property int $Action 0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project, 5 = create subscription
  * @property bool $AllowProvideYourRef Allow customers to enter their purchase order number.
  * @property bool $CreateItemPriceAgreement Create a project item price agreement. Only needed when Action = 3 or Action = 4. Default = True.
@@ -32,6 +33,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectWBSPartOf The ID of the WBS deliverable part of. Only needed when Action = 4 and CreateProjectWBS = True.
  * @property string $QuotationDate Date of the quotation printed.
  * @property string $RejectEmailLayout If you enter for this field, your customer receives an email informing them of the rejected quotation.
+ * @property string $RejectOpportunityStage The stage of the opportunity after reject the quotation.
  * @property string $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  * @property string $Subject Subject of the email. If LayoutEmailSubject featureset is enabled, subject in email text layout will be used.
  * @property string $SubscriptionDate The start date of the subscription. Mandatory for Action = 5.
@@ -51,6 +53,7 @@ class EmailWithSignOffQuotation extends Model
     protected $fillable = [
         'QuotationID',
         'AcceptEmailLayout',
+        'AcceptOpportunityStage',
         'Action',
         'AllowProvideYourRef',
         'CreateItemPriceAgreement',
@@ -74,6 +77,7 @@ class EmailWithSignOffQuotation extends Model
         'ProjectWBSPartOf',
         'QuotationDate',
         'RejectEmailLayout',
+        'RejectOpportunityStage',
         'SenderEmailAddress',
         'Subject',
         'SubscriptionDate',

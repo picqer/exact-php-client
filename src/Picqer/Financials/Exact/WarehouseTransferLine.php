@@ -26,9 +26,11 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocationFrom ID of storage location to transfer item from (Professional and Premium Only)
  * @property string $StorageLocationFromCode Code of storage location to transfer item from
  * @property string $StorageLocationFromDescription Description of storage location to transfer item from
+ * @property int $StorageLocationFromLocationSequence Location sequence of storage location to transfer item from (Premium Only)
  * @property string $StorageLocationTo ID of storage location to transfer item to (Professional and Premium Only)
  * @property string $StorageLocationToCode Code of storage location to transfer item to
  * @property string $StorageLocationToDescription Description of storage location to transfer item to
+ * @property int $StorageLocationToLocationSequence Location sequence of storage location to transfer item to (Premium Only)
  * @property string $TransferID Entry number of the stock transaction
  * @property string $UnitCode The standard unit code of this item
  * @property string $UnitDescription Description of item's unit
@@ -58,9 +60,11 @@ class WarehouseTransferLine extends Model
         'StorageLocationFrom',
         'StorageLocationFromCode',
         'StorageLocationFromDescription',
+        'StorageLocationFromLocationSequence',
         'StorageLocationTo',
         'StorageLocationToCode',
         'StorageLocationToDescription',
+        'StorageLocationToLocationSequence',
         'TransferID',
         'UnitCode',
         'UnitDescription',

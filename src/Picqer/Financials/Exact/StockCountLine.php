@@ -35,6 +35,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocation This property is package specific (Stock count can have multiple lines for the same item only if it is for multiple storage locations).
  * @property string $StorageLocationCode Storage location code
  * @property string $StorageLocationDescription Storage location description
+ * @property int $StorageLocationSequenceNumber Sequence number for stock count (Premium Only)
  */
 class StockCountLine extends Model
 {
@@ -70,6 +71,7 @@ class StockCountLine extends Model
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
+        'StorageLocationSequenceNumber',
     ];
 
     protected $url = 'inventory/StockCountLines';
