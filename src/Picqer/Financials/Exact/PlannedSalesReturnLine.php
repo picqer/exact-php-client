@@ -36,6 +36,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocation Storage location
  * @property string $StorageLocationCode Storage location code
  * @property string $StorageLocationDescription Storage location description
+ * @property int $StorageLocationSequenceNumber Sequence number of planned sales return (Premium Only)
  * @property string $UnitCode Code of item's sales unit
  * @property string $UnitDescription Description of item's sales unit
  */
@@ -74,6 +75,7 @@ class PlannedSalesReturnLine extends Model
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
+        'StorageLocationSequenceNumber',
         'UnitCode',
         'UnitDescription',
     ];
