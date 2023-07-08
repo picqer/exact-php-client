@@ -40,7 +40,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StartDate Startdate after which the login is allowed. If the start date is NULL the login is allowed as well
  * @property string $Title Title
  * @property string $UserDivisionList User Division List - CSV format
- * @property string $UserName Login name of the user
+ * @property string $UserName Login name of the user. If the user logs in with One Exact Identity, the login name is in the email address field
  * @property string $UserTypeCode User type code
  */
 class SystemUser extends Model

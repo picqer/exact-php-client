@@ -39,6 +39,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Name Name of the opportunity
  * @property string $NextAction Indicates what follow up action is to be undertaken to move the opportunity towards a deal. Is used in combination with ActionDate
  * @property string $Notes Notes of the opportunity
+ * @property int $Number Internal number of the opportunity
  * @property string $OpportunityStage The stage of the opportunity. This is a list defined by the user
  * @property string $OpportunityStageDescription Description of OpportunityStage
  * @property int $OpportunityStatus Status: 1=Open, 2=Closed won, 3=Closed lost
@@ -93,6 +94,7 @@ class HostingOpportunity extends Model
         'Name',
         'NextAction',
         'Notes',
+        'Number',
         'OpportunityStage',
         'OpportunityStageDescription',
         'OpportunityStatus',

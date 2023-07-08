@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehouses
  *
  * @property string $ID A guid that is the unique identifier of the linkage between item and warehouse
+ * @property int $CountingCycle Indicates the number of days for next cycle count.
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -53,6 +54,7 @@ class ItemWarehouse extends Model
 
     protected $fillable = [
         'ID',
+        'CountingCycle',
         'Created',
         'Creator',
         'CreatorFullName',
