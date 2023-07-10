@@ -61,8 +61,6 @@ class SalesOrderLine extends Model
     use Query\Findable;
     use Persistance\Storable;
 
-    protected $primaryKey = 'ID';
-
     protected $fillable = [
         'ID',
         'AmountDC',

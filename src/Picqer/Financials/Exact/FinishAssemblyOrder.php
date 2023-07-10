@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryFinishAssemblyOrder
  *
  * @property string $AssemblyOrder A guid that is the unique identifier of the assembly order
+ * @property string $AssembledItemStorageLocation Storage location of assembled item
  * @property string $AssemblyDate Date of the assembly order is initiated
  * @property BatchNumber[] $BatchNumbers The collection of batch numbers that belongs to the assembled and part items in the assembly order
  * @property string $Description Description of assembly order
@@ -25,6 +26,7 @@ class FinishAssemblyOrder extends Model
 
     protected $fillable = [
         'AssemblyOrder',
+        'AssembledItemStorageLocation',
         'AssemblyDate',
         'BatchNumbers',
         'Description',

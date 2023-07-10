@@ -43,7 +43,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ThumbnailPicture Binary thumbnail picture of this user (This property will never return value and will be removed in the near future.)
  * @property string $ThumbnailPictureFormat File type of the picture (This property will never return value and will be removed in the near future.)
  * @property string $Title Title
- * @property string $UserName Login name of the user
+ * @property string $UserName Login name of the user. If the user logs in with One Exact Identity, the login name is in the email address field
  */
 class Me extends Model
 {

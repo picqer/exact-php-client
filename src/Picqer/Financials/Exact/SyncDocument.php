@@ -50,6 +50,7 @@ namespace Picqer\Financials\Exact;
  * @property int $SendMethod Send method
  * @property int $ShopOrderNumber Number of the shop order
  * @property string $Subject Subject of this document
+ * @property string $TeamsMeetingId Teams meeting id
  * @property int $Type ID of the type of this document
  * @property string $TypeDescription Description of Type
  */
@@ -103,6 +104,7 @@ class SyncDocument extends Model
         'SendMethod',
         'ShopOrderNumber',
         'Subject',
+        'TeamsMeetingId',
         'Type',
         'TypeDescription',
     ];

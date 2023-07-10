@@ -21,6 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocation Storage location of this stock
  * @property string $StorageLocationCode Code of the storage location of this stock quantity
  * @property string $StorageLocationDescription Description of the storage location of this stock quantity
+ * @property int $StorageLocationSequenceNumber Sequence number of this stock quantity (Premium Only)
  * @property string $Warehouse ID of Warehouse
  * @property string $WarehouseCode Code of the warehouse of this stock quantity
  * @property string $WarehouseDescription Description of the warehouse of this stock quantity
@@ -44,6 +45,7 @@ class ItemWarehouseStorageLocation extends Model
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
+        'StorageLocationSequenceNumber',
         'Warehouse',
         'WarehouseCode',
         'WarehouseDescription',
