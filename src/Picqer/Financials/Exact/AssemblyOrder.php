@@ -11,6 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AssemblyDate Planned date for assembly of the item
  * @property string $Description Description of assembly order
  * @property int $Division Division code
+ * @property string $FinishedAssemblyDate Latest finished date for assembly of the item
  * @property float $FinishedQuantity Quantity of items that have actually been assembled
  * @property string $Item Reference to assembled item
  * @property string $ItemCode Assembled item code
@@ -41,6 +42,7 @@ class AssemblyOrder extends Model
         'AssemblyDate',
         'Description',
         'Division',
+        'FinishedAssemblyDate',
         'FinishedQuantity',
         'Item',
         'ItemCode',
