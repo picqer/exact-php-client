@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AccountContact Contact person of Account
  * @property string $AccountName Name of Account
  * @property bool $AllowAdditionalInvoicing Indicates if additional invoice is allowed for project
+ * @property bool $AllowMemberEntryOnly Allow only member to create time or cost entry
  * @property bool $BlockEntry Block time and cost entries
  * @property bool $BlockPlanning Block planning and reservations
  * @property bool $BlockPurchasing Block purchasing
@@ -78,6 +79,7 @@ class SyncProject extends Model
         'AccountContact',
         'AccountName',
         'AllowAdditionalInvoicing',
+        'AllowMemberEntryOnly',
         'BlockEntry',
         'BlockPlanning',
         'BlockPurchasing',
