@@ -31,6 +31,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PartItemDescription Part item description
  * @property float $Quantity Quantity of the material that ends up in the produced item
  * @property float $QuantityBatch Quantity of the material needed to produce the batch including the waste
+ * @property string $RoutingStepID ID of the routing step
  * @property string $syscreated Creation date
  * @property string $syscreator User ID of creator
  * @property string $sysmodified Modified date
@@ -68,6 +69,7 @@ class BillOfMaterialMaterial extends Model
         'PartItemDescription',
         'Quantity',
         'QuantityBatch',
+        'RoutingStepID',
         'syscreated',
         'syscreator',
         'sysmodified',

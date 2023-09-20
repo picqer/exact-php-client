@@ -30,6 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property float $PlannedPriceFC Planned price of the material
  * @property float $PlannedQuantity Intended total planned quantity of the material including waste
  * @property float $PlannedQuantityFactor Intended quantity of the material per unit excluding waste
+ * @property string $RoutingStepID ID of the routing step.
  * @property string $ShopOrder Reference to ShopOrders table
  * @property int $Status Line status
  * @property string $StatusDescription Description of Status
@@ -67,6 +68,7 @@ class ShopOrderMaterialPlan extends Model
         'PlannedPriceFC',
         'PlannedQuantity',
         'PlannedQuantityFactor',
+        'RoutingStepID',
         'ShopOrder',
         'Status',
         'StatusDescription',

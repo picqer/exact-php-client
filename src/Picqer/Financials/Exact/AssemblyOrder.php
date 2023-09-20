@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocationCode Storage location code
  * @property string $StorageLocationDescription Storage location description
  * @property int $StorageLocationSequenceNumber Sequence number for assembly order (Premium Only)
+ * @property int $Type Assembly order type: 8060 = Assembly, 8061 = Disassemble
  * @property string $Unit The standard unit of the assembled item
  * @property string $UnitCode Code of Unit
  * @property string $UnitDescription Description of Unit
@@ -57,6 +58,7 @@ class AssemblyOrder extends Model
         'StorageLocationCode',
         'StorageLocationDescription',
         'StorageLocationSequenceNumber',
+        'Type',
         'Unit',
         'UnitCode',
         'UnitDescription',

@@ -24,8 +24,8 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
- * @property string $ParentID ID to link part item to assembled item (assembly order only)
- * @property string $PickOrderLine ID of pick order entry in which this serial or batch number was used
+ * @property string $ParentID ID to link part item to assembled item (assembly order and pick order only)
+ * @property string $PickOrderLine ID of pick order entry in which this serial or batch number was used.
  * @property float $Quantity Quantity of this batch number entering or leaving inventory
  * @property string $Remarks Remarks
  * @property string $SalesOrderLine ID of sales order line
