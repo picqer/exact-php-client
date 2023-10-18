@@ -71,6 +71,11 @@ class Connection
     private $redirectUrl;
 
     /**
+     * @var bool
+     */
+    private $forceLogin = false;
+
+    /**
      * @var string
      */
     private $state = null;
@@ -410,6 +415,7 @@ class Connection
             'redirect_uri'  => $this->redirectUrl,
             'response_type' => 'code',
             'state'         => $this->state,
+            'force_login'   => $this->forceLogin ? 1 : 0,
         ]);
     }
 
@@ -466,6 +472,14 @@ class Connection
     public function setRedirectUrl($redirectUrl)
     {
         $this->redirectUrl = $redirectUrl;
+    }
+
+    /**
+     * @param bool $forceLogin
+     */
+    public function setForceLogin($forceLogin)
+    {
+        $this->forceLogin = $forceLogin;
     }
 
     /**
