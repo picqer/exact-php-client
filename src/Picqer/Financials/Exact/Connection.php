@@ -763,7 +763,7 @@ class Connection
     }
 
     /**
-     * Return the maximum number of API calls that your app is permitted to make per company, per day
+     * Return the maximum number of API calls that your app is permitted to make per company, per day.
      */
     public function getDailyLimit(): ?int
     {
@@ -771,7 +771,7 @@ class Connection
     }
 
     /**
-     * Return the remaining number of API calls that your app is permitted to make for a company, per day
+     * Return the remaining number of API calls that your app is permitted to make for a company, per day.
      */
     public function getDailyLimitRemaining(): ?int
     {
@@ -779,7 +779,7 @@ class Connection
     }
 
     /**
-     * Return the time at which the rate limit window resets in UTC epoch milliseconds
+     * Return the time at which the rate limit window resets in UTC epoch milliseconds.
      */
     public function getDailyLimitReset(): ?int
     {
@@ -787,7 +787,7 @@ class Connection
     }
 
     /**
-     * Return the maximum number of API calls that your app is permitted to make per company, per minute
+     * Return the maximum number of API calls that your app is permitted to make per company, per minute.
      */
     public function getMinutelyLimit(): ?int
     {
@@ -795,7 +795,7 @@ class Connection
     }
 
     /**
-     * Return the remaining number of API calls that your app is permitted to make for a company, per minute
+     * Return the remaining number of API calls that your app is permitted to make for a company, per minute.
      */
     public function getMinutelyLimitRemaining(): ?int
     {
@@ -803,7 +803,7 @@ class Connection
     }
 
     /**
-     * Return the time at which the minutely rate limit window resets in UTC epoch milliseconds
+     * Return the time at which the minutely rate limit window resets in UTC epoch milliseconds.
      */
     public function getMinutelyLimitReset(): ?int
     {
