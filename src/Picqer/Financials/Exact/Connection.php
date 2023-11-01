@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Picqer\Financials\Exact;
 
 use Exception;
@@ -15,25 +17,13 @@ use GuzzleHttp\Psr7\Response;
  */
 class Connection
 {
-    /**
-     * @var string
-     */
-    private $baseUrl = 'https://start.exactonline.nl';
+    private string $baseUrl = 'https://start.exactonline.nl';
 
-    /**
-     * @var string
-     */
-    private $apiUrl = '/api/v1';
+    private string $apiUrl = '/api/v1';
 
-    /**
-     * @var string
-     */
-    private $authUrl = '/api/oauth2/auth';
+    private string $authUrl = '/api/oauth2/auth';
 
-    /**
-     * @var string
-     */
-    private $tokenUrl = '/api/oauth2/token';
+    private string $tokenUrl = '/api/oauth2/token';
 
     /**
      * @var mixed
@@ -58,7 +48,7 @@ class Connection
     /**
      * @var int the Unix timestamp at which the access token expires
      */
-    private $tokenExpires;
+    private int $tokenExpires;
 
     /**
      * @var mixed
@@ -70,25 +60,16 @@ class Connection
      */
     private $redirectUrl;
 
-    /**
-     * @var bool
-     */
-    private $forceLogin = false;
+    private bool $forceLogin = false;
 
-    /**
-     * @var string
-     */
-    private $state = null;
+    private ?string $state = null;
 
     /**
      * @var mixed
      */
     private $division;
 
-    /**
-     * @var Client|null
-     */
-    private $client;
+    private ?Client $client = null;
 
     /**
      * @var callable(Connection)
@@ -115,50 +96,23 @@ class Connection
      */
     protected $middleWares = [];
 
-    /**
-     * @var string|null
-     */
-    public $nextUrl = null;
+    public ?string $nextUrl = null;
 
-    /**
-     * @var int|null
-     */
-    protected $dailyLimit;
+    protected ?int $dailyLimit;
 
-    /**
-     * @var int|null
-     */
-    protected $dailyLimitRemaining;
+    protected ?int $dailyLimitRemaining;
 
-    /**
-     * @var int|null
-     */
-    protected $dailyLimitReset;
+    protected ?int $dailyLimitReset;
 
-    /**
-     * @var int|null
-     */
-    protected $minutelyLimit;
+    protected ?int $minutelyLimit;
 
-    /**
-     * @var int|null
-     */
-    protected $minutelyLimitRemaining;
+    protected ?int $minutelyLimitRemaining;
 
-    /**
-     * @var int|null
-     */
-    protected $minutelyLimitReset;
+    protected ?int $minutelyLimitReset;
 
-    /**
-     * @var bool
-     */
-    private $waitOnMinutelyRateLimitHit = false;
+    private bool $waitOnMinutelyRateLimitHit = false;
 
-    /**
-     * @return Client
-     */
-    private function client()
+    private function client(): Client
     {
         if ($this->client) {
             return $this->client;
@@ -180,10 +134,8 @@ class Connection
 
     /**
      * Insert a custom Guzzle client.
-     *
-     * @param Client $client
      */
-    public function setClient($client)
+    public function setClient(Client $client): void
     {
         $this->client = $client;
     }
@@ -200,10 +152,8 @@ class Connection
 
     /**
      * @throws ApiException
-     *
-     * @return Client
      */
-    public function connect()
+    public function connect(): Client
     {
         // Redirect for authorization if needed (no access token or refresh token given)
         if ($this->needsAuthentication()) {
@@ -212,9 +162,7 @@ class Connection
 
         $this->checkOrAcquireAccessToken();
 
-        $client = $this->client();
-
-        return $client;
+        return $this->client();
     }
 
     /**
@@ -222,7 +170,7 @@ class Connection
      *
      * @throws \Picqer\Financials\Exact\ApiException
      */
-    public function checkOrAcquireAccessToken()
+    public function checkOrAcquireAccessToken(): void
     {
         // If access token is not set or token has expired, acquire new token
         if (empty($this->accessToken) || $this->tokenHasExpired()) {
@@ -241,7 +189,7 @@ class Connection
      *
      * @return Request
      */
-    private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = [])
+    private function createRequest($method, $endpoint, $body = null, array $params = [], array $headers = []): Request
     {
         // Add default json headers to the request
         $headers = array_merge($headers, [
@@ -264,9 +212,7 @@ class Connection
         }
 
         // Create the request
-        $request = new Request($method, $endpoint, $headers, $body);
-
-        return $request;
+        return new Request($method, $endpoint, $headers, $body);
     }
 
     /**
@@ -405,10 +351,7 @@ class Connection
         }
     }
 
-    /**
-     * @return string
-     */
-    public function getAuthUrl()
+    public function getAuthUrl(): string
     {
         return $this->baseUrl . $this->authUrl . '?' . http_build_query([
             'client_id'     => $this->exactClientId,
@@ -459,7 +402,7 @@ class Connection
         $this->refreshToken = $refreshToken;
     }
 
-    public function redirectForAuthorization()
+    public function redirectForAuthorization(): void
     {
         $authUrl = $this->getAuthUrl();
         header('Location: ' . $authUrl);
@@ -474,26 +417,17 @@ class Connection
         $this->redirectUrl = $redirectUrl;
     }
 
-    /**
-     * @param bool $forceLogin
-     */
-    public function setForceLogin($forceLogin)
+    public function setForceLogin(bool $forceLogin): void
     {
         $this->forceLogin = $forceLogin;
     }
 
-    /**
-     * @param string $state
-     */
-    public function setState(string $state)
+    public function setState(string $state): void
     {
         $this->state = $state;
     }
 
-    /**
-     * @return bool
-     */
-    public function needsAuthentication()
+    public function needsAuthentication(): bool
     {
         return empty($this->refreshToken) && empty($this->authorizationCode);
     }
@@ -628,7 +562,7 @@ class Connection
         return $this->accessToken;
     }
 
-    private function acquireAccessToken()
+    private function acquireAccessToken(): void
     {
         try {
             if (is_callable($this->acquireAccessTokenLockCallback)) {
@@ -694,10 +628,8 @@ class Connection
      * Translates expires_in to a Unix timestamp.
      *
      * @param string $expiresIn number of seconds until the token expires
-     *
-     * @return int
      */
-    private function getTimestampFromExpiresIn($expiresIn)
+    private function getTimestampFromExpiresIn($expiresIn): int
     {
         if (! ctype_digit($expiresIn)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
@@ -706,10 +638,7 @@ class Connection
         return time() + (int) $expiresIn;
     }
 
-    /**
-     * @return int the Unix timestamp at which the access token expires
-     */
-    public function getTokenExpires()
+    public function getTokenExpires(): int
     {
         return $this->tokenExpires;
     }
@@ -722,7 +651,7 @@ class Connection
         $this->tokenExpires = $tokenExpires;
     }
 
-    private function tokenHasExpired()
+    private function tokenHasExpired(): bool
     {
         if (empty($this->tokenExpires)) {
             return true;
@@ -770,7 +699,7 @@ class Connection
     /**
      * @param callable $callback
      */
-    public function setAcquireAccessTokenLockCallback($callback)
+    public function setAcquireAccessTokenLockCallback($callback): void
     {
         $this->acquireAccessTokenLockCallback = $callback;
     }
@@ -778,7 +707,7 @@ class Connection
     /**
      * @param callable $callback
      */
-    public function setAcquireAccessTokenUnlockCallback($callback)
+    public function setAcquireAccessTokenUnlockCallback($callback): void
     {
         $this->acquireAccessTokenUnlockCallback = $callback;
     }
@@ -786,7 +715,7 @@ class Connection
     /**
      * @param callable $callback
      */
-    public function setTokenUpdateCallback($callback)
+    public function setTokenUpdateCallback($callback): void
     {
         $this->tokenUpdateCallback = $callback;
     }
@@ -794,7 +723,7 @@ class Connection
     /**
      * @param callable $callback
      */
-    public function setRefreshAccessTokenCallback($callback)
+    public function setRefreshAccessTokenCallback($callback): void
     {
         $this->refreshAccessTokenCallback = $callback;
     }
@@ -806,7 +735,7 @@ class Connection
      *
      * @throws ApiException
      */
-    private function parseExceptionForErrorMessages(Exception $e)
+    private function parseExceptionForErrorMessages(Exception $e): void
     {
         if (! $e instanceof BadResponseException) {
             throw new ApiException($e->getMessage(), 0, $e);
@@ -834,73 +763,64 @@ class Connection
     }
 
     /**
-     * @return int|null The maximum number of API calls that your app is permitted to make per company, per day
+     * Return the maximum number of API calls that your app is permitted to make per company, per day.
      */
-    public function getDailyLimit()
+    public function getDailyLimit(): ?int
     {
         return $this->dailyLimit;
     }
 
     /**
-     * @return int|null The remaining number of API calls that your app is permitted to make for a company, per day
+     * Return the remaining number of API calls that your app is permitted to make for a company, per day.
      */
-    public function getDailyLimitRemaining()
+    public function getDailyLimitRemaining(): ?int
     {
         return $this->dailyLimitRemaining;
     }
 
     /**
-     * @return int|null The time at which the rate limit window resets in UTC epoch milliseconds
+     * Return the time at which the rate limit window resets in UTC epoch milliseconds.
      */
-    public function getDailyLimitReset()
+    public function getDailyLimitReset(): ?int
     {
         return $this->dailyLimitReset;
     }
 
     /**
-     * @return int|null The maximum number of API calls that your app is permitted to make per company, per minute
+     * Return the maximum number of API calls that your app is permitted to make per company, per minute.
      */
-    public function getMinutelyLimit()
+    public function getMinutelyLimit(): ?int
     {
         return $this->minutelyLimit;
     }
 
     /**
-     * @return int|null The remaining number of API calls that your app is permitted to make for a company, per minute
+     * Return the remaining number of API calls that your app is permitted to make for a company, per minute.
      */
-    public function getMinutelyLimitRemaining()
+    public function getMinutelyLimitRemaining(): ?int
     {
         return $this->minutelyLimitRemaining;
     }
 
     /**
-     * @return int|null The time at which the minutely rate limit window resets in UTC epoch milliseconds
+     * Return the time at which the minutely rate limit window resets in UTC epoch milliseconds.
      */
-    public function getMinutelyLimitReset()
+    public function getMinutelyLimitReset(): ?int
     {
         return $this->minutelyLimitReset;
     }
 
-    /**
-     * @return string
-     */
-    protected function getBaseUrl()
+    protected function getBaseUrl(): string
     {
         return $this->baseUrl;
     }
 
-    /**
-     * @return string
-     */
-    private function getApiUrl()
+    private function getApiUrl(): string
     {
         return $this->baseUrl . $this->apiUrl;
     }
 
-    /**
-     * @return string
-     */
-    private function getTokenUrl()
+    private function getTokenUrl(): string
     {
         return $this->baseUrl . $this->tokenUrl;
     }
@@ -908,39 +828,28 @@ class Connection
     /**
      * Set base URL for different countries according to
      * https://developers.exactonline.com/#Exact%20Online%20sites.html.
-     *
-     * @param string $baseUrl
      */
-    public function setBaseUrl($baseUrl)
+    public function setBaseUrl(string $baseUrl): void
     {
         $this->baseUrl = $baseUrl;
     }
 
-    /**
-     * @param string $apiUrl
-     */
-    public function setApiUrl($apiUrl)
+    public function setApiUrl(string $apiUrl): void
     {
         $this->apiUrl = $apiUrl;
     }
 
-    /**
-     * @param string $authUrl
-     */
-    public function setAuthUrl($authUrl)
+    public function setAuthUrl(string $authUrl): void
     {
         $this->authUrl = $authUrl;
     }
 
-    /**
-     * @param string $tokenUrl
-     */
-    public function setTokenUrl($tokenUrl)
+    public function setTokenUrl(string $tokenUrl): void
     {
         $this->tokenUrl = $tokenUrl;
     }
 
-    private function extractRateLimits(Response $response)
+    private function extractRateLimits(Response $response): void
     {
         $this->dailyLimit = (int) $response->getHeaderLine('X-RateLimit-Limit');
         $this->dailyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Remaining');
@@ -951,7 +860,7 @@ class Connection
         $this->minutelyLimitReset = (int) $response->getHeaderLine('X-RateLimit-Minutely-Reset');
     }
 
-    protected function waitIfMinutelyRateLimitHit()
+    protected function waitIfMinutelyRateLimitHit(): void
     {
         if (! $this->waitOnMinutelyRateLimitHit) {
             return;
@@ -973,7 +882,7 @@ class Connection
         }
     }
 
-    public function setWaitOnMinutelyRateLimitHit(bool $waitOnMinutelyRateLimitHit)
+    public function setWaitOnMinutelyRateLimitHit(bool $waitOnMinutelyRateLimitHit): void
     {
         $this->waitOnMinutelyRateLimitHit = $waitOnMinutelyRateLimitHit;
     }
