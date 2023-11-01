@@ -4,23 +4,15 @@ namespace Picqer\Financials\Exact\Persistance;
 
 use GuzzleHttp\Client;
 use Picqer\Financials\Exact\Connection;
+use Psr\Http\Message\StreamInterface;
 
 trait Downloadable
 {
-    /**
-     * @return Connection
-     */
-    abstract public function connection();
+    abstract public function connection(): Connection;
 
-    /**
-     * @return string
-     */
-    abstract public function getDownloadUrl();
+    abstract public function getDownloadUrl(): string;
 
-    /**
-     * @return mixed Binary representation of file
-     */
-    public function download()
+    public function download(): StreamInterface
     {
         $client = new Client();
 

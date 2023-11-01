@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Picqer\Financials\Exact\Query;
 
 use Generator;
@@ -17,12 +19,9 @@ trait Findable
     /**
      * @return string
      */
-    abstract public function url();
+    abstract public function url(): string;
 
-    /**
-     * @return string
-     */
-    abstract public function primaryKey();
+    abstract public function primaryKey(): string;
 
     public function find($id)
     {

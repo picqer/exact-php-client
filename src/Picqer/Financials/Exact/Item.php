@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Picqer\Financials\Exact;
 
 /**
@@ -229,10 +231,7 @@ class Item extends Model
 
     protected $url = 'logistics/Items';
 
-    /**
-     * @return string
-     */
-    public function getDownloadUrl()
+    public function getDownloadUrl(): string
     {
         return $this->PictureUrl;
     }
