@@ -265,17 +265,18 @@ class Connection
     /**
      * @param string $topic
      * @param mixed  $body
+     * @param array  $params
      *
      * @throws ApiException
      *
      * @return mixed
      */
-    public function upload($topic, $body)
+    public function upload($topic, $body, $params = [])
     {
         $url = $this->getBaseUrl() . '/docs/XMLUpload.aspx?Topic=' . $topic . '&_Division_=' . $this->getDivision();
 
         try {
-            $request = $this->createRequest('POST', $url, $body);
+            $request = $this->createRequest('POST', $url, $body, $params);
             $response = $this->client()->send($request);
 
             return $this->parseResponseXml($response);
