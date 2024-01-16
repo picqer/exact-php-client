@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Picqer\Financials\Exact\Query;
 
 use Generator;
@@ -10,35 +12,18 @@ use Picqer\Financials\Exact\Connection;
  */
 class Resultset
 {
-    /**
-     * @var Connection
-     */
-    protected $connection;
+    protected Connection $connection;
+
+    protected ?string $url;
+
+    protected string $class;
+
+    protected array $params;
 
     /**
-     * @var string
+     * @param array<string, mixed> $params
      */
-    protected $url;
-
-    /**
-     * @var string
-     */
-    protected $class;
-
-    /**
-     * @var array
-     */
-    protected $params;
-
-    /**
-     * Resultset constructor.
-     *
-     * @param Connection $connection
-     * @param string     $url
-     * @param string     $class
-     * @param array      $params
-     */
-    public function __construct(Connection $connection, $url, $class, array $params)
+    public function __construct(Connection $connection, ?string $url, string $class, array $params)
     {
         $this->connection = $connection;
         $this->url = $url;
@@ -60,10 +45,7 @@ class Resultset
         return $this->collectionFromResultAsGenerator($result);
     }
 
-    /**
-     * @return bool
-     */
-    public function hasMore()
+    public function hasMore(): bool
     {
         return $this->url !== null;
     }

@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Picqer\Financials\Exact\Webhook;
 
 trait Authenticatable
 {
-    public function authenticate($requestContent, $webhookSecret)
+    public function authenticate(string $requestContent, string $webhookSecret): bool
     {
         $matches = [];
         $matched = preg_match('/^{"Content":(.*),"HashCode":"(.*)"}$/', $requestContent, $matches);
