@@ -98,17 +98,17 @@ class Connection
 
     public ?string $nextUrl = null;
 
-    protected ?int $dailyLimit;
+    protected ?int $dailyLimit = null;
 
-    protected ?int $dailyLimitRemaining;
+    protected ?int $dailyLimitRemaining = null;
 
-    protected ?int $dailyLimitReset;
+    protected ?int $dailyLimitReset = null;
 
-    protected ?int $minutelyLimit;
+    protected ?int $minutelyLimit = null;
 
-    protected ?int $minutelyLimitRemaining;
+    protected ?int $minutelyLimitRemaining = null;
 
-    protected ?int $minutelyLimitReset;
+    protected ?int $minutelyLimitReset = null;
 
     private bool $waitOnMinutelyRateLimitHit = false;
 
