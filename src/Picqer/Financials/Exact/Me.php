@@ -35,6 +35,7 @@ namespace Picqer\Financials\Exact;
  * @property string $MiddleName Middle name
  * @property string $Mobile Mobile phone
  * @property string $Nationality Nationality
+ * @property string $PackageCode Package code used in the customers license
  * @property string $Phone Phone number
  * @property string $PhoneExtension Phone number extension
  * @property string $PictureUrl Url that can be used to retrieve the picture of the user
@@ -80,6 +81,7 @@ class Me extends Model
         'MiddleName',
         'Mobile',
         'Nationality',
+        'PackageCode',
         'Phone',
         'PhoneExtension',
         'PictureUrl',

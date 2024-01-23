@@ -36,6 +36,8 @@ namespace Picqer\Financials\Exact;
  * @property string $Item The item linked to the document
  * @property string $ItemCode Code of Item
  * @property string $ItemDescription Description of Item
+ * @property string $ItemMaterial ID of bill of material materials
+ * @property string $ItemRoutingStep ID of bill of material routings
  * @property string $Language The language code of the document
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -90,6 +92,8 @@ class SyncDocument extends Model
         'Item',
         'ItemCode',
         'ItemDescription',
+        'ItemMaterial',
+        'ItemRoutingStep',
         'Language',
         'Modified',
         'Modifier',

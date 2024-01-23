@@ -22,6 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property float $EfficiencyPercentage Efficiency Percentage
  * @property int $FactorType Conversion factor type between Shop order Item and Subcontract purchase Unit
  * @property string $ID Primary key
+ * @property string $ItemRoutingStep Reference to BillOfMaterialRoutings
  * @property int $LineNumber Sequential order of the operation
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -77,6 +78,7 @@ class SyncShopOrderRoutingStepPlan extends Model
         'EfficiencyPercentage',
         'FactorType',
         'ID',
+        'ItemRoutingStep',
         'LineNumber',
         'Modified',
         'Modifier',

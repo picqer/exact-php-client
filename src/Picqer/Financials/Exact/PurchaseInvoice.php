@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchasePurchaseInvoices
  *
  * @property string $ID A guid that is the unique identifier of the purchase invoice.
- * @property float $Amount The amount including VAT in the currency of the invoice.
+ * @property float $Amount The amount including VAT in the foreign currency.
  * @property string $ContactPerson Guid identifying the contact person of the supplier.
  * @property string $Currency The code of the currency of the invoiced amount.
  * @property string $Description The description of the invoice.

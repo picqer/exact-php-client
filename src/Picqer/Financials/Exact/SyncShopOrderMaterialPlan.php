@@ -20,6 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Item Reference to Items table
  * @property string $ItemCode Item Code (material)
  * @property string $ItemDescription Description of Item (material)
+ * @property string $ItemMaterial Reference to BillOfMaterialMaterials
  * @property string $ItemPictureUrl URL of the material item's picture
  * @property int $LineNumber Line number
  * @property string $Modified Last modified date
@@ -60,6 +61,7 @@ class SyncShopOrderMaterialPlan extends Model
         'Item',
         'ItemCode',
         'ItemDescription',
+        'ItemMaterial',
         'ItemPictureUrl',
         'LineNumber',
         'Modified',
