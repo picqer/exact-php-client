@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property bool $AllowAdditionalInvoicing Indicates if additional invoice is allowed for project
  * @property bool $AllowMemberEntryOnly Allow only member to create time or cost entry
  * @property bool $BlockEntry Block time and cost entries
+ * @property bool $BlockInvoicing Block invoicing
  * @property bool $BlockPlanning Block planning and reservations
  * @property bool $BlockPurchasing Block purchasing
  * @property bool $BlockRebilling Block rebilling
@@ -81,6 +82,7 @@ class SyncProject extends Model
         'AllowAdditionalInvoicing',
         'AllowMemberEntryOnly',
         'BlockEntry',
+        'BlockInvoicing',
         'BlockPlanning',
         'BlockPurchasing',
         'BlockRebilling',

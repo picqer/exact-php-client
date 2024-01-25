@@ -13,6 +13,9 @@ namespace Picqer\Financials\Exact;
  * @property string $Item Item
  * @property string $ItemCode Code of the item
  * @property string $ItemDescription Description of the item
+ * @property float $QuantityToPicked To pick quantity
+ * @property float $ReservedPick To pick quantity with SerialBatch reserved
+ * @property float $SerialBatchReservedStock Reserved serial batch stock
  * @property float $Stock Stock
  * @property string $StorageLocation Storage location
  * @property string $StorageLocationCode Code of the storage location
@@ -36,6 +39,9 @@ class SyncStorageLocationStockPosition extends Model
         'Item',
         'ItemCode',
         'ItemDescription',
+        'QuantityToPicked',
+        'ReservedPick',
+        'SerialBatchReservedStock',
         'Stock',
         'StorageLocation',
         'StorageLocationCode',
