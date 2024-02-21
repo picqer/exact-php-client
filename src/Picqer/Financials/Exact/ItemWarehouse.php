@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=InventoryItemWarehouses
  *
  * @property string $ID A guid that is the unique identifier of the linkage between item and warehouse
+ * @property int $CountingCycle Indicates the number of days for next cycle count.
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -40,6 +41,7 @@ namespace Picqer\Financials\Exact;
  * @property int $ReplenishmentType Replenishment options: 1-Purchase, 2-Assemble, 3-Make, 4-Transfer, 5-No replenishment advice
  * @property float $ReservedStock The quantity in a back to back order process which is already received from the purchase order, but not yet delivered for the sales order.
  * @property float $SafetyStock Minimum quantity of items you must have in stock
+ * @property int $StorageLocationSequenceNumber Sequence number of the item (Premium Only)
  * @property string $StorageLocationUrl URL pointing to details of which storage locations this ItemWarehouse's stock is located
  * @property string $Warehouse Warehouse ID
  * @property string $WarehouseCode Code of warehouse
@@ -52,6 +54,7 @@ class ItemWarehouse extends Model
 
     protected $fillable = [
         'ID',
+        'CountingCycle',
         'Created',
         'Creator',
         'CreatorFullName',
@@ -84,6 +87,7 @@ class ItemWarehouse extends Model
         'ReplenishmentType',
         'ReservedStock',
         'SafetyStock',
+        'StorageLocationSequenceNumber',
         'StorageLocationUrl',
         'Warehouse',
         'WarehouseCode',

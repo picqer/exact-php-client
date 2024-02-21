@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Picqer\Financials\Exact;
 
 /**
@@ -94,6 +96,7 @@ namespace Picqer\Financials\Exact;
  * @property float $NetWeight Net weight for international goods shipments
  * @property string $NetWeightUnit Net Weight unit for international goods shipment, only available in manufacturing packages
  * @property string $Notes Notes
+ * @property string $Picture This field is write-only. The picture can be downloaded through PictureUrl and PictureThumbnailUrl.
  * @property string $PictureName File name of picture
  * @property string $PictureThumbnailUrl Url where thumbnail picture can be retrieved
  * @property string $PictureUrl Url where picture can be retrieved
@@ -206,6 +209,7 @@ class Item extends Model
         'NetWeight',
         'NetWeightUnit',
         'Notes',
+        'Picture',
         'PictureName',
         'PictureThumbnailUrl',
         'PictureUrl',
@@ -227,10 +231,7 @@ class Item extends Model
 
     protected $url = 'logistics/Items';
 
-    /**
-     * @return string
-     */
-    public function getDownloadUrl()
+    public function getDownloadUrl(): string
     {
         return $this->PictureUrl;
     }

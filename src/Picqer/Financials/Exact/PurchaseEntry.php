@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency code
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description
  * @property int $Division Division code
  * @property string $Document Reference to document
@@ -35,6 +36,7 @@ namespace Picqer\Financials\Exact;
  * @property int $OrderNumber Order number
  * @property string $PaymentCondition Payment condition
  * @property string $PaymentConditionDescription Description of PaymentCondition
+ * @property string $PaymentConditionPaymentMethod Payment method of Payment condition. Values: B = On credit, I = Collection, K = Cash
  * @property string $PaymentReference The payment reference used for bank imports, VAT return and Tax reference
  * @property int $ProcessNumber Internal processing number, only relevant for Germany
  * @property PurchaseEntryLine[] $PurchaseEntryLines Collection of lines
@@ -70,6 +72,7 @@ class PurchaseEntry extends Model
         'Creator',
         'CreatorFullName',
         'Currency',
+        'CustomField',
         'Description',
         'Division',
         'Document',
@@ -90,6 +93,7 @@ class PurchaseEntry extends Model
         'OrderNumber',
         'PaymentCondition',
         'PaymentConditionDescription',
+        'PaymentConditionPaymentMethod',
         'PaymentReference',
         'ProcessNumber',
         'PurchaseEntryLines',

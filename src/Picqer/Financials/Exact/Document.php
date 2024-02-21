@@ -32,6 +32,9 @@ namespace Picqer\Financials\Exact;
  * @property bool $HasEmptyBody Indicates that the document body is empty
  * @property int $HID Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
  * @property bool $InheritShare InheritShare value
+ * @property string $Item The item linked to the document
+ * @property string $ItemCode Code of Item
+ * @property string $ItemDescription Description of Item
  * @property string $Language The language code of the document
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -46,6 +49,7 @@ namespace Picqer\Financials\Exact;
  * @property int $SendMethod Send method
  * @property int $ShopOrderNumber Number of the shop order
  * @property string $Subject Subject of this document
+ * @property string $TeamsMeetingId Teams meeting id
  * @property int $Type ID of the type of this document
  * @property string $TypeDescription Description of Type
  */
@@ -80,6 +84,9 @@ class Document extends Model
         'HasEmptyBody',
         'HID',
         'InheritShare',
+        'Item',
+        'ItemCode',
+        'ItemDescription',
         'Language',
         'Modified',
         'Modifier',
@@ -94,6 +101,7 @@ class Document extends Model
         'SendMethod',
         'ShopOrderNumber',
         'Subject',
+        'TeamsMeetingId',
         'Type',
         'TypeDescription',
     ];

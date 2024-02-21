@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PurchasePurchaseInvoices
  *
  * @property string $ID A guid that is the unique identifier of the purchase invoice.
- * @property float $Amount The amount including VAT in the currency of the invoice.
+ * @property float $Amount The amount including VAT in the foreign currency.
  * @property string $ContactPerson Guid identifying the contact person of the supplier.
  * @property string $Currency The code of the currency of the invoiced amount.
  * @property string $Description The description of the invoice.
@@ -30,7 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Supplier Guid that identifies the supplier.
  * @property int $Type Indicates the type of the purchase invoice. 8030 Direct purchase invoice, 8031 Direct purchase invoice (Credit), 8033 Purchase invoice, 8034 Purchase invoice (Credit)
  * @property float $VATAmount The total VAT amount of the purchase invoice.
- * @property string $Warehouse Guid that identifies the warehouse that will receive the purchased goods. This is mandatory for creating a direct purchase invoice.
+ * @property string $Warehouse Guid that identifies the warehouse that will receive the purchased goods. This is mandatory for creating a direct purchase invoice except for Exact Online Projects.
  * @property string $YourRef The invoice number provided by the supplier.
  */
 class PurchaseInvoice extends Model

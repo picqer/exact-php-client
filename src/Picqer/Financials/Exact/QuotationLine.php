@@ -10,7 +10,12 @@ namespace Picqer\Financials\Exact;
  * @property string $ID Primary key
  * @property float $AmountDC Amount in the default currency of the company
  * @property float $AmountFC Amount in the currency of the transaction
+ * @property string $CostCenter Reference to Cost center
+ * @property string $CostCenterDescription Description of CostCenter
+ * @property string $CostUnit Reference to Cost unit
+ * @property string $CostUnitDescription Description of CostUnit
  * @property string $CustomerItemCode Code the customer uses for this item
+ * @property string $CustomField Custom field endpoint
  * @property string $Description By default this contains the item description
  * @property float $Discount Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
@@ -19,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property int $LineNumber Indicates the sequence of the lines within one quotation
  * @property float $NetPrice Net price of the quotation line
  * @property string $Notes Extra notes
+ * @property bool $Optional Indicates the optional line
  * @property float $Quantity The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor
  * @property string $QuotationID Identifies the quotation. All the lines of a quotation have the same QuotationID
  * @property int $QuotationNumber Unique number to indentify the quotation. By default this number is based on the setting for first available number
@@ -40,7 +46,12 @@ class QuotationLine extends Model
         'ID',
         'AmountDC',
         'AmountFC',
+        'CostCenter',
+        'CostCenterDescription',
+        'CostUnit',
+        'CostUnitDescription',
         'CustomerItemCode',
+        'CustomField',
         'Description',
         'Discount',
         'Division',
@@ -49,6 +60,7 @@ class QuotationLine extends Model
         'LineNumber',
         'NetPrice',
         'Notes',
+        'Optional',
         'Quantity',
         'QuotationID',
         'QuotationNumber',

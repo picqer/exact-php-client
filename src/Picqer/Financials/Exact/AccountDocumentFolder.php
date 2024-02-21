@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Description Document folder description
  * @property int $Division Division code
+ * @property bool $IsRootConV2 IsRootConV2
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -36,6 +37,7 @@ class AccountDocumentFolder extends Model
         'CreatorFullName',
         'Description',
         'Division',
+        'IsRootConV2',
         'Modified',
         'Modifier',
         'ModifierFullName',

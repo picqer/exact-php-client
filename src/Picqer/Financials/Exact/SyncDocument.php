@@ -33,6 +33,11 @@ namespace Picqer\Financials\Exact;
  * @property int $HID Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
  * @property string $ID Primary key
  * @property bool $InheritShare InheritShare value
+ * @property string $Item The item linked to the document
+ * @property string $ItemCode Code of Item
+ * @property string $ItemDescription Description of Item
+ * @property string $ItemMaterial ID of bill of material materials
+ * @property string $ItemRoutingStep ID of bill of material routings
  * @property string $Language The language code of the document
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
@@ -47,6 +52,7 @@ namespace Picqer\Financials\Exact;
  * @property int $SendMethod Send method
  * @property int $ShopOrderNumber Number of the shop order
  * @property string $Subject Subject of this document
+ * @property string $TeamsMeetingId Teams meeting id
  * @property int $Type ID of the type of this document
  * @property string $TypeDescription Description of Type
  */
@@ -83,6 +89,11 @@ class SyncDocument extends Model
         'HID',
         'ID',
         'InheritShare',
+        'Item',
+        'ItemCode',
+        'ItemDescription',
+        'ItemMaterial',
+        'ItemRoutingStep',
         'Language',
         'Modified',
         'Modifier',
@@ -97,6 +108,7 @@ class SyncDocument extends Model
         'SendMethod',
         'ShopOrderNumber',
         'Subject',
+        'TeamsMeetingId',
         'Type',
         'TypeDescription',
     ];

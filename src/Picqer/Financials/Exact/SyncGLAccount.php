@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncFinancialGLAccounts
  *
  * @property int $Timestamp Timestamp
+ * @property int $AllowCostsInSales Allow cost base amount and vat amount to be generated in sales entries
  * @property int $AssimilatedVATBox AssimilatedVATBox (France)
  * @property string $BalanceSide The following values are supported: D (Debit) C (Credit)
  * @property string $BalanceType The following values are supported: B (Balance Sheet) W (Profit & Loss)
@@ -21,6 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint
  * @property DeductibilityPercentage[] $DeductibilityPercentages Deductibility percentages. You can have several Deductibility percentages, with start and end dates
  * @property string $Description Name of the G/L account. If Multilanguage featureset is enabled in the administration and the G/L account already has a set of termed description, this field is not allowed to change.
  * @property int $Division Division code
@@ -58,6 +60,7 @@ class SyncGLAccount extends Model
 
     protected $fillable = [
         'Timestamp',
+        'AllowCostsInSales',
         'AssimilatedVATBox',
         'BalanceSide',
         'BalanceType',
@@ -71,6 +74,7 @@ class SyncGLAccount extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'DeductibilityPercentages',
         'Description',
         'Division',

@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CostCenterDescription Description of CostCenter
  * @property string $CostUnit Reference to Cost unit
  * @property string $CostUnitDescription Description of CostUnit
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description. Can be different for header and lines
  * @property int $Division Division code
  * @property string $EntryID The unique ID of the entry. Via this ID all transaction lines of a single entry can be retrieved
@@ -70,6 +71,7 @@ class SalesEntryLine extends Model
         'CostCenterDescription',
         'CostUnit',
         'CostUnitDescription',
+        'CustomField',
         'Description',
         'Division',
         'EntryID',

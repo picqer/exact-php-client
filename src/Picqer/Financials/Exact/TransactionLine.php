@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency
+ * @property string $CustomField Custom field endpoint
  * @property string $Date Entry date
  * @property string $Description Description
  * @property int $Division Division code
@@ -102,6 +103,7 @@ class TransactionLine extends Model
         'Creator',
         'CreatorFullName',
         'Currency',
+        'CustomField',
         'Date',
         'Description',
         'Division',

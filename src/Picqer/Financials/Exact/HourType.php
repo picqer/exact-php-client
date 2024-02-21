@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ReadProjectHourTypes
  *
  * @property string $ItemId GUID id of the item that is linked to the project
+ * @property string $ItemCode Code of the item that is linked to the project
  * @property string $ItemDescription Description of the item that is linked to the project
  */
 class HourType extends Model
@@ -18,6 +19,7 @@ class HourType extends Model
 
     protected $fillable = [
         'ItemId',
+        'ItemCode',
         'ItemDescription',
     ];
 

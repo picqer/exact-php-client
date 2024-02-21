@@ -8,11 +8,11 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=HRMCostcenters
  *
  * @property string $ID Primary key
- * @property bool $Active Indicates if the cost center is active: 0 = inactive 1 = active
  * @property string $Code Code (user-defined ID)
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint
  * @property string $Description Description (text)
  * @property int $Division Division code
  * @property string $EndDate The end date by which the cost center has to be inactive
@@ -27,11 +27,11 @@ class Costcenter extends Model
 
     protected $fillable = [
         'ID',
-        'Active',
         'Code',
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Description',
         'Division',
         'EndDate',

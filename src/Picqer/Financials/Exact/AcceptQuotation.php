@@ -8,14 +8,17 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAcceptQuotation
  *
  * @property string $QuotationID Identifier of the quotation.
- * @property int $Action 0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project.
+ * @property int $Action 0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project, 5 = create subscription, 99 = follow email with sign off action.
  * @property string $AddToExistingProjectSuccess Contains information if the quotation was successfully added to existing project.
  * @property bool $CreateItemPriceAgreement Create a project item price agreement. Only needed when Action = 3 or Action = 4. Default = True.
  * @property bool $CreateProjectWBS Create a project work breakdown structure. Only needed when ProjectBudgetType = 2.
  * @property int $Division Division code
  * @property string $ErrorMessage Contains the error message if an error occurred during the acception of the quotation.
  * @property string $InvoiceJournal The journal in which the sales invoice will be booked. Mandatory for Action = 2.
+ * @property string $NotificationLayout Based on this layout the notification email is sent. In case it is not specified, then no email is sent.
+ * @property OptionalQuotationLineID[] $OptionalQuotationLineIDs Collection of optional quotation line IDs.
  * @property int $ProjectBudgetType The budget type of the project that will be created. Default = 0.
+ * @property string $ProjectClassification The ID of the project classification.
  * @property string $ProjectCode The code of the project that will be created. Mandatory for Action = 3.
  * @property string $ProjectDescription The description of the project that will be created. Mandatory for Action = 3.
  * @property string $ProjectID The ID of the project that will be linked to the quotation. Mandatory for Action = 4.
@@ -29,8 +32,13 @@ namespace Picqer\Financials\Exact;
  * @property string $ReasonCode Reason why the quotation was accepted.
  * @property string $SalesInvoiceSuccess Contains information if the sales invoice was successfully created.
  * @property string $SalesOrderSuccess Contains information if the sales order was successfully created.
+ * @property string $SubscriptionDescription Description of the subscription.
+ * @property string $SubscriptionStartDate Start date of the subscription.
+ * @property string $SubscriptionSuccess Contains information if the subscription was successfully created.
+ * @property string $SubscriptionType The ID of the subscription condition. Mandatory for Action = 5.
  * @property string $SuccessMessage Contains information if the quotation was successfully accepted.
  * @property bool $UpdateProjectBudgetAndPriceAgreement Update project budget, price agreement and hours. Only needed when Action = 4. Default = True.
+ * @property string $YourRef The number by which this quotation is identified by the order account
  */
 class AcceptQuotation extends Model
 {
@@ -48,7 +56,10 @@ class AcceptQuotation extends Model
         'Division',
         'ErrorMessage',
         'InvoiceJournal',
+        'NotificationLayout',
+        'OptionalQuotationLineIDs',
         'ProjectBudgetType',
+        'ProjectClassification',
         'ProjectCode',
         'ProjectDescription',
         'ProjectID',
@@ -62,8 +73,13 @@ class AcceptQuotation extends Model
         'ReasonCode',
         'SalesInvoiceSuccess',
         'SalesOrderSuccess',
+        'SubscriptionDescription',
+        'SubscriptionStartDate',
+        'SubscriptionSuccess',
+        'SubscriptionType',
         'SuccessMessage',
         'UpdateProjectBudgetAndPriceAgreement',
+        'YourRef',
     ];
 
     protected $url = 'crm/AcceptQuotation';

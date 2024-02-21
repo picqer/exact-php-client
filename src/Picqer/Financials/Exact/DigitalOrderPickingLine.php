@@ -20,6 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property int $IsSerialNumberItem Indicates that an Item is an serial item
  * @property string $Item Item ID
  * @property string $ItemBarcode Barcode of the item (numeric string)
+ * @property string $ItemBarcodeAdditional This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale & Distribution and Manufacturing
  * @property string $ItemCode Item code
  * @property string $ItemDescription Description of item
  * @property string $ItemUnitcode Item unit code from sales order
@@ -32,6 +33,7 @@ namespace Picqer\Financials\Exact;
  * @property string $OrderPickerFullName Name of the order picker
  * @property string $PickedDate Date of order picked
  * @property string $PickedOrderDeliveryDate Date of goods delivery
+ * @property PickingLocation[] $PickingLocations Collection of picking locations
  * @property int $PickOrderNumber Pick order number
  * @property float $QuantityPicked Quantity picked
  * @property float $QuantityToBePicked Quantity to be picked
@@ -66,6 +68,7 @@ class DigitalOrderPickingLine extends Model
         'IsSerialNumberItem',
         'Item',
         'ItemBarcode',
+        'ItemBarcodeAdditional',
         'ItemCode',
         'ItemDescription',
         'ItemUnitcode',
@@ -78,6 +81,7 @@ class DigitalOrderPickingLine extends Model
         'OrderPickerFullName',
         'PickedDate',
         'PickedOrderDeliveryDate',
+        'PickingLocations',
         'PickOrderNumber',
         'QuantityPicked',
         'QuantityToBePicked',

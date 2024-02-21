@@ -13,7 +13,10 @@ namespace Picqer\Financials\Exact;
  * @property string $AccountContact Contact person of Account
  * @property string $AccountName Name of Account
  * @property bool $AllowAdditionalInvoicing Indicates if additional invoice is allowed for project
+ * @property bool $AllowMemberEntryOnly Allow only member to create time or cost entry
  * @property bool $BlockEntry Block time and cost entries
+ * @property bool $BlockInvoicing Block invoicing
+ * @property bool $BlockPlanning Block planning and reservations
  * @property bool $BlockPurchasing Block purchasing
  * @property bool $BlockRebilling Block rebilling
  * @property float $BudgetedAmount Budgeted amount of sales in the default currency of the company
@@ -51,6 +54,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
  * @property string $Notes For additional information about projects
+ * @property string $PaymentCondition Payment condition code for this project
  * @property string $PrepaidItem Used only for PSA. This item is used for prepaid invoicing. If left empty, the functionality relies on a setting
  * @property string $PrepaidItemDescription Description of PrepaidItem
  * @property int $PrepaidType PrepaidType: 1-Retainer, 2-Hour type bundle
@@ -76,7 +80,10 @@ class SyncProject extends Model
         'AccountContact',
         'AccountName',
         'AllowAdditionalInvoicing',
+        'AllowMemberEntryOnly',
         'BlockEntry',
+        'BlockInvoicing',
+        'BlockPlanning',
         'BlockPurchasing',
         'BlockRebilling',
         'BudgetedAmount',
@@ -114,6 +121,7 @@ class SyncProject extends Model
         'Modifier',
         'ModifierFullName',
         'Notes',
+        'PaymentCondition',
         'PrepaidItem',
         'PrepaidItemDescription',
         'PrepaidType',

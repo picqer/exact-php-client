@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Picqer\Financials\Exact;
 
 /**
@@ -31,10 +33,7 @@ class DocumentAttachment extends Model
 
     protected $url = 'documents/DocumentAttachments';
 
-    /**
-     * @return string
-     */
-    public function getDownloadUrl()
+    public function getDownloadUrl(): string
     {
         return $this->Url . '&Download=1';
     }

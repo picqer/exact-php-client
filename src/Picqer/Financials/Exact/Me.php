@@ -35,6 +35,7 @@ namespace Picqer\Financials\Exact;
  * @property string $MiddleName Middle name
  * @property string $Mobile Mobile phone
  * @property string $Nationality Nationality
+ * @property string $PackageCode Package code used in the customers license
  * @property string $Phone Phone number
  * @property string $PhoneExtension Phone number extension
  * @property string $PictureUrl Url that can be used to retrieve the picture of the user
@@ -43,7 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ThumbnailPicture Binary thumbnail picture of this user (This property will never return value and will be removed in the near future.)
  * @property string $ThumbnailPictureFormat File type of the picture (This property will never return value and will be removed in the near future.)
  * @property string $Title Title
- * @property string $UserName Login name of the user
+ * @property string $UserName Login name of the user. If the user logs in with One Exact Identity, the login name is in the email address field
  */
 class Me extends Model
 {
@@ -80,6 +81,7 @@ class Me extends Model
         'MiddleName',
         'Mobile',
         'Nationality',
+        'PackageCode',
         'Phone',
         'PhoneExtension',
         'PictureUrl',

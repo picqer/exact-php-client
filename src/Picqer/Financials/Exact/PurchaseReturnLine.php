@@ -15,6 +15,8 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of the creator
  * @property int $Division Division code
  * @property string $EntryID EntryID identifies the purchase return. All the lines of purchase return have the same Entry ID
+ * @property string $Expense Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license
+ * @property string $ExpenseDescription Description of expense. Only available with a professional service license
  * @property string $GoodsReceiptLineID ID of the goods receipts line
  * @property string $Item The unique identifier of the item being returned
  * @property string $ItemCode Code of the returned item
@@ -27,8 +29,12 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of the last modifier
  * @property string $ModifierFullName Name of the last modifier
  * @property string $Notes Notes related to the return
+ * @property string $Project Reference to project. Only available with a professional service license
+ * @property string $ProjectCode Project code. Only available with a professional service license
+ * @property string $ProjectDescription Description of the project. Only available with a professional service license
  * @property string $PurchaseOrderLineID ID of the purchase order line that is returned
  * @property int $PurchaseOrderNumber Order number of the purchase order that is returned
+ * @property bool $Rebill Indicates whether the purchase order line needs to be rebilled. Only available with a professional service license
  * @property int $ReceiptNumber Receipt number of the return
  * @property float $ReceivedQuantity Quantity received
  * @property float $ReturnQuantity Quantity returned
@@ -52,6 +58,8 @@ class PurchaseReturnLine extends Model
         'CreatorFullName',
         'Division',
         'EntryID',
+        'Expense',
+        'ExpenseDescription',
         'GoodsReceiptLineID',
         'Item',
         'ItemCode',
@@ -64,8 +72,12 @@ class PurchaseReturnLine extends Model
         'Modifier',
         'ModifierFullName',
         'Notes',
+        'Project',
+        'ProjectCode',
+        'ProjectDescription',
         'PurchaseOrderLineID',
         'PurchaseOrderNumber',
+        'Rebill',
         'ReceiptNumber',
         'ReceivedQuantity',
         'ReturnQuantity',

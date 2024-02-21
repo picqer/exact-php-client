@@ -11,6 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AssemblyDate Planned date for assembly of the item
  * @property string $Description Description of assembly order
  * @property int $Division Division code
+ * @property string $FinishedAssemblyDate Latest finished date for assembly of the item
  * @property float $FinishedQuantity Quantity of items that have actually been assembled
  * @property string $Item Reference to assembled item
  * @property string $ItemCode Assembled item code
@@ -24,6 +25,11 @@ namespace Picqer\Financials\Exact;
  * @property string $StorageLocation Reference to storage location
  * @property string $StorageLocationCode Storage location code
  * @property string $StorageLocationDescription Storage location description
+ * @property int $StorageLocationSequenceNumber Sequence number for assembly order (Premium Only)
+ * @property int $Type Assembly order type: 8060 = Assembly, 8061 = Disassemble
+ * @property string $Unit The standard unit of the assembled item
+ * @property string $UnitCode Code of Unit
+ * @property string $UnitDescription Description of Unit
  * @property string $Warehouse Warehouse
  * @property string $WarehouseCode Code of Warehouse
  * @property string $WarehouseDescription Description of Warehouse
@@ -37,6 +43,7 @@ class AssemblyOrder extends Model
         'AssemblyDate',
         'Description',
         'Division',
+        'FinishedAssemblyDate',
         'FinishedQuantity',
         'Item',
         'ItemCode',
@@ -50,6 +57,11 @@ class AssemblyOrder extends Model
         'StorageLocation',
         'StorageLocationCode',
         'StorageLocationDescription',
+        'StorageLocationSequenceNumber',
+        'Type',
+        'Unit',
+        'UnitCode',
+        'UnitDescription',
         'Warehouse',
         'WarehouseCode',
         'WarehouseDescription',

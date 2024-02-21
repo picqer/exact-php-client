@@ -10,7 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PurchaseOrderID Primary key
  * @property float $AmountDC Total amount in the default currency of the company
  * @property float $AmountFC Total amount in the currency of the transaction
- * @property int $ApprovalStatus Approval status of purchase order. 0=Awaiting approval, 1=Automatically, 2=Approved. Approve a new purchase order by giving value 2 if user has PurchaseOrderApproval right.
+ * @property int $ApprovalStatus Approval status of purchase order. 0=Awaiting approval, 1=Automatically, 2=Approved.
  * @property string $ApprovalStatusDescription Description of ApprovalStatus
  * @property string $Approved Approval datetime
  * @property string $Approver User who approved the purchase order

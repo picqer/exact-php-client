@@ -17,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $Description Description of the purchase order line
  * @property float $Discount Discount in percentage for item
  * @property int $Division Division code
@@ -28,6 +29,7 @@ namespace Picqer\Financials\Exact;
  * @property int $IsSerialNumberItem Indicates that an Item is an serial item
  * @property string $Item Reference to the item for purchase order
  * @property string $ItemBarcode Barcode of the item (numeric string)
+ * @property string $ItemBarcodeAdditional This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale & Distribution and Manufacturing
  * @property string $ItemCode Item code
  * @property string $ItemDescription Description of item
  * @property bool $ItemDivisable Indicates if fractional quantities of the item can be used, for example quantity = 0.4
@@ -51,6 +53,8 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesOrderLine Sales order line of the sales order that Is linked to a back to back sales order in purchase order. Show NULL if more than one sales order is linked to the purchase order line.
  * @property int $SalesOrderLineNumber Number of the sales order line. Show NULL if more than one sales order is linked to the purchase order line.
  * @property int $SalesOrderNumber Number of the sales order. Show NULL if more than one sales order is linked to the purchase order line.
+ * @property ShopOrderMaterialPlan[] $ShopOrderMaterialPlans Collection of Shop order Material plans
+ * @property ShopOrderRoutingStepPlan[] $ShopOrderRoutingStepPlans Collection of Shop order Routing step plans
  * @property string $SupplierItemCode Code the supplier uses for this item
  * @property int $SupplierItemCopyRemarks Indicate if the notes content should be copied from SupplierItem's remarks. The default follows the CopyRemarks value from SupplierItem. Values: 0 = Do not copy remark, 1 = Copy remark
  * @property string $Unit Code of item unit
@@ -77,6 +81,7 @@ class PurchaseOrderLine extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Description',
         'Discount',
         'Division',
@@ -88,6 +93,7 @@ class PurchaseOrderLine extends Model
         'IsSerialNumberItem',
         'Item',
         'ItemBarcode',
+        'ItemBarcodeAdditional',
         'ItemCode',
         'ItemDescription',
         'ItemDivisable',
@@ -111,6 +117,8 @@ class PurchaseOrderLine extends Model
         'SalesOrderLine',
         'SalesOrderLineNumber',
         'SalesOrderNumber',
+        'ShopOrderMaterialPlans',
+        'ShopOrderRoutingStepPlans',
         'SupplierItemCode',
         'SupplierItemCopyRemarks',
         'Unit',

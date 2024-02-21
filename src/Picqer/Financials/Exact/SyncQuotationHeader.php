@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DeliveryAccountContactFullName Full name of the delivery account contact person
  * @property string $DeliveryAccountName The name of the delivery account
  * @property string $DeliveryAddress The id of the delivery address
+ * @property string $DeliveryDate The date of the delivery
  * @property string $Description By default this contains the item description
  * @property float $Discount Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
@@ -64,6 +65,9 @@ namespace Picqer\Financials\Exact;
  * @property string $SalesChannelDescription Description of Sales channel.
  * @property string $SalesPerson The user that is responsible for the quotation version
  * @property string $SalesPersonFullName Full name of the sales person
+ * @property string $SelectionCode ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing
+ * @property string $SelectionCodeCode Code of selection code
+ * @property string $SelectionCodeDescription Description of selection code
  * @property string $ShippingMethod Shipping method ID
  * @property string $ShippingMethodDescription Shipping method description
  * @property int $Status The status of the quotation version. 5 = Rejected, 6 = Reviewed and closed, 10 = Recovery, 20 = Draft, 25 = Open, 35 = Processing... , 40 = Printed, 50 = Accepted
@@ -95,6 +99,7 @@ class SyncQuotationHeader extends Model
         'DeliveryAccountContactFullName',
         'DeliveryAccountName',
         'DeliveryAddress',
+        'DeliveryDate',
         'Description',
         'Discount',
         'Division',
@@ -135,6 +140,9 @@ class SyncQuotationHeader extends Model
         'SalesChannelDescription',
         'SalesPerson',
         'SalesPersonFullName',
+        'SelectionCode',
+        'SelectionCodeCode',
+        'SelectionCodeDescription',
         'ShippingMethod',
         'ShippingMethodDescription',
         'Status',

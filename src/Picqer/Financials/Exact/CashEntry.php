@@ -12,6 +12,7 @@ namespace Picqer\Financials\Exact;
  * @property float $ClosingBalanceFC Closing balance in the currency of the transaction
  * @property string $Created Creation date
  * @property string $Currency Currency code
+ * @property string $CustomField Custom field endpoint
  * @property int $Division Division code
  * @property int $EntryNumber Entry number
  * @property int $FinancialPeriod The period of the transaction lines. The period should exist in the period date table
@@ -38,6 +39,7 @@ class CashEntry extends Model
         'ClosingBalanceFC',
         'Created',
         'Currency',
+        'CustomField',
         'Division',
         'EntryNumber',
         'FinancialPeriod',

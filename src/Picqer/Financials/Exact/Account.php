@@ -17,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $AddressLine1 Visit address first line
  * @property string $AddressLine2 Visit address second line
  * @property string $AddressLine3 Visit address third line
+ * @property int $AutomaticProcessProposedEntry Automatically create entries for complete entry proposals
  * @property BankAccount[] $BankAccounts Collection of Bank accounts
  * @property bool $Blocked Indicates if the account is blocked
  * @property string $BSN Citizen Service Number for the Netherlands
@@ -51,6 +52,7 @@ namespace Picqer\Financials\Exact;
  * @property float $DiscountSales Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
  * @property string $Email E-Mail address of the account
+ * @property bool $EnableSalesPaymentLink Indicates whether payment link is activated for sales
  * @property string $EndDate Determines in combination with the start date if the account is active. If the current date is > end date the account is inactive
  * @property string $EORINumber EORI number
  * @property string $EstablishedDate RegistrationDate
@@ -163,6 +165,7 @@ class Account extends Model
         'AddressLine1',
         'AddressLine2',
         'AddressLine3',
+        'AutomaticProcessProposedEntry',
         'BankAccounts',
         'Blocked',
         'BSN',
@@ -197,6 +200,7 @@ class Account extends Model
         'DiscountSales',
         'Division',
         'Email',
+        'EnableSalesPaymentLink',
         'EndDate',
         'EORINumber',
         'EstablishedDate',

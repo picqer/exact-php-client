@@ -173,4 +173,22 @@ class SalesOrder extends Model
         }
         $this->attributes['SalesOrderLines'][] = $array;
     }
+
+    public function getSalesOrderLines()
+    {
+        if (array_key_exists('__deferred', $this->attributes['SalesOrderLines'])) {
+            $this->attributes['SalesOrderLines'] = (new SalesOrderLine($this->connection()))->filter("OrderID eq guid'{$this->OrderID}'");
+        }
+
+        return $this->attributes['SalesOrderLines'];
+    }
+
+    public function getSalesOrderOrderChargeLines()
+    {
+        if (array_key_exists('__deferred', $this->attributes['SalesOrderOrderChargeLines'])) {
+            $this->attributes['SalesOrderOrderChargeLines'] = (new SalesOrderOrderChargeLine($this->connection()))->filter("OrderID eq guid'{$this->OrderID}'");
+        }
+
+        return $this->attributes['SalesOrderOrderChargeLines'];
+    }
 }

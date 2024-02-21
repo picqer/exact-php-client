@@ -12,10 +12,15 @@ namespace Picqer\Financials\Exact;
  * @property float $AmountDiscount Discount amount in the currency of the transaction
  * @property float $AmountDiscountExclVat Discount amount excluding VAT in the currency of the transaction
  * @property float $AmountFC Amount in the currency of the transaction
+ * @property string $CostCenter Reference to Cost center
+ * @property string $CostCenterDescription Description of CostCenter
+ * @property string $CostUnit Reference to Cost unit
+ * @property string $CostUnitDescription Description of CostUnit
  * @property string $Created Date and time on which the quotation was created
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
  * @property string $CustomerItemCode Code the customer uses for this item
+ * @property string $CustomField Custom field endpoint
  * @property string $Description By default this contains the item description
  * @property float $Discount Discount given on the default price. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
@@ -28,6 +33,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of the modifier
  * @property float $NetPrice Net price of the quotation line
  * @property string $Notes Extra notes
+ * @property bool $Optional Indicates the optional line
  * @property float $Quantity The number of items sold in default units. The quantity shown in the entry screen is Quantity * UnitFactor
  * @property string $QuotationID Identifies the quotation. All the lines of a quotation have the same QuotationID
  * @property int $QuotationNumber Unique number to indentify the quotation. By default this number is based on the setting for first available number
@@ -51,10 +57,15 @@ class SyncQuotationLine extends Model
         'AmountDiscount',
         'AmountDiscountExclVat',
         'AmountFC',
+        'CostCenter',
+        'CostCenterDescription',
+        'CostUnit',
+        'CostUnitDescription',
         'Created',
         'Creator',
         'CreatorFullName',
         'CustomerItemCode',
+        'CustomField',
         'Description',
         'Discount',
         'Division',
@@ -67,6 +78,7 @@ class SyncQuotationLine extends Model
         'ModifierFullName',
         'NetPrice',
         'Notes',
+        'Optional',
         'Quantity',
         'QuotationID',
         'QuotationNumber',
