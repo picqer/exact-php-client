@@ -36,6 +36,8 @@ namespace Picqer\Financials\Exact;
  * @property string $PartOfDescription Description of part of
  * @property string $Project ID of the project that linked to WBS activity
  * @property string $ProjectDescription Project description that is linked to WBS activity
+ * @property bool $ReleaseInvoiceTerm Action to release the invoice term. You can only release a WBS activity's invoice term once and it cannot be undo
+ * @property string $ReleaseInvoiceTermDate Release invoice term date. The linked invoice term date can be updated by using this property. The update will only happen when releasing a WBS activity's invoice term
  * @property int $SequenceNumber Sequence number of the WBS activity. Last sequence will be selected if not specified
  * @property string $StartDate Start date of the WBS activity
  * @property float $TimeQuantityToAlert Alert when exceeding this time quantity
@@ -75,6 +77,8 @@ class WBSActivity extends Model
         'PartOfDescription',
         'Project',
         'ProjectDescription',
+        'ReleaseInvoiceTerm',
+        'ReleaseInvoiceTermDate',
         'SequenceNumber',
         'StartDate',
         'TimeQuantityToAlert',

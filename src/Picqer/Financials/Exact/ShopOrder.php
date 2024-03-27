@@ -55,6 +55,8 @@ namespace Picqer\Financials\Exact;
  * @property int $ShopOrderMaterialPlanBackflushCount Number of shop order material plans, which are backflushed, for this shop order
  * @property int $ShopOrderMaterialPlanCount Number of shop order material plans for this shop order
  * @property ShopOrderMaterialPlan[] $ShopOrderMaterialPlans Collection of Shop order Material plans
+ * @property int $ShopOrderMaterialPlansNonIssuedByproductsCount Count of non-issued shop order material plans related to byproducts
+ * @property int $ShopOrderMaterialPlansNonIssuedMaterialsCount Count of non-issued shop order material plans related to materials
  * @property int $ShopOrderNumber Unique number to indentify the shop order
  * @property string $ShopOrderNumberString Unique number to indentify the shop order (as a string to allow OData filtering, e.g. $filter=substringof('123',ShopOrderNumberString) eq true
  * @property string $ShopOrderParent Shop order parent
@@ -123,6 +125,8 @@ class ShopOrder extends Model
         'ShopOrderMaterialPlanBackflushCount',
         'ShopOrderMaterialPlanCount',
         'ShopOrderMaterialPlans',
+        'ShopOrderMaterialPlansNonIssuedByproductsCount',
+        'ShopOrderMaterialPlansNonIssuedMaterialsCount',
         'ShopOrderNumber',
         'ShopOrderNumberString',
         'ShopOrderParent',

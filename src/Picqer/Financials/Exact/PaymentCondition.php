@@ -26,7 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property int $PaymentDays Number of days to be included in the due date calculation. Example: invoice date = 17/01 PaymentEndOfMonths = 2 => 31/03 PaymentDays = 15 => 15/04
  * @property string $PaymentDiscountType Type of payment discount. Values: B = Settlement discount, K = Credit surcharge
  * @property int $PaymentEndOfMonths Number of month endings to be included in the due date calculation
- * @property string $PaymentMethod Method of payment. Values: B = On credit, I = Collection, K = Cash
+ * @property string $PaymentMethod Method of payment. Values: B = On credit, I = Collection, K = Cash, Q = PSP Collection
  * @property float $Percentage Percentage (stored as fraction) of total invoice amount
  * @property string $VATCalculation Indicates how the VAT amount is calculated Values: E = Excluding discount, I = Including discount
  */

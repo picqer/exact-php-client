@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property bool $BlockRebilling To indicated if rebilling is blocked
  * @property float $BudgetedCost Budget cost of the WBS expense
  * @property float $BudgetedRevenue Revenue of the WBS expense
+ * @property bool $Completed To indicated if the WBS expense is completed
  * @property string $Created The date and time when the WBS expense was created
  * @property string $Creator The ID of the user that created the WBS expense
  * @property string $CreatorFullName The full name of the user that created the WBS expense
@@ -35,6 +36,8 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectDescription Project description that is linked to WBS expense
  * @property float $PurchasePrice Purchase price of the item
  * @property float $Quantity Quantity of the WBS
+ * @property bool $ReleaseInvoiceTerm Action to release the invoice term. You can only release a WBS expense's invoice term once and it cannot be undo
+ * @property string $ReleaseInvoiceTermDate Release invoice term date. The linked invoice term date can be updated by using this property. The update will only happen when releasing a WBS expense's invoice term
  * @property int $SequenceNumber Sequence number of the WBS deliverable. Last sequence will be selected if not specified
  * @property string $StartDate Start date of the WBS expense
  * @property string $Supplier Supplier of the item
@@ -51,6 +54,7 @@ class WBSExpense extends Model
         'BlockRebilling',
         'BudgetedCost',
         'BudgetedRevenue',
+        'Completed',
         'Created',
         'Creator',
         'CreatorFullName',
@@ -73,6 +77,8 @@ class WBSExpense extends Model
         'ProjectDescription',
         'PurchasePrice',
         'Quantity',
+        'ReleaseInvoiceTerm',
+        'ReleaseInvoiceTermDate',
         'SequenceNumber',
         'StartDate',
         'Supplier',

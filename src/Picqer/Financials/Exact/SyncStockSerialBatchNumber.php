@@ -28,7 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PurchaseTransaction ID of purchase transaction associated with this serial or batch number.
  * @property float $Quantity Quantity of this serial or batch number entering or leaving inventory
  * @property string $Remarks Remarks
- * @property string $SalesOrderLine ID of sales order line associated with this serial or batch number.
+ * @property string $SalesOrderLine ID of sales order in which this serial or batch number was reserved. Provided only for the Exact Online Premium users.
  * @property string $SalesReturnLine ID of sales return associated with this serial or batch number.
  * @property string $SalesTransaction ID of sales transaction associated with this serial or batch number.
  * @property string $SerialBatchNumber Serial or Batch Number ID
