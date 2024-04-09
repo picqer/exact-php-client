@@ -33,7 +33,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DeliveryContact Reference to contact for delivery
  * @property string $DeliveryContactPersonFullName Name of the contact person of the customer who will receive delivered goods
  * @property string $Description Description
- * @property float $Discount Discount in percentage for item
+ * @property float $Discount Discount in percentage for item.
  * @property int $Division Division code
  * @property string $Document Document that is manually linked to the purchase order
  * @property int $DocumentNumber Number of the document

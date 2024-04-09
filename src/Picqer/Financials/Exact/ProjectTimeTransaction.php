@@ -26,7 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property string $EndTime End time of the time transaction
  * @property int $EntryNumber Number that represents the grouping of time transactions
  * @property string $ErrorText (Only used by backgroundjobs) To determine which transaction has an error
- * @property int $HourStatus Status of the transaction: 1 = Draft, 2 = Rejected, 10 = Submitted, 11 = Failed on approval, 14 = Processing, 16 = Processing, 19 = Failed while undoing approval, 20 = Final
+ * @property int $HourStatus For POST/PUT: Status of the transaction: 1 = Draft, 2 = Rejected, 10 = Submitted For GET: Status of the transaction: 1 = Draft, 2 = Rejected, 10 = Submitted, 11 = Failed on approval, 14 = Processing, 16 = Processing, 19 = Failed while undoing approval, 20 = Final
  * @property string $Item Item that is linked to the transaction, which provides the time information
  * @property string $ItemDescription Description of the item that is linked to the transaction
  * @property bool $ItemDivisable Indicates if fractional quantities of the item can be used, for example quantity = 0.4

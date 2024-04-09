@@ -9,6 +9,8 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property string $Account Account to which the mandate belongs.
+ * @property string $Attachment Contain attachment (Format: Base64 encoded) of the mandate belongs. Binaries are not sent in the response.
+ * @property string $AttachmentFileName Filename of the attachment to which the mandate belongs.
  * @property string $BankAccount Bank account to which the mandate belongs.
  * @property string $CancellationDate Date that the mandate is cancelled. Used to check the validity of the mandate.
  * @property string $Created Creation date
@@ -34,6 +36,8 @@ class DirectDebitMandate extends Model
     protected $fillable = [
         'ID',
         'Account',
+        'Attachment',
+        'AttachmentFileName',
         'BankAccount',
         'CancellationDate',
         'Created',

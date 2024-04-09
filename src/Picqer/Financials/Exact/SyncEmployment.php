@@ -3,11 +3,11 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Employment.
+ * Class SyncEmployment.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmployments
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncPayrollEmployments
  *
- * @property string $ID Primary key
+ * @property int $Timestamp Timestamp
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -17,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property int $EmployeeHID Numeric number of Employee
  * @property int $EmploymentNumber Employment number
  * @property string $EndDate End date of employment
+ * @property string $ID Primary key
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -27,12 +28,14 @@ namespace Picqer\Financials\Exact;
  * @property string $StartDate Start date of employment
  * @property string $StartDateOrganization Start date of the employee in the organization. This field is used to count the years in service.
  */
-class Employment extends Model
+class SyncEmployment extends Model
 {
     use Query\Findable;
 
+    protected $primaryKey = 'Timestamp';
+
     protected $fillable = [
-        'ID',
+        'Timestamp',
         'Created',
         'Creator',
         'CreatorFullName',
@@ -42,6 +45,7 @@ class Employment extends Model
         'EmployeeHID',
         'EmploymentNumber',
         'EndDate',
+        'ID',
         'Modified',
         'Modifier',
         'ModifierFullName',
@@ -53,5 +57,5 @@ class Employment extends Model
         'StartDateOrganization',
     ];
 
-    protected $url = 'payroll/Employments';
+    protected $url = 'sync/Payroll/Employments';
 }
