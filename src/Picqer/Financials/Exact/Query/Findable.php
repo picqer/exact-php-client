@@ -55,7 +55,7 @@ trait Findable
     /**
      * Return the value of the primary key.
      *
-     * @param string $code the value to search for
+     * @param string|int $code the value to search for
      * @param string $key  the key being searched (defaults to 'Code')
      *
      * @return string|void (guid)
@@ -64,7 +64,7 @@ trait Findable
     {
         if ($this->isFillable($key)) {
             $format = ($this->url() == 'crm/Accounts' && $key === 'Code') ? '%18s' : '%s';
-            if (preg_match('/^[\w]{8}-([\w]{4}-){3}[\w]{12}$/', $code)) {
+            if (is_string($code) && preg_match('/^[\w]{8}-([\w]{4}-){3}[\w]{12}$/', $code)) {
                 $format = "guid'$format'";
             } elseif (is_string($code)) {
                 $format = "'$format'";
