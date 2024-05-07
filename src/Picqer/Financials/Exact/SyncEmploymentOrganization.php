@@ -3,11 +3,11 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class EmploymentOrganization.
+ * Class SyncEmploymentOrganization.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentOrganizations
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncPayrollEmploymentOrganizations
  *
- * @property string $ID Primary key
+ * @property int $Timestamp Timestamp
  * @property string $CostCenter Cost center code
  * @property string $CostCenterDescription Description of cost center
  * @property string $CostUnit Cost unit code
@@ -25,6 +25,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Employment Employment ID
  * @property int $EmploymentNumber Employment number
  * @property string $EndDate Organization end date
+ * @property string $ID Primary key
  * @property string $JobTitle ID of job title
  * @property string $JobTitleCode Job title code
  * @property string $JobTitleDescription Job title description
@@ -33,12 +34,14 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $StartDate Organization start date
  */
-class EmploymentOrganization extends Model
+class SyncEmploymentOrganization extends Model
 {
     use Query\Findable;
 
+    protected $primaryKey = 'Timestamp';
+
     protected $fillable = [
-        'ID',
+        'Timestamp',
         'CostCenter',
         'CostCenterDescription',
         'CostUnit',
@@ -56,6 +59,7 @@ class EmploymentOrganization extends Model
         'Employment',
         'EmploymentNumber',
         'EndDate',
+        'ID',
         'JobTitle',
         'JobTitleCode',
         'JobTitleDescription',
@@ -65,5 +69,5 @@ class EmploymentOrganization extends Model
         'StartDate',
     ];
 
-    protected $url = 'payroll/EmploymentOrganizations';
+    protected $url = 'sync/Payroll/EmploymentOrganizations';
 }

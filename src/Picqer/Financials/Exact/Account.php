@@ -113,6 +113,8 @@ namespace Picqer\Financials\Exact;
  * @property string $PaymentConditionPurchaseDescription Description of PaymentConditionPurchase
  * @property string $PaymentConditionSales Code of default payment condition for sales
  * @property string $PaymentConditionSalesDescription Description of PaymentConditionSales
+ * @property string $PeppolIdentifier Peppol identifier user entered manually, corresponds to picked peppol adress
+ * @property int $PeppolIdentifierType Peppol identifier type that user picked manually - GLN, COC, etc
  * @property string $Phone Phone number
  * @property string $PhoneExtension Phone number extention
  * @property string $Postcode Visit address postcode
@@ -261,6 +263,8 @@ class Account extends Model
         'PaymentConditionPurchaseDescription',
         'PaymentConditionSales',
         'PaymentConditionSalesDescription',
+        'PeppolIdentifier',
+        'PeppolIdentifierType',
         'Phone',
         'PhoneExtension',
         'Postcode',

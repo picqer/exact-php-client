@@ -3,11 +3,11 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class EmploymentSalary.
+ * Class SyncEmploymentSalary.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentSalaries
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncPayrollEmploymentSalaries
  *
- * @property string $ID Primary key
+ * @property int $Timestamp Timestamp
  * @property int $AmountType Salary Section: Salary typeValue: 0 - Gross, 1 - Net.
  * @property string $AmountTypeDescription Salary Section: Salary type descriptionWhen AmountType value is 0, return 'Gross'When AmountType value 1, return 'Net'
  * @property float $AverageDaysPerWeek The average number of contract days that an employee works per week
@@ -31,6 +31,7 @@ namespace Picqer\Financials\Exact;
  * @property string $FrequencyDescription Payroll period frequency description
  * @property float $FulltimeAmount Salary when working fulltime
  * @property float $HourlyWage Hourly wage
+ * @property string $ID Primary key
  * @property float $IntercompanyRate Rate Section: Intercompany rate
  * @property float $InternalRate Internal rate for time & billing or professional service user
  * @property int $JobLevel Employee job level in context of a wage scale
@@ -50,12 +51,14 @@ namespace Picqer\Financials\Exact;
  * @property int $WageScalePeriod Salary Section: Period for automatic step increase
  * @property string $WageScaleStep Salary Section: Wagescale Step Code
  */
-class EmploymentSalary extends Model
+class SyncEmploymentSalary extends Model
 {
     use Query\Findable;
 
+    protected $primaryKey = 'Timestamp';
+
     protected $fillable = [
-        'ID',
+        'Timestamp',
         'AmountType',
         'AmountTypeDescription',
         'AverageDaysPerWeek',
@@ -79,6 +82,7 @@ class EmploymentSalary extends Model
         'FrequencyDescription',
         'FulltimeAmount',
         'HourlyWage',
+        'ID',
         'IntercompanyRate',
         'InternalRate',
         'JobLevel',
@@ -99,5 +103,5 @@ class EmploymentSalary extends Model
         'WageScaleStep',
     ];
 
-    protected $url = 'payroll/EmploymentSalaries';
+    protected $url = 'sync/Payroll/EmploymentSalaries';
 }

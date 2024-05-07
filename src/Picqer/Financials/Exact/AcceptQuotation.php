@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMAcceptQuotation
  *
  * @property string $QuotationID Identifier of the quotation.
- * @property int $Action 0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project, 5 = create subscription, 99 = follow email with sign off action.
+ * @property int $Action 0 = No action (Default), 1 = create sales order, 2 = create sales invoice, 3 = create project, 4 = add to existing project, 5 = create subscription, 99 = follow email with sign off action. For CRM standalone: Code 99 only applicable for quotation with status '60 - Awaiting online acceptance'.
  * @property string $AddToExistingProjectSuccess Contains information if the quotation was successfully added to existing project.
  * @property bool $CreateItemPriceAgreement Create a project item price agreement. Only needed when Action = 3 or Action = 4. Default = True.
  * @property bool $CreateProjectWBS Create a project work breakdown structure. Only needed when ProjectBudgetType = 2.

@@ -3,11 +3,11 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class EmploymentTaxAuthoritiesGeneral.
+ * Class SyncEmploymentTaxAuthoritiesGeneral.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=PayrollEmploymentTaxAuthoritiesGeneral
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncPayrollEmploymentTaxAuthoritiesGeneral
  *
- * @property string $ID Primary key
+ * @property int $Timestamp Timestamp
  * @property string $Account ID of the account
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -19,6 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Employment Employment
  * @property int $EmploymentNumber Employment number
  * @property string $EndDate End date of employment agencies
+ * @property string $ID Primary key
  * @property string $InfluenceInsuranceObligation Influence insurance obligation
  * @property string $InfluenceInsuranceObligationDescription Influence insurance obligation description
  * @property string $Modified Last modified date
@@ -31,12 +32,14 @@ namespace Picqer\Financials\Exact;
  * @property string $TypeOfIncome Type of income
  * @property string $TypeOfIncomeDescription Type of income description
  */
-class EmploymentTaxAuthoritiesGeneral extends Model
+class SyncEmploymentTaxAuthoritiesGeneral extends Model
 {
     use Query\Findable;
 
+    protected $primaryKey = 'Timestamp';
+
     protected $fillable = [
-        'ID',
+        'Timestamp',
         'Account',
         'Created',
         'Creator',
@@ -48,6 +51,7 @@ class EmploymentTaxAuthoritiesGeneral extends Model
         'Employment',
         'EmploymentNumber',
         'EndDate',
+        'ID',
         'InfluenceInsuranceObligation',
         'InfluenceInsuranceObligationDescription',
         'Modified',
@@ -61,5 +65,5 @@ class EmploymentTaxAuthoritiesGeneral extends Model
         'TypeOfIncomeDescription',
     ];
 
-    protected $url = 'payroll/EmploymentTaxAuthoritiesGeneral';
+    protected $url = 'sync/Payroll/EmploymentTaxAuthoritiesGeneral';
 }
