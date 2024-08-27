@@ -29,6 +29,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Customer Customer ID
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property int $Division Division code
  * @property string $Email Page: User maintenance page; Section: PersonalE-mail address of a user. If employee is linked to a user, the user email is stored in this property.Note: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employeesUsers created in Exact Online can access the company or companies in an administration.
  * @property int $EmployeeHID Employee number
@@ -60,7 +61,9 @@ namespace Picqer\Financials\Exact;
  * @property string $Person Reference to the persons table in which the personal data of the employee is stored
  * @property string $Phone Phone numberNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
  * @property string $PhoneExtension Phone number extensionNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
+ * @property string $Picture Bytes of the logo image
  * @property string $PictureFileName Filename of picture
+ * @property string $PictureThumbnailUrl Thumbnail url of the picture
  * @property string $PictureUrl Url of picture
  * @property string $Postcode PostcodeNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
  * @property string $PrivateEmail Section: Personal Personal e-mail address of the employee.Note: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
@@ -98,6 +101,7 @@ class Employee extends Model
         'Creator',
         'CreatorFullName',
         'Customer',
+        'CustomField',
         'Division',
         'Email',
         'EmployeeHID',
@@ -129,7 +133,9 @@ class Employee extends Model
         'Person',
         'Phone',
         'PhoneExtension',
+        'Picture',
         'PictureFileName',
+        'PictureThumbnailUrl',
         'PictureUrl',
         'Postcode',
         'PrivateEmail',

@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  * @property int $IsReleased Indicator that the Shop order has been released to production
  * @property int $IsSerial Does the material plan's item use serial numbers
  * @property string $Item Reference to the item created by this shoporder
+ * @property string $ItemBarcode Barcode of the item created by this shop order
  * @property string $ItemCode Code of the item created by this shop order
  * @property string $ItemDescription Description of the item created by this shop order
  * @property string $ItemPictureUrl URL of the picture linked to the item created by this shop order
@@ -96,6 +97,7 @@ class ShopOrder extends Model
         'IsReleased',
         'IsSerial',
         'Item',
+        'ItemBarcode',
         'ItemCode',
         'ItemDescription',
         'ItemPictureUrl',

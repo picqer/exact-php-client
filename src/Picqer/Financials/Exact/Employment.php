@@ -25,7 +25,7 @@ namespace Picqer\Financials\Exact;
  * @property int $ReasonEndFlex Reason of ended flexible employment
  * @property string $ReasonEndFlexDescription Other reason for end of employment
  * @property string $StartDate Start date of employment
- * @property string $StartDateOrganization Start date of the employee in the organization. This field is used to count the years in service.
+ * @property string $StartDateOrganization Start date of the employee in the organization. This field is used to count the years in service.Note: For PUT, this property will update the start date years in service for all employments of this employee
  */
 class Employment extends Model
 {

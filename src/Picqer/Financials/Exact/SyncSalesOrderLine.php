@@ -19,6 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $CustomerItemCode Code the customer uses for this item
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DeliveryDate Delivery date of this line
  * @property int $DeliveryStatus Shipping status of the sales order line. 12=Open, 20=Partial, 21=Complete, 45=Cancelled
  * @property string $DeliveryStatusDescription Description of DeliveryStatus
@@ -86,6 +87,7 @@ class SyncSalesOrderLine extends Model
         'Creator',
         'CreatorFullName',
         'CustomerItemCode',
+        'CustomField',
         'DeliveryDate',
         'DeliveryStatus',
         'DeliveryStatusDescription',

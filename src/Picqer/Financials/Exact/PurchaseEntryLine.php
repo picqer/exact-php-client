@@ -20,7 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description
  * @property int $Division Division code
  * @property string $EntryID Reference to header of the purchase entry
- * @property string $From From date to identify the range for deferred costs. This is used in combination with the property 'To' that defines the end date
+ * @property string $From From date to identify the range for accrued/deferred costs. This is used in combination with the property 'To' that defines the end date
  * @property string $GLAccount General ledger account
  * @property string $GLAccountCode Code of GLAccount
  * @property string $GLAccountDescription Description of GLAccount
@@ -43,7 +43,7 @@ namespace Picqer\Financials\Exact;
  * @property float $StatisticalValue Statistical Value (only relevant when IntraStat for purchase is enabled in the administration)
  * @property string $Subscription Reference to subscription
  * @property string $SubscriptionDescription Description of Subscription
- * @property string $To To date to identify the range for deferred costs. This is used in combination with the property 'From' that defines the start date
+ * @property string $To To date to identify the range for accrued/deferred costs. This is used in combination with the property 'From' that defines the start date
  * @property string $TrackingNumber Reference to tracking number
  * @property string $TrackingNumberDescription Description of TrackingNumber
  * @property int $Type Type: 30 = Purchase entry, 31 = Purchase credit note

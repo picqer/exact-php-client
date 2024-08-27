@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectCostTransactions
  *
  * @property string $ID Primary key
- * @property string $Account Guid ID of account that is linked to the project
+ * @property string $Account Reference to the account
  * @property string $AccountName Name of account that is linked to the project
  * @property float $AmountFC Calculated amount of the transaction based on (Quantity * PriceFC)
  * @property string $Attachment Attachment linked to the transaction (not mandatory)

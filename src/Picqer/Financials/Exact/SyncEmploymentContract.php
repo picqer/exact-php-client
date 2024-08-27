@@ -29,6 +29,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ModifierFullName Name of modifier
  * @property string $ProbationEndDate Employment probation end date
  * @property int $ProbationPeriod Employment probation period
+ * @property string $ProbationPeriodDescription Contract probation period description
  * @property int $ReasonContract Employment contract reason code. 1 - New employment, 2 - Employment change, 3 - New legal employer, 4 - Acquisition 5 - Previous contract expired, 6 - Other
  * @property string $ReasonContractDescription Employment contract reason description
  * @property int $Sequence Sequence number
@@ -65,6 +66,7 @@ class SyncEmploymentContract extends Model
         'ModifierFullName',
         'ProbationEndDate',
         'ProbationPeriod',
+        'ProbationPeriodDescription',
         'ReasonContract',
         'ReasonContractDescription',
         'Sequence',

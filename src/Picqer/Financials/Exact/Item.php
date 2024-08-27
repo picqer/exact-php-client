@@ -82,11 +82,11 @@ namespace Picqer\Financials\Exact;
  * @property bool $IsPurchaseItem Indicates if the item can be purchased
  * @property bool $IsSalesItem Indicates if the item can be sold
  * @property bool $IsSerialItem Indicates that serial numbers are used for this item
- * @property bool $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory.
+ * @property bool $IsStockItem If you have the Trade or Manufacturing license and you check this property the item will be shown in the stock positions overview, stock counts and transaction lists. If you have the Invoice module and you check this property you will get a general journal entry based on the Stock and Costs G/L accounts of the item group. If you don’t want the general journal entry to be created you should change the Stock/Costs G/L account on the Item group page to the type Costs instead of Inventory. If you have the CRM Standalone license, the item will not be available.
  * @property bool $IsSubcontractedItem Indicates if the item is provided by an outside supplier
  * @property int $IsTaxableItem Indicates if tax needs to be calculated for this item
  * @property int $IsTime Indicates if the item is a time unit item (for example a labor hour item)
- * @property int $IsWebshopItem Indicates if the item can be exported to a web shop
+ * @property int $IsWebshopItem Indicates if the item can be exported to a web shop. If you have the CRM Standalone license, the item will not be available.
  * @property string $ItemGroup GUID of Item group of the item
  * @property string $ItemGroupCode Code of ItemGroup
  * @property string $ItemGroupDescription Description of ItemGroup

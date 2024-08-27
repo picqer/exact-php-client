@@ -43,6 +43,7 @@ namespace Picqer\Financials\Exact;
  * @property string $RoutingStepRealizationNotes RoutingStepRealizationNotes
  * @property int $RoutingStepStatus Routing step status
  * @property string $RoutingStepStatusDescription Routing step status description
+ * @property int $RoutingStepType Routing step type
  * @property string $RunStartTime Run start time
  * @property int $RunStatus Run timed status
  * @property string $RunTimedTimeTransaction Run timed time transaction
@@ -107,6 +108,7 @@ class ShopOrderRoutingStepPlansAvailableToWork extends Model
         'RoutingStepRealizationNotes',
         'RoutingStepStatus',
         'RoutingStepStatusDescription',
+        'RoutingStepType',
         'RunStartTime',
         'RunStatus',
         'RunTimedTimeTransaction',
