@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncLogisticsSupplierItem
  *
  * @property int $Timestamp Timestamp
+ * @property string $Barcode This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale & Distribution and Manufacturing
  * @property int $CopyRemarks Copy purchase remarks to purchase lines
  * @property string $CountryOfOrigin Country of origin code
  * @property string $CountryOfOriginDescription Description of country of origin
@@ -54,6 +55,7 @@ class SyncSupplierItem extends Model
 
     protected $fillable = [
         'Timestamp',
+        'Barcode',
         'CopyRemarks',
         'CountryOfOrigin',
         'CountryOfOriginDescription',

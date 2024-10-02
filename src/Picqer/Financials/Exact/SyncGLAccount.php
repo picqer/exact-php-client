@@ -23,7 +23,6 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $CustomField Custom field endpoint
- * @property DeductibilityPercentage[] $DeductibilityPercentages Deductibility percentages. You can have several Deductibility percentages, with start and end dates
  * @property string $Description Name of the G/L account. If Multilanguage featureset is enabled in the administration and the G/L account already has a set of termed description, this field is not allowed to change.
  * @property int $Division Division code
  * @property int $ExcludeVATListing General ledger transactions on this G/L account should not appear on the VAT listing
@@ -75,7 +74,6 @@ class SyncGLAccount extends Model
         'Creator',
         'CreatorFullName',
         'CustomField',
-        'DeductibilityPercentages',
         'Description',
         'Division',
         'ExcludeVATListing',

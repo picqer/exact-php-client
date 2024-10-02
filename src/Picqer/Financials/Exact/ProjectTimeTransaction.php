@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ProjectTimeTransactions
  *
  * @property string $ID Primary key
- * @property string $Account Guid ID of account that is linked to the project
+ * @property string $Account Reference to the account
  * @property string $AccountName Name of account that is linked to the project
  * @property string $Activity Guid ID of activity that is linked to project WBS (work breakdown structure)
  * @property string $ActivityDescription Name of activity that is linked to project WBS (work breakdown structure)

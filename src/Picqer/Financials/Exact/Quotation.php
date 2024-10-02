@@ -72,6 +72,9 @@ namespace Picqer\Financials\Exact;
  * @property string $StatusDescription The description of the status
  * @property float $VATAmountFC Total VAT amount in the currency of the transaction
  * @property int $VersionNumber Number indicating the different reviews which are made for the quotation
+ * @property string $WarehouseCode Code of Warehouse
+ * @property string $WarehouseDescription Description of Warehouse
+ * @property string $WarehouseID Warehouse. Only supported by the Plus, Professional and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $YourRef The number by which this quotation is identified by the order account
  */
 class Quotation extends Model
@@ -147,6 +150,9 @@ class Quotation extends Model
         'StatusDescription',
         'VATAmountFC',
         'VersionNumber',
+        'WarehouseCode',
+        'WarehouseDescription',
+        'WarehouseID',
         'YourRef',
     ];
 

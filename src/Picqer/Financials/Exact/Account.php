@@ -80,7 +80,7 @@ namespace Picqer\Financials\Exact;
  * @property string $InvoiceAccountCode Code of InvoiceAccount
  * @property string $InvoiceAccountName Name of InvoiceAccount
  * @property int $InvoiceAttachmentType Indicates which attachment types should be sent when a sales invoice is printed. Only values in related table with Invoice=1 are allowed
- * @property int $InvoicingMethod Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange), 8: Send and track
+ * @property int $InvoicingMethod Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange), 8: Send and trackTake notes: To use the '4 - Mailbox (electronic exchange)' option, the 'Mailbox' feature set is required in the licence.
  * @property int $IsAccountant Indicates whether the account is an accountant. Values: 0 = No accountant, 1 = True, but accountant doesn't want his name to be published in the list of accountants, 2 = True, and accountant is published in the list of accountants
  * @property int $IsAgency Indicates whether the accounti is an agency
  * @property int $IsAnonymised Indicates whtether the account is anonymised.
@@ -119,7 +119,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PhoneExtension Phone number extention
  * @property string $Postcode Visit address postcode
  * @property string $PriceList Default sales price list for account
- * @property string $PurchaseCurrency Currency of purchase
+ * @property string $PurchaseCurrency Currency of purchaseTake notes: If the currency code input is not in the active currencies, the value will be set to empty.
  * @property string $PurchaseCurrencyDescription Description of PurchaseCurrency
  * @property int $PurchaseLeadDays Indicates number of days required to receive a purchase. Acts as a default
  * @property string $PurchaseVATCode Default VAT code used for purchase entries
@@ -130,7 +130,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ResellerCode Code of Reseller
  * @property string $ResellerName Name of Reseller
  * @property string $RSIN Fiscal number for NL legislation
- * @property string $SalesCurrency Currency of Sales used for Time & Billing
+ * @property string $SalesCurrency Currency of Sales used for Time & BillingTake notes: If the currency code input is not in the active currencies, the value will be set to empty.
  * @property string $SalesCurrencyDescription Description of SalesCurrency
  * @property string $SalesVATCode Default VAT code for a sales entry
  * @property string $SalesVATCodeDescription Description of SalesVATCode

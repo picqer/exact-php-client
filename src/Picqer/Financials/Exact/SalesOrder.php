@@ -22,6 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
  * @property string $Currency Currency code
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DeliverTo Reference to the delivery customer. For an existing sales order this value can not be changed.
  * @property string $DeliverToContactPerson Reference to contact person of delivery customer
  * @property string $DeliverToContactPersonFullName Name of contact person of delivery customer
@@ -102,6 +103,7 @@ class SalesOrder extends Model
         'Creator',
         'CreatorFullName',
         'Currency',
+        'CustomField',
         'DeliverTo',
         'DeliverToContactPerson',
         'DeliverToContactPersonFullName',

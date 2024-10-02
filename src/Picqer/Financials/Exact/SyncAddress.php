@@ -46,7 +46,7 @@ namespace Picqer\Financials\Exact;
  * @property string $FreeTextField_04 Free text field 4
  * @property string $FreeTextField_05 Free text field 5
  * @property string $ID Primary key
- * @property string $Mailbox Mailbox
+ * @property string $Mailbox MailboxTake notes: The 'Mailbox' functionality required the Mailbox feature set in the licence.
  * @property bool $Main Indicates if the address is the main address for this type
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier

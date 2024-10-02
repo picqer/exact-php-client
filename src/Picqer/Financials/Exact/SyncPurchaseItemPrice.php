@@ -10,6 +10,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Timestamp Timestamp
  * @property string $Account ID of the supplier
  * @property string $AccountName Name of the supplier account
+ * @property string $Barcode This is the barcode for the unit other than standard unit of the item. Only supported by the Premium for Wholesale & Distribution and Manufacturing
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -42,6 +43,7 @@ class SyncPurchaseItemPrice extends Model
         'Timestamp',
         'Account',
         'AccountName',
+        'Barcode',
         'Created',
         'Creator',
         'CreatorFullName',
