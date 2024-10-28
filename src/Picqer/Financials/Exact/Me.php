@@ -27,6 +27,7 @@ namespace Picqer\Financials\Exact;
  * @property bool $IsEmployeeSelfServiceUser Employee user with limited access and specific start page
  * @property bool $IsMyFirmLiteUser MyFirm lite user of accountant with limited access and specific start page (internal use)
  * @property bool $IsMyFirmPortalUser MyFirm user of accountant with limited access and specific start page (internal use)
+ * @property bool $IsOEIMigrationMandatory Determines whether one exact identity migration is mandatory for the user. True - User does have to migrate, False - User does not have to migrate
  * @property bool $IsStarterUser Starter user with limited access and specific start page (internal use)
  * @property string $Language Language spoken by this user
  * @property string $LanguageCode Language (culture) that is used in Exact Online
@@ -73,6 +74,7 @@ class Me extends Model
         'IsEmployeeSelfServiceUser',
         'IsMyFirmLiteUser',
         'IsMyFirmPortalUser',
+        'IsOEIMigrationMandatory',
         'IsStarterUser',
         'Language',
         'LanguageCode',

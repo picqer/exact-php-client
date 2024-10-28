@@ -30,7 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property float $PaymentParttimeFactor Part-time factor for payroll calculation. Value between 0 and 1
  * @property int $ScheduleType Type of schedule. 1 = Hours and average days, 2 = Hours and specific days, 3 = Hours per day, 4 = Time frames per day
  * @property string $ScheduleTypeDescription Description of the schedule type
- * @property string $StartDate Week in the schedule which is used to start with. By default the number will be 1.
+ * @property string $StartDate Start date of the schedule
  * @property int $StartWeek Week to start the schedule from for an employee
  */
 class SyncSchedule extends Model

@@ -47,6 +47,7 @@ namespace Picqer\Financials\Exact;
  * @property string $InternalNotes Internal notes not to be printed in invoice
  * @property string $InvoiceAddress Invoice address
  * @property bool $InvoiceAsQuoted Indicates whether the project is invoice as quoted
+ * @property string $InvoiceDescription Description for generate project invoice
  * @property InvoiceTerm[] $InvoiceTerms Collection of invoice terms
  * @property int $IsWBSRequiredForEntry Indicates whether the project WBS is required for time and cost entry E.g: 0 = Based on company setting, 1 = Yes, 2 = No
  * @property string $Manager Responsible person for this project
@@ -118,6 +119,7 @@ class Project extends Model
         'InternalNotes',
         'InvoiceAddress',
         'InvoiceAsQuoted',
+        'InvoiceDescription',
         'InvoiceTerms',
         'IsWBSRequiredForEntry',
         'Manager',

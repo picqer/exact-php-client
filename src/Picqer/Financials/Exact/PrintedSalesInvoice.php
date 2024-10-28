@@ -18,6 +18,8 @@ namespace Picqer\Financials\Exact;
  * @property string $EmailLayout Based on this layout the email text is produced
  * @property string $ExtraText Extra text that can be added to the printed document and email
  * @property string $InvoiceDate Date of the invoice
+ * @property string $PeppolCreationError Contains the error message if an error occurred during the sending via peppol
+ * @property string $PeppolCreationSuccess Contains information if sending via peppol was succesfully sent
  * @property string $PostboxMessageCreationError Contains the error message if an error occurred during the sending of a postbox message
  * @property string $PostboxMessageCreationSuccess Contains information if a postbox message was succesfully sent
  * @property string $PostboxSender The postbox from where the message is sent
@@ -26,6 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property bool $SendEmailToCustomer Set to True if an email containing the invoice should be sent to the invoice customer. This option overrules SendInvoiceToCustomerPostbox.
  * @property string $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  * @property bool $SendInvoiceToCustomerPostbox Set to True if a postbox message containing the invoice should be sent to the invoice customer Take notes:The digital postbox option only available if the license has Mailbox feature set.
+ * @property bool $SendInvoiceViaPeppol Set to True if the invoice should be sent via peppol to the invoice customer.
  * @property bool $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Document only, Email or Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox. Take notes:The digital postbox option only available if the license has Mailbox feature set.
  */
 class PrintedSalesInvoice extends Model
@@ -47,6 +50,8 @@ class PrintedSalesInvoice extends Model
         'EmailLayout',
         'ExtraText',
         'InvoiceDate',
+        'PeppolCreationError',
+        'PeppolCreationSuccess',
         'PostboxMessageCreationError',
         'PostboxMessageCreationSuccess',
         'PostboxSender',
@@ -55,6 +60,7 @@ class PrintedSalesInvoice extends Model
         'SendEmailToCustomer',
         'SenderEmailAddress',
         'SendInvoiceToCustomerPostbox',
+        'SendInvoiceViaPeppol',
         'SendOutputBasedOnAccount',
     ];
 
