@@ -456,9 +456,10 @@ class Connection
             }
 
             Psr7\Message::rewindBody($response);
-            $json = json_decode($response->getBody()->getContents(), true);
+            $responseBody = $response->getBody()->getContents();
+            $json = json_decode($responseBody, true);
             if (false === is_array($json)) {
-                throw new ApiException('Json decode failed. Got response: ' . $response->getBody()->getContents());
+                throw new ApiException('Json decode failed. Got response: ' . $responseBody);
             }
             if (array_key_exists('d', $json)) {
                 if (array_key_exists('__next', $json['d'])) {
@@ -608,7 +609,8 @@ class Connection
             $response = $this->client()->post($this->getTokenUrl(), $body);
 
             Psr7\Message::rewindBody($response);
-            $body = json_decode($response->getBody()->getContents(), true);
+            $responseBody = $response->getBody()->getContents();
+            $body = json_decode($responseBody, true);
 
             if (json_last_error() === JSON_ERROR_NONE) {
                 $this->accessToken = $body['access_token'];
@@ -619,7 +621,7 @@ class Connection
                     call_user_func($this->tokenUpdateCallback, $this);
                 }
             } else {
-                throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $response->getBody()->getContents());
+                throw new ApiException('Could not acquire tokens, json decode failed. Got response: ' . $responseBody);
             }
         } catch (BadResponseException $ex) {
             $this->parseExceptionForErrorMessages($ex);
