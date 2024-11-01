@@ -17,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CategoryDescription Description of Category
  * @property string $Contact ID of the related contact of this document
  * @property string $ContactFullName Contact full name
+ * @property string $ContractNumber Contract Number
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -69,6 +70,7 @@ class Document extends Model
         'CategoryDescription',
         'Contact',
         'ContactFullName',
+        'ContractNumber',
         'Created',
         'Creator',
         'CreatorFullName',

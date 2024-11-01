@@ -18,11 +18,11 @@ namespace Picqer\Financials\Exact;
  * @property string $EmployeeFullName Name of employee
  * @property int $EmployeeHID Numeric number of Employee
  * @property string $ID Primary key
- * @property bool $Main This indicates if the bank account is the main bank account. Set this to true if the bank account is the main bank account. If there are no bank accounts, the first bank account will automatically be set as the main bank account.
+ * @property bool $Main This indicates if the bank account is the main bank account
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
- * @property string $Number This is the bank account number.
+ * @property string $Number This is the bank account number. (maximum of 34 characters)
  */
 class SyncBankAccount extends Model
 {
