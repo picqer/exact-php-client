@@ -28,7 +28,7 @@ namespace Picqer\Financials\Exact;
  * @property string $BudgetTypeDescription Budget type description
  * @property string $Classification Used only for PSA to link a project classification to the project
  * @property string $ClassificationDescription Description of Classification
- * @property string $Code Code
+ * @property string $Code Code Note : Code is not mandatory in PSA packages.If no code is provided, project auto number will be used, but this can only be applied to PSA packages.
  * @property float $CostsAmountFC Used only for PSA to store the budgetted costs of a project (except for project type Campaign and Non-billable). Positive quantities only
  * @property string $Created Creation date
  * @property string $Creator User ID of creator

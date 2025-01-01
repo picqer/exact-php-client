@@ -15,7 +15,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
- * @property float $Rate The exchange rate is stored as 1 TARGET CURRENCY = x SOURCE CURRENCY
+ * @property float $Rate The exchange rate is stored as 1 TARGET CURRENCY = 1/x SOURCE CURRENCY
  * @property string $SourceCurrency The foreign currency
  * @property string $SourceCurrencyDescription Description of the foreign currency
  * @property string $StartDate The date as of which the rate is valid. The rate is valid until a next rate is defined

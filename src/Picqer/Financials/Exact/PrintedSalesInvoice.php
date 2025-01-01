@@ -29,7 +29,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SenderEmailAddress Email address from which the email will be sent. If not specified, the company email address will be used.
  * @property bool $SendInvoiceToCustomerPostbox Set to True if a postbox message containing the invoice should be sent to the invoice customer Take notes:The digital postbox option only available if the license has Mailbox feature set.
  * @property bool $SendInvoiceViaPeppol Set to True if the invoice should be sent via peppol to the invoice customer.
- * @property bool $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Document only, Email or Digital postbox. This option overrules both SendEmailToCustomer and SendInvoiceToCustomerPostbox. Take notes:The digital postbox option only available if the license has Mailbox feature set.
+ * @property bool $SendOutputBasedOnAccount Set to True if the output preference should be taken from the account. It will be either Document only, Email, Digital postbox or Peppol. This option overrules by SendEmailToCustomer, SendInvoiceToCustomerPostbox, SendInvoiceViaPeppol. Take notes:The digital postbox option only available if the license has Mailbox feature set.
  */
 class PrintedSalesInvoice extends Model
 {

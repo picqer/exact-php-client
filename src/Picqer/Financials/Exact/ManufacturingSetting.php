@@ -12,8 +12,6 @@ namespace Picqer\Financials\Exact;
  * @property int $InventorySubMethod What is the division's sub inventory method? Perpetual=1,NonPerpetual=2,AngloSaxon=3
  * @property int $NegativeStockIsAllowed Does the current division allow negative stock?
  * @property int $SerialNumbersAreMandatory Are serial numbers mandatory in this division?
- * @property int $ShowBackflushMaterials Should ShopOrderMaterialPlans with Backflush=True be shown within Smart Shop Floor?
- * @property int $ShowSubOrderMaterials Should ShopOrderMaterialPlans linked to a SubOrder be shown within Smart Shop Floor?
  */
 class ManufacturingSetting extends Model
 {
@@ -27,8 +25,6 @@ class ManufacturingSetting extends Model
         'InventorySubMethod',
         'NegativeStockIsAllowed',
         'SerialNumbersAreMandatory',
-        'ShowBackflushMaterials',
-        'ShowSubOrderMaterials',
     ];
 
     protected $url = 'manufacturing/ManufacturingSettings';
