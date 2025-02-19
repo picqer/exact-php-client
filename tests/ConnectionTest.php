@@ -91,7 +91,6 @@ class ConnectionTest extends TestCase
 
     public function endpointsThatDontUseDivisionInUrl(): \Generator
     {
-
         yield 'System users endpoint' => ['system/Users'];
         yield 'Me endpoint'           => ['current/Me'];
     }

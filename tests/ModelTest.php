@@ -2,7 +2,6 @@
 
 namespace Picqer\Tests;
 
-use Generator;
 use PHPUnit\Framework\TestCase;
 use Picqer\Financials\Exact\Item;
 use Picqer\Financials\Exact\Query\Resultset;
