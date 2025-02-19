@@ -6,6 +6,8 @@ namespace Picqer\Financials\Exact;
 
 /**
  * Class Model.
+ *
+ * @phpstan-consistent-constructor
  */
 abstract class Model implements \JsonSerializable
 {
@@ -30,7 +32,7 @@ abstract class Model implements \JsonSerializable
      */
     protected $primaryKey = 'ID';
 
-    public function __construct(Connection $connection, array $attributes = [])
+    final public function __construct(Connection $connection, array $attributes = [])
     {
         $this->connection = $connection;
         $this->fill($attributes);
