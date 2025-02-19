@@ -72,29 +72,29 @@ class Connection
     private ?Client $client = null;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void
      */
     private $tokenUpdateCallback;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void
      */
     private $acquireAccessTokenLockCallback;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void
      */
     private $acquireAccessTokenUnlockCallback;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void
      */
     private $refreshAccessTokenCallback;
 
     /**
-     * @var callable[]
+     * @var list<callable(callable): callable>
      */
-    protected $middleWares = [];
+    protected array $middleWares = [];
 
     public ?string $nextUrl = null;
 
