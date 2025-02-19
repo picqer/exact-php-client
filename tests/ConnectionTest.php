@@ -89,12 +89,11 @@ class ConnectionTest extends TestCase
         $connection->get('crm/Accounts');
     }
 
-    public function endpointsThatDontUseDivisionInUrl(): array
+    public function endpointsThatDontUseDivisionInUrl(): \Generator
     {
-        return [
-            'System users endpoint' => ['system/Users'],
-            'Me endpoint'           => ['current/Me'],
-        ];
+
+        yield 'System users endpoint' => ['system/Users'];
+        yield 'Me endpoint'           => ['current/Me'];
     }
 
     private function createMockHandler(): MockHandler
