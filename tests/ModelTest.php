@@ -54,7 +54,7 @@ class ModelTest extends TestCase
         $response = (new Item($connection))->getAsGenerator();
 
         $this->assertInstanceOf(Generator::class, $response);
-        $this->assertCount(2, $response);
+        $this->assertEquals(2, iterator_count($response));
     }
 
     public function testCanFilterModels()
@@ -77,7 +77,7 @@ class ModelTest extends TestCase
         $response = (new Item($connection))->filterAsGenerator('IsWebshopItem eq 0');
 
         $this->assertInstanceOf(Generator::class, $response);
-        $this->assertCount(2, $response);
+        $this->assertEquals(2, iterator_count($response));
     }
 
     public function testCanGetCollectionFromResult()
@@ -104,7 +104,7 @@ class ModelTest extends TestCase
         $collection = $item->collectionFromResultAsGenerator($result);
 
         $this->assertInstanceOf(Generator::class, $collection);
-        $this->assertCount(2, $collection);
+        $this->assertEquals(2, iterator_count($collection));
     }
 
     public function testCanGetResultSet()

@@ -41,6 +41,6 @@ class ResultsetTest extends TestCase
         ))->nextAsGenerator();
 
         $this->assertIsIterable($response);
-        $this->assertCount(2, $response);
+        $this->assertEquals(2, iterator_count($response));
     }
 }
