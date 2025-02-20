@@ -41,7 +41,6 @@ class ModelTest extends TestCase
 
         $response = (new Item($connection))->get();
 
-        $this->assertIsArray($response);
         $this->assertInstanceOf(Item::class, $response[0]);
         $this->assertCount(2, $response);
     }
@@ -64,7 +63,6 @@ class ModelTest extends TestCase
 
         $response = (new Item($connection))->filter('IsWebshopItem eq 0');
 
-        $this->assertIsArray($response);
         $this->assertInstanceOf(Item::class, $response[0]);
         $this->assertCount(2, $response);
     }
@@ -89,7 +87,6 @@ class ModelTest extends TestCase
         $result = $connection->get($item->url(), []);
         $collection = $item->collectionFromResult($result);
 
-        $this->assertIsArray($collection);
         $this->assertInstanceOf(Item::class, $collection[0]);
         $this->assertCount(2, $collection);
     }

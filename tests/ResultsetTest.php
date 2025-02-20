@@ -23,7 +23,6 @@ class ResultsetTest extends TestCase
             []
         ))->next();
 
-        $this->assertIsArray($response);
         $this->assertInstanceOf(Item::class, $response[0]);
         $this->assertCount(2, $response);
     }
@@ -40,7 +39,6 @@ class ResultsetTest extends TestCase
             []
         ))->nextAsGenerator();
 
-        $this->assertIsIterable($response);
         $this->assertCount(2, $response);
     }
 }
