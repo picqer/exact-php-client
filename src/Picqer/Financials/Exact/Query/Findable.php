@@ -143,9 +143,8 @@ trait Findable
         }
 
         $results = $this->filter($filter, $expand, $select, $query_options, $headers);
-        $result = is_array($results) && count($results) > 0 ? $results[0] : null;
 
-        return $result;
+        return count($results) > 0 ? $results[0] : null;
     }
 
     public function getResultSet(array $params = [])
