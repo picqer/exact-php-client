@@ -1,24 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Function getValue\(\) should return string\|null but return statement is missing\.$#'
-			identifier: return.missing
-			count: 1
-			path: example/example.php
-
-		-
-			message: '#^Parameter \#1 \$tokenExpires of method Picqer\\Financials\\Exact\\Connection\:\:setTokenExpires\(\) expects int, string given\.$#'
-			identifier: argument.type
-			count: 1
-			path: example/example.php
-
-		-
-			message: '#^Parameter \#2 \$value of function setValue expects string, int given\.$#'
-			identifier: argument.type
-			count: 1
-			path: example/example.php
-
-		-
 			message: '#^Trait Picqer\\Financials\\Exact\\Webhook\\Authenticatable is used zero times and is not analysed\.$#'
 			identifier: trait.unused
 			count: 1

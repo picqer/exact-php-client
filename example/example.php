@@ -8,27 +8,28 @@ require __DIR__ . '/../vendor/autoload.php';
  *
  * @param string $key
  *
- * @return null|string
+ * @return null|string|int
  */
-function getValue($key)
+function getValue(string $key)
 {
-    $storage = json_decode(file_get_contents('storage.json'), true);
+    $storage = json_decode(file_get_contents('storage.json'), true, 512, JSON_THROW_ON_ERROR);
     if (array_key_exists($key, $storage)) {
         return $storage[$key];
     }
+
+    return null;
 }
 
 /**
  * Function to persist some data for the example.
  *
- * @param string $key
- * @param string $value
+ * @param string|int $value
  */
-function setValue($key, $value)
+function setValue(string $key, $value)
 {
-    $storage = json_decode(file_get_contents('storage.json'), true);
+    $storage = json_decode(file_get_contents('storage.json'), true, 512, JSON_THROW_ON_ERROR);
     $storage[$key] = $value;
-    file_put_contents('storage.json', json_encode($storage));
+    file_put_contents('storage.json', json_encode($storage, JSON_THROW_ON_ERROR));
 }
 
 /**
@@ -46,10 +47,8 @@ function authorize()
 
 /**
  * Callback function that sets values that expire and are refreshed by Connection.
- *
- * @param \Picqer\Financials\Exact\Connection $connection
  */
-function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection)
+function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection): void
 {
     // Save the new tokens for next connections
     setValue('accesstoken', $connection->getAccessToken());
@@ -63,10 +62,8 @@ function tokenUpdateCallback(\Picqer\Financials\Exact\Connection $connection)
  * Function to connect to Exact, this creates the client and automatically retrieves oAuth tokens if needed.
  *
  * @throws Exception
- *
- * @return \Picqer\Financials\Exact\Connection
  */
-function connect()
+function connect(): \Picqer\Financials\Exact\Connection
 {
     $connection = new \Picqer\Financials\Exact\Connection();
     $connection->setRedirectUrl('__REDIRECT_URL__');
