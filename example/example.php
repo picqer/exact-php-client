@@ -108,7 +108,7 @@ if (isset($_GET['code']) && is_null(getValue('authorizationcode'))) {
     setValue('authorizationcode', $_GET['code']);
 }
 
-// If we do not have a authorization code, authorize first to setup tokens
+// If we do not have an authorization code, authorize first to set up tokens
 if (getValue('authorizationcode') === null) {
     authorize();
 }
