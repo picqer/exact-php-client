@@ -1,0 +1,23 @@
+name: Run static analysis
+
+on: [pull_request]
+
+jobs:
+  static-analysis:
+    name: Static analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 7.4
+      
+      - name: Composer install
+        run: composer install --prefer-dist --no-interaction --no-progress --no-suggest
+        
+      - name: Run static analysis
+        run: vendor/bin/phpstan
