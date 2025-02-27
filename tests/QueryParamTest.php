@@ -28,189 +28,187 @@ class QueryParamTest extends TestCase
         $this->assertEquals(http_build_query($params), $mockHandler->getLastRequest()->getUri()->getQuery());
     }
 
-    public function ModelsWithSupportQueryParams(): array
+    public function ModelsWithSupportQueryParams(): \Generator
     {
-        return [
-            Exact\RecentCostsByNumberOfWeeks::class => [
-                Exact\RecentCostsByNumberOfWeeks::class,
-                ['numberOfWeeks'],
-            ],
-            Exact\PayablesListByAccountAndAgeGroup::class => [
-                Exact\PayablesListByAccountAndAgeGroup::class,
-                ['accountId', 'ageGroup'],
-            ],
-            Exact\CostEntryRecentAccountsByProject::class => [
-                Exact\CostEntryRecentAccountsByProject::class,
-                ['projectId'],
-            ],
-            Exact\PreferredMailboxForOperation::class => [
-                Exact\PreferredMailboxForOperation::class,
-                ['operation'],
-            ],
-            Exact\HourTypesByDate::class => [
-                Exact\HourTypesByDate::class,
-                ['checkDate'],
-            ],
-            Exact\CostTypesByProjectAndDate::class => [
-                Exact\CostTypesByProjectAndDate::class,
-                ['projectId', 'checkDate'],
-            ],
-            Exact\ReceivablesListByAccountAndAgeGroup::class => [
-                Exact\ReceivablesListByAccountAndAgeGroup::class,
-                ['accountId', 'ageGroup'],
-            ],
-            Exact\ReceivablesListByAgeGroup::class => [
-                Exact\ReceivablesListByAgeGroup::class,
-                ['ageGroup'],
-            ],
-            Exact\DefaultAddressForAccount::class => [
-                Exact\DefaultAddressForAccount::class,
-                ['accountId', 'addressType'],
-            ],
-            Exact\HoursById::class => [
-                Exact\HoursById::class,
-                ['entryId'],
-            ],
-            Exact\ProjectWBSByProjectAndWBS::class => [
-                Exact\ProjectWBSByProjectAndWBS::class,
-                ['projectId', 'projectWBSId', 'webType'],
-            ],
-            Exact\HourEntryRecentActivitiesByProject::class => [
-                Exact\HourEntryRecentActivitiesByProject::class,
-                ['projectId'],
-            ],
-            Exact\OpportunityDocumentsCount::class => [
-                Exact\OpportunityDocumentsCount::class,
-                ['opportunityId', 'searchText'],
-            ],
-            Exact\CostEntryRecentCostTypesByProject::class => [
-                Exact\CostEntryRecentCostTypesByProject::class,
-                ['projectId'],
-            ],
-            Exact\TimeAndBillingEntryAccountsByProjectAndDate::class => [
-                Exact\TimeAndBillingEntryAccountsByProjectAndDate::class,
-                ['projectId', 'checkDate'],
-            ],
-            Exact\HourTypesByProjectAndDate::class => [
-                Exact\HourTypesByProjectAndDate::class,
-                ['projectId', 'checkDate'],
-            ],
-            Exact\AccountDocumentCount::class => [
-                Exact\AccountDocumentCount::class,
-                ['accountId', 'searchText', 'useFullTextSearch'],
-            ],
-            Exact\AgingReceivablesListByAgeGroup::class => [
-                Exact\AgingReceivablesListByAgeGroup::class,
-                ['ageGroup'],
-            ],
-            Exact\CostsByDate::class => [
-                Exact\CostsByDate::class,
-                ['checkDate'],
-            ],
-            Exact\RevenueListByYearAndStatus::class => [
-                Exact\RevenueListByYearAndStatus::class,
-                ['year', 'afterEntry'],
-            ],
-            Exact\AgingPayablesListByAgeGroup::class => [
-                Exact\AgingPayablesListByAgeGroup::class,
-                ['ageGroup'],
-            ],
-            Exact\HoursByDate::class => [
-                Exact\HoursByDate::class,
-                ['checkDate'],
-            ],
-            Exact\AccountDocument::class => [
-                Exact\AccountDocument::class,
-                ['accountId', 'searchText', 'useFullTextSearch'],
-            ],
-            Exact\PayablesListByAgeGroup::class => [
-                Exact\PayablesListByAgeGroup::class,
-                ['ageGroup'],
-            ],
-            Exact\AccountDocumentFolder::class => [
-                Exact\AccountDocumentFolder::class,
-                ['accountId'],
-            ],
-            Exact\HourEntryActivitiesByProject::class => [
-                Exact\HourEntryActivitiesByProject::class,
-                ['projectId'],
-            ],
-            Exact\TimeAndBillingEntryAccountsByDate::class => [
-                Exact\TimeAndBillingEntryAccountsByDate::class,
-                ['checkDate'],
-            ],
-            Exact\CostsById::class => [
-                Exact\CostsById::class,
-                ['entryId'],
-            ],
-            Exact\ReceivablesListByAccount::class => [
-                Exact\ReceivablesListByAccount::class,
-                ['accountId'],
-            ],
-            Exact\RevenueListByYear::class => [
-                Exact\RevenueListByYear::class,
-                ['year'],
-            ],
-            Exact\AgingOverviewByAccount::class => [
-                Exact\AgingOverviewByAccount::class,
-                ['accountId'],
-            ],
-            Exact\HourEntryRecentAccountsByProject::class => [
-                Exact\HourEntryRecentAccountsByProject::class,
-                ['projectId'],
-            ],
-            Exact\PayablesListByAccount::class => [
-                Exact\PayablesListByAccount::class,
-                ['accountId'],
-            ],
-            Exact\TimeAndBillingAccountDetailsByID::class => [
-                Exact\TimeAndBillingAccountDetailsByID::class,
-                ['accountId'],
-            ],
-            Exact\CostTypesByDate::class => [
-                Exact\CostTypesByDate::class,
-                ['checkDate'],
-            ],
-            Exact\HourEntryRecentHourTypesByProject::class => [
-                Exact\HourEntryRecentHourTypesByProject::class,
-                ['projectId'],
-            ],
-            Exact\OpportunityDocument::class => [
-                Exact\OpportunityDocument::class,
-                ['opportunityId', 'searchText'],
-            ],
-            Exact\TimeAndBillingEntryProjectsByDate::class => [
-                Exact\TimeAndBillingEntryProjectsByDate::class,
-                ['checkDate'],
-            ],
-            Exact\TimeAndBillingItemDetailsByID::class => [
-                Exact\TimeAndBillingItemDetailsByID::class,
-                ['itemId'],
-            ],
-            Exact\CostEntryExpensesByProject::class => [
-                Exact\CostEntryExpensesByProject::class,
-                ['projectId'],
-            ],
-            Exact\UserHasRights::class => [
-                Exact\UserHasRights::class,
-                ['endpoint', 'action'],
-            ],
-            Exact\TimeAndBillingEntryProjectsByAccountAndDate::class => [
-                Exact\TimeAndBillingEntryProjectsByAccountAndDate::class,
-                ['accountId', 'checkDate'],
-            ],
-            Exact\TimeAndBillingProjectDetailsByID::class => [
-                Exact\TimeAndBillingProjectDetailsByID::class,
-                ['projectId'],
-            ],
-            Exact\ItemDetailsByID::class => [
-                Exact\ItemDetailsByID::class,
-                ['itemId'],
-            ],
-            Exact\CostEntryRecentExpensesByProject::class => [
-                Exact\CostEntryRecentExpensesByProject::class,
-                ['projectId'],
-            ],
+        yield Exact\RecentCostsByNumberOfWeeks::class => [
+            Exact\RecentCostsByNumberOfWeeks::class,
+            ['numberOfWeeks'],
+        ];
+        yield Exact\PayablesListByAccountAndAgeGroup::class => [
+            Exact\PayablesListByAccountAndAgeGroup::class,
+            ['accountId', 'ageGroup'],
+        ];
+        yield Exact\CostEntryRecentAccountsByProject::class => [
+            Exact\CostEntryRecentAccountsByProject::class,
+            ['projectId'],
+        ];
+        yield Exact\PreferredMailboxForOperation::class => [
+            Exact\PreferredMailboxForOperation::class,
+            ['operation'],
+        ];
+        yield Exact\HourTypesByDate::class => [
+            Exact\HourTypesByDate::class,
+            ['checkDate'],
+        ];
+        yield Exact\CostTypesByProjectAndDate::class => [
+            Exact\CostTypesByProjectAndDate::class,
+            ['projectId', 'checkDate'],
+        ];
+        yield Exact\ReceivablesListByAccountAndAgeGroup::class => [
+            Exact\ReceivablesListByAccountAndAgeGroup::class,
+            ['accountId', 'ageGroup'],
+        ];
+        yield Exact\ReceivablesListByAgeGroup::class => [
+            Exact\ReceivablesListByAgeGroup::class,
+            ['ageGroup'],
+        ];
+        yield Exact\DefaultAddressForAccount::class => [
+            Exact\DefaultAddressForAccount::class,
+            ['accountId', 'addressType'],
+        ];
+        yield Exact\HoursById::class => [
+            Exact\HoursById::class,
+            ['entryId'],
+        ];
+        yield Exact\ProjectWBSByProjectAndWBS::class => [
+            Exact\ProjectWBSByProjectAndWBS::class,
+            ['projectId', 'projectWBSId', 'webType'],
+        ];
+        yield Exact\HourEntryRecentActivitiesByProject::class => [
+            Exact\HourEntryRecentActivitiesByProject::class,
+            ['projectId'],
+        ];
+        yield Exact\OpportunityDocumentsCount::class => [
+            Exact\OpportunityDocumentsCount::class,
+            ['opportunityId', 'searchText'],
+        ];
+        yield Exact\CostEntryRecentCostTypesByProject::class => [
+            Exact\CostEntryRecentCostTypesByProject::class,
+            ['projectId'],
+        ];
+        yield Exact\TimeAndBillingEntryAccountsByProjectAndDate::class => [
+            Exact\TimeAndBillingEntryAccountsByProjectAndDate::class,
+            ['projectId', 'checkDate'],
+        ];
+        yield Exact\HourTypesByProjectAndDate::class => [
+            Exact\HourTypesByProjectAndDate::class,
+            ['projectId', 'checkDate'],
+        ];
+        yield Exact\AccountDocumentCount::class => [
+            Exact\AccountDocumentCount::class,
+            ['accountId', 'searchText', 'useFullTextSearch'],
+        ];
+        yield Exact\AgingReceivablesListByAgeGroup::class => [
+            Exact\AgingReceivablesListByAgeGroup::class,
+            ['ageGroup'],
+        ];
+        yield Exact\CostsByDate::class => [
+            Exact\CostsByDate::class,
+            ['checkDate'],
+        ];
+        yield Exact\RevenueListByYearAndStatus::class => [
+            Exact\RevenueListByYearAndStatus::class,
+            ['year', 'afterEntry'],
+        ];
+        yield Exact\AgingPayablesListByAgeGroup::class => [
+            Exact\AgingPayablesListByAgeGroup::class,
+            ['ageGroup'],
+        ];
+        yield Exact\HoursByDate::class => [
+            Exact\HoursByDate::class,
+            ['checkDate'],
+        ];
+        yield Exact\AccountDocument::class => [
+            Exact\AccountDocument::class,
+            ['accountId', 'searchText', 'useFullTextSearch'],
+        ];
+        yield Exact\PayablesListByAgeGroup::class => [
+            Exact\PayablesListByAgeGroup::class,
+            ['ageGroup'],
+        ];
+        yield Exact\AccountDocumentFolder::class => [
+            Exact\AccountDocumentFolder::class,
+            ['accountId'],
+        ];
+        yield Exact\HourEntryActivitiesByProject::class => [
+            Exact\HourEntryActivitiesByProject::class,
+            ['projectId'],
+        ];
+        yield Exact\TimeAndBillingEntryAccountsByDate::class => [
+            Exact\TimeAndBillingEntryAccountsByDate::class,
+            ['checkDate'],
+        ];
+        yield Exact\CostsById::class => [
+            Exact\CostsById::class,
+            ['entryId'],
+        ];
+        yield Exact\ReceivablesListByAccount::class => [
+            Exact\ReceivablesListByAccount::class,
+            ['accountId'],
+        ];
+        yield Exact\RevenueListByYear::class => [
+            Exact\RevenueListByYear::class,
+            ['year'],
+        ];
+        yield Exact\AgingOverviewByAccount::class => [
+            Exact\AgingOverviewByAccount::class,
+            ['accountId'],
+        ];
+        yield Exact\HourEntryRecentAccountsByProject::class => [
+            Exact\HourEntryRecentAccountsByProject::class,
+            ['projectId'],
+        ];
+        yield Exact\PayablesListByAccount::class => [
+            Exact\PayablesListByAccount::class,
+            ['accountId'],
+        ];
+        yield Exact\TimeAndBillingAccountDetailsByID::class => [
+            Exact\TimeAndBillingAccountDetailsByID::class,
+            ['accountId'],
+        ];
+        yield Exact\CostTypesByDate::class => [
+            Exact\CostTypesByDate::class,
+            ['checkDate'],
+        ];
+        yield Exact\HourEntryRecentHourTypesByProject::class => [
+            Exact\HourEntryRecentHourTypesByProject::class,
+            ['projectId'],
+        ];
+        yield Exact\OpportunityDocument::class => [
+            Exact\OpportunityDocument::class,
+            ['opportunityId', 'searchText'],
+        ];
+        yield Exact\TimeAndBillingEntryProjectsByDate::class => [
+            Exact\TimeAndBillingEntryProjectsByDate::class,
+            ['checkDate'],
+        ];
+        yield Exact\TimeAndBillingItemDetailsByID::class => [
+            Exact\TimeAndBillingItemDetailsByID::class,
+            ['itemId'],
+        ];
+        yield Exact\CostEntryExpensesByProject::class => [
+            Exact\CostEntryExpensesByProject::class,
+            ['projectId'],
+        ];
+        yield Exact\UserHasRights::class => [
+            Exact\UserHasRights::class,
+            ['endpoint', 'action'],
+        ];
+        yield Exact\TimeAndBillingEntryProjectsByAccountAndDate::class => [
+            Exact\TimeAndBillingEntryProjectsByAccountAndDate::class,
+            ['accountId', 'checkDate'],
+        ];
+        yield Exact\TimeAndBillingProjectDetailsByID::class => [
+            Exact\TimeAndBillingProjectDetailsByID::class,
+            ['projectId'],
+        ];
+        yield Exact\ItemDetailsByID::class => [
+            Exact\ItemDetailsByID::class,
+            ['itemId'],
+        ];
+        yield Exact\CostEntryRecentExpensesByProject::class => [
+            Exact\CostEntryRecentExpensesByProject::class,
+            ['projectId'],
         ];
     }
 }

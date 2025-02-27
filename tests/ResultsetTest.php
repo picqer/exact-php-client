@@ -11,7 +11,7 @@ class ResultsetTest extends TestCase
 {
     use MocksExactConnection;
 
-    public function testCanGetNext()
+    public function testCanGetNext(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
@@ -27,7 +27,7 @@ class ResultsetTest extends TestCase
         $this->assertCount(2, $response);
     }
 
-    public function testCanGetNextAsGenerator()
+    public function testCanGetNextAsGenerator(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
@@ -39,6 +39,7 @@ class ResultsetTest extends TestCase
             []
         ))->nextAsGenerator();
 
-        $this->assertCount(2, $response);
+        $this->assertIsIterable($response);
+        $this->assertEquals(2, iterator_count($response));
     }
 }
