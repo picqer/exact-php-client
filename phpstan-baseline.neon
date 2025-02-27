@@ -179,27 +179,3 @@ parameters:
 			identifier: trait.unused
 			count: 1
 			path: src/Picqer/Financials/Exact/Webhook/Authenticatable.php
-
-		-
-			message: '#^Parameter \$response of method Picqer\\Tests\\ModelTest\:\:createMockHandler\(\) has invalid type Picqer\\Tests\\Support\\GuzzleHttp\\Psr7\\Response\.$#'
-			identifier: class.notFound
-			count: 1
-			path: tests/ModelTest.php
-
-		-
-			message: '#^Parameter \#1 \$response of method Picqer\\Tests\\QueryParamTest\:\:createMockHandler\(\) expects array\|Picqer\\Tests\\Support\\GuzzleHttp\\Psr7\\Response\|string\|null, GuzzleHttp\\Psr7\\Response given\.$#'
-			identifier: argument.type
-			count: 1
-			path: tests/QueryParamTest.php
-
-		-
-			message: '#^Parameter \$response of method Picqer\\Tests\\QueryParamTest\:\:createMockHandler\(\) has invalid type Picqer\\Tests\\Support\\GuzzleHttp\\Psr7\\Response\.$#'
-			identifier: class.notFound
-			count: 1
-			path: tests/QueryParamTest.php
-
-		-
-			message: '#^Parameter \$response of method Picqer\\Tests\\ResultsetTest\:\:createMockHandler\(\) has invalid type Picqer\\Tests\\Support\\GuzzleHttp\\Psr7\\Response\.$#'
-			identifier: class.notFound
-			count: 1
-			path: tests/ResultsetTest.php
