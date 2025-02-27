@@ -266,4 +266,4 @@ Guzzle 6 and 7 is supported starting from v3. For Guzzle 3 use [v1](https://gith
 
 ## TODO
 
-- Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them. Use the ```userscript.js``` in greasemonkey or tampermonkey to generate entities consistently and completely.
+- Current entities do not contain all available properties. Feel free to submit a PR with added or extended entities if you require them.
