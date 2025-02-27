@@ -10,7 +10,7 @@ use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\Psr7\Response;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Connection.
@@ -72,29 +72,29 @@ class Connection
     private ?Client $client = null;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void|null
      */
     private $tokenUpdateCallback;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void|null
      */
     private $acquireAccessTokenLockCallback;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void|null
      */
     private $acquireAccessTokenUnlockCallback;
 
     /**
-     * @var callable(Connection)
+     * @var callable(Connection): void|null
      */
     private $refreshAccessTokenCallback;
 
     /**
-     * @var callable[]
+     * @var list<callable(callable): callable>
      */
-    protected $middleWares = [];
+    protected array $middleWares = [];
 
     public ?string $nextUrl = null;
 
@@ -439,14 +439,11 @@ class Connection
     }
 
     /**
-     * @param Response $response
-     * @param bool     $returnSingleIfPossible
-     *
      * @throws ApiException
      *
      * @return mixed
      */
-    private function parseResponse(Response $response, $returnSingleIfPossible = true)
+    private function parseResponse(ResponseInterface $response, bool $returnSingleIfPossible = true)
     {
         try {
             $this->extractRateLimits($response);
@@ -486,13 +483,11 @@ class Connection
     }
 
     /**
-     * @param Response $response
-     *
      * @throws ApiException
      *
      * @return mixed
      */
-    private function parseResponseXml(Response $response)
+    private function parseResponseXml(ResponseInterface $response)
     {
         try {
             if ($response->getStatusCode() === 204) {
@@ -519,13 +514,11 @@ class Connection
     }
 
     /**
-     * @param Response $response
-     *
      * @throws ApiException
      *
      * @return mixed
      */
-    private function parseDownloadResponseXml(Response $response)
+    private function parseDownloadResponseXml(ResponseInterface $response)
     {
         try {
             if ($response->getStatusCode() === 204) {
@@ -857,7 +850,7 @@ class Connection
         $this->tokenUrl = $tokenUrl;
     }
 
-    private function extractRateLimits(Response $response): void
+    private function extractRateLimits(ResponseInterface $response): void
     {
         $this->dailyLimit = (int) $response->getHeaderLine('X-RateLimit-Limit');
         $this->dailyLimitRemaining = (int) $response->getHeaderLine('X-RateLimit-Remaining');

@@ -1,0 +1,181 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\AssemblyOrder\:\:\$PartItems contains unknown class Picqer\\Financials\\Exact\\PartItem\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/AssemblyOrder.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\BulkGoodsDelivery\:\:\$GoodsDeliveryLines contains unknown class Picqer\\Financials\\Exact\\goodsdeliverylines\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/BulkGoodsDelivery.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\BulkGoodsDeliveryLine\:\:\$BatchNumbers contains unknown class Picqer\\Financials\\Exact\\stockbatchnumbers\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/BulkGoodsDeliveryLine.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\BulkGoodsDeliveryLine\:\:\$SerialNumbers contains unknown class Picqer\\Financials\\Exact\\stockserialnumbers\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/BulkGoodsDeliveryLine.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\DigitalOrderPickingLine\:\:\$PickingLocations contains unknown class Picqer\\Financials\\Exact\\PickingLocation\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/DigitalOrderPickingLine.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Division\:\:\$Class_01 contains unknown class Picqer\\Financials\\Exact\\divisionclasses\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Division.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Division\:\:\$Class_02 contains unknown class Picqer\\Financials\\Exact\\divisionclasses\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Division.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Division\:\:\$Class_03 contains unknown class Picqer\\Financials\\Exact\\divisionclasses\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Division.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Division\:\:\$Class_04 contains unknown class Picqer\\Financials\\Exact\\divisionclasses\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Division.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Division\:\:\$Class_05 contains unknown class Picqer\\Financials\\Exact\\divisionclasses\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Division.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Division\:\:\$HID contains unknown class Picqer\\Financials\\Exact\\int64\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Division.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ItemAssortment\:\:\$Properties contains unknown class Picqer\\Financials\\Exact\\Property\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ItemAssortment.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\LogisticsReasonsCodes\:\:\$Types contains unknown class Picqer\\Financials\\Exact\\Type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/LogisticsReasonsCodes.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\PayablesList\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/PayablesList.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\PayablesListByAccount\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/PayablesListByAccount.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\PayablesListByAccountAndAgeGroup\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/PayablesListByAccountAndAgeGroup.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\PayablesListByAgeGroup\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/PayablesListByAgeGroup.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ProcessPayment\:\:\$PaymentIDs contains unknown class Picqer\\Financials\\Exact\\PaymentID\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ProcessPayment.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Project\:\:\$BudgetedHoursPerHourType contains unknown class Picqer\\Financials\\Exact\\BudgetedHoursPerHourType\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Project.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ReasonForLogistic\:\:\$Types contains unknown class Picqer\\Financials\\Exact\\Type\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ReasonForLogistic.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ReceivablesList\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ReceivablesList.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ReceivablesListByAccount\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ReceivablesListByAccount.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ReceivablesListByAccountAndAgeGroup\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ReceivablesListByAccountAndAgeGroup.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ReceivablesListByAgeGroup\:\:\$Notes contains unknown class Picqer\\Financials\\Exact\\Note\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ReceivablesListByAgeGroup.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Schedule\:\:\$ScheduleEntries contains unknown class Picqer\\Financials\\Exact\\ScheduleEntry\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Schedule.php
+
+		-
+			message: '#^Class Picqer\\Financials\\Exact\\SalesOrderLine referenced with incorrect case\: Picqer\\Financials\\Exact\\SalesOrderline\.$#'
+			identifier: class.nameCase
+			count: 1
+			path: src/Picqer/Financials/Exact/ShopOrder.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ShopOrderRoutingStepPlan\:\:\$TimeTransactions contains unknown class Picqer\\Financials\\Exact\\TimeTransaction\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/ShopOrderRoutingStepPlan.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\User\:\:\$UserRoles contains unknown class Picqer\\Financials\\Exact\\UserRoles\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/User.php
+
+		-
+			message: '#^Class Picqer\\Financials\\Exact\\VatPercentage referenced with incorrect case\: Picqer\\Financials\\Exact\\VATPercentage\.$#'
+			identifier: class.nameCase
+			count: 1
+			path: src/Picqer/Financials/Exact/VatCode.php
+
+		-
+			message: '#^Trait Picqer\\Financials\\Exact\\Webhook\\Authenticatable is used zero times and is not analysed\.$#'
+			identifier: trait.unused
+			count: 1
+			path: src/Picqer/Financials/Exact/Webhook/Authenticatable.php
