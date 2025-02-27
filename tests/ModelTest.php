@@ -2,7 +2,6 @@
 
 namespace Picqer\Tests;
 
-use Generator;
 use PHPUnit\Framework\TestCase;
 use Picqer\Financials\Exact\Item;
 use Picqer\Financials\Exact\Query\Resultset;
@@ -12,7 +11,7 @@ class ModelTest extends TestCase
 {
     use MocksExactConnection;
 
-    public function testCanFindModel()
+    public function testCanFindModel(): void
     {
         $handler = $this->createMockHandlerUsingFixture('item.json');
         $connection = $this->createMockConnection($handler);
@@ -23,7 +22,7 @@ class ModelTest extends TestCase
         $this->assertEquals('00000000-0000-0000-0000-000000000000', $response->primaryKeyContent());
     }
 
-    public function testCanGetFirstModel()
+    public function testCanGetFirstModel(): void
     {
         $handler = $this->createMockHandlerUsingFixture('item.json');
         $connection = $this->createMockConnection($handler);
@@ -34,7 +33,7 @@ class ModelTest extends TestCase
         $this->assertEquals('00000000-0000-0000-0000-000000000000', $response->primaryKeyContent());
     }
 
-    public function testCanGetModels()
+    public function testCanGetModels(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
@@ -46,18 +45,17 @@ class ModelTest extends TestCase
         $this->assertCount(2, $response);
     }
 
-    public function testCanGetModelsAsGenerator()
+    public function testCanGetModelsAsGenerator(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
 
         $response = (new Item($connection))->getAsGenerator();
 
-        $this->assertInstanceOf(Generator::class, $response);
-        $this->assertCount(2, $response);
+        $this->assertEquals(2, iterator_count($response));
     }
 
-    public function testCanFilterModels()
+    public function testCanFilterModels(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
@@ -69,18 +67,17 @@ class ModelTest extends TestCase
         $this->assertCount(2, $response);
     }
 
-    public function testCanFilterModelsAsGenerator()
+    public function testCanFilterModelsAsGenerator(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
 
         $response = (new Item($connection))->filterAsGenerator('IsWebshopItem eq 0');
 
-        $this->assertInstanceOf(Generator::class, $response);
-        $this->assertCount(2, $response);
+        $this->assertEquals(2, iterator_count($response));
     }
 
-    public function testCanGetCollectionFromResult()
+    public function testCanGetCollectionFromResult(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
@@ -94,7 +91,7 @@ class ModelTest extends TestCase
         $this->assertCount(2, $collection);
     }
 
-    public function testCanGetCollectionFromResultAsGenerator()
+    public function testCanGetCollectionFromResultAsGenerator(): void
     {
         $handler = $this->createMockHandlerUsingFixture('items.json');
         $connection = $this->createMockConnection($handler);
@@ -103,18 +100,16 @@ class ModelTest extends TestCase
         $result = $connection->get($item->url(), []);
         $collection = $item->collectionFromResultAsGenerator($result);
 
-        $this->assertInstanceOf(Generator::class, $collection);
-        $this->assertCount(2, $collection);
+        $this->assertEquals(2, iterator_count($collection));
     }
 
-    public function testCanGetResultSet()
+    public function testCanGetResultSet(): void
     {
         $handler = $this->createMockHandler();
         $connection = $this->createMockConnection($handler);
-        $item = new Item($connection);
 
-        $resultset = (new Item($connection))->getResultSet();
+        $resultSet = (new Item($connection))->getResultSet();
 
-        $this->assertInstanceOf(Resultset::class, $resultset);
+        $this->assertInstanceOf(Resultset::class, $resultSet);
     }
 }
