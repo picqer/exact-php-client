@@ -36,6 +36,9 @@ class EntityTest extends TestCase
             'ApiException.php',
             'Model.php',
         ];
+        $deprecated = [
+            'Units.php',
+        ];
 
         while ($iterator->valid()) {
             /** @var \SplFileInfo $file */
@@ -45,9 +48,13 @@ class EntityTest extends TestCase
                 $iterator->next();
                 continue;
             }
+            if (in_array($file->getFilename(), $deprecated, true)) {
+                $iterator->next();
+                continue;
+            }
 
             $className = substr($file->getFilename(), 0, -4);
-            yield ["{$namespace}\\{$className}"];
+            yield $className => ["{$namespace}\\{$className}"];
             $iterator->next();
         }
     }
