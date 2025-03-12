@@ -2,34 +2,18 @@
 
 namespace Picqer\Financials\Exact;
 
+trigger_error(
+    sprintf(
+        '"%s" is deprecated due to an invalid naming convention, use "%s" instead',
+        Units::class,
+        Unit::class
+    ),
+    E_USER_DEPRECATED
+);
+
 /**
- * Class Units.
- *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=LogisticsUnits
- *
- * @property string $ID Primary key
- * @property bool $Active Indicates whether a unit is in use
- * @property string $Code Unique code for the unit
- * @property string $Description Description
- * @property int $Division Division code
- * @property int $Main	Indicates the main unit per division. Will be used when creating new item
- * @property string $TimeUnit If Type = 'T' (time) then this fields indicates the type of time frame. yy = Year, mm = Month, wk = Week, dd = Day, hh = Hour, mi = Minute, ss = Second
- * @property string $Type Type 'Time' is especially important for contracts.
+ * @deprecated since 4.5.0, use \Picqer\Financials\Exact\Unit instead, to be removed in 5.0
  */
-class Units extends Model
+class Units extends Unit
 {
-    use Query\Findable;
-
-    protected $fillable = [
-        'ID',
-        'Active',
-        'Code',
-        'Description',
-        'Division',
-        'Main',
-        'TimeUnit',
-        'Type',
-    ];
-
-    protected $url = 'logistics/Units';
 }
