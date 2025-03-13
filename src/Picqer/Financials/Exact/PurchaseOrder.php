@@ -160,10 +160,10 @@ class PurchaseOrder extends Model
         $this->attributes['PurchaseOrderLines'][] = $array;
     }
 
-    public function getPurchaseOrderLines()
+    public function getPurchaseOrderLines($select = '')
     {
         if (array_key_exists('__deferred', $this->attributes['PurchaseOrderLines'])) {
-            $this->attributes['PurchaseOrderLines'] = (new PurchaseOrderLine($this->connection()))->filter("PurchaseOrderID eq guid'{$this->PurchaseOrderID}'");
+            $this->attributes['PurchaseOrderLines'] = (new PurchaseOrderLine($this->connection()))->filter("PurchaseOrderID eq guid'{$this->PurchaseOrderID}'", '', $select);
         }
 
         return $this->attributes['PurchaseOrderLines'];
