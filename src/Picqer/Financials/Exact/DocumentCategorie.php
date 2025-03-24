@@ -2,27 +2,18 @@
 
 namespace Picqer\Financials\Exact;
 
+trigger_error(
+    sprintf(
+        '"%s" is deprecated due to an invalid naming convention, use "%s" instead',
+        DocumentCategorie::class,
+        DocumentCategory::class
+    ),
+    E_USER_DEPRECATED
+);
+
 /**
- * Class DocumentCategorie.
- *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=DocumentsDocumentCategories
- *
- * @property string $ID Primary key
- * @property string $Created Creation date
- * @property string $Description Document category description
- * @property string $Modified Last modified date
+ * @deprecated since 4.5.2, use \Picqer\Financials\Exact\DocumentCategory instead, to be removed in 5.0
  */
-class DocumentCategorie extends Model
+class DocumentCategorie extends DocumentCategory
 {
-    use Query\Findable;
-    use Persistance\Storable;
-
-    protected $fillable = [
-        'ID',
-        'Created',
-        'Description',
-        'Modified',
-    ];
-
-    protected $url = 'documents/DocumentCategories';
 }
