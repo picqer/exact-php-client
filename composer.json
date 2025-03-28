@@ -32,5 +32,13 @@
         "psr-4": {
             "Picqer\\Tests\\": "tests/"
         }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+        "exact-php-client": {
+            "type": "vcs",
+            "url": "https://github.com/vaughan-dsouza/exact-php-client"
+        }
     }
 }
