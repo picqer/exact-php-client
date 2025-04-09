@@ -37,6 +37,18 @@ class EntityTest extends TestCase
             'Model.php',
         ];
         $deprecated = [
+            'Deleted.php',
+            'DocumentsAttachment.php',
+            'DocumentCategorie.php',
+            'HrmDivision.php',
+            'InventoryItemWarehouse.php',
+            'ItemWarehousePlanningDetails.php',
+            'ProjectTimeTransactions.php',
+            'SalesShippingMethods.php',
+            'ShippingMethod.php',
+            'StorageLocationStockPosition.php',
+            'SyncStockPosition.php',
+            'TimeCostTransaction.php',
             'Units.php',
         ];
 
