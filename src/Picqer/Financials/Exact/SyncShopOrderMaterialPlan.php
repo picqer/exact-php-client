@@ -9,6 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property int $Timestamp Timestamp
  * @property int $Backflush Indicates if this is a backflush step
+ * @property string $Barcode Barcode of the item (numeric string)
  * @property int $CalculatorType Calculator type
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -50,6 +51,7 @@ class SyncShopOrderMaterialPlan extends Model
     protected $fillable = [
         'Timestamp',
         'Backflush',
+        'Barcode',
         'CalculatorType',
         'Created',
         'Creator',

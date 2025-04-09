@@ -9,6 +9,7 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property int $Backflush Indicates if this is a backflush step
+ * @property string $Barcode Barcode of the item (numeric string)
  * @property int $CalculatorType Calculator type
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
@@ -47,6 +48,7 @@ class ShopOrderMaterialPlan extends Model
     protected $fillable = [
         'ID',
         'Backflush',
+        'Barcode',
         'CalculatorType',
         'Created',
         'Creator',

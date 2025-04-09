@@ -30,7 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier ID of modifier
  * @property string $ModifierFullName Name of the modifier
  * @property float $PaymentParttimeFactor Part-time factor for payroll calculation. Value between 0 and 1
- * @property ScheduleEntry[] $ScheduleEntries The collection of schedule entries
+ * @property mixed[] $ScheduleEntries The collection of schedule entries
  * @property int $ScheduleType Type of schedule. 1 = Hours and average days, 2 = Hours and specific days, 3 = Hours per day, 4 = Time frames per day1 - Hours and average days, StartWeek will automatically set to 12 - Hours and specific days, StartWeek must be greater or equal to 1, AverageDaysPerWeek will automatically set to 03 - Hours per day, StartWeek must be greater or equal to 1, AverageHoursPerWeek and AverageDaysPerWeek will automatically set to 04 - Time frames per day, Hours per day, StartWeek must be greater or equal to 1, AverageHoursPerWeek and AverageDaysPerWeek will automatically set to 0Note: For Time and Billing basic company, the schedule type is automatically set to value "3 - Hour per day".
  * @property string $ScheduleTypeDescription Description of the schedule type
  * @property string $StartDate Start date of the schedule

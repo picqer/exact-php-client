@@ -33,7 +33,7 @@ namespace Picqer\Financials\Exact;
  * @property string $OrderPickerFullName Name of the order picker
  * @property string $PickedDate Date of order picked
  * @property string $PickedOrderDeliveryDate Date of goods delivery
- * @property PickingLocation[] $PickingLocations Collection of picking locations
+ * @property DigitalOrderPickingLocation[] $PickingLocations Collection of picking locations
  * @property int $PickOrderNumber Pick order number
  * @property float $QuantityPicked Quantity picked
  * @property float $QuantityToBePicked Quantity to be picked

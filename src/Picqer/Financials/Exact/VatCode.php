@@ -48,7 +48,7 @@ namespace Picqer\Financials\Exact;
  * @property string $VatDocType Field in VAT code maintenance to calculate different VATs depending on the selected document type. P = purchase invoice, F = freelance invoice, E = expense voucher. The field is valid for witholding tax type
  * @property int $VatMargin The VAT margin scheme is used for the trade of secondhand goods which are purchased without VAT (for example when a company buys a secondhand good from a private person). In the VAT margin scheme, the VAT is not calculated based on the sales price. Instead of that, the VAT is calculated based on the margin (gross sales price minus the gross purchase price)
  * @property int $VATPartialRatio Partial ratio explains which part of the VAT the company has to pay. Used in some branches where the sellers have a bad reputation, so the buyers have to take over the VAT-liability
- * @property VATPercentage[] $VATPercentages VAT percentages. You can have several VAT percentages, with start and end dates
+ * @property VatPercentage[] $VATPercentages VAT percentages. You can have several VAT percentages, with start and end dates
  * @property string $VATTransactionType Indicates the type of transactions for which the VAT code may be used. B = Both, P = Purchase, S = Sales
  */
 class VatCode extends Model

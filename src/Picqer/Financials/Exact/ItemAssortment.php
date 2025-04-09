@@ -11,7 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Code Code of ItemAssortment
  * @property string $Description Description of ItemAssortment
  * @property int $Division Division
- * @property Property[] $Properties Properties of this ItemAssortment
+ * @property ItemAssortmentProperty[] $Properties Properties of this ItemAssortment
  */
 class ItemAssortment extends Model
 {

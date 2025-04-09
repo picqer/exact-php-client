@@ -8,6 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingMaterialReversals
  *
  * @property string $ReversalStockTransactionId ID of stock transaction related to this material issue
+ * @property StockBatchNumber[] $BatchNumbers Collection of batch numbers
  * @property string $CreatedBy ID of creating user
  * @property string $CreatedByFullName Name of the creating user
  * @property string $CreatedDate Date this reversal was created
@@ -20,8 +21,9 @@ namespace Picqer\Financials\Exact;
  * @property string $ItemDescription Description of item reversed
  * @property string $ItemPictureUrl Picture url of item issued
  * @property string $Note Notes logged with this reversal
- * @property string $OriginalStockTransactionId ID of the original stock transaction, which was reversed
+ * @property string $OriginalStockTransactionId ID of the original stock transaction, which was to be reverse
  * @property float $Quantity Quantity of this reversal
+ * @property StockSerialNumber[] $SerialNumbers Collection of serial numbers
  * @property string $ShopOrder ID of shop order reversed from
  * @property string $ShopOrderMaterialPlan ID of shop order material plan
  * @property int $ShopOrderNumber Number of shop order reversed from
@@ -44,6 +46,7 @@ class MaterialReversal extends Model
 
     protected $fillable = [
         'ReversalStockTransactionId',
+        'BatchNumbers',
         'CreatedBy',
         'CreatedByFullName',
         'CreatedDate',
@@ -58,6 +61,7 @@ class MaterialReversal extends Model
         'Note',
         'OriginalStockTransactionId',
         'Quantity',
+        'SerialNumbers',
         'ShopOrder',
         'ShopOrderMaterialPlan',
         'ShopOrderNumber',

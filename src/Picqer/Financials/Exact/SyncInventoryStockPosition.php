@@ -19,7 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property float $PlanningOut Number of items that are planned to go out
  * @property float $ProjectedStock The quantity of stock projected given all planned future stock changes
  * @property float $ReorderPoint Quantity of items as an indication of when you need to reorder more stock for the warehouse
- * @property float $ReservedStock The quantity in a back to back order process which is already received from the purchase order, but not yet delivered for the sales order.
+ * @property float $ReservedStock Stock stored in the warehouse that is already reserved
  * @property string $UnitCode Code of item unit
  * @property string $UnitDescription Description of the item unit
  * @property string $Warehouse A guid that is the unique identifier of the warehouse
