@@ -77,4 +77,12 @@ class GoodsDelivery extends Model
     ];
 
     protected $url = 'salesorder/GoodsDeliveries';
+
+    public function getGoodsDeliveryLines()
+    {
+        if (array_key_exists('__deferred', $this->attributes['GoodsDeliveryLines'])) {
+            $this->attributes['GoodsDeliveryLines'] = (new GoodsDeliveryLine($this->connection()))->filter("EntryID eq guid'{$this->EntryID}'");
+        }
+        return $this->attributes['GoodsDeliveryLines'];
+    }
 }
