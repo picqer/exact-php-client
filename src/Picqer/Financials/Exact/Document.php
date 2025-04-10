@@ -48,6 +48,7 @@ namespace Picqer\Financials\Exact;
  * @property int $ProposedEntryStatus ProposedEntryStatus, 0 = Void, 5 = Rejected, 20 = Open, 50 = Processed
  * @property int $SalesInvoiceNumber 'Our reference' of the transaction that belongs to this document
  * @property int $SalesOrderNumber Number of the sales order
+ * @property int $ScanServiceStatus ScanServiceStatus
  * @property int $SendMethod Send method
  * @property int $ShopOrderNumber Number of the shop order
  * @property string $Subject Subject of this document
@@ -102,6 +103,7 @@ class Document extends Model
         'ProposedEntryStatus',
         'SalesInvoiceNumber',
         'SalesOrderNumber',
+        'ScanServiceStatus',
         'SendMethod',
         'ShopOrderNumber',
         'Subject',

@@ -45,7 +45,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ProjectDescription Description of Project
  * @property float $ReadyToShipQuantity Quantity ready to ship
  * @property int $SalesOrderLineCount Number of sales orders linked to this shop order
- * @property SalesOrderline[] $SalesOrderLines Collection of Sales order lines
+ * @property SalesOrderLine[] $SalesOrderLines Collection of Sales order lines
  * @property string $SelectionCode ID of selection code. Only supported by the Plus, Professional and Premium editions for Wholesale & Distribution and Manufacturing
  * @property string $SelectionCodeCode Code of Selection code
  * @property string $SelectionCodeDescription Description of Selection code
@@ -70,6 +70,8 @@ namespace Picqer\Financials\Exact;
  * @property string $Unit Unit of the item created by this shop order
  * @property string $UnitDescription Unit description of the unit of the item created by this shop order
  * @property string $Warehouse Reference to the Warehouse associated with the Shop order
+ * @property string $WarehouseCode Code of Warehouse
+ * @property string $WarehouseDescription Description of Warehouse
  * @property string $YourRef Your reference (of the customer)
  */
 class ShopOrder extends Model
@@ -141,6 +143,8 @@ class ShopOrder extends Model
         'Unit',
         'UnitDescription',
         'Warehouse',
+        'WarehouseCode',
+        'WarehouseDescription',
         'YourRef',
     ];
 

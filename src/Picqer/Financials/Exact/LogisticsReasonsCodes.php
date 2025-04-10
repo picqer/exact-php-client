@@ -19,7 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier.
  * @property string $ModifierFullName Name of modifier.
  * @property string $Notes Extra notes.
- * @property Type[] $Types Collection of types
+ * @property ReasonCodesLinkType[] $Types Collection of types
  */
 class LogisticsReasonsCodes extends Model
 {

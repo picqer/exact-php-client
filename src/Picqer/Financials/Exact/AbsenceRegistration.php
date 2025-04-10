@@ -19,9 +19,6 @@ namespace Picqer\Financials\Exact;
  * @property string $Employee Employee linked to the absence
  * @property string $EmployeeFullName Employee full name
  * @property int $EmployeeHID Numeric ID of the employee
- * @property int $Kind Absence kind, only supported for the Netherland legislation
- * @property string $KindCode Code for the absence kind, only supported for the Netherland legislation
- * @property string $KindDescription Description for the absence kind, only supported for the Netherland legislation
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -44,9 +41,6 @@ class AbsenceRegistration extends Model
         'Employee',
         'EmployeeFullName',
         'EmployeeHID',
-        'Kind',
-        'KindCode',
-        'KindDescription',
         'Modified',
         'Modifier',
         'ModifierFullName',

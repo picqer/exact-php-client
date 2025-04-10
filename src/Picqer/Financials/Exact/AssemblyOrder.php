@@ -20,7 +20,7 @@ namespace Picqer\Financials\Exact;
  * @property string $OrderDate Date of the assembly order is initiated
  * @property int $OrderNumber Assembly order number
  * @property int $OrderStatus Assembly order status: 20 = Open, 30 = Partial, 50 = Complete
- * @property PartItem[] $PartItems Collection of part items for assembly order
+ * @property mixed[] $PartItems Collection of part items for assembly order
  * @property float $PlannedQuantity Planned quantity of the item to be assembled
  * @property string $StorageLocation Reference to storage location
  * @property string $StorageLocationCode Storage location code

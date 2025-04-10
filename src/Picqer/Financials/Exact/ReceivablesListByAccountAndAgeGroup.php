@@ -21,7 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property int $InvoiceNumber For sales entry, it would be the entrynumber. For the cashflow entry, it will be entrynumber of an invoice which this collection is for
  * @property string $JournalCode Code of Journal
  * @property string $JournalDescription Description of Journal
- * @property Note[] $Notes Notes collection
+ * @property string[] $Notes Notes collection
  * @property string $YourRef Sales invoice Your Reference number. Will be null if it is a cashflow entry
  */
 class ReceivablesListByAccountAndAgeGroup extends Model

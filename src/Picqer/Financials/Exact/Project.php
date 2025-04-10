@@ -21,7 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property bool $BlockRebilling Block rebilling
  * @property float $BudgetedAmount Budgeted amount of sales in the default currency of the company
  * @property float $BudgetedCosts Budgeted amount of costs in the default currency of the company
- * @property BudgetedHoursPerHourType[] $BudgetedHoursPerHourType Collection of budgeted hours
+ * @property ProjectHourBudget[] $BudgetedHoursPerHourType Collection of budgeted hours
  * @property float $BudgetedRevenue Budgeted amount of revenue in the default currency of the company
  * @property int $BudgetOverrunHours BudgetOverrunHours: 10-Allowed, 20-Not Allowed
  * @property int $BudgetType Budget type

@@ -3,11 +3,11 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class BillOfMaterialMaterial.
+ * Class SyncBillOfMaterialMaterial.
  *
- * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ManufacturingBillOfMaterialMaterials
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=SyncManufacturingBillOfMaterialMaterials
  *
- * @property string $ID Primary key
+ * @property int $Timestamp Timestamp
  * @property int $Backflush Indicates if this is a backflush item
  * @property int $CalculatorType Calculator type
  * @property float $CostBatch Cost batch
@@ -19,6 +19,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Description Description of the material
  * @property string $DetailDrawing Detail drawing reference
  * @property int $Division Division code
+ * @property string $ID Primary key
  * @property string $ItemVersion Bill of material version
  * @property int $LineNumber Line number
  * @property float $NetWeight Net weight
@@ -39,13 +40,14 @@ namespace Picqer\Financials\Exact;
  * @property int $Type Material type 1 indicates material, 2 indicates byproduct
  * @property float $WastePercentage Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)
  */
-class BillOfMaterialMaterial extends Model
+class SyncBillOfMaterialMaterial extends Model
 {
     use Query\Findable;
-    use Persistance\Storable;
+
+    protected $primaryKey = 'Timestamp';
 
     protected $fillable = [
-        'ID',
+        'Timestamp',
         'Backflush',
         'CalculatorType',
         'CostBatch',
@@ -57,6 +59,7 @@ class BillOfMaterialMaterial extends Model
         'Description',
         'DetailDrawing',
         'Division',
+        'ID',
         'ItemVersion',
         'LineNumber',
         'NetWeight',
@@ -78,5 +81,5 @@ class BillOfMaterialMaterial extends Model
         'WastePercentage',
     ];
 
-    protected $url = 'manufacturing/BillOfMaterialMaterials';
+    protected $url = 'sync/Manufacturing/BillOfMaterialMaterials';
 }

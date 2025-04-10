@@ -9,11 +9,16 @@ namespace Picqer\Financials\Exact;
  *
  * @property string $ID Primary key
  * @property int $Backflush Indicates if this is a backflush step
+ * @property string $Barcode Barcode of the item (numeric string)
  * @property string $Calculator The calculator associated with this material plan
  * @property int $CalculatorType Calculator type
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $DefaultItemStorageLocation Default storage location of the item
+ * @property string $DefaultItemStorageLocationCode Code of the default storage location of the item
+ * @property string $DefaultItemStorageLocationDescription Description of the default storage location of the item
+ * @property int $DefaultItemStorageLocationSequenceNumber Sequence number of the default storage location of the item (Premium Only)
  * @property string $Description Description of the material
  * @property string $DetailDrawing Detail drawing reference
  * @property int $Division Division code
@@ -60,11 +65,16 @@ class ShopOrderMaterialPlanDetail extends Model
     protected $fillable = [
         'ID',
         'Backflush',
+        'Barcode',
         'Calculator',
         'CalculatorType',
         'Created',
         'Creator',
         'CreatorFullName',
+        'DefaultItemStorageLocation',
+        'DefaultItemStorageLocationCode',
+        'DefaultItemStorageLocationDescription',
+        'DefaultItemStorageLocationSequenceNumber',
         'Description',
         'DetailDrawing',
         'Division',
