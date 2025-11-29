@@ -14,6 +14,7 @@ namespace Picqer\Financials\Exact;
  */
 class ReasonForLogisticsLinkType extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

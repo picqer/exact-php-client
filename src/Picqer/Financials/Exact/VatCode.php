@@ -53,6 +53,7 @@ namespace Picqer\Financials\Exact;
  */
 class VatCode extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

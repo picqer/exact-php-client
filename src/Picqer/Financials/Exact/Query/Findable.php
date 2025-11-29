@@ -6,7 +6,11 @@ namespace Picqer\Financials\Exact\Query;
 
 use Generator;
 use Picqer\Financials\Exact\Connection;
+use Picqer\Financials\Exact\Model;
 
+/**
+ * @template T of Model
+ */
 trait Findable
 {
     /**
@@ -16,13 +20,13 @@ trait Findable
 
     abstract protected function isFillable($key);
 
-    /**
-     * @return string
-     */
     abstract public function url(): string;
 
     abstract public function primaryKey(): string;
 
+    /**
+     * @return T
+     */
     public function find($id)
     {
         $filter = $this->primaryKey() . " eq guid'$id'";
@@ -41,6 +45,9 @@ trait Findable
         return new static($this->connection(), $result);
     }
 
+    /**
+     * @return T
+     */
     public function findWithSelect($id, $select = '')
     {
         //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
@@ -83,6 +90,9 @@ trait Findable
         }
     }
 
+    /**
+     * @return T[]
+     */
     public function filter($filter, $expand = '', $select = '', $system_query_options = null, array $headers = []): array
     {
         return iterator_to_array(
@@ -90,6 +100,9 @@ trait Findable
         );
     }
 
+    /**
+     * @return Generator<T>
+     */
     public function filterAsGenerator($filter, $expand = '', $select = '', $system_query_options = null, array $headers = []): Generator
     {
         $originalDivision = $this->connection()->getDivision();
@@ -127,7 +140,7 @@ trait Findable
     /**
      * Returns the first Financial model in by applying $top=1 to the query string.
      *
-     * @return \Picqer\Financials\Exact\Model|null
+     * @return T|null
      */
     public function first($filter = '', $expand = '', $select = '', $system_query_options = null, array $headers = [])
     {
@@ -152,11 +165,17 @@ trait Findable
         return new Resultset($this->connection(), $this->url(), get_class($this), $params);
     }
 
+    /**
+     * @return T[]
+     */
     public function get(array $params = []): array
     {
         return iterator_to_array($this->getAsGenerator($params));
     }
 
+    /**
+     * @return Generator<T>
+     */
     public function getAsGenerator(array $params = []): Generator
     {
         $result = $this->connection()->get($this->url(), $params);
@@ -164,6 +183,9 @@ trait Findable
         return $this->collectionFromResultAsGenerator($result);
     }
 
+    /**
+     * @return T[]
+     */
     public function collectionFromResult($result, array $headers = []): array
     {
         return iterator_to_array(
@@ -171,6 +193,9 @@ trait Findable
         );
     }
 
+    /**
+     * @return Generator<T>
+     */
     public function collectionFromResultAsGenerator($result, array $headers = []): Generator
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the

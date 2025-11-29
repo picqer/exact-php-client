@@ -53,6 +53,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncGLAccount extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

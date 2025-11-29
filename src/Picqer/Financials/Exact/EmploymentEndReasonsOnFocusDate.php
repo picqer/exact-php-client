@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  */
 class EmploymentEndReasonsOnFocusDate extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

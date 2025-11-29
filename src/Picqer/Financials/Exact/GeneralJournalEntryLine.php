@@ -57,6 +57,7 @@ namespace Picqer\Financials\Exact;
  */
 class GeneralJournalEntryLine extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

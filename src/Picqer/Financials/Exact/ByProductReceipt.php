@@ -37,6 +37,7 @@ namespace Picqer\Financials\Exact;
  */
 class ByProductReceipt extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

@@ -53,6 +53,7 @@ namespace Picqer\Financials\Exact;
  */
 class EmploymentSalary extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

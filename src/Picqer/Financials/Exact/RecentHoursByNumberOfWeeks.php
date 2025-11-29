@@ -34,6 +34,7 @@ namespace Picqer\Financials\Exact;
  */
 class RecentHoursByNumberOfWeeks extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Id';

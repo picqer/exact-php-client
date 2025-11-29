@@ -60,6 +60,7 @@ namespace Picqer\Financials\Exact;
  */
 class ShopOrderMaterialPlanDetail extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

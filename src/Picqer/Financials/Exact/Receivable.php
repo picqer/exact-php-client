@@ -89,6 +89,7 @@ namespace Picqer\Financials\Exact;
  */
 class Receivable extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

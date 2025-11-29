@@ -59,6 +59,7 @@ namespace Picqer\Financials\Exact;
  */
 class ProjectPlanningRecurring extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

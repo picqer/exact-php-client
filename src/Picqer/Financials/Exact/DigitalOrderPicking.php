@@ -36,6 +36,7 @@ namespace Picqer\Financials\Exact;
  */
 class DigitalOrderPicking extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'EntryID';

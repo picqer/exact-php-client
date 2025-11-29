@@ -35,6 +35,7 @@ namespace Picqer\Financials\Exact;
  */
 class RecentCostsByNumberOfWeeksByDate extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Id';

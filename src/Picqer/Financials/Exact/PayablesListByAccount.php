@@ -27,6 +27,7 @@ namespace Picqer\Financials\Exact;
  */
 class PayablesListByAccount extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'HID';

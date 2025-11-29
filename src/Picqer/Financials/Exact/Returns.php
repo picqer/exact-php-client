@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  */
 class Returns extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'DocumentID';

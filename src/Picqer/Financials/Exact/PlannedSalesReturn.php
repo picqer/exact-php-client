@@ -35,6 +35,7 @@ namespace Picqer\Financials\Exact;
  */
 class PlannedSalesReturn extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncTimestamp extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Modified';

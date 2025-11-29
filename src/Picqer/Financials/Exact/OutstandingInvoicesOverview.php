@@ -19,6 +19,7 @@ namespace Picqer\Financials\Exact;
  */
 class OutstandingInvoicesOverview extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'CurrencyCode';

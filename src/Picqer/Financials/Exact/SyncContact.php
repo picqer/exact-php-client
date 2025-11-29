@@ -78,6 +78,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncContact extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

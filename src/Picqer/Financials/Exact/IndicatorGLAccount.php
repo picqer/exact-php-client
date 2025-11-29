@@ -15,6 +15,7 @@ namespace Picqer\Financials\Exact;
  */
 class IndicatorGLAccount extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

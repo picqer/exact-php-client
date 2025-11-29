@@ -38,6 +38,7 @@ namespace Picqer\Financials\Exact;
  */
 class Schedule extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

@@ -28,6 +28,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncEmploymentCLA extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

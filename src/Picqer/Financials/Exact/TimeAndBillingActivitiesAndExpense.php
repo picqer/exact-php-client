@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  */
 class TimeAndBillingActivitiesAndExpense extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

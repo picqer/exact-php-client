@@ -44,6 +44,7 @@ namespace Picqer\Financials\Exact;
  */
 class SubscriptionType extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

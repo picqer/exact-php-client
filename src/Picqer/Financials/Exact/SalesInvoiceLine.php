@@ -59,6 +59,7 @@ namespace Picqer\Financials\Exact;
  */
 class SalesInvoiceLine extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

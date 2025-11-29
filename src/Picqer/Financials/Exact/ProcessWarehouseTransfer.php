@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  */
 class ProcessWarehouseTransfer extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

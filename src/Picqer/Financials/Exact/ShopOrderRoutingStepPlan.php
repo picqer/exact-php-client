@@ -57,6 +57,7 @@ namespace Picqer\Financials\Exact;
  */
 class ShopOrderRoutingStepPlan extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

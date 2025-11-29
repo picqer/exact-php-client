@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  */
 class Unit extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

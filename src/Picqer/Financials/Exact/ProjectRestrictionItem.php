@@ -25,6 +25,7 @@ namespace Picqer\Financials\Exact;
  */
 class ProjectRestrictionItem extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

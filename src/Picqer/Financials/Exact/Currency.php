@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  */
 class Currency extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Code';

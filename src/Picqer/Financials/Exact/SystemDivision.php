@@ -72,6 +72,7 @@ namespace Picqer\Financials\Exact;
  */
 class SystemDivision extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Code';

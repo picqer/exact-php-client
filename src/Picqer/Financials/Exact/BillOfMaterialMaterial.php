@@ -41,6 +41,7 @@ namespace Picqer\Financials\Exact;
  */
 class BillOfMaterialMaterial extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

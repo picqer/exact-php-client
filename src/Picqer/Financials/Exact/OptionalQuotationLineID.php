@@ -11,6 +11,7 @@ namespace Picqer\Financials\Exact;
  */
 class OptionalQuotationLineID extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

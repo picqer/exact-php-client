@@ -25,6 +25,7 @@ namespace Picqer\Financials\Exact;
  */
 class StorageLocation extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

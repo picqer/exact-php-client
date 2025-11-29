@@ -32,6 +32,7 @@ namespace Picqer\Financials\Exact;
  */
 class StageForDeliveryReceipt extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

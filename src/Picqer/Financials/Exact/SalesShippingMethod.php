@@ -28,6 +28,7 @@ namespace Picqer\Financials\Exact;
  */
 class SalesShippingMethod extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

@@ -14,6 +14,7 @@ namespace Picqer\Financials\Exact;
  */
 class HourEntryRecentProject extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'ProjectId';

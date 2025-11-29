@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  */
 class HourType extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'ItemId';

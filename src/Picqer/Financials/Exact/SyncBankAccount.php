@@ -26,6 +26,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncBankAccount extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

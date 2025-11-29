@@ -81,6 +81,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncTransactionLine extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

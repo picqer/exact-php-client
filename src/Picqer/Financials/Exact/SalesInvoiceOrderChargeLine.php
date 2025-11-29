@@ -29,6 +29,7 @@ namespace Picqer\Financials\Exact;
  */
 class SalesInvoiceOrderChargeLine extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

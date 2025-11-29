@@ -40,6 +40,7 @@ namespace Picqer\Financials\Exact;
  */
 class ShopOrderReceipt extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

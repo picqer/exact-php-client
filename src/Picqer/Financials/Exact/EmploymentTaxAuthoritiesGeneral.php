@@ -33,6 +33,7 @@ namespace Picqer\Financials\Exact;
  */
 class EmploymentTaxAuthoritiesGeneral extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

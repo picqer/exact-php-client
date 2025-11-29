@@ -46,6 +46,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncProjectPlanning extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

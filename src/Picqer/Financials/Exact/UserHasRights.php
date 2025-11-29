@@ -9,6 +9,7 @@ namespace Picqer\Financials\Exact;
  */
 class UserHasRights extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

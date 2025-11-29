@@ -21,6 +21,7 @@ namespace Picqer\Financials\Exact;
  */
 class PreferredMailboxForOperation extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

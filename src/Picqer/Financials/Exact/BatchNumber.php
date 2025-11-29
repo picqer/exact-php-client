@@ -29,6 +29,7 @@ namespace Picqer\Financials\Exact;
  */
 class BatchNumber extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

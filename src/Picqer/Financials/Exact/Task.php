@@ -41,6 +41,7 @@ namespace Picqer\Financials\Exact;
  */
 class Task extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

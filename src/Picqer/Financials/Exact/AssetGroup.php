@@ -36,6 +36,7 @@ namespace Picqer\Financials\Exact;
  */
 class AssetGroup extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

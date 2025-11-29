@@ -117,6 +117,7 @@ namespace Picqer\Financials\Exact;
  */
 class Item extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
     use Persistance\Downloadable;

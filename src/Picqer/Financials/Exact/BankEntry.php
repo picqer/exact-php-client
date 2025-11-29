@@ -29,6 +29,7 @@ namespace Picqer\Financials\Exact;
  */
 class BankEntry extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

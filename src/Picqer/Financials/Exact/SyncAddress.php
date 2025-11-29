@@ -65,6 +65,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncAddress extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

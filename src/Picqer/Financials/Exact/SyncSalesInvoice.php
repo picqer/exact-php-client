@@ -119,6 +119,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncSalesInvoice extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

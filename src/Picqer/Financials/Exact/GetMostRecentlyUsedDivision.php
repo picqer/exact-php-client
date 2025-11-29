@@ -72,6 +72,7 @@ namespace Picqer\Financials\Exact;
  */
 class GetMostRecentlyUsedDivision extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Code';

@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  */
 class GLTransactionSource extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

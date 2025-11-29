@@ -79,6 +79,7 @@ namespace Picqer\Financials\Exact;
  */
 class OpportunityContact extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

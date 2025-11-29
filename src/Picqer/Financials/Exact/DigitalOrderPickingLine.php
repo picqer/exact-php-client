@@ -52,6 +52,7 @@ namespace Picqer\Financials\Exact;
  */
 class DigitalOrderPickingLine extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

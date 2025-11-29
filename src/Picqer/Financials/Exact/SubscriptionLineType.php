@@ -12,6 +12,7 @@ namespace Picqer\Financials\Exact;
  */
 class SubscriptionLineType extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

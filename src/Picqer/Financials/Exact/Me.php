@@ -49,6 +49,7 @@ namespace Picqer\Financials\Exact;
  */
 class Me extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'UserID';

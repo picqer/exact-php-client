@@ -54,6 +54,7 @@ namespace Picqer\Financials\Exact;
  */
 class ActiveEmployment extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

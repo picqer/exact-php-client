@@ -30,6 +30,7 @@ namespace Picqer\Financials\Exact;
  */
 class AbsenceRegistrationTransaction extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

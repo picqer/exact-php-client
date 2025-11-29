@@ -23,6 +23,7 @@ namespace Picqer\Financials\Exact;
  */
 class ReasonForLogistic extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

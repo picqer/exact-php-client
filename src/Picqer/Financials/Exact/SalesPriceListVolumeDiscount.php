@@ -37,6 +37,7 @@ namespace Picqer\Financials\Exact;
  */
 class SalesPriceListVolumeDiscount extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

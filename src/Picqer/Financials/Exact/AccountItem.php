@@ -58,6 +58,7 @@ namespace Picqer\Financials\Exact;
  */
 class AccountItem extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

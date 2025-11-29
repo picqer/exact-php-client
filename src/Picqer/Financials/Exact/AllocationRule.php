@@ -23,6 +23,7 @@ namespace Picqer\Financials\Exact;
  */
 class AllocationRule extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
     use Persistance\Storable;
 

@@ -24,6 +24,7 @@ namespace Picqer\Financials\Exact;
  */
 class SalesPriceList extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

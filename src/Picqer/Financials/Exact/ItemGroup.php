@@ -40,6 +40,7 @@ namespace Picqer\Financials\Exact;
  */
 class ItemGroup extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

@@ -18,6 +18,7 @@ namespace Picqer\Financials\Exact;
  */
 class JournalStatusByFinancialPeriod extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Year';

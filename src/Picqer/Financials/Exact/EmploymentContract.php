@@ -40,6 +40,7 @@ namespace Picqer\Financials\Exact;
  */
 class EmploymentContract extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

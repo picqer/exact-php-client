@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  */
 class RequestAttachment extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [

@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  */
 class TimeAndBillingEntryRecentAccount extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'AccountId';

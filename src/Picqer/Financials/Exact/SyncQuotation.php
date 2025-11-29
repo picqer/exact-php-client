@@ -87,6 +87,7 @@ namespace Picqer\Financials\Exact;
  */
 class SyncQuotation extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $primaryKey = 'Timestamp';

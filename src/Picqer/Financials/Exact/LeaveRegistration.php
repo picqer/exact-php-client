@@ -34,6 +34,7 @@ namespace Picqer\Financials\Exact;
  */
 class LeaveRegistration extends Model
 {
+    /** @use Query\Findable<self> */
     use Query\Findable;
 
     protected $fillable = [
