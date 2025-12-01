@@ -16,13 +16,13 @@ trait Findable
 
     abstract protected function isFillable($key);
 
-    /**
-     * @return string
-     */
     abstract public function url(): string;
 
     abstract public function primaryKey(): string;
 
+    /**
+     * @return static
+     */
     public function find($id)
     {
         $filter = $this->primaryKey() . " eq guid'$id'";
@@ -41,6 +41,9 @@ trait Findable
         return new static($this->connection(), $result);
     }
 
+    /**
+     * @return static
+     */
     public function findWithSelect($id, $select = '')
     {
         //eg: $oAccounts->findWithSelect('5b7f4515-b7a0-4839-ac69-574968677d96', 'Code, Name');
@@ -83,6 +86,9 @@ trait Findable
         }
     }
 
+    /**
+     * @return static[]
+     */
     public function filter($filter, $expand = '', $select = '', $system_query_options = null, array $headers = []): array
     {
         return iterator_to_array(
@@ -90,6 +96,9 @@ trait Findable
         );
     }
 
+    /**
+     * @return Generator<static>
+     */
     public function filterAsGenerator($filter, $expand = '', $select = '', $system_query_options = null, array $headers = []): Generator
     {
         $originalDivision = $this->connection()->getDivision();
@@ -127,7 +136,7 @@ trait Findable
     /**
      * Returns the first Financial model in by applying $top=1 to the query string.
      *
-     * @return \Picqer\Financials\Exact\Model|null
+     * @return ?static
      */
     public function first($filter = '', $expand = '', $select = '', $system_query_options = null, array $headers = [])
     {
@@ -147,16 +156,22 @@ trait Findable
         return count($results) > 0 ? $results[0] : null;
     }
 
-    public function getResultSet(array $params = [])
+    public function getResultSet(array $params = []): Resultset
     {
         return new Resultset($this->connection(), $this->url(), get_class($this), $params);
     }
 
+    /**
+     * @return static[]
+     */
     public function get(array $params = []): array
     {
         return iterator_to_array($this->getAsGenerator($params));
     }
 
+    /**
+     * @return Generator<static>
+     */
     public function getAsGenerator(array $params = []): Generator
     {
         $result = $this->connection()->get($this->url(), $params);
@@ -164,6 +179,9 @@ trait Findable
         return $this->collectionFromResultAsGenerator($result);
     }
 
+    /**
+     * @return static[]
+     */
     public function collectionFromResult($result, array $headers = []): array
     {
         return iterator_to_array(
@@ -171,6 +189,9 @@ trait Findable
         );
     }
 
+    /**
+     * @return Generator<static>
+     */
     public function collectionFromResultAsGenerator($result, array $headers = []): Generator
     {
         // If we have one result which is not an assoc array, make it the first element of an array for the
