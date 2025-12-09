@@ -171,4 +171,22 @@ class Quotation extends Model
         }
         $this->attributes['QuotationLines'][] = $array;
     }
+
+    public function getQuotationLines()
+    {
+        if (array_key_exists('__deferred', $this->attributes['QuotationLines'])) {
+            $this->attributes['QuotationLines'] = (new QuotationLine($this->connection()))->filter("QuotationID eq guid'{$this->QuotationID}'");
+        }
+
+        return $this->attributes['QuotationLines'];
+    }
+
+    public function getQuotationOrderChargeLines()
+    {
+        if (array_key_exists('__deferred', $this->attributes['QuotationOrderChargeLines'])) {
+            $this->attributes['QuotationOrderChargeLines'] = (new QuotationOrderChargeLine($this->connection()))->filter("QuotationID eq guid'{$this->QuotationID}'");
+        }
+
+        return $this->attributes['QuotationOrderChargeLines'];
+    }
 }
