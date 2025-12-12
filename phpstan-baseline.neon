@@ -17,6 +17,19 @@ parameters:
 			identifier: class.notFound
 			count: 1
 			path: src/Picqer/Financials/Exact/BulkGoodsDeliveryLine.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Expenses\:\:\$ExpenseLines contains unknown class Picqer\\Financials\\Exact\\ExpenseLine\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Expenses.php
+
+		-
+			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\Expenses\:\:\$Waypoints contains unknown class Picqer\\Financials\\Exact\\Waypoint\.$#'
+			identifier: class.notFound
+			count: 1
+			path: src/Picqer/Financials/Exact/Expenses.php
+
 		-
 			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\ReasonForLogistic\:\:\$Types contains unknown class Picqer\\Financials\\Exact\\Type\.$#'
 			identifier: class.notFound
