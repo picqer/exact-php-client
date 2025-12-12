@@ -3,7 +3,7 @@
 namespace Picqer\Financials\Exact;
 
 /**
- * Class Expensis.
+ * Class Expenses.
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=ExpenseManagementExpenses
  *
@@ -44,7 +44,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Vendor Vendor name
  * @property Waypoint[] $Waypoints Waypoints for Mileage expenses (route tracking)
  */
-class Expensis extends Model
+class Expenses extends Model
 {
     use Query\Findable;
     use Persistance\Storable;
