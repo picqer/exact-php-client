@@ -46,13 +46,13 @@ namespace Picqer\Financials\Exact;
  * @property string $RoutingStepID ID of the routing step.
  * @property string $ShopOrder Reference to ShopOrders table
  * @property int $ShopOrderNumber Shop order number
- * @property int $Status Line status
+ * @property int $Status Line status: 5 = Draft, 10 = Open, 20 = On order, 25 = Partial, 30 = Finished
  * @property string $StatusDescription Description of Status
  * @property float $Stock Number of items in stock
  * @property ItemWarehouseStorageLocation[] $StockLocations Collection of Manufacturing stock locations
  * @property string $SubShopOrder ID of the shop order linked to this material
  * @property int $SubShopOrderNumber Number of the shop order linked to this material
- * @property int $Type Type
+ * @property int $Type Type: 1 = Material, 2 = By-product
  * @property string $Unit Unit
  * @property string $UnitDescription Unit description
  * @property string $Warehouse Shop order warehouse

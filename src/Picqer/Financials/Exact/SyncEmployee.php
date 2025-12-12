@@ -71,6 +71,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SocialSecurityNumber Social security numberNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
  * @property string $StartDate Start date of the employee
  * @property string $State StateNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
+ * @property string $TaxIdentificationNumber Tax identification numberNote: The value is only returned if user has any of the following roles: View userEnter variable payroll mutationsManage employeesAnonymise employee and userView personal information Of employees
  * @property string $Title Title
  * @property string $User User ID of employee
  * @property string $UserFullName Name of user
@@ -146,6 +147,7 @@ class SyncEmployee extends Model
         'SocialSecurityNumber',
         'StartDate',
         'State',
+        'TaxIdentificationNumber',
         'Title',
         'User',
         'UserFullName',

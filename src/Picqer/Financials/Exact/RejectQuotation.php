@@ -11,6 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code.
  * @property string $ErrorMessage Contains the error message if an error occurred during the rejection of the quotation.
  * @property string $NotificationLayout Based on this layout the notification email is sent. In case it is not specified, then no email is sent.
+ * @property string $OpportunityStage The stage of the linked opportunity after rejecting the quotation.
  * @property string $ReasonCode Reason why the quotation was rejected.
  * @property string $SuccessMessage Contains information if the quotation was successfully rejected.
  */
@@ -26,6 +27,7 @@ class RejectQuotation extends Model
         'Division',
         'ErrorMessage',
         'NotificationLayout',
+        'OpportunityStage',
         'ReasonCode',
         'SuccessMessage',
     ];
