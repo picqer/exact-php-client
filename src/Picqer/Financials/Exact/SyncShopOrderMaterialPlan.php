@@ -35,9 +35,9 @@ namespace Picqer\Financials\Exact;
  * @property float $PlannedQuantityFactor Intended quantity of the material per unit excluding waste
  * @property string $RoutingStepID ID of the routing step.
  * @property string $ShopOrder Reference to ShopOrders table
- * @property int $Status Line status
+ * @property int $Status Line status: 5 = Draft, 10 = Open, 20 = On order, 25 = Partial, 30 = Finished
  * @property string $StatusDescription Description of Status
- * @property int $Type Type
+ * @property int $Type Type: 1 = Material, 2 = By-product
  * @property string $Unit Unit
  * @property string $UnitDescription Unit description
  * @property float $WastePercentage Waste percentage must be null or integer from 1 to 9999 (only available in Manufacturing Professional and Premium)

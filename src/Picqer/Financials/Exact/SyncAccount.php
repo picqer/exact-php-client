@@ -48,6 +48,7 @@ namespace Picqer\Financials\Exact;
  * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $DatevCreditorCode DATEV creditor code for Germany legislation
  * @property string $DatevDebtorCode DATEV debtor code for Germany legislation
+ * @property int $DeliveryAdvice Indicates how deliveries are handled. Values: 0 = Partial, orders can be delivered partial, 1 = Complete the order needs to be complete to deliver, 2 = Partial without backorder when deliver partially the remainder of the order is completed without delivery
  * @property float $DiscountPurchase Default discount percentage for purchase. This is stored as a fraction. ie 5.5% is stored as .055
  * @property float $DiscountSales Default discount percentage for sales. This is stored as a fraction. ie 5.5% is stored as .055
  * @property int $Division Division code
@@ -81,7 +82,7 @@ namespace Picqer\Financials\Exact;
  * @property string $InvoiceAccountCode Code of InvoiceAccount
  * @property string $InvoiceAccountName Name of InvoiceAccount
  * @property int $InvoiceAttachmentType Indicates which attachment types should be sent when a sales invoice is printed. Only values in related table with Invoice=1 are allowed
- * @property int $InvoicingMethod Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange), 8: Send and trackTake notes: To use the '4 - Mailbox (electronic exchange)' option, the 'Mailbox' feature set is required in the licence.
+ * @property int $InvoicingMethod Method of sending for sales invoices. Values: 1: Paper, 2: EMail, 4: Mailbox (electronic exchange), 8: Send and track, 32: Send via PeppolTake notes: To use the '4 - Mailbox (electronic exchange)' option, the 'Mailbox' feature set is required in the licence. To use the '32 - Send via Peppol' option, e-invoicing via Peppol must be activated
  * @property int $IsAccountant Indicates whether the account is an accountant. Values: 0 = No accountant, 1 = True, but accountant doesn't want his name to be published in the list of accountants, 2 = True, and accountant is published in the list of accountants
  * @property int $IsAgency Indicates whether the accounti is an agency
  * @property int $IsAnonymised Indicates whtether the account is anonymised.
@@ -200,6 +201,7 @@ class SyncAccount extends Model
         'CustomField',
         'DatevCreditorCode',
         'DatevDebtorCode',
+        'DeliveryAdvice',
         'DiscountPurchase',
         'DiscountSales',
         'Division',

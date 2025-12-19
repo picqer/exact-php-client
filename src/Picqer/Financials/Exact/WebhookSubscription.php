@@ -15,7 +15,8 @@ namespace Picqer\Financials\Exact;
  * @property string $CreatorFullName Name of creator
  * @property string $Description Description of the OAuth Client
  * @property int $Division Division code
- * @property string $Topic Webhook subscription topic, e.g.: FinancialTransactions, Items, StockPositions
+ * @property bool $IsInstant Enable instant delivery (only supported for topic 'GoodsDeliveries'). For any other topic, return an error.
+ * @property string $Topic Webhook subscription topic, e.g.: Accounts, Items, StockPositions
  * @property string $UserID Subscribing User ID
  */
 class WebhookSubscription extends Model
@@ -32,6 +33,7 @@ class WebhookSubscription extends Model
         'CreatorFullName',
         'Description',
         'Division',
+        'IsInstant',
         'Topic',
         'UserID',
     ];

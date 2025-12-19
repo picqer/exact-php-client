@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ErrorMessage Contains the error message if an error occurred during the acception of the quotation.
  * @property string $InvoiceJournal The journal in which the sales invoice will be booked. Mandatory for Action = 2.
  * @property string $NotificationLayout Based on this layout the notification email is sent. In case it is not specified, then no email is sent.
+ * @property string $OpportunityStage The stage of the linked opportunity after accepting the quotation.
  * @property OptionalQuotationLineID[] $OptionalQuotationLineIDs Collection of optional quotation line IDs.
  * @property int $ProjectBudgetType The budget type of the project that will be created. Default = 0.
  * @property string $ProjectClassification The ID of the project classification.
@@ -57,6 +58,7 @@ class AcceptQuotation extends Model
         'ErrorMessage',
         'InvoiceJournal',
         'NotificationLayout',
+        'OpportunityStage',
         'OptionalQuotationLineIDs',
         'ProjectBudgetType',
         'ProjectClassification',

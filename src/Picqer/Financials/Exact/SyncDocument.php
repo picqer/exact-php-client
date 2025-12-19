@@ -11,6 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Account ID of the related account of this document
  * @property string $AccountCode Code of Account
  * @property string $AccountName Name of Account
+ * @property bool $ActionRegenerateEntryProposal ActionRegenerateEntryProposal
  * @property float $AmountFC Amount in the currency of the transaction
  * @property string $Body Body of this document
  * @property string $Category ID of the category of this document
@@ -29,6 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property string $DocumentFolderCode The Code of document folder
  * @property string $DocumentFolderDescription The Decsription of document folder
  * @property string $DocumentViewUrl Url to view the document
+ * @property string $EntryStatusDescription EntryStatusDescription
  * @property string $ExpiryDate Expiry date of this document
  * @property string $FinancialTransactionEntryID Reference to the transaction lines of the financial entry. For a document of type sales invoice it will return the InvoiceID of the sales invoice (SalesInvoices API).
  * @property bool $HasEmptyBody Indicates that the document body is empty
@@ -51,7 +53,6 @@ namespace Picqer\Financials\Exact;
  * @property int $ProposedEntryStatus ProposedEntryStatus, 0 = Void, 5 = Rejected, 20 = Open, 50 = Processed
  * @property int $SalesInvoiceNumber 'Our reference' of the transaction that belongs to this document
  * @property int $SalesOrderNumber Number of the sales order
- * @property int $ScanServiceStatus ScanServiceStatus
  * @property int $SendMethod Send method
  * @property int $ShopOrderNumber Number of the shop order
  * @property string $Subject Subject of this document
@@ -70,6 +71,7 @@ class SyncDocument extends Model
         'Account',
         'AccountCode',
         'AccountName',
+        'ActionRegenerateEntryProposal',
         'AmountFC',
         'Body',
         'Category',
@@ -88,6 +90,7 @@ class SyncDocument extends Model
         'DocumentFolderCode',
         'DocumentFolderDescription',
         'DocumentViewUrl',
+        'EntryStatusDescription',
         'ExpiryDate',
         'FinancialTransactionEntryID',
         'HasEmptyBody',
@@ -110,7 +113,6 @@ class SyncDocument extends Model
         'ProposedEntryStatus',
         'SalesInvoiceNumber',
         'SalesOrderNumber',
-        'ScanServiceStatus',
         'SendMethod',
         'ShopOrderNumber',
         'Subject',

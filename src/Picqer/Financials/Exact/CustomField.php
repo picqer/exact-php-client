@@ -7,11 +7,11 @@ namespace Picqer\Financials\Exact;
  *
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CustomFieldCustomFields
  *
- * @property string $LinkId Entity id
+ * @property string $PropertyName Custom business property name
  * @property string $BusinessComponentName Business component name
  * @property string $Caption Custom field description
- * @property string $PropertyName Custom business property name
- * @property string $RefersTo The name of the referencing entity. The supported values are Item, Account, Project, Opportunity, SalesOrder, Contact, User, Employee, Document and Team
+ * @property string $LinkId Entity id
+ * @property string $RefersTo The name of the referencing entity. The supported values are Item, Account, Project, Opportunity, SalesOrder, Contact, User, Employee, Document, Team, CostUnit, CostCenter and Journal
  * @property string $Type Represents the data type of the custom field. The supported datatypes are boolean, integer, string, double, date and GUID
  * @property string $Value Custom field data
  */
@@ -19,13 +19,13 @@ class CustomField extends Model
 {
     use Query\Findable;
 
-    protected $primaryKey = 'LinkId';
+    protected $primaryKey = 'PropertyName';
 
     protected $fillable = [
-        'LinkId',
+        'PropertyName',
         'BusinessComponentName',
         'Caption',
-        'PropertyName',
+        'LinkId',
         'RefersTo',
         'Type',
         'Value',
