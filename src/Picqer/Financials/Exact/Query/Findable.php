@@ -194,6 +194,16 @@ trait Findable
      */
     public function collectionFromResultAsGenerator($result, array $headers = []): Generator
     {
+        // Capture the next page url now: the returned generator runs lazily and other requests
+        // on the same connection overwrite Connection::$nextUrl in the meantime.
+        return $this->paginateResult($result, $this->connection()->nextUrl, $headers);
+    }
+
+    /**
+     * @return Generator<static>
+     */
+    private function paginateResult($result, ?string $nextUrl, array $headers): Generator
+    {
         // If we have one result which is not an assoc array, make it the first element of an array for the
         // collectionFromResult function so we always return a collection from filter
         if ((bool) count(array_filter(array_keys($result), 'is_string'))) {
@@ -204,8 +214,9 @@ trait Findable
             yield new static($this->connection(), $row);
         }
 
-        while ($this->connection()->nextUrl !== null) {
-            $nextResult = $this->connection()->get($this->connection()->nextUrl, [], $headers);
+        while ($nextUrl !== null) {
+            $nextResult = $this->connection()->get($nextUrl, [], $headers);
+            $nextUrl = $this->connection()->nextUrl;
 
             // If we have one result which is not an assoc array, make it the first element of an array for the array_merge function
             if ((bool) count(array_filter(array_keys($nextResult), 'is_string'))) {
