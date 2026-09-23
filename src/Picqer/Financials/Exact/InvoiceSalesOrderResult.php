@@ -30,4 +30,14 @@ class InvoiceSalesOrderResult extends Model
     ];
 
     protected $url = 'read/salesinvoice/InvoiceSalesOrderResult';
+
+    /**
+     * Get the result of the process started by InvoiceSalesOrder, using the ProcessID it returned.
+     */
+    public function findByProcessId(string $processId): ?self
+    {
+        $results = $this->get(['ProcessID' => "guid'{$processId}'"]);
+
+        return $results[0] ?? null;
+    }
 }
