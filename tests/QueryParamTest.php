@@ -206,6 +206,10 @@ class QueryParamTest extends TestCase
             Exact\ItemDetailsByID::class,
             ['itemId'],
         ];
+        yield Exact\InvoiceSalesOrderResult::class => [
+            Exact\InvoiceSalesOrderResult::class,
+            ['ProcessID'],
+        ];
         yield Exact\CostEntryRecentExpensesByProject::class => [
             Exact\CostEntryRecentExpensesByProject::class,
             ['projectId'],
