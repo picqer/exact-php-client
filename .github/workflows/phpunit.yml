@@ -1,13 +1,13 @@
 name: Run phpunit
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
     
     strategy:
       matrix:
-        php-versions: [ '7.4', '8.0', '8.1', '8.2' ]
+        php-versions: [ '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5' ]
     
     name: PHP ${{ matrix.php-versions }}
     
@@ -15,7 +15,7 @@ jobs:
     
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -26,7 +26,7 @@ jobs:
         run: php -v
       
       - name: Composer install
-        run: composer install --prefer-dist --no-interaction  --no-progress --no-suggest
+        run: composer install --prefer-dist --no-interaction --no-progress
         
       - name: Run tests
         run: vendor/bin/phpunit
