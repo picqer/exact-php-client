@@ -11,6 +11,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7;
 use GuzzleHttp\Psr7\Request;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamInterface;
 
 /**
  * Class Connection.
@@ -201,7 +202,7 @@ class Connection
         $this->checkOrAcquireAccessToken();
 
         // If we have a token, sign the request
-        if (! $this->needsAuthentication() && ! empty($this->accessToken)) {
+        if (! empty($this->accessToken)) {
             $headers['Authorization'] = 'Bearer ' . $this->accessToken;
         }
 
@@ -303,6 +304,26 @@ class Connection
             $response = $this->client()->send($request);
 
             return $this->parseDownloadResponseXml($response);
+        } catch (Exception $e) {
+            $this->parseExceptionForErrorMessages($e);
+        }
+    }
+
+    /**
+     * Download a file (e.g. an item picture or document attachment) from an absolute Exact Online url.
+     *
+     * @throws ApiException
+     */
+    public function downloadFile(string $url): StreamInterface
+    {
+        $this->waitIfMinutelyRateLimitHit();
+
+        try {
+            $request = $this->createRequest('GET', $url);
+            $response = $this->client()->send($request);
+            $this->extractRateLimits($response);
+
+            return $response->getBody();
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
@@ -744,6 +765,8 @@ class Connection
      * @param Exception $e
      *
      * @throws ApiException
+     *
+     * @return never
      */
     private function parseExceptionForErrorMessages(Exception $e): void
     {

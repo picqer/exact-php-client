@@ -140,19 +140,20 @@ abstract class Model implements \JsonSerializable
             return true;
         }
 
-        try {
-            if (array_key_exists($key, $this->attributes) && is_array($this->attributes[$key]) && array_key_exists('__deferred', $this->attributes[$key])) {
-                $class = preg_replace('/(.+?)s?$/', __NAMESPACE__ . '\\\$1', $key); // Filter plural 's' and add namespace
-                $deferred = new $class($this->connection());
-                $uri = $this->attributes[$key]['__deferred']['uri'];
-                $deferred->connection()->nextUrl = $uri; // $uri is complete, by setting it to nextUrl Connection->formatUrl leaves it as is.
-                $result = $deferred->connection()->get($uri);
-                $this->deferred[$key] = $deferred->collectionFromResult($result);
-
-                return true;
+        if (array_key_exists($key, $this->attributes) && is_array($this->attributes[$key]) && array_key_exists('__deferred', $this->attributes[$key])) {
+            $class = preg_replace('/(.+?)s?$/', __NAMESPACE__ . '\\\$1', $key); // Filter plural 's' and add namespace
+            if (! class_exists($class)) {
+                // No entity for this property, leave it as is.
+                return false;
             }
-        } catch (\Exception $e) {
-            // We tried lets leave it as is.
+
+            $deferred = new $class($this->connection());
+            $uri = $this->attributes[$key]['__deferred']['uri'];
+            $deferred->connection()->nextUrl = $uri; // $uri is complete, by setting it to nextUrl Connection->formatUrl leaves it as is.
+            $result = $deferred->connection()->get($uri);
+            $this->deferred[$key] = $deferred->collectionFromResult($result);
+
+            return true;
         }
 
         return false;

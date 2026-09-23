@@ -91,16 +91,15 @@ class AuthenticationTest extends TestCase
         $this->assertSame('Bearer access-token', $this->sentRequests()[0]->getHeaderLine('Authorization'));
     }
 
-    public function testAccessTokenIsNotSentWithoutRefreshTokenOrAuthorizationCode(): void
+    public function testAccessTokenIsSentWithoutRefreshTokenOrAuthorizationCode(): void
     {
-        // Documents current behaviour: an access token alone is not enough to sign requests.
         $connection = $this->createConnection([$this->emptyResponse()]);
         $connection->setAccessToken('access-token');
         $connection->setTokenExpires(time() + 600);
 
         $connection->get('crm/Accounts');
 
-        $this->assertSame('', $this->sentRequests()[0]->getHeaderLine('Authorization'));
+        $this->assertSame('Bearer access-token', $this->sentRequests()[0]->getHeaderLine('Authorization'));
     }
 
     public function testCallbacksAreCalledAroundTokenRefresh(): void
