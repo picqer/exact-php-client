@@ -8,8 +8,14 @@ jobs:
     strategy:
       matrix:
         php-versions: [ '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5' ]
+        dependencies: [ 'highest' ]
+        include:
+          - php-versions: '7.4'
+            dependencies: 'lowest'
+          - php-versions: '8.5'
+            dependencies: 'lowest'
     
-    name: PHP ${{ matrix.php-versions }}
+    name: PHP ${{ matrix.php-versions }}${{ matrix.dependencies == 'lowest' && ' (lowest dependencies)' || '' }}
     
     runs-on: ubuntu-latest
     
@@ -26,7 +32,12 @@ jobs:
         run: php -v
       
       - name: Composer install
+        if: matrix.dependencies == 'highest'
         run: composer install --prefer-dist --no-interaction --no-progress
+      
+      - name: Composer install (lowest dependencies)
+        if: matrix.dependencies == 'lowest'
+        run: composer update --prefer-lowest --prefer-dist --no-interaction --no-progress
         
       - name: Run tests
         run: vendor/bin/phpunit
