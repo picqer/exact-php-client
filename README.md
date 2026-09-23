@@ -200,6 +200,27 @@ $printedInvoice->ExtraText = "Some additional text";
 $printedInvoice->save();
 ```
 
+### Invoice sales orders (async)
+As of October 2026 Exact only supports the async mode of the InvoiceSalesOrders endpoint. Starting the process returns a `ProcessID`, which you use to fetch the result later.
+
+```php
+$invoiceSalesOrder = new \Picqer\Financials\Exact\InvoiceSalesOrder($connection);
+$invoiceSalesOrder->CreateMode = 1; // 0: Per customer, 1: Per sales order
+$invoiceSalesOrder->InvoiceMode = 0; // 0: By quantity delivered, 1: By quantity ordered
+$invoiceSalesOrder->JournalCode = '70';
+$invoiceSalesOrder->Mode = 1; // Async
+$invoiceSalesOrder->SalesOrderIDs = [
+    new \Picqer\Financials\Exact\SalesOrderID($connection, ['ID' => $salesOrderId]),
+];
+$invoiceSalesOrder->save();
+
+// Later: fetch the result of the background process
+$results = (new \Picqer\Financials\Exact\InvoiceSalesOrderResult($connection))
+    ->get(['ProcessID' => "guid'{$invoiceSalesOrder->ProcessID}'"]);
+$result = $results[0] ?? null;
+// $result->Status, $result->NumberOfCreatedInvoices, $result->NumberOfFailedInvoices, $result->Errors
+```
+
 ### Use generators to prevent memory overflow
 This package allows you to interact with the Exact API using PHP [generators](https://www.php.net/manual/en/language.generators.overview.php).
 This may be useful when you're retrieving large sets of data that are too big to load into memory all at once.
