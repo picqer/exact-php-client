@@ -7,6 +7,8 @@ namespace Picqer\Tests;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
 use Picqer\Financials\Exact\Account;
+use Picqer\Financials\Exact\ApiException;
+use Picqer\Financials\Exact\Expenses;
 use Picqer\Financials\Exact\Item;
 use Picqer\Financials\Exact\SalesInvoice;
 use Picqer\Financials\Exact\SalesInvoiceLine;
@@ -195,6 +197,47 @@ class FindableTest extends TestCase
         // Loaded only once
         $this->assertCount(2, $invoice->SalesInvoiceLines);
         $this->assertCount(1, $this->sentRequests());
+    }
+
+    public function testLazyLoadingThrowsApiErrors(): void
+    {
+        $connection = $this->createMockConnection($this->createMockHandler([
+            new Response(429, [], json_encode(['error' => ['message' => ['value' => 'Too many requests']]])),
+        ]));
+        $invoice = new SalesInvoice($connection, [
+            'InvoiceID'         => self::ID,
+            'SalesInvoiceLines' => ['__deferred' => ['uri' => 'https://start.exactonline.nl/api/v1/1234567890/salesinvoice/SalesInvoiceLines']],
+        ]);
+
+        $this->expectException(ApiException::class);
+        $this->expectExceptionCode(429);
+
+        $lines = $invoice->SalesInvoiceLines;
+    }
+
+    public function testDeferredPropertyWithoutEntityClassIsReturnedAsIs(): void
+    {
+        $deferred = ['__deferred' => ['uri' => 'https://start.exactonline.nl/api/v1/1234567890/expensemanagement/ExpenseLines']];
+        $connection = $this->createMockConnection($this->createMockHandler());
+        $expense = new Expenses($connection, ['ID' => self::ID, 'ExpenseLines' => $deferred]);
+
+        $this->assertSame($deferred, $expense->ExpenseLines);
+        $this->assertCount(0, $this->sentRequests());
+    }
+
+    public function testFilterOnDivisionRestoresDivisionWhenRequestFails(): void
+    {
+        $connection = $this->createMockConnection($this->createMockHandler([
+            new Response(403, [], json_encode(['error' => ['message' => ['value' => 'Forbidden']]])),
+        ]));
+
+        try {
+            (new Item($connection))->filter('Division eq 999');
+            $this->fail('Expected an ApiException');
+        } catch (ApiException $e) {
+        }
+
+        $this->assertSame('1234567890', $connection->getDivision());
     }
 
     /**

@@ -124,10 +124,12 @@ trait Findable
             $request = array_merge($system_query_options, $request);
         }
 
-        $result = $this->connection()->get($this->url(), $request, $headers);
-
-        if (! empty($divisionId)) {
-            $this->connection()->setDivision($originalDivision); // Restore division
+        try {
+            $result = $this->connection()->get($this->url(), $request, $headers);
+        } finally {
+            if (! empty($divisionId)) {
+                $this->connection()->setDivision($originalDivision); // Restore division
+            }
         }
 
         return $this->collectionFromResultAsGenerator($result, $headers);
