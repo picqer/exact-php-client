@@ -50,6 +50,36 @@ class InvoiceSalesOrderTest extends TestCase
         $this->assertSame(self::PROCESS_ID, $invoiceSalesOrder->ProcessID);
     }
 
+    public function testFindResultByProcessId(): void
+    {
+        $connection = $this->createMockConnection($this->createMockHandler([
+            new Response(200, [], json_encode(['d' => ['results' => [[
+                'ProcessID'               => self::PROCESS_ID,
+                'NumberOfCreatedInvoices' => 2,
+                'Status'                  => 'Processed',
+            ]]]])),
+        ]));
+
+        $result = (new InvoiceSalesOrderResult($connection))->findByProcessId(self::PROCESS_ID);
+
+        $this->assertSame(
+            "https://start.exactonline.nl/api/v1/1234567890/read/salesinvoice/InvoiceSalesOrderResult?ProcessID=guid'" . self::PROCESS_ID . "'",
+            urldecode((string) $this->sentRequests()[0]->getUri())
+        );
+        $this->assertNotNull($result);
+        $this->assertSame('Processed', $result->Status);
+        $this->assertSame(2, $result->NumberOfCreatedInvoices);
+    }
+
+    public function testFindResultByProcessIdReturnsNullWhenNotFound(): void
+    {
+        $connection = $this->createMockConnection($this->createMockHandler([
+            new Response(200, [], json_encode(['d' => ['results' => []]])),
+        ]));
+
+        $this->assertNull((new InvoiceSalesOrderResult($connection))->findByProcessId(self::PROCESS_ID));
+    }
+
     public function testGetResultOfAsyncProcess(): void
     {
         $connection = $this->createMockConnection($this->createMockHandler([
