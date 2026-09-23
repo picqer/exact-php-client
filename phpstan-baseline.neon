@@ -41,9 +41,3 @@ parameters:
 			identifier: class.notFound
 			count: 1
 			path: src/Picqer/Financials/Exact/User.php
-
-		-
-			message: '#^Trait Picqer\\Financials\\Exact\\Webhook\\Authenticatable is used zero times and is not analysed\.$#'
-			identifier: trait.unused
-			count: 1
-			path: src/Picqer/Financials/Exact/Webhook/Authenticatable.php

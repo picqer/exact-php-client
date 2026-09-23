@@ -48,7 +48,7 @@ class Connection
     /**
      * @var int the Unix timestamp at which the access token expires
      */
-    private int $tokenExpires;
+    private int $tokenExpires = 0;
 
     /**
      * @var mixed
@@ -227,13 +227,14 @@ class Connection
     public function get($url, array $params = [], array $headers = [])
     {
         $this->waitIfMinutelyRateLimitHit();
-        $url = $this->formatUrl($url, $this->requiresDivisionInRequestUrl($url), $url === $this->nextUrl);
+        $isNextUrl = $url === $this->nextUrl || $this->isAbsoluteUrl($url);
+        $url = $this->formatUrl($url, $this->requiresDivisionInRequestUrl($url), $isNextUrl);
 
         try {
             $request = $this->createRequest('GET', $url, null, $params, $headers);
             $response = $this->client()->send($request);
 
-            return $this->parseResponse($response, $url != $this->nextUrl);
+            return $this->parseResponse($response, ! $isNextUrl);
         } catch (Exception $e) {
             $this->parseExceptionForErrorMessages($e);
         }
@@ -632,7 +633,7 @@ class Connection
      */
     private function getTimestampFromExpiresIn($expiresIn): int
     {
-        if (! ctype_digit($expiresIn)) {
+        if (! ctype_digit((string) $expiresIn)) {
             throw new \InvalidArgumentException('Function requires a numeric expires value');
         }
 
@@ -645,11 +646,11 @@ class Connection
     }
 
     /**
-     * @param int $tokenExpires the Unix timestamp at which the access token expires
+     * @param int|numeric-string $tokenExpires the Unix timestamp at which the access token expires
      */
     public function setTokenExpires($tokenExpires)
     {
-        $this->tokenExpires = $tokenExpires;
+        $this->tokenExpires = (int) $tokenExpires;
     }
 
     private function tokenHasExpired(): bool
@@ -665,6 +666,14 @@ class Connection
     {
         if ($formatNextUrl) {
             return $endPoint;
+        }
+
+        // Some endpoints (e.g. beta) have the division in the middle of the path: beta/{division}/...
+        if ($includeDivision && strpos($endPoint, '{division}') !== false) {
+            return implode('/', [
+                $this->getApiUrl(),
+                str_replace('{division}', (string) $this->getCurrentDivisionNumber(), $endPoint),
+            ]);
         }
 
         if ($includeDivision) {
@@ -738,6 +747,10 @@ class Connection
      */
     private function parseExceptionForErrorMessages(Exception $e): void
     {
+        if ($e instanceof ApiException) {
+            throw $e;
+        }
+
         if (! $e instanceof BadResponseException) {
             throw new ApiException($e->getMessage(), 0, $e);
         }
@@ -886,6 +899,11 @@ class Connection
     public function setWaitOnMinutelyRateLimitHit(bool $waitOnMinutelyRateLimitHit): void
     {
         $this->waitOnMinutelyRateLimitHit = $waitOnMinutelyRateLimitHit;
+    }
+
+    private function isAbsoluteUrl(string $url): bool
+    {
+        return preg_match('#^https?://#i', $url) === 1;
     }
 
     private function requiresDivisionInRequestUrl(string $endpointUrl): bool

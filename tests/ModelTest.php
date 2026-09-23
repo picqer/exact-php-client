@@ -2,7 +2,9 @@
 
 namespace Picqer\Tests;
 
+use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
+use Picqer\Financials\Exact\Account;
 use Picqer\Financials\Exact\Item;
 use Picqer\Financials\Exact\Query\Resultset;
 use Picqer\Tests\Support\MocksExactConnection;
@@ -100,6 +102,49 @@ class ModelTest extends TestCase
         $this->assertEquals(2, iterator_count($collection));
     }
 
+    public function testGeneratorKeepsPaginatingWhenOtherRequestsAreMadeWhileIterating(): void
+    {
+        $nextUrl = 'https://start.exactonline.nl/api/v1/1234567890/logistics/Items?$skiptoken=guid\'00000000-0000-0000-0000-000000000002\'';
+        $handler = $this->createMockHandler([
+            $this->createPageResponse(['00000000-0000-0000-0000-000000000001', '00000000-0000-0000-0000-000000000002'], $nextUrl),
+            $this->createPageResponse(['00000000-0000-0000-0000-00000000000a']),
+            $this->createPageResponse(['00000000-0000-0000-0000-000000000003', '00000000-0000-0000-0000-000000000004']),
+        ]);
+        $connection = $this->createMockConnection($handler);
+
+        $ids = [];
+        foreach ((new Item($connection))->getAsGenerator() as $item) {
+            if ($ids === []) {
+                // Another request on the same connection resets Connection::$nextUrl
+                (new Account($connection))->find('00000000-0000-0000-0000-00000000000a');
+            }
+            $ids[] = $item->ID;
+        }
+
+        $this->assertSame([
+            '00000000-0000-0000-0000-000000000001',
+            '00000000-0000-0000-0000-000000000002',
+            '00000000-0000-0000-0000-000000000003',
+            '00000000-0000-0000-0000-000000000004',
+        ], $ids);
+        $this->assertSame($nextUrl, urldecode((string) $handler->getLastRequest()->getUri()));
+    }
+
+    public function testGeneratorUsesNextUrlOfItsOwnRequestWhenIteratedLater(): void
+    {
+        $handler = $this->createMockHandler([
+            $this->createPageResponse(['00000000-0000-0000-0000-000000000001'], 'https://start.exactonline.nl/api/v1/1234567890/logistics/Items?$skiptoken=1'),
+            $this->createPageResponse(['00000000-0000-0000-0000-00000000000a']),
+            $this->createPageResponse(['00000000-0000-0000-0000-000000000002']),
+        ]);
+        $connection = $this->createMockConnection($handler);
+
+        $items = (new Item($connection))->getAsGenerator();
+        (new Account($connection))->find('00000000-0000-0000-0000-00000000000a');
+
+        $this->assertEquals(2, iterator_count($items));
+    }
+
     public function testCanGetResultSet(): void
     {
         $handler = $this->createMockHandler();
@@ -108,5 +153,15 @@ class ModelTest extends TestCase
         $resultSet = (new Item($connection))->getResultSet();
 
         $this->assertInstanceOf(Resultset::class, $resultSet);
+    }
+
+    private function createPageResponse(array $ids, ?string $nextUrl = null): Response
+    {
+        $page = ['results' => array_map(fn (string $id) => ['ID' => $id], $ids)];
+        if ($nextUrl !== null) {
+            $page['__next'] = $nextUrl;
+        }
+
+        return new Response(200, [], json_encode(['d' => $page]));
     }
 }
