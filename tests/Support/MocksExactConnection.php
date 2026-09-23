@@ -5,14 +5,22 @@ namespace Picqer\Tests\Support;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Response;
 use Picqer\Financials\Exact\Connection;
+use Psr\Http\Message\RequestInterface;
 
 trait MocksExactConnection
 {
+    /**
+     * @var array<int, array{request: RequestInterface}>
+     */
+    protected array $requestHistory = [];
+
     protected function createMockConnection(callable $mockHandler): Connection
     {
         $handlerStack = HandlerStack::create($mockHandler);
+        $handlerStack->push(Middleware::history($this->requestHistory));
         $client = new Client(['handler' => $handlerStack]);
         $connection = new Connection();
         $connection->setClient($client);
@@ -40,6 +48,14 @@ trait MocksExactConnection
         return $this->createMockHandler(
             file_get_contents(__DIR__ . "/../fixtures/$fixture")
         );
+    }
+
+    /**
+     * @return RequestInterface[]
+     */
+    protected function sentRequests(): array
+    {
+        return array_column($this->requestHistory, 'request');
     }
 
     protected function normalizeResponse($response = null): array
