@@ -262,7 +262,7 @@ This error occurs because the code you get in your redirect URL is only valid fo
 See for example: [example/example.php](example/example.php)
 
 ## Guzzle versions
-Guzzle 6 and 7 is supported starting from v3. For Guzzle 3 use [v1](https://github.com/picqer/exact-php-client/releases?q=v1&expanded=true).
+Guzzle 7.15.2 or higher is required starting from v4.8, because earlier Guzzle versions have known security vulnerabilities. For Guzzle 6 use [v4.7](https://github.com/picqer/exact-php-client/releases/tag/v4.7.0) or lower. For Guzzle 3 use [v1](https://github.com/picqer/exact-php-client/releases?q=v1&expanded=true).
 
 ## TODO
 
