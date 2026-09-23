@@ -9,4 +9,4 @@ parameters:
         - tests
     phpVersion:
         min: 70400
-        max: 80317
+        max: 80599
