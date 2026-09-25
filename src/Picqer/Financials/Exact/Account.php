@@ -33,6 +33,8 @@ namespace Picqer\Financials\Exact;
  * @property string $Classification6 Account classification 6
  * @property string $Classification7 Account classification 7
  * @property string $Classification8 Account classification 8
+ * @property string $ClientGroup ID of the client group
+ * @property string $ClientGroupDescription Description of the client group
  * @property string $Code Unique key, fixed length numeric string with leading spaces, length 18. IMPORTANT: When you use OData $filter on this field you have to make sure the filter parameter contains the leading spaces
  * @property string $CodeAtSupplier Code under which your own company is known at the account
  * @property string $CompanySize Reference to Company size of the account
@@ -184,6 +186,8 @@ class Account extends Model
         'Classification6',
         'Classification7',
         'Classification8',
+        'ClientGroup',
+        'ClientGroupDescription',
         'Code',
         'CodeAtSupplier',
         'CompanySize',

@@ -8,10 +8,11 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=BulkSalesOrderGoodsDeliveryLines
  *
  * @property string $ID The unique identifier of a stock transaction for a goods delivery line. A goods delivery line can be split into multiple storage locations. In this case, multiple storage locations will have the same stock transaction ID.
- * @property stockbatchnumbers $BatchNumbers Collection of batch numbers
+ * @property StockBatchNumber[] $BatchNumbers Collection of batch numbers
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomerItemCode Code the customer uses for this item
  * @property string $DeliveryDate Date of goods delivery
  * @property string $Description Description of sales order delivery
  * @property int $Division Division code

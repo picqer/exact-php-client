@@ -17,7 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property string $PayrollComponentID Payroll component ID
  * @property int $PayrollPeriod Payroll period
  * @property int $PayrollYear Payroll year
- * @property int $Type Type of the entry:1 = Days worked, 2 = Hours worked, 3 = Days ill, 4 = Hours ill, 5 = Days leave, 6 = Hours leave, 7 = Payroll component, 8 = Days care leave, 9 = Hours care leave, 10 = Days extended partner leave, 11 = Hours extended partner leave, 12 = Days Unpaid Leave, 13 = Hours Unpaid Leave, 14 = Days Paid Parental Leave, 15 = Hours Paid Parental Leave
+ * @property int $Type Type of the entry:1 = Days worked, 2 = Hours worked, 3 = Days ill, 4 = Hours ill, 5 = Days leave, 6 = Hours leave, 7 = Payroll component, 8 = Days care leave, 9 = Hours care leave, 10 = Days extended partner leave, 11 = Hours extended partner leave, 12 = Days Unpaid Leave, 13 = Hours Unpaid Leave, 14 = Days Paid Parental Leave, 15 = Hours Paid Parental Leave16 = Average days worked, 17 = Average hours worked, 18 = Days unpaid parental leave, 19 = Hours unpaid parental leave, 20 = Days maternity leave, 21 = Hours maternity leave
  * @property float $Value Value of the entry
  */
 class VariableMutation extends Model

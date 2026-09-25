@@ -32,6 +32,7 @@ namespace Picqer\Financials\Exact;
  * @property string $ShippingMethod Reference to shipping method. Define shipping method during POST, else it will be empty by default.
  * @property string $ShippingMethodCode Code of shipping method
  * @property string $ShippingMethodDescription Description of shipping method
+ * @property int $ShippingMethodExternalReference External Reference of shipping method. 10=DHL, 20=PostNL, 999=Other. Only supported for Exact Online E-commerce
  * @property string $TrackingNumber Reference to header tracking number
  * @property string $Warehouse Warehouse
  * @property string $WarehouseCode Code of Warehouse
@@ -70,6 +71,7 @@ class GoodsDelivery extends Model
         'ShippingMethod',
         'ShippingMethodCode',
         'ShippingMethodDescription',
+        'ShippingMethodExternalReference',
         'TrackingNumber',
         'Warehouse',
         'WarehouseCode',

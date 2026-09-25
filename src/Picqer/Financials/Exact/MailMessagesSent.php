@@ -40,7 +40,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SkipRecipientMailBoxAddressOverride Skip Recipient MailBoxAddress Override for Scanning service
  * @property string $Subject The subject of the mail message.
  * @property string $SynchronizationCode Provides a link between Exact Online and the banks.
- * @property int $Type The mail message type can have the following values: 0= Other5000= Invitation1000= Purchase invoice5010= Invitation accepted1010= Reminder5020= Invitation rejected1020= Quotation6100= Annual statement1030= Sales order6200= Income tax1040= Delivery note6210= Corporate tax1050= Return note6220= VAT Return XBRL1060= Purchase order6221= Supplementary VAT Return XBRL1100= Sales invoice6230= EU Sales list XBRL1200= CRM document6300= Credit report1300= Soda6400= TaxKitDiese2000= Bank7000= Scanned document3000= VAT Return8000= Tax Declaration3001= Postpone submission8010= Payroll tax declaration XBRL4000= EC Sales list8020= Yearly payroll tax declaration XBRL
+ * @property int $Type The mail message type can have the following values: 0= Other5000= Invitation1000= Purchase invoice5010= Invitation accepted1010= Reminder5020= Invitation rejected1020= Quotation6100= Annual statement1030= Sales order6200= Income tax1040= Delivery note6210= Corporate tax1050= Return note6220= VAT Return XBRL1060= Purchase order6221= Supplementary VAT Return XBRL1100= Sales invoice6230= EU Sales list XBRL1200= CRM document6300= Credit report1300= Soda2000= Bank7000= Scanned document3000= VAT Return8000= Tax Declaration3001= Postpone submission8010= Payroll tax declaration XBRL4000= EC Sales list8020= Yearly payroll tax declaration XBRL
  */
 class MailMessagesSent extends Model
 {

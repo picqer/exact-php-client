@@ -1,0 +1,32 @@
+<?php
+
+namespace Picqer\Financials\Exact;
+
+/**
+ * Class BankStatementUploadAttachment.
+ *
+ * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CashflowBankStatementUploadAttachments
+ *
+ * @property string $ID Primary key
+ * @property string $Attachment Contains the attachment(Format: Base64 encoded)
+ * @property string $Document Reference to the Document
+ * @property string $FileName Filename of the attachment
+ * @property float $FileSize File size of the attachment
+ * @property string $Url Url of the attachment. To get the file in its original format (xml, jpg, pdf, etc.) append &Download=1 to the url.
+ */
+class BankStatementUploadAttachment extends Model
+{
+    use Query\Findable;
+    use Persistance\Storable;
+
+    protected $fillable = [
+        'ID',
+        'Attachment',
+        'Document',
+        'FileName',
+        'FileSize',
+        'Url',
+    ];
+
+    protected $url = 'cashflow/BankStatementUploadAttachments';
+}

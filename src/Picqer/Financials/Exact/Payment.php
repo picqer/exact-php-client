@@ -53,6 +53,7 @@ namespace Picqer\Financials\Exact;
  * @property int $PaymentBatchNumber Number assigned during the of processing payments. When payments are processed a bank export file is created. This file contains one or more batches that contain one or more payments. Each batch gets a sequence number that is stored for each payment in that batch.
  * @property string $PaymentCondition Payment condition of the linked transaction.
  * @property string $PaymentConditionDescription Description of the payment condition.
+ * @property string $PaymentDateProposal Payment date proposal.
  * @property int $PaymentDays Number of days between invoice date and due date.
  * @property int $PaymentDaysDiscount Number of days between invoice date and due date of the discount.
  * @property float $PaymentDiscountPercentage Payment discount percentage.
@@ -127,6 +128,7 @@ class Payment extends Model
         'PaymentBatchNumber',
         'PaymentCondition',
         'PaymentConditionDescription',
+        'PaymentDateProposal',
         'PaymentDays',
         'PaymentDaysDiscount',
         'PaymentDiscountPercentage',

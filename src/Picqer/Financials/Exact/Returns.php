@@ -21,7 +21,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Request Reference to request
  * @property int $Status The status of the request (-10 - NULL, 0 - Void, 5 - Rejected, 10 - Draft, 20 - Open, 30 - Approved, 40 - Realized, 50 - Processed)
  * @property string $Subject The subject of the return document
- * @property int $Type Return Type (31 - VAT, 32-EC Sales list, 146-Payroll declaration)
+ * @property int $Type Return Type (31-VAT, 32-EC Sales list, 33-VAT listing, 34-Intrastat Return, 35-Fiches 281.50-325.50, 37-Fiscal Fiche 281.30, 38-Fiscal Fiche 281.50, 39-Fiscal Fiche 281.71, 46-Income tax, 47-Corporate tax, 200-Annual statement, 146-Payroll declaration, 189-Official return)
  * @property int $Year Return year
  */
 class Returns extends Model
