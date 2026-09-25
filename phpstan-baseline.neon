@@ -7,12 +7,6 @@ parameters:
 			path: src/Picqer/Financials/Exact/BulkGoodsDelivery.php
 
 		-
-			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\BulkGoodsDeliveryLine\:\:\$BatchNumbers contains unknown class Picqer\\Financials\\Exact\\stockbatchnumbers\.$#'
-			identifier: class.notFound
-			count: 1
-			path: src/Picqer/Financials/Exact/BulkGoodsDeliveryLine.php
-
-		-
 			message: '#^PHPDoc tag @property for property Picqer\\Financials\\Exact\\BulkGoodsDeliveryLine\:\:\$SerialNumbers contains unknown class Picqer\\Financials\\Exact\\stockserialnumbers\.$#'
 			identifier: class.notFound
 			count: 1
