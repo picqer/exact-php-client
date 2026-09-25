@@ -69,6 +69,7 @@ namespace Picqer\Financials\Exact;
  * @property string $SelectionCode ID of selection code. Only supported by the Plus, Professional and Premium for Wholesale & Distribution and Manufacturing
  * @property string $SelectionCodeCode Code of selection code
  * @property string $SelectionCodeDescription Description of selection code
+ * @property string $ServicePoint Service point for delivery. Only supported for Exact Online E-commerce
  * @property string $ShippingMethod ShippingMethod
  * @property string $ShippingMethodDescription Description of ShippingMethod
  * @property int $Status The status of the sales order. 12 = Open, 20 = Partial, 21 = Complete, 45 = Cancelled.
@@ -150,6 +151,7 @@ class SalesOrder extends Model
         'SelectionCode',
         'SelectionCodeCode',
         'SelectionCodeDescription',
+        'ServicePoint',
         'ShippingMethod',
         'ShippingMethodDescription',
         'Status',

@@ -8,7 +8,7 @@ namespace Picqer\Financials\Exact;
  * @see https://start.exactonline.nl/docs/HlpRestAPIResourcesDetails.aspx?name=CRMReviewQuotation
  *
  * @property string $QuotationID Identifier of the quotation.
- * @property bool $CopyItemPrices Indicates if the item prices should be copied from the original quotation or the default item prices should be used.
+ * @property bool $CopyItemPrices Indicates if the item prices should be copied from the original quotation or the default item prices should be used. Take note:If this field is not provided in the request, the item prices will be copied from the original quotation.
  * @property string $Description The description of the new quotation.
  * @property int $Division Division code.
  * @property string $Document The document linked to the new quotation.

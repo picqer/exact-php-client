@@ -23,6 +23,7 @@ namespace Picqer\Financials\Exact;
  * @property int $Division Division code
  * @property string $Expense Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license
  * @property string $ExpenseDescription Description of expense. Only available with a professional service license
+ * @property string $From The date which the purchase order line starts
  * @property float $InStock The current stock level of items shown in stock unit. The information is displayed only for items with the stock property selected.
  * @property float $InvoicedQuantity Quantity of item that has been invoiced
  * @property int $IsBatchNumberItem Indicates that an Item is an batch item
@@ -57,6 +58,7 @@ namespace Picqer\Financials\Exact;
  * @property ShopOrderRoutingStepPlan[] $ShopOrderRoutingStepPlans Collection of Shop order Routing step plans
  * @property string $SupplierItemCode Code the supplier uses for this item
  * @property int $SupplierItemCopyRemarks Indicate if the notes content should be copied from SupplierItem's remarks. The default follows the CopyRemarks value from SupplierItem. Values: 0 = Do not copy remark, 1 = Copy remark
+ * @property string $To The date which the purchase order line ends
  * @property string $Unit Code of item unit
  * @property string $UnitDescription Description of unit
  * @property float $UnitPrice Item price per purchase unit
@@ -87,6 +89,7 @@ class PurchaseOrderLine extends Model
         'Division',
         'Expense',
         'ExpenseDescription',
+        'From',
         'InStock',
         'InvoicedQuantity',
         'IsBatchNumberItem',
@@ -121,6 +124,7 @@ class PurchaseOrderLine extends Model
         'ShopOrderRoutingStepPlans',
         'SupplierItemCode',
         'SupplierItemCopyRemarks',
+        'To',
         'Unit',
         'UnitDescription',
         'UnitPrice',

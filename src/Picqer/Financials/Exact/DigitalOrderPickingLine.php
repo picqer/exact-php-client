@@ -13,6 +13,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of the creator
  * @property string $CreatorFullName Name of the creator
+ * @property string $Description Description of sales order line
  * @property int $Division Division code
  * @property string $EntryID The EntryID identifies the digital order picking. All the lines of a digital order picking have the same EntryID
  * @property int $IsAssembledItem Indicates that an Item is an assembled item
@@ -61,6 +62,7 @@ class DigitalOrderPickingLine extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'Description',
         'Division',
         'EntryID',
         'IsAssembledItem',

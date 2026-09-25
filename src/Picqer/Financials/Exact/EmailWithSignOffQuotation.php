@@ -22,7 +22,7 @@ namespace Picqer\Financials\Exact;
  * @property string $InvoiceJournal The journal in which the sales invoice will be booked. Mandatory for Action = 2. For CRM standalone: If the value is not provided, the default value will set to 'sales journal'. If the value is provided, the value must be 'sales journal'. Otherwise, the error message will be thrown.
  * @property int $ProjectBudgetType The budget type of the project that will be created. 0 = None (Default), 1 = Hours per hour type, 2 = Work breakdown structure (WBS).
  * @property string $ProjectClassification The ID of the project classification.
- * @property string $ProjectCode The code of the project that will be created. Mandatory for Action = 3.
+ * @property string $ProjectCode The code of the project that will be created. Required for Action = 3. Note: ProjectCode is not mandatory in PSA packages. If no ProjectCode is provided, project auto number will be used, but this can only be applied to PSA packages.
  * @property string $ProjectDescription The description of the project that will be created. Mandatory for Action = 3.
  * @property string $ProjectID The ID of the project that will be linked to the quotation. Mandatory for Action = 4. For Action = 5, project will be linked to the subscription created.
  * @property string $ProjectInvoiceDate The invoicing date of the project. Mandatory for ProjectInvoicingAction = 2.

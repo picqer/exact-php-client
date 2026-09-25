@@ -16,6 +16,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
+ * @property string $CustomField Custom field endpoint. Provided only for the Exact Online Premium users.
  * @property string $Description Description of the shop order
  * @property int $Division Division code
  * @property string $EntryDate Date on which the shop order was entered, does not need to be the same as syscreated date but is usually the same.
@@ -83,6 +84,7 @@ class SyncShopOrder extends Model
         'Created',
         'Creator',
         'CreatorFullName',
+        'CustomField',
         'Description',
         'Division',
         'EntryDate',

@@ -42,7 +42,7 @@ namespace Picqer\Financials\Exact;
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName User name of modifier
  * @property string $OssCountry OSS country. Available when OneStopShop featureset is enabled in the administration.
- * @property float $Percentage Percentage of the VAT code
+ * @property float $Percentage Active Percentage of the VAT code
  * @property int $TaxReturnType Indicates what type of Taxcode it is: can be VAT, IncomeTax
  * @property string $Type Indicates how the VAT amount should be calculated in relation to the invoice amount. B = VAT 0% (Only base amount), E = Excluding, I = Including, N = No VAT
  * @property string $VatDocType Field in VAT code maintenance to calculate different VATs depending on the selected document type. P = purchase invoice, F = freelance invoice, E = expense voucher. The field is valid for witholding tax type

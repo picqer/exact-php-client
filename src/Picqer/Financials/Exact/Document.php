@@ -20,6 +20,10 @@ namespace Picqer\Financials\Exact;
  * @property string $ContactFullName Contact full name
  * @property string $ContractID The contract linked to the document
  * @property string $ContractNumber Contract Number
+ * @property string $CostcenterCode CostCenter Code
+ * @property string $CostcenterDescription CostCenter Description
+ * @property string $CostunitCode CostUnit Code
+ * @property string $CostunitDescription CostUnit Description
  * @property string $Created Creation date
  * @property string $Creator User ID of creator
  * @property string $CreatorFullName Name of creator
@@ -36,10 +40,12 @@ namespace Picqer\Financials\Exact;
  * @property bool $HasEmptyBody Indicates that the document body is empty
  * @property int $HID Human-readable ID, formatted as xx.xxx.xxx. Unique. May not be equal to zero
  * @property bool $InheritShare InheritShare value
+ * @property bool $IsMarkAsPaidEditable Is MarkAsPaid editable
  * @property string $Item The item linked to the document
  * @property string $ItemCode Code of Item
  * @property string $ItemDescription Description of Item
  * @property string $Language The language code of the document
+ * @property bool $MarkAsPaid Mark as paid
  * @property string $Modified Last modified date
  * @property string $Modifier User ID of modifier
  * @property string $ModifierFullName Name of modifier
@@ -76,6 +82,10 @@ class Document extends Model
         'ContactFullName',
         'ContractID',
         'ContractNumber',
+        'CostcenterCode',
+        'CostcenterDescription',
+        'CostunitCode',
+        'CostunitDescription',
         'Created',
         'Creator',
         'CreatorFullName',
@@ -92,10 +102,12 @@ class Document extends Model
         'HasEmptyBody',
         'HID',
         'InheritShare',
+        'IsMarkAsPaidEditable',
         'Item',
         'ItemCode',
         'ItemDescription',
         'Language',
+        'MarkAsPaid',
         'Modified',
         'Modifier',
         'ModifierFullName',

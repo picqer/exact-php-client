@@ -11,7 +11,7 @@ namespace Picqer\Financials\Exact;
  * @property string $BusinessComponentName Business component name
  * @property string $Caption Custom field description
  * @property string $LinkId Entity id
- * @property string $RefersTo The name of the referencing entity. The supported values are Item, Account, Project, Opportunity, SalesOrder, Contact, User, Employee, Document, Team, CostUnit, CostCenter and Journal
+ * @property string $RefersTo The name of the referencing entity. The supported values are Item, Account, Project, Opportunity, SalesOrder, Contact, User, Employee, Document, Team, CostUnit, CostCenter, Journal, Quotation, PurchaseOrder, SalesInvoice, GLAccount, ShopOrder, Subscription, VATCode and PaymentCondition
  * @property string $Type Represents the data type of the custom field. The supported datatypes are boolean, integer, string, double, date and GUID
  * @property string $Value Custom field data
  */

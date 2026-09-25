@@ -53,7 +53,7 @@ namespace Picqer\Financials\Exact;
  * @property float $VATBaseAmountFC VAT base amount in the currency of the transaction
  * @property string $VATCode VAT code. If this property is not filled, it will use the default VAT code of the G/L account property
  * @property string $VATCodeDescription Description of VATCode
- * @property float $VATNonDeductiblePercentage If not the full amount of the VAT is deductible, you can indicate a percentage for the non decuctible part. This is used during the entry of purchase invoices.
+ * @property float $VATNonDeductiblePercentage If not the full amount of the VAT is deductible, you can indicate a percentage for the non deductible part. This is used during the entry of purchase invoices.
  * @property float $VATPercentage VAT percentage
  * @property float $WithholdingAmountDC Withholding tax amount for spanish legislation
  * @property string $WithholdingTax Withholding tax key for spanish legislation

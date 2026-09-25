@@ -17,6 +17,7 @@ namespace Picqer\Financials\Exact;
  * @property float $Discount The discount given on the default price. A value of 0.1 translates to 10% discount.
  * @property string $Expense Expense related to the Work Breakdown Structure of the selected project. Only available with a professional service license
  * @property string $ExpenseDescription Description of expense. Only available with a professional service license
+ * @property string $From The date which the purchase invoice line starts
  * @property string $InvoiceID The unique identifier of the purchase invoice this line belongs to.
  * @property string $Item Guid that identifies the purchase item. In a POST request either the Item or the PurchaseOrderLine has to be supplied.
  * @property string $ItemUnit The default unit of the purchased item.
@@ -29,6 +30,7 @@ namespace Picqer\Financials\Exact;
  * @property float $Quantity The number of purchased items in purchase units. The purchase unit is defined on the item card and it can also be found using the logistics/SupplierItem api endpoint.For divisible items the quantity can be a fractional number, otherwise it is an integer.
  * @property float $QuantityInDefaultUnits The number of purchased items in default units. An item has both a default unit and a purchase unit, for example piece and box with a box containing 12 pieces. The multiplication factor (12 in this example) between the default unit and purchase unit is maintained on the item card. When you GET a purchase invoice line for 1 box of items the field Quantity = 1 and QuantityInDefaultUnits = 12.
  * @property bool $Rebill Indicates whether the purchase invoice line needs to be rebilled. Only available with a professional service license
+ * @property string $To The date which the purchase invoice line ends
  * @property string $Unit The code of the unit in which the item is purchased. For example piece, box or kg. The value is taken from the purchase unit in the item card.
  * @property float $UnitPrice The default purchase price per unit.Depending on the type of the VAT code the unit price is including or excluding VAT.
  * @property float $VATAmount The VAT amount of the invoice line.
@@ -51,6 +53,7 @@ class PurchaseInvoiceLine extends Model
         'Discount',
         'Expense',
         'ExpenseDescription',
+        'From',
         'InvoiceID',
         'Item',
         'ItemUnit',
@@ -63,6 +66,7 @@ class PurchaseInvoiceLine extends Model
         'Quantity',
         'QuantityInDefaultUnits',
         'Rebill',
+        'To',
         'Unit',
         'UnitPrice',
         'VATAmount',

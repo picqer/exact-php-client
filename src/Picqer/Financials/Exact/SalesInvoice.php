@@ -37,6 +37,7 @@ namespace Picqer\Financials\Exact;
  * @property int $IncotermVersion Version of Incoterm Supported version for Incoterms : 2010, 2020
  * @property string $InvoiceDate Official date for the invoice. When the invoice is entered it's equal to the field 'EntryDate'. During the printing process the invoice date can be entered
  * @property int $InvoiceNumber Assigned at entry or at printing depending on setting. The number assigned is based on the freenumbers as defined for the Journal. When printing the field InvoiceNumber is copied to the fields EntryNumber and InvoiceNumber of the sales entry
+ * @property string $InvoiceStatusInformation Detailed information on the status of the sales invoice in case of collaboration with 3rd parties like Peppol
  * @property string $InvoiceTo Reference to the Customer who will receive the invoice
  * @property string $InvoiceToContactPerson Reference to the Contact person of the customer who will receive the invoice
  * @property string $InvoiceToContactPersonFullName Name of the contact person of the customer who will receive the invoice
@@ -122,6 +123,7 @@ class SalesInvoice extends Model
         'IncotermVersion',
         'InvoiceDate',
         'InvoiceNumber',
+        'InvoiceStatusInformation',
         'InvoiceTo',
         'InvoiceToContactPerson',
         'InvoiceToContactPersonFullName',
