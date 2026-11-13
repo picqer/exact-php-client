@@ -9,11 +9,14 @@ jobs:
       matrix:
         php-versions: [ '7.4', '8.0', '8.1', '8.2', '8.3', '8.4', '8.5' ]
         dependencies: [ 'highest' ]
+        guzzle-versions: [ '^7.15.2', '^8.0' ]
         include:
           - php-versions: '7.4'
             dependencies: 'lowest'
+            guzzle-versions: '^7.15.2'
           - php-versions: '8.5'
             dependencies: 'lowest'
+            guzzle-versions: '^8.0'
     
     name: PHP ${{ matrix.php-versions }}${{ matrix.dependencies == 'lowest' && ' (lowest dependencies)' || '' }}
     
@@ -33,11 +36,11 @@ jobs:
       
       - name: Composer install
         if: matrix.dependencies == 'highest'
-        run: composer install --prefer-dist --no-interaction --no-progress
+        run: composer update guzzlehttp/guzzle --with-all-dependencies --with guzzlehttp/guzzle:${{ matrix.guzzle-versions }} --prefer-dist --no-interaction --no-progress
       
       - name: Composer install (lowest dependencies)
         if: matrix.dependencies == 'lowest'
-        run: composer update --prefer-lowest --prefer-dist --no-interaction --no-progress
+        run: composer update guzzlehttp/guzzle --with-all-dependencies --with guzzlehttp/guzzle:${{ matrix.guzzle-versions }} --prefer-lowest --prefer-dist --no-interaction --no-progress
         
       - name: Run tests
         run: vendor/bin/phpunit
